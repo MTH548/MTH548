@@ -643,7 +643,7 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
 <span class="n">start_text</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;&lt;span&gt;The University at Buffalo Department&quot;</span><span class="p">)</span>
-<span class="n">end_text</span> <span class="o">=</span>  <span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">)</span>
+<span class="n">end_text</span> <span class="o">=</span>  <span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;/strong&gt;);.&lt;/span&gt;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;/strong&gt;);.&lt;/span&gt;&#39;</span><span class="p">)</span>
 <span class="n">HTML</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">[</span><span class="n">start_text</span><span class="p">:</span><span class="n">end_text</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -653,17 +653,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<span>The University at Buffalo Department of <strong>Mathematics</strong> is pleased to announce that Dr. ... Naoki Masuda, Associate Professor (Applied <strong>Mathematics</strong>);. -Simone Cassani, Visiting Assistant Professor (Applied <strong>Mathematics</strong>);.</span>
-      </div>
-   </div>
-  </ubcms-search-result>
-
-
-  <ubcms-search-result data-fb-result="http://www.sens.buffalo.edu/home">
-    <div class="search-result website clearfix">
-      <a class="title" href="https://search.buffalo.edu/s/redirect?collection=meta-search&amp;url=http%3A%2F%2Fwww.sens.buffalo.edu%2Fhome&amp;auth=EF8Z3B2BXUJGgNptD8tbFg&amp;profile=_default&amp;rank=2&amp;query=mathematics" title="http://www.sens.buffalo.edu/home"></div>
+<span>The University at Buffalo Department of <strong>Mathematics</strong> is pleased to announce that Dr. ... Naoki Masuda, Associate Professor (Applied <strong>Mathematics</strong>);. -Simone Cassani, Visiting Assistant Professor (Applied <strong>Mathematics</strong>);.</span></div>
 </div>
-<p>The kind of data which needs to be provided on a given web page will depend on the web page itself.</p>
+<p>The kind of data which can (or needs to) be provided on a given web page will depend on the web page itself.</p>
 </div>
 </div>
 
