@@ -1,0 +1,28 @@
+div.nboutput.container {
+    max-height: 400px;
+    overflow: auto;
+    margin-top: 15px!important;
+    margin-bottom: 25px!important;
+    color: slategray;
+}
+
+div.nbinput.container {
+    max-height: 700px;
+    overflow: auto;
+    margin-top: 0px!important;
+    margin-bottom: 15px!important;
+}
+
+/* do not show netebook cell In/Out prompts*/ 
+div.prompt {
+    min-width: 0px!important;
+}
+
+/* content width */
+.wy-nav-content {
+    max-width: 900px!important;
+}
+
+p {
+    margin-bottom: 15px;
+}
