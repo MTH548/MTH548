@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Requests &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script >var copybuttonSkipText = '>>> ';</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Beautiful Soup" href="beautiful_soup.html" />
+    <link rel="prev" title="MTH 448/548 Data Oriented Computing" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Requests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Requests-basics">Requests basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Binary-files">Binary files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#User-Agent">User Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Sending-data">Sending data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Exercise: scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Requests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Requests">
+<h1>Requests<a class="headerlink" href="#Requests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Requests-basics">
+<h2>Requests basics<a class="headerlink" href="#Requests-basics" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://requests.readthedocs.io/en/master/user/quickstart/">Requests</a> is a Python module for communicating with web pages. We can connect to a web page by passing the address of the page to the the request’s <code class="docutils literal notranslate"><span class="pre">get()</span></code> function:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/wiki/Buffalo,_New_York&quot;</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">get()</span></code> function returns an object with several types of data returned by the web server. For example, we can check the <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">status code</a> of the connection. The code 200 means that the everything went fine:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">page</span><span class="o">.</span><span class="n">status_code</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+200
+</pre></div></div>
+</div>
+<p>Code 404 means that the requested page has not been found:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">bad_url</span> <span class="o">=</span> <span class="s2">&quot;https://en.wikipedia.org/THERE_IS_NO_SUCH_PAGE&quot;</span>
+<span class="n">bad_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">bad_url</span><span class="p">)</span>
+<span class="n">bad_page</span><span class="o">.</span><span class="n">status_code</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+404
+</pre></div></div>
+</div>
+<p>The text of the web page can be retrieved using the <code class="docutils literal notranslate"><span class="pre">text</span></code> property:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="n">page_text</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">text</span>
+<span class="n">pprint</span><span class="p">(</span><span class="n">page_text</span><span class="p">[</span><span class="mi">200000</span><span class="p">:</span><span class="mi">201000</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>  <span class="c1"># print a fragment of the wikipadia page text</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(&#39;ke.jpg 2x&#34; data-file-width=&#34;1536&#34; data-file-height=&#34;1020&#34; /&gt;&lt;/a&gt;  &lt;div &#39;
+ &#39;class=&#34;thumbcaption&#34;&gt;&lt;div class=&#34;magnify&#34;&gt;&lt;a &#39;
+ &#39;href=&#34;/wiki/File:Delaware_Park_lake.jpg&#34; class=&#34;internal&#34; &#39;
+ &#39;title=&#34;Enlarge&#34;&gt;&lt;/a&gt;&lt;/div&gt;Hoyt Lake at Delaware Park&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;\n&#39;
+ &#39;&lt;p&gt;The Buffalo parks system has over 20 parks with several parks accessible &#39;
+ &#39;from any part of the city. The Olmsted Park and Parkway System is the &#39;
+ &#34;hallmark of Buffalo&#39;s many green spaces. Three-fourths of city parkland is &#34;
+ &#39;part of the system, which comprises six major parks, eight connecting &#39;
+ &#39;parkways, nine circles and seven smaller spaces. Constructed in 1868 by &lt;a &#39;
+ &#39;href=&#34;/wiki/Frederick_Law_Olmsted&#34; title=&#34;Frederick Law Olmsted&#34;&gt;Frederick &#39;
+ &#39;Law Olmsted&lt;/a&gt; and his partner &lt;a href=&#34;/wiki/Calvert_Vaux&#34; title=&#34;Calvert &#39;
+ &#39;Vaux&#34;&gt;Calvert Vaux&lt;/a&gt;, the system was integrated into the city and marks &#39;
+ &#39;the first attempt in America to lay out a coordinated system of public parks &#39;
+ &#39;and parkways. The Olmsted-designed portions of the Buffalo park system are &#39;
+ &#39;listed on th&#39;)
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Binary-files">
+<h2>Binary files<a class="headerlink" href="#Binary-files" title="Permalink to this headline">¶</a></h2>
+<p>Some web addresses point not to web pages, but to other types of data: images, videos, pdf files etc. We can retrieve such data using requests too. For example, here is the url of a <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/9/93/Northern_Cardinal_Male-27527-3.jpg">jpeg file</a> posted on Wikimedia Commons:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">photo_url</span> <span class="o">=</span> <span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/9/93/Northern_Cardinal_Male-27527-3.jpg&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Here we download the photo and save it to a file:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">p</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">photo_url</span><span class="p">)</span>
+<span class="n">photo</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">content</span> <span class="c1"># get the binary content of the file</span>
+
+<span class="c1"># save the photo to a file</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;northern_cardinal.jpg&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">photo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We can now display the downloaded file:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;northern_cardinal.jpg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<img alt="_images/requests_16_0.jpeg" src="_images/requests_16_0.jpeg" style="width: 250px;" />
+</div>
+</div>
+</div>
+<div class="section" id="User-Agent">
+<h2>User Agent<a class="headerlink" href="#User-Agent" title="Permalink to this headline">¶</a></h2>
+<p>Every request sent by a web browser to a web server includes user agent, a string with information about the type of browser, the computer on which the browser operates etc. For example, the following user agent identifies the browser as Firefox 73 operating on a Macintosh with the operating system Mac OS X 10.14:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Macintosh</span><span class="p">;</span> <span class="n">Intel</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span> <span class="mf">10.14</span><span class="p">;</span> <span class="n">rv</span><span class="p">:</span><span class="mf">73.0</span><span class="p">)</span> <span class="n">Gecko</span><span class="o">/</span><span class="mi">20100101</span> <span class="n">Firefox</span><span class="o">/</span><span class="mf">73.0</span>
+</pre></div>
+</div>
+<p>The website <a class="reference external" href="https://httpbin.org/get">httpbin.org/get</a> simply displays the data sent to it by the browser, so you can visit it to check the user agent used by your web browser. Using requests to connect to this website, we can inspect the default user agent set by the requests module:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/get&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;args&#34;: {},
+  &#34;headers&#34;: {
+    &#34;Accept&#34;: &#34;*/*&#34;,
+    &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+    &#34;Host&#34;: &#34;httpbin.org&#34;,
+    &#34;User-Agent&#34;: &#34;python-requests/2.22.0&#34;,
+    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e615933-8b363310b894fbadfde15504&#34;
+  },
+  &#34;origin&#34;: &#34;98.118.166.16&#34;,
+  &#34;url&#34;: &#34;https://httpbin.org/get&#34;
+}
+
+</pre></div></div>
+</div>
+<p>The default user agent can occasionally create difficulties, since some websites may reject queries which come from a Python script (and not a web browser). However, it is possible to change the request’s user agent to any value as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># lets pretend to be Firefox on a Mac</span>
+<span class="n">user_agent</span> <span class="o">=</span> <span class="s2">&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0&quot;</span>
+
+<span class="c1"># create a dictionary specifying the user agent</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="n">user_agent</span><span class="p">}</span>
+<span class="c1"># pass the dictionary to the get() function</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/get&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="c1"># check the data we sent to the website</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{
+  &#34;args&#34;: {},
+  &#34;headers&#34;: {
+    &#34;Accept&#34;: &#34;*/*&#34;,
+    &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+    &#34;Host&#34;: &#34;httpbin.org&#34;,
+    &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0&#34;,
+    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e61617a-8abd45785437c000a849d2bc&#34;
+  },
+  &#34;origin&#34;: &#34;98.118.166.16&#34;,
+  &#34;url&#34;: &#34;https://httpbin.org/get&#34;
+}
+
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Sending-data">
+<h2>Sending data<a class="headerlink" href="#Sending-data" title="Permalink to this headline">¶</a></h2>
+<p>In some cases we need to specify more data, beside a web page address to get the information we need. For example, to search the University at Buffalo website, we need to specify the search query on the <a class="reference external" href="https://www.buffalo.edu/search/search.html">UB search page</a>. This can be accomplished using requests as follows:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.buffalo.edu/search/search.html&quot;</span>
+
+<span class="c1"># define dictionary with data to be sent to the web page</span>
+<span class="c1"># here we are specifing that we want to search for the word &quot;mathematics&quot;</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;mathematics&quot;</span><span class="p">}</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The code below displays a fragment of the retrieved web page with search results:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">start_text</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;&lt;span&gt;The University at Buffalo Department&quot;</span><span class="p">)</span>
+<span class="n">end_text</span> <span class="o">=</span>  <span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Welcome!&quot;</span><span class="p">)</span>
+<span class="n">HTML</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">[</span><span class="n">start_text</span><span class="p">:</span><span class="n">end_text</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<span>The University at Buffalo Department of <strong>Mathematics</strong> is pleased to announce that Dr. ... Naoki Masuda, Associate Professor (Applied <strong>Mathematics</strong>);. -Simone Cassani, Visiting Assistant Professor (Applied <strong>Mathematics</strong>);.</span>
+      </div>
+   </div>
+  </ubcms-search-result>
+
+
+  <ubcms-search-result data-fb-result="http://www.sens.buffalo.edu/home">
+    <div class="search-result website clearfix">
+      <a class="title" href="https://search.buffalo.edu/s/redirect?collection=meta-search&amp;url=http%3A%2F%2Fwww.sens.buffalo.edu%2Fhome&amp;auth=EF8Z3B2BXUJGgNptD8tbFg&amp;profile=_default&amp;rank=2&amp;query=mathematics" title="http://www.sens.buffalo.edu/home"></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="beautiful_soup.html" class="btn btn-neutral float-right" title="Beautiful Soup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="MTH 448/548 Data Oriented Computing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Bernard Badzioch
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
