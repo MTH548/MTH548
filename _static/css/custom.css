@@ -2,7 +2,7 @@ div.nboutput.container {
     max-height: 400px;
     overflow: auto;
     margin-top: 15px!important;
-    margin-bottom: 25px!important;
+    margin-bottom: 10px!important;
     color: slategray;
 }
 
@@ -18,7 +18,7 @@ div.prompt {
     min-width: 0px!important;
 }
 
-/* content width */
+/* set page content width */
 .wy-nav-content {
     max-width: 900px!important;
 }
@@ -26,6 +26,13 @@ div.prompt {
 p {
     margin-bottom: 15px;
 }
+
+/* add some padding to the code output area, so that
+   the horizontal scoll bar does not obstruct the content */
+div.nboutput.container div.output_area div[class*=highlight] > pre {
+    padding-bottom: 15px!important;
+}
+
 
 /* override table width restrictions */
 @media screen and (min-width: 300px) {
