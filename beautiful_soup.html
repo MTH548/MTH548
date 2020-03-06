@@ -145,14 +145,20 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html">MTH548</a> &raquo;</li>
         
       <li>Beautiful Soup</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
+          
             
+             
+              <a href="https://github.com/MTH548/MTH548.github.io/blob/master/beautiful_soup.ipynb" class="fa fa-github"> View on GitHub</a>
+              
+            
+          
         
       </li>
     
@@ -448,11 +454,9 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span> <span class="c1"># just for nicer code output</span>
-
 
 <span class="n">grad_page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://www.buffalo.edu/cas/math/people/grad-directory.html&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
-<span class="n">pprint</span><span class="p">(</span><span class="n">grad_page</span><span class="p">[:</span><span class="mi">1000</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grad_page</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -461,19 +465,16 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(&#39;&lt;!DOCTYPE HTML&gt;&lt;html lang=&#34;en&#34; class=&#34;ubcms-63&#34;&gt;&lt;!-- cmspub01 0305-160301 &#39;
- &#39;--&gt;&lt;head&gt;&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;/&gt;&lt;meta &#39;
- &#39;http-equiv=&#34;content-type&#34; content=&#34;text/html; charset=UTF-8&#34;/&gt;&lt;meta &#39;
- &#39;id=&#34;meta-viewport&#34; name=&#34;viewport&#34; &#39;
- &#39;content=&#34;width=device-width,initial-scale=1&#34;/&gt;&lt;script&gt;if (screen.width &gt; 720 &#39;
- &#39;&amp;&amp; screen.width &lt; 960) &#39;
- &#34;document.getElementById(&#39;meta-viewport&#39;).setAttribute(&#39;content&#39;,&#39;width=960&#39;);&lt;/script&gt;&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&#39;gtm.start&#39;:new &#34;
- &#34;Date().getTime(),event:&#39;gtm.js&#39;});var &#34;
- &#34;f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.async=true;j.src=&#39;https://www.googletagmanager.com/gtm.js?id=&#39;+i+dl;f.parentNode.insertBefore(j,f);})(window,document,&#39;script&#39;,&#39;dataLayer&#39;,&#39;GTM-T5KRRKT&#39;);&lt;/script&gt;&lt;title&gt;Graduate &#34;
- &#39;Students - Department of Mathematics - University at Buffalo&lt;/title&gt;&lt;link &#39;
- &#39;rel=&#34;canonical&#34; &#39;
- &#39;href=&#34;http://www.buffalo.edu/cas/math/people/grad-directory.html&#34;/&gt;&lt;meta &#39;
- &#39;name=&#34;date&#34; content=&#34;2020-03-02&#34;/&gt;&lt;&#39;)
+&lt;!DOCTYPE HTML&gt;&lt;html lang=&#34;en&#34; class=&#34;ubcms-63&#34;&gt;&lt;!-- cmspub04 0306-095713 --&gt;&lt;head&gt;&lt;meta http-equiv=&#34;X-UA-Com
+patible&#34; content=&#34;IE=edge&#34;/&gt;&lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html; charset=UTF-8&#34;/&gt;&lt;meta id=&#34;met
+a-viewport&#34; name=&#34;viewport&#34; content=&#34;width=device-width,initial-scale=1&#34;/&gt;&lt;script&gt;if (screen.width &gt; 720 &amp;&amp; s
+creen.width &lt; 960) document.getElementById(&#39;meta-viewport&#39;).setAttribute(&#39;content&#39;,&#39;width=960&#39;);&lt;/script&gt;&lt;scr
+ipt&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&#39;gtm.start&#39;:new Date().getTime(),event:&#39;gtm.js&#39;});var f=d.g
+etElementsByTagName(s)[0],j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.async=true;j.src=&#39;https://www.g
+oogletagmanager.com/gtm.js?id=&#39;+i+dl;f.parentNode.insertBefore(j,f);})(window,document,&#39;script&#39;,&#39;dataLayer&#39;,&#39;
+GTM-T5KRRKT&#39;);&lt;/script&gt;&lt;title&gt;Graduate Students - Department of Mathematics - University at Buffalo&lt;/title&gt;&lt;l
+ink rel=&#34;canonical&#34; href=&#34;http://www.buffalo.edu/cas/math/people/grad-directory.html&#34;/&gt;&lt;meta name=&#34;date&#34; cont
+ent=&#34;2020-03-02&#34;/&gt;&lt;
 </pre></div></div>
 </div>
 <p>Next, we import <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> and pass to it the HTML code of the web page to produce a <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> object:</p>
@@ -487,7 +488,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>The first useful feature of this new object is that it can produce a nicer printout of the HTML code:</p>
+<p>One useful feature of this new object is that it can produce a nicer printout of the HTML code:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
@@ -504,7 +505,7 @@ div.rendered_html tbody tr:hover {
 <div class="highlight"><pre>
 &lt;!DOCTYPE HTML&gt;
 &lt;html class=&#34;ubcms-63&#34; lang=&#34;en&#34;&gt;
- &lt;!-- cmspub04 0303-123952 --&gt;
+ &lt;!-- cmspub03 0306-093545 --&gt;
  &lt;head&gt;
   &lt;meta content=&#34;IE=edge&#34; http-equiv=&#34;X-UA-Compatible&#34;/&gt;
   &lt;meta content=&#34;text/html; charset=utf-8&#34; http-equiv=&#34;content-type&#34;/&gt;
@@ -645,6 +646,325 @@ div.rendered_html tbody tr:hover {
              &lt;/div&gt;
             &lt;/div&gt;
            &lt;/div&gt;
+           &lt;div class=&#34;reference parbase section&#34;&gt;
+            &lt;div class=&#34;unstructuredpage page&#34;&gt;
+             &lt;div class=&#34;par parsys&#34;&gt;
+              &lt;div class=&#34;list parbase section&#34;&gt;
+               &lt;div id=&#34;ubcms-gen-25749564&#34;&gt;
+                &lt;div class=&#34;par parsys&#34;&gt;
+                 &lt;div class=&#34;reference parbase section&#34;&gt;
+                  &lt;style&gt;
+                   /*
+    (*) large = 24px for regular weight or 18.5px for bold text
+    See http://webaim.org/resources/contrastchecker/
+*/
+.long-term-alert-banner {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffc72c;
+}
+.long-term-alert-banner:before {
+  content: &#34;&#34;;
+  position: absolute;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 100%;
+  background-color: #ffc72c;
+}
+@media only screen and (min-width: 721px) and (max-width: 959px) {
+  .long-term-alert-banner:before {
+    left: 0;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner:before {
+    left: 0;
+  }
+}
+.long-term-alert-banner.ensure-z-top {
+  z-index: 10000;
+}
+.long-term-alert-banner .text.parbase.section {
+  display: inline-block;
+  padding: 6px 14px 0;
+}
+.long-term-alert-banner .text.parbase.section p {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner .text.parbase.section p {
+    display: block;
+    padding-right: 25px;
+  }
+}
+.long-term-alert-banner .text.parbase.section p,
+.long-term-alert-banner .text.parbase.section p &gt; b {
+  font-size: 14px;
+  line-height: 14px;
+}
+.long-term-alert-banner .text.parbase.section ul {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 4px;
+}
+.long-term-alert-banner .text.parbase.section ul &gt; li {
+  font-size: 13px;
+  display: inline-block;
+  margin-left: 4px;
+  padding-top: 4px;
+}
+.long-term-alert-banner .text.parbase.section ul &gt; li:before {
+  content: &#34;&#34;;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-right: 5px;
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner .text.parbase.section ul &gt; li:before {
+    vertical-align: 1px;
+    margin-right: 4px;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner .text.parbase.section ul &gt; li {
+    font-size: 12px;
+    display: block;
+    margin-left: 0;
+    padding: 2px 0 3px 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media only screen and (min-width: 721px) {
+  .long-term-alert-banner .text.parbase.section ul {
+    display: inline-block !important;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner .text.parbase.section ul {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  .long-term-alert-banner .text.parbase.section ul.mobile-collapsed {
+    display: none;
+  }
+}
+.long-term-alert-banner .text.parbase.section a {
+  color: black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.long-term-alert-banner .text.parbase.section a:hover {
+  border-bottom: 1px solid black;
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner .text.parbase.section {
+    display: block;
+    padding: 10px 20px 9px;
+  }
+}
+.long-term-alert-banner button.collapsible-toggle {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  background-color: inherit;
+  border: none;
+  top: 7px;
+  right: 12px;
+  height: 20px;
+  cursor: pointer;
+}
+.long-term-alert-banner button.collapsible-toggle:after {
+  content: &#34;+&#34;;
+  display: inline-block;
+  overflow: hidden;
+  font: bold 30px sofia;
+  line-height: 30px;
+  margin-top: -10px;
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner button.collapsible-toggle {
+    display: inline-block;
+  }
+}
+.long-term-alert-banner.expanded button.collapsible-toggle:after {
+  content: &#34;\00d7&#34;;
+}
+@media only screen and (min-width: 721px) and (max-width: 959px) {
+  .long-term-alert-banner {
+    left: 0;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .long-term-alert-banner {
+    left: 0;
+    width: 100vw;
+  }
+}
+@media only screen and (min-width: 721px) {
+  section[aria-label=&#34;UB Alert&#34;] + section[aria-label=&#34;UB Long-Term Alert&#34;] .long-term-alert-banner:before {
+    border-top: 1px solid white;
+  }
+}
+#container.content {
+  width: 100vw;
+  padding-left: 0;
+}
+                  &lt;/style&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;long-term-alert-banner&#34;&gt;
+                  &lt;div class=&#34;text parbase section&#34;&gt;
+                   &lt;p&gt;
+                    &lt;b&gt;
+                     &lt;a href=&#34;https://www.buffalo.edu/coronavirus&#34;&gt;
+                      COVID-19 Information
+                     &lt;/a&gt;
+                     •  3/4/2020 update
+                    &lt;/b&gt;
+                   &lt;/p&gt;
+                   &lt;ul&gt;
+                    &lt;li&gt;
+                     &lt;a href=&#34;https://www.buffalo.edu/coronavirus.html#cv-bulletins&#34;&gt;
+                      UB recalling students studying abroad in affected countries
+                     &lt;/a&gt;
+                    &lt;/li&gt;
+                   &lt;/ul&gt;
+                  &lt;/div&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;reference parbase section&#34;&gt;
+                  &lt;script&gt;
+                   (function($) {
+    &#39;use strict&#39;;
+
+    /**
+     * The Local Storage key for loading the last recorded Long-Term Alert Banner toggle state.
+     */
+    var toggleStateRecordKey = &#39;ubcmsLongTermAlertToggleState&#39;;
+    setupAlertBannerCollapsible();
+    moveAlertBannerBeforePage();
+
+    /**
+     * Sets up the collapsible functionality and elements for a Long-Term Alert Banner that is found on the page.
+     */
+    function setupAlertBannerCollapsible() {
+                var $alertBanner = $(&#39;.long-term-alert-banner&#39;);
+        var $content = $alertBanner.find(&#39;ul&#39;);
+        var $toggleButton = addToggleButton($alertBanner);
+
+        $content.attr(&#39;aria-label&#39;, &#39;Long-Term Alert Banner Content&#39;);
+        initToggleState($alertBanner, $toggleButton, $content);
+                setupToggleListener($alertBanner, $toggleButton, $content);
+    }
+
+    /**
+     * Adds a toggle button to a given Long-Term Alert Banner.
+     * @param {jQuery} $alertBanner The Long-Term Alert Banner.
+     * @return {jQuery} The added toggle button.
+     */
+    function addToggleButton($alertBanner) {
+                var $toggleButton = $(document.createElement(&#39;button&#39;));
+        $toggleButton.attr(&#39;type&#39;, &#39;button&#39;);
+        $toggleButton.addClass(&#39;collapsible-toggle&#39;);
+        $toggleButton.attr(&#39;aria-haspopup&#39;, &#39;true&#39;);
+        $toggleButton.attr(&#39;aria-label&#39;, &#39;Long-Term Alert Banner Toggle Button&#39;);
+        $toggleButton.attr(&#39;id&#39;, &#39;long-term-alert-collapsible-toggle&#39;);
+        $alertBanner.append($toggleButton);
+        return $toggleButton;
+    }
+
+    /**
+     * Initializes the toggle state for a given Long-Term Alert Banner and its contents.
+     * Note that the toggle state will be initialized to any previously saved toggle state.
+     * @param {jQuery} $alertBanner The Long-Term Alert Banner.
+     * @param {jQuery} $toggleButton The toggle button.
+     * @param {jQuery} $content The toggle content.
+     */
+    function initToggleState($alertBanner, $toggleButton, $content) {
+        var toggleStateRecord = JSON.parse(localStorage.getItem(toggleStateRecordKey));
+        var expanded = (toggleStateRecord &amp;&amp; toggleStateRecord.version === $alertBanner.text())
+                ? (toggleStateRecord.expanded === &#39;true&#39;)
+            : true; // Defaults to expanded on first load.
+
+        if (expanded) {
+                $toggleButton.attr(&#39;aria-expanded&#39;, &#39;true&#39;);
+                $alertBanner.addClass(&#39;expanded&#39;);
+        } else {
+                        $content.addClass(&#39;mobile-collapsed&#39;);
+        }
+    }
+
+    /**
+     * Sets up a toggle button listener for a given Long-Term Alert Banner.
+     * @param {jQuery} $alertBanner The Long-Term Alert Banner.
+     * @param {jQuery} $toggleButton The toggle button.
+     * @param {jQuery} $content The toggle content.
+     */
+    function setupToggleListener($alertBanner, $toggleButton, $content) {
+        $toggleButton.click(function() {
+            toggleCollapsible($alertBanner, $toggleButton, $content);
+        });
+    }
+
+    /**
+     * Toggles a given collapsible Long-Term Alert Banner.
+     * @param {jQuery} $alertBanner The Long-Term Alert Banner collapsible container.
+     * @param {jQuery} $toggleButton The collapsible toggle button.
+     * @param {jQuery} $content The collapsible content.
+     */
+    function toggleCollapsible($alertBanner, $toggleButton, $content) {
+        $alertBanner.toggleClass(&#39;expanded&#39;);
+        var expanded = ($alertBanner.hasClass(&#39;expanded&#39;) ? &#39;true&#39; : &#39;false&#39;);
+        $content.slideToggle(&#39;fast&#39;);
+        $toggleButton.attr(&#39;aria-expanded&#39;, expanded);
+        saveToggleStateForReload($alertBanner, expanded);
+    }
+
+    /**
+     * Saves the toggle state of a given Long-Term Alert Banner so that it maintains its toggle state on page re-visit.
+     * @param {jQuery} $alertBanner The Long-Term Alert Banner to save the toggle state of.
+     * @param {boolean} expanded The epanded toggle state of the Long-Term Alert Banner.
+     */
+    function saveToggleStateForReload($alertBanner, expanded) {
+        var toggleStateRecord = {
+            version: $alertBanner.text(),
+            expanded: expanded
+        };
+        localStorage.setItem(toggleStateRecordKey, JSON.stringify(toggleStateRecord));
+    }
+
+    /**
+     * Moves the a Long-Term Alert Banner found within a page header just before the #page container (if one exists).
+     */
+    function moveAlertBannerBeforePage() {
+        var $page = $(&#39;#page&#39;);
+                if ($page.get(0)) {
+            var $alertBanner = $(&#39;.long-term-alert-banner&#39;);
+            $alertBanner.detach().insertBefore($page).wrap(&#39;&lt;section aria-label=&#34;UB Long-Term Alert&#34;&gt;&#39;);
+            $alertBanner.addClass(&#39;ensure-z-top&#39;);
+        }
+    }
+
+})(jQuery);
+                  &lt;/script&gt;
+                 &lt;/div&gt;
+                &lt;/div&gt;
+               &lt;/div&gt;
+              &lt;/div&gt;
+             &lt;/div&gt;
+            &lt;/div&gt;
+           &lt;/div&gt;
            &lt;div class=&#34;mobilemenu section&#34;&gt;
             &lt;!--noindex--&gt;
             &lt;nav aria-label=&#34;mobile navigation menu&#34;&gt;
@@ -696,12 +1016,12 @@ div.rendered_html tbody tr:hover {
              &lt;div class=&#34;main&#34;&gt;
               &lt;ul class=&#34;menu&#34;&gt;
                &lt;li class=&#34;first theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/about-us.html&#34; id=&#34;ubcms-gen-411827155&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/about-us.html&#34; id=&#34;ubcms-gen-25749572&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   About
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-411827155&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-25749572&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;About:Why Choose Us?&#34; href=&#34;/cas/math/about-us/why-choose.html&#34;&gt;
@@ -792,7 +1112,7 @@ div.rendered_html tbody tr:hover {
                    &lt;div class=&#34;relatedlinkspage unstructuredpage page&#34;&gt;
                     &lt;div class=&#34;par parsys&#34;&gt;
                      &lt;div class=&#34;relatedlinks list parbase section&#34;&gt;
-                      &lt;div id=&#34;ubcms-gen-411827200&#34;&gt;
+                      &lt;div id=&#34;ubcms-gen-25749591&#34;&gt;
                        &lt;ul class=&#34;link-list&#34; data-columnize=&#34;1&#34;&gt;
                         &lt;li&gt;
                          &lt;span class=&#34;teaser teaser-inline&#34;&gt;
@@ -918,12 +1238,12 @@ div.rendered_html tbody tr:hover {
                 &lt;/div&gt;
                &lt;/li&gt;
                &lt;li class=&#34;theme-secondary theme-putnam-gray active-trail&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/people.html&#34; id=&#34;ubcms-gen-411827236&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/people.html&#34; id=&#34;ubcms-gen-25749607&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   People
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-411827236&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-25749607&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;People:Faculty&#34; href=&#34;/cas/math/people/faculty.html&#34;&gt;
@@ -966,12 +1286,12 @@ div.rendered_html tbody tr:hover {
                 &lt;/div&gt;
                &lt;/li&gt;
                &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/research.html&#34; id=&#34;ubcms-gen-411827266&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/research.html&#34; id=&#34;ubcms-gen-25749618&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Research
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-411827266&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-25749618&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;Research:Algebra&#34; href=&#34;/cas/math/research/algebra.html&#34;&gt;
@@ -999,12 +1319,12 @@ div.rendered_html tbody tr:hover {
                 &lt;/div&gt;
                &lt;/li&gt;
                &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/ug.html&#34; id=&#34;ubcms-gen-411827282&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/ug.html&#34; id=&#34;ubcms-gen-25749625&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Undergraduate
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-411827282&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-25749625&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;Undergraduate:Undergraduate Programs&#34; href=&#34;/cas/math/ug/undergraduate-programs.html&#34;&gt;
@@ -1070,12 +1390,12 @@ div.rendered_html tbody tr:hover {
                 &lt;/div&gt;
                &lt;/li&gt;
                &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/grad.html&#34; id=&#34;ubcms-gen-411827308&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/grad.html&#34; id=&#34;ubcms-gen-25749641&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Graduate
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-411827308&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-25749641&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;Graduate:Master&#39;s Program&#34; href=&#34;/cas/math/grad/master-program.html&#34;&gt;
@@ -1142,19 +1462,19 @@ div.rendered_html tbody tr:hover {
                 &lt;/div&gt;
                &lt;/li&gt;
                &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/courses.html&#34; id=&#34;ubcms-gen-411827324&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/courses.html&#34; id=&#34;ubcms-gen-25749657&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Courses
                  &lt;/span&gt;
                 &lt;/a&gt;
                &lt;/li&gt;
                &lt;li class=&#34;last theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/news-events/news.html&#34; id=&#34;ubcms-gen-411827326&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/news-events/news.html&#34; id=&#34;ubcms-gen-25749659&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   News &amp;amp; Events
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-411827326&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-25749659&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;News &amp;amp; Events:NERCCS 2020&#34; href=&#34;/cas/math/news-events/nerccs-2020.html&#34;&gt;
@@ -1242,10 +1562,10 @@ div.rendered_html tbody tr:hover {
                 &lt;div class=&#34;form&#34; onmouseleave=&#34;jQuery(this).parent().find(&#39;input[type=text]&#39;).blur()&#34;&gt;
                  &lt;div class=&#34;form-content&#34; data-set=&#34;mobile-search&#34;&gt;
                   &lt;form action=&#34;/cas/math/searchresults.html&#34; method=&#34;GET&#34; onsubmit=&#34;return this.q.value != &#39;&#39;&#34;&gt;
-                   &lt;label class=&#34;ada-hidden&#34; for=&#34;ubcms-gen-411827343&#34;&gt;
+                   &lt;label class=&#34;ada-hidden&#34; for=&#34;ubcms-gen-25749676&#34;&gt;
                     Search
                    &lt;/label&gt;
-                   &lt;input autocomplete=&#34;off&#34; id=&#34;ubcms-gen-411827343&#34; name=&#34;q&#34; onblur=&#34;jQuery(this).parents(&#39;.form&#39;).removeClass(&#39;show-search&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.form&#39;).addClass(&#39;show-search&#39;)&#34; placeholder=&#34;Search&#34; type=&#34;text&#34; value=&#34;&#34;/&gt;
+                   &lt;input autocomplete=&#34;off&#34; id=&#34;ubcms-gen-25749676&#34; name=&#34;q&#34; onblur=&#34;jQuery(this).parents(&#39;.form&#39;).removeClass(&#39;show-search&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.form&#39;).addClass(&#39;show-search&#39;)&#34; placeholder=&#34;Search&#34; type=&#34;text&#34; value=&#34;&#34;/&gt;
                    &lt;i class=&#34;icon icon-search&#34;&gt;
                    &lt;/i&gt;
                    &lt;input onblur=&#34;jQuery(this).parents(&#39;.form&#39;).removeClass(&#39;show-search&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.form&#39;).addClass(&#39;show-search&#39;)&#34; type=&#34;submit&#34; value=&#34;Search&#34;/&gt;
@@ -2934,7 +3254,7 @@ Deutsch, Dustin
 &#39;//www.buffalo.edu/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc/designs/ubcms/images/header/ub-logo-black.png&#39;
 </pre></div></div>
 </div>
-<p>We can use <code class="docutils literal notranslate"><span class="pre">requests</span></code> to download the image file, and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to display it:</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">requests</span></code> to download the image file, and <code class="docutils literal notranslate"><span class="pre">IPython.display</span></code> to display it:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
@@ -2944,20 +3264,17 @@ Deutsch, Dustin
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ub_logo.png&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ub_logo.png&quot;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="n">Image</span><span class="p">(</span><span class="s2">&quot;ub_logo.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;50%&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="_images/beautiful_soup_47_0.png" src="_images/beautiful_soup_47_0.png" />
+<a class="reference internal image-reference" href="_images/beautiful_soup_49_0.png"><img alt="_images/beautiful_soup_49_0.png" src="_images/beautiful_soup_49_0.png" style="width: 50%;" /></a>
 </div>
 </div>
 </div>
@@ -3148,7 +3465,9 @@ Deutsch, Dustin
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Bernard Badzioch
+      <span class="lastupdated">
+        Last updated on Mar 06, 2020.
+      </span>
 
     </p>
   </div>
