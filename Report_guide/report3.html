@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Example: Output formatting &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script >var copybuttonSkipText = '>>> ';</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example: Graphs and plots" href="report2.html" />
+    <link rel="prev" title="Example: Output size" href="report1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../report_guide.html">Report guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#collaboration">Collaboration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#using-external-resources">Using external resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#additional-python-features">Additional Python features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#report-grading-rubrics">Report grading rubrics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../report_guide.html#report-style-guide">Report Style Guide</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-introduction">Report introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-conclusions">Report conclusions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-organization">Report organization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#references">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#math-formatting">Math formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-structure">Code structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-sequencing">Code sequencing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-comments">Code comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#execution-errors">Execution errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#output-size">Output size</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../report_guide.html#output-formatting">Output formatting</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#graphs-and-plots">Graphs and plots</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings.html">Exercise: scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PT-functions.html">Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../report_guide.html">Project Report Guide</a> &raquo;</li>
+        
+      <li>Example: Output formatting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="example-output-formatting">
+<h1>Example: Output formatting<a class="headerlink" href="#example-output-formatting" title="Permalink to this headline">¶</a></h1>
+<p><strong>Bad:</strong> Code output is misaligned, there are too many decimal digits,
+and variable names are unnecessarily repeated in each row.</p>
+<a href = "../_static/report_guide/report_sample3a.html">
+<img src="../_static/report_guide/report_sample3a.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
+</a><p><strong>Good:</strong> Code output is arranged into an easy to read table. Insignificant digits in the decimal expansion are truncated.</p>
+<a href = "../_static/report_guide/report_sample3b.html">
+<img src="../_static/report_guide/report_sample3b.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
+</a><p><strong>Fancier options.</strong> Python and Jupyter notebook provide more
+sophisticated tools that can be used to format code output in various ways.
+The table below was produced in a Jupyter notebook using the same data as
+in the above examples, but with some extra formatting code. You don’t need to
+use such formatting, but this is an illustration of what is possible.</p>
+<style  type="text/css" >
+    table {
+       margin-left: 0%;
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 th:first-child {
+
+        display: none;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 th {
+
+        border-radius: 3px;
+
+        font-size: 90%;
+
+        background-color: DarkSeaGreen;
+
+        padding-right: 7pt;
+        padding-top: 2pt;
+        padding-bottom: 2pt;
+
+        border-left: white solid 1px;
+        border-right: white solid 1px;
+
+        color: black;
+
+        text-align: right;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 td {
+
+        font-size: 90%;
+
+        border-radius: 3px;
+
+        padding-bottom: 0pt;
+
+        font-family: Courier;
+
+        padding-right: 7pt;
+        padding-top: 2pt;
+        padding-bottom: 2pt;
+
+        border-left: white solid 1px;
+        border-right: white solid 1px;
+
+        text-align: right;
+
+        width: 50pt;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 tr:nth-child(even) {
+
+        background-color: Beige;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 tr:nth-child(odd) {
+
+        background-color: FloralWhite;
+
+    }
+
+    #T_2cf1831a_1651_11e7_be6f_34363bd21df6 tr:hover {
+
+        color: red;
+
+        transition: color 0.5s;
+
+    }
+
+
+</style>
+
+<table id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" None>
+
+
+<thead>
+
+    <tr>
+
+        <th class="blank">
+
+        <th class="col_heading level0 col0">t
+
+        <th class="col_heading level0 col1">v
+
+        <th class="col_heading level0 col2">h
+
+    </tr>
+
+</thead>
+<tbody>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row0">
+            0
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row0_col0" class="data row0 col0">
+             0.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row0_col1" class="data row0 col1">
+            10.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row0_col2" class="data row0 col2">
+             0.00
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row1">
+            1
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row1_col0" class="data row1 col0">
+             0.20
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row1_col1" class="data row1 col1">
+             8.04
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row1_col2" class="data row1 col2">
+             1.80
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row2">
+            2
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row2_col0" class="data row2 col0">
+             0.40
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row2_col1" class="data row2 col1">
+             6.08
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row2_col2" class="data row2 col2">
+             3.22
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row3">
+            3
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row3_col0" class="data row3 col0">
+             0.60
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row3_col1" class="data row3 col1">
+             4.11
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row3_col2" class="data row3 col2">
+             4.23
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row4">
+            4
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row4_col0" class="data row4 col0">
+             0.80
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row4_col1" class="data row4 col1">
+             2.15
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row4_col2" class="data row4 col2">
+             4.86
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row5">
+            5
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row5_col0" class="data row5 col0">
+             1.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row5_col1" class="data row5 col1">
+             0.19
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row5_col2" class="data row5 col2">
+             5.09
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row6">
+            6
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row6_col0" class="data row6 col0">
+             1.20
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row6_col1" class="data row6 col1">
+            -1.77
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row6_col2" class="data row6 col2">
+             4.94
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row7">
+            7
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row7_col0" class="data row7 col0">
+             1.40
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row7_col1" class="data row7 col1">
+            -3.73
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row7_col2" class="data row7 col2">
+             4.39
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row8">
+            8
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row8_col0" class="data row8 col0">
+             1.60
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row8_col1" class="data row8 col1">
+            -5.70
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row8_col2" class="data row8 col2">
+             3.44
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row9">
+            9
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row9_col0" class="data row9 col0">
+             1.80
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row9_col1" class="data row9 col1">
+            -7.66
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row9_col2" class="data row9 col2">
+             2.11
+
+    </tr>
+
+    <tr>
+
+        <th id="T_2cf1831a_1651_11e7_be6f_34363bd21df6" class="row_heading level2 row10">
+            10
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row10_col0" class="data row10 col0">
+             2.00
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row10_col1" class="data row10 col1">
+            -9.62
+
+        <td id="T_2cf1831a_1651_11e7_be6f_34363bd21df6row10_col2" class="data row10 col2">
+             0.38
+
+    </tr>
+
+</tbody>
+</table></div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="report2.html" class="btn btn-neutral float-right" title="Example: Graphs and plots" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="report1.html" class="btn btn-neutral float-left" title="Example: Output size" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Bernard Badzioch
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
