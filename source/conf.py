@@ -89,8 +89,7 @@ html_context = {
 "github_user": "MTH548",
 "github_repo": 'MTH548_site',
 "theme_vcs_pageview_mode" : 'blob',
-"github_version": "master/sources/",
-"github_version2": "master/",
+"github_version": "master/source/",
 }
 
 github_url = 'https://github.com/MTH548'
