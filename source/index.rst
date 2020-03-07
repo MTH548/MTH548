@@ -9,12 +9,12 @@ MTH 448/548 Data Oriented Computing
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
-
+   
    report_guide
+   useful_links
    requests
    beautiful_soup
    scrapping_course_listings
-   .. RUBRICS/scrapping_course_listings_RUBRICS
    PT-functions
 
 
