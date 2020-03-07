@@ -34,6 +34,7 @@ extensions = [
     'nbsphinx',
     'sphinx.ext.mathjax',
     'sphinx_copybutton',
+    'sphinx.ext.githubpages'
     #'sphinxcontrib.srclinks',
 ]
 
@@ -43,7 +44,10 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', '**.ipynb_checkpoints', 'RUBRICS']
+exclude_patterns = ['_build', 
+                    '**.ipynb_checkpoints', 
+                    'RUBRICS'
+                    ]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -93,7 +97,7 @@ html_context = {
 }
 
 github_url = 'https://github.com/MTH548'
-
+html_baseurl = 'https://www.mth548.org'
 # List of arguments to be passed to the kernel that executes the notebooks:
 nbsphinx_execute_arguments = [
     "--InlineBackend.figure_formats={'svg', 'pdf'}",

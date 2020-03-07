@@ -10,11 +10,12 @@ MTH 448/548 Data Oriented Computing
    :maxdepth: 3
    :caption: Contents:
 
-   Report guide <report_guide>
-   Requests <requests>
-   Beautiful Soup <beautiful_soup>
-   Exercise: scrapping course listings <scrapping_course_listings>
-   Functions <PT-functions>
+   report_guide
+   requests
+   beautiful_soup
+   scrapping_course_listings
+   .. RUBRICS/scrapping_course_listings_RUBRICS
+   PT-functions
 
 
 Indices and tables
