@@ -93,7 +93,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Requests</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Requests-basics">Requests basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Binary-files">Binary files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#User-Agent">User Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#User-Agent">User-Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Sending-data">Sending data</a></li>
 </ul>
 </li>
@@ -542,12 +542,12 @@ the United States.&lt;
 </div>
 </div>
 <div class="section" id="User-Agent">
-<h2>User Agent<a class="headerlink" href="#User-Agent" title="Permalink to this headline">¶</a></h2>
-<p>Every request sent by a web browser to a web server includes user agent, i.e. a string with information about the type of browser, the computer on which the browser operates etc. For example, the following user agent identifies the browser as Firefox 73 operating on a Macintosh with the operating system Mac OS X 10.14:</p>
+<h2>User-Agent<a class="headerlink" href="#User-Agent" title="Permalink to this headline">¶</a></h2>
+<p>Every request sent by a web browser to a web server includes User-Agent, i.e. a string with information about the type of browser, the computer on which the browser operates etc. For example, the following User-Agent identifies the browser as Firefox 73 operating on a Macintosh with the operating system Mac OS X 10.14:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Macintosh</span><span class="p">;</span> <span class="n">Intel</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span> <span class="mf">10.14</span><span class="p">;</span> <span class="n">rv</span><span class="p">:</span><span class="mf">73.0</span><span class="p">)</span> <span class="n">Gecko</span><span class="o">/</span><span class="mi">20100101</span> <span class="n">Firefox</span><span class="o">/</span><span class="mf">73.0</span>
 </pre></div>
 </div>
-<p>The website <a class="reference external" href="https://httpbin.org/get">httpbin.org/get</a> simply displays the data sent to it by the browser, so you can visit it to check the user agent used by your web browser. Using requests to connect to this website, we can inspect the default user agent set by the requests module:</p>
+<p>The website <a class="reference external" href="https://httpbin.org/get">httpbin.org/get</a> simply displays the data sent to it by the browser, so you can visit it to check the User-Agent used by your web browser. Using requests to connect to this website we can inspect the default User-Agent set by the requests module:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
@@ -578,16 +578,16 @@ the United States.&lt;
 
 </pre></div></div>
 </div>
-<p>The default user agent can occasionally create difficulties, since some websites may reject queries which come from a Python script (and not a web browser). However, it is possible to change the request’s user agent to any value as follows:</p>
+<p>This default User-Agent is good enough in many cases, but some websites expect less generic information, and may return an error message if these expectations are not met. For example, <a class="reference external" href="https://meta.wikimedia.org/wiki/User-Agent_policy">here</a> is the User-Agent policy of Wikimedia, which applies e.g. to accessing Wikipedia pages. We can change the request’s User-Agent to any value as follows:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># lets pretend to be Firefox on a Mac</span>
-<span class="n">user_agent</span> <span class="o">=</span> <span class="s2">&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0&quot;</span>
+<span></span><span class="c1"># define the User-Agent string</span>
+<span class="n">user_agent</span> <span class="o">=</span> <span class="s2">&quot;MTH548_test_script/1.0&quot;</span>
 
-<span class="c1"># create a dictionary specifying the user agent</span>
+<span class="c1"># create a dictionary specifying the User-Agent</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="n">user_agent</span><span class="p">}</span>
 <span class="c1"># pass the dictionary to the get() function</span>
 <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/get&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
@@ -607,10 +607,10 @@ the United States.&lt;
     &#34;Accept&#34;: &#34;*/*&#34;,
     &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
     &#34;Host&#34;: &#34;httpbin.org&#34;,
-    &#34;User-Agent&#34;: &#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0&#34;,
-    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e61617a-8abd45785437c000a849d2bc&#34;
+    &#34;User-Agent&#34;: &#34;MTH548_test_script/1.0&#34;,
+    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e64effa-3abafe42402c18b0e96126ac&#34;
   },
-  &#34;origin&#34;: &#34;98.118.166.16&#34;,
+  &#34;origin&#34;: &#34;69.193.54.226&#34;,
   &#34;url&#34;: &#34;https://httpbin.org/get&#34;
 }
 
@@ -619,40 +619,98 @@ the United States.&lt;
 </div>
 <div class="section" id="Sending-data">
 <h2>Sending data<a class="headerlink" href="#Sending-data" title="Permalink to this headline">¶</a></h2>
-<p>In some cases we need to specify more data, beside the address of a web page, to get the information we need. For example, to make use of the <a class="reference external" href="https://www.buffalo.edu/search/search.html">University at Buffalo search page</a> we need to provide the search query. This can be accomplished using requests as follows:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.buffalo.edu/search/search.html&quot;</span>
-
-<span class="c1"># define dictionary with data to be sent to the web page</span>
-<span class="c1"># here we are specifing that we want to search for the word &quot;mathematics&quot;</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;mathematics&quot;</span><span class="p">}</span>
-<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<p>The code below displays a fragment of the retrieved web page with search results:</p>
+<p>In some cases we need to specify more data, beside the address of a web page, to get the information we need. For example, to make use of the <a class="reference external" href="https://oeis.org/">On-Line Encyclopedia of Integer Sequences</a> we need to provide the search query, which is a sequence of integers. This can be accomplished using requests as follows:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="n">start_text</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;&lt;span&gt;The University at Buffalo Department&quot;</span><span class="p">)</span>
-<span class="n">end_text</span> <span class="o">=</span>  <span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;/strong&gt;);.&lt;/span&gt;&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;/strong&gt;);.&lt;/span&gt;&#39;</span><span class="p">)</span>
-<span class="n">HTML</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">[</span><span class="n">start_text</span><span class="p">:</span><span class="n">end_text</span><span class="p">])</span>
+<span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://oeis.org/search&quot;</span>
+
+<span class="c1"># define dictionary with data to be sent to the web page</span>
+<span class="c1"># here we are specifing that we want to search for the word &quot;mathematics&quot;</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="s2">&quot;448, 548&quot;</span><span class="p">,</span>  <span class="c1"># search for integer sequences containing 448 and 548</span>
+          <span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span>     <span class="c1"># return results in a text format (and not HTML)</span>
+         <span class="p">}</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
-<div class="output_area rendered_html docutils container">
-<span>The University at Buffalo Department of <strong>Mathematics</strong> is pleased to announce that Dr. ... Naoki Masuda, Associate Professor (Applied <strong>Mathematics</strong>);. -Simone Cassani, Visiting Assistant Professor (Applied <strong>Mathematics</strong>);.</span></div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+# Greetings from The On-Line Encyclopedia of Integer Sequences! http://oeis.org/
+
+Search: seq:448,548
+Showing 1-3 of 3
+
+%I A328780
+%S A328780 0,1,2,3,10,20,30,100,200,245,247,249,251,253,283,300,448,548,949,
+%T A328780 1000,1249,1253,1416,1747,1749,1751,1753,1755,2000,2245,2247,2249,
+%U A328780 2251,2253,2429,2450,2451,2470,2490,2498,2510,2530,2647,2830,3000,3747,3751,4480,4899
+%N A328780 Nonnegative integers k such that k and k^2 have the same number of nonzero digits.
+%C A328780 The idea of this sequence comes from the 1st problem of the 28th British Mathematical Olympiad in 1992 (see the link).
+%C A328780 This sequence is infinite because the family of integers {10^k, k &gt;= 0} (A011557) belongs to this sequence.
+%D A328780 A. Gardiner, The Mathematical Olympiad Handbook: An Introduction to Problem Solving, Oxford University Press, 1997, reprinted 2011, Pb 1 pp. 57 and 109 (1992)
+%H A328780 Giovanni Resta, &lt;a href=&#34;/A328780/b328780.txt&#34;&gt;Table of n, a(n) for n = 1..10000&lt;/a&gt;
+%H A328780 British Mathematical Olympiad, &lt;a href=&#34;https://bmos.ukmt.org.uk/home/bmo1-1992.pdf&#34;&gt;1992 - Problem 1&lt;/a&gt;
+%e A328780 247^2 = 61009, hence 247 and 61009 both have 3 nonzero digits, 247 is a term.
+%p A328780 q:= n-&gt;(f-&gt;f(n)=f(n^2))(t-&gt;nops(subs(0=[][], convert(t, base, 10)))):
+%p A328780 select(q, [$0..5000])[];  # _Alois P. Heinz_, Oct 27 2019
+%t A328780 Select[Range[0, 5000], Equal @@ Total /@ Sign@ IntegerDigits[{#, #^2}] &amp;] (* _Giovanni Resta_, Feb 27 2020 *)
+%Y A328780 Subsequences: A011557, A093136, A093138.
+%K A328780 nonn,base,changed
+%O A328780 1,3
+%A A328780 _Bernard Schott_, Oct 27 2019
+%E A328780 More terms from _Alois P. Heinz_, Oct 27 2019
+
+%I A222738
+%S A222738 1,0,1,1,2,2,4,4,7,8,14,16,23,28,40,49,67,82,110,135,180,220,286,349,
+%T A222738 448,548,694,846,1061,1290,1608,1948,2406,2909,3566,4300,5242,6298,
+%U A222738 7637,9149,11044,13189,15847,18872,22582,26817,31967,37858,44970,53116,62894
+%N A222738 Total sum of parts of multiplicity 10 in all partitions of n.
+%H A222738 Alois P. Heinz, &lt;a href=&#34;/A222738/b222738.txt&#34;&gt;Table of n, a(n) for n = 10..1000&lt;/a&gt;
+%F A222738 G.f.: (x^10/(1-x^10)^2-x^11/(1-x^11)^2)/Product_{i&gt;=1}(1-x^i).
+%F A222738 a(n) ~ 21 * sqrt(3) * exp(Pi*sqrt(2*n/3)) / (24200 * Pi^2). - _Vaclav Kotesovec_, May 29 2018
+%p A222738 b:= proc(n, p) option remember; `if`(n=0, [1, 0], `if`(p&lt;1, [0, 0],
+%p A222738       add((l-&gt;`if`(m=10, l+[0, l[1]*p], l))(b(n-p*m, p-1)), m=0..n/p)))
+%p A222738     end:
+%p A222738 a:= n-&gt; b(n, n)[2]:
+%p A222738 seq(a(n), n=10..60);
+%t A222738 b[n_, p_] := b[n, p] = If[n == 0 &amp;&amp; p == 0, {1, 0}, If[p == 0, Array[0&amp;, n+2], Sum[Function[l, ReplacePart[l, m+2 -&gt; p*l[[1]] + l[[m+2]]]][Join[b[n-p*m, p-1], Array[0&amp;, p*m]]], {m, 0, n/p}]]]; a[n_] := b[n, n][[12]]; Table[a[n], {n, 10, 60}] (* _Jean-François Alcover_, Jan 24 2014, after _Alois P. Heinz_ *)
+%Y A222738 Column k=10 of A222730.
+%K A222738 nonn
+%O A222738 10,5
+%A A222738 _Alois P. Heinz_, Mar 03 2013
+
+%I A210464
+%S A210464 4,11,18,33,48,74,100,140,180,237,294,371,448,548,648,774,900,1055,
+%T A210464 1210,1397,1584,1806,2028,2288,2548,2849,3150,3495,3840,4232,4624,
+%U A210464 5066,5508,6003,6498,7049,7600,8210,8820,9492,10164,10901,11638,12443,13248,14124
+%N A210464 Number of bracelets with 2 blue, 2 red, and n black beads.
+%C A210464 As n=1,2,3,... and F(2,2,4n) is the number of bracelets with 2 blue, 2 red and 4n black beads,
+%C A210464 n=0,1,2... and F(2,2,2n+1) is the number of bracelets with 2 blue, 2 red and 2n+1 black beads,
+%C A210464 n=0,1,2... and F(2,2,4n+2) is the number of bracelets with 2 blue, 2 red and 4n+2 black beads.
+%H A210464 Ata A. Uslu and Hamdi G. Ozmenekse, &lt;a href=&#34;http://commons.wikimedia.org/wiki/File:Bracelet_problem.pdf&#34;&gt;F(1,6,n)&lt;/a&gt;
+%H A210464 &lt;a href=&#34;/index/Rec#order_06&#34;&gt;Index entries for linear recurrences with constant coefficients&lt;/a&gt;, signature (2,1,-4,1,2,-1).
+%F A210464 F(2,2,4n) = 8n^3 + 14n^2 + 9n + 2.
+%F A210464 F(2,2,2n+1) = n^3 + 5n^2 + 8n + 4.
+%F A210464 F(2,2,4n+2) = 8n^3 + 26n^2 + 29n + 11.
+%F A210464 a(n) = (25+7*(-1)^n+3*(11+(-1)^n)*n+14*n^2+2*n^3)/16. a(n) = 2*a(n-1)+a(n-2)-4*a(n-3)+a(n-4)+2*a(n-5)-a(n-6). G.f.: -x*(2*x^5-4*x^4-2*x^3+8*x^2-3*x-4) / ((x-1)^4*(x+1)^2). [_Colin Barker_, Feb 06 2013]
+%e A210464 For 12 black beads, number of possible bracelets: a(12), 4n=12, n=3 so a(12) = F(2,2,12) = 8*3^3 + 14*3^2 + 9*3+2 = 371.
+%e A210464 For 19 black beads: a(19), 2n+1=19, n=9 so a(19) = F(2,2,19) = 9^3 + 5*9^2 + 8*9 + 4 = 1210.
+%e A210464 For 10 black beads: a(10), 4n+2=10, n=2 so a(10) = F(2,2,10) = 8*2^3 + 26*2^2 + 29*2 + 11 = 237.
+%t A210464 Table[If[Mod[m, 4] == 0, n = m/4; 8*n^3 + 14*n^2 + 9*n + 2, If[Mod[m, 2] == 1, n = (m - 1)/2; n^3 + 5*n^2 + 8*n + 4, If[Mod[m, 4] == 2, n = (m - 2)/4; 8*n^3 + 26*n^2 + 29*n + 11]]], {m, 46}] (* _T. D. Noe_, Jan 24 2013 *)
+%K A210464 nonn,easy
+%O A210464 1,1
+%A A210464 _Ata Aydin Uslu_, Jan 22 2013
+
+# Content is available under The OEIS End-User License Agreement: http://oeis.org/LICENSE
+
+</pre></div></div>
 </div>
 <p>The kind of data which can (or needs to) be provided on a given web page will depend on the web page itself.</p>
 </div>
@@ -679,7 +737,7 @@ the United States.&lt;
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 07, 2020.
+        Last updated on Mar 08, 2020.
       </span>
 
     </p>

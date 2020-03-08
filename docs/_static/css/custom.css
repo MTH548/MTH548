@@ -13,7 +13,7 @@ div.nbinput.container {
     margin-bottom: 15px!important;
 }
 
-/* do not show netebook cell In/Out prompts*/ 
+/* do not show netebook cell In/Out prompts */
 div.prompt {
     min-width: 0px!important;
 }
