@@ -627,10 +627,9 @@ the United States.&lt;
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://oeis.org/search&quot;</span>
 
-<span class="c1"># define dictionary with data to be sent to the web page</span>
-<span class="c1"># here we are specifing that we want to search for the word &quot;mathematics&quot;</span>
+<span class="c1"># define a dictionary with data to be sent to the web page</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="s2">&quot;448, 548&quot;</span><span class="p">,</span>  <span class="c1"># search for integer sequences containing 448 and 548</span>
-          <span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span>     <span class="c1"># return results in a text format (and not HTML)</span>
+          <span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span>     <span class="c1"># return results as plain text (and not HTML)</span>
          <span class="p">}</span>
 <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
