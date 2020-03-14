@@ -97,6 +97,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#Grouping-patterns">Grouping patterns</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Anchors">Anchors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Flags">Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Matching-special-characters">Matching special characters</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
@@ -461,7 +462,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>This function takes two arguments. The first is a regular expression. The second is a string in which we search for the pattern specified by the regular expression. The function prints the string with the pattern matches highlighted:</p>
+<p>The first argument of this function is a regular expression. The second is a string in which we search for the pattern specified by the regular expression. The function prints the string with the pattern matches highlighted:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
@@ -499,34 +500,6 @@ div.rendered_html tbody tr:hover {
                     background-color: cornsilk;
                     color: red;"
                     >is</span> the course MTH 548 Data Oriented Computing!</code></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^.*? &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<code style="border-style: none;
-                   border-width: 0px;
-                   padding: 0px;
-                   font-size: 16px;
-                   color: darkslategray;
-                   background-color: white;
-                   white-space: pre;
-                   line-height: 22px;"
-                   ><span style="padding: 0px 1px 0px 1px;
-                    margin: 0px 0.5px 0px 0.5px;
-                    border-style: solid;
-                    border-width: 0.5px;
-                    border-color: black;
-                    background-color:cornsilk;color: red;">This </span>is the course MTH 548 Data Oriented Computing!</code></div>
 </div>
 <div class="section" id="Character-classes">
 <h2>Character classes<a class="headerlink" href="#Character-classes" title="Permalink to this headline">¶</a></h2>
@@ -1936,6 +1909,114 @@ Like a diamond in the sky.</code></div>
 How I wonder what you are!</span>
 Up above the world so high,
 Like a diamond in the sky.</code></div>
+</div>
+</div>
+<div class="section" id="Matching-special-characters">
+<h2>Matching special characters<a class="headerlink" href="#Matching-special-characters" title="Permalink to this headline">¶</a></h2>
+<p>As we have seen above several, characters (<code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> etc.) have special meaning when used in a regular expression. In order to match such characters literally, we precede them by a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>, so they become <code class="docutils literal notranslate"><span class="pre">\.</span></code>, <code class="docutils literal notranslate"><span class="pre">\+</span></code>, <code class="docutils literal notranslate"><span class="pre">\*</span></code> and so on. The backlash itself is matched by entering <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
+<p><strong>Example.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;*** \hello\ ***&quot;</span>
+<span class="c1"># match the sequence &quot;***&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\*</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 16px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 22px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: black;
+                    background-color: cornsilk;
+                    color: red;"
+                    >***</span> \hello\ <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: black;
+                    background-color: cornsilk;
+                    color: red;"
+                    >***</span></code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match a sequence which stats and ends</span>
+<span class="c1"># with a backlash &quot;\&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">.*</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 16px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 22px;"
+                   >*** <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: black;
+                    background-color: cornsilk;
+                    color: red;"
+                    >\hello\</span> ***</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match a sequence enclosed in parentheses &quot;(...)&quot;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;¯\_(ツ)_/¯&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\(.*\)&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 16px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 22px;"
+                   >¯\_<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: black;
+                    background-color: cornsilk;
+                    color: red;"
+                    >(ツ)</span>_/¯</code></div>
 </div>
 </div>
 </div>
