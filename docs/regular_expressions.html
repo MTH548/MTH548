@@ -2230,12 +2230,12 @@ Like a diamond in the sky.</code></div>
 </div>
 <div class="section" id="Inserting-comments">
 <h2>Inserting comments<a class="headerlink" href="#Inserting-comments" title="Permalink to this headline">¶</a></h2>
-<p>More complex regular expression can look very cryptic and be difficult to understand. To make them more readable, it is possible insert comments explaining what they do piece by piece. The flag <code class="docutils literal notranslate"><span class="pre">re.X</span></code> signals that a regular expression may contain comments. If this flag is used two things happen:</p>
+<p>More complex regular expression can look very cryptic and be difficult to understand. To make them more readable, it is possible insert comments explaining what they do piece by piece. The flag <code class="docutils literal notranslate"><span class="pre">re.X</span></code> signals that a regular expression may contain comments. If this flag is used it has the following effect:</p>
 <ul class="simple">
-<li><p>all space and newline characters in the regular expression are ignored</p></li>
-<li><p>if a line in the regular expression contains the <code class="docutils literal notranslate"><span class="pre">#</span></code> character, then this character and the reminder of the line are also ignored.</p></li>
+<li><p>All space and newline characters in the regular expression are ignored.</p></li>
+<li><p>If a line in the regular expression contains the <code class="docutils literal notranslate"><span class="pre">#</span></code> character then this character and the reminder of the line are also ignored.</p></li>
+<li><p>Exception: the space and <code class="docutils literal notranslate"><span class="pre">#</span></code> characters are matched if they are preceded by a backslash: <code class="docutils literal notranslate"><span class="pre">\</span></code>, <code class="docutils literal notranslate"><span class="pre">\#</span></code> or they are entered as a part of a character group, i.e. enclosed in square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">#]</span></code> or <code class="docutils literal notranslate"><span class="pre">[^</span> <span class="pre">#]</span></code>.</p></li>
 </ul>
-<p>In order to match a space, a newline <code class="docutils literal notranslate"><span class="pre">\n</span></code> or the <code class="docutils literal notranslate"><span class="pre">#</span></code> character in a regular expression with comments we need to precede them by a backslash: <code class="docutils literal notranslate"><span class="pre">\</span></code>, <code class="docutils literal notranslate"><span class="pre">\\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\#</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
