@@ -13,6 +13,7 @@ MTH 448/548 Data Oriented Computing
    report_guide
    useful_links
    regular_expressions
+   re_functions
    requests
    beautiful_soup
    scrapping_course_listings

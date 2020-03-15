@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Requests" href="requests.html" />
+    <link rel="next" title="Functions in the re module" href="re_functions.html" />
     <link rel="prev" title="Useful links" href="useful_links.html" /> 
 </head>
 
@@ -91,15 +91,19 @@
 <li class="toctree-l1"><a class="reference internal" href="report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="useful_links.html">Useful links</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Regular expressions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Prelude:-raw-strings">Prelude: raw strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Visualizing-regular-expressions">Visualizing regular expressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Character-classes">Character classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Repetitions">Repetitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Non-greedy-matches">Non-greedy matches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Grouping-patterns">Grouping patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Match-groups">Match groups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Anchors">Anchors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Flags">Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Inserting-comments">Inserting comments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Matching-special-characters">Matching special characters</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
@@ -414,7 +418,69 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Regular-expressions">
 <h1>Regular expressions<a class="headerlink" href="#Regular-expressions" title="Permalink to this headline">¶</a></h1>
-<p>Regular expressions are a tool for specifying patterns in text strings. We can use this for search for these patterns, modify string based on search results etc. Regular expressions are a feature of many programming languages. In Python they are implemented by the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re</a> module:</p>
+<p>Regular expressions are a tool for specifying patterns (phone numbers, e-mail addresses etc.), in text strings. We can use them to search strings for such patterns, modify strings based on search results etc.</p>
+<div class="section" id="Prelude:-raw-strings">
+<h2>Prelude: raw strings<a class="headerlink" href="#Prelude:-raw-strings" title="Permalink to this headline">¶</a></h2>
+<p>In Python strings the backslash character <code class="docutils literal notranslate"><span class="pre">\</span></code> has a special meaning. For example <code class="docutils literal notranslate"><span class="pre">\n</span></code> denotes a new line, <code class="docutils literal notranslate"><span class="pre">\t</span></code> the tab, <code class="docutils literal notranslate"><span class="pre">\U</span></code> indicates a UTF-32 encoded unicode character etc.:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\t</span><span class="s2">there,</span><span class="se">\n</span><span class="s2">this is a cat: </span><span class="se">\U0001F431</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello   there,
+this is a cat: 🐱.
+</pre></div></div>
+</div>
+<p>This creates conflicts with the syntax of regular expressions, since in this setting we want backslashes to be interpreted literally, as backslashes. There are two ways to resolve this. The first is to enter each backslash as <code class="docutils literal notranslate"><span class="pre">\\</span></code> - which indicates that we really mean a backslash:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\\</span><span class="s2">tthere,</span><span class="se">\\</span><span class="s2">nthis is a cat: </span><span class="se">\\</span><span class="s2">U0001F431.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello\tthere,\nthis is a cat: \U0001F431.
+</pre></div></div>
+</div>
+<p>The second method is to precede the string with the <code class="docutils literal notranslate"><span class="pre">r</span></code> character, to create a “raw string”, in which backlashes are treated like any other character:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Hello\tthere,\nthis is a cat: \U0001F431.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello\tthere,\nthis is a cat: \U0001F431.
+</pre></div></div>
+</div>
+<p>While working with regular expressions this second method is usually more convenient, and we will use it below.</p>
+</div>
+<div class="section" id="Visualizing-regular-expressions">
+<h2>Visualizing regular expressions<a class="headerlink" href="#Visualizing-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Regular expressions are a feature of many programming languages. In Python they are implemented by the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re</a> module:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
@@ -439,17 +505,17 @@ div.rendered_html tbody tr:hover {
     <span class="n">text_css</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&quot;border-style: none;</span>
 <span class="s1">                   border-width: 0px;</span>
 <span class="s1">                   padding: 0px;</span>
-<span class="s1">                   font-size: 15px;</span>
+<span class="s1">                   font-size: 14px;</span>
 <span class="s1">                   color: darkslategray;</span>
 <span class="s1">                   background-color: white;</span>
 <span class="s1">                   white-space: pre;</span>
-<span class="s1">                   line-height: 22px;&quot;</span>
+<span class="s1">                   line-height: 20px;&quot;</span>
 <span class="s1">                   &#39;&#39;&#39;</span>
     <span class="n">match_css</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&quot;padding: 0px 1px 0px 1px;</span>
 <span class="s1">                    margin: 0px 0.5px 0px 0.5px;</span>
 <span class="s1">                    border-style: solid;</span>
 <span class="s1">                    border-width: 0.5px;</span>
-<span class="s1">                    border-color: red;</span>
+<span class="s1">                    border-color: darkred;</span>
 <span class="s1">                    background-color: cornsilk;</span>
 <span class="s1">                    color: red;&quot;</span>
 <span class="s1">                    &#39;&#39;&#39;</span>
@@ -469,7 +535,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is the course MTH 548 Data Oriented Computing!&quot;</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="c1"># search for occurences of &quot;is&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="c1"># search for all occurences of &quot;is&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -480,26 +546,27 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >Th<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >is</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >is</span> the course MTH 548 Data Oriented Computing!</code></div>
+</div>
 </div>
 <div class="section" id="Character-classes">
 <h2>Character classes<a class="headerlink" href="#Character-classes" title="Permalink to this headline">¶</a></h2>
@@ -559,37 +626,37 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     > t</span>he course MTH 548 D<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >at</span>a Orie<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >nt</span>ed Comp<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >ut</span>ing!</code></div>
@@ -611,16 +678,16 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is the course MTH 548 Data Oriented Comput<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >ing!</span></code></div>
@@ -642,16 +709,16 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is the course MTH <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >54</span>8 Data Oriented Computing!</code></div>
@@ -673,23 +740,23 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is the course MTH 548 <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >D</span>ata Oriente<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >d</span> Computing!</code></div>
@@ -712,51 +779,51 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >This</span> is the <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >cour</span>se MTH 548 Data <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Orie</span><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >nted</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Comp</span><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >utin</span>g!</code></div>
@@ -778,30 +845,30 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >Th<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >is</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >is</span> the course MTH 548 Data Oriented Comput<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >in</span>g!</code></div>
@@ -836,6 +903,12 @@ div.rendered_html tbody tr:hover {
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{n,</span> <span class="pre">m}</span></code></p></td>
 <td><p>Match as many times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times, and no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{n,}</span></code></p></td>
+<td><p>Match as many times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{,m}</span></code></p></td>
+<td><p>Match as many times as possible, but no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
+</tr>
 </tbody>
 </table>
 <p><strong>Examples.</strong></p>
@@ -856,30 +929,30 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is the <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >course</span> MTH 548 Data <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Orient</span>ed <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Comput</span>ing!</code></div>
@@ -901,16 +974,16 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is the course MTH <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >548</span> Data Oriented Computing!</code></div>
@@ -933,359 +1006,359 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>T<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>h<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>i<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>s<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>i<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>s<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>t<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>h<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>e<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>c<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>o<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>u<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>r<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>s<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>e<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>M<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>T<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>H<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >548</span><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>D<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>a<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>t<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>a<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>O<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>r<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>i<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>e<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>n<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>t<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>e<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>d<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>C<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>o<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>m<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>p<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>u<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>t<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>i<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>n<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>g<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>!<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span></code></div>
@@ -1307,79 +1380,79 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >This</span> is <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >the</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >cours</span>e <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >MTH</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >548</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Data</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Orien</span><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >ted</span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Compu</span><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >ting</span>!</code></div>
@@ -1387,13 +1460,13 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Non-greedy-matches">
 <h2>Non-greedy matches<a class="headerlink" href="#Non-greedy-matches" title="Permalink to this headline">¶</a></h2>
-<p>By default regular expression matches are greedy: they will match the longest possible part of a given string which fits the specified pattern. For example the pattern <code class="docutils literal notranslate"><span class="pre">r&quot;a.+&quot;</span></code> will match the longest possible sequence starting with the letter “a” followed by at least one more character:</p>
+<p>By default regular expression matches are greedy: they will match the longest possible part of a given string which fits the specified pattern. For example the pattern <code class="docutils literal notranslate"><span class="pre">r&quot;.+</span> <span class="pre">&quot;</span></code> will match the longest possible sequence starting with the letter “D” and ending with a space:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;a.+&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span></span><span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;D.* &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1404,19 +1477,19 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
-                   >This is the course MTH 548 D<span style="padding: 0px 1px 0px 1px;
+                   line-height: 20px;"
+                   >This is the course MTH 548 <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
-                    >ata Oriented Computing!</span></code></div>
+                    >Data Oriented </span>Computing!</code></div>
 </div>
 <p>The following sequences modify this behavior by specifying non-greedy matches:</p>
 <table class="docutils align-default">
@@ -1442,6 +1515,12 @@ div.rendered_html tbody tr:hover {
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{n,</span> <span class="pre">m}?</span></code></p></td>
 <td><p>Match as few times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times and no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
 </tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{n,}?</span></code></p></td>
+<td><p>Match as few times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{,m}?</span></code></p></td>
+<td><p>Match as few times as possible, and no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
+</tr>
 </tbody>
 </table>
 <p><strong>Examples.</strong></p>
@@ -1450,9 +1529,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># match all shortest possible sequences starting with &quot;a&quot;</span>
-<span class="c1"># followed by at least one more character</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;a.+?&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span></span><span class="c1"># match shortest possible sequences starting with &quot;D&quot;</span>
+<span class="c1"># and ending with a space &quot; &quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;D.*? &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1463,26 +1542,19 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
-                   >This is the course MTH 548 D<span style="padding: 0px 1px 0px 1px;
+                   line-height: 20px;"
+                   >This is the course MTH 548 <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
-                    >at</span><span style="padding: 0px 1px 0px 1px;
-                    margin: 0px 0.5px 0px 0.5px;
-                    border-style: solid;
-                    border-width: 0.5px;
-                    border-color: red;
-                    background-color: cornsilk;
-                    color: red;"
-                    >a </span>Oriented Computing!</code></div>
+                    >Data </span>Oriented Computing!</code></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
@@ -1502,31 +1574,31 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is the course MTH 548 Data Or<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >ien</span>ted Comput<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >in</span>g!</code></div>
 </div>
 </div>
-<div class="section" id="Grouping-patterns">
-<h2>Grouping patterns<a class="headerlink" href="#Grouping-patterns" title="Permalink to this headline">¶</a></h2>
-<p>As the last example shows, by default the sequences <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">*?</span></code> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">+?</span></code> etc. apply only to the single symbol preceding them. For example, the regular expression <code class="docutils literal notranslate"><span class="pre">&quot;ie?n&quot;</span></code> means that the character <code class="docutils literal notranslate"><span class="pre">e</span></code> should be repeated 0 or 1 times. In order to indicate that <code class="docutils literal notranslate"><span class="pre">?</span></code> applies the whole sequence <code class="docutils literal notranslate"><span class="pre">ie</span></code> we need to enclose this sequence in parentheses: <code class="docutils literal notranslate"><span class="pre">(ie)?n</span></code>.</p>
+<div class="section" id="Match-groups">
+<h2>Match groups<a class="headerlink" href="#Match-groups" title="Permalink to this headline">¶</a></h2>
+<p>As the last example shows, by default the sequences <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">*?</span></code> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">+?</span></code> etc. apply only to the single symbol preceding them. For example, the regular expression <code class="docutils literal notranslate"><span class="pre">&quot;ie?n&quot;</span></code> means that the character <code class="docutils literal notranslate"><span class="pre">e</span></code> should be repeated 0 or 1 times. In order to indicate that <code class="docutils literal notranslate"><span class="pre">?</span></code> applies the whole group <code class="docutils literal notranslate"><span class="pre">ie</span></code> we need to enclose this group in parentheses: <code class="docutils literal notranslate"><span class="pre">(ie)?n</span></code>. A part of a regular expression wrapped in parentheses is called a <em>match group</em>.</p>
 <p><strong>Examples.</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
@@ -1546,23 +1618,23 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is the course MTH 548 Data Or<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >ien</span>ted Computi<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >n</span>g!</code></div>
@@ -1585,16 +1657,16 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >Th<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >is is </span>the course MTH 548 Data Oriented Computing!</code></div>
@@ -1617,23 +1689,23 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >the course</span> MTH 548 Data <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Oriented Computing</span>!</code></div>
@@ -1657,23 +1729,23 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >This is <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >the c</span>ourse MTH 548 Data Oriented <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Computing</span>!</code></div>
@@ -1725,16 +1797,16 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >This is the course MTH 548 Da</span>ta Oriented Computing!</code></div>
@@ -1756,135 +1828,135 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>This<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>is<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>the<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>course<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>MTH<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>548<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>Data<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>Oriented<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span> <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>Computing<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     ></span>!</code></div>
@@ -1907,23 +1979,23 @@ div.rendered_html tbody tr:hover {
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >T<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >his</span> is t<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >he</span> course MTH 548 Data Oriented Computing!</code></div>
@@ -1952,6 +2024,9 @@ div.rendered_html tbody tr:hover {
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">re.S</span></code></p></td>
 <td><p>The symbol <code class="docutils literal notranslate"><span class="pre">.</span></code> matches everything, including the newline character <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>.</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">re.X</span></code></p></td>
+<td><p>The regular expression may contain comments (see below for details).</p></td>
+</tr>
 </tbody>
 </table>
 <p><strong>Examples.</strong> We will use again the function <code class="docutils literal notranslate"><span class="pre">re_show</span></code> which admits an additional <code class="docutils literal notranslate"><span class="pre">flags</span></code> argument.</p>
@@ -1962,14 +2037,14 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># a multiline text sample to experiment with</span>
 <span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">       Twinkle, twinkle, little star,</span>
 <span class="s1">       How I wonder what you are!</span>
 <span class="s1">       Up above the world so high,</span>
 <span class="s1">       Like a diamond in the sky.</span>
 <span class="s1">       &#39;&#39;&#39;</span>
-<span class="n">text</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1990,7 +2065,7 @@ Like a diamond in the sky.
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># find the word &quot;twinkle&quot; in either upper or lower case</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;twinkle&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;twinkle&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2001,23 +2076,23 @@ Like a diamond in the sky.
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Twinkle</span>, <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >twinkle</span>, little star,
@@ -2032,7 +2107,7 @@ Like a diamond in the sky.</code></div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># find a sequence starting with &quot;star&quot;, ending with &quot;!&quot;,</span>
 <span class="c1"># and possibly including newline characters</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;star.*!&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;star.*!&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2043,16 +2118,16 @@ Like a diamond in the sky.</code></div>
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >Twinkle, twinkle, little <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >star,
@@ -2068,7 +2143,7 @@ Like a diamond in the sky.</code></div>
 <span></span><span class="c1"># find shortest possible sequences which start</span>
 <span class="c1"># at the beginning of a line, contain at least one</span>
 <span class="c1"># character, and end at a word boundary</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^.+?\b&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^.+?\b&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2079,16 +2154,16 @@ Like a diamond in the sky.</code></div>
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Twinkle</span>, twinkle, little star,
@@ -2096,7 +2171,7 @@ Like a diamond in the sky.</code></div>
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >How</span> I wonder what you are!
@@ -2104,7 +2179,7 @@ Like a diamond in the sky.</code></div>
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Up</span> above the world so high,
@@ -2112,7 +2187,7 @@ Like a diamond in the sky.</code></div>
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Like</span> a diamond in the sky.</code></div>
@@ -2124,7 +2199,7 @@ Like a diamond in the sky.</code></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># re.I and re.S combined</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;twinkle.*!&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="o">|</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;twinkle.*!&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="o">|</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2135,22 +2210,80 @@ Like a diamond in the sky.</code></div>
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >Twinkle, twinkle, little star,
 How I wonder what you are!</span>
 Up above the world so high,
 Like a diamond in the sky.</code></div>
+</div>
+</div>
+<div class="section" id="Inserting-comments">
+<h2>Inserting comments<a class="headerlink" href="#Inserting-comments" title="Permalink to this headline">¶</a></h2>
+<p>More complex regular expression can look very cryptic and be difficult to understand. To make them more readable, it is possible insert comments explaining what they do piece by piece. The flag <code class="docutils literal notranslate"><span class="pre">re.X</span></code> signals that a regular expression may contain comments. If this flag is used two things happen:</p>
+<ul class="simple">
+<li><p>all space and newline characters in the regular expression are ignored</p></li>
+<li><p>if a line in the regular expression contains the <code class="docutils literal notranslate"><span class="pre">#</span></code> character, then this character and the reminder of the line are also ignored.</p></li>
+</ul>
+<p>In order to match a space, a newline <code class="docutils literal notranslate"><span class="pre">\n</span></code> or the <code class="docutils literal notranslate"><span class="pre">#</span></code> character in a regular expression with comments we need to precede them by a backslash: <code class="docutils literal notranslate"><span class="pre">\</span></code>, <code class="docutils literal notranslate"><span class="pre">\\n</span></code>, <code class="docutils literal notranslate"><span class="pre">\#</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text5</span> <span class="o">=</span> <span class="s2">&quot;The solution is x=5.71, y = -13.2, and  z=0.&quot;</span>
+<span class="c1"># match numbers in the decimal form</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;-?          # possibly the minus sign</span>
+<span class="s2">            \d+         # digits before the decimal point</span>
+<span class="s2">            (\.\d+)?    # possibly the decimal part: period and more digits</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">text5</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >The solution is x=<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >5.71</span>, y = <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >-13.2</span>, and  z=<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >0</span>.</code></div>
 </div>
 </div>
 <div class="section" id="Matching-special-characters">
@@ -2162,9 +2295,9 @@ Like a diamond in the sky.</code></div>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;*** \hello\ ***&quot;</span>
+<span></span><span class="n">text3</span> <span class="o">=</span> <span class="s2">&quot;*** \hello\ ***&quot;</span>
 <span class="c1"># match the sequence &quot;***&quot;</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\*</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\*</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2175,23 +2308,23 @@ Like a diamond in the sky.</code></div>
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    ><span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >***</span> \hello\ <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >***</span></code></div>
@@ -2201,9 +2334,9 @@ Like a diamond in the sky.</code></div>
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># match a sequence which stats and ends</span>
+<span></span><span class="c1"># match a sequence which starts and ends</span>
 <span class="c1"># with a backlash &quot;\&quot;</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">.*</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">.*</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2214,16 +2347,16 @@ Like a diamond in the sky.</code></div>
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >*** <span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >\hello\</span> ***</code></div>
@@ -2234,8 +2367,8 @@ Like a diamond in the sky.</code></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># match a sequence enclosed in parentheses &quot;(...)&quot;</span>
-<span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;¯\_(ツ)_/¯&quot;</span>
-<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\(.*\)&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="n">text4</span> <span class="o">=</span> <span class="s2">&quot;¯\_(ツ)_/¯&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\(.*\)&quot;</span><span class="p">,</span> <span class="n">text4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2246,16 +2379,16 @@ Like a diamond in the sky.</code></div>
 <code style="border-style: none;
                    border-width: 0px;
                    padding: 0px;
-                   font-size: 15px;
+                   font-size: 14px;
                    color: darkslategray;
                    background-color: white;
                    white-space: pre;
-                   line-height: 22px;"
+                   line-height: 20px;"
                    >¯\_<span style="padding: 0px 1px 0px 1px;
                     margin: 0px 0.5px 0px 0.5px;
                     border-style: solid;
                     border-width: 0.5px;
-                    border-color: red;
+                    border-color: darkred;
                     background-color: cornsilk;
                     color: red;"
                     >(ツ)</span>_/¯</code></div>
@@ -2271,7 +2404,7 @@ Like a diamond in the sky.</code></div>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="requests.html" class="btn btn-neutral float-right" title="Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="re_functions.html" class="btn btn-neutral float-right" title="Functions in the re module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="useful_links.html" class="btn btn-neutral float-left" title="Useful links" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -2284,7 +2417,7 @@ Like a diamond in the sky.</code></div>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 14, 2020.
+        Last updated on Mar 15, 2020.
       </span>
 
     </p>

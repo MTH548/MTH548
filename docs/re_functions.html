@@ -1,0 +1,712 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Functions in the re module &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script >var copybuttonSkipText = '>>> ';</script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Requests" href="requests.html" />
+    <link rel="prev" title="Regular expressions" href="regular_expressions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="useful_links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regular_expressions.html">Regular expressions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions in the re module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#re.findall">re.findall</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#re.findall-with-match-groups">re.findall with match groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Non-capturing-match-groups">Non-capturing match groups</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#re.sub">re.sub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">MTH548</a> &raquo;</li>
+        
+      <li>Functions in the re module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/re_functions.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Functions-in-the-re-module">
+<h1>Functions in the re module<a class="headerlink" href="#Functions-in-the-re-module" title="Permalink to this headline">¶</a></h1>
+<p>The Python <code class="docutils literal notranslate"><span class="pre">re</span></code> module had several functions for searching and modifying strings using regular expressions. We describe a few of them. See the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re module documentation</a> for the complete list.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="re.findall">
+<h2>re.findall<a class="headerlink" href="#re.findall" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="re.findall">
+<code class="sig-prename descclassname">re.</code><code class="sig-name descname">findall</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">string</em>, <em class="sig-param">flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#re.findall" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This function returns a list of all matches of the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> in the <code class="docutils literal notranslate"><span class="pre">string</span></code>. The third argument, <code class="docutils literal notranslate"><span class="pre">flags</span></code> can be used to specify flags for the regular expression.</p>
+<p>For example, here we find all sequences of digits in a string:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text1</span> <span class="o">=</span> <span class="s2">&quot;This costs $57 for a 100 lbs box, so $171 for 3 boxes.&quot;</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">text1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;57&#39;, &#39;100&#39;, &#39;171&#39;, &#39;3&#39;]
+</pre></div></div>
+</div>
+<div class="section" id="re.findall-with-match-groups">
+<h3>re.findall with match groups<a class="headerlink" href="#re.findall-with-match-groups" title="Permalink to this headline">¶</a></h3>
+<p>In some cases we are interested only in a part of a match. For example, we may want to find all dollar amounts in the format “$57”, but we are interested in the numeric value “57” only. Such situations can be handled using a match groups (i.e. parts of a regular expression enclosed in parentheses). If we create a match group in the pattern, then the whole pattern will be matched, but only the value of the match group will be returned:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># search for sequences of digits starting with &quot;$&quot;,</span>
+<span class="c1"># but return digits only</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\$(\d+)&quot;</span><span class="p">,</span> <span class="n">text1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[&#39;57&#39;, &#39;171&#39;]
+</pre></div></div>
+</div>
+<p>If the pattern includes more than one match group, <code class="docutils literal notranslate"><span class="pre">re.findall</span></code> will return a list of tuples with values of the match groups:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text2</span> <span class="o">=</span> <span class="s2">&quot;This class starts at 9:30, and ends at at 10:15&quot;</span>
+<span class="c1"># find all tuples in the form (hours, minutes)</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d+):(\d+)&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(&#39;9&#39;, &#39;30&#39;), (&#39;10&#39;, &#39;15&#39;)]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Non-capturing-match-groups">
+<h3>Non-capturing match groups<a class="headerlink" href="#Non-capturing-match-groups" title="Permalink to this headline">¶</a></h3>
+<p>It often happens that need to create a match group in a regular expression just for the purpose of specifying what should be matched, and not because we want to retrieve its value. Such match groups can be specified using the format <code class="docutils literal notranslate"><span class="pre">(?:...)</span></code>, their values will not be returned by <code class="docutils literal notranslate"><span class="pre">re.findall</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># flight itinerary</span>
+<span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span>
+<span class="n">text3</span><span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">       BUF 11:30 PM =&gt;=&gt;=&gt;=&gt; EWR 12:45 PM</span>
+<span class="s2">       EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM</span>
+<span class="s2">       &quot;&quot;&quot;</span>
+<span class="n">text3</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="n">text3</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+BUF 11:30 PM =&gt;=&gt;=&gt;=&gt; EWR 12:45 PM
+EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># find all flight arrivals and departures</span>
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;(.+?)        # match departure</span>
+<span class="s2">               \ (?:=&gt;)+ \  # match, but not capture, the =&gt;=&gt; part</span>
+<span class="s2">               (.+)         # match arrival&quot;&quot;&quot;</span>  <span class="p">,</span> <span class="n">text3</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[(&#39;BUF 11:30 PM&#39;, &#39;EWR 12:45 PM&#39;), (&#39;EWR 7:45 PM&#39;, &#39;LHR 6:55 AM&#39;)]
+</pre></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="re.sub">
+<h2>re.sub<a class="headerlink" href="#re.sub" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="re.sub">
+<code class="sig-prename descclassname">re.</code><code class="sig-name descname">sub</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">repl</em>, <em class="sig-param">string</em>, <em class="sig-param">count=0</em>, <em class="sig-param">flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#re.sub" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This function finds matches for the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> in the <code class="docutils literal notranslate"><span class="pre">string</span></code> and replaces them with the <code class="docutils literal notranslate"><span class="pre">repl</span></code> string. The <code class="docutils literal notranslate"><span class="pre">count</span></code> argument specifies the maximum number of replacements to be performed. The default value <code class="docutils literal notranslate"><span class="pre">count=0</span></code> means the all matches should be replaced. The <code class="docutils literal notranslate"><span class="pre">flags</span></code> argument can specify regular expression flags.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text4</span> <span class="o">=</span> <span class="s2">&quot;This costs $57 for a 100 lbs box, so $171 for 3 boxes.&quot;</span>
+<span class="c1"># replace all sequences of digits by the string &quot;(NUMBER)&quot;</span>
+<span class="n">new_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;(NUMBER)&quot;</span><span class="p">,</span> <span class="n">text4</span><span class="p">)</span>
+<span class="c1"># print results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mORIGINAL TEXT:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{text4}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mNEW TEXT:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{new_text}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-bold">ORIGINAL TEXT:</span>
+This costs $57 for a 100 lbs box, so $171 for 3 boxes.
+
+<span class="ansi-bold">NEW TEXT:</span>
+This costs $(NUMBER) for a (NUMBER) lbs box, so $(NUMBER) for (NUMBER) boxes.
+</pre></div></div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> is more flexible than the example above suggests, since the value of the replacement string can depend on the value of the match being replaced. In order to make use of it, we need to specify one or more match groups in the pattern. Each capturing match group is automatically given a label <code class="docutils literal notranslate"><span class="pre">\1</span></code>, <code class="docutils literal notranslate"><span class="pre">\2</span></code>, <code class="docutils literal notranslate"><span class="pre">\3</span></code> etc. (with <code class="docutils literal notranslate"><span class="pre">\1</span></code> denoting the leftmost match group). When these labels are used in the replacement string, they will be themselves replaced by the values of the
+corresponding match groups.</p>
+<p><strong>Examples.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text4</span> <span class="o">=</span> <span class="s2">&quot;This costs $57 for a 100 lbs box, so $171 for 3 boxes.&quot;</span>
+<span class="c1"># add decimals to all prices</span>
+<span class="n">new_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\$\d+)&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\1.00&quot;</span><span class="p">,</span> <span class="n">text4</span><span class="p">)</span>
+<span class="c1"># print results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mORIGINAL TEXT:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{text4}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mNEW TEXT:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{new_text}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-bold">ORIGINAL TEXT:</span>
+This costs $57 for a 100 lbs box, so $171 for 3 boxes.
+
+<span class="ansi-bold">NEW TEXT:</span>
+This costs $57.00 for a 100 lbs box, so $171.00 for 3 boxes.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text5</span> <span class="o">=</span> <span class="s2">&quot;Flight itinerary:</span><span class="se">\n</span><span class="s2">BUF 11:30 PM =&gt;=&gt;=&gt; EWR 12:45 PM =&gt;=&gt;=&gt; LHR 6:55 AM&quot;</span>
+<span class="c1"># reformat the itinerary</span>
+<span class="n">new_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;(.+?)           # \1 first airport</span>
+<span class="s2">                      \ (?:=&gt;)+\      #    the =&gt;=&gt; part</span>
+<span class="s2">                      (.+)            # \2 second airport</span>
+<span class="s2">                      \ (?:=&gt;)+\      #    the =&gt;=&gt; part</span>
+<span class="s2">                      (.+)            # \3 third airport</span>
+<span class="s2">                      &quot;&quot;&quot;</span><span class="p">,</span>
+                  <span class="sa">r</span><span class="s2">&quot;Dep.: \1; Arr.: \2\nDep.: \2; Arr.: \3&quot;</span><span class="p">,</span> <span class="n">text5</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+<span class="c1"># print results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mORIGINAL TEXT:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{text5}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mNEW TEXT:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{new_text}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-bold">ORIGINAL TEXT:</span>
+Flight itinerary:
+BUF 11:30 PM =&gt;=&gt;=&gt; EWR 12:45 PM =&gt;=&gt;=&gt; LHR 6:55 AM
+
+<span class="ansi-bold">NEW TEXT:</span>
+Flight itinerary:
+Dep.: BUF 11:30 PM; Arr.: EWR 12:45 PM
+Dep.: EWR 12:45 PM; Arr.: LHR 6:55 AM
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="requests.html" class="btn btn-neutral float-right" title="Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="regular_expressions.html" class="btn btn-neutral float-left" title="Regular expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Mar 15, 2020.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

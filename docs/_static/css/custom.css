@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap');
+
 div.nboutput.container {
     max-height: 400px;
     overflow: auto;
     margin-top: 15px!important;
     margin-bottom: 10px!important;
-    color: slategray;
+    color: darkslategray;
 }
 
 div.nbinput.container {
@@ -46,4 +48,23 @@ div.nboutput.container div.output_area div[class*=highlight] > pre {
     .wy-table-responsive {
        overflow: visible !important;
     }
+ }
+
+
+ /* change fonts and increase their size in input/output areas */
+ .rst-content pre.literal-block, 
+ .rst-content div[class^="highlight"] pre, 
+ .rst-content .linenodiv pre {
+     font-size: 14px;
+     font-family: 'Roboto Mono', Courier, monospace!important;
+ }
+
+ div.input_area,
+ .highlight-default .highlight,
+ .highlight-html .highlight{
+     background-color: #e8e8e8!important;
+ }
+
+ div.output_area .highlight-default .highlight{
+    background-color: #ffffff!important;
  }
