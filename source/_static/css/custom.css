@@ -59,12 +59,14 @@ div.nboutput.container div.output_area div[class*=highlight] > pre {
      font-family: 'Roboto Mono', Courier, monospace!important;
  }
 
+ /* darker input background */
  div.input_area,
  .highlight-default .highlight,
  .highlight-html .highlight{
      background-color: #e8e8e8!important;
  }
 
+  /* keep output background white */
  div.output_area .highlight-default .highlight{
     background-color: #ffffff!important;
  }
