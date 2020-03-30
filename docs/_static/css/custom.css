@@ -17,7 +17,7 @@ div.nbinput.container {
 
 /* do not show netebook cell In/Out prompts */
 div.prompt {
-    min-width: 0px!important;
+    display: none;
 }
 
 /* set page content width */
@@ -44,7 +44,7 @@ div.nboutput.container div.output_area div[class*=highlight] > pre {
           this as on RTD they are loaded after this stylesheet */
        white-space: normal !important;
     }
- 
+
     .wy-table-responsive {
        overflow: visible !important;
     }
@@ -52,8 +52,8 @@ div.nboutput.container div.output_area div[class*=highlight] > pre {
 
 
  /* change fonts and increase their size in input/output areas */
- .rst-content pre.literal-block, 
- .rst-content div[class^="highlight"] pre, 
+ .rst-content pre.literal-block,
+ .rst-content div[class^="highlight"] pre,
  .rst-content .linenodiv pre {
      font-size: 14px;
      font-family: 'Roboto Mono', Courier, monospace!important;

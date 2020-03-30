@@ -28,7 +28,6 @@
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script >var copybuttonSkipText = '>>> ';</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -423,7 +422,7 @@ div.rendered_html tbody tr:hover {
 <h2>Prelude: raw strings<a class="headerlink" href="#Prelude:-raw-strings" title="Permalink to this headline">¶</a></h2>
 <p>In Python strings the backslash character <code class="docutils literal notranslate"><span class="pre">\</span></code> has a special meaning. For example <code class="docutils literal notranslate"><span class="pre">\n</span></code> denotes a new line, <code class="docutils literal notranslate"><span class="pre">\t</span></code> the tab, <code class="docutils literal notranslate"><span class="pre">\U</span></code> indicates a UTF-32 encoded unicode character etc.:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[128]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -442,7 +441,7 @@ this is a cat: 🐱.
 </div>
 <p>This creates conflicts with the syntax of regular expressions, since in this setting we want backslashes to be interpreted literally, as backslashes. There are two ways to resolve this. The first is to enter each backslash as <code class="docutils literal notranslate"><span class="pre">\\</span></code> - which indicates that we really mean a backslash:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[129]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -460,7 +459,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </div>
 <p>The second method is to precede the string with the <code class="docutils literal notranslate"><span class="pre">r</span></code> character, to create a “raw string”, in which backlashes are treated like any other character:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[130]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -482,7 +481,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 <h2>Visualizing regular expressions<a class="headerlink" href="#Visualizing-regular-expressions" title="Permalink to this headline">¶</a></h2>
 <p>Regular expressions are a feature of many programming languages. In Python they are implemented by the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re</a> module:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[131]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -492,7 +491,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </div>
 <p>We will use the following function to illustrate the syntax of regular expressions:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[132]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -530,7 +529,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </div>
 <p>The first argument of this function is a regular expression. The second is a string in which we search for the pattern specified by the regular expression. The function prints the string with the pattern matches highlighted:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[133]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -573,8 +572,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 <p>As the above example shows, a regular expressions can simply consist of a string we want to search for. The real power of regular expressions, however, is that they can contain special character sequences with a more general meaning.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
+<col style="width: 12%" />
+<col style="width: 88%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Sequence</p></th>
@@ -610,7 +609,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </table>
 <p><strong>Examples.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[134]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -662,7 +661,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >ut</span>ing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[135]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -693,7 +692,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >ing!</span></code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[136]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -724,7 +723,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >54</span>8 Data Oriented Computing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[137]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -762,7 +761,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >d</span> Computing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[138]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -829,7 +828,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >utin</span>g!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[139]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -913,7 +912,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </table>
 <p><strong>Examples.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[140]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -958,7 +957,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >Comput</span>ing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[141]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -989,7 +988,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >548</span> Data Oriented Computing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[142]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1364,7 +1363,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     ></span></code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[143]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1462,7 +1461,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 <h2>Non-greedy matches<a class="headerlink" href="#Non-greedy-matches" title="Permalink to this headline">¶</a></h2>
 <p>By default regular expression matches are greedy: they will match the longest possible part of a given string which fits the specified pattern. For example the pattern <code class="docutils literal notranslate"><span class="pre">r&quot;.+</span> <span class="pre">&quot;</span></code> will match the longest possible sequence starting with the letter “D” and ending with a space:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[144]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1525,7 +1524,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </table>
 <p><strong>Examples.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[145]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1557,7 +1556,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >Data </span>Oriented Computing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[146]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1601,7 +1600,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 <p>As the last example shows, by default the sequences <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">*?</span></code> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">+?</span></code> etc. apply only to the single symbol preceding them. For example, the regular expression <code class="docutils literal notranslate"><span class="pre">&quot;ie?n&quot;</span></code> means that the character <code class="docutils literal notranslate"><span class="pre">e</span></code> should be repeated 0 or 1 times. In order to indicate that <code class="docutils literal notranslate"><span class="pre">?</span></code> applies the whole group <code class="docutils literal notranslate"><span class="pre">ie</span></code> we need to enclose this group in parentheses: <code class="docutils literal notranslate"><span class="pre">(ie)?n</span></code>. A part of a regular expression wrapped in parentheses is called a <em>match group</em>.</p>
 <p><strong>Examples.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[147]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1640,7 +1639,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >n</span>g!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[148]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1672,7 +1671,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >is is </span>the course MTH 548 Data Oriented Computing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[149]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1712,7 +1711,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </div>
 <p>Compare the last example to one without grouping:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[150]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1780,7 +1779,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </tbody>
 </table>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[151]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1812,7 +1811,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     >This is the course MTH 548 Da</span>ta Oriented Computing!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[152]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1962,7 +1961,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     ></span>!</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[153]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2031,7 +2030,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </table>
 <p><strong>Examples.</strong> We will use again the function <code class="docutils literal notranslate"><span class="pre">re_show</span></code> which admits an additional <code class="docutils literal notranslate"><span class="pre">flags</span></code> argument.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[154]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2060,7 +2059,7 @@ Like a diamond in the sky.
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[155]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2101,7 +2100,7 @@ Up above the world so high,
 Like a diamond in the sky.</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[156]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2136,7 +2135,7 @@ Up above the world so high,
 Like a diamond in the sky.</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[157]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2194,7 +2193,7 @@ Like a diamond in the sky.</code></div>
 </div>
 <p><strong>Note.</strong> Flags can be combined using the vertical bar <code class="docutils literal notranslate"><span class="pre">|</span></code> character:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[158]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2237,7 +2236,7 @@ Like a diamond in the sky.</code></div>
 <li><p>Exception: the space and <code class="docutils literal notranslate"><span class="pre">#</span></code> characters are matched if they are preceded by a backslash: <code class="docutils literal notranslate"><span class="pre">\</span></code>, <code class="docutils literal notranslate"><span class="pre">\#</span></code> or they are entered as a part of a character group, i.e. enclosed in square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">#]</span></code> or <code class="docutils literal notranslate"><span class="pre">[^</span> <span class="pre">#]</span></code>.</p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[159]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2291,7 +2290,7 @@ Like a diamond in the sky.</code></div>
 <p>As we have seen above several, characters (<code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> etc.) have special meaning when used in a regular expression. In order to match such characters literally, we precede them by a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>, so they become <code class="docutils literal notranslate"><span class="pre">\.</span></code>, <code class="docutils literal notranslate"><span class="pre">\+</span></code>, <code class="docutils literal notranslate"><span class="pre">\*</span></code> and so on. The backlash itself is matched by entering <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
 <p><strong>Example.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[160]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2330,7 +2329,7 @@ Like a diamond in the sky.</code></div>
                     >***</span></code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[161]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2362,7 +2361,7 @@ Like a diamond in the sky.</code></div>
                     >\hello\</span> ***</code></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[162]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2417,7 +2416,7 @@ Like a diamond in the sky.</code></div>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 20, 2020.
+        Last updated on Mar 30, 2020.
       </span>
 
     </p>

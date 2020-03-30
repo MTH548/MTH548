@@ -28,7 +28,6 @@
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script >var copybuttonSkipText = '>>> ';</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -422,7 +421,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -434,7 +433,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -450,7 +449,7 @@ div.rendered_html tbody tr:hover {
 &nbsp;<p><strong>Note:</strong> This is a live web page, and it is regularly updated. If you use the code below, your output may differ to some extent from the one shown here.</p>
 <p>To start, we will use <code class="docutils literal notranslate"><span class="pre">requests</span></code> to get the HTML code of the page:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -480,7 +479,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <p>Next, we import <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> and pass to it the HTML code of the web page to produce a <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> object:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -491,7 +490,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <p>One useful feature of this new object is that it can produce a nicer printout of the HTML code:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2888,7 +2887,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">find_all()</span></code> method to search for all HTML tags of a given kind. For example, <code class="docutils literal notranslate"><span class="pre">soup.find_all('p')</span></code> returns a list of all paragraph tags:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2898,7 +2897,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2917,7 +2916,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <p>Some items on the list (e.g. the first one) do not contain relevant information, but most of them are paragraphs with student data:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2926,7 +2925,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2936,7 +2935,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <p>Inside a paragraph tag the name of a student is enclosed in the tag <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;....&lt;/b&gt;</span></code>indicating boldface text. We could use the <code class="docutils literal notranslate"><span class="pre">find_all()</span></code> method again to search for boldface tags in a paragraph, but in this example we can use the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method as well. It returns the first occurrence of a given tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2954,7 +2953,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <p>The method <code class="docutils literal notranslate"><span class="pre">find()</span></code> returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if the specified tag is not found. We can use this to filter out paragraphs which do not contain student names:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2964,7 +2963,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -2973,7 +2972,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -2991,7 +2990,7 @@ None
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">get_text()</span></code> method returns text contained in a specified HTML element:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3001,7 +3000,7 @@ None
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3011,7 +3010,7 @@ None
 </div>
 <p>Applying this to the list of paragraph tags with student data, we can extract names of all students:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3049,7 +3048,7 @@ Deutsch, Dustin
 <p>will be displayed in a web browser as <a class="reference external" href="https://www.buffalo.edu">University at Buffalo</a>. The <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute specifies the address of the link destination, and the text between <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;/a&gt;</span></code> is the visible text of the link.</p>
 <p>Using Beautiful Soup we find links in the graduate student directory web page:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3059,7 +3058,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3078,7 +3077,7 @@ Deutsch, Dustin
 </div>
 <p>Beautiful Soup lets us easily access attributes of any tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3088,7 +3087,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3097,7 +3096,7 @@ Deutsch, Dustin
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3106,7 +3105,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3116,7 +3115,7 @@ Deutsch, Dustin
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3125,7 +3124,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3138,7 +3137,7 @@ Deutsch, Dustin
 <p>Notice that links addresses can be given in several different formats.</p>
 <p>An <strong>absolute link</strong>, with the whole address of the destination:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3147,7 +3146,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3157,7 +3156,7 @@ Deutsch, Dustin
 </div>
 <p>Also an absolute link, but the without the <code class="docutils literal notranslate"><span class="pre">http:</span></code> part:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3166,7 +3165,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3176,7 +3175,7 @@ Deutsch, Dustin
 </div>
 <p>A <strong>local link</strong>, omitting the <code class="docutils literal notranslate"><span class="pre">http://www.buffalo.edu</span></code> part:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3185,7 +3184,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3195,7 +3194,7 @@ Deutsch, Dustin
 </div>
 <p>An <strong>anchor</strong>, which links to a specific part of the same page where the link is located. The full address would be <code class="docutils literal notranslate"><span class="pre">http://www.buffalo.edu/cas/math/people/grad-directory.html#letter_a</span></code>:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3204,7 +3203,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3218,7 +3217,7 @@ Deutsch, Dustin
 <h2>Images<a class="headerlink" href="#Images" title="Permalink to this headline">¶</a></h2>
 <p>Images in HTML documents are defined using the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3228,7 +3227,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3238,7 +3237,7 @@ Deutsch, Dustin
 </div>
 <p>Similarly as with links, each image tag has a <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute which gives the address where the image file is located.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3247,7 +3246,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3257,7 +3256,7 @@ Deutsch, Dustin
 </div>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">requests</span></code> to download the image file, and <code class="docutils literal notranslate"><span class="pre">IPython.display</span></code> to display it:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3271,7 +3270,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3312,7 +3311,7 @@ Deutsch, Dustin
 </pre></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3322,7 +3321,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -3336,7 +3335,7 @@ Deutsch, Dustin
 </div>
 <p>Let say that we want to use Beautiful Soup to find the quantity and price of apples on the page with the table. First, we get the page content:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3347,7 +3346,7 @@ Deutsch, Dustin
 </div>
 <p>Next, we find the table tag. Since the page contains only one table, the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method can be used for this:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3357,7 +3356,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3383,7 +3382,7 @@ Deutsch, Dustin
 </div>
 <p>We can find the cell of the table which contains the string “Apples” as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3397,7 +3396,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3407,7 +3406,7 @@ Deutsch, Dustin
 </div>
 <p>We are interested in the cell appearing immediately after <code class="docutils literal notranslate"><span class="pre">apples_cell</span></code> (for quantity), and the one after that (for price). The method <code class="docutils literal notranslate"><span class="pre">find_next()</span></code> comes useful here. It searches for the first occurrence of a tag of a specified kind after a given tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3416,7 +3415,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3426,7 +3425,7 @@ Deutsch, Dustin
 </div>
 <p>We can chain <code class="docutils literal notranslate"><span class="pre">find_next()</span></code> to search for subsequent tags:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3435,7 +3434,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3467,7 +3466,7 @@ Deutsch, Dustin
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 20, 2020.
+        Last updated on Mar 30, 2020.
       </span>
 
     </p>

@@ -28,7 +28,6 @@
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script >var copybuttonSkipText = '>>> ';</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -417,7 +416,7 @@ div.rendered_html tbody tr:hover {
 <h2>Requests basics<a class="headerlink" href="#Requests-basics" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://requests.readthedocs.io/en/master/user/quickstart/">Requests</a> is a Python module for communicating with web pages. We can connect to a web page by passing the address of the page to the the <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code> function:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -430,7 +429,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">get()</span></code> function returns an object with several types of data returned by the web server. For example, we can check the <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">status code</a> of the connection. The code 200 means that the everything went fine:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -439,7 +438,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -449,7 +448,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Code 404 means that the requested page has not been found:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -460,7 +459,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -470,7 +469,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>The text of the web page can be retrieved using the <code class="docutils literal notranslate"><span class="pre">text</span></code> property:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -501,7 +500,7 @@ d=&#34;cite_ref-AboutBO
 <h2>Binary files<a class="headerlink" href="#Binary-files" title="Permalink to this headline">¶</a></h2>
 <p>Some web addresses point not to web pages, but to other types of data: images, videos, pdf files etc. We can retrieve such data using requests too. For example, here is the url of a <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/9/93/Northern_Cardinal_Male-27527-3.jpg">jpg file</a> posted on Wikimedia Commons:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -511,7 +510,7 @@ d=&#34;cite_ref-AboutBO
 </div>
 <p>The code below downloads the photo and saves to a jpg file:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -526,7 +525,7 @@ d=&#34;cite_ref-AboutBO
 </div>
 <p>We can now display the saved file:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -536,11 +535,11 @@ d=&#34;cite_ref-AboutBO
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="_images/requests_18_0.jpeg"><img alt="_images/requests_18_0.jpeg" src="_images/requests_18_0.jpeg" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="_images/requests_18_0.jpg"><img alt="_images/requests_18_0.jpg" src="_images/requests_18_0.jpg" style="width: 250px;" /></a>
 </div>
 </div>
 </div>
@@ -552,7 +551,7 @@ d=&#34;cite_ref-AboutBO
 </div>
 <p>The web page <a class="reference external" href="https://httpbin.org/get">httpbin.org/get</a> simply displays the data sent to it by the browser, so you can visit it to check the User-Agent used by your web browser. Using requests to connect to this website, we can inspect the default User-Agent set by the requests module:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[129]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -583,7 +582,7 @@ d=&#34;cite_ref-AboutBO
 </div>
 <p>This default User-Agent is good enough in many cases, but some websites expect less generic information, and may return an error message if these expectations are not met. For example, <a class="reference external" href="https://meta.wikimedia.org/wiki/User-Agent_policy">here</a> is the User-Agent policy of Wikimedia, which applies e.g. to accessing all Wikipedia pages. We can change the request’s User-Agent to any value as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -625,7 +624,7 @@ d=&#34;cite_ref-AboutBO
 <h2>Sending data<a class="headerlink" href="#Sending-data" title="Permalink to this headline">¶</a></h2>
 <p>In some cases we need to specify more data, beside the address of a web page, to get the information we need. For example, to make use of the <a class="reference external" href="https://oeis.org/">On-Line Encyclopedia of Integer Sequences</a> we need to provide a sequence of integers as a search query. This can be accomplished using requests as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -674,7 +673,7 @@ data to the server - e.g. to securely send a password or upload a file - client
 <p>If you click on the link <a class="reference external" href="https://httpbin.org/post">httpbin.org/post</a>, or you enter this url in the address bar of a web browser, you will see a page with a message “Method not allowed”. It happens because this url expects POST requests, and web browsers use GET unless directed otherwise.</p>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -746,7 +745,7 @@ data to the server - e.g. to securely send a password or upload a file - client
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 20, 2020.
+        Last updated on Mar 30, 2020.
       </span>
 
     </p>
