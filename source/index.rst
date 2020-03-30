@@ -14,6 +14,7 @@ MTH 448/548 Data Oriented Computing
    useful_links
    regular_expressions
    re_functions
+   json
    requests
    beautiful_soup
    scrapping_course_listings
