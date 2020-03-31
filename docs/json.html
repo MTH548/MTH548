@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Functions" href="PT-functions.html" />
-    <link rel="prev" title="Scrapping course listings" href="scrapping_course_listings.html" /> 
+    <link rel="next" title="Scrapping course listings" href="scrapping_course_listings.html" />
+    <link rel="prev" title="Beautiful Soup" href="beautiful_soup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,6 +93,11 @@
 <li class="toctree-l1"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JSON</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#The-json-module">The json module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Example:-currency-exchange-rates">Example: currency exchange rates</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">JSON</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#The-json-module">The json module</a></li>
@@ -410,7 +415,9 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="JSON">
 <h1>JSON<a class="headerlink" href="#JSON" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.json.org/json-en.html">JSON</a> is a format for representing various types of data (numbers, lists, dictionaries etc.) in the form of text strings. The benefit of encoding data in this way is that strings can be be easily stored in text files or shared over Internet. A useful feature of JSON is that data encoded in this format is easy to read and understand. For example, a list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> in the JSON format becomes simply a string <code class="docutils literal notranslate"><span class="pre">'[1,</span> <span class="pre">2,</span> <span class="pre">3]'</span></code>.</p>
+<p><a class="reference external" href="https://www.json.org/json-en.html">JSON</a> is a format for representing various types of data (numbers, lists, dictionaries etc.) in the form of text strings. The benefit of encoding data in this way is that strings can be be easily stored in text files or shared over the Internet.</p>
+<p>JSON encoded data is simple to read and understand. For example, a list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> in the JSON format becomes simply a string <code class="docutils literal notranslate"><span class="pre">'[1,</span> <span class="pre">2,</span> <span class="pre">3]'</span></code>, and a dictionary <code class="docutils literal notranslate"><span class="pre">{'x':</span> <span class="pre">1,</span> <span class="pre">'y':</span> <span class="pre">2}</span></code> becomes a string <code class="docutils literal notranslate"><span class="pre">'{&quot;x&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;y&quot;:</span> <span class="pre">2}'</span></code>. Beside lists and dictionaries, JSON recognizes only a few basic data types: strings, numbers, <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code>, and <code class="docutils literal notranslate"><span class="pre">null</span></code>. However, since JSON lists and dictionaries can be arbitrarily nested (so we can have e.g. a list of dictionaries or a dictionary whose values are
+other dictionaries and lists), this syntax can be used to represent complex data structures.</p>
 <div class="section" id="The-json-module">
 <h2>The json module<a class="headerlink" href="#The-json-module" title="Permalink to this headline">¶</a></h2>
 <p>The Python module <code class="docutils literal notranslate"><span class="pre">json</span></code> provides tools for reading and writing JSON data.</p>
@@ -423,13 +430,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Below is a brief overview of the most commonly used functions in the <code class="docutils literal notranslate"><span class="pre">json</span></code> module. See the <a class="reference external" href="https://docs.python.org/3/library/json.html">json module documentation</a> for details.</p>
-<dl class="function">
-<dt id="json.dumps">
-<code class="sig-prename descclassname">json.</code><code class="sig-name descname">dumps</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#json.dumps" title="Permalink to this definition">¶</a></dt>
+<p>Below is a brief overview of the most commonly used functions in this module. See the <a class="reference external" href="https://docs.python.org/3/library/json.html">json module documentation</a> for details.</p>
+<br><dl class="function">
+<dt id="json.json.dumps">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">dumps</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.dumps" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<p>This function takes as an argument an Python object <code class="docutils literal notranslate"><span class="pre">obj</span></code> and returns a string representing the object in the JSON format.</p>
+<p><code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> takes as an argument an Python object <code class="docutils literal notranslate"><span class="pre">obj</span></code> and returns a string representing the object in the JSON format.</p>
 <p><strong>Examples.</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
@@ -470,9 +477,9 @@ div.rendered_html tbody tr:hover {
 &#39;{&#34;name&#34;: &#34;Maggie&#34;, &#34;age&#34;: 19, &#34;grades&#34;: [&#34;A&#34;, &#34;B+&#34;, &#34;A-&#34;]}&#39;
 </pre></div></div>
 </div>
-<dl class="function">
-<dt id="json.loads">
-<code class="sig-prename descclassname">json.</code><code class="sig-name descname">loads</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#json.loads" title="Permalink to this definition">¶</a></dt>
+<br><dl class="function">
+<dt id="json.json.loads">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">loads</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.loads" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>This function is inverse of <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code>: it takes a JSON encoded string <code class="docutils literal notranslate"><span class="pre">s</span></code> and returns the corresponding Python object:</p>
@@ -513,12 +520,12 @@ div.rendered_html tbody tr:hover {
 &#39;Maggie&#39;
 </pre></div></div>
 </div>
-<dl class="function">
-<dt id="json.dump">
-<code class="sig-prename descclassname">json.</code><code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#json.dump" title="Permalink to this definition">¶</a></dt>
+<br><dl class="function">
+<dt id="json.json.dump">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.dump" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<p>This function is similar to <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> but instead of producing a string representing <code class="docutils literal notranslate"><span class="pre">obj</span></code>, it writes this string to a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code>. For example, the code below saves the dictionary <code class="docutils literal notranslate"><span class="pre">student</span></code> to a text file <code class="docutils literal notranslate"><span class="pre">student.json</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">json.dump</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> but instead of producing a string representing <code class="docutils literal notranslate"><span class="pre">obj</span></code>, it writes this string to a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code>. For example, the code below saves the dictionary <code class="docutils literal notranslate"><span class="pre">student</span></code> to a text file <code class="docutils literal notranslate"><span class="pre">student.json</span></code>:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -532,12 +539,12 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>Here is a link to the file produced in this way: <a class="reference external" href="student.json">student.json</a>.</p>
-<dl class="function">
-<dt id="json.load">
-<code class="sig-prename descclassname">json.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#json.load" title="Permalink to this definition">¶</a></dt>
+<br><dl class="function">
+<dt id="json.json.load">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.load" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<p>This function, in turn, is similar to <code class="docutils literal notranslate"><span class="pre">json.loads</span></code>, but it takes as its argument a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code> which contains a JSON formatted string, and returns the corresponding Python object:</p>
+<p><code class="docutils literal notranslate"><span class="pre">json.load</span></code> in turn, is similar to <code class="docutils literal notranslate"><span class="pre">json.loads</span></code>, but it takes as its argument a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code> which contains a JSON formatted string, and returns the corresponding Python object:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -673,10 +680,10 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="PT-functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="scrapping_course_listings.html" class="btn btn-neutral float-right" title="Scrapping course listings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="scrapping_course_listings.html" class="btn btn-neutral float-left" title="Scrapping course listings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="beautiful_soup.html" class="btn btn-neutral float-left" title="Beautiful Soup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -686,7 +693,7 @@ div.rendered_html tbody tr:hover {
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 30, 2020.
+        Last updated on Mar 31, 2020.
       </span>
 
     </p>
