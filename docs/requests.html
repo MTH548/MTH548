@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Beautiful Soup" href="beautiful_soup.html" />
-    <link rel="prev" title="JSON" href="json.html" /> 
+    <link rel="prev" title="Functions in the re module" href="re_functions.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,7 +91,6 @@
 <li class="toctree-l1"><a class="reference internal" href="useful_links.html">Useful links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regular_expressions.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Requests</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Requests-basics">Requests basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Binary-files">Binary files</a></li>
@@ -101,6 +100,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
 </ul>
@@ -417,7 +417,7 @@ div.rendered_html tbody tr:hover {
 <h2>Requests basics<a class="headerlink" href="#Requests-basics" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://requests.readthedocs.io/en/master/user/quickstart/">Requests</a> is a Python module for communicating with web pages. We can connect to a web page by passing the address of the page to the the <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code> function:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -430,7 +430,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">get()</span></code> function returns an object with several types of data returned by the web server. For example, we can check the <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">status code</a> of the connection. The code 200 means that the everything went fine:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -439,7 +439,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -449,7 +449,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Code 404 means that the requested page has not been found:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -460,7 +460,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -470,7 +470,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>The text of the web page can be retrieved using the <code class="docutils literal notranslate"><span class="pre">text</span></code> property:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -484,16 +484,16 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
- part of the city. The Olmsted Park and Parkway System is the hallmark of Buffalo&#39;s many green spaces. Three-
-fourths of city parkland is part of the system, which comprises six major parks, eight connecting parkways, n
-ine circles and seven smaller spaces. Constructed in 1868 by &lt;a href=&#34;/wiki/Frederick_Law_Olmsted&#34; title=&#34;Fre
-derick Law Olmsted&#34;&gt;Frederick Law Olmsted&lt;/a&gt; and his partner &lt;a href=&#34;/wiki/Calvert_Vaux&#34; title=&#34;Calvert Vau
-x&#34;&gt;Calvert Vaux&lt;/a&gt;, the system was integrated into the city and marks the first attempt in America to lay ou
-t a coordinated system of public parks and parkways. The Olmsted-designed portions of the Buffalo park system
- are listed on the National Register of Historic Places and are maintained by the Buffalo Olmsted Parks Conse
-rvancy (BOPC), a non-profit, for public benefit corporation which serves as the city&#39;s parks department. It i
-s the first non-governmental organization of its kind to serve in such a capacity in the United States.&lt;sup i
-d=&#34;cite_ref-AboutBO
+ Park and Parkway System is the hallmark of Buffalo&#39;s many green spaces. Three-fourths of city parkl
+and is part of the system, which comprises six major parks, eight connecting parkways, nine circles
+and seven smaller spaces. Constructed in 1868 by &lt;a href=&#34;/wiki/Frederick_Law_Olmsted&#34; title=&#34;Freder
+ick Law Olmsted&#34;&gt;Frederick Law Olmsted&lt;/a&gt; and his partner &lt;a href=&#34;/wiki/Calvert_Vaux&#34; title=&#34;Calve
+rt Vaux&#34;&gt;Calvert Vaux&lt;/a&gt;, the system was integrated into the city and marks the first attempt in Am
+erica to lay out a coordinated system of public parks and parkways. The Olmsted-designed portions of
+ the Buffalo park system are listed on the National Register of Historic Places and are maintained b
+y the Buffalo Olmsted Parks Conservancy (BOPC), a non-profit, for public benefit corporation which s
+erves as the city&#39;s parks department. It is the first non-governmental organization of its kind to s
+erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_180-0&#34; class=&#34;reference&#34;&gt;&lt;a
 </pre></div></div>
 </div>
 </div>
@@ -736,7 +736,7 @@ data to the server - e.g. to securely send a password or upload a file - client
         <a href="beautiful_soup.html" class="btn btn-neutral float-right" title="Beautiful Soup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="json.html" class="btn btn-neutral float-left" title="JSON" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="re_functions.html" class="btn btn-neutral float-left" title="Functions in the re module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

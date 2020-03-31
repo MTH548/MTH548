@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Requests" href="requests.html" />
-    <link rel="prev" title="Functions in the re module" href="re_functions.html" /> 
+    <link rel="next" title="Scrapping course listings" href="scrapping_course_listings.html" />
+    <link rel="prev" title="Beautiful Soup" href="beautiful_soup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,9 +91,13 @@
 <li class="toctree-l1"><a class="reference internal" href="useful_links.html">Useful links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regular_expressions.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JSON</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#The-json-module">The json module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Example:-currency-exchange-rates">Example: currency exchange rates</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
 </ul>
@@ -406,10 +410,12 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="JSON">
 <h1>JSON<a class="headerlink" href="#JSON" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.json.org/json-en.html">JSON</a> is a format for representing various types of data (numbers, lists, dictionaries etc.) in the form of text strings. The advantage of encoding data in this way is that strings can be be easily stored in text files or shared over Internet. Another benefit is that JSON encoded data is easy to read and understand. For example, a list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> in the JSON notation becomes simply a string <code class="docutils literal notranslate"><span class="pre">'[1,</span> <span class="pre">2,</span> <span class="pre">3]'</span></code>.</p>
-<p>The Python module <code class="docutils literal notranslate"><span class="pre">json</span></code> provides tools for reading and writing json data.</p>
+<p><a class="reference external" href="https://www.json.org/json-en.html">JSON</a> is a format for representing various types of data (numbers, lists, dictionaries etc.) in the form of text strings. The benefit of encoding data in this way is that strings can be be easily stored in text files or shared over Internet. A useful feature of JSON is that data encoded in this format is easy to read and understand. For example, a list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> in the JSON format becomes simply a string <code class="docutils literal notranslate"><span class="pre">'[1,</span> <span class="pre">2,</span> <span class="pre">3]'</span></code>.</p>
+<div class="section" id="The-json-module">
+<h2>The json module<a class="headerlink" href="#The-json-module" title="Permalink to this headline">¶</a></h2>
+<p>The Python module <code class="docutils literal notranslate"><span class="pre">json</span></code> provides tools for reading and writing JSON data.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -417,7 +423,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Below is a brief overview of most commonly used functions in <code class="docutils literal notranslate"><span class="pre">json</span></code> module. See the <a class="reference external" href="https://docs.python.org/3/library/json.html">json documentation</a> for details.</p>
+<p>Below is a brief overview of the most commonly used functions in the <code class="docutils literal notranslate"><span class="pre">json</span></code> module. See the <a class="reference external" href="https://docs.python.org/3/library/json.html">json module documentation</a> for details.</p>
 <dl class="function">
 <dt id="json.dumps">
 <code class="sig-prename descclassname">json.</code><code class="sig-name descname">dumps</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#json.dumps" title="Permalink to this definition">¶</a></dt>
@@ -426,7 +432,7 @@ div.rendered_html tbody tr:hover {
 <p>This function takes as an argument an Python object <code class="docutils literal notranslate"><span class="pre">obj</span></code> and returns a string representing the object in the JSON format.</p>
 <p><strong>Examples.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -436,7 +442,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -445,7 +451,7 @@ div.rendered_html tbody tr:hover {
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -456,7 +462,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -471,7 +477,7 @@ div.rendered_html tbody tr:hover {
 
 <p>This function is inverse of <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code>: it takes a JSON encoded string <code class="docutils literal notranslate"><span class="pre">s</span></code> and returns the corresponding Python object:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -481,7 +487,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -490,7 +496,7 @@ div.rendered_html tbody tr:hover {
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -499,7 +505,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -514,7 +520,7 @@ div.rendered_html tbody tr:hover {
 
 <p>This function is similar to <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> but instead of producing a string representing <code class="docutils literal notranslate"><span class="pre">obj</span></code>, it writes this string to a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code>. For example, the code below saves the dictionary <code class="docutils literal notranslate"><span class="pre">student</span></code> to a text file <code class="docutils literal notranslate"><span class="pre">student.json</span></code>:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -525,7 +531,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<p>Here is a link to the file produced in this way: <a class="reference external" href="student.json">student.json</a></p>
+<p>Here is a link to the file produced in this way: <a class="reference external" href="student.json">student.json</a>.</p>
 <dl class="function">
 <dt id="json.load">
 <code class="sig-prename descclassname">json.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#json.load" title="Permalink to this definition">¶</a></dt>
@@ -533,7 +539,7 @@ div.rendered_html tbody tr:hover {
 
 <p>This function, in turn, is similar to <code class="docutils literal notranslate"><span class="pre">json.loads</span></code>, but it takes as its argument a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code> which contains a JSON formatted string, and returns the corresponding Python object:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -544,13 +550,118 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 {&#39;name&#39;: &#39;Maggie&#39;, &#39;age&#39;: 19, &#39;grades&#39;: [&#39;A&#39;, &#39;B+&#39;, &#39;A-&#39;]}
 </pre></div></div>
+</div>
+</div>
+<div class="section" id="Example:-currency-exchange-rates">
+<h2>Example: currency exchange rates<a class="headerlink" href="#Example:-currency-exchange-rates" title="Permalink to this headline">¶</a></h2>
+<p>The website <a class="reference external" href="https://www.exchangeratesapi.io/">www.exchangeratesapi.io</a> provides current and historical currency exchange rates. We can use it, for example, to obtain the latest exchange rates against the US dollar:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">rates</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.exchangeratesapi.io/latest?base=USD&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">rates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#34;rates&#34;:{&#34;CAD&#34;:1.4161682074,&#34;HKD&#34;:7.7541236179,&#34;ISK&#34;:139.8404930216,&#34;PHP&#34;:50.9298531811,&#34;DKK&#34;:6.766
+9929309,&#34;HUF&#34;:325.1042233098,&#34;CZK&#34;:24.7553017945,&#34;GBP&#34;:0.805691499,&#34;RON&#34;:4.3753851731,&#34;SEK&#34;:10.00317
+20138,&#34;IDR&#34;:16393.0034439007,&#34;INR&#34;:75.6751857894,&#34;BRL&#34;:5.1215334421,&#34;RUB&#34;:79.8790103317,&#34;HRK&#34;:6.9118
+18017,&#34;JPY&#34;:108.1566068515,&#34;THB&#34;:32.6998368679,&#34;CHF&#34;:0.9580387892,&#34;EUR&#34;:0.9062896502,&#34;MYR&#34;:4.3326083
+016,&#34;BGN&#34;:1.7725212978,&#34;TRY&#34;:6.5683342396,&#34;CNY&#34;:7.0996012326,&#34;NOK&#34;:10.5934384629,&#34;NZD&#34;:1.6680261011,
+&#34;ZAR&#34;:17.8798259924,&#34;USD&#34;:1.0,&#34;MXN&#34;:23.7864781584,&#34;SGD&#34;:1.4257748777,&#34;AUD&#34;:1.6332245786,&#34;ILS&#34;:3.5838
+317926,&#34;KRW&#34;:1224.8685880007,&#34;PLN&#34;:4.124433569},&#34;base&#34;:&#34;USD&#34;,&#34;date&#34;:&#34;2020-03-30&#34;}
+</pre></div></div>
+</div>
+<p>The exchange rates are provided as a JSON encoded string. Using the <code class="docutils literal notranslate"><span class="pre">json.loads</span></code> function we can convert this string into a Python dictionary:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rates_d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">rates</span><span class="p">)</span>
+<span class="n">rates_d</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;rates&#39;: {&#39;CAD&#39;: 1.4161682074,
+  &#39;HKD&#39;: 7.7541236179,
+  &#39;ISK&#39;: 139.8404930216,
+  &#39;PHP&#39;: 50.9298531811,
+  &#39;DKK&#39;: 6.7669929309,
+  &#39;HUF&#39;: 325.1042233098,
+  &#39;CZK&#39;: 24.7553017945,
+  &#39;GBP&#39;: 0.805691499,
+  &#39;RON&#39;: 4.3753851731,
+  &#39;SEK&#39;: 10.0031720138,
+  &#39;IDR&#39;: 16393.0034439007,
+  &#39;INR&#39;: 75.6751857894,
+  &#39;BRL&#39;: 5.1215334421,
+  &#39;RUB&#39;: 79.8790103317,
+  &#39;HRK&#39;: 6.911818017,
+  &#39;JPY&#39;: 108.1566068515,
+  &#39;THB&#39;: 32.6998368679,
+  &#39;CHF&#39;: 0.9580387892,
+  &#39;EUR&#39;: 0.9062896502,
+  &#39;MYR&#39;: 4.3326083016,
+  &#39;BGN&#39;: 1.7725212978,
+  &#39;TRY&#39;: 6.5683342396,
+  &#39;CNY&#39;: 7.0996012326,
+  &#39;NOK&#39;: 10.5934384629,
+  &#39;NZD&#39;: 1.6680261011,
+  &#39;ZAR&#39;: 17.8798259924,
+  &#39;USD&#39;: 1.0,
+  &#39;MXN&#39;: 23.7864781584,
+  &#39;SGD&#39;: 1.4257748777,
+  &#39;AUD&#39;: 1.6332245786,
+  &#39;ILS&#39;: 3.5838317926,
+  &#39;KRW&#39;: 1224.8685880007,
+  &#39;PLN&#39;: 4.124433569},
+ &#39;base&#39;: &#39;USD&#39;,
+ &#39;date&#39;: &#39;2020-03-30&#39;}
+</pre></div></div>
+</div>
+<p>We can use the dictionary obtained in this way to check how much 1 USD is worth in terms of any other listed currency:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># value of 1 USD in Canadian dollars</span>
+<span class="n">rates_d</span><span class="p">[</span><span class="s1">&#39;rates&#39;</span><span class="p">][</span><span class="s1">&#39;CAD&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.4161682074
+</pre></div></div>
+</div>
 </div>
 </div>
 
@@ -562,10 +673,10 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="requests.html" class="btn btn-neutral float-right" title="Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="scrapping_course_listings.html" class="btn btn-neutral float-right" title="Scrapping course listings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="re_functions.html" class="btn btn-neutral float-left" title="Functions in the re module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="beautiful_soup.html" class="btn btn-neutral float-left" title="Beautiful Soup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
