@@ -19,6 +19,7 @@ MTH 448/548 Data Oriented Computing
    json
    scrapping_course_listings
    json
+   escape_from_jupyter
    PT-functions
 
 

@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Escape from Jupyter &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -39,8 +38,10 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Functions" href="PT-functions.html" />
+    <link rel="prev" title="Scrapping course listings" href="scrapping_course_listings.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,7 +86,7 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="useful_links.html">Useful links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regular_expressions.html">Regular expressions</a></li>
@@ -95,7 +96,11 @@
 <li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
-<li class="toctree-l1"><a class="reference internal" href="escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Escape from Jupyter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise.">Exercise.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Example.">Example.</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
 </ul>
 
@@ -142,14 +147,14 @@
     
       <li><a href="index.html">MTH548</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>Escape from Jupyter</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/genindex" class="fa fa-github"> View on GitHub</a>
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/escape_from_jupyter.ipynb" class="fa fa-github"> View on GitHub</a>
             
           
         
@@ -163,48 +168,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
 
-<h1 id="index">Index</h1>
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
 
-<div class="genindex-jumpbox">
- <a href="#J"><strong>J</strong></a>
- | <a href="#R"><strong>R</strong></a>
- 
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Escape-from-Jupyter">
+<h1>Escape from Jupyter<a class="headerlink" href="#Escape-from-Jupyter" title="Permalink to this headline">¶</a></h1>
+<p>All data in Jupyter notebooks is saved in JSON encoded text files with the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> extension. This storage format makes it easy to retrieve notebook data without using Jupyter notebook software. This could come handy e.g. if the Jupyter project were to be discontinued at some point in the future, and we would like to recover content of old notebook files. The goal of this exercise is to implement such data recovery process.</p>
+<div class="section" id="Exercise.">
+<h2>Exercise.<a class="headerlink" href="#Exercise." title="Permalink to this headline">¶</a></h2>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">nb2py</span></code> which takes as an argument a Jupyter notebook file, and creates a text file with the following properties.</p>
+<ul class="simple">
+<li><p>The file created by the function should have the same name as the input file, but it should have the extension <code class="docutils literal notranslate"><span class="pre">.py</span></code> instead of <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>. For example, if the input file is <code class="docutils literal notranslate"><span class="pre">mynotebook.ipynb</span></code>, then the output file should be <code class="docutils literal notranslate"><span class="pre">mynotebook.py</span></code>.</p></li>
+<li><p>The code from all code cells in the notebook should be saved without changes. The code from a cell number <code class="docutils literal notranslate"><span class="pre">x</span></code> should be preceded by a line with a Python comment of the form:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># In[x]:</span>
+</pre></div>
 </div>
-<h2 id="J">J</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="json.html#json.json.dump">json.dump() (in module json)</a>
-</li>
-      <li><a href="json.html#json.json.dumps">json.dumps() (in module json)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="json.html#json.json.load">json.load() (in module json)</a>
-</li>
-      <li><a href="json.html#json.json.loads">json.loads() (in module json)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="R">R</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="re_functions.html#re.re.findall">re.findall() (in module re)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="re_functions.html#re.re.sub">re.sub() (in module re)</a>
-</li>
-  </ul></td>
-</tr></table>
-
+<ul class="simple">
+<li><p>Text from markdown cells should be saved as Python comments. i.e. every line of the text should be preceded by the <code class="docutils literal notranslate"><span class="pre">#</span></code> character.</p></li>
+<li><p>Content of markdown and code cells should be saved in the same order in which it appears in the notebook file.</p></li>
+<li><p>Output from code cells should be discarded.</p></li>
+<li><p>For simplicity, assume that markdown cells contain text only (and do not have e.g. embedded images).</p></li>
+</ul>
+</div>
+<div class="section" id="Example.">
+<h2>Example.<a class="headerlink" href="#Example." title="Permalink to this headline">¶</a></h2>
+<p>As an illustration of how the <code class="docutils literal notranslate"><span class="pre">nb2py</span></code> function should work, below are links to a sample Jupyter notebook file and a text file in the form that should be produced from this notebook by <code class="docutils literal notranslate"><span class="pre">nb2py</span></code>.</p>
+<div class="line-block">
+<div class="line"><a class="reference download internal" download="" href="_downloads/1b8e8f1a25681617891d06f9a541d847/sample_notebook.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">sample_notebook.ipynb</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/28dfd3262f8efdf9f3b9e918a2d25405/sample_notebook.py"><code class="xref download docutils literal notranslate"><span class="pre">sample_notebook.py</span></code></a></div>
+</div>
+</div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PT-functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="scrapping_course_listings.html" class="btn btn-neutral float-left" title="Scrapping course listings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
