@@ -16,7 +16,6 @@ MTH 448/548 Data Oriented Computing
    re_functions
    requests
    beautiful_soup
-   json
    scrapping_course_listings
    json
    escape_from_jupyter
