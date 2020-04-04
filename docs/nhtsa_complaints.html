@@ -675,7 +675,7 @@ DateComplaintFiled:  /Date(970718400000-0400)/
 </div>
 <p>The string “901944000000-0400” has the following meaning:</p>
 <ul class="simple">
-<li><p>The part “901944000000” is a Unix timestamp. It gives date and time in terms of the number of miliseconds that have elapsed since the time 0:00:00 GMT on January 1, 1970.</p></li>
+<li><p>The part “901944000000” is a Unix timestamp. It gives date and time in terms of the number of miliseconds that have elapsed since the time 00:00:00 GMT on January 1, 1970.</p></li>
 <li><p>The part “-0400” indicates the adjustment that needs to be made to convert the GMT time to the local time used by the database: the local time is 4 hours behind GMT.</p></li>
 </ul>
 <p>We can use Python <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module to convert this data into a human-readable format:</p>
@@ -717,7 +717,7 @@ DateComplaintFiled:  /Date(970718400000-0400)/
 1998-08-01 00:00:00-04:00
 </pre></div></div>
 </div>
-<p>This shows that the the string “901944000000-0400”corresponds to the time 0:00 on August 1, 1998 in the local time zone of the database.</p>
+<p>This shows that the the string “901944000000-0400”corresponds to the time 00:00:00 on August 1, 1998 in the local time zone of the database.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
