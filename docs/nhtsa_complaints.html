@@ -1,0 +1,794 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NHTSA complaints database &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Functions" href="PT-functions.html" />
+    <link rel="prev" title="Escape from Jupyter" href="escape_from_jupyter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="useful_links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regular_expressions.html">Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NHTSA complaints database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#NHTSA-database-web-API">NHTSA database web API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Dates-in-the-NHTSA-database">Dates in the NHTSA database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Project">Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">MTH548</a> &raquo;</li>
+        
+      <li>NHTSA complaints database</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/nhtsa_complaints.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="NHTSA-complaints-database">
+<h1>NHTSA complaints database<a class="headerlink" href="#NHTSA-complaints-database" title="Permalink to this headline">¶</a></h1>
+<p>The National Highway Traffic Safety Administration (part of the US Department of Transportation) maintains a database of vehicle safety complaints: you can file a complaint <a class="reference external" href="https://www-odi.nhtsa.dot.gov/VehicleComplaint/">here</a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="NHTSA-database-web-API">
+<h2>NHTSA database web API<a class="headerlink" href="#NHTSA-database-web-API" title="Permalink to this headline">¶</a></h2>
+<p>The NHTSA database can be accessed using a <a class="reference external" href="https://webapi.nhtsa.gov/Default.aspx?Complaints/API/81">web API</a>. The basic API functionality is as follows.</p>
+<ul class="simple">
+<li><p>Request a list of all possible model years of vehicles in the database:</p></li>
+</ul>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span>http://www.nhtsa.gov/webapi/api/Complaints/vehicle
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.nhtsa.gov/webapi/api/Complaints/vehicle&quot;</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">years</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#34;Count&#34;:67,&#34;Message&#34;:&#34;Results returned successfully&#34;,&#34;Results&#34;:[{&#34;ModelYear&#34;:&#34;9999&#34;},{&#34;ModelYear&#34;:&#34;2020&#34;},{&#34;
+ModelYear&#34;:&#34;2019&#34;},{&#34;ModelYear&#34;:&#34;2018&#34;},{&#34;ModelYear&#34;:&#34;2017&#34;},{&#34;ModelYear&#34;:&#34;2016&#34;},{&#34;ModelYear&#34;:&#34;2015&#34;},{&#34;Mode
+lYear&#34;:&#34;2014&#34;},{&#34;ModelYear&#34;:&#34;2013&#34;},{&#34;ModelYear&#34;:&#34;2012&#34;},{&#34;ModelYear&#34;:&#34;2011&#34;},{&#34;ModelYear&#34;:&#34;2010&#34;},{&#34;ModelYea
+r&#34;:&#34;2009&#34;},{&#34;ModelYear&#34;:&#34;2008&#34;},{&#34;ModelYear&#34;:&#34;2007&#34;},{&#34;ModelYear&#34;:&#34;2006&#34;},{&#34;ModelYear&#34;:&#34;2005&#34;},{&#34;ModelYear&#34;:&#34;
+2004&#34;},{&#34;ModelYear&#34;:&#34;2003&#34;},{&#34;ModelYear&#34;:&#34;2002&#34;},{&#34;ModelYear&#34;:&#34;2001&#34;},{&#34;ModelYear&#34;:&#34;2000&#34;},{&#34;ModelYear&#34;:&#34;1999
+&#34;},{&#34;ModelYear&#34;:&#34;1998&#34;},{&#34;ModelYear&#34;:&#34;1997&#34;},{&#34;ModelYear&#34;:&#34;1996&#34;},{&#34;ModelYear&#34;:&#34;1995&#34;},{&#34;ModelYear&#34;:&#34;1994&#34;},{
+&#34;ModelYear&#34;:&#34;1993&#34;},{&#34;ModelYear&#34;:&#34;1992&#34;},{&#34;ModelYear&#34;:&#34;1991&#34;},{&#34;ModelYear&#34;:&#34;1990&#34;},{&#34;ModelYear&#34;:&#34;1989&#34;},{&#34;Mod
+elYear&#34;:&#34;1988&#34;},{&#34;ModelYear&#34;:&#34;1987&#34;},{&#34;ModelYear&#34;:&#34;1986&#34;},{&#34;ModelYear&#34;:&#34;1985&#34;},{&#34;ModelYear&#34;:&#34;1984&#34;},{&#34;ModelYe
+ar&#34;:&#34;1983&#34;},{&#34;ModelYear&#34;:&#34;1982&#34;},{&#34;ModelYear&#34;:&#34;1981&#34;},{&#34;ModelYear&#34;:&#34;1980&#34;},{&#34;ModelYear&#34;:&#34;1979&#34;},{&#34;ModelYear&#34;:
+&#34;1978&#34;},{&#34;ModelYear&#34;:&#34;1977&#34;},{&#34;ModelYear&#34;:&#34;1976&#34;},{&#34;ModelYear&#34;:&#34;1975&#34;},{&#34;ModelYear&#34;:&#34;1974&#34;},{&#34;ModelYear&#34;:&#34;197
+3&#34;},{&#34;ModelYear&#34;:&#34;1972&#34;},{&#34;ModelYear&#34;:&#34;1971&#34;},{&#34;ModelYear&#34;:&#34;1970&#34;},{&#34;ModelYear&#34;:&#34;1969&#34;},{&#34;ModelYear&#34;:&#34;1968&#34;},
+{&#34;ModelYear&#34;:&#34;1967&#34;},{&#34;ModelYear&#34;:&#34;1966&#34;},{&#34;ModelYear&#34;:&#34;1965&#34;},{&#34;ModelYear&#34;:&#34;1964&#34;},{&#34;ModelYear&#34;:&#34;1963&#34;},{&#34;Mo
+delYear&#34;:&#34;1962&#34;},{&#34;ModelYear&#34;:&#34;1961&#34;},{&#34;ModelYear&#34;:&#34;1960&#34;},{&#34;ModelYear&#34;:&#34;1959&#34;},{&#34;ModelYear&#34;:&#34;1958&#34;},{&#34;ModelY
+ear&#34;:&#34;1957&#34;},{&#34;ModelYear&#34;:&#34;1955&#34;},{&#34;ModelYear&#34;:&#34;1949&#34;}]}
+</pre></div></div>
+</div>
+<ul class="simple">
+<li><p>Request a list of vehicle makers by providing a specific vehicle model year:</p></li>
+</ul>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span>http://www.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/<span class="nb">{</span>YEAR<span class="nb">}</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/1965&quot;</span>
+<span class="n">makers</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">makers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#34;Count&#34;:4,&#34;Message&#34;:&#34;Results returned successfully&#34;,&#34;Results&#34;:[{&#34;ModelYear&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;FORD&#34;},{&#34;ModelYea
+r&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;HARLEY-DAVIDSON&#34;},{&#34;ModelYear&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;INTERNATIONAL HARVESTER&#34;},{&#34;ModelYear&#34;:&#34;1965&#34;
+,&#34;Make&#34;:&#34;VOLKSWAGEN&#34;}]}
+</pre></div></div>
+</div>
+<ul class="simple">
+<li><p>Request a list of vehicle models by providing the vehicle model year and maker.</p></li>
+</ul>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span>http://www.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/<span class="nb">{</span>YEAR<span class="nb">}</span>/make/<span class="nb">{</span>MAKE<span class="nb">}</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/1965/make/ford&quot;</span>
+<span class="n">models</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">models</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#34;Count&#34;:2,&#34;Message&#34;:&#34;Results returned successfully&#34;,&#34;Results&#34;:[{&#34;ModelYear&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;FORD&#34;,&#34;Model&#34;:&#34;MU
+STANG&#34;},{&#34;ModelYear&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;FORD&#34;,&#34;Model&#34;:&#34;THUNDERBIRD&#34;}]}
+</pre></div></div>
+</div>
+<ul class="simple">
+<li><p>Request a list of complaints for a given model year, maker, and model:</p></li>
+</ul>
+<div class="highlight-tex notranslate"><div class="highlight"><pre><span></span>http://www.nhtsa.gov/webapi/api/api/Complaints/vehicle/modelyear/<span class="nb">{</span>YEAR<span class="nb">}</span>/make/<span class="nb">{</span>MAKE<span class="nb">}</span>/model/<span class="nb">{</span>MODEL<span class="nb">}</span>
+</pre></div>
+</div>
+<p><strong>Example:</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://www.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/1965/make/ford/model/mustang&quot;</span>
+<span class="n">complaints</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">complaints</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#34;Count&#34;:4,&#34;Message&#34;:&#34;Results returned successfully&#34;,&#34;Results&#34;:[{&#34;ODINumber&#34;:538398,&#34;Manufacturer&#34;:&#34;Ford Moto
+r Company&#34;,&#34;Crash&#34;:&#34;No&#34;,&#34;Fire&#34;:&#34;No&#34;,&#34;NumberOfInjured&#34;:0,&#34;NumberOfDeaths&#34;:0,&#34;DateComplaintFiled&#34;:&#34;\/Date(90056
+1600000-0400)\/&#34;,&#34;VIN&#34;:&#34;5RO7C219764&#34;,&#34;Component&#34;:&#34;FUEL SYSTEM, GASOLINE:STORAGE:TANK ASSEMBLY&#34;,&#34;Summary&#34;:&#34;OWN
+ER CONCERNED THAT FUEL TANK WILL RUPTURE IN A REAR END COLLISION AND RESULT IN A FIRE.&#34;,&#34;ProductType&#34;:&#34;VEHICL
+E&#34;,&#34;ModelYear&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;FORD&#34;,&#34;Model&#34;:&#34;MUSTANG&#34;},{&#34;ODINumber&#34;:733514,&#34;Manufacturer&#34;:&#34;Ford Motor Company
+&#34;,&#34;Crash&#34;:&#34;No&#34;,&#34;Fire&#34;:&#34;No&#34;,&#34;NumberOfInjured&#34;:0,&#34;NumberOfDeaths&#34;:0,&#34;DateofIncident&#34;:&#34;\/Date(901944000000-0400)
+\/&#34;,&#34;DateComplaintFiled&#34;:&#34;\/Date(970718400000-0400)\/&#34;,&#34;VIN&#34;:&#34;5R08A203647&#34;,&#34;Component&#34;:&#34;TIRES:TREAD/BELT&#34;,&#34;Su
+mmary&#34;:&#34;TIRE ONLY HAD 5-6000 MILES USE, ENTIRE TRED AREA DETACHED AS DONUT WRAPPED AROUND AXLE AND DAMAGED FE
+NDER .*AK (TIRESIZE: P185/75SR1)( DOT NUMBER:   TIRE SIZE: P185/75SR1 )&#34;,&#34;ProductType&#34;:&#34;VEHICLE&#34;,&#34;ModelYear&#34;:
+&#34;1965&#34;,&#34;Make&#34;:&#34;FORD&#34;,&#34;Model&#34;:&#34;MUSTANG&#34;},{&#34;ODINumber&#34;:10022583,&#34;Manufacturer&#34;:&#34;Ford Motor Company&#34;,&#34;Crash&#34;:&#34;No
+&#34;,&#34;Fire&#34;:&#34;No&#34;,&#34;NumberOfInjured&#34;:0,&#34;NumberOfDeaths&#34;:0,&#34;DateofIncident&#34;:&#34;\/Date(1054353600000-0400)\/&#34;,&#34;DateCom
+plaintFiled&#34;:&#34;\/Date(1057809600000-0400)\/&#34;,&#34;VIN&#34;:&#34;SF07A362335&#34;,&#34;Component&#34;:&#34;TIRES&#34;,&#34;Summary&#34;:&#34;VEHICLE WAS PA
+RKED, THE OWNER HEARD A BIG \&#34;BANG\&#34; NOISE COMING  FROM THE CAR.  A MICHELIN  REGAL SPORT TIRE BLEWOUT WITH
+OUT ANY REASON.   *AK  THE CONSUMER DISCOVERED THE DRIVER&#39;S SIDE FRONT TIRE EXPERIENCED A BLOW OUT.  (TIRE MO
+DEL/REGAL SPORT CHALLENGER)   *SCC   *JB&#34;,&#34;ProductType&#34;:&#34;VEHICLE&#34;,&#34;ModelYear&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;FORD&#34;,&#34;Model&#34;:&#34;M
+USTANG&#34;},{&#34;ODINumber&#34;:10937513,&#34;Manufacturer&#34;:&#34;Ford Motor Company&#34;,&#34;Crash&#34;:&#34;Yes&#34;,&#34;Fire&#34;:&#34;Yes&#34;,&#34;NumberOfInjure
+d&#34;:0,&#34;NumberOfDeaths&#34;:1,&#34;DateofIncident&#34;:&#34;\/Date(187678800000-0500)\/&#34;,&#34;DateComplaintFiled&#34;:&#34;\/Date(148272840
+0000-0500)\/&#34;,&#34;Component&#34;:&#34;ELECTRICAL SYSTEM | FUEL/PROPULSION SYSTEM | STRUCTURE:BODY&#34;,&#34;Summary&#34;:&#34;1965 FORD
+MUSTANG STALLED DURING RAINY EVENING AND CAME TO A STOP. VEHICLE WAS THEN HIT FROM BEHIND BY ANOTHER VEHICLE.
+ THE MUSTANG EXPLODED AND INCINERATED THE DRIVER.\r\n&#34;,&#34;ProductType&#34;:&#34;VEHICLE&#34;,&#34;ModelYear&#34;:&#34;1965&#34;,&#34;Make&#34;:&#34;FOR
+D&#34;,&#34;Model&#34;:&#34;MUSTANG&#34;}]}
+</pre></div></div>
+</div>
+<p>In each case data is returned as a JSON encoded string. Using the<code class="docutils literal notranslate"><span class="pre">json</span></code> module we can convert it into a Python dictionary:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">complaints</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">complaints</span><span class="p">)</span>
+<span class="n">complaints</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;Count&#39;: 4,
+ &#39;Message&#39;: &#39;Results returned successfully&#39;,
+ &#39;Results&#39;: [{&#39;ODINumber&#39;: 538398,
+   &#39;Manufacturer&#39;: &#39;Ford Motor Company&#39;,
+   &#39;Crash&#39;: &#39;No&#39;,
+   &#39;Fire&#39;: &#39;No&#39;,
+   &#39;NumberOfInjured&#39;: 0,
+   &#39;NumberOfDeaths&#39;: 0,
+   &#39;DateComplaintFiled&#39;: &#39;/Date(900561600000-0400)/&#39;,
+   &#39;VIN&#39;: &#39;5RO7C219764&#39;,
+   &#39;Component&#39;: &#39;FUEL SYSTEM, GASOLINE:STORAGE:TANK ASSEMBLY&#39;,
+   &#39;Summary&#39;: &#39;OWNER CONCERNED THAT FUEL TANK WILL RUPTURE IN A REAR END COLLISION AND RESULT IN A FIRE.&#39;,
+   &#39;ProductType&#39;: &#39;VEHICLE&#39;,
+   &#39;ModelYear&#39;: &#39;1965&#39;,
+   &#39;Make&#39;: &#39;FORD&#39;,
+   &#39;Model&#39;: &#39;MUSTANG&#39;},
+  {&#39;ODINumber&#39;: 733514,
+   &#39;Manufacturer&#39;: &#39;Ford Motor Company&#39;,
+   &#39;Crash&#39;: &#39;No&#39;,
+   &#39;Fire&#39;: &#39;No&#39;,
+   &#39;NumberOfInjured&#39;: 0,
+   &#39;NumberOfDeaths&#39;: 0,
+   &#39;DateofIncident&#39;: &#39;/Date(901944000000-0400)/&#39;,
+   &#39;DateComplaintFiled&#39;: &#39;/Date(970718400000-0400)/&#39;,
+   &#39;VIN&#39;: &#39;5R08A203647&#39;,
+   &#39;Component&#39;: &#39;TIRES:TREAD/BELT&#39;,
+   &#39;Summary&#39;: &#39;TIRE ONLY HAD 5-6000 MILES USE, ENTIRE TRED AREA DETACHED AS DONUT WRAPPED AROUND AXLE AND DAMAGED FENDER .*AK (TIRESIZE: P185/75SR1)( DOT NUMBER:   TIRE SIZE: P185/75SR1 )&#39;,
+   &#39;ProductType&#39;: &#39;VEHICLE&#39;,
+   &#39;ModelYear&#39;: &#39;1965&#39;,
+   &#39;Make&#39;: &#39;FORD&#39;,
+   &#39;Model&#39;: &#39;MUSTANG&#39;},
+  {&#39;ODINumber&#39;: 10022583,
+   &#39;Manufacturer&#39;: &#39;Ford Motor Company&#39;,
+   &#39;Crash&#39;: &#39;No&#39;,
+   &#39;Fire&#39;: &#39;No&#39;,
+   &#39;NumberOfInjured&#39;: 0,
+   &#39;NumberOfDeaths&#39;: 0,
+   &#39;DateofIncident&#39;: &#39;/Date(1054353600000-0400)/&#39;,
+   &#39;DateComplaintFiled&#39;: &#39;/Date(1057809600000-0400)/&#39;,
+   &#39;VIN&#39;: &#39;SF07A362335&#39;,
+   &#39;Component&#39;: &#39;TIRES&#39;,
+   &#39;Summary&#39;: &#39;VEHICLE WAS PARKED, THE OWNER HEARD A BIG &#34;BANG&#34; NOISE COMING  FROM THE CAR.  A MICHELIN  REGAL SPORT TIRE BLEWOUT WITH  OUT ANY REASON.   *AK  THE CONSUMER DISCOVERED THE DRIVER\&#39;S SIDE FRONT TIRE EXPERIENCED A BLOW OUT.  (TIRE MODEL/REGAL SPORT CHALLENGER)   *SCC   *JB&#39;,
+   &#39;ProductType&#39;: &#39;VEHICLE&#39;,
+   &#39;ModelYear&#39;: &#39;1965&#39;,
+   &#39;Make&#39;: &#39;FORD&#39;,
+   &#39;Model&#39;: &#39;MUSTANG&#39;},
+  {&#39;ODINumber&#39;: 10937513,
+   &#39;Manufacturer&#39;: &#39;Ford Motor Company&#39;,
+   &#39;Crash&#39;: &#39;Yes&#39;,
+   &#39;Fire&#39;: &#39;Yes&#39;,
+   &#39;NumberOfInjured&#39;: 0,
+   &#39;NumberOfDeaths&#39;: 1,
+   &#39;DateofIncident&#39;: &#39;/Date(187678800000-0500)/&#39;,
+   &#39;DateComplaintFiled&#39;: &#39;/Date(1482728400000-0500)/&#39;,
+   &#39;Component&#39;: &#39;ELECTRICAL SYSTEM | FUEL/PROPULSION SYSTEM | STRUCTURE:BODY&#39;,
+   &#39;Summary&#39;: &#39;1965 FORD MUSTANG STALLED DURING RAINY EVENING AND CAME TO A STOP. VEHICLE WAS THEN HIT FROM BEHIND BY ANOTHER VEHICLE. THE MUSTANG EXPLODED AND INCINERATED THE DRIVER.\r\n&#39;,
+   &#39;ProductType&#39;: &#39;VEHICLE&#39;,
+   &#39;ModelYear&#39;: &#39;1965&#39;,
+   &#39;Make&#39;: &#39;FORD&#39;,
+   &#39;Model&#39;: &#39;MUSTANG&#39;}]}
+</pre></div></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="Dates-in-the-NHTSA-database">
+<h2>Dates in the NHTSA database<a class="headerlink" href="#Dates-in-the-NHTSA-database" title="Permalink to this headline">¶</a></h2>
+<p>Complaints records in the NHTSA database contains two fields specifying date and time:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DateofIncident</span></code> - the date and time of the reported incident.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DateComplaintFiled</span></code> - the date and time when the complaint was reported.</p></li>
+</ul>
+<p>For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">record</span> <span class="o">=</span> <span class="n">complaints</span><span class="p">[</span><span class="s1">&#39;Results&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DateofIncident:  </span><span class="si">{record[&#39;DateofIncident&#39;]}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DateComplaintFiled:  </span><span class="si">{record[&#39;DateComplaintFiled&#39;]}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+DateofIncident:  /Date(901944000000-0400)/
+DateComplaintFiled:  /Date(970718400000-0400)/
+</pre></div></div>
+</div>
+<p>The string “901944000000-0400” has the following meaning:</p>
+<ul class="simple">
+<li><p>The part “901944000000” is a Unix timestamp. It gives date and time in terms of the number of miliseconds that have elapsed since the time 0:00:00 GMT on January 1, 1970.</p></li>
+<li><p>The part “-0400” indicates the adjustment that needs to be made to convert the GMT time to the local time used by the database: the local time is 4 hours behind GMT.</p></li>
+</ul>
+<p>We can use Python <code class="docutils literal notranslate"><span class="pre">datetime</span></code> module to convert this data into a human-readable format:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span><span class="p">,</span> <span class="n">timezone</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">date</span> <span class="o">=</span> <span class="s2">&quot;901944000000-0400&quot;</span>
+
+<span class="c1"># split the date into a timestamp and a time zone indicator</span>
+<span class="n">timestamp</span><span class="p">,</span> <span class="n">time_zone</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d*)(.*)&quot;</span><span class="p">,</span> <span class="n">date</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+
+
+<span class="c1"># the datetime.fromtimestampt function expects timestamp expressed in seconds,</span>
+<span class="c1"># so we need to round up miliseconds:</span>
+<span class="n">seconds</span> <span class="o">=</span> <span class="n">timestamp</span><span class="o">//</span><span class="mi">1000</span>
+
+<span class="c1"># divide the timezone indicator by 100 to get the number of hours</span>
+<span class="n">time_zone_hours</span> <span class="o">=</span> <span class="n">time_zone</span><span class="o">/</span><span class="mi">100</span>
+
+<span class="c1"># define timezone of the local time of the databease,</span>
+<span class="n">local</span> <span class="o">=</span> <span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span> <span class="o">=</span> <span class="n">time_zone_hours</span><span class="p">))</span>
+
+<span class="c1"># get date and time from the timestamp</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="n">local</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1998-08-01 00:00:00-04:00
+</pre></div></div>
+</div>
+<p>This shows that the the string “901944000000-0400”corresponds to the time 0:00 on August 1, 1998 in the local time zone of the database.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="Project">
+<h2>Project<a class="headerlink" href="#Project" title="Permalink to this headline">¶</a></h2>
+<p>Use the NHTSA complaints database to find and analyze something that you consider interesting or important.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="PT-functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="escape_from_jupyter.html" class="btn btn-neutral float-left" title="Escape from Jupyter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Apr 04, 2020.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

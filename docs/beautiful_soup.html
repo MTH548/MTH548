@@ -105,6 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nhtsa_complaints.html">NHTSA complaints database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
 </ul>
 
@@ -419,7 +420,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="First-steps">
 <h2>First steps<a class="headerlink" href="#First-steps" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a> is a Python library for retrieving data from HTML (and other XML) files. We will explore its basic functionality using the UB Math Department web page with graduate student directory as an example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">buffalo</span><span class="o">.</span><span class="n">edu</span><span class="o">/</span><span class="n">cas</span><span class="o">/</span><span class="n">math</span><span class="o">/</span><span class="n">people</span><span class="o">/</span><span class="n">grad</span><span class="o">-</span><span class="n">directory</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.buffalo.edu/cas/math/people/grad-directory.html
 </pre></div>
 </div>
 <div class="nbinput docutils container">
@@ -447,8 +448,10 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-&nbsp;
-&nbsp;<p><strong>Note:</strong> This is a live web page, and it is regularly updated. If you use the code below, your output may differ to some extent from the one shown here.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p><strong>Note:</strong> This is a live web page, and it is regularly updated. If you use the code below, your output may differ to some extent from the one shown here.</p>
 <p>To start, we will use <code class="docutils literal notranslate"><span class="pre">requests</span></code> to get the HTML code of the page:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -2876,7 +2879,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </pre></div></div>
 </div>
 <p>The main content of the web page consists of contact information of math graduate students. Our goal will be to retrieve names of the students listed on the page. Looking at the code above we can see that each student listing is enclosed in the HTML paragraph tag <code class="docutils literal notranslate"><span class="pre">&lt;p&gt;....&lt;/p&gt;</span></code>, e.g:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+<div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
  <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>
   Smith, John
   <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
@@ -3044,7 +3047,7 @@ Deutsch, Dustin
 <div class="section" id="Links">
 <h2>Links<a class="headerlink" href="#Links" title="Permalink to this headline">¶</a></h2>
 <p>Links in HTML documents are defined by the <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tag. For example:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.buffalo.edu&quot;</span><span class="p">&gt;</span>University at Buffalo<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.buffalo.edu&quot;</span><span class="p">&gt;</span>University at Buffalo<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
 </pre></div>
 </div>
 <p>will be displayed in a web browser as <a class="reference external" href="https://www.buffalo.edu">University at Buffalo</a>. The <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute specifies the address of the link destination, and the text between <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;/a&gt;</span></code> is the visible text of the link.</p>
@@ -3276,14 +3279,14 @@ Deutsch, Dustin
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="_images/beautiful_soup_49_0.png"><img alt="_images/beautiful_soup_49_0.png" src="_images/beautiful_soup_49_0.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="_images/beautiful_soup_53_0.png"><img alt="_images/beautiful_soup_53_0.png" src="_images/beautiful_soup_53_0.png" style="width: 50%;" /></a>
 </div>
 </div>
 </div>
 <div class="section" id="Tables">
 <h2>Tables<a class="headerlink" href="#Tables" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example of an HTML code defining a simple table:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Item<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Quantity<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
@@ -3309,7 +3312,7 @@ Deutsch, Dustin
 <li><p>Data in all other rows is specified using the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tag.</p></li>
 </ul>
 <p>Here is the address of a <a class="reference external" href="https://www.mth548.org/_static/table.html">page</a> which shows the table produced by the above code:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">mth548</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">_static</span><span class="o">/</span><span class="n">table</span><span class="o">.</span><span class="n">html</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.mth548.org/_static/table.html
 </pre></div>
 </div>
 <div class="nbinput docutils container">
@@ -3468,7 +3471,7 @@ Deutsch, Dustin
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 31, 2020.
+        Last updated on Apr 04, 2020.
       </span>
 
     </p>

@@ -103,6 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nhtsa_complaints.html">NHTSA complaints database</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
 </ul>
 
@@ -548,7 +549,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 <div class="section" id="User-Agent">
 <h2>User-Agent<a class="headerlink" href="#User-Agent" title="Permalink to this headline">¶</a></h2>
 <p>Every request sent by a web browser to a web server includes User-Agent, i.e. a string with information about the type of browser, the computer on which the browser operates etc. For example, the following User-Agent identifies the browser as Firefox 73 operating on a Macintosh with the operating system Mac OS X 10.14:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="n">Macintosh</span><span class="p">;</span> <span class="n">Intel</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span> <span class="mf">10.14</span><span class="p">;</span> <span class="n">rv</span><span class="p">:</span><span class="mf">73.0</span><span class="p">)</span> <span class="n">Gecko</span><span class="o">/</span><span class="mi">20100101</span> <span class="n">Firefox</span><span class="o">/</span><span class="mf">73.0</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
 </pre></div>
 </div>
 <p>The web page <a class="reference external" href="https://httpbin.org/get">httpbin.org/get</a> simply displays the data sent to it by the browser, so you can visit it to check the User-Agent used by your web browser. Using requests to connect to this website, we can inspect the default User-Agent set by the requests module:</p>
@@ -747,7 +748,7 @@ data to the server - e.g. to securely send a password or upload a file - client
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Mar 31, 2020.
+        Last updated on Apr 04, 2020.
       </span>
 
     </p>
