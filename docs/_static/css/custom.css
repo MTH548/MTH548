@@ -50,13 +50,17 @@ div.nboutput.container div.output_area div[class*=highlight] > pre {
     }
  }
 
-
  /* change fonts and increase their size in input/output areas */
  .rst-content pre.literal-block,
  .rst-content div[class^="highlight"] pre,
  .rst-content .linenodiv pre {
      font-size: 14px;
      font-family: 'Roboto Mono', Courier, monospace!important;
+ }
+
+ /* remove backgorund colors from rst code snippets */
+ div.highlight{
+   background-color: rgb(252, 252, 252);
  }
 
  /* darker input background */
