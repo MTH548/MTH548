@@ -1,0 +1,957 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SQL Basics &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Functions" href="../PT-functions.html" />
+    <link rel="prev" title="NHTSA complaints database" href="../nhtsa_complaints.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../regular_expressions.html">Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../re_functions.html">Functions in the re module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings.html">Scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SQL Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SQL-in-a-Jupyter-notebook">SQL in a Jupyter notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Creating-tables">Creating tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Deleting-tables">Deleting tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Creating-table-records">Creating table records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Modifying-records">Modifying records</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Deleting-records">Deleting records</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../PT-functions.html">Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+      <li>SQL Basics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/SQL/sql_basics.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="SQL-Basics">
+<h1>SQL Basics<a class="headerlink" href="#SQL-Basics" title="Permalink to this headline">¶</a></h1>
+<p>SQL is a programming language for working with data stored in relational databases. There are many flavors of SQL used by various database systems (MySQL, Postgres, Oracle, SQL Server etc.), but they share the same basic syntax and functionality. Below we show how to use SQL while working with databases created using SQLite software.</p>
+<div class="section" id="SQL-in-a-Jupyter-notebook">
+<h2>SQL in a Jupyter notebook<a class="headerlink" href="#SQL-in-a-Jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p>In order to execute SQL code in Jupyter Notebook, we will use the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> extension of the notebook. The following command, executed in a notebook, will install this extension:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">pip</span> install ipython-sql
+</pre></div>
+</div>
+</div>
+<p>Next, we need to load the extension:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span> <span class="o">%</span><span class="k">load_ext</span> sql
+</pre></div>
+</div>
+</div>
+<p>From now on, when the first line of a code cell is <code class="docutils literal notranslate"><span class="pre">%%sql</span></code>, the rest of the cell will be evaluated as an SQL (and not Python) code.</p>
+</div>
+<div class="section" id="Creating-tables">
+<h2>Creating tables<a class="headerlink" href="#Creating-tables" title="Permalink to this headline">¶</a></h2>
+<p>To access data stored in a database, we first need to connect to the database. Usually this requires connecting to a remove database server, but SQLite is special in this respect - its databases are saved in files stored locally on a computer. The command below connects to a database stored in a file <code class="docutils literal notranslate"><span class="pre">tiny.sqlite</span></code>. If such file does not exists, it will be automatically created:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+sqlite:///tiny.sqlite
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Connected: @tiny.sqlite&#39;
+</pre></div></div>
+</div>
+<p>The newly created database is empty. The code below creates in it a table named <code class="docutils literal notranslate"><span class="pre">courses</span></code> with three columns named <code class="docutils literal notranslate"><span class="pre">courseId</span></code>, <code class="docutils literal notranslate"><span class="pre">course_name</span></code>, and <code class="docutils literal notranslate"><span class="pre">credits</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+CREATE TABLE courses(
+    courseId TEXT,
+    course_name TEXT,
+    credits INT);
+</pre></div>
+</div>
+</div>
+<p>The syntax</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>courseId TEXT,
+course_name TEXT,
+credits INT
+</pre></div>
+</div>
+<p>specifies that the columns <code class="docutils literal notranslate"><span class="pre">courseId</span></code> and <code class="docutils literal notranslate"><span class="pre">course_name</span></code> will be used to store text, and the <code class="docutils literal notranslate"><span class="pre">credits</span></code> column will contain integer values. While many database systems enforce such data type specifications, SQLite treats them merely as suggestions - e.g. it will let us store text values in the <code class="docutils literal notranslate"><span class="pre">credits</span></code> column without any problems.</p>
+<p>SQL does not provide a standard way of listing tables existing in a database. However, every SQLite database contains a special table <code class="docutils literal notranslate"><span class="pre">sqlite_master</span></code> which records all database components. The code below retrieves the whole content of <code class="docutils literal notranslate"><span class="pre">sqlite_master</span></code>. It shows that the <code class="docutils literal notranslate"><span class="pre">courses</span></code> table now exists in the database:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT *
+FROM sqlite_master;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>type</th>
+        <th>name</th>
+        <th>tbl_name</th>
+        <th>rootpage</th>
+        <th>sql</th>
+    </tr>
+    <tr>
+        <td>table</td>
+        <td>courses</td>
+        <td>courses</td>
+        <td>2</td>
+        <td>CREATE TABLE courses(<br>    courseId TEXT,  <br>    course_name TEXT,<br>    credits INT)</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Deleting-tables">
+<h2>Deleting tables<a class="headerlink" href="#Deleting-tables" title="Permalink to this headline">¶</a></h2>
+<p>In order to delete a table <code class="docutils literal notranslate"><span class="pre">my_table</span></code> from a database we use the statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>DROP TABLE  my_table;
+</pre></div>
+</div>
+<p>This will generate an error if there is no table with the specified name:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+DROP TABLE  my_table;
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+(sqlite3.OperationalError) no such table: my_table
+[SQL: DROP TABLE  my_table;]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+</pre></div></div>
+</div>
+<p>This error can be avoided by adding a check if the table exists prior to deleting it:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+DROP TABLE IF EXISTS my_table;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Creating-table-records">
+<h2>Creating table records<a class="headerlink" href="#Creating-table-records" title="Permalink to this headline">¶</a></h2>
+<p>The statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM my_table
+</pre></div>
+</div>
+<p>retrieves all content of <code class="docutils literal notranslate"><span class="pre">my_table</span></code>. Applied to the <code class="docutils literal notranslate"><span class="pre">courses</span></code> table, it will give just column headers, since at the moment this table is empty:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT *
+FROM courses;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>courseId</th>
+        <th>course_name</th>
+        <th>credits</th>
+    </tr>
+</table></div>
+</div>
+<p>Records can be added to a table using the syntax</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INSERT INTO my_table (column1, column2 ,..)
+VALUES (value1, value2 ,...);
+</pre></div>
+</div>
+<p>This adds a new record to <code class="docutils literal notranslate"><span class="pre">my_table</span></code> with <code class="docutils literal notranslate"><span class="pre">value1</span></code> placed in <code class="docutils literal notranslate"><span class="pre">column1</span></code> etc.:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+INSERT INTO courses (courseId, course_name, credits)
+VALUES (&#39;MTH 141&#39;,&#39;Calculus I&#39;, 4);
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+1 rows affected.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[]
+</pre></div></div>
+</div>
+<p>We can verify that a record has been added to the <code class="docutils literal notranslate"><span class="pre">courses</span></code> table:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT *
+FROM courses;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>courseId</th>
+        <th>course_name</th>
+        <th>credits</th>
+    </tr>
+    <tr>
+        <td>MTH 141</td>
+        <td>Calculus I</td>
+        <td>4</td>
+    </tr>
+</table></div>
+</div>
+<p>Several records can be added to a table at once:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+INSERT INTO courses (courseId, course_name, credits)
+VALUES
+  (&#39;MTH 142&#39;, &#39;Calculus II&#39;, 4),
+  (&#39;MTH 448&#39;, &#39;Data Oriented Computing&#39;, 3),
+  (&#39;MTH 462&#39;, &#39;Topics in Analysis&#39;, 2);
+
+SELECT *
+FROM courses;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+3 rows affected.
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>courseId</th>
+        <th>course_name</th>
+        <th>credits</th>
+    </tr>
+    <tr>
+        <td>MTH 141</td>
+        <td>Calculus I</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>MTH 142</td>
+        <td>Calculus II</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>MTH 448</td>
+        <td>Data Oriented Computing</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>MTH 462</td>
+        <td>Topics in Analysis</td>
+        <td>2</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Modifying-records">
+<h2>Modifying records<a class="headerlink" href="#Modifying-records" title="Permalink to this headline">¶</a></h2>
+<p>Existing records can be modified using the statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>UPDATE my_table
+SET
+    column_1 = new_value_1,
+    column_2 = new_value_2
+WHERE
+    condition;
+</pre></div>
+</div>
+<p>The condition given after <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> specifies that only the records for which this condition holds true are to be changed. For example, the code below changes the number of credits of the MTH 141 course to 6:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+UPDATE courses
+SET
+    credits = 6
+WHERE
+    courseId = &#39;MTH 141&#39;;
+
+SELECT *
+FROM courses;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+1 rows affected.
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>courseId</th>
+        <th>course_name</th>
+        <th>credits</th>
+    </tr>
+    <tr>
+        <td>MTH 141</td>
+        <td>Calculus I</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>MTH 142</td>
+        <td>Calculus II</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>MTH 448</td>
+        <td>Data Oriented Computing</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>MTH 462</td>
+        <td>Topics in Analysis</td>
+        <td>2</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Deleting-records">
+<h2>Deleting records<a class="headerlink" href="#Deleting-records" title="Permalink to this headline">¶</a></h2>
+<p>The statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>DELETE FROM my_table
+WHERE
+    condition;
+</pre></div>
+</div>
+<p>deletes from <code class="docutils literal notranslate"><span class="pre">my_table</span></code> all records for which the specified condition is satisfied. For example, we can use it to delete all courses with less than 4 credits from the <code class="docutils literal notranslate"><span class="pre">courses</span></code> table:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+DELETE FROM courses
+WHERE
+    credits &lt; 4;
+
+SELECT *
+FROM courses;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///tiny.sqlite
+2 rows affected.
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>courseId</th>
+        <th>course_name</th>
+        <th>credits</th>
+    </tr>
+    <tr>
+        <td>MTH 141</td>
+        <td>Calculus I</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>MTH 142</td>
+        <td>Calculus II</td>
+        <td>4</td>
+    </tr>
+</table></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Note</p>
+<p>Here are a few comments on the general SQL syntax:</p>
+<ol class="arabic simple">
+<li><p>Indentations and newlines in SQL code are ignored. In the code above they are used solely to increase code readability.</p></li>
+<li><p>While it is customary to capitalize keywords in SQL code, this is not necessary. <code class="docutils literal notranslate"><span class="pre">select</span> <span class="pre">*</span> <span class="pre">from</span> <span class="pre">courses</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">courses</span></code>.</p></li>
+<li><p>The semicolon <code class="docutils literal notranslate"><span class="pre">;</span></code> marks the end of an SQL statement and separates each statement from the next one. If we are executing only one statement, its ending semicolon can be omitted.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../PT-functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../nhtsa_complaints.html" class="btn btn-neutral float-left" title="NHTSA complaints database" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Apr 07, 2020.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

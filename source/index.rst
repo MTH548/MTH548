@@ -20,6 +20,7 @@ MTH 448/548 Data Oriented Computing
    json
    escape_from_jupyter
    nhtsa_complaints
+   SQL/sql_basics
    PT-functions
 
 
