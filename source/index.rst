@@ -21,6 +21,7 @@ MTH 448/548 Data Oriented Computing
    escape_from_jupyter
    nhtsa_complaints
    SQL/sql_basics
+   SQL/sql_queries
    PT-functions
 
 
