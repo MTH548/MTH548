@@ -1,0 +1,1531 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SQL joins, union, intersection &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Functions" href="../PT-functions.html" />
+    <link rel="prev" title="SQL queries" href="sql_queries.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../regular_expressions.html">Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../re_functions.html">Functions in the re module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings.html">Scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql_basics.html">SQL Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql_queries.html">SQL queries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SQL joins, union, intersection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#INTERSECT">INTERSECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#UNION">UNION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#EXCEPT">EXCEPT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Joins">Joins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Inner-join">Inner join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Left-join">Left join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Right-join">Right join</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Full-outer-join">Full outer join</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Multiple-joins">Multiple joins</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../PT-functions.html">Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+      <li>SQL joins, union, intersection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/SQL/sql_joins.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="SQL-joins,-union,-intersection">
+<h1>SQL joins, union, intersection<a class="headerlink" href="#SQL-joins,-union,-intersection" title="Permalink to this headline">¶</a></h1>
+<p>We frequently need to combine data from several database tables and queries to extract information we want. The operators <code class="docutils literal notranslate"><span class="pre">UNION</span></code>, <code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code>, <code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code> and various types of joins are tools that help us accomplish such tasks.</p>
+<p>In the examples below we will be using the SQLite database <code class="docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code>. It can be downloaded here:</p>
+<div class="line-block">
+<div class="line"><a class="reference download internal" download="" href="../_downloads/bb79c49cabc11ec154df7911fbd50f82/courses_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code></a></div>
+</div>
+<p>To execute SQL code in Jupyter Notebook we will use the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> notebook extension. Assuming that this extension is already installed (see <a class="reference internal" href="sql_basics.html"><span class="doc">SQL Basics</span></a> for installation instructions), the code below will load it:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">load_ext</span> sql
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The sql extension is already loaded. To reload it, use:
+  %reload_ext sql
+</pre></div></div>
+</div>
+<p>Next, we connect to the <code class="docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code> database:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+sqlite:///courses_data.sqlite
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Connected: @courses_data.sqlite&#39;
+</pre></div></div>
+</div>
+<p>This database consists of a three tables: <code class="docutils literal notranslate"><span class="pre">students</span></code>, <code class="docutils literal notranslate"><span class="pre">mth141</span></code>, and <code class="docutils literal notranslate"><span class="pre">eng101</span></code>. The <code class="docutils literal notranslate"><span class="pre">students</span></code> table contains information (names, id numbers, majors) of some college students:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT *
+FROM students
+LIMIT 5;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+    </tr>
+    <tr>
+        <td>196</td>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>biology</td>
+    </tr>
+    <tr>
+        <td>165</td>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>biology</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>mathematics</td>
+    </tr>
+    <tr>
+        <td>136</td>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>mathematics</td>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>biology</td>
+    </tr>
+</table></div>
+</div>
+<p>The tables <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> contain student grades from two courses: MTH 141 and ENG 101, respectively. Each grade is associated to an id number of a student:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT *
+FROM mth141
+ORDER BY student_id;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>grade</th>
+    </tr>
+    <tr>
+        <td>109</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>127</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>145</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>157</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>C</td>
+    </tr>
+</table></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT *
+FROM eng101
+ORDER BY student_id;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>grade</th>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>165</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>189</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+<div class="section" id="INTERSECT">
+<h2>INTERSECT<a class="headerlink" href="#INTERSECT" title="Permalink to this headline">¶</a></h2>
+<p>Lets say that we want to know id numbers of students who took both courses, MTH 141 and ENG 101. We can accomplish this using the <code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code> operator. Given two queries, it returns records which are selected by both of them:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT student_id
+FROM mth141
+INTERSECT
+SELECT student_id
+FROM eng101
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+    </tr>
+    <tr>
+        <td>122</td>
+    </tr>
+    <tr>
+        <td>140</td>
+    </tr>
+    <tr>
+        <td>188</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="UNION">
+<h2>UNION<a class="headerlink" href="#UNION" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">UNION</span></code> operator combines two queries, returning records selected by either one of them. Identical records selected by both queries are returned only once.</p>
+<p>As an example, we can use <code class="docutils literal notranslate"><span class="pre">UNION</span></code> to get a list of id numbers of students who took either MTH 141 or ENG 101, or both:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT student_id
+FROM mth141
+UNION
+SELECT student_id
+FROM eng101
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+    </tr>
+    <tr>
+        <td>109</td>
+    </tr>
+    <tr>
+        <td>122</td>
+    </tr>
+    <tr>
+        <td>123</td>
+    </tr>
+    <tr>
+        <td>127</td>
+    </tr>
+    <tr>
+        <td>140</td>
+    </tr>
+    <tr>
+        <td>145</td>
+    </tr>
+    <tr>
+        <td>157</td>
+    </tr>
+    <tr>
+        <td>165</td>
+    </tr>
+    <tr>
+        <td>188</td>
+    </tr>
+    <tr>
+        <td>189</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="EXCEPT">
+<h2>EXCEPT<a class="headerlink" href="#EXCEPT" title="Permalink to this headline">¶</a></h2>
+<p>Given two queries, the <code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code> operator returns these records selected by the first query, which are not selected by the second query.</p>
+<p>Below we use it to get a list of id numbers of students who took MTH 141 but not ENG 101:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT student_id
+FROM mth141
+EXCEPT
+SELECT student_id
+FROM eng101
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+    </tr>
+    <tr>
+        <td>109</td>
+    </tr>
+    <tr>
+        <td>127</td>
+    </tr>
+    <tr>
+        <td>145</td>
+    </tr>
+    <tr>
+        <td>157</td>
+    </tr>
+</table></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Note</p>
+<p>The operators <code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code>, <code class="docutils literal notranslate"><span class="pre">UNION</span></code> and <code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code> can be used to combine only queries which return the same number of columns.</p>
+</div>
+</div>
+<div class="section" id="Joins">
+<h2>Joins<a class="headerlink" href="#Joins" title="Permalink to this headline">¶</a></h2>
+<p>Let say that we want to combine records from the <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> tables so that we get student id numbers in one column, MTH 141 grades in the second column, and ENG 101 grades in the last column. This can be done in a few different ways depending on what precisely we want to accomplish:</p>
+<p><strong>Case 1.</strong> We can get records of only these students who took both courses and have a grade for both MTH 141 and ENG 101.</p>
+<p><strong>Case 2.</strong> We can get records of all students who took MTH 141. The column with ENG 101 grades will contain either a grade, for students who took ENG 101, or NULL otherwise.</p>
+<p><strong>Case 3.</strong> We can get records of all students who took ENG 101, and populate the MTH 141 column with either grades or NULL values depending on whether a student took MTH 141 or not.</p>
+<p><strong>Case 4.</strong> We can get records of students who took either course. The MTH 141 and ENG 101 columns will be populated with grades wherever they exist, and with NULL values elsewhere.</p>
+<p>SQL lets us implement each of these scenarios using different types of table joins: the inner join in case 1, the left and right joins in cases 2 and 3, and the full outer join in case 4.</p>
+<div class="section" id="Inner-join">
+<h3>Inner join<a class="headerlink" href="#Inner-join" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> clause is used as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT column1, column2, ...
+FROM
+    left_table INNER JOIN right_table
+    ON condition;
+</pre></div>
+</div>
+<p>This clause returns combinations of every record of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with every record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> for which the specified condition is satisfied.</p>
+<p>For example, the query below returns combined records from tables <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> which have the same student id number:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT *
+FROM
+    mth141 INNER JOIN eng101
+    ON mth141.student_id = eng101.student_id;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>grade</th>
+        <th>student_id_1</th>
+        <th>grade_1</th>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>F</td>
+        <td>140</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>C</td>
+        <td>188</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+<p>Notice that to identify which column comes from which table we need to prefix each column name with the name of a table. E.g. <code class="docutils literal notranslate"><span class="pre">mth141.student_id</span></code> denotes column <code class="docutils literal notranslate"><span class="pre">student_id</span></code> in table <code class="docutils literal notranslate"><span class="pre">mth141</span></code>.</p>
+<p>The above query returns <code class="docutils literal notranslate"><span class="pre">student_id</span></code> column twice since this column appears in both tables. We can avoid this by specifying the columns we want to retrieve:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT mth141.student_id,
+       mth141.grade AS mth141_grade,
+       eng101.grade AS eng101_grade
+FROM
+    mth141 INNER JOIN eng101
+    ON mth141.student_id = eng101.student_id;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>mth141_grade</th>
+        <th>eng101_grade</th>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>A</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>F</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>C</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+<p>The condition in <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> (and other types of joins) does not need to test just equality of column values. For example, below we return records of students who took both courses, and received a different grade in each course:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT mth141.student_id,
+       mth141.grade AS mth141_grade,
+       eng101.grade AS eng101_grade
+FROM
+    mth141 INNER JOIN eng101
+    ON mth141.student_id = eng101.student_id AND mth141.grade != eng101.grade;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>mth141_grade</th>
+        <th>eng101_grade</th>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>F</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>C</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Left-join">
+<h3>Left join<a class="headerlink" href="#Left-join" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> clause is used as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT column1, column2, ...
+FROM
+   left_table LEFT JOIN right_table
+   ON condition;
+</pre></div>
+</div>
+<p>It combines every record of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with every record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> for which the given condition is satisfied. If a record in <code class="docutils literal notranslate"><span class="pre">left_table</span></code> does not have a match in <code class="docutils literal notranslate"><span class="pre">right_table</span></code> then it is combined with NULL values.</p>
+<p>For example, we can use <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> to list MTH 141 students and include additional information whether they took ENG 101, and if so what grades they obtained.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT mth141.student_id,
+       mth141.grade AS mth141_grade,
+       eng101.grade AS eng101_grade
+FROM
+    mth141 LEFT JOIN eng101
+    ON mth141.student_id = eng101.student_id;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>mth141_grade</th>
+        <th>eng101_grade</th>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>A</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>109</td>
+        <td>C</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>127</td>
+        <td>A</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>F</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>145</td>
+        <td>C</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>157</td>
+        <td>F</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>C</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Right-join">
+<h3>Right join<a class="headerlink" href="#Right-join" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>, but with roles of the <code class="docutils literal notranslate"><span class="pre">right_table</span></code> and <code class="docutils literal notranslate"><span class="pre">left_table</span></code> reversed: if a record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> does not have a matching record in the <code class="docutils literal notranslate"><span class="pre">left_table</span></code>, then it gets matched with NULL values.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code> is a standard part of SQL, it is not implemented by SQLite. This is a minor inconvenience since we can get the same results by switching tables and using <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>. Below we do this to get grades of ENG 101 students, supplements by MTH 141 grades if they exist:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT eng101.student_id,
+       mth141.grade AS mth141_grade,
+       eng101.grade AS eng101_grade
+FROM
+    eng101 LEFT JOIN mth141
+    ON mth141.student_id = eng101.student_id;
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>mth141_grade</th>
+        <th>eng101_grade</th>
+    </tr>
+    <tr>
+        <td>165</td>
+        <td>None</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>None</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>A</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>189</td>
+        <td>None</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>F</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>C</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Full-outer-join">
+<h3>Full outer join<a class="headerlink" href="#Full-outer-join" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">OUTER</span> <span class="pre">JOIN</span></code> is a combination of <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> and <code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code>. It matches all records of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with all records of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> based on a specified condition. If a record of either of the two tables does not have a match in the other table, it is matched with NULL values.</p>
+<p>Again, while <code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">OUTER</span> <span class="pre">JOIN</span></code> is a standard SQL feature, SQLite does not implement it. However, we can get the same results using <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> and <code class="docutils literal notranslate"><span class="pre">UNION</span></code>. For example, below we compute the full outer join of the <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> tables for records with the same student id number:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT mth141.student_id AS student_id,
+       mth141.grade AS mth141_grade,
+       eng101.grade AS eng101_grade
+
+FROM
+     mth141 LEFT JOIN eng101
+     ON mth141.student_id = eng101.student_id
+UNION
+SELECT eng101.student_id AS student_id,
+       mth141.grade AS mth141_grade,
+       eng101.grade AS eng101_grade
+FROM
+     eng101 LEFT JOIN mth141
+     ON mth141.student_id = eng101.student_id
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>mth141_grade</th>
+        <th>eng101_grade</th>
+    </tr>
+    <tr>
+        <td>109</td>
+        <td>C</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>A</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>None</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>127</td>
+        <td>A</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>F</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>145</td>
+        <td>C</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>157</td>
+        <td>F</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>165</td>
+        <td>None</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>C</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>189</td>
+        <td>None</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+</div>
+</div>
+<div class="section" id="Multiple-joins">
+<h2>Multiple joins<a class="headerlink" href="#Multiple-joins" title="Permalink to this headline">¶</a></h2>
+<p>We can combine more that two tables by iterating the join operation. For example, below we use <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> twice to get grades of students who took both MTH 141 and ENG 101 combined with student names and majors:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT students.*,
+       mth141.grade AS mth141_grade,
+       eng101.grade AS eng101_grade
+FROM
+       students INNER JOIN mth141 INNER JOIN eng101
+       ON students.student_id = mth141.student_id AND students.student_id = eng101.student_id
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+        <th>mth141_grade</th>
+        <th>eng101_grade</th>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>biology</td>
+        <td>A</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>computer science</td>
+        <td>F</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>Randall</td>
+        <td>Lindbloom</td>
+        <td>mathematics</td>
+        <td>C</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+<p>Here is a more complex example. We retrieve grades of students who took either of the two courses and combine them with student names and majors. Notice that the first <code class="docutils literal notranslate"><span class="pre">FROM</span></code> is followed by a join of a query getting all grades and the <code class="docutils literal notranslate"><span class="pre">students</span></code> table. To identify columns of the query getting grades, we give it a name <code class="docutils literal notranslate"><span class="pre">combined_grades</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+SELECT students.*,
+       combined_grades.mth141_grade,
+       combined_grades.eng101_grade
+
+FROM (
+
+      SELECT mth141.student_id AS student_id,
+             mth141.grade AS mth141_grade,
+             eng101.grade AS eng101_grade
+
+      FROM
+           mth141 LEFT JOIN eng101
+          ON mth141.student_id = eng101.student_id
+      UNION
+      SELECT eng101.student_id AS student_id,
+            mth141.grade AS mth141_grade,
+            eng101.grade AS eng101_grade
+      FROM
+      eng101 LEFT JOIN mth141
+      ON mth141.student_id = eng101.student_id
+
+     ) AS combined_grades
+
+     INNER JOIN students
+
+ON combined_grades.student_id = students.student_id
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///courses_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+        <th>mth141_grade</th>
+        <th>eng101_grade</th>
+    </tr>
+    <tr>
+        <td>165</td>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>biology</td>
+        <td>None</td>
+        <td>F</td>
+    </tr>
+    <tr>
+        <td>123</td>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>mathematics</td>
+        <td>None</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>biology</td>
+        <td>A</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>109</td>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>mathematics</td>
+        <td>C</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>189</td>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>mathematics</td>
+        <td>None</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>127</td>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>biology</td>
+        <td>A</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>140</td>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>computer science</td>
+        <td>F</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>145</td>
+        <td>Ilona</td>
+        <td>Rabe</td>
+        <td>computer science</td>
+        <td>C</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>157</td>
+        <td>Wilbert</td>
+        <td>Haskell</td>
+        <td>computer science</td>
+        <td>F</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>188</td>
+        <td>Randall</td>
+        <td>Lindbloom</td>
+        <td>mathematics</td>
+        <td>C</td>
+        <td>A</td>
+    </tr>
+</table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../PT-functions.html" class="btn btn-neutral float-right" title="Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql_queries.html" class="btn btn-neutral float-left" title="SQL queries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Apr 11, 2020.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
