@@ -901,7 +901,7 @@ Done.
 </table></div>
 </div>
 <p>Notice that to identify which column comes from which table we need to prefix each column name with the name of a table. E.g. <code class="docutils literal notranslate"><span class="pre">mth141.student_id</span></code> denotes column <code class="docutils literal notranslate"><span class="pre">student_id</span></code> in table <code class="docutils literal notranslate"><span class="pre">mth141</span></code>.</p>
-<p>The above query returns <code class="docutils literal notranslate"><span class="pre">student_id</span></code> column twice since this column appears in both tables. We can avoid this by specifying the columns we want to retrieve:</p>
+<p>The above query returns <code class="docutils literal notranslate"><span class="pre">student_id</span></code> column twice since this column appears in both tables. Also, names of columns with grades are not informative. We can fix this by specifying which columns we want to retrieve and using aliases:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
