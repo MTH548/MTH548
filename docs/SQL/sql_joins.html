@@ -431,7 +431,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>To execute SQL code in Jupyter Notebook we will use the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> notebook extension. Assuming that this extension is already installed (see <a class="reference internal" href="sql_basics.html"><span class="doc">SQL Basics</span></a> for installation instructions), the code below will load it:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -450,7 +450,7 @@ The sql extension is already loaded. To reload it, use:
 </div>
 <p>Next, we connect to the <code class="docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code> database:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -460,7 +460,7 @@ sqlite:///courses_data.sqlite
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -847,7 +847,7 @@ FROM
 <p>This clause returns combinations of every record of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with every record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> for which the specified condition is satisfied.</p>
 <p>For example, the query below returns combined records from tables <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> which have the same student id number:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -869,7 +869,7 @@ Done.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -879,6 +879,12 @@ Done.
         <th>grade</th>
         <th>student_id_1</th>
         <th>grade_1</th>
+    </tr>
+    <tr>
+        <td>122</td>
+        <td>A</td>
+        <td>122</td>
+        <td>A</td>
     </tr>
     <tr>
         <td>140</td>
@@ -1485,7 +1491,7 @@ Done.
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 11, 2020.
+        Last updated on Apr 12, 2020.
       </span>
 
     </p>
