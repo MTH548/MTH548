@@ -23,6 +23,7 @@ MTH 448/548 Data Oriented Computing
    SQL/sql_basics
    SQL/sql_queries
    SQL/sql_joins
+   SQL/sql_with_python
    PT-functions
 
 
