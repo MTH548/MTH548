@@ -12,6 +12,7 @@ MTH 448/548 Data Oriented Computing
 
    report_guide
    useful_links
+   Plotly/plotly_basics
    regular_expressions
    re_functions
    requests
@@ -25,6 +26,7 @@ MTH 448/548 Data Oriented Computing
    SQL/sql_joins
    SQL/sql_with_python
    PT-functions
+
 
 
 Indices and tables

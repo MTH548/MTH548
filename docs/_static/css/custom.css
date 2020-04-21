@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap');
 
-div.nboutput.container {
-    max-height: 400px;
+div.output_area.docutils.container {
+    max-height: 300px;
     overflow: auto;
     margin-top: 15px!important;
     margin-bottom: 10px!important;
     color: darkslategray;
+}
+
+div.output_area.rendered_html.docutils.container {
+  max-height: 700px;
 }
 
 div.nbinput.container {
