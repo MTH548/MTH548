@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Regular expressions" href="../regular_expressions.html" />
+    <link rel="next" title="Regular expressions" href="../Regex/regex_toc.html" />
     <link rel="prev" title="Plotly basics" href="plotly_basics.html" /> 
 </head>
 
@@ -91,24 +91,23 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plotly_basics.html">Plotly basics</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotly Express</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Plots-from-dataframes">Plots from dataframes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Customizing-plots">Customizing plots</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="plotly_toc.html">Plotly</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html">Plotly basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotly Express</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Plots-from-dataframes">Plots from dataframes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Customizing-plots">Customizing plots</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../regular_expressions.html">Regular expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../re_functions.html">Functions in the re module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_basics.html">SQL basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_queries.html">SQL queries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_joins.html">SQL joins, union, intersection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_with_python.html">SQL with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PT-functions.html">Functions</a></li>
 </ul>
 
@@ -154,6 +153,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+          <li><a href="plotly_toc.html">Plotly</a> &raquo;</li>
         
       <li>Plotly Express</li>
     
@@ -422,7 +423,7 @@ div.rendered_html tbody tr:hover {
 <h1>Plotly Express<a class="headerlink" href="#Plotly-Express" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://plotly.com/python/plotly-express/">Plotly Express</a> is a Plotly module with tools which simplify creation of many types of plots. It is especially useful for visualizing data coming from Pandas dataframes.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -432,7 +433,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Plotly Express includes sample sets of data which will use here to illustrate its feature. The function <code class="docutils literal notranslate"><span class="pre">px.data.tips()</span></code> returns a dataframe with data on restaurant visits: the total bill amount, tip amount, sex of the person paying the bill, whether the visiting group included smokers, week day and time (dinner or lunch) of the visit, and the size of the group:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -442,7 +443,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -596,7 +597,7 @@ div.rendered_html tbody tr:hover {
                  <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
                  <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span>
                  <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
-                 <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>             <span class="c1"># assign marker sizes based on values of this column</span>
+                 <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>   <span class="c1"># assign marker sizes based on values of this column</span>
                  <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -622,12 +623,12 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span>
-                 <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
-                 <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+                 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+                 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span>
                  <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
                  <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
-                 <span class="n">facet_row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span>       <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
-                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
+                 <span class="n">facet_row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span>   <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
+                 <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -656,8 +657,8 @@ div.rendered_html tbody tr:hover {
                  <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
                  <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
                  <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
-                 <span class="n">facet_row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span>       <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
-                 <span class="n">facet_col</span> <span class="o">=</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span>        <span class="c1"># columns of subplots depending on &quot;sex&quot; value</span>
+                 <span class="n">facet_row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span>   <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
+                 <span class="n">facet_col</span> <span class="o">=</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span>    <span class="c1"># columns of subplots depending on &quot;sex&quot; value</span>
                  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -721,9 +722,9 @@ div.rendered_html tbody tr:hover {
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
 
 <span class="c1"># create a trace</span>
-<span class="n">line</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
-                  <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
-                  <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">,</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+                  <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+                  <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;lines&quot;</span><span class="p">,</span>
                   <span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
                   <span class="n">line_width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
                   <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
@@ -793,10 +794,10 @@ div.rendered_html tbody tr:hover {
 <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
 
 <span class="c1"># change colors of markers</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DarkOrange&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#EF553B&#39;</span><span class="p">})</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;RoyalBlue&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#00cc96&#39;</span><span class="p">})</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;Chartreuse&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#ab63fa&#39;</span><span class="p">})</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DeepPink&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#636efa&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;DarkOrange&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#EF553B&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;RoyalBlue&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#00cc96&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;Chartreuse&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#ab63fa&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;DeepPink&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#636efa&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -824,7 +825,7 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../regular_expressions.html" class="btn btn-neutral float-right" title="Regular expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Regex/regex_toc.html" class="btn btn-neutral float-right" title="Regular expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="plotly_basics.html" class="btn btn-neutral float-left" title="Plotly basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

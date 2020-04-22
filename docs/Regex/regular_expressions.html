@@ -17,33 +17,33 @@
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script src="_static/clipboard.min.js"></script>
-        <script src="_static/copybutton.js"></script>
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
 
   
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Functions in the re module" href="re_functions.html" />
-    <link rel="prev" title="Plotly Express" href="Plotly/plotly_express.html" /> 
+    <link rel="prev" title="Regular expressions" href="regex_toc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -57,7 +57,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> MTH 448/548
+            <a href="../index.html" class="icon icon-home"> MTH 448/548
           
 
           
@@ -70,7 +70,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -89,35 +89,34 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="report_guide.html">Project Report Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="useful_links.html">Useful links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Plotly/plotly_basics.html">Plotly basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Plotly/plotly_express.html">Plotly Express</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Regular expressions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Prelude:-raw-strings">Prelude: raw strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Visualizing-regular-expressions">Visualizing regular expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Character-classes">Character classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Repetitions">Repetitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Non-greedy-matches">Non-greedy matches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Match-groups">Match groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Anchors">Anchors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Flags">Flags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Inserting-comments">Inserting comments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Matching-special-characters">Matching special characters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="regex_toc.html">Regular expressions</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Regular expressions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Prelude:-raw-strings">Prelude: raw strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Visualizing-regular-expressions">Visualizing regular expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Character-classes">Character classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Repetitions">Repetitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Non-greedy-matches">Non-greedy matches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Match-groups">Match groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Anchors">Anchors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Flags">Flags</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Inserting-comments">Inserting comments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Matching-special-characters">Matching special characters</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="requests.html">Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="beautiful_soup.html">Beautiful Soup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scrapping_course_listings.html">Scrapping course listings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="json.html">JSON</a></li>
-<li class="toctree-l1"><a class="reference internal" href="escape_from_jupyter.html">Escape from Jupyter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nhtsa_complaints.html">NHTSA complaints database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SQL/sql_basics.html">SQL Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SQL/sql_queries.html">SQL queries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SQL/sql_joins.html">SQL joins, union, intersection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SQL/sql_with_python.html">SQL with Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PT-functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings.html">Scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PT-functions.html">Functions</a></li>
 </ul>
 
             
@@ -132,7 +131,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">MTH 448/548</a>
+          <a href="../index.html">MTH 448/548</a>
         
       </nav>
 
@@ -161,7 +160,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">MTH548</a> &raquo;</li>
+      <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+          <li><a href="regex_toc.html">Regular expressions</a> &raquo;</li>
         
       <li>Regular expressions</li>
     
@@ -170,7 +171,7 @@
         
           
             
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/regular_expressions.ipynb" class="fa fa-github"> View on GitHub</a>
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Regex/regular_expressions.ipynb" class="fa fa-github"> View on GitHub</a>
             
           
         
@@ -2417,7 +2418,7 @@ Like a diamond in the sky.</code></div>
         <a href="re_functions.html" class="btn btn-neutral float-right" title="Functions in the re module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Plotly/plotly_express.html" class="btn btn-neutral float-left" title="Plotly Express" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="regex_toc.html" class="btn btn-neutral float-left" title="Regular expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2427,7 +2428,7 @@ Like a diamond in the sky.</code></div>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 21, 2020.
+        Last updated on Apr 22, 2020.
       </span>
 
     </p>

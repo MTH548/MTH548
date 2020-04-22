@@ -43,7 +43,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Plotly Express" href="plotly_express.html" />
-    <link rel="prev" title="Useful links" href="../useful_links.html" /> 
+    <link rel="prev" title="Plotly" href="plotly_toc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,28 +91,27 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotly basics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Traces-and-figures">Traces and figures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Figure-layout">Figure layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Underscore-Notation">Underscore Notation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Updating-layout">Updating layout</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Subplots">Subplots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Templates">Templates</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="plotly_toc.html">Plotly</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotly basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Traces-and-figures">Traces and figures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Figure-layout">Figure layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Underscore-Notation">Underscore Notation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Updating-layout">Updating layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Subplots">Subplots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Templates">Templates</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="plotly_express.html">Plotly Express</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../regular_expressions.html">Regular expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../re_functions.html">Functions in the re module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_express.html">Plotly Express</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings.html">Scrapping course listings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_basics.html">SQL Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_queries.html">SQL queries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_joins.html">SQL joins, union, intersection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_with_python.html">SQL with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../PT-functions.html">Functions</a></li>
 </ul>
 
@@ -158,6 +157,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+          <li><a href="plotly_toc.html">Plotly</a> &raquo;</li>
         
       <li>Plotly basics</li>
     
@@ -524,9 +525,9 @@ div.rendered_html tbody tr:hover {
                       <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>            <span class="c1"># plot lines and markers</span>
                       <span class="n">line</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span>        <span class="c1"># dictionary of line properties</span>
                               <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
-                      <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;symbol&#39;</span> <span class="p">:</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of marker properties</span>
-                                <span class="s1">&#39;color&#39;</span> <span class="p">:</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span>
-                                 <span class="s1">&#39;size&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+                      <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;symbol&#39;</span><span class="p">:</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of marker properties</span>
+                                <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">sin_plot</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -596,13 +597,13 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
-                <span class="n">layout</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span> <span class="p">:</span> <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>      <span class="c1"># figure title properties</span>
-                                    <span class="s1">&#39;font&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span> <span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
-                                              <span class="s1">&#39;color&#39;</span> <span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">}},</span>
-                          <span class="s1">&#39;legend&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span> <span class="p">:</span> <span class="s2">&quot;Legend&quot;</span><span class="p">},</span> <span class="c1"># legend properties</span>
+                <span class="n">layout</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>     <span class="c1"># figure title properties</span>
+                                    <span class="s1">&#39;font&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+                                              <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">}},</span>
+                          <span class="s1">&#39;legend&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Legend&quot;</span><span class="p">},</span> <span class="c1"># legend properties</span>
                                      <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
-                          <span class="s1">&#39;width&#39;</span> <span class="p">:</span> <span class="mi">750</span><span class="p">,</span>                             <span class="c1"># figure width</span>
-                          <span class="s1">&#39;height&#39;</span> <span class="p">:</span> <span class="mi">200</span><span class="p">})</span>                           <span class="c1"># figure height</span>
+                          <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">750</span><span class="p">,</span>                            <span class="c1"># figure width</span>
+                          <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">})</span>                          <span class="c1"># figure height</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1233,7 +1234,7 @@ div.rendered_html tbody tr:hover {
         <a href="plotly_express.html" class="btn btn-neutral float-right" title="Plotly Express" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../useful_links.html" class="btn btn-neutral float-left" title="Useful links" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="plotly_toc.html" class="btn btn-neutral float-left" title="Plotly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -12,20 +12,15 @@ MTH 448/548 Data Oriented Computing
 
    report_guide
    useful_links
-   Plotly/plotly_basics
-   Plotly/plotly_express
-   regular_expressions
-   re_functions
+   Plotly/plotly_toc
+   Regex/regex_toc
    requests
    beautiful_soup
    scrapping_course_listings
    json
    escape_from_jupyter
    nhtsa_complaints
-   SQL/sql_basics
-   SQL/sql_queries
-   SQL/sql_joins
-   SQL/sql_with_python
+   SQL/sql_toc
    PT-functions
 
 

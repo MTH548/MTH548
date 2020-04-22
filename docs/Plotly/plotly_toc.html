@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Example: Code structure &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Plotly &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example: Code sequencing" href="report5.html" />
-    <link rel="prev" title="Example: Math formatting" href="report4.html" /> 
+    <link rel="next" title="Plotly basics" href="plotly_basics.html" />
+    <link rel="prev" title="Useful links" href="../useful_links.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,33 +89,13 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../report_guide.html">Project Report Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#collaboration">Collaboration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#using-external-resources">Using external resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#additional-python-features">Additional Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#report-grading-rubrics">Report grading rubrics</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../report_guide.html#report-style-guide">Report Style Guide</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-introduction">Report introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-conclusions">Report conclusions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-organization">Report organization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#references">References</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#math-formatting">Math formatting</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../report_guide.html#code-structure">Code structure</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-sequencing">Code sequencing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-comments">Code comments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#execution-errors">Execution errors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#output-size">Output size</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#output-formatting">Output formatting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#graphs-and-plots">Graphs and plots</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotly</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html">Plotly basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_express.html">Plotly Express</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
@@ -170,16 +150,14 @@
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
         
-          <li><a href="../report_guide.html">Project Report Guide</a> &raquo;</li>
-        
-      <li>Example: Code structure</li>
+      <li>Plotly</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Report_guide/report7.rst" class="fa fa-github"> View on GitHub</a>
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Plotly/plotly_toc.rst" class="fa fa-github"> View on GitHub</a>
             
           
         
@@ -217,17 +195,27 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="example-code-structure">
-<h1>Example: Code structure<a class="headerlink" href="#example-code-structure" title="Permalink to this headline">¶</a></h1>
-<p><strong>Bad:</strong> The example below includes a long block of Python code which defines a few functions
-and also prints and plots some data. It takes effort to unravel what this code does.</p>
-<a href = "../_static/report_guide/report_sample7a.html">
-<img src="../_static/report_guide/report_sample7a.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a><p><strong>Good:</strong> The same code as above is split into a few code cells. Beside simplifying the code structure
-it is easier to explain in this setting what is the purpose of each bit of code.</p>
-<a href = "../_static/report_guide/report_sample7b.html">
-<img src="../_static/report_guide/report_sample7b.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a></div>
+<div class="section" id="plotly">
+<h1>Plotly<a class="headerlink" href="#plotly" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="plotly_basics.html">Plotly basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html#Traces-and-figures">Traces and figures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html#Figure-layout">Figure layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html#Underscore-Notation">Underscore Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html#Updating-layout">Updating layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html#Subplots">Subplots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_basics.html#Templates">Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plotly_express.html">Plotly Express</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plotly_express.html#Plots-from-dataframes">Plots from dataframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotly_express.html#Customizing-plots">Customizing plots</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 
 
            </div>
@@ -237,10 +225,10 @@ it is easier to explain in this setting what is the purpose of each bit of code.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="report5.html" class="btn btn-neutral float-right" title="Example: Code sequencing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="plotly_basics.html" class="btn btn-neutral float-right" title="Plotly basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="report4.html" class="btn btn-neutral float-left" title="Example: Math formatting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../useful_links.html" class="btn btn-neutral float-left" title="Useful links" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
