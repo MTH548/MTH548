@@ -13,6 +13,7 @@ MTH 448/548 Data Oriented Computing
    report_guide
    useful_links
    Plotly/plotly_basics
+   Plotly/plotly_express
    regular_expressions
    re_functions
    requests
