@@ -434,7 +434,7 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="c1"># display the web page in the notebook</span>
 <span class="kn">import</span> <span class="nn">IPython</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.buffalo.edu/cas/math/people/grad-directory.html&quot;</span>
-<span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">IFrame</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">720</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">)</span>
+<span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">IFrame</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">720</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3024,7 +3024,7 @@ None
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ptags</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>   <span class="c1"># skip paragraphs with no b-tags</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># skip paragraphs with no b-tags</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">get_text</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -3061,7 +3061,7 @@ Deutsch, Dustin
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">grad_links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
-<span class="n">grad_links</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="c1"># show the first 10 links</span>
+<span class="n">grad_links</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>  <span class="c1"># show the first 10 links</span>
 </pre></div>
 </div>
 </div>
@@ -3324,7 +3324,7 @@ Deutsch, Dustin
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">table_url</span> <span class="o">=</span> <span class="s2">&quot;https://www.mth548.org/_static/table.html&quot;</span>
-<span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">IFrame</span><span class="p">(</span><span class="n">table_url</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">700</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">85</span><span class="p">)</span>
+<span class="n">IPython</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">IFrame</span><span class="p">(</span><span class="n">table_url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">85</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

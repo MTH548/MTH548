@@ -521,7 +521,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">p</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">photo_url</span><span class="p">)</span>
-<span class="n">photo</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">content</span> <span class="c1"># get the binary content of the file</span>
+<span class="n">photo</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">content</span>  <span class="c1"># get the binary content of the file</span>
 
 <span class="c1"># save the photo to a file</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;northern_cardinal.jpg&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -601,7 +601,6 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://httpbin.org/get&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
 <span class="c1"># check the data we sent to the website</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-
 </pre></div>
 </div>
 </div>
@@ -638,8 +637,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 
 <span class="c1"># define a dictionary with data to be sent</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span><span class="p">:</span> <span class="s2">&quot;448, 548&quot;</span><span class="p">,</span>  <span class="c1"># search for integer sequences containing 448 and 548</span>
-          <span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span>     <span class="c1"># return results as plain text (and not HTML)</span>
-         <span class="p">}</span>
+          <span class="s2">&quot;fmt&quot;</span><span class="p">:</span> <span class="s2">&quot;text&quot;</span><span class="p">}</span>     <span class="c1"># return results as plain text (and not HTML)</span>
 
 <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span> <span class="c1"># print a fragment of the response</span>
@@ -693,7 +691,7 @@ data to the server - e.g. to securely send a password or upload a file - client
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Stanislaw&#39;</span><span class="p">,</span> <span class="s1">&#39;second_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Lem&#39;</span><span class="p">}</span>
 
 <span class="c1"># send a POST request</span>
-<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>

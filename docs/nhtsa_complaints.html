@@ -695,16 +695,15 @@ DateComplaintFiled:  /Date(970718400000-0400)/
 <span class="c1"># split the date into a timestamp and a time zone indicator</span>
 <span class="n">timestamp</span><span class="p">,</span> <span class="n">time_zone</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\d*)(.*)&quot;</span><span class="p">,</span> <span class="n">date</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
 
-
 <span class="c1"># the datetime.fromtimestampt function expects timestamp expressed in seconds,</span>
 <span class="c1"># so we need to round up miliseconds:</span>
-<span class="n">seconds</span> <span class="o">=</span> <span class="n">timestamp</span><span class="o">//</span><span class="mi">1000</span>
+<span class="n">seconds</span> <span class="o">=</span> <span class="n">timestamp</span> <span class="o">//</span> <span class="mi">1000</span>
 
 <span class="c1"># divide the timezone indicator by 100 to get the number of hours</span>
-<span class="n">time_zone_hours</span> <span class="o">=</span> <span class="n">time_zone</span><span class="o">/</span><span class="mi">100</span>
+<span class="n">time_zone_hours</span> <span class="o">=</span> <span class="n">time_zone</span> <span class="o">/</span> <span class="mi">100</span>
 
 <span class="c1"># define timezone of the local time of the databease,</span>
-<span class="n">local</span> <span class="o">=</span> <span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span> <span class="o">=</span> <span class="n">time_zone_hours</span><span class="p">))</span>
+<span class="n">local</span> <span class="o">=</span> <span class="n">timezone</span><span class="p">(</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">time_zone_hours</span><span class="p">))</span>
 
 <span class="c1"># get date and time from the timestamp</span>
 <span class="n">date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">seconds</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="n">local</span><span class="p">)</span>

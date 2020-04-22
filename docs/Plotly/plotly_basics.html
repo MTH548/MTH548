@@ -451,15 +451,15 @@ div.rendered_html tbody tr:hover {
 
 <span class="c1"># create a trace</span>
 <span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-                      <span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span>                           <span class="c1"># x-coordinates of points</span>
-                      <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>                   <span class="c1"># y-coordinates</span>
-                      <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;markers&#39;</span><span class="p">,</span>                <span class="c1"># use markers to plot points</span>
-                      <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;symbol&#39;</span> <span class="p">:</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of marker properties</span>
+                      <span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>                           <span class="c1"># x-coordinates of points</span>
+                      <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>                   <span class="c1"># y-coordinates</span>
+                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>                <span class="c1"># use markers to plot points</span>
+                      <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;symbol&#39;</span> <span class="p">:</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of marker properties</span>
                                 <span class="s1">&#39;color&#39;</span> <span class="p">:</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span>
                                 <span class="s1">&#39;size&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
 
 <span class="c1"># create a figure with the trace</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">sin_plot</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">sin_plot</span><span class="p">)</span>
 <span class="c1"># display the figure</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -487,13 +487,13 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-                      <span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span>
-                      <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
-                      <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;lines&#39;</span><span class="p">,</span>           <span class="c1"># connect points with line segments</span>
-                      <span class="n">line</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of line properties</span>
+                      <span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>
+                      <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>           <span class="c1"># connect points with line segments</span>
+                      <span class="n">line</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of line properties</span>
                               <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">sin_plot</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">sin_plot</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -520,12 +520,12 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
-                      <span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span>
-                      <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
-                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>            <span class="c1"># plot lines and markers</span>
-                      <span class="n">line</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span>        <span class="c1"># dictionary of line properties</span>
+                      <span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>
+                      <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>         <span class="c1"># plot lines and markers</span>
+                      <span class="n">line</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span>       <span class="c1"># dictionary of line properties</span>
                               <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
-                      <span class="n">marker</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;symbol&#39;</span><span class="p">:</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of marker properties</span>
+                      <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;symbol&#39;</span><span class="p">:</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of marker properties</span>
                                 <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span>
                                 <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
 
@@ -556,20 +556,20 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 
 <span class="c1"># trace of sine function</span>
-<span class="n">cos_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span>
-                      <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+<span class="n">cos_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>
+                      <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
                       <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
                       <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sin(t)&#39;</span><span class="p">)</span>  <span class="c1"># name of the trace for the legend</span>
 
 <span class="c1"># trace of cosine function</span>
-<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span>
-                      <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>
+                      <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
                       <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
                       <span class="n">name</span><span class="o">=</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span>  <span class="c1"># name of the trace for the legend</span>
 
 
 <span class="c1"># a figure with a list of traces to be displayed</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">])</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">])</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -596,8 +596,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
-                <span class="n">layout</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>     <span class="c1"># figure title properties</span>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
+                <span class="n">layout</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>       <span class="c1"># figure title properties</span>
                                     <span class="s1">&#39;font&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
                                               <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Green&#39;</span><span class="p">}},</span>
                           <span class="s1">&#39;legend&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;Legend&quot;</span><span class="p">},</span> <span class="c1"># legend properties</span>
@@ -952,14 +952,14 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
-                <span class="n">layout_title_text</span> <span class="o">=</span>  <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>
-                <span class="n">layout_title_font_size</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span>
-                <span class="n">layout_title_font_color</span> <span class="o">=</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span>
-                <span class="n">layout_legend_title_text</span> <span class="o">=</span> <span class="s2">&quot;Legend&quot;</span><span class="p">,</span>
-                <span class="n">layout_legend_y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-                <span class="n">layout_width</span> <span class="o">=</span> <span class="mi">750</span><span class="p">,</span>
-                <span class="n">layout_height</span> <span class="o">=</span>  <span class="mi">200</span><span class="p">)</span>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
+                <span class="n">layout_title_text</span><span class="o">=</span> <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>
+                <span class="n">layout_title_font_size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span>
+                <span class="n">layout_title_font_color</span><span class="o">=</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span>
+                <span class="n">layout_legend_title_text</span><span class="o">=</span><span class="s2">&quot;Legend&quot;</span><span class="p">,</span>
+                <span class="n">layout_legend_y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">layout_width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span>
+                <span class="n">layout_height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -987,16 +987,15 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create a figure</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
-                <span class="n">layout_title_text</span> <span class="o">=</span>  <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>
-                <span class="n">layout_title_font_size</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span>
-                <span class="n">layout_title_font_color</span> <span class="o">=</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span>
-                <span class="n">layout_width</span> <span class="o">=</span> <span class="mi">750</span><span class="p">,</span>
-                <span class="n">layout_height</span> <span class="o">=</span>  <span class="mi">200</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
+                <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>
+                <span class="n">layout_title_font_size</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span>
+                <span class="n">layout_title_font_color</span><span class="o">=</span><span class="s1">&#39;Green&#39;</span><span class="p">,</span>
+                <span class="n">layout_width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span>
+                <span class="n">layout_height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 
 <span class="c1"># modify some title properties</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span> <span class="o">=</span> <span class="s2">&quot;New title&quot;</span><span class="p">,</span>
-                  <span class="n">title_font_color</span> <span class="o">=</span> <span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;New title&quot;</span><span class="p">,</span> <span class="n">title_font_color</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1024,18 +1023,19 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create a figure</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">layout_width</span> <span class="o">=</span> <span class="mi">350</span><span class="p">,</span>
-                <span class="n">layout_height</span> <span class="o">=</span>  <span class="mi">350</span><span class="p">,</span>
-                <span class="n">layout_yaxis_scaleanchor</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>  <span class="c1"># set scaleanchor=&quot;x&quot; and scaleratio=1</span>
-                <span class="n">layout_yaxis_scaleratio</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>     <span class="c1"># to plot x and y axes using the same scale</span>
-                <span class="n">layout_showlegend</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>       <span class="c1"># do not show legend</span>
-                <span class="n">layout_title_text</span> <span class="o">=</span> <span class="s2">&quot;Circles&quot;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+                <span class="n">layout_width</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span>
+                <span class="n">layout_height</span><span class="o">=</span><span class="mi">350</span><span class="p">,</span>
+                <span class="n">layout_yaxis_scaleanchor</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>  <span class="c1"># set scaleanchor=&quot;x&quot; and scaleratio=1</span>
+                <span class="n">layout_yaxis_scaleratio</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>     <span class="c1"># to plot x and y axes using the same scale</span>
+                <span class="n">layout_showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>       <span class="c1"># do not show legend</span>
+                <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;Circles&quot;</span><span class="p">)</span>
 
 <span class="c1"># create traces</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
-<span class="n">circle1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
-<span class="n">circle2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.7</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.7</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;Green&#39;</span><span class="p">)</span>
-<span class="n">circle3</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;Blue&#39;</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">circle1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;Red&#39;</span><span class="p">)</span>
+<span class="n">circle2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.7</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.7</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;Green&#39;</span><span class="p">)</span>
+<span class="n">circle3</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;Blue&#39;</span><span class="p">)</span>
 
 <span class="c1"># add traces to the figure</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">circle1</span><span class="p">)</span>
@@ -1067,25 +1067,26 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
 
 <span class="c1"># create a figure with subplots</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>                       <span class="c1"># number of rows with subplots</span>
-                    <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>                       <span class="c1"># number of columns</span>
-                    <span class="n">subplot_titles</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;sin(t)&#39;</span><span class="p">,</span>     <span class="c1"># list of subplot titles</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span>
+                    <span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># number of rows with subplots</span>
+                    <span class="n">cols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="c1"># number of columns</span>
+                    <span class="n">subplot_titles</span><span class="o">=</span><span class="p">(</span>
+                                    <span class="s1">&#39;sin(t)&#39;</span><span class="p">,</span>  <span class="c1"># list of subplot titles</span>
                                     <span class="s2">&quot;sin(2t)&quot;</span><span class="p">,</span>
                                     <span class="s2">&quot;sin(3t)&quot;</span><span class="p">,</span>
                                     <span class="s2">&quot;sin(4t)&quot;</span><span class="p">))</span>
 
 <span class="c1"># make_subplots does not accept the layout argument, but we can</span>
 <span class="c1"># use fig.update_layout() to modify the layout of the figure</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mi">700</span><span class="p">,</span>
-                  <span class="n">height</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
-                  <span class="n">showlegend</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>  <span class="c1"># do not show legend</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+                  <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># do not show legend</span>
 
 <span class="c1"># create traces</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">plot1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span> <span class="p">)</span>
-<span class="n">plot2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
-<span class="n">plot3</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
-<span class="n">plot4</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
+<span class="n">plot1</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
+<span class="n">plot2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
+<span class="n">plot3</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
+<span class="n">plot4</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">)</span>
 
 <span class="c1"># add traces to subplots</span>
 <span class="c1"># subplot rows and columns are numbered starting with 1, not 0</span>
@@ -1121,17 +1122,18 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 
-<span class="n">cos_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sin(t)&#39;</span><span class="p">)</span>
-<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span>
+<span class="n">cos_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;sin(t)&#39;</span><span class="p">)</span>
+<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;cos(t)&#39;</span><span class="p">)</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
-                <span class="n">layout_width</span> <span class="o">=</span> <span class="mi">750</span><span class="p">,</span>
-                <span class="n">layout_height</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
-                <span class="n">layout_margin_l</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>        <span class="c1"># left margin of the figure</span>
-                <span class="n">layout_margin_r</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>        <span class="c1"># right margin</span>
-                <span class="n">layout_margin_t</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>        <span class="c1"># top margin</span>
-                <span class="n">layout_margin_b</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>        <span class="c1"># bottom margin</span>
-                <span class="n">layout_template</span><span class="o">=</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span>   <span class="c1"># select a template</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span>
+                <span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
+                <span class="n">layout_width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span>
+                <span class="n">layout_height</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                <span class="n">layout_margin_l</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># left margin of the figure</span>
+                <span class="n">layout_margin_r</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># right margin</span>
+                <span class="n">layout_margin_t</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>  <span class="c1"># top margin</span>
+                <span class="n">layout_margin_b</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>  <span class="c1"># bottom margin</span>
+                <span class="n">layout_template</span><span class="o">=</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span>  <span class="c1"># select a template</span>
                 <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;Theme:</span><span class="se">\&quot;</span><span class="s2">ggplot2</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>

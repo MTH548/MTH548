@@ -449,9 +449,11 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;title&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Casablanca&#39;</span><span class="p">,</span> <span class="s1">&#39;Forrest Gump&#39;</span><span class="p">,</span> <span class="s1">&#39;Goodfellas&#39;</span><span class="p">,</span> <span class="s1">&#39;Chinatown&#39;</span><span class="p">,</span> <span class="s1">&#39;Jaws&#39;</span><span class="p">,</span> <span class="s1">&#39;Wall-E&#39;</span><span class="p">],</span>
-                   <span class="s1">&#39;director&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;M. Curtiz&#39;</span><span class="p">,</span> <span class="s1">&#39;R. Zemeckis&#39;</span><span class="p">,</span> <span class="s1">&#39;M. Scorsese&#39;</span><span class="p">,</span> <span class="s1">&#39;R. Polanski&#39;</span><span class="p">,</span> <span class="s1">&#39;S. Spielberg&#39;</span><span class="p">,</span> <span class="s1">&#39;A. Stanton&#39;</span><span class="p">],</span>
-                   <span class="s1">&#39;year&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1942</span><span class="p">,</span> <span class="mi">1994</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">1974</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span> <span class="mi">2008</span><span class="p">]})</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Casablanca&#39;</span><span class="p">,</span> <span class="s1">&#39;Forrest Gump&#39;</span><span class="p">,</span> <span class="s1">&#39;Goodfellas&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;Chinatown&#39;</span><span class="p">,</span> <span class="s1">&#39;Jaws&#39;</span><span class="p">,</span> <span class="s1">&#39;Wall-E&#39;</span><span class="p">],</span>
+                   <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;M. Curtiz&#39;</span><span class="p">,</span> <span class="s1">&#39;R. Zemeckis&#39;</span><span class="p">,</span> <span class="s1">&#39;M. Scorsese&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;R. Polanski&#39;</span><span class="p">,</span> <span class="s1">&#39;S. Spielberg&#39;</span><span class="p">,</span> <span class="s1">&#39;A. Stanton&#39;</span><span class="p">],</span>
+                   <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1942</span><span class="p">,</span> <span class="mi">1994</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">1974</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span> <span class="mi">2008</span><span class="p">]})</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -531,13 +533,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;movies&#39;</span><span class="p">,</span>            <span class="c1"># name of the table</span>
-          <span class="n">con</span> <span class="o">=</span> <span class="n">engine</span><span class="p">,</span>        <span class="c1"># database connection</span>
-          <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>       <span class="c1"># do not include the index of the dataframe in the table</span>
-          <span class="n">dtype</span> <span class="o">=</span> <span class="p">{</span>            <span class="c1"># type of data in each column</span>
-                   <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">INT</span><span class="p">,</span>
-                   <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">TEXT</span><span class="p">,</span>
-                   <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">INT</span><span class="p">})</span>
+<span></span><span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;movies&#39;</span><span class="p">,</span>     <span class="c1"># name of the table</span>
+          <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span>   <span class="c1"># database connection</span>
+          <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># do not include the index of the dataframe in the table</span>
+          <span class="n">dtype</span><span class="o">=</span><span class="p">{</span>       <span class="c1"># type of data in each column</span>
+                 <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">INT</span><span class="p">,</span>
+                 <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">TEXT</span><span class="p">,</span>
+                 <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">INT</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>

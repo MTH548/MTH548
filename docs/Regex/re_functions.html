@@ -522,10 +522,10 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># string with a flight itinerary</span>
 <span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span>
-<span class="n">text3</span><span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">       BUF 11:30 PM =&gt;=&gt;=&gt;=&gt; EWR 12:45 PM</span>
-<span class="s2">       EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM</span>
-<span class="s2">       &quot;&quot;&quot;</span>
+<span class="n">text3</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        BUF 11:30 PM =&gt;=&gt;=&gt;=&gt; EWR 12:45 PM</span>
+<span class="s2">        EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM</span>
+<span class="s2">        &quot;&quot;&quot;</span>
 <span class="n">text3</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="n">text3</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">text3</span><span class="p">)</span>
 </pre></div>
@@ -645,7 +645,7 @@ values of the corresponding match groups.</p>
 <span class="s2">                                 # the whole pattern is a match group</span>
 <span class="s2">                                 # with backreference \1</span>
 <span class="s2">                   &quot;&quot;&quot;</span><span class="p">,</span>
-                  <span class="sa">r</span><span class="s2">&quot;\1.00&quot;</span><span class="p">,</span> <span class="n">text4</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+                  <span class="sa">r</span><span class="s2">&quot;\1.00&quot;</span><span class="p">,</span> <span class="n">text4</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
 
 <span class="c1"># print results</span>
 <span class="n">show_diff</span><span class="p">(</span><span class="n">text4</span><span class="p">,</span> <span class="n">new_text</span><span class="p">)</span>
@@ -678,7 +678,8 @@ This costs $57.00 for a 100 lbs box, so $171.00 for 3 boxes.
 <span class="s2">                      \ (?:=&gt;)+\      #    the =&gt;=&gt; part</span>
 <span class="s2">                      (.+)            # \3 third airport</span>
 <span class="s2">                      &quot;&quot;&quot;</span><span class="p">,</span>
-                  <span class="sa">r</span><span class="s2">&quot;From: \1 To: \2\nFrom: \2 To: \3&quot;</span><span class="p">,</span> <span class="n">text5</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+                  <span class="sa">r</span><span class="s2">&quot;From: \1 To: \2\nFrom: \2 To: \3&quot;</span><span class="p">,</span>
+                  <span class="n">text5</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
 
 <span class="c1"># print results</span>
 <span class="n">show_diff</span><span class="p">(</span><span class="n">text5</span><span class="p">,</span> <span class="n">new_text</span><span class="p">)</span>
@@ -718,18 +719,19 @@ From: EWR To: LHR
 <span class="s2">        &quot;&quot;&quot;</span>
 <span class="n">text6</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="n">text6</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
+
 <span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
 
     <span class="c1"># match.group(1) is the value od the first match group</span>
     <span class="c1"># in our case it will be a number with a distance in miles</span>
-    <span class="n">d_km</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="mf">1.606</span><span class="p">)</span>
+    <span class="n">d_km</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.606</span><span class="p">)</span>
     <span class="c1"># return a string with the distance in km</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{d_km}</span><span class="s2"> km&quot;</span>
+
 
 <span class="c1"># find distances in miles and replace them</span>
 <span class="c1"># by values of the `convert` function</span>
 <span class="n">new_text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;(\d+) miles&quot;</span><span class="p">,</span> <span class="n">convert</span><span class="p">,</span> <span class="n">text6</span><span class="p">)</span>
-
 
 <span class="c1"># print results</span>
 <span class="n">show_diff</span><span class="p">(</span><span class="n">text6</span><span class="p">,</span> <span class="n">new_text</span><span class="p">)</span>

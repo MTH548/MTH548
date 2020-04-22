@@ -537,10 +537,11 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span>                       <span class="c1"># dataframe</span>
-                 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>           <span class="c1"># x-values column</span>
-                 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span>                  <span class="c1"># y-values column</span>
-                 <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                 <span class="n">tips</span><span class="p">,</span>            <span class="c1"># dataframe</span>
+                 <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>  <span class="c1"># x-values column</span>
+                 <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>         <span class="c1"># y-values column</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -564,11 +565,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span>
-                 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
-                 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span>
-                 <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>              <span class="c1"># assign colors based on values of this column</span>
-                 <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                 <span class="n">tips</span><span class="p">,</span>
+                 <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+                 <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>  <span class="c1"># assign colors based on values of this column</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -593,12 +595,13 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span>
-                 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
-                 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span>
-                 <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
-                 <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>   <span class="c1"># assign marker sizes based on values of this column</span>
-                 <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                 <span class="n">tips</span><span class="p">,</span>
+                 <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+                 <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+                 <span class="n">size</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">,</span>  <span class="c1"># assign marker sizes based on values of this column</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -622,13 +625,14 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span>
-                 <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
-                 <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span>
-                 <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
-                 <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
-                 <span class="n">facet_row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span>   <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
-                 <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                 <span class="n">tips</span><span class="p">,</span>
+                 <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+                 <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+                 <span class="n">size</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">,</span>
+                 <span class="n">facet_row</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>  <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -652,13 +656,14 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+                 <span class="n">tips</span><span class="p">,</span>
                  <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
                  <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
-                 <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span>
-                 <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span>
-                 <span class="n">facet_row</span> <span class="o">=</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span>   <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
-                 <span class="n">facet_col</span> <span class="o">=</span> <span class="s2">&quot;sex&quot;</span><span class="p">,</span>    <span class="c1"># columns of subplots depending on &quot;sex&quot; value</span>
+                 <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+                 <span class="n">size</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">,</span>
+                 <span class="n">facet_row</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>  <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
+                 <span class="n">facet_col</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>  <span class="c1"># columns of subplots depending on &quot;sex&quot; value</span>
                  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -719,15 +724,15 @@ div.rendered_html tbody tr:hover {
 <span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
 
 <span class="c1"># create a figure using Plotly Express</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">)</span>
 
 <span class="c1"># create a trace</span>
-<span class="n">line</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
-                  <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
-                  <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;lines&quot;</span><span class="p">,</span>
-                  <span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
-                  <span class="n">line_width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
-                  <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+                  <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+                  <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">,</span>
+                  <span class="n">line_color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                  <span class="n">line_width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                  <span class="n">opacity</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
 <span class="c1"># add trace to the figure</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
@@ -755,14 +760,13 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create a figure using Plotly Express</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">)</span>
 
 <span class="c1"># modify layout of the figure</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span> <span class="o">=</span> <span class="s2">&quot;&lt;b&gt;Restaurant data&lt;/b&gt;&quot;</span><span class="p">,</span>
-                  <span class="n">title_font_family</span> <span class="o">=</span> <span class="s2">&quot;Courier New&quot;</span><span class="p">,</span>
-                  <span class="n">title_font_size</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
-                  <span class="n">title_font_color</span> <span class="o">=</span> <span class="s2">&quot;cornflowerblue&quot;</span>
-                 <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;&lt;b&gt;Restaurant data&lt;/b&gt;&quot;</span><span class="p">,</span>
+                  <span class="n">title_font_family</span><span class="o">=</span><span class="s2">&quot;Courier New&quot;</span><span class="p">,</span>
+                  <span class="n">title_font_size</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+                  <span class="n">title_font_color</span><span class="o">=</span><span class="s2">&quot;cornflowerblue&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -791,13 +795,13 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create a figure using Plotly Express</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">)</span>
 
 <span class="c1"># change colors of markers</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;DarkOrange&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#EF553B&#39;</span><span class="p">})</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;RoyalBlue&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#00cc96&#39;</span><span class="p">})</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;Chartreuse&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#ab63fa&#39;</span><span class="p">})</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span> <span class="o">=</span> <span class="s2">&quot;DeepPink&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#636efa&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DarkOrange&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#EF553B&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;RoyalBlue&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#00cc96&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;Chartreuse&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#ab63fa&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DeepPink&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span><span class="p">:</span> <span class="s1">&#39;#636efa&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
