@@ -92,7 +92,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plotly_basics.html">Plotly basics</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotly Express</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotly Express</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Plots-from-dataframes">Plots from dataframes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Customizing-plots">Customizing plots</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../regular_expressions.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../re_functions.html">Functions in the re module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
@@ -524,6 +528,8 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
+<div class="section" id="Plots-from-dataframes">
+<h2>Plots from dataframes<a class="headerlink" href="#Plots-from-dataframes" title="Permalink to this headline">¶</a></h2>
 <p>In order to produce a scatter plot showing the bill amount on the <span class="math notranslate nohighlight">\(x\)</span> axis and the tip amount on the <span class="math notranslate nohighlight">\(y\)</span> axis we just need to specify the dataframe and names of the corresponding columns:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -700,6 +706,114 @@ div.rendered_html tbody tr:hover {
 ></iframe></div>
 </div>
 <p>While all above examples show scatter plots only, Plotly Express can be used to create many other types of plots. See the <a class="reference external" href="https://plotly.com/python/plotly-express/">documentation</a> for details.</p>
+</div>
+<div class="section" id="Customizing-plots">
+<h2>Customizing plots<a class="headerlink" href="#Customizing-plots" title="Permalink to this headline">¶</a></h2>
+<p>Plotly Express functions return Plotly figure objects, which can be customized using other Plotly tools. For example, we can use the <code class="docutils literal notranslate"><span class="pre">fig.add_trace()</span></code> method to add additional traces a figure:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+
+<span class="c1"># create a figure using Plotly Express</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a trace</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span>
+                  <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+                  <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;lines&quot;</span><span class="p">,</span>
+                  <span class="n">line_color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                  <span class="n">line_width</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+                  <span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># add trace to the figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="100%"
+    height="545px"
+    src="../_static/plotly_express/iframe_figures/figure_10.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">fig.update_layout()</span></code> method to change the figure layout:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create a figure using Plotly Express</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
+
+<span class="c1"># modify layout of the figure</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span> <span class="o">=</span> <span class="s2">&quot;&lt;b&gt;Restaurant data&lt;/b&gt;&quot;</span><span class="p">,</span>
+                  <span class="n">title_font_family</span> <span class="o">=</span> <span class="s2">&quot;Courier New&quot;</span><span class="p">,</span>
+                  <span class="n">title_font_size</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
+                  <span class="n">title_font_color</span> <span class="o">=</span> <span class="s2">&quot;cornflowerblue&quot;</span>
+                 <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="100%"
+    height="545px"
+    src="../_static/plotly_express/iframe_figures/figure_11.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">fig.update_traces()</span></code> method can be used to modify traces includes in the figure. Below we use it to change colors of markers. The <code class="docutils literal notranslate"><span class="pre">selector</span></code> argument indicates which markers should be affected by the change. For example, the code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DarkOrange&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#EF553B&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>selects all markers with color ‘#EF553B’, and sets their color to “DarkOrange”. Hexadecimal codes of colors appearing in the original figure can be obtained e.g. by using <code class="docutils literal notranslate"><span class="pre">fig.to_dict()</span></code> to get the dictionary describing the figure, and then inspecting the dictionary.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create a figure using Plotly Express</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s2">&quot;size&quot;</span><span class="p">)</span>
+
+<span class="c1"># change colors of markers</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DarkOrange&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#EF553B&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;RoyalBlue&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#00cc96&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;Chartreuse&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#ab63fa&#39;</span><span class="p">})</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DeepPink&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#636efa&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="100%"
+    height="545px"
+    src="../_static/plotly_express/iframe_figures/figure_12.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+</div>
 </div>
 
 
