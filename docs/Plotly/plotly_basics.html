@@ -95,6 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#Traces-and-figures">Traces and figures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Figure-layout">Figure layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Underscore-Notation">Underscore Notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Updating-layout">Updating layout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Subplots">Subplots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Templates">Templates</a></li>
 </ul>
@@ -484,14 +485,14 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
-<span class="n">cos_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
                       <span class="n">x</span> <span class="o">=</span> <span class="n">t</span><span class="p">,</span>
-                      <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+                      <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
                       <span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;lines&#39;</span><span class="p">,</span>           <span class="c1"># connect points with line segments</span>
                       <span class="n">line</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;Blue&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of line properties</span>
                               <span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">cos_plot</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">sin_plot</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -976,11 +977,48 @@ div.rendered_html tbody tr:hover {
 ></iframe></div>
 </div>
 </div>
+<div class="section" id="Updating-layout">
+<h2>Updating layout<a class="headerlink" href="#Updating-layout" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">fig.update_layout()</span></code> method lets us modify figure layout after the figure has been created. We can use use it with either dictionaries or the underscore notation. Since all arguments of this method apply to the layout, the <code class="docutils literal notranslate"><span class="pre">layout_</span></code> part of the underscore notation is omitted:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create a figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
+                <span class="n">layout_title_text</span> <span class="o">=</span>  <span class="s2">&quot;Sine and cosine&quot;</span><span class="p">,</span>
+                <span class="n">layout_title_font_size</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span>
+                <span class="n">layout_title_font_color</span> <span class="o">=</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span>
+                <span class="n">layout_width</span> <span class="o">=</span> <span class="mi">750</span><span class="p">,</span>
+                <span class="n">layout_height</span> <span class="o">=</span>  <span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># modify some title properties</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title_text</span> <span class="o">=</span> <span class="s2">&quot;New title&quot;</span><span class="p">,</span>
+                  <span class="n">title_font_color</span> <span class="o">=</span> <span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="770px"
+    height="220"
+    src="../_static/plotly_basics/iframe_figures/figure_10.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+</div>
 <div class="section" id="Subplots">
 <h2>Subplots<a class="headerlink" href="#Subplots" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">fig.add_trace()</span></code> method can be used to add a trace to an existing figure:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1014,14 +1052,14 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="370px"
     height="370"
-    src="../_static/plotly_basics/iframe_figures/figure_26.html"
+    src="../_static/plotly_basics/iframe_figures/figure_11.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">fig.add_trace()</span></code> is especially useful when we want to create a figure consisting of subplots:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1035,8 +1073,8 @@ div.rendered_html tbody tr:hover {
                                     <span class="s2">&quot;sin(3t)&quot;</span><span class="p">,</span>
                                     <span class="s2">&quot;sin(4t)&quot;</span><span class="p">))</span>
 
-<span class="c1"># make_subplots does not accept layout argument, but we can</span>
-<span class="c1"># use fig.update_layout to modify the layout of the figure</span>
+<span class="c1"># make_subplots does not accept the layout argument, but we can</span>
+<span class="c1"># use fig.update_layout() to modify the layout of the figure</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="mi">700</span><span class="p">,</span>
                   <span class="n">height</span> <span class="o">=</span> <span class="mi">400</span><span class="p">,</span>
                   <span class="n">showlegend</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>  <span class="c1"># do not show legend</span>
@@ -1066,7 +1104,7 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="720px"
     height="420"
-    src="../_static/plotly_basics/iframe_figures/figure_11.html"
+    src="../_static/plotly_basics/iframe_figures/figure_12.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -1076,7 +1114,7 @@ div.rendered_html tbody tr:hover {
 <h2>Templates<a class="headerlink" href="#Templates" title="Permalink to this headline">¶</a></h2>
 <p>Plotly comes with several theme templates which modify the overall look of a figure. A theme can be specified using the <code class="docutils literal notranslate"><span class="pre">template</span></code> key in the figure layout.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1088,36 +1126,13 @@ div.rendered_html tbody tr:hover {
 <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
                 <span class="n">layout_width</span> <span class="o">=</span> <span class="mi">750</span><span class="p">,</span>
                 <span class="n">layout_height</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
-                <span class="n">layout_margin_l</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>   <span class="c1"># left margin of the figure</span>
-                <span class="n">layout_margin_r</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>   <span class="c1"># right margin</span>
-                <span class="n">layout_margin_t</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>   <span class="c1"># top margin</span>
-                <span class="n">layout_margin_b</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>   <span class="c1"># bottom margin</span>
+                <span class="n">layout_margin_l</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>        <span class="c1"># left margin of the figure</span>
+                <span class="n">layout_margin_r</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>        <span class="c1"># right margin</span>
+                <span class="n">layout_margin_t</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span>        <span class="c1"># top margin</span>
+                <span class="n">layout_margin_b</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span>        <span class="c1"># bottom margin</span>
+                <span class="n">layout_template</span><span class="o">=</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span>   <span class="c1"># select a template</span>
+                <span class="n">layout_title_text</span><span class="o">=</span><span class="s2">&quot;Theme:</span><span class="se">\&quot;</span><span class="s2">ggplot2</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
 
-
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly&quot;</span><span class="p">,</span> <span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Theme:</span><span class="se">\&quot;</span><span class="s2">plotly</span><span class="se">\&quot;</span><span class="s2"> (default)&quot;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-<iframe
-    scrolling="no"
-    width="770px"
-    height="220"
-    src="../_static/plotly_basics/iframe_figures/figure_12.html"
-    frameborder="0"
-    allowfullscreen
-></iframe></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">template</span><span class="o">=</span><span class="s2">&quot;ggplot2&quot;</span><span class="p">,</span> <span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Theme:</span><span class="se">\&quot;</span><span class="s2">ggplot2</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1228,7 +1243,7 @@ div.rendered_html tbody tr:hover {
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Apr 21, 2020.
+        Last updated on Apr 22, 2020.
       </span>
 
     </p>
