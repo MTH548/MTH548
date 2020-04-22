@@ -97,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#Figure-layout">Figure layout</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Underscore-Notation">Underscore Notation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Updating-layout">Updating layout</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Updating-traces">Updating traces</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Subplots">Subplots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Templates">Templates</a></li>
 </ul>
@@ -1014,11 +1015,88 @@ div.rendered_html tbody tr:hover {
 ></iframe></div>
 </div>
 </div>
+<div class="section" id="Updating-traces">
+<h2>Updating traces<a class="headerlink" href="#Updating-traces" title="Permalink to this headline">¶</a></h2>
+<p>The method <code class="docutils literal notranslate"><span class="pre">fig.update_traces()</span></code> can be used to update traces embedded in an existing figure.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+
+<span class="n">cos_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                      <span class="n">line_dash</span><span class="o">=</span><span class="s1">&#39;dash&#39;</span><span class="p">,</span>   <span class="c1"># dashed line</span>
+                      <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">)</span>
+
+<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>
+                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                      <span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
+                <span class="n">layout_width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span>
+                <span class="n">layout_height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="c1"># modify line width and color</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="770px"
+    height="220"
+    src="../_static/plotly_basics/iframe_figures/figure_11.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">fig.update_traces()</span></code> modifies to all figure traces. To get more control, we can use it with a <code class="docutils literal notranslate"><span class="pre">selector</span></code> argument. When this argument is assigned to a dictionary, only traces which have properties corresponding to the dictionary keys with values equal to the respective dictionary values will be updated:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create a figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">],</span>
+                <span class="n">layout_width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span>
+                <span class="n">layout_height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">line_color</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">,</span>
+                  <span class="n">line_width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                  <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;line_dash&#39;</span><span class="p">:</span> <span class="s1">&#39;dash&#39;</span><span class="p">})</span>   <span class="c1"># modify dashed lines only</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="770px"
+    height="220"
+    src="../_static/plotly_basics/iframe_figures/figure_12.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+</div>
 <div class="section" id="Subplots">
 <h2>Subplots<a class="headerlink" href="#Subplots" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">fig.add_trace()</span></code> method can be used to add a trace to an existing figure:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1053,14 +1131,14 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="370px"
     height="370"
-    src="../_static/plotly_basics/iframe_figures/figure_11.html"
+    src="../_static/plotly_basics/iframe_figures/figure_13.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">fig.add_trace()</span></code> is especially useful when we want to create a figure consisting of subplots:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1106,7 +1184,7 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="720px"
     height="420"
-    src="../_static/plotly_basics/iframe_figures/figure_12.html"
+    src="../_static/plotly_basics/iframe_figures/figure_14.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -1116,7 +1194,7 @@ div.rendered_html tbody tr:hover {
 <h2>Templates<a class="headerlink" href="#Templates" title="Permalink to this headline">¶</a></h2>
 <p>Plotly comes with several theme templates which modify the overall look of a figure. A theme can be specified using the <code class="docutils literal notranslate"><span class="pre">template</span></code> key in the figure layout.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1148,13 +1226,13 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="770px"
     height="220"
-    src="../_static/plotly_basics/iframe_figures/figure_13.html"
+    src="../_static/plotly_basics/iframe_figures/figure_15.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1171,13 +1249,13 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="770px"
     height="220"
-    src="../_static/plotly_basics/iframe_figures/figure_14.html"
+    src="../_static/plotly_basics/iframe_figures/figure_16.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1194,13 +1272,13 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="770px"
     height="220"
-    src="../_static/plotly_basics/iframe_figures/figure_15.html"
+    src="../_static/plotly_basics/iframe_figures/figure_17.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1217,7 +1295,7 @@ div.rendered_html tbody tr:hover {
     scrolling="no"
     width="770px"
     height="220"
-    src="../_static/plotly_basics/iframe_figures/figure_16.html"
+    src="../_static/plotly_basics/iframe_figures/figure_18.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>

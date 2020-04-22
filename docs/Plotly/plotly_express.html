@@ -559,7 +559,7 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-<p>Next, we use the values in the “day” column to assign marker colors:</p>
+<p>We can use the values in the “day” column to assign marker colors:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -589,7 +589,7 @@ div.rendered_html tbody tr:hover {
 ></iframe></div>
 </div>
 <p>By clicking on a color dot in the legend, we can hide markers of that color in the plot. Double clicking on a dot in the legend shows markers of the specified color only.</p>
-<p>We can set different marker sizes based on values in the “size” column:</p>
+<p>Next, we set different marker sizes based on values in the “size” column:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -663,7 +663,7 @@ div.rendered_html tbody tr:hover {
                  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
                  <span class="n">size</span><span class="o">=</span><span class="s2">&quot;size&quot;</span><span class="p">,</span>
                  <span class="n">facet_row</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>  <span class="c1"># rows of subplots depending on &quot;time&quot; value</span>
-                 <span class="n">facet_col</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>  <span class="c1"># columns of subplots depending on &quot;sex&quot; value</span>
+                 <span class="n">facet_col</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>   <span class="c1"># columns of subplots depending on &quot;sex&quot; value</span>
                  <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Restaurant data&quot;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -753,7 +753,7 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-<p>We can also use <code class="docutils literal notranslate"><span class="pre">fig.update_layout()</span></code> method to change the figure layout:</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">fig.update_layout()</span></code> method to change the figure layout:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -784,11 +784,11 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">fig.update_traces()</span></code> method can be used to modify traces included in the figure. Below we use it to change colors of markers. The <code class="docutils literal notranslate"><span class="pre">selector</span></code> argument indicates which markers should be affected by the change. For example, the code</p>
+<p>We can also apply the method <code class="docutils literal notranslate"><span class="pre">fig.update_traces()</span></code> to modify traces included in the figure. Below we use it to change colors of markers. The <code class="docutils literal notranslate"><span class="pre">selector</span></code> argument indicates which markers should be affected by the change. For example, the code</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_color</span><span class="o">=</span><span class="s2">&quot;DarkOrange&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;marker_color&quot;</span> <span class="p">:</span> <span class="s1">&#39;#EF553B&#39;</span><span class="p">})</span>
 </pre></div>
 </div>
-<p>selects all markers with color ‘#EF553B’, and sets their color to “DarkOrange”. Hexadecimal codes of colors appearing in the original figure can be obtained e.g. by using <code class="docutils literal notranslate"><span class="pre">fig.to_dict()</span></code> to get the dictionary describing the figure, and then inspecting the dictionary.</p>
+<p>selects all markers with color ‘#EF553B’, and sets their color to “DarkOrange”. Hexadecimal codes of colors appearing in the original figure can be obtained e.g. by using <code class="docutils literal notranslate"><span class="pre">fig.to_dict()</span></code> to get a dictionary describing the figure, and then inspecting the dictionary.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
