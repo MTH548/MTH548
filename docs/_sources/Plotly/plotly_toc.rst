@@ -2,7 +2,6 @@
 Plotly
 =======
 
-
 .. toctree::
    :maxdepth: 2
 

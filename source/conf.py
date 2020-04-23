@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = 'MTH 448/548'
-copyright = '2020, Bernard Badzioch'
+copyright = '<a href="mailto:admin@mth548.org">Bernard Badzioch</a>'
 author = 'Bernard Badzioch'
 
 # The full version, including alpha/beta/rc tags
@@ -127,7 +127,7 @@ nbsphinx_execute_arguments = [
 #os.environ['MY_DUMMY_VARIABLE'] = 'Hello from conf.py!'
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-html_show_copyright = False
+html_show_copyright = True
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.

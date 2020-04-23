@@ -41,9 +41,7 @@
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Plotly Express" href="plotly_express.html" />
-    <link rel="prev" title="Plotly" href="plotly_toc.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,23 +86,10 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="plotly_toc.html">Plotly</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Plotly basics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Traces-and-figures">Traces and figures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Figure-layout">Figure layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Underscore-Notation">Underscore Notation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Updating-layout">Updating layout</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Updating-traces">Updating traces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Subplots">Subplots</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Templates">Templates</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="plotly_express.html">Plotly Express</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="plotly_toc.html">Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
@@ -159,8 +144,6 @@
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
         
-          <li><a href="plotly_toc.html">Plotly</a> &raquo;</li>
-        
       <li>Plotly basics</li>
     
     
@@ -168,7 +151,7 @@
         
           
             
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Plotly/plotly_basics.ipynb" class="fa fa-github"> View on GitHub</a>
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Plotly/plotly_basics-Copy1.ipynb" class="fa fa-github"> View on GitHub</a>
             
           
         
@@ -441,7 +424,7 @@ div.rendered_html tbody tr:hover {
 <h2>Traces and figures<a class="headerlink" href="#Traces-and-figures" title="Permalink to this headline">¶</a></h2>
 <p>Plotly module <code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code> defines classes that can be used to construct plots of various types. In the example below, we employ it to produce a scatter plot, which displays points with given <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates. This example illustrates the basic process of creating a plot with Plotly. First, we create an object with the plot data (a <em>trace</em> in the Plotly nomenclature). Then we embed the trace in a figure object and finally, we display the resulting figure.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -451,18 +434,22 @@ div.rendered_html tbody tr:hover {
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
 
 <span class="c1"># create a trace</span>
-<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+<span class="n">sin_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scattergl</span><span class="p">(</span>
                       <span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>                           <span class="c1"># x-coordinates of points</span>
                       <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>                   <span class="c1"># y-coordinates</span>
-                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span>                <span class="c1"># use markers to plot points</span>
-                      <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;symbol&#39;</span> <span class="p">:</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span>  <span class="c1"># dictionary of marker properties</span>
-                                <span class="s1">&#39;color&#39;</span> <span class="p">:</span> <span class="s1">&#39;Red&#39;</span><span class="p">,</span>
-                                <span class="s1">&#39;size&#39;</span> <span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>                <span class="c1"># use markers to plot points</span>
+                      <span class="n">line</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span> <span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
+
+<span class="n">cos_plot</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scattergl</span><span class="p">(</span>
+                      <span class="n">x</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>                           <span class="c1"># x-coordinates of points</span>
+                      <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span>                   <span class="c1"># y-coordinates</span>
+                      <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>                <span class="c1"># use markers to plot points</span>
+                      <span class="n">line</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span> <span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s1">&#39;width&#39;</span> <span class="p">:</span> <span class="mi">3</span><span class="p">})</span>
 
 <span class="c1"># create a figure with the trace</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">sin_plot</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">sin_plot</span><span class="p">,</span> <span class="n">cos_plot</span><span class="p">])</span>
 <span class="c1"># display the figure</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s1">&#39;scrollZoom&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,}))</span>
 </pre></div>
 </div>
 </div>
@@ -470,14 +457,49 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-<iframe
-    scrolling="no"
-    width="100%"
-    height="370"
-    src="../_static/plotly_basics/iframe_figures/figure_3.html"
-    frameborder="0"
-    allowfullscreen
-></iframe></div>
+<div>
+
+
+            <div id="9e964224-7c9f-46db-bc0d-84cd15cb9f40" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <script type="text/javascript">
+                require(["plotly"], function(Plotly) {
+                    window.PLOTLYENV=window.PLOTLYENV || {};
+
+                if (document.getElementById("9e964224-7c9f-46db-bc0d-84cd15cb9f40")) {
+                    Plotly.newPlot(
+                        '9e964224-7c9f-46db-bc0d-84cd15cb9f40',
+                        [{"line": {"color": "red", "width": 3}, "mode": "lines", "type": "scattergl", "x": [0.0, 0.3448275862068966, 0.6896551724137931, 1.0344827586206897, 1.3793103448275863, 1.7241379310344829, 2.0689655172413794, 2.413793103448276, 2.7586206896551726, 3.1034482758620694, 3.4482758620689657, 3.793103448275862, 4.137931034482759, 4.482758620689656, 4.827586206896552, 5.172413793103448, 5.517241379310345, 5.862068965517242, 6.206896551724139, 6.551724137931035, 6.8965517241379315, 7.241379310344828, 7.586206896551724, 7.931034482758621, 8.275862068965518, 8.620689655172415, 8.965517241379311, 9.310344827586208, 9.655172413793103, 10.0], "y": [0.0, 0.3380344178335103, 0.6362711974814501, 0.8595981763240232, 0.9817225101058533, 0.9882661953069056, 0.878458827488186, 0.6652283029348345, 0.37367878506512486, 0.03813512843002494, -0.301898272335703, -0.6063884337819878, -0.8394869669963327, -0.9737505981668363, -0.9933721339045803, -0.8960414816901681, -0.6932176228486977, -0.40877951799402507, -0.0762147772214363, 0.26532292005567687, 0.5756234857933761, 0.8181544576372234, 0.9643620571640104, 0.9970328976918713, 0.912320559383206, 0.7201984378805917, 0.4432855514721931, 0.11418354744834988, -0.22836157144296196, -0.5440211108893699]}, {"line": {"color": "blue", "width": 3}, "mode": "lines", "type": "scattergl", "x": [0.0, 0.3448275862068966, 0.6896551724137931, 1.0344827586206897, 1.3793103448275863, 1.7241379310344829, 2.0689655172413794, 2.413793103448276, 2.7586206896551726, 3.1034482758620694, 3.4482758620689657, 3.793103448275862, 4.137931034482759, 4.482758620689656, 4.827586206896552, 5.172413793103448, 5.517241379310345, 5.862068965517242, 6.206896551724139, 6.551724137931035, 6.8965517241379315, 7.241379310344828, 7.586206896551724, 7.931034482758621, 8.275862068965518, 8.620689655172415, 8.965517241379311, 9.310344827586208, 9.655172413793103, 10.0], "y": [1.0, 0.9411337483907162, 0.7714654647199196, 0.5109706207409713, 0.19031792651104298, -0.1527413736143978, -0.47781804947917306, -0.7466400102957517, -0.9275581736970745, -0.9992725914281976, -0.9533401455727739, -0.7951685779603139, -0.5433798231838372, -0.22761760162546435, 0.1149426099488802, 0.4439703403274685, 0.7207283311845044, 0.9126331714706476, 0.997091423959251, 0.9641596071673657, 0.8177148663214354, 0.574998507344446, 0.2645861347508557, -0.07697662580387894, -0.4094767355134038, -0.6937681241411683, -0.8963804548605429, -0.9934596707929871, -0.9735763928362792, -0.8390715290764524]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "margin": {"b": 30, "l": 30, "r": 30, "t": 60}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}},
+                        {"scrollZoom": true, "responsive": true}
+                    ).then(function(){
+
+var gd = document.getElementById('9e964224-7c9f-46db-bc0d-84cd15cb9f40');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })
+                };
+                });
+            </script>
+        </div></div>
 </div>
 <p>In a scatter plot the <code class="docutils literal notranslate"><span class="pre">mode</span></code> argument specifies how points in a plot should be displayed. If we set <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">=</span> <span class="pre">'markers'</span></code> then each point will be indicated by a marker. If, instead, we set <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">=</span> <span class="pre">'lines'</span></code>, then points will be connected with straight line segments:</p>
 <div class="nbinput docutils container">
@@ -1308,15 +1330,6 @@ div.rendered_html tbody tr:hover {
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="plotly_express.html" class="btn btn-neutral float-right" title="Plotly Express" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="plotly_toc.html" class="btn btn-neutral float-left" title="Plotly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
