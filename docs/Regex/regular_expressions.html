@@ -509,7 +509,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
-<span class="k">def</span> <span class="nf">re_show</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">re_show</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Displays text with the regex match highlighted.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -531,11 +531,9 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 <span class="s1">                    color: red;&quot;</span>
 <span class="s1">                    &#39;&#39;&#39;</span>
 
-    <span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{regex}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">flags</span><span class="p">)</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&lt;code style=</span><span class="si">{text_css}</span><span class="s1">&gt;&#39;</span>
-    <span class="n">s</span> <span class="o">+=</span> <span class="n">r</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;&lt;span style=</span><span class="si">{match_css}</span><span class="s1">&gt;\1&lt;/span&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-    <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;&lt;/code&gt;&#39;</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{regex}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;&lt;span style=</span><span class="si">{match_css}</span><span class="s1">&gt;\1&lt;/span&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;code style=</span><span class="si">{text_css}</span><span class="s1">&gt;</span><span class="si">{t}</span><span class="s1">&lt;/code&gt;&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -581,7 +579,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </div>
 <div class="section" id="Character-classes">
 <h2>Character classes<a class="headerlink" href="#Character-classes" title="Permalink to this headline">¶</a></h2>
-<p>As the above example shows, a regular expressions can simply consist of a string we want to search for. The real power of regular expressions, however, is that they can contain special character sequences with a more general meaning.</p>
+<p>As the above example shows, a regular expression can simply consist of a string we want to search for. The real power of regular expressions, however, is that they can contain special character sequences with a more general meaning.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 12%" />
@@ -1471,7 +1469,7 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </div>
 <div class="section" id="Non-greedy-matches">
 <h2>Non-greedy matches<a class="headerlink" href="#Non-greedy-matches" title="Permalink to this headline">¶</a></h2>
-<p>By default regular expression matches are greedy: they will match the longest possible part of a given string which fits the specified pattern. For example the pattern <code class="docutils literal notranslate"><span class="pre">r&quot;.+</span> <span class="pre">&quot;</span></code> will match the longest possible sequence starting with the letter “D” and ending with a space:</p>
+<p>By default regular expression matches are greedy: they will match the longest possible part of a given string that fits the specified pattern. For example, the pattern <code class="docutils literal notranslate"><span class="pre">r&quot;.+</span> <span class="pre">&quot;</span></code> will match the longest possible character sequence starting with the letter “D” and ending with a space:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
@@ -2241,10 +2239,10 @@ Like a diamond in the sky.</code></div>
 </div>
 <div class="section" id="Inserting-comments">
 <h2>Inserting comments<a class="headerlink" href="#Inserting-comments" title="Permalink to this headline">¶</a></h2>
-<p>More complex regular expression can look very cryptic and be difficult to understand. To make them more readable, it is possible insert comments explaining what they do piece by piece. The flag <code class="docutils literal notranslate"><span class="pre">re.X</span></code> signals that a regular expression may contain comments. If this flag is used it has the following effect:</p>
+<p>More complex regular expressions can look very cryptic and be difficult to understand. To make them more readable, it is possible to insert comments explaining what they match piece by piece. The flag <code class="docutils literal notranslate"><span class="pre">re.X</span></code> signals that a regular expression may contain comments. If this flag is used it has the following effects:</p>
 <ul class="simple">
 <li><p>All space and newline characters in the regular expression are ignored.</p></li>
-<li><p>If a line in the regular expression contains the <code class="docutils literal notranslate"><span class="pre">#</span></code> character then this character and the reminder of the line are also ignored.</p></li>
+<li><p>If a line in the regular expression contains the <code class="docutils literal notranslate"><span class="pre">#</span></code> character then this character and the remainder of the line are ignored.</p></li>
 <li><p>Exception: the space and <code class="docutils literal notranslate"><span class="pre">#</span></code> characters are matched if they are preceded by a backslash: <code class="docutils literal notranslate"><span class="pre">\</span></code>, <code class="docutils literal notranslate"><span class="pre">\#</span></code> or they are entered as a part of a character group, i.e. enclosed in square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">#]</span></code> or <code class="docutils literal notranslate"><span class="pre">[^</span> <span class="pre">#]</span></code>.</p></li>
 </ul>
 <div class="nbinput docutils container">
@@ -2256,7 +2254,7 @@ Like a diamond in the sky.</code></div>
 <span class="c1"># match numbers in the decimal form</span>
 <span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;-?          # possibly the minus sign</span>
 <span class="s2">            \d+         # digits before the decimal point</span>
-<span class="s2">            (\.\d+)?    # possibly the decimal part: period and more digits</span>
+<span class="s2">            (\.\d+)?    # possibly the decimal point and more digits</span>
 <span class="s2">            &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">text5</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2299,7 +2297,7 @@ Like a diamond in the sky.</code></div>
 </div>
 <div class="section" id="Matching-special-characters">
 <h2>Matching special characters<a class="headerlink" href="#Matching-special-characters" title="Permalink to this headline">¶</a></h2>
-<p>As we have seen above several, characters (<code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> etc.) have special meaning when used in a regular expression. In order to match such characters literally, we precede them by a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>, so they become <code class="docutils literal notranslate"><span class="pre">\.</span></code>, <code class="docutils literal notranslate"><span class="pre">\+</span></code>, <code class="docutils literal notranslate"><span class="pre">\*</span></code> and so on. The backlash itself is matched by entering <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
+<p>As we have seen above, several characters (<code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> etc.) have special meaning when used in a regular expression. To match such characters literally, we precede them by a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>, so they become <code class="docutils literal notranslate"><span class="pre">\.</span></code>, <code class="docutils literal notranslate"><span class="pre">\+</span></code>, <code class="docutils literal notranslate"><span class="pre">\*</span></code> and so on. The backlash itself is matched by entering <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
 <p><strong>Example.</strong></p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
@@ -2429,7 +2427,7 @@ Like a diamond in the sky.</code></div>
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Apr 22, 2020.
+        Last updated on Apr 30, 2020.
       </span>
 
     </p>
