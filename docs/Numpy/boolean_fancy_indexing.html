@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Boolean and fancy indexing of numpy arrays &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Boolean and fancy indexing &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -92,7 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="numpy_basics.html">Numpy Basics</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Boolean and fancy indexing of numpy arrays</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Boolean and fancy indexing</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Boolean-arrays">Boolean arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Logical-operations-on-Boolean-arrays">Logical operations on Boolean arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Indexing-with-Boolean-arrays">Indexing with Boolean arrays</a></li>
@@ -155,7 +155,7 @@
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
         
-      <li>Boolean and fancy indexing of numpy arrays</li>
+      <li>Boolean and fancy indexing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -418,8 +418,8 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Boolean-and-fancy-indexing-of-numpy-arrays">
-<h1>Boolean and fancy indexing of numpy arrays<a class="headerlink" href="#Boolean-and-fancy-indexing-of-numpy-arrays" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Boolean-and-fancy-indexing">
+<h1>Boolean and fancy indexing<a class="headerlink" href="#Boolean-and-fancy-indexing" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Boolean-arrays">
 <h2>Boolean arrays<a class="headerlink" href="#Boolean-arrays" title="Permalink to this headline">¶</a></h2>
 <p>A Boolean array is a numpy array with Boolean (True/False) values. Such array can be obtained by applying a logical operator to another numpy array:</p>
@@ -430,7 +430,8 @@ div.rendered_html tbody tr:hover {
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># create a 4x4 array of integers</span>
+<span class="c1"># create a 4x4 array of integers</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -498,7 +499,8 @@ array([[ True, False,  True, False],
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span></span><span class="c1"># another 4x4 array</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -666,7 +668,8 @@ d=
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># create a 4x4 array of integers</span>
+<span></span><span class="c1"># create a 4x4 array of integers</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -711,7 +714,8 @@ array([[ True, False,  True, False],
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="c1"># select all even elements of the array a</span>
+<span></span><span class="c1"># select all even elements of the array a</span>
+<span class="n">a</span><span class="p">[</span><span class="n">b</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -950,7 +954,7 @@ array([[   0,    1,    2,    3,    4],
        [  15,   16,   17,   18, 1000]])
 </pre></div></div>
 </div>
-<p>Fancy indexing can be mixed with other indexing kinds. For example, we can apply fancy indexing to one axis of an array, and slicing to the second axis:</p>
+<p>Fancy indexing can be mixed with other forms of indexing. For example, we can apply fancy indexing to one axis of an array, and slicing to the second axis:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
@@ -978,7 +982,7 @@ array([[ 0,  1,  2,  3,  4],
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># select elements which are in rows 1, 3 and in columns 0-3</span>
+<span></span><span class="c1"># select elements which are in rows 1, 3 and columns 0-3</span>
 <span class="n">b</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>

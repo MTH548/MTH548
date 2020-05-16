@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Boolean and fancy indexing of numpy arrays" href="boolean_fancy_indexing.html" />
+    <link rel="next" title="Boolean and fancy indexing" href="boolean_fancy_indexing.html" />
     <link rel="prev" title="Useful links" href="../useful_links.html" /> 
 </head>
 
@@ -100,7 +100,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#Slicing-multidimensional-arrays">Slicing multidimensional arrays</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="boolean_fancy_indexing.html">Boolean and fancy indexing of numpy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boolean_fancy_indexing.html">Boolean and fancy indexing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
@@ -422,7 +422,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Numpy-Basics">
 <h1>Numpy Basics<a class="headerlink" href="#Numpy-Basics" title="Permalink to this headline">¶</a></h1>
-<p>Numpy is the standard module for doing numerical computations in Python. It provides tools for writing code which is both easier to develop and usually a lot faster than it would be without numpy.</p>
+<p>Numpy is a standard module for doing numerical computations in Python. It provides tools for writing code which is both easier to develop and usually a lot faster than it would be without numpy.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -596,7 +596,7 @@ array([0.84147098, 0.90929743, 0.14112001])
 </div>
 <div class="section" id="Numpy-arrays-vs-lists">
 <h2>Numpy arrays vs lists<a class="headerlink" href="#Numpy-arrays-vs-lists" title="Permalink to this headline">¶</a></h2>
-<p>In some respects numpy array behave the same way as lists. For example, indexing and slicing work as usual:</p>
+<p>In some respects numpy arrays behave the same way as lists. For example, indexing and slicing work as usual:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -661,7 +661,7 @@ array([2, 3, 4])
 </pre></div></div>
 </div>
 <p><strong>2.</strong> Lists can be shortened and extended (e.g. using <code class="docutils literal notranslate"><span class="pre">append</span></code>). The size of a numpy array is fixed when the array is created and it can’t be changed.</p>
-<p><strong>3.</strong> Lists slicing produces a new list, independent of the original list. For numpy arrays, slicing produces a <em>view</em> of the original array; changing a slice changes the original array:</p>
+<p><strong>3.</strong> Lists slicing produces a new list, independent of the original list. For numpy arrays, slicing produces a <em>view</em> of an array. Changing a slice changes the original array:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -894,7 +894,7 @@ array([1.  , 1.25, 1.5 , 1.75, 2.  ])
 </div>
 <div class="section" id="Multidimensional-numpy-arrays">
 <h2>Multidimensional numpy arrays<a class="headerlink" href="#Multidimensional-numpy-arrays" title="Permalink to this headline">¶</a></h2>
-<p>Numpy arrays can have more than one dimension. One way to create such array is to start with a 1-dimensional array and use the numpy <code class="docutils literal notranslate"><span class="pre">reshape()</span></code> function that rearranges elements of that array into a new shape.</p>
+<p>Numpy arrays can have more than one dimension. One way to create such an array is to start with a 1-dimensional array and use the numpy <code class="docutils literal notranslate"><span class="pre">reshape()</span></code> function that rearranges elements of that array into a new shape.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
@@ -1079,7 +1079,7 @@ array([[30, 30],
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># compute cosine of all elements of the array b</span>
+<span></span><span class="c1"># compute cosine of all elements of the array a</span>
 <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1103,7 +1103,8 @@ array([[ 0.54030231, -0.41614684],
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="c1"># create a 5x6 array</span>
+<span></span><span class="c1"># create a 5x6 array</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -1237,7 +1238,7 @@ a =
  [  24   25   26   27   28   29]]
 </pre></div></div>
 </div>
-<p>We can use this to change many entries of an array at once:</p>
+<p>We can use this to change several entries of an array at once:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
@@ -1272,7 +1273,7 @@ array([[ 0,  0,  0,  0,  4,  5],
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="boolean_fancy_indexing.html" class="btn btn-neutral float-right" title="Boolean and fancy indexing of numpy arrays" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="boolean_fancy_indexing.html" class="btn btn-neutral float-right" title="Boolean and fancy indexing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../useful_links.html" class="btn btn-neutral float-left" title="Useful links" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
