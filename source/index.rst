@@ -12,6 +12,9 @@ MTH 448/548 Data Oriented Computing
 
    report_guide
    useful_links
+   Numpy/numpy_basics
+   Numpy/boolean_fancy_indexing
+   mnist_with_knn/mnist_with_knn
    Plotly/plotly_toc
    Regex/regex_toc
    requests
