@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project: Recognizing digits with k-NN" href="../mnist_with_knn/mnist_with_knn.html" />
+    <link rel="next" title="Array shapes and broadcasting" href="broadcasting.html" />
     <link rel="prev" title="Numpy Basics" href="numpy_basics.html" /> 
 </head>
 
@@ -91,12 +91,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="numpy_basics.html">Numpy Basics</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Boolean and fancy indexing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Boolean-arrays">Boolean arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Logical-operations-on-Boolean-arrays">Logical operations on Boolean arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Indexing-with-Boolean-arrays">Indexing with Boolean arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Fancy-indexing">Fancy indexing</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="numpy_toc.html">Numpy</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="numpy_basics.html">Numpy Basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Boolean and fancy indexing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Boolean-arrays">Boolean arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Logical-operations-on-Boolean-arrays">Logical operations on Boolean arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Indexing-with-Boolean-arrays">Indexing with Boolean arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Fancy-indexing">Fancy indexing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Fancy-indexing-example">Fancy indexing example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="broadcasting.html">Array shapes and broadcasting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
@@ -154,6 +159,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+          <li><a href="numpy_toc.html">Numpy</a> &raquo;</li>
         
       <li>Boolean and fancy indexing</li>
     
@@ -424,20 +431,20 @@ div.rendered_html tbody tr:hover {
 <h2>Boolean arrays<a class="headerlink" href="#Boolean-arrays" title="Permalink to this headline">¶</a></h2>
 <p>A Boolean array is a numpy array with Boolean (True/False) values. Such array can be obtained by applying a logical operator to another numpy array:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># create a 4x4 array of integers</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -500,7 +507,7 @@ array([[ True, False,  True, False],
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># another 4x4 array</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -669,7 +676,7 @@ d=
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create a 4x4 array of integers</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -759,8 +766,8 @@ array([[100,   1, 100,   3],
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create two 3x3 arrays of random numbers</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;x=</span><span class="se">\n</span><span class="si">{x}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y=</span><span class="se">\n</span><span class="si">{y}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -814,7 +821,7 @@ array([[-1.        ,  0.81450535,  0.7884784 ],
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create an array of 10 integers randomly selected from the range 0 &lt;= x &lt; 100</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -853,7 +860,7 @@ array([31, 62, 40])
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -960,7 +967,7 @@ array([[   0,    1,    2,    3,    4],
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">b</span>
 </pre></div>
 </div>
@@ -998,6 +1005,86 @@ array([[ 5,  6,  7],
 </pre></div></div>
 </div>
 </div>
+<div class="section" id="Fancy-indexing-example">
+<h2>Fancy indexing example<a class="headerlink" href="#Fancy-indexing-example" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of how fancy indexing can be used in practice. Lets say that we have a numpy array that in the first column gives student id numbers, and in the second column their exam scores:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">exam_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">5010</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">exam_scores</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[5000,   91],
+       [5001,   15],
+       [5002,   24],
+       [5003,   91],
+       [5004,   63],
+       [5005,   56],
+       [5006,    5],
+       [5007,   14],
+       [5008,   22],
+       [5009,   72]])
+</pre></div></div>
+</div>
+<p>Assume that we want to sort rows of this array in increasing order of exam scores. Applying the numpy <code class="docutils literal notranslate"><span class="pre">argsort()</span></code> function to the score column we obtain an array that shows how row indices should be arranged to give such ordering:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[107]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">exam_scores</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">indices</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[107]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([6, 7, 1, 8, 2, 5, 4, 9, 0, 3])
+</pre></div></div>
+</div>
+<p>Fancy indexing lets us apply this to sort the array with exam scores:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[108]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">exam_scores</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[108]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[5006,    5],
+       [5007,   14],
+       [5001,   15],
+       [5008,   22],
+       [5002,   24],
+       [5005,   56],
+       [5004,   63],
+       [5009,   72],
+       [5000,   91],
+       [5003,   91]])
+</pre></div></div>
+</div>
+</div>
 </div>
 
 
@@ -1008,7 +1095,7 @@ array([[ 5,  6,  7],
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../mnist_with_knn/mnist_with_knn.html" class="btn btn-neutral float-right" title="Project: Recognizing digits with k-NN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="broadcasting.html" class="btn btn-neutral float-right" title="Array shapes and broadcasting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="numpy_basics.html" class="btn btn-neutral float-left" title="Numpy Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1022,7 +1109,7 @@ array([[ 5,  6,  7],
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on May 16, 2020.
+        Last updated on May 17, 2020.
       </span>
 
     </p>

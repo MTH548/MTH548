@@ -3,7 +3,7 @@ Plotly
 =======
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
    plotly_basics
    plotly_express

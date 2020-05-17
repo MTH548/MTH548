@@ -4,7 +4,7 @@ Regular expressions
 
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
    regular_expressions
    re_functions

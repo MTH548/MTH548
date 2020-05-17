@@ -43,7 +43,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Plotly" href="../Plotly/plotly_toc.html" />
-    <link rel="prev" title="Boolean and fancy indexing of numpy arrays" href="../Numpy/boolean_fancy_indexing.html" /> 
+    <link rel="prev" title="Boolean and fancy indexing" href="../Numpy/boolean_fancy_indexing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -91,9 +91,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_basics.html">Numpy Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Numpy/boolean_fancy_indexing.html">Boolean and fancy indexing of numpy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Project: Recognizing digits with k-NN</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#MNIST-database">MNIST database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Objectives">Objectives</a></li>
 </ul>
 </li>
@@ -199,8 +199,11 @@
 </style>
 <div class="section" id="Project:-Recognizing-digits-with-k-NN">
 <h1>Project: Recognizing digits with k-NN<a class="headerlink" href="#Project:-Recognizing-digits-with-k-NN" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="MNIST-database">
+<h2>MNIST database<a class="headerlink" href="#MNIST-database" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="http://yann.lecun.com/exdb/mnist/">MNIST database</a> is a collection of 60,000 images of handwritten digits from 0 through 9, with numerical labels. Here is sample of images included in the database:</p>
 <p><img alt="MNIST digits" src="../_images/digits.png" /></p>
+</div>
 <div class="section" id="Objectives">
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <p>Download MNIST files for this project:</p>
@@ -209,13 +212,13 @@
 <div class="line"><a class="reference download internal" download="" href="../_downloads/598c4cd4043b79d04cc72e468eeb3d73/train-labels-idx1-ubyte"><code class="xref download docutils literal notranslate"><span class="pre">train-labels-idx1-ubyte</span></code></a></div>
 </div>
 <p>The first file contains images of digits and the second the corresponding labels. The format of both files is described on the <a class="reference external" href="http://yann.lecun.com/exdb/mnist/">MNIST database website</a>.</p>
-<p>Investigate how useful the k-Nearest Neighbors algorithm is for classification of images in the MNIST database, and describe your results.</p>
+<p>Investigate performance of the k-Nearest Neighbors algorithm in classification of images in the MNIST database, and describe your results.</p>
 <p>Here are some questions which you may consider:</p>
 <ul class="simple">
 <li><p>How does the classification accuracy depend on the size of the training set and on the number of neighbors?</p></li>
 <li><p>Various ways of measuring distances between images, and their impact on classification.</p></li>
-<li><p>What to do if an image we want to classify has equal number of neighbors with two different labels? How does this affect accuracy of classification?</p></li>
-<li><p>Analyze examples of images that have not been classified correctly. What went wrong with them?</p></li>
+<li><p>You can consider a weighted k-NN algorithm: instead just counting how many neighbors have a given label, assign a weight to each neighbor depending on its distance from the data point being classified (smaller weights for more distant neighbors), and then classify the point depending on the sum of weights of neighbors with a given label. Does this improve the accuracy?</p></li>
+<li><p>Analyze examples of images that have not been classified correctly. What went wrong with them? Which digits are confused most often with what other digits?</p></li>
 <li><p>Anything else you find interesting.</p></li>
 </ul>
 </div>
@@ -232,7 +235,7 @@
         <a href="../Plotly/plotly_toc.html" class="btn btn-neutral float-right" title="Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Numpy/boolean_fancy_indexing.html" class="btn btn-neutral float-left" title="Boolean and fancy indexing of numpy arrays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Numpy/boolean_fancy_indexing.html" class="btn btn-neutral float-left" title="Boolean and fancy indexing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -243,7 +246,7 @@
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on May 16, 2020.
+        Last updated on May 17, 2020.
       </span>
 
     </p>

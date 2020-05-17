@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Example: Code sequencing &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Numpy &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example: Code comments" href="report9.html" />
-    <link rel="prev" title="Example: Code structure" href="report7.html" /> 
+    <link rel="next" title="Numpy Basics" href="numpy_basics.html" />
+    <link rel="prev" title="Useful links" href="../useful_links.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,33 +89,14 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../report_guide.html">Project Report Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#collaboration">Collaboration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#using-external-resources">Using external resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#additional-python-features">Additional Python features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#report-grading-rubrics">Report grading rubrics</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../report_guide.html#report-style-guide">Report Style Guide</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-introduction">Report introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-conclusions">Report conclusions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-organization">Report organization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#references">References</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#math-formatting">Math formatting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-structure">Code structure</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../report_guide.html#code-sequencing">Code sequencing</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-comments">Code comments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#execution-errors">Execution errors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#output-size">Output size</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#output-formatting">Output formatting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#graphs-and-plots">Graphs and plots</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Numpy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="numpy_basics.html">Numpy Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boolean_fancy_indexing.html">Boolean and fancy indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="broadcasting.html">Array shapes and broadcasting</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
@@ -172,16 +153,14 @@
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
         
-          <li><a href="../report_guide.html">Project Report Guide</a> &raquo;</li>
-        
-      <li>Example: Code sequencing</li>
+      <li>Numpy</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Report_guide/report5.rst" class="fa fa-github"> View on GitHub</a>
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Numpy/numpy_toc.rst" class="fa fa-github"> View on GitHub</a>
             
           
         
@@ -219,22 +198,16 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="example-code-sequencing">
-<h1>Example: Code sequencing<a class="headerlink" href="#example-code-sequencing" title="Permalink to this headline">¶</a></h1>
-<p><strong>Bad:</strong> In the code below the function <code class="docutils literal notranslate"><span class="pre">ball_height()</span></code> first appears before it is defined.
-This code is confusing to read since when one first sees <code class="docutils literal notranslate"><span class="pre">ball_height()</span></code> it is not clear what
-it is and where it is coming from.</p>
-<a href = "../_static/report_guide/report_sample5a.html">
-<img src="../_static/report_guide/report_sample5a.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a><p><strong>Also bad:</strong> The code below will work if one executes the bottom code cell before executing
-the top one, but anyone reading the report will do it in the opposite order,
-from top to bottom, and this will result in an execution error:</p>
-<a href = "../_static/report_guide/report_sample5aa.html">
-<img src="../_static/report_guide/report_sample5aa.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a><p><strong>Good:</strong>  Code is entered sequentially and it is split into separate cells to better explain its purpose and structure.</p>
-<a href = "../_static/report_guide/report_sample5b.html">
-<img src="../_static/report_guide/report_sample5b.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a></div>
+<div class="section" id="numpy">
+<h1>Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="numpy_basics.html">Numpy Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boolean_fancy_indexing.html">Boolean and fancy indexing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="broadcasting.html">Array shapes and broadcasting</a></li>
+</ul>
+</div>
+</div>
 
 
            </div>
@@ -244,10 +217,10 @@ from top to bottom, and this will result in an execution error:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="report9.html" class="btn btn-neutral float-right" title="Example: Code comments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="numpy_basics.html" class="btn btn-neutral float-right" title="Numpy Basics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="report7.html" class="btn btn-neutral float-left" title="Example: Code structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../useful_links.html" class="btn btn-neutral float-left" title="Useful links" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
