@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400&display=swap');
 
+div.section {
+  margin-top: 20px;
+}
+
+div.nboutput.nblast.container {
+  margin-bottom: 0px!important;
+}
+
 div.output_area.docutils.container {
     max-height: 300px;
     overflow: auto;
-    margin-top: 15px!important;
-    margin-bottom: 10px!important;
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
     color: darkslategray;
 }
 
