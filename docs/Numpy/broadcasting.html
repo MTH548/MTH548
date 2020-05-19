@@ -634,10 +634,10 @@ array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11]])
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([[60,  4, 14],
-       [80, 22, 49],
-       [43, 20, 86],
-       [59, 47, 60]])
+array([[ 3, 10, 59],
+       [93, 75, 49],
+       [24, 67, 19],
+       [66, 80, 18]])
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -656,7 +656,7 @@ array([[60,  4, 14],
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([60,  4, 14, 80, 22, 49, 43, 20, 86, 59, 47, 60])
+array([ 3, 10, 59, 93, 75, 49, 24, 67, 19, 66, 80, 18])
 </pre></div></div>
 </div>
 </div>
@@ -712,8 +712,8 @@ array([[10, 11, 12, 13],
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">])</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a=</span><span class="se">\n</span><span class="si">{a}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b=</span><span class="se">\n</span><span class="si">{b}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a =</span><span class="se">\n</span><span class="si">{a}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b =</span><span class="se">\n</span><span class="si">{b}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -722,12 +722,12 @@ array([[10, 11, 12, 13],
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-a=
+a =
 [[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]
 
-b=
+b =
 [100 200 300 400]
 </pre></div></div>
 </div>
@@ -781,7 +781,7 @@ c=
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -796,7 +796,7 @@ c=
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-17-e81e582b6fa9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-25-e81e582b6fa9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>a <span class="ansi-blue-fg">+</span> c
 
 <span class="ansi-red-fg">ValueError</span>: operands could not be broadcast together with shapes (3,4) (2,4)
@@ -822,9 +822,12 @@ c=
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a=</span><span class="se">\n</span><span class="si">{a}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b=</span><span class="se">\n</span><span class="si">{b}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;c=</span><span class="se">\n</span><span class="si">{c}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a =</span><span class="se">\n</span><span class="si">{a}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b =</span><span class="se">\n</span><span class="si">{b}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;c =</span><span class="se">\n</span><span class="si">{c}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a.shape = </span><span class="si">{a.shape}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.shape = </span><span class="si">{b.shape}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;c.shape = </span><span class="si">{c.shape}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -833,17 +836,21 @@ c=
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-a=
+a =
 [[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]
 
-b=
+b =
 [100 200 300 400]
 
-c=
+c =
 [[ 0 10 20 30]
  [40 50 60 70]]
+
+a.shape = (3, 4)
+b.shape = (4,)
+c.shape = (2, 4)
 </pre></div></div>
 </div>
 <p>The shape of <code class="docutils literal notranslate"><span class="pre">a</span></code> is (3,4) and the shape of <code class="docutils literal notranslate"><span class="pre">b</span></code> is (4,). Since <code class="docutils literal notranslate"><span class="pre">b</span></code> has fewer dimensions, we pad its shape with 1 in the front, i.e. we consider it as a 2-dimensional array with a single row. This gives the following shapes:</p>
@@ -861,14 +868,14 @@ c=
 <p><strong>Example.</strong></p>
 <p>Consider the following arrays <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code>:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a=</span><span class="se">\n</span><span class="si">{a}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d=</span><span class="se">\n</span><span class="si">{d}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a =</span><span class="se">\n</span><span class="si">{a}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d =</span><span class="se">\n</span><span class="si">{d}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a.shape = </span><span class="si">{a.shape}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d.shape = </span><span class="si">{d.shape}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -879,12 +886,12 @@ c=
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-a=
+a =
 [[ 0  1  2  3]
  [ 4  5  6  7]
  [ 8  9 10 11]]
 
-d=
+d =
 [[10]
  [20]
  [30]]
@@ -895,7 +902,7 @@ d.shape = (3, 1)
 </div>
 <p>In this case both arrays are 2-dimensional, and their first dimensions match. Since the array <code class="docutils literal notranslate"><span class="pre">d</span></code> has 1 in the second dimension, it gets stretched in this dimension, which replicated its single column. The result is that <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">d</span></code> adds <code class="docutils literal notranslate"><span class="pre">d</span></code> to every column of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -904,7 +911,7 @@ d.shape = (3, 1)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -917,12 +924,12 @@ array([[10, 11, 12, 13],
 <p><strong>Example.</strong></p>
 <p>Take the following arrays <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">d</span></code>:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b=</span><span class="se">\n</span><span class="si">{b}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d=</span><span class="se">\n</span><span class="si">{d}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b =</span><span class="se">\n</span><span class="si">{b}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d =</span><span class="se">\n</span><span class="si">{d}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b.shape = </span><span class="si">{b.shape}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d.shape = </span><span class="si">{d.shape}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -933,10 +940,10 @@ array([[10, 11, 12, 13],
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-b=
+b =
 [100 200 300 400]
 
-d=
+d =
 [[10]
  [20]
  [30]]
@@ -952,7 +959,7 @@ d.shape = (3, 1)
 </ul>
 <p>This shows that arrays are compatible for broadcasting, and that the broadcasting will be performed by stretching <code class="docutils literal notranslate"><span class="pre">b</span></code> along the first dimension (i.e. replicating its row) and stretching <code class="docutils literal notranslate"><span class="pre">d</span></code> along the second dimension (replicating its single column):</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -961,7 +968,7 @@ d.shape = (3, 1)
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -973,7 +980,7 @@ array([[110, 210, 310, 410],
 </div>
 <p>More explicitly, the array <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">+</span> <span class="pre">d</span></code> has the same values as the sum of the following arrays <code class="docutils literal notranslate"><span class="pre">b_stretched</span></code> and <code class="docutils literal notranslate"><span class="pre">d_stretched</span></code>:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1002,7 +1009,7 @@ d_stretched =
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1011,7 +1018,7 @@ d_stretched =
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1046,7 +1053,7 @@ array([[110, 210, 310, 410],
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on May 18, 2020.
+        Last updated on May 19, 2020.
       </span>
 
     </p>
