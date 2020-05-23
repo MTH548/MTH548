@@ -14,11 +14,13 @@ MTH 448/548 Data Oriented Computing
    useful_links
    Numpy/numpy_toc
    mnist_with_knn/mnist_with_knn
+   Pandas/pandas_toc
+   baby_names/baby_names
    Plotly/plotly_toc
    Regex/regex_toc
    requests
    beautiful_soup
-   scrapping_course_listings
+   scrapping_course_listings/scrapping_course_listings
    json
    escape_from_jupyter
    nhtsa_complaints

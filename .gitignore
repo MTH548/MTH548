@@ -1,5 +1,16 @@
+
+# Large data files
+train-images-idx3-ubyte
+train-labels-idx1-ubyte
+buffalo_crime_Incidents.csv
+source/baby_names/namesbystate/
+source/baby_names/names/
+
 # MacOS
 # General
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Jupyter Notebook
+.ipynb_checkpoints

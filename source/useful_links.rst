@@ -15,3 +15,4 @@ Useful links
    Pandas docs  <https://pandas.pydata.org/docs/>
    Requests docs <https://requests.readthedocs.io/en/master/user/quickstart/>
    Beautiful Soup docs <https://www.crummy.com/software/BeautifulSoup/bs4/doc/>
+   Python Data Science Handbook by Jake VanderPlas <https://jakevdp.github.io/PythonDataScienceHandbook/>
