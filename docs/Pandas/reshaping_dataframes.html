@@ -1,0 +1,2301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reshaping DataFrames &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Project: Baby names" href="../baby_names/baby_names.html" />
+    <link rel="prev" title="Pandas basics" href="pandas_basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="pandas_toc.html">Pandas</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pandas_basics.html">Pandas basics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Reshaping DataFrames</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Transpose">Transpose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Setting-and-reseting-an-index">Setting and reseting an index</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#MultiIndex">MultiIndex</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Stack-and-unstack">Stack and unstack</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings/scrapping_course_listings.html">Scrapping course listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../json.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PT-functions.html">Functions</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+          <li><a href="pandas_toc.html">Pandas</a> &raquo;</li>
+        
+      <li>Reshaping DataFrames</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Pandas/reshaping_dataframes.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Reshaping-DataFrames">
+<h1>Reshaping DataFrames<a class="headerlink" href="#Reshaping-DataFrames" title="Permalink to this headline">¶</a></h1>
+<p>Pandas provide various tools for reshaping DataFrames. This helps us bring data to a form most convenient for our needs. Below we show a few ways how to accomplish it.</p>
+<p>As an illustration we will use sample data provided by the <code class="docutils literal notranslate"><span class="pre">seaborm</span></code> module:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[125]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;flights&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[125]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1949</td>
+      <td>January</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1949</td>
+      <td>February</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1949</td>
+      <td>March</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1949</td>
+      <td>April</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1949</td>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="Transpose">
+<h2>Transpose<a class="headerlink" href="#Transpose" title="Permalink to this headline">¶</a></h2>
+<p>Transpose of a DataFrame produces a new DataFrame whose rows are columns of the original DataFrame:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[126]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">df1</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[126]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1949</td>
+      <td>January</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1949</td>
+      <td>February</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1949</td>
+      <td>March</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1949</td>
+      <td>April</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1949</td>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[127]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># tranpose of df1; each column of df1 becomes a row</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[127]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>year</th>
+      <td>1949</td>
+      <td>1949</td>
+      <td>1949</td>
+      <td>1949</td>
+      <td>1949</td>
+    </tr>
+    <tr>
+      <th>month</th>
+      <td>January</td>
+      <td>February</td>
+      <td>March</td>
+      <td>April</td>
+      <td>May</td>
+    </tr>
+    <tr>
+      <th>passengers</th>
+      <td>112</td>
+      <td>118</td>
+      <td>132</td>
+      <td>129</td>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Setting-and-reseting-an-index">
+<h2>Setting and reseting an index<a class="headerlink" href="#Setting-and-reseting-an-index" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">set_index()</span></code> method lets us select a column to serve as an index of the DataFrame:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[121]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># convert the &quot;year&quot; column into DataFrame index</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;year&quot;</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[121]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1949</th>
+      <td>January</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1949</th>
+      <td>February</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>1949</th>
+      <td>March</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>1949</th>
+      <td>April</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>1949</th>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Notice that values of the newly created index repeat several times. If we use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> indexer with an index value, we will obtain all rows corresponding to this value:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1950</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[86]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1950</th>
+      <td>January</td>
+      <td>115</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>February</td>
+      <td>126</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>March</td>
+      <td>141</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>April</td>
+      <td>135</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>May</td>
+      <td>125</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>June</td>
+      <td>149</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>July</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>August</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>September</td>
+      <td>158</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>October</td>
+      <td>133</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>November</td>
+      <td>114</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>December</td>
+      <td>140</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method has the opposite effect to <code class="docutils literal notranslate"><span class="pre">set_index()</span></code>: it converts the index into a column of the DataFrame:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df2</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[87]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1949</td>
+      <td>January</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1949</td>
+      <td>February</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1949</td>
+      <td>March</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1949</td>
+      <td>April</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1949</td>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>1960</td>
+      <td>August</td>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>1960</td>
+      <td>September</td>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>1960</td>
+      <td>October</td>
+      <td>461</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>1960</td>
+      <td>November</td>
+      <td>390</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>1960</td>
+      <td>December</td>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+<p>144 rows × 3 columns</p>
+</div></div>
+</div>
+</div>
+<div class="section" id="MultiIndex">
+<h2>MultiIndex<a class="headerlink" href="#MultiIndex" title="Permalink to this headline">¶</a></h2>
+<p>In our sample DataFrame each value of the passengers column is uniquely identified by a combination of a year and a month. For this reason it would convenient to set the index using not just the <code class="docutils literal notranslate"><span class="pre">year</span></code> column (as we did above) but both <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">month</span></code> columns. This can be done by passing a list of columns to the <code class="docutils literal notranslate"><span class="pre">set_index()</span></code> method:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[101]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create a DataFrame with index consising of &quot;year&quot; and &quot;month&quot; columns</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">])</span>
+<span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[101]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>passengers</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>month</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">1949</th>
+      <th>January</th>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>February</th>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>March</th>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>April</th>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <td>121</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1960</th>
+      <th>August</th>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>October</th>
+      <td>461</td>
+    </tr>
+    <tr>
+      <th>November</th>
+      <td>390</td>
+    </tr>
+    <tr>
+      <th>December</th>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+<p>144 rows × 1 columns</p>
+</div></div>
+</div>
+<p>The new DataFrame is equipped with a <em>MultiIndex</em> consisting of (year, month) tuples:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df3</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[90]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MultiIndex([(1949,   &#39;January&#39;),
+            (1949,  &#39;February&#39;),
+            (1949,     &#39;March&#39;),
+            (1949,     &#39;April&#39;),
+            (1949,       &#39;May&#39;),
+            (1949,      &#39;June&#39;),
+            (1949,      &#39;July&#39;),
+            (1949,    &#39;August&#39;),
+            (1949, &#39;September&#39;),
+            (1949,   &#39;October&#39;),
+            ...
+            (1960,     &#39;March&#39;),
+            (1960,     &#39;April&#39;),
+            (1960,       &#39;May&#39;),
+            (1960,      &#39;June&#39;),
+            (1960,      &#39;July&#39;),
+            (1960,    &#39;August&#39;),
+            (1960, &#39;September&#39;),
+            (1960,   &#39;October&#39;),
+            (1960,  &#39;November&#39;),
+            (1960,  &#39;December&#39;)],
+           names=[&#39;year&#39;, &#39;month&#39;], length=144)
+</pre></div></div>
+</div>
+<p>To select a row of the DataFrame we can use <code class="docutils literal notranslate"><span class="pre">loc</span></code> with one of these tuples:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df3</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="mi">1949</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[102]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+passengers    121
+Name: (1949, May), dtype: int64
+</pre></div></div>
+</div>
+<p>MultiIndex can be used in several way to select data. For example, MultiIndex slicing works:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[103]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># select all rows with MultiIndex values between (1950, &quot;November&quot;) and (1951, &quot;March&quot;)</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="mi">1950</span><span class="p">,</span> <span class="s2">&quot;November&quot;</span><span class="p">):(</span><span class="mi">1951</span><span class="p">,</span> <span class="s2">&quot;March&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[103]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>passengers</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>month</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">1950</th>
+      <th>November</th>
+      <td>114</td>
+    </tr>
+    <tr>
+      <th>December</th>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">1951</th>
+      <th>January</th>
+      <td>145</td>
+    </tr>
+    <tr>
+      <th>February</th>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>March</th>
+      <td>178</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="Stack-and-unstack">
+<h2>Stack and unstack<a class="headerlink" href="#Stack-and-unstack" title="Permalink to this headline">¶</a></h2>
+<p>Lets bring up again the DataFrame with the (year, month) MultiIndex:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[104]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[104]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>passengers</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th>month</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">1949</th>
+      <th>January</th>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>February</th>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>March</th>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>April</th>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>May</th>
+      <td>121</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th rowspan="5" valign="top">1960</th>
+      <th>August</th>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>September</th>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>October</th>
+      <td>461</td>
+    </tr>
+    <tr>
+      <th>November</th>
+      <td>390</td>
+    </tr>
+    <tr>
+      <th>December</th>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+<p>144 rows × 1 columns</p>
+</div></div>
+</div>
+<p>It may be convenient to rearrange this DataFrame, so that years label rows, months label columns, and a value in a given row and column is the number of passangers for the corresponding year and month. Such rearrangement can be accomplished using the <code class="docutils literal notranslate"><span class="pre">unstack()</span></code> method. Thie method converts the lowest level of the MultiIndex of rows into the lowest level of the MultiIndex of columns:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df4</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="n">df4</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[89]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="12" halign="left">passengers</th>
+    </tr>
+    <tr>
+      <th>month</th>
+      <th>January</th>
+      <th>February</th>
+      <th>March</th>
+      <th>April</th>
+      <th>May</th>
+      <th>June</th>
+      <th>July</th>
+      <th>August</th>
+      <th>September</th>
+      <th>October</th>
+      <th>November</th>
+      <th>December</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1949</th>
+      <td>112</td>
+      <td>118</td>
+      <td>132</td>
+      <td>129</td>
+      <td>121</td>
+      <td>135</td>
+      <td>148</td>
+      <td>148</td>
+      <td>136</td>
+      <td>119</td>
+      <td>104</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>115</td>
+      <td>126</td>
+      <td>141</td>
+      <td>135</td>
+      <td>125</td>
+      <td>149</td>
+      <td>170</td>
+      <td>170</td>
+      <td>158</td>
+      <td>133</td>
+      <td>114</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>1951</th>
+      <td>145</td>
+      <td>150</td>
+      <td>178</td>
+      <td>163</td>
+      <td>172</td>
+      <td>178</td>
+      <td>199</td>
+      <td>199</td>
+      <td>184</td>
+      <td>162</td>
+      <td>146</td>
+      <td>166</td>
+    </tr>
+    <tr>
+      <th>1952</th>
+      <td>171</td>
+      <td>180</td>
+      <td>193</td>
+      <td>181</td>
+      <td>183</td>
+      <td>218</td>
+      <td>230</td>
+      <td>242</td>
+      <td>209</td>
+      <td>191</td>
+      <td>172</td>
+      <td>194</td>
+    </tr>
+    <tr>
+      <th>1953</th>
+      <td>196</td>
+      <td>196</td>
+      <td>236</td>
+      <td>235</td>
+      <td>229</td>
+      <td>243</td>
+      <td>264</td>
+      <td>272</td>
+      <td>237</td>
+      <td>211</td>
+      <td>180</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>1954</th>
+      <td>204</td>
+      <td>188</td>
+      <td>235</td>
+      <td>227</td>
+      <td>234</td>
+      <td>264</td>
+      <td>302</td>
+      <td>293</td>
+      <td>259</td>
+      <td>229</td>
+      <td>203</td>
+      <td>229</td>
+    </tr>
+    <tr>
+      <th>1955</th>
+      <td>242</td>
+      <td>233</td>
+      <td>267</td>
+      <td>269</td>
+      <td>270</td>
+      <td>315</td>
+      <td>364</td>
+      <td>347</td>
+      <td>312</td>
+      <td>274</td>
+      <td>237</td>
+      <td>278</td>
+    </tr>
+    <tr>
+      <th>1956</th>
+      <td>284</td>
+      <td>277</td>
+      <td>317</td>
+      <td>313</td>
+      <td>318</td>
+      <td>374</td>
+      <td>413</td>
+      <td>405</td>
+      <td>355</td>
+      <td>306</td>
+      <td>271</td>
+      <td>306</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>315</td>
+      <td>301</td>
+      <td>356</td>
+      <td>348</td>
+      <td>355</td>
+      <td>422</td>
+      <td>465</td>
+      <td>467</td>
+      <td>404</td>
+      <td>347</td>
+      <td>305</td>
+      <td>336</td>
+    </tr>
+    <tr>
+      <th>1958</th>
+      <td>340</td>
+      <td>318</td>
+      <td>362</td>
+      <td>348</td>
+      <td>363</td>
+      <td>435</td>
+      <td>491</td>
+      <td>505</td>
+      <td>404</td>
+      <td>359</td>
+      <td>310</td>
+      <td>337</td>
+    </tr>
+    <tr>
+      <th>1959</th>
+      <td>360</td>
+      <td>342</td>
+      <td>406</td>
+      <td>396</td>
+      <td>420</td>
+      <td>472</td>
+      <td>548</td>
+      <td>559</td>
+      <td>463</td>
+      <td>407</td>
+      <td>362</td>
+      <td>405</td>
+    </tr>
+    <tr>
+      <th>1960</th>
+      <td>417</td>
+      <td>391</td>
+      <td>419</td>
+      <td>461</td>
+      <td>472</td>
+      <td>535</td>
+      <td>622</td>
+      <td>606</td>
+      <td>508</td>
+      <td>461</td>
+      <td>390</td>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Notice that the row index now consists of a single level with year values, but the column index is a MultiIndex with two levels:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[105]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># index of rows</span>
+<span class="n">df4</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[105]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Int64Index([1949, 1950, 1951, 1952, 1953, 1954, 1955, 1956, 1957, 1958, 1959,
+            1960],
+           dtype=&#39;int64&#39;, name=&#39;year&#39;)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[106]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># MultiIndex of columns</span>
+<span class="n">df4</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[106]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MultiIndex([(&#39;passengers&#39;,   &#39;January&#39;),
+            (&#39;passengers&#39;,  &#39;February&#39;),
+            (&#39;passengers&#39;,     &#39;March&#39;),
+            (&#39;passengers&#39;,     &#39;April&#39;),
+            (&#39;passengers&#39;,       &#39;May&#39;),
+            (&#39;passengers&#39;,      &#39;June&#39;),
+            (&#39;passengers&#39;,      &#39;July&#39;),
+            (&#39;passengers&#39;,    &#39;August&#39;),
+            (&#39;passengers&#39;, &#39;September&#39;),
+            (&#39;passengers&#39;,   &#39;October&#39;),
+            (&#39;passengers&#39;,  &#39;November&#39;),
+            (&#39;passengers&#39;,  &#39;December&#39;)],
+           names=[None, &#39;month&#39;])
+</pre></div></div>
+</div>
+<p>To select a column we need to specify both levels of the MultiIndex:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[124]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df4</span><span class="p">[(</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span> <span class="s2">&quot;January&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[124]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+year
+1949    112
+1950    115
+1951    145
+1952    171
+1953    196
+1954    204
+1955    242
+1956    284
+1957    315
+1958    340
+1959    360
+1960    417
+Name: (passengers, January), dtype: int64
+</pre></div></div>
+</div>
+<p>The first level of the column MultiIndex is not very useful, since it has only one value “passengers” for all columns. We can delete it using the <code class="docutils literal notranslate"><span class="pre">droplevel()</span></code> method</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[128]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df5</span> <span class="o">=</span> <span class="n">df4</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>   <span class="c1"># level of index to drop, indexing starts with 0</span>
+                    <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># specifies that we are modifying the column index</span>
+
+<span class="n">df5</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[128]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>month</th>
+      <th>January</th>
+      <th>February</th>
+      <th>March</th>
+      <th>April</th>
+      <th>May</th>
+      <th>June</th>
+      <th>July</th>
+      <th>August</th>
+      <th>September</th>
+      <th>October</th>
+      <th>November</th>
+      <th>December</th>
+    </tr>
+    <tr>
+      <th>year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1949</th>
+      <td>112</td>
+      <td>118</td>
+      <td>132</td>
+      <td>129</td>
+      <td>121</td>
+      <td>135</td>
+      <td>148</td>
+      <td>148</td>
+      <td>136</td>
+      <td>119</td>
+      <td>104</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>1950</th>
+      <td>115</td>
+      <td>126</td>
+      <td>141</td>
+      <td>135</td>
+      <td>125</td>
+      <td>149</td>
+      <td>170</td>
+      <td>170</td>
+      <td>158</td>
+      <td>133</td>
+      <td>114</td>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>1951</th>
+      <td>145</td>
+      <td>150</td>
+      <td>178</td>
+      <td>163</td>
+      <td>172</td>
+      <td>178</td>
+      <td>199</td>
+      <td>199</td>
+      <td>184</td>
+      <td>162</td>
+      <td>146</td>
+      <td>166</td>
+    </tr>
+    <tr>
+      <th>1952</th>
+      <td>171</td>
+      <td>180</td>
+      <td>193</td>
+      <td>181</td>
+      <td>183</td>
+      <td>218</td>
+      <td>230</td>
+      <td>242</td>
+      <td>209</td>
+      <td>191</td>
+      <td>172</td>
+      <td>194</td>
+    </tr>
+    <tr>
+      <th>1953</th>
+      <td>196</td>
+      <td>196</td>
+      <td>236</td>
+      <td>235</td>
+      <td>229</td>
+      <td>243</td>
+      <td>264</td>
+      <td>272</td>
+      <td>237</td>
+      <td>211</td>
+      <td>180</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>1954</th>
+      <td>204</td>
+      <td>188</td>
+      <td>235</td>
+      <td>227</td>
+      <td>234</td>
+      <td>264</td>
+      <td>302</td>
+      <td>293</td>
+      <td>259</td>
+      <td>229</td>
+      <td>203</td>
+      <td>229</td>
+    </tr>
+    <tr>
+      <th>1955</th>
+      <td>242</td>
+      <td>233</td>
+      <td>267</td>
+      <td>269</td>
+      <td>270</td>
+      <td>315</td>
+      <td>364</td>
+      <td>347</td>
+      <td>312</td>
+      <td>274</td>
+      <td>237</td>
+      <td>278</td>
+    </tr>
+    <tr>
+      <th>1956</th>
+      <td>284</td>
+      <td>277</td>
+      <td>317</td>
+      <td>313</td>
+      <td>318</td>
+      <td>374</td>
+      <td>413</td>
+      <td>405</td>
+      <td>355</td>
+      <td>306</td>
+      <td>271</td>
+      <td>306</td>
+    </tr>
+    <tr>
+      <th>1957</th>
+      <td>315</td>
+      <td>301</td>
+      <td>356</td>
+      <td>348</td>
+      <td>355</td>
+      <td>422</td>
+      <td>465</td>
+      <td>467</td>
+      <td>404</td>
+      <td>347</td>
+      <td>305</td>
+      <td>336</td>
+    </tr>
+    <tr>
+      <th>1958</th>
+      <td>340</td>
+      <td>318</td>
+      <td>362</td>
+      <td>348</td>
+      <td>363</td>
+      <td>435</td>
+      <td>491</td>
+      <td>505</td>
+      <td>404</td>
+      <td>359</td>
+      <td>310</td>
+      <td>337</td>
+    </tr>
+    <tr>
+      <th>1959</th>
+      <td>360</td>
+      <td>342</td>
+      <td>406</td>
+      <td>396</td>
+      <td>420</td>
+      <td>472</td>
+      <td>548</td>
+      <td>559</td>
+      <td>463</td>
+      <td>407</td>
+      <td>362</td>
+      <td>405</td>
+    </tr>
+    <tr>
+      <th>1960</th>
+      <td>417</td>
+      <td>391</td>
+      <td>419</td>
+      <td>461</td>
+      <td>472</td>
+      <td>535</td>
+      <td>622</td>
+      <td>606</td>
+      <td>508</td>
+      <td>461</td>
+      <td>390</td>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Now the column index has only one level, consisting of month names:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[108]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df5</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[108]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CategoricalIndex([&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;,
+                  &#39;July&#39;, &#39;August&#39;, &#39;September&#39;, &#39;October&#39;, &#39;November&#39;,
+                  &#39;December&#39;],
+                 categories=[&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;, &#39;July&#39;, &#39;August&#39;, ...], ordered=False, name=&#39;month&#39;, dtype=&#39;category&#39;)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[109]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># select a column</span>
+<span class="n">df5</span><span class="p">[</span><span class="s2">&quot;May&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[109]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+year
+1949    121
+1950    125
+1951    172
+1952    183
+1953    229
+1954    234
+1955    270
+1956    318
+1957    355
+1958    363
+1959    420
+1960    472
+Name: May, dtype: int64
+</pre></div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">atack()</span></code> method is the inverse of <code class="docutils literal notranslate"><span class="pre">unstack()</span></code>: it converts the lowest level of the column index into the lowest level of the row index:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[110]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df6</span> <span class="o">=</span> <span class="n">df5</span><span class="o">.</span><span class="n">stack</span><span class="p">()</span>
+<span class="n">df6</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[110]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+year  month
+1949  January      112
+      February     118
+      March        132
+      April        129
+      May          121
+                  ...
+1960  August       606
+      September    508
+      October      461
+      November     390
+      December     432
+Length: 144, dtype: int64
+</pre></div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">df6</span></code> is a Series with a two level MultiIndex consisting of year and row values:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[112]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df6</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[112]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+MultiIndex([(1949,   &#39;January&#39;),
+            (1949,  &#39;February&#39;),
+            (1949,     &#39;March&#39;),
+            (1949,     &#39;April&#39;),
+            (1949,       &#39;May&#39;),
+            (1949,      &#39;June&#39;),
+            (1949,      &#39;July&#39;),
+            (1949,    &#39;August&#39;),
+            (1949, &#39;September&#39;),
+            (1949,   &#39;October&#39;),
+            ...
+            (1960,     &#39;March&#39;),
+            (1960,     &#39;April&#39;),
+            (1960,       &#39;May&#39;),
+            (1960,      &#39;June&#39;),
+            (1960,      &#39;July&#39;),
+            (1960,    &#39;August&#39;),
+            (1960, &#39;September&#39;),
+            (1960,   &#39;October&#39;),
+            (1960,  &#39;November&#39;),
+            (1960,  &#39;December&#39;)],
+           names=[&#39;year&#39;, &#39;month&#39;], length=144)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[113]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># select a row of the series</span>
+<span class="n">df6</span><span class="p">[(</span><span class="mi">1949</span><span class="p">,</span> <span class="s2">&quot;March&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[113]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+132
+</pre></div></div>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> method we can convert the Multiindex into colums, one column for each MultiIndex level:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[114]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df7</span> <span class="o">=</span> <span class="n">df6</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df7</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[114]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1949</td>
+      <td>January</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1949</td>
+      <td>February</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1949</td>
+      <td>March</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1949</td>
+      <td>April</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1949</td>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>1960</td>
+      <td>August</td>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>1960</td>
+      <td>September</td>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>1960</td>
+      <td>October</td>
+      <td>461</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>1960</td>
+      <td>November</td>
+      <td>390</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>1960</td>
+      <td>December</td>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+<p>144 rows × 3 columns</p>
+</div></div>
+</div>
+<p>The DataFrame we obtained is almost the same as the DataFrame we started with. The only difference is that the passenger column is now called 0. We can use the <code class="docutils literal notranslate"><span class="pre">rename</span></code> method to change the name of this column. This method takes as its argument a dictionary with keys given by names of columns (or rows) we want to rename, and values given by new names:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[116]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df8</span> <span class="o">=</span> <span class="n">df7</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">0</span> <span class="p">:</span> <span class="s2">&quot;passengers&quot;</span><span class="p">},</span>  <span class="c1"># replace the label 0 in the index by &quot;passenger&quot;</span>
+                 <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>              <span class="c1"># this specifies that we are changing the column index</span>
+<span class="n">df8</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[116]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1949</td>
+      <td>January</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1949</td>
+      <td>February</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1949</td>
+      <td>March</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1949</td>
+      <td>April</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1949</td>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>1960</td>
+      <td>August</td>
+      <td>606</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>1960</td>
+      <td>September</td>
+      <td>508</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>1960</td>
+      <td>October</td>
+      <td>461</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>1960</td>
+      <td>November</td>
+      <td>390</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>1960</td>
+      <td>December</td>
+      <td>432</td>
+    </tr>
+  </tbody>
+</table>
+<p>144 rows × 3 columns</p>
+</div></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../baby_names/baby_names.html" class="btn btn-neutral float-right" title="Project: Baby names" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pandas_basics.html" class="btn btn-neutral float-left" title="Pandas basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
+      <span class="lastupdated"><br/>
+        Last updated on May 30, 2020.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

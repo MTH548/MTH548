@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project: Baby names" href="../baby_names/baby_names.html" />
+    <link rel="next" title="Reshaping DataFrames" href="reshaping_dataframes.html" />
     <link rel="prev" title="Pandas" href="pandas_toc.html" /> 
 </head>
 
@@ -110,9 +110,13 @@
 <li class="toctree-l4"><a class="reference internal" href="#Series.apply()">Series.apply()</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#Aggregations">Aggregations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Aggregations">Aggregations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#DataFrame.agg()">DataFrame.agg()</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reshaping_dataframes.html">Reshaping DataFrames</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
@@ -440,7 +444,7 @@ div.rendered_html tbody tr:hover {
 <h1>Pandas basics<a class="headerlink" href="#Pandas-basics" title="Permalink to this headline">¶</a></h1>
 <p>Pandas is a Python library for working with tabular data. The main objects it provides are Series and DataFrame.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -450,7 +454,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Pandas-Series">
 <h2>Pandas Series<a class="headerlink" href="#Pandas-Series" title="Permalink to this headline">¶</a></h2>
-<p>Pandas Series is essentially a one-dimensional array, equipped with an index which labels data entries. We can create a Series object, for example, by converting a list:</p>
+<p>Pandas Series is essentially a one-dimensional array, equipped with an index which labels its entries. We can create a Series object, for example, by converting a list:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -478,7 +482,7 @@ div.rendered_html tbody tr:hover {
 dtype: int64
 </pre></div></div>
 </div>
-<p>By default entries of a Series are indexed by consecutive integers, but we can specify a more meaningful index. The numbers in the above Series give diameters (in kilometers) of planets of the Solar System, so it is natural to use names of the planet as index values:</p>
+<p>By default entries of a Series are indexed by consecutive integers, but we can specify a more meaningful index. The numbers in the above Series give diameters (in kilometers) of planets of the Solar System, so it is sensible to use names of the planet as index values:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
@@ -508,7 +512,7 @@ Neptune     49528
 dtype: int64
 </pre></div></div>
 </div>
-<p>We can use index values to specify Series entries:</p>
+<p>We can use index values to select Series entries:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -607,7 +611,7 @@ dtype: int64
 <h2>Pandas DataFrame<a class="headerlink" href="#Pandas-DataFrame" title="Permalink to this headline">¶</a></h2>
 <p>Pandas DataFrame is a two-dimensional array equipped with one index labeling its rows, and another labeling its columns. There are several ways of creating a DataFrame. One of them is to use a dictionary of lists. Each list gives values of a column of the DataFrame, and dictionary keys give column labels:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -621,7 +625,7 @@ dtype: int64
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -691,6 +695,123 @@ dtype: int64
       <td>-195</td>
       <td>8.7</td>
     </tr>
+    <tr>
+      <th>7</th>
+      <td>49528</td>
+      <td>-200</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2370</td>
+      <td>-225</td>
+      <td>0.7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">head</span></code> and <code class="docutils literal notranslate"><span class="pre">tail</span></code> methods lets us select the first snd last few rows of a DataFrame:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># get the first 3 rows</span>
+<span class="n">planets</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diameter</th>
+      <th>avg_temp</th>
+      <th>gravity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4879</td>
+      <td>167</td>
+      <td>3.7</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>12104</td>
+      <td>464</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12756</td>
+      <td>15</td>
+      <td>9.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># get the last 2 rows</span>
+<span class="n">planets</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>diameter</th>
+      <th>avg_temp</th>
+      <th>gravity</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <th>7</th>
       <td>49528</td>
@@ -1054,7 +1175,7 @@ Name: gravity, dtype: float64
 </div>
 <div class="section" id="Selections-with-loc-and-iloc">
 <h3>Selections with <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code><a class="headerlink" href="#Selections-with-loc-and-iloc" title="Permalink to this headline">¶</a></h3>
-<p>To get more flexibility with DataFrame selections, we can use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> indexer. It allows us to select rows and columns using row and column labels, lists of labels, and slices:</p>
+<p>To get more flexibility with DataFrame selections we can use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> indexer. It lets us select rows and columns using row and column labels, lists of labels, and slices:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
@@ -1616,6 +1737,7 @@ Name: diameter, dtype: bool
 </table>
 </div></div>
 </div>
+<p>Notice that if the Boolean array used for selection is one-dimensional, then is selects rows of the DataFrame. Other options (using a two-dimensional Boolean array, using a one-dimensional array to select columns) are also possible.</p>
 <p>Logical conditions can be combined the same way as for numpy arrays:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
@@ -1672,7 +1794,6 @@ Name: diameter, dtype: bool
 </table>
 </div></div>
 </div>
-<p>Notice that if the Boolean array used for selection is one-dimensional, then is selects rows of the DataFrame. Other options (using a two-dimensional Boolean array, using a one-dimensional array to select columns) are also possible.</p>
 </div>
 </div>
 <div class="section" id="Sorting">
@@ -1733,7 +1854,7 @@ Jupyter    142984
 dtype: int64
 </pre></div></div>
 </div>
-<p>By default values will be sorted in the ascending order, but we can change it:</p>
+<p>By default values are sorted in the ascending order, but we can change it:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
 </pre></div>
@@ -1762,7 +1883,7 @@ Pluto        2370
 dtype: int64
 </pre></div></div>
 </div>
-<p>The sort values method works with DataFrames as well, but in this case we need to specify which column (or row) should be used for sorting:</p>
+<p><code class="docutils literal notranslate"><span class="pre">sort_values</span></code> works with DataFrames as well, but in this case we need to specify which column (or row) should be used for sorting:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
@@ -1866,7 +1987,7 @@ dtype: int64
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># sort using the &quot;gravity&quot; column in descending order</span>
-<span class="n">planets</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;gravity&quot;</span><span class="p">)</span>
+<span class="n">planets</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;gravity&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1900,10 +2021,40 @@ dtype: int64
   </thead>
   <tbody>
     <tr>
-      <th>Pluto</th>
-      <td>2370</td>
-      <td>-225</td>
-      <td>0.7</td>
+      <th>Jupyter</th>
+      <td>142984</td>
+      <td>-110</td>
+      <td>23.1</td>
+    </tr>
+    <tr>
+      <th>Neptune</th>
+      <td>49528</td>
+      <td>-200</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>Earth</th>
+      <td>12756</td>
+      <td>15</td>
+      <td>9.8</td>
+    </tr>
+    <tr>
+      <th>Saturn</th>
+      <td>120536</td>
+      <td>-140</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>Venus</th>
+      <td>12104</td>
+      <td>464</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>Uranus</th>
+      <td>51118</td>
+      <td>-195</td>
+      <td>8.7</td>
     </tr>
     <tr>
       <th>Mercury</th>
@@ -1918,52 +2069,22 @@ dtype: int64
       <td>3.7</td>
     </tr>
     <tr>
-      <th>Uranus</th>
-      <td>51118</td>
-      <td>-195</td>
-      <td>8.7</td>
-    </tr>
-    <tr>
-      <th>Venus</th>
-      <td>12104</td>
-      <td>464</td>
-      <td>8.9</td>
-    </tr>
-    <tr>
-      <th>Saturn</th>
-      <td>120536</td>
-      <td>-140</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>Earth</th>
-      <td>12756</td>
-      <td>15</td>
-      <td>9.8</td>
-    </tr>
-    <tr>
-      <th>Neptune</th>
-      <td>49528</td>
-      <td>-200</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>Jupyter</th>
-      <td>142984</td>
-      <td>-110</td>
-      <td>23.1</td>
+      <th>Pluto</th>
+      <td>2370</td>
+      <td>-225</td>
+      <td>0.7</td>
     </tr>
   </tbody>
 </table>
 </div></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> method accepts <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument. The default setting is <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> which sorts columns. By changing it to <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> we can sort rows:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> method accepts <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument. The default value is <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> which sorts columns. By changing it to <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> we can sort rows:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># sort using the &quot;gravity&quot; column in descending order</span>
+<span></span><span class="c1"># sort values in the &quot;Mercury&quot; row</span>
 <span class="n">planets</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Mercury&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2255,7 +2376,7 @@ dtype: int64
 <h2>Modifying DataFrames and Series<a class="headerlink" href="#Modifying-DataFrames-and-Series" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="Adding-rows-and-columns">
 <h3>Adding rows and columns<a class="headerlink" href="#Adding-rows-and-columns" title="Permalink to this headline">¶</a></h3>
-<p>We can add a column to a DataFrame simply by specifying its name and values:</p>
+<p>We can add a column to a DataFrame by specifying its name and values:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
@@ -2792,7 +2913,7 @@ Pluto      3.374748
 dtype: float64
 </pre></div></div>
 </div>
-<p>Since each row and each column of a DataFrame is a Series, we can use numoy functions to modify DataFrame rows and columns, or to create new rows and columns:</p>
+<p>Since each row and each column of a DataFrame is a Series, we can use numpy functions to modify DataFrame rows and columns, or to create new rows and columns:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
@@ -3170,27 +3291,27 @@ dtype: object
   <tbody>
     <tr>
       <th>John</th>
-      <td>92</td>
-      <td>29</td>
-      <td>91</td>
+      <td>9</td>
+      <td>69</td>
+      <td>10</td>
     </tr>
     <tr>
       <th>Alice</th>
-      <td>28</td>
-      <td>80</td>
-      <td>74</td>
+      <td>59</td>
+      <td>53</td>
+      <td>99</td>
     </tr>
     <tr>
       <th>Bob</th>
-      <td>17</td>
-      <td>10</td>
-      <td>84</td>
+      <td>15</td>
+      <td>48</td>
+      <td>16</td>
     </tr>
     <tr>
       <th>Emily</th>
-      <td>95</td>
-      <td>40</td>
-      <td>49</td>
+      <td>59</td>
+      <td>22</td>
+      <td>27</td>
     </tr>
   </tbody>
 </table>
@@ -3212,9 +3333,9 @@ dtype: object
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-exam_1    95
-exam_2    80
-exam_3    91
+exam_1    59
+exam_2    69
+exam_3    99
 dtype: int64
 </pre></div></div>
 </div>
@@ -3234,9 +3355,9 @@ dtype: int64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-exam_1    17
-exam_2    10
-exam_3    49
+exam_1     9
+exam_2    22
+exam_3    10
 dtype: int64
 </pre></div></div>
 </div>
@@ -3256,9 +3377,9 @@ dtype: int64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-exam_1    58.00
-exam_2    39.75
-exam_3    74.50
+exam_1    35.5
+exam_2    48.0
+exam_3    38.0
 dtype: float64
 </pre></div></div>
 </div>
@@ -3279,14 +3400,16 @@ dtype: float64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-John     212
-Alice    182
-Bob      111
-Emily    184
+John      88
+Alice    211
+Bob       79
+Emily    108
 dtype: int64
 </pre></div></div>
 </div>
-<p>To aggregate data in a custom way we can use the DataFrame <code class="docutils literal notranslate"><span class="pre">agg</span></code> method. This method takes as an argument a function, passes each column (or row) of a DataFrame to this function, and returns a Series (or DataFrame) consisting of return values.</p>
+<div class="section" id="DataFrame.agg()">
+<h3>DataFrame.agg()<a class="headerlink" href="#DataFrame.agg()" title="Permalink to this headline">¶</a></h3>
+<p>To aggregate data in a custom way we can use the DataFrame <code class="docutils literal notranslate"><span class="pre">agg</span></code> method. This method takes as an argument a function, passes each column (or row) of the DataFrame to this function, and returns a Series (or DataFrame) consisting of return values.</p>
 <p>For example, lets say that we want to assign grades to students based on their total exam scores: “Pass” for a score above 200, and “Fail” otherwise. We can do it as follows:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
@@ -3310,16 +3433,16 @@ dtype: int64
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-John     Pass
-Alice    Fail
+John     Fail
+Alice    Pass
 Bob      Fail
 Emily    Fail
 dtype: object
 </pre></div></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">agg</span></code> method has many additional options. For example, we can use it to specify a different aggregation function for each column.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">agg</span></code> method has several additional options. For example, we can use it to specify a different aggregation function for each column.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3329,30 +3452,31 @@ dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[55]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[52]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-exam_1    17.0
-exam_2    80.0
-exam_3    74.5
+exam_1     9.0
+exam_2    69.0
+exam_3    38.0
 dtype: float64
 </pre></div></div>
 </div>
 <p>Notice that the standard aggregation functions (<code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code> etc.) can be specified by giving their names as strings.</p>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">agg</span></code> with a list of functions to compute several aggregations at once:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">scores</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="n">assign_grades</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span></span><span class="c1"># compute mean, sum, and the value of assign_grades for each row</span>
+<span class="n">scores</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="n">assign_grades</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[57]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -3382,31 +3506,32 @@ dtype: float64
   <tbody>
     <tr>
       <th>John</th>
-      <td>70.6667</td>
-      <td>212</td>
-      <td>Pass</td>
-    </tr>
-    <tr>
-      <th>Alice</th>
-      <td>60.6667</td>
-      <td>182</td>
+      <td>29.3333</td>
+      <td>88</td>
       <td>Fail</td>
     </tr>
     <tr>
+      <th>Alice</th>
+      <td>70.3333</td>
+      <td>211</td>
+      <td>Pass</td>
+    </tr>
+    <tr>
       <th>Bob</th>
-      <td>37</td>
-      <td>111</td>
+      <td>26.3333</td>
+      <td>79</td>
       <td>Fail</td>
     </tr>
     <tr>
       <th>Emily</th>
-      <td>61.3333</td>
-      <td>184</td>
+      <td>36</td>
+      <td>108</td>
       <td>Fail</td>
     </tr>
   </tbody>
 </table>
 </div></div>
+</div>
 </div>
 </div>
 </div>
@@ -3419,7 +3544,7 @@ dtype: float64
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../baby_names/baby_names.html" class="btn btn-neutral float-right" title="Project: Baby names" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="reshaping_dataframes.html" class="btn btn-neutral float-right" title="Reshaping DataFrames" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="pandas_toc.html" class="btn btn-neutral float-left" title="Pandas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -3433,7 +3558,7 @@ dtype: float64
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on May 25, 2020.
+        Last updated on May 30, 2020.
       </span>
 
     </p>
