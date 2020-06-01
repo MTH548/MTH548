@@ -7,3 +7,4 @@ Pandas
 
    pandas_basics
    reshaping_dataframes
+   groupby
