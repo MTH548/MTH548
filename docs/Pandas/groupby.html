@@ -42,7 +42,7 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Project: Baby names" href="../baby_names/baby_names.html" />
+    <link rel="next" title="Combining DataFrames" href="combining_dataframes.html" />
     <link rel="prev" title="Reshaping DataFrames" href="reshaping_dataframes.html" /> 
 </head>
 
@@ -99,12 +99,13 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">GroupBy</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#The-GroupBy-object">The GroupBy object</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Simple-aggregations">Simple aggregations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#GroupBy.agg()">GroupBy.agg()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#GroupBy.transform()">GroupBy.transform()</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#GroupBy.apply()">GroupBy.apply()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GroupBy.agg">GroupBy.agg</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GroupBy.transform">GroupBy.transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#GroupBy.apply">GroupBy.apply</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#groupby-options">groupby options</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="combining_dataframes.html">Combining DataFrames</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
@@ -1104,8 +1105,8 @@ Name: total_bill, dtype: float64
 </div></div>
 </div>
 </div>
-<div class="section" id="GroupBy.agg()">
-<h2>GroupBy.agg()<a class="headerlink" href="#GroupBy.agg()" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="GroupBy.agg">
+<h2>GroupBy.agg<a class="headerlink" href="#GroupBy.agg" title="Permalink to this headline">¶</a></h2>
 <p>To aggregate data in a custom way, we can use the <code class="docutils literal notranslate"><span class="pre">agg()</span></code> method. This method takes as its argument a function. This function is applied to every column of each group to compute aggregations.</p>
 <p>For example, let say that we want to calculate how many males and females left tips above $5.00. This could be done as follows:</p>
 <div class="nbinput docutils container">
@@ -1168,8 +1169,8 @@ Name: tip, dtype: int64
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="GroupBy.transform()">
-<h2>GroupBy.transform()<a class="headerlink" href="#GroupBy.transform()" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="GroupBy.transform">
+<h2>GroupBy.transform<a class="headerlink" href="#GroupBy.transform" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">transform()</span></code> is another method of GroupBy objects. It also takes as its argument a function and applies this function to columns of each group. In this case though, the function must return either a Series of the same length as the original column or a scalar value.</p>
 <p>In the example below, we use transform to express values of the “total_bill” and “tip” columns as fractions of mean values of these columns in each group.</p>
 <div class="nbinput docutils container">
@@ -1476,8 +1477,8 @@ Name: tip, dtype: int64
 </div></div>
 </div>
 </div>
-<div class="section" id="GroupBy.apply()">
-<h2>GroupBy.apply()<a class="headerlink" href="#GroupBy.apply()" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="GroupBy.apply">
+<h2>GroupBy.apply<a class="headerlink" href="#GroupBy.apply" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method is more flexible than <code class="docutils literal notranslate"><span class="pre">agg()</span></code> and <code class="docutils literal notranslate"><span class="pre">transform()</span></code> but usually also slower. It takes as an argument a function. This function is applied to the whole DataFrame for each group. The return values are then assembled together.</p>
 <p>For example, lets say that for each “Female”/“Male” group we want to find 3 rows of data with the largest tip amounts. We can do it as follows:</p>
 <div class="nbinput docutils container">
@@ -1974,7 +1975,7 @@ array([&#39;small&#39;, &#39;large&#39;, &#39;large&#39;, &#39;small&#39;, &#39;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../baby_names/baby_names.html" class="btn btn-neutral float-right" title="Project: Baby names" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="combining_dataframes.html" class="btn btn-neutral float-right" title="Combining DataFrames" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="reshaping_dataframes.html" class="btn btn-neutral float-left" title="Reshaping DataFrames" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1988,7 +1989,7 @@ array([&#39;small&#39;, &#39;large&#39;, &#39;large&#39;, &#39;small&#39;, &#39;
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jun 01, 2020.
+        Last updated on Jun 03, 2020.
       </span>
 
     </p>

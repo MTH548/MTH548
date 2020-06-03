@@ -847,7 +847,7 @@ FROM
     ON condition;
 </pre></div>
 </div>
-<p>This clause returns combinations of every record of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with every record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> for which the specified condition is satisfied.</p>
+<p>This clause returns combinations of every record of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with every record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> for which the specified condition is satisfied. Records of either table which do not have a match are omitted.</p>
 <p>For example, the query below returns combined records from tables <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> which have the same student id number:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -1018,8 +1018,8 @@ FROM
    ON condition;
 </pre></div>
 </div>
-<p>It combines every record of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with every record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> for which the given condition is satisfied. If a record in <code class="docutils literal notranslate"><span class="pre">left_table</span></code> does not have a match in <code class="docutils literal notranslate"><span class="pre">right_table</span></code> then it is combined with NULL values.</p>
-<p>For example, we can use <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> to list MTH 141 students and include additional information whether they took ENG 101, and if so what grades they obtained.</p>
+<p>It combines every record of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with every record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> for which the given condition is satisfied. Records in the <code class="docutils literal notranslate"><span class="pre">left_table</span></code> that not have a match in <code class="docutils literal notranslate"><span class="pre">right_table</span></code> are combined with NULL values.</p>
+<p>For example, we can use <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> to list MTH 141 students, and include their grades in ENG 101 if they exist:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1502,7 +1502,7 @@ Done.
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on May 31, 2020.
+        Last updated on Jun 03, 2020.
       </span>
 
     </p>
