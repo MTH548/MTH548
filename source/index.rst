@@ -15,8 +15,8 @@ MTH 448/548 Data Oriented Computing
    Numpy/numpy_toc
    mnist_with_knn/mnist_with_knn
    Pandas/pandas_toc
-   baby_names/baby_names
    Plotly/plotly_toc
+   baby_names/baby_names
    Regex/regex_toc
    requests
    beautiful_soup
