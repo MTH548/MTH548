@@ -661,7 +661,7 @@ gapminder:
                  <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
                  <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
                  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
-                 <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>   <span class="c1"># plot width</span>
+                 <span class="n">width</span><span class="o">=</span><span class="mi">750</span><span class="p">,</span>   <span class="c1"># plot width</span>
                  <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>  <span class="c1"># plot height</span>
                  <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Scatter plot&quot;</span>
                 <span class="p">)</span>
@@ -675,8 +675,8 @@ gapminder:
 <div class="output_area rendered_html docutils container">
 <iframe
     scrolling="no"
-    width="820px"
-    height="520"
+    width="100%"
+    height="545px"
     src="../_static/plotly_plot_types/iframe_figures/figure_3.html"
     frameborder="0"
     allowfullscreen
@@ -761,6 +761,7 @@ want them plotted.</p>
 </div>
 <div class="section" id="Strip-plot">
 <h2>Strip plot<a class="headerlink" href="#Strip-plot" title="Permalink to this headline">¶</a></h2>
+<p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to prevent overlapping.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -793,6 +794,15 @@ want them plotted.</p>
 </div>
 <div class="section" id="Box-plot">
 <h2>Box plot<a class="headerlink" href="#Box-plot" title="Permalink to this headline">¶</a></h2>
+<p>Components of a box plot:</p>
+<ul class="simple">
+<li><p>The lower edge of a box indicates the <em>first quartile</em>: 25% of data values are below it.</p></li>
+<li><p>The line inside a box indicated the <em>median</em>: 50% of data values are below, and 50% is above it.</p></li>
+<li><p>The upper edge of a box indicates the <em>third quartile</em>: 75% of data values are below it.</p></li>
+<li><p>The height of the box (i.e. the difference between the first and third quartiles) is called the <em>Interquartile Range</em> (IRQ).</p></li>
+<li><p>The whiskers of a box extend to the smallest and larges data values which are within 1.5 <span class="math notranslate nohighlight">\(\times\)</span> IQR from the lower and upper edges of a box.</p></li>
+<li><p>Data values which are outside the range of whiskers are considered to be <em>outliers</em>. They are plotted as individual points.</p></li>
+</ul>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -825,6 +835,7 @@ want them plotted.</p>
 </div>
 <div class="section" id="Violin-plot">
 <h2>Violin plot<a class="headerlink" href="#Violin-plot" title="Permalink to this headline">¶</a></h2>
+<p>Violin plots show kernel density estimate (KDE) of data.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -855,12 +866,44 @@ want them plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
+<p>Violin plot can be combined with box plot:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">violin</span><span class="p">(</span><span class="n">tips</span><span class="p">,</span>
+                <span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
+                <span class="n">labels</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;total_bill&quot;</span> <span class="p">:</span> <span class="s2">&quot;total bill&quot;</span><span class="p">},</span>  <span class="c1"># change label of y-axis</span>
+                <span class="n">category_orders</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;day&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Thur&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">]},</span> <span class="c1"># order days on x-axis</span>
+                <span class="n">box</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>   <span class="c1"># add box plots</span>
+                <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Violin plot with boxes&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="100%"
+    height="545px"
+    src="../_static/plotly_plot_types/iframe_figures/figure_9.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
 </div>
 <div class="section" id="Histogram-plot">
 <h2>Histogram plot<a class="headerlink" href="#Histogram-plot" title="Permalink to this headline">¶</a></h2>
 <p>Figures produced by Plotly Express can be customized using other Plotly tools. Below we use it to modify a histogram to add a bit of space between its bars (by default all bars would be plotted next to each other).</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -884,7 +927,7 @@ want them plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../_static/plotly_plot_types/iframe_figures/figure_9.html"
+    src="../_static/plotly_plot_types/iframe_figures/figure_10.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -893,7 +936,7 @@ want them plotted.</p>
 <div class="section" id="Sunburst-plot">
 <h2>Sunburst plot<a class="headerlink" href="#Sunburst-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -913,7 +956,7 @@ want them plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../_static/plotly_plot_types/iframe_figures/figure_10.html"
+    src="../_static/plotly_plot_types/iframe_figures/figure_11.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -923,7 +966,7 @@ want them plotted.</p>
 <h2>Marginal plots<a class="headerlink" href="#Marginal-plots" title="Permalink to this headline">¶</a></h2>
 <p>Most types of plots have options to include one or two marginal sublots. Below we use it to add a carpet plot on the margin of the x-axis, and a box plot on the margin of the y-axis. Possible types of marginal plots are <code class="docutils literal notranslate"><span class="pre">&quot;rug&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;box&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;violin&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;histogram&quot;</span></code>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -946,7 +989,7 @@ want them plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../_static/plotly_plot_types/iframe_figures/figure_11.html"
+    src="../_static/plotly_plot_types/iframe_figures/figure_12.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -956,7 +999,7 @@ want them plotted.</p>
 <h2>Animated plots<a class="headerlink" href="#Animated-plots" title="Permalink to this headline">¶</a></h2>
 <p>Some types plots can be animated using <code class="docutils literal notranslate"><span class="pre">animation_frame</span></code> and <code class="docutils literal notranslate"><span class="pre">animation_group</span></code> options. See <a class="reference external" href="https://plotly.com/python/animations/">Plotly documentation</a> for more details.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -987,7 +1030,7 @@ want them plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../_static/plotly_plot_types/iframe_figures/figure_12.html"
+    src="../_static/plotly_plot_types/iframe_figures/figure_13.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
