@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Project: Baby names &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Scraping course listings &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -42,8 +42,8 @@
   <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Regular expressions" href="../Regex/regex_toc.html" />
-    <link rel="prev" title="Plotly Express plot types" href="../Plotly/plotly_plot_types.html" /> 
+    <link rel="next" title="JSON" href="../json.html" />
+    <link rel="prev" title="Beautiful Soup" href="../beautiful_soup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,15 +95,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Project: Baby names</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Database-of-baby-names">Database of baby names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Objectives">Objectives</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scrapping_course_listings/scrapping_course_listings.html">Scrapping course listings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scraping course listings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Course-listings">Course listings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercise">Exercise</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../json.html">JSON</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
@@ -154,14 +154,14 @@
     
       <li><a href="../index.html">MTH548</a> &raquo;</li>
         
-      <li>Project: Baby names</li>
+      <li>Scraping course listings</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
             
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/baby_names/baby_names.ipynb" class="fa fa-github"> View on GitHub</a>
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/scraping_course_listings/scraping_course_listings.ipynb" class="fa fa-github"> View on GitHub</a>
             
           
         
@@ -199,29 +199,21 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Project:-Baby-names">
-<h1>Project: Baby names<a class="headerlink" href="#Project:-Baby-names" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Database-of-baby-names">
-<h2>Database of baby names<a class="headerlink" href="#Database-of-baby-names" title="Permalink to this headline">¶</a></h2>
-<p>The United States Social Security Administration maintains records of babies born in the USA each year. Historical data of first names of babies is available on the <a class="reference external" href="https://www.ssa.gov/oact/babynames/limits.html">Social Security website</a>. It provides the number of babies registered with a given first name in a given year. Here is a sample data for the year 1960:</p>
-<iframe src="../_static/baby_names/year_names.html" height="420" width="620" style="border:none; margin:0"></iframe><p>Another data set provides the number of babies registered with a given first name in each US state. Here is a sample of data for New York:</p>
-<iframe src="../_static/baby_names/state_names.html" height="420" width="620" style="border:none; margin:0"></iframe></div>
-<div class="section" id="Objectives">
-<h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
-<p>Download the files with baby names data:</p>
-<div class="line-block">
-<div class="line"><a class="reference download external" download="" href="https://www.ssa.gov/oact/babynames/names.zip"><code class="xref download docutils literal notranslate"><span class="pre">names.zip</span></code></a>  - cumulative US data</div>
-<div class="line"><a class="reference download external" download="" href="https://www.ssa.gov/oact/babynames/state/namesbystate.zip"><code class="xref download docutils literal notranslate"><span class="pre">namesbystate.zip</span></code></a> - baby names by state</div>
+<div class="section" id="Scraping-course-listings">
+<h1>Scraping course listings<a class="headerlink" href="#Scraping-course-listings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Course-listings">
+<h2>Course listings<a class="headerlink" href="#Course-listings" title="Permalink to this headline">¶</a></h2>
+<p>The following web page shows a table of UB undergraduate courses offered in the spring semester:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http://www.buffalo.edu/class-schedule?switch=showcourses&amp;semester=spring&amp;division=1&amp;dept=MTH
+</pre></div>
 </div>
-<p>Analyze some facets of this data. You can use one of the data sets (national or state data), or both.</p>
-<p>Here are some possible topics you can pursue:</p>
+<img style="display: block; margin-left: auto; margin-right: auto; width: 90%;" src="../_static/course_table.png"><p>Each table row contains data about a lecture, recitation etc. In addition, the <strong>Course</strong> column of the table contains links to pages with more detailed information. In particular, these individual pages list enrollment capacity and enrollment total for each course.</p>
+<img style="display: block; margin-left: auto; margin-right:auto; width: 90%;" src="../_static/course_details.png"></div>
+<div class="section" id="Exercise">
+<h2>Exercise<a class="headerlink" href="#Exercise" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Name diversity.</strong> How many names were used each year? How many babies shared the same name on average? How did this change over the years? How does this differ among various states? How does this differ depending on the gender of babies?</p></li>
-<li><p><strong>Name popularity.</strong> Which names are most and least popular? How has the popularity of various names been changing over the years? Are names popular in one state also popular in other states? What fraction of babies are given, say, one of the one hundred most popular names, and what fraction are given very unique names? Does this depend on the gender of babies? Are there sudden spikes of the popularity of some names?</p></li>
-<li><p><strong>Gender specificity.</strong> Some names are given only to male babies, some only to female babies, and some are given to both males and females. What fraction of names belong to each of these groups? Does this differ depending on the year and state? For names given to both males and females, how can you measure if a name is predominantly male or female? Does such a measure vary by state? Are there names that over the years evolved from being predominantly male to predominantly female and vice
-versa?</p></li>
-<li><p><strong>Name history.</strong> What was the first year that a given name appeared in the data? Did some names appear in some states much later than in other states? What names have been used for many years and what names were in use only for a few years? What fraction of names fall into each category? Does this depend on state and gender? Are there names that disappear for several years and then appear again?</p></li>
-<li><p><strong>Anything else you find interesting.</strong></p></li>
+<li><p>Use Beautiful Soup to scrap these web pages for information about math courses, including enrollment capacity and enrollment total.</p></li>
+<li><p>Create a pandas dataframe containing information about all courses. Columns of the dataframe should be the same as columns of the main web page with course listing. Two additional columns should give the enrollment data.</p></li>
 </ul>
 </div>
 </div>
@@ -234,10 +226,10 @@ versa?</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Regex/regex_toc.html" class="btn btn-neutral float-right" title="Regular expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../json.html" class="btn btn-neutral float-right" title="JSON" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Plotly/plotly_plot_types.html" class="btn btn-neutral float-left" title="Plotly Express plot types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../beautiful_soup.html" class="btn btn-neutral float-left" title="Beautiful Soup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -248,7 +240,7 @@ versa?</p></li>
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jun 12, 2020.
+        Last updated on Jun 19, 2020.
       </span>
 
     </p>

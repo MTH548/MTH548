@@ -675,8 +675,8 @@ gapminder:
 <div class="output_area rendered_html docutils container">
 <iframe
     scrolling="no"
-    width="100%"
-    height="545px"
+    width="770px"
+    height="520"
     src="../_static/plotly_plot_types/iframe_figures/figure_3.html"
     frameborder="0"
     allowfullscreen
@@ -724,8 +724,8 @@ gapminder:
 </div>
 <div class="section" id="Bar-plot">
 <h2>Bar plot<a class="headerlink" href="#Bar-plot" title="Permalink to this headline">¶</a></h2>
-<p>By default values in a column with categorical data are plotted in the order they are encountered in the DataFrame. In the example below it means that the order of days on the x-axis would not necessarily correspond to the usual ordering of days in a week. We can override this by assigning a dictionary to the <code class="docutils literal notranslate"><span class="pre">category_orders</span></code> argument. Dictionary keys should be column names. The value corresponding to a given column should be a list of values appearing in the column, ordered in the way we
-want them plotted.</p>
+<p>By default values in a column with categorical data are plotted in the order they are encountered in the DataFrame. In the example below it means that the order of days on the x-axis would not necessarily correspond to the usual ordering of days in a week. We can override this by assigning a dictionary to the <code class="docutils literal notranslate"><span class="pre">category_orders</span></code> argument. Dictionary keys are column names. The value corresponding to a given column is a list of values appearing in the column, ordered in the way we want them
+plotted.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
@@ -761,7 +761,7 @@ want them plotted.</p>
 </div>
 <div class="section" id="Strip-plot">
 <h2>Strip plot<a class="headerlink" href="#Strip-plot" title="Permalink to this headline">¶</a></h2>
-<p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to prevent overlapping.</p>
+<p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to decrease overlapping.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
@@ -796,9 +796,9 @@ want them plotted.</p>
 <h2>Box plot<a class="headerlink" href="#Box-plot" title="Permalink to this headline">¶</a></h2>
 <p>Components of a box plot:</p>
 <ul class="simple">
-<li><p>The lower edge of a box indicates the <em>first quartile</em>: 25% of data values are below it.</p></li>
-<li><p>The line inside a box indicated the <em>median</em>: 50% of data values are below, and 50% is above it.</p></li>
-<li><p>The upper edge of a box indicates the <em>third quartile</em>: 75% of data values are below it.</p></li>
+<li><p>The lower edge of a box marks the <em>first quartile</em>: 25% of data values are below it.</p></li>
+<li><p>The line inside a box marks the <em>median</em>: 50% of data values are below, and 50% is above it.</p></li>
+<li><p>The upper edge of a box marks the <em>third quartile</em>: 75% of data values are below it.</p></li>
 <li><p>The height of the box (i.e. the difference between the first and third quartiles) is called the <em>Interquartile Range</em> (IRQ).</p></li>
 <li><p>The whiskers of a box extend to the smallest and larges data values which are within 1.5 <span class="math notranslate nohighlight">\(\times\)</span> IQR from the lower and upper edges of a box.</p></li>
 <li><p>Data values which are outside the range of whiskers are considered to be <em>outliers</em>. They are plotted as individual points.</p></li>
@@ -997,7 +997,7 @@ want them plotted.</p>
 </div>
 <div class="section" id="Animated-plots">
 <h2>Animated plots<a class="headerlink" href="#Animated-plots" title="Permalink to this headline">¶</a></h2>
-<p>Some types plots can be animated using <code class="docutils literal notranslate"><span class="pre">animation_frame</span></code> and <code class="docutils literal notranslate"><span class="pre">animation_group</span></code> options. See <a class="reference external" href="https://plotly.com/python/animations/">Plotly documentation</a> for more details.</p>
+<p>Some types plots can be animated using <code class="docutils literal notranslate"><span class="pre">animation_frame</span></code> and <code class="docutils literal notranslate"><span class="pre">animation_group</span></code> arguments. See <a class="reference external" href="https://plotly.com/python/animations/">Plotly documentation</a> for more details.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
@@ -1060,7 +1060,7 @@ want them plotted.</p>
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jun 06, 2020.
+        Last updated on Jun 12, 2020.
       </span>
 
     </p>

@@ -20,7 +20,7 @@ MTH 448/548 Data Oriented Computing
    Regex/regex_toc
    requests
    beautiful_soup
-   scrapping_course_listings/scrapping_course_listings
+   scraping_course_listings/scraping_course_listings
    json
    escape_from_jupyter
    nhtsa_complaints
