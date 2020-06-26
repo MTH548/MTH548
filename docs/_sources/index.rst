@@ -18,14 +18,14 @@ MTH 448/548 Data Oriented Computing
    Plotly/plotly_toc
    baby_names/baby_names
    Regex/regex_toc
+   text_with_naive_bayes/text_with_naive_bayes
    requests
    beautiful_soup
    scraping_course_listings/scraping_course_listings
-   json
+   json/json
    escape_from_jupyter
    nhtsa_complaints
    SQL/sql_toc
-   PT-functions
 
 
 

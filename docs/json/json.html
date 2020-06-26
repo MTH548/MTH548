@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JSON &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Escape from Jupyter" href="../escape_from_jupyter.html" />
+    <link rel="prev" title="Scraping course listings" href="../scraping_course_listings/scraping_course_listings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scraping_course_listings/scraping_course_listings.html">Scraping course listings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JSON</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#The-json-module">The json module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Example:-currency-exchange-rates">Example: currency exchange rates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../escape_from_jupyter.html">Escape from Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nhtsa_complaints.html">NHTSA complaints database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">MTH548</a> &raquo;</li>
+        
+      <li>JSON</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/json/json.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="JSON">
+<h1>JSON<a class="headerlink" href="#JSON" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.json.org/json-en.html">JSON</a> is a format for representing various types of data (numbers, lists, dictionaries etc.) in the form of text strings. The benefit of encoding data in this way is that strings can be be easily stored in text files or shared over the Internet.</p>
+<p>JSON encoded data is simple to read and understand. For example, a list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> in the JSON format becomes simply a string <code class="docutils literal notranslate"><span class="pre">'[1,</span> <span class="pre">2,</span> <span class="pre">3]'</span></code>, and a dictionary <code class="docutils literal notranslate"><span class="pre">{'x':</span> <span class="pre">1,</span> <span class="pre">'y':</span> <span class="pre">2}</span></code> becomes a string <code class="docutils literal notranslate"><span class="pre">'{&quot;x&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;y&quot;:</span> <span class="pre">2}'</span></code>. Beside lists and dictionaries, JSON recognizes only a few basic data types: strings, numbers, <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code>, and <code class="docutils literal notranslate"><span class="pre">null</span></code>. However, since JSON lists and dictionaries can be arbitrarily nested (so we can have e.g. a list of dictionaries or a dictionary whose values are
+other dictionaries and lists), this syntax can be used to represent complex data structures.</p>
+<div class="section" id="The-json-module">
+<h2>The json module<a class="headerlink" href="#The-json-module" title="Permalink to this headline">¶</a></h2>
+<p>The Python module <code class="docutils literal notranslate"><span class="pre">json</span></code> provides tools for reading and writing JSON data.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+<p>Below is a brief overview of the most commonly used functions in this module. See the <a class="reference external" href="https://docs.python.org/3/library/json.html">json module documentation</a> for details.</p>
+<br><dl class="function">
+<dt id="json.json.dumps">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">dumps</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.dumps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> takes as an argument an Python object <code class="docutils literal notranslate"><span class="pre">obj</span></code> and returns a string representing the object in the JSON format.</p>
+<p><strong>Examples.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Buffalo&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.5</span><span class="p">]</span>
+<span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;[1, 2, 3, &#34;Buffalo&#34;, -7.5]&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;grades&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B+&quot;</span><span class="p">,</span> <span class="s2">&quot;A-&quot;</span><span class="p">]}</span>
+<span class="n">jstudent</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+<span class="n">jstudent</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;{&#34;name&#34;: &#34;Maggie&#34;, &#34;age&#34;: 19, &#34;grades&#34;: [&#34;A&#34;, &#34;B+&#34;, &#34;A-&#34;]}&#39;
+</pre></div></div>
+</div>
+<br><dl class="function">
+<dt id="json.json.loads">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">loads</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.loads" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This function is inverse of <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code>: it takes a JSON encoded string <code class="docutils literal notranslate"><span class="pre">s</span></code> and returns the corresponding Python object:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jstudent</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;name&#39;: &#39;Maggie&#39;, &#39;age&#39;: 19, &#39;grades&#39;: [&#39;A&#39;, &#39;B+&#39;, &#39;A-&#39;]}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Maggie&#39;
+</pre></div></div>
+</div>
+<br><dl class="function">
+<dt id="json.json.dump">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><code class="docutils literal notranslate"><span class="pre">json.dump</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> but instead of producing a string representing <code class="docutils literal notranslate"><span class="pre">obj</span></code>, it writes this string to a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code>. For example, the code below saves the dictionary <code class="docutils literal notranslate"><span class="pre">student</span></code> to a text file <code class="docutils literal notranslate"><span class="pre">student.json</span></code>:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Maggie&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;grades&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B+&quot;</span><span class="p">,</span> <span class="s2">&quot;A-&quot;</span><span class="p">]}</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;student.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Here is a link to the file produced in this way: <a class="reference external" href="student.json">student.json</a>.</p>
+<br><dl class="function">
+<dt id="json.json.load">
+<code class="sig-prename descclassname">json.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">fp</em><span class="sig-paren">)</span><a class="headerlink" href="#json.json.load" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p><code class="docutils literal notranslate"><span class="pre">json.load</span></code> in turn, is similar to <code class="docutils literal notranslate"><span class="pre">json.loads</span></code>, but it takes as its argument a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code> which contains a JSON formatted string, and returns the corresponding Python object:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;student.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">d</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;name&#39;: &#39;Maggie&#39;, &#39;age&#39;: 19, &#39;grades&#39;: [&#39;A&#39;, &#39;B+&#39;, &#39;A-&#39;]}
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Example:-currency-exchange-rates">
+<h2>Example: currency exchange rates<a class="headerlink" href="#Example:-currency-exchange-rates" title="Permalink to this headline">¶</a></h2>
+<p>The website <a class="reference external" href="https://www.exchangeratesapi.io/">www.exchangeratesapi.io</a> provides current and historical currency exchange rates. We can use it, for example, to obtain the latest exchange rates against the US dollar:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">rates</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.exchangeratesapi.io/latest?base=USD&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">rates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#34;rates&#34;:{&#34;CAD&#34;:1.4161682074,&#34;HKD&#34;:7.7541236179,&#34;ISK&#34;:139.8404930216,&#34;PHP&#34;:50.9298531811,&#34;DKK&#34;:6.766
+9929309,&#34;HUF&#34;:325.1042233098,&#34;CZK&#34;:24.7553017945,&#34;GBP&#34;:0.805691499,&#34;RON&#34;:4.3753851731,&#34;SEK&#34;:10.00317
+20138,&#34;IDR&#34;:16393.0034439007,&#34;INR&#34;:75.6751857894,&#34;BRL&#34;:5.1215334421,&#34;RUB&#34;:79.8790103317,&#34;HRK&#34;:6.9118
+18017,&#34;JPY&#34;:108.1566068515,&#34;THB&#34;:32.6998368679,&#34;CHF&#34;:0.9580387892,&#34;EUR&#34;:0.9062896502,&#34;MYR&#34;:4.3326083
+016,&#34;BGN&#34;:1.7725212978,&#34;TRY&#34;:6.5683342396,&#34;CNY&#34;:7.0996012326,&#34;NOK&#34;:10.5934384629,&#34;NZD&#34;:1.6680261011,
+&#34;ZAR&#34;:17.8798259924,&#34;USD&#34;:1.0,&#34;MXN&#34;:23.7864781584,&#34;SGD&#34;:1.4257748777,&#34;AUD&#34;:1.6332245786,&#34;ILS&#34;:3.5838
+317926,&#34;KRW&#34;:1224.8685880007,&#34;PLN&#34;:4.124433569},&#34;base&#34;:&#34;USD&#34;,&#34;date&#34;:&#34;2020-03-30&#34;}
+</pre></div></div>
+</div>
+<p>The exchange rates are provided as a JSON encoded string. Using the <code class="docutils literal notranslate"><span class="pre">json.loads</span></code> function we can convert this string into a Python dictionary:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">rates_d</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">rates</span><span class="p">)</span>
+<span class="n">rates_d</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;rates&#39;: {&#39;CAD&#39;: 1.4161682074,
+  &#39;HKD&#39;: 7.7541236179,
+  &#39;ISK&#39;: 139.8404930216,
+  &#39;PHP&#39;: 50.9298531811,
+  &#39;DKK&#39;: 6.7669929309,
+  &#39;HUF&#39;: 325.1042233098,
+  &#39;CZK&#39;: 24.7553017945,
+  &#39;GBP&#39;: 0.805691499,
+  &#39;RON&#39;: 4.3753851731,
+  &#39;SEK&#39;: 10.0031720138,
+  &#39;IDR&#39;: 16393.0034439007,
+  &#39;INR&#39;: 75.6751857894,
+  &#39;BRL&#39;: 5.1215334421,
+  &#39;RUB&#39;: 79.8790103317,
+  &#39;HRK&#39;: 6.911818017,
+  &#39;JPY&#39;: 108.1566068515,
+  &#39;THB&#39;: 32.6998368679,
+  &#39;CHF&#39;: 0.9580387892,
+  &#39;EUR&#39;: 0.9062896502,
+  &#39;MYR&#39;: 4.3326083016,
+  &#39;BGN&#39;: 1.7725212978,
+  &#39;TRY&#39;: 6.5683342396,
+  &#39;CNY&#39;: 7.0996012326,
+  &#39;NOK&#39;: 10.5934384629,
+  &#39;NZD&#39;: 1.6680261011,
+  &#39;ZAR&#39;: 17.8798259924,
+  &#39;USD&#39;: 1.0,
+  &#39;MXN&#39;: 23.7864781584,
+  &#39;SGD&#39;: 1.4257748777,
+  &#39;AUD&#39;: 1.6332245786,
+  &#39;ILS&#39;: 3.5838317926,
+  &#39;KRW&#39;: 1224.8685880007,
+  &#39;PLN&#39;: 4.124433569},
+ &#39;base&#39;: &#39;USD&#39;,
+ &#39;date&#39;: &#39;2020-03-30&#39;}
+</pre></div></div>
+</div>
+<p>We can use the dictionary to check how much 1 USD is worth in terms of any other listed currency:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># value of 1 USD in Canadian dollars</span>
+<span class="n">rates_d</span><span class="p">[</span><span class="s1">&#39;rates&#39;</span><span class="p">][</span><span class="s1">&#39;CAD&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+1.4161682074
+</pre></div></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../escape_from_jupyter.html" class="btn btn-neutral float-right" title="Escape from Jupyter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../scraping_course_listings/scraping_course_listings.html" class="btn btn-neutral float-left" title="Scraping course listings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
+      <span class="lastupdated"><br/>
+        Last updated on Jun 25, 2020.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
