@@ -19,8 +19,8 @@ MTH 448/548 Data Oriented Computing
    baby_names/baby_names
    Regex/regex_toc
    text_with_naive_bayes/text_with_naive_bayes
-   requests
-   beautiful_soup
+   requests/requests
+   beautiful_soup/beautiful_soup
    scraping_course_listings/scraping_course_listings
    json/json
    escape_from_jupyter
