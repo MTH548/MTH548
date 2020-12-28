@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,12 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
@@ -19,29 +24,24 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Plotly Express" href="plotly_express.html" />
@@ -59,7 +59,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> MTH 448/548
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MTH 448/548
           
 
           
@@ -82,6 +82,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -96,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="plotly_toc.html">Plotly</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Plotly basics</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Traces-and-figures">Traces and figures</a></li>
@@ -126,6 +128,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -479,7 +482,7 @@ div.rendered_html tbody tr:hover {
 <iframe
     scrolling="no"
     width="100%"
-    height="370"
+    height="420"
     src="../_static/plotly_basics/iframe_figures/figure_3.html"
     frameborder="0"
     allowfullscreen
@@ -512,7 +515,7 @@ div.rendered_html tbody tr:hover {
 <iframe
     scrolling="no"
     width="100%"
-    height="370"
+    height="420"
     src="../_static/plotly_basics/iframe_figures/figure_4.html"
     frameborder="0"
     allowfullscreen
@@ -548,7 +551,7 @@ div.rendered_html tbody tr:hover {
 <iframe
     scrolling="no"
     width="100%"
-    height="370"
+    height="420"
     src="../_static/plotly_basics/iframe_figures/figure_5.html"
     frameborder="0"
     allowfullscreen
@@ -588,7 +591,7 @@ div.rendered_html tbody tr:hover {
 <iframe
     scrolling="no"
     width="100%"
-    height="370"
+    height="420"
     src="../_static/plotly_basics/iframe_figures/figure_6.html"
     frameborder="0"
     allowfullscreen
@@ -825,6 +828,7 @@ div.rendered_html tbody tr:hover {
    &#39;layout&#39;: {&#39;annotationdefaults&#39;: {&#39;arrowcolor&#39;: &#39;#2a3f5f&#39;,
      &#39;arrowhead&#39;: 0,
      &#39;arrowwidth&#39;: 1},
+    &#39;autotypenumbers&#39;: &#39;strict&#39;,
     &#39;coloraxis&#39;: {&#39;colorbar&#39;: {&#39;outlinewidth&#39;: 0, &#39;ticks&#39;: &#39;&#39;}},
     &#39;colorscale&#39;: {&#39;diverging&#39;: [[0, &#39;#8e0152&#39;],
       [0.1, &#39;#c51b7d&#39;],
@@ -927,7 +931,7 @@ div.rendered_html tbody tr:hover {
      &#39;title&#39;: {&#39;standoff&#39;: 15},
      &#39;zerolinecolor&#39;: &#39;white&#39;,
      &#39;zerolinewidth&#39;: 2},
-    &#39;margin&#39;: {&#39;b&#39;: 30, &#39;l&#39;: 30, &#39;r&#39;: 30, &#39;t&#39;: 60}}}}}
+    &#39;margin&#39;: {&#39;b&#39;: 60, &#39;l&#39;: 30, &#39;r&#39;: 30, &#39;t&#39;: 60}}}}}
 </pre></div></div>
 </div>
 </div>
@@ -1331,7 +1335,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jul 24, 2020.
+        Last updated on Dec 28, 2020.
       </span>
 
     </p>
@@ -1347,7 +1351,6 @@ div.rendered_html tbody tr:hover {
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,12 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
@@ -19,29 +24,24 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Project: Text classification with naive Bayes" href="../text_with_naive_bayes/text_with_naive_bayes.html" />
@@ -59,7 +59,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> MTH 448/548
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MTH 448/548
           
 
           
@@ -82,6 +82,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -96,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="regex_toc.html">Regular expressions</a><ul class="current">
@@ -128,6 +130,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -447,9 +450,9 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="re.findall">
 <h2>re.findall<a class="headerlink" href="#re.findall" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="re.re.findall">
-<code class="sig-prename descclassname">re.</code><code class="sig-name descname">findall</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">string</em>, <em class="sig-param">flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#re.re.findall" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">re.</code><code class="sig-name descname">findall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">flags</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#re.re.findall" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>This function returns a list of all matches of the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> in the <code class="docutils literal notranslate"><span class="pre">string</span></code>. The third argument, <code class="docutils literal notranslate"><span class="pre">flags</span></code> can be used to specify flags for the regular expression.</p>
@@ -573,9 +576,9 @@ EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM
 </div>
 <div class="section" id="re.sub">
 <h2>re.sub<a class="headerlink" href="#re.sub" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<dl class="py function">
 <dt id="re.re.sub">
-<code class="sig-prename descclassname">re.</code><code class="sig-name descname">sub</code><span class="sig-paren">(</span><em class="sig-param">pattern</em>, <em class="sig-param">repl</em>, <em class="sig-param">string</em>, <em class="sig-param">count=0</em>, <em class="sig-param">flags=0</em><span class="sig-paren">)</span><a class="headerlink" href="#re.re.sub" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">re.</code><code class="sig-name descname">sub</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pattern</span></em>, <em class="sig-param"><span class="n">repl</span></em>, <em class="sig-param"><span class="n">string</span></em>, <em class="sig-param"><span class="n">count</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">flags</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#re.re.sub" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p>This function finds matches of the <code class="docutils literal notranslate"><span class="pre">pattern</span></code> in the <code class="docutils literal notranslate"><span class="pre">string</span></code> and replaces them with the <code class="docutils literal notranslate"><span class="pre">repl</span></code> string. The <code class="docutils literal notranslate"><span class="pre">count</span></code> argument specifies the maximum number of replacements to be performed. The default value <code class="docutils literal notranslate"><span class="pre">count=0</span></code> means the all matches will be replaced. The <code class="docutils literal notranslate"><span class="pre">flags</span></code> argument can specify regular expression flags.</p>
@@ -586,8 +589,8 @@ EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="k">def</span> <span class="nf">show_diff</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">modified</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mORIGINAL STRING:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{original}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mMODIFIED STRING:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{modified}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mORIGINAL STRING:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{</span><span class="n">original</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[1mMODIFIED STRING:</span><span class="se">\033</span><span class="s2">[0m</span><span class="se">\n</span><span class="si">{</span><span class="n">modified</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
 <span class="n">show_diff</span><span class="p">(</span><span class="s2">&quot;This is the original text.&quot;</span><span class="p">,</span> <span class="s2">&quot;This is the modified text.&quot;</span><span class="p">)</span>
@@ -732,7 +735,7 @@ From: EWR To: LHR
     <span class="c1"># in our case it will be a number with a distance in miles</span>
     <span class="n">d_km</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="mf">1.606</span><span class="p">)</span>
     <span class="c1"># return a string with the distance in km</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{d_km}</span><span class="s2"> km&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d_km</span><span class="si">}</span><span class="s2"> km&quot;</span>
 
 
 <span class="c1"># find distances in miles and replace them</span>
@@ -784,7 +787,7 @@ Buffalo is 594 km away from New York City
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jul 24, 2020.
+        Last updated on Dec 28, 2020.
       </span>
 
     </p>
@@ -800,7 +803,6 @@ Buffalo is 594 km away from New York City
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,6 +11,12 @@
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
   
@@ -19,29 +24,24 @@
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="SQL with Python" href="sql_with_python.html" />
@@ -59,7 +59,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> MTH 448/548
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MTH 448/548
           
 
           
@@ -82,6 +82,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -96,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
@@ -131,6 +133,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -458,9 +461,9 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-sqlite:///courses_data.sqlite
+<span class="n">sqlite</span><span class="p">:</span><span class="o">///</span><span class="n">courses_data</span><span class="p">.</span><span class="n">sqlite</span>
 </pre></div>
 </div>
 </div>
@@ -478,11 +481,11 @@ sqlite:///courses_data.sqlite
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT *
-FROM students
-LIMIT 5;
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">students</span>
+<span class="k">LIMIT</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -544,11 +547,11 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT *
-FROM mth141
-ORDER BY student_id;
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">mth141</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -605,11 +608,11 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT *
-FROM eng101
-ORDER BY student_id;
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">eng101</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -665,13 +668,13 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT student_id
-FROM mth141
-INTERSECT
-SELECT student_id
-FROM eng101;
+<span class="k">SELECT</span> <span class="n">student_id</span>
+<span class="k">FROM</span> <span class="n">mth141</span>
+<span class="k">INTERSECT</span>
+<span class="k">SELECT</span> <span class="n">student_id</span>
+<span class="k">FROM</span> <span class="n">eng101</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -713,13 +716,13 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT student_id
-FROM mth141
-UNION
-SELECT student_id
-FROM eng101;
+<span class="k">SELECT</span> <span class="n">student_id</span>
+<span class="k">FROM</span> <span class="n">mth141</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span> <span class="n">student_id</span>
+<span class="k">FROM</span> <span class="n">eng101</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -782,13 +785,13 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT student_id
-FROM mth141
-EXCEPT
-SELECT student_id
-FROM eng101;
+<span class="k">SELECT</span> <span class="n">student_id</span>
+<span class="k">FROM</span> <span class="n">mth141</span>
+<span class="k">EXCEPT</span>
+<span class="k">SELECT</span> <span class="n">student_id</span>
+<span class="k">FROM</span> <span class="n">eng101</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -855,12 +858,12 @@ FROM
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT *
-FROM
-    mth141 INNER JOIN eng101
-    ON mth141.student_id = eng101.student_id;
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span>
+    <span class="n">mth141</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">eng101</span>
+    <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -911,15 +914,15 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT
-    mth141.student_id,
-    mth141.grade AS mth141_grade,
-    eng101.grade AS eng101_grade
-FROM
-    mth141 INNER JOIN eng101
-    ON mth141.student_id = eng101.student_id;
+<span class="k">SELECT</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span><span class="p">,</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="n">mth141</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">eng101</span>
+    <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -965,16 +968,16 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT
-    mth141.student_id,
-    mth141.grade AS mth141_grade,
-    eng101.grade AS eng101_grade
-FROM
-    mth141 INNER JOIN eng101
-    ON mth141.student_id = eng101.student_id
-       AND mth141.grade != eng101.grade;
+<span class="k">SELECT</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span><span class="p">,</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="n">mth141</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">eng101</span>
+    <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span>
+       <span class="k">AND</span> <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="o">!=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1026,15 +1029,15 @@ FROM
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT
-    mth141.student_id,
-    mth141.grade AS mth141_grade,
-    eng101.grade AS eng101_grade
-FROM
-    mth141 LEFT JOIN eng101
-    ON mth141.student_id = eng101.student_id;
+<span class="k">SELECT</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span><span class="p">,</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="n">mth141</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">eng101</span>
+    <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1104,15 +1107,15 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT
-    eng101.student_id,
-    mth141.grade AS mth141_grade,
-    eng101.grade AS eng101_grade
-FROM
-    eng101 LEFT JOIN mth141
-    ON mth141.student_id = eng101.student_id;
+<span class="k">SELECT</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span><span class="p">,</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="n">eng101</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">mth141</span>
+    <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1177,24 +1180,24 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT
-    mth141.student_id AS student_id,
-    mth141.grade AS mth141_grade,
-    eng101.grade AS eng101_grade
-FROM
-    mth141 LEFT JOIN eng101
-    ON mth141.student_id = eng101.student_id
-UNION
-SELECT
-    eng101.student_id AS student_id,
-    mth141.grade AS mth141_grade,
-    eng101.grade AS eng101_grade
-FROM
-    eng101
-    LEFT JOIN mth141
-    ON mth141.student_id = eng101.student_id;
+<span class="k">SELECT</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="k">AS</span> <span class="n">student_id</span><span class="p">,</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="n">mth141</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">eng101</span>
+    <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span>
+<span class="k">UNION</span>
+<span class="k">SELECT</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span> <span class="k">AS</span> <span class="n">student_id</span><span class="p">,</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="n">eng101</span>
+    <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">mth141</span>
+    <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1278,16 +1281,16 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT
-    students.*,
-    mth141.grade AS mth141_grade,
-    eng101.grade AS eng101_grade
-FROM
-    students INNER JOIN mth141 INNER JOIN eng101
-    ON students.student_id = mth141.student_id
-       AND students.student_id = eng101.student_id;
+<span class="k">SELECT</span>
+    <span class="n">students</span><span class="p">.</span><span class="o">*</span><span class="p">,</span>
+    <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="n">students</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">mth141</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">eng101</span>
+    <span class="k">ON</span> <span class="n">students</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span>
+       <span class="k">AND</span> <span class="n">students</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1345,31 +1348,31 @@ Done.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
 <span></span><span class="o">%%</span><span class="k">sql</span>
-SELECT
-    students.*,
-    combined_grades.mth141_grade,
-    combined_grades.eng101_grade
-FROM
-    (SELECT
-         mth141.student_id AS student_id,
-         mth141.grade AS mth141_grade,
-         eng101.grade AS eng101_grade
-     FROM
-         mth141 LEFT JOIN eng101
-         ON mth141.student_id = eng101.student_id
-     UNION
-     SELECT
-         eng101.student_id AS student_id,
-         mth141.grade AS mth141_grade,
-         eng101.grade AS eng101_grade
-     FROM
-         eng101 LEFT JOIN mth141
-         ON mth141.student_id = eng101.student_id
-     ) AS combined_grades
-     INNER JOIN students
-     ON combined_grades.student_id = students.student_id;
+<span class="k">SELECT</span>
+    <span class="n">students</span><span class="p">.</span><span class="o">*</span><span class="p">,</span>
+    <span class="n">combined_grades</span><span class="p">.</span><span class="n">mth141_grade</span><span class="p">,</span>
+    <span class="n">combined_grades</span><span class="p">.</span><span class="n">eng101_grade</span>
+<span class="k">FROM</span>
+    <span class="p">(</span><span class="k">SELECT</span>
+         <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="k">AS</span> <span class="n">student_id</span><span class="p">,</span>
+         <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+         <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+     <span class="k">FROM</span>
+         <span class="n">mth141</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">eng101</span>
+         <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span>
+     <span class="k">UNION</span>
+     <span class="k">SELECT</span>
+         <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span> <span class="k">AS</span> <span class="n">student_id</span><span class="p">,</span>
+         <span class="n">mth141</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">mth141_grade</span><span class="p">,</span>
+         <span class="n">eng101</span><span class="p">.</span><span class="n">grade</span> <span class="k">AS</span> <span class="n">eng101_grade</span>
+     <span class="k">FROM</span>
+         <span class="n">eng101</span> <span class="k">LEFT</span> <span class="k">JOIN</span> <span class="n">mth141</span>
+         <span class="k">ON</span> <span class="n">mth141</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">eng101</span><span class="p">.</span><span class="n">student_id</span>
+     <span class="p">)</span> <span class="k">AS</span> <span class="n">combined_grades</span>
+     <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">students</span>
+     <span class="k">ON</span> <span class="n">combined_grades</span><span class="p">.</span><span class="n">student_id</span> <span class="o">=</span> <span class="n">students</span><span class="p">.</span><span class="n">student_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -1504,7 +1507,7 @@ Done.
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jul 24, 2020.
+        Last updated on Dec 28, 2020.
       </span>
 
     </p>
@@ -1520,7 +1523,6 @@ Done.
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
