@@ -1,0 +1,1063 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Seaborn plot types &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://www.mth548.org/Tools/Seaborn/seaborn_plot_types.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Plotly" href="../Plotly/plotly_toc.html" />
+    <link rel="prev" title="Seaborn" href="seaborn_basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../master.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Schedule</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../master.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../master.html">MTH 448/548</a> &raquo;</li>
+        
+          <li><a href="seaborn_toc.html">Seaborn</a> &raquo;</li>
+        
+      <li>Seaborn plot types</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Tools/Seaborn/seaborn_plot_types.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Seaborn-plot-types">
+<h1>Seaborn plot types<a class="headerlink" href="#Seaborn-plot-types" title="Permalink to this headline">¶</a></h1>
+<p>Below are examples of plots which can be created using seaborn. For the full list of seaborn functions and their options see the <a class="reference external" href="https://seaborn.pydata.org/api.html">seaborn documentation</a>.</p>
+<p>In all examples we will use sample datasets provided with seaborn.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># load DataFrames with sample data</span>
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;tips&#39;</span><span class="p">)</span>
+<span class="n">flights</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;flights&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">tips:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">tips</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">flights:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">flights</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+tips:
+</pre></div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>total_bill</th>
+      <th>tip</th>
+      <th>sex</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+flights:
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>passengers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1949</td>
+      <td>Jan</td>
+      <td>112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1949</td>
+      <td>Feb</td>
+      <td>118</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1949</td>
+      <td>Mar</td>
+      <td>132</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1949</td>
+      <td>Apr</td>
+      <td>129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1949</td>
+      <td>May</td>
+      <td>121</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="Scatter-plot">
+<h2>Scatter plot<a class="headerlink" href="#Scatter-plot" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">font_scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span> <span class="c1"># set theme for plots</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+                <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span>
+               <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Scatter plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" style="width: 836px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Line-plot">
+<h2>Line plot<a class="headerlink" href="#Line-plot" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">flights</span><span class="p">,</span>
+             <span class="n">x</span><span class="o">=</span><span class="s2">&quot;month&quot;</span><span class="p">,</span>
+             <span class="n">y</span><span class="o">=</span><span class="s2">&quot;passengers&quot;</span><span class="p">,</span>
+             <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span>
+             <span class="n">palette</span> <span class="o">=</span> <span class="s2">&quot;muted&quot;</span>
+             <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Line plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" style="width: 844px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Bar-plot">
+<h2>Bar plot<a class="headerlink" href="#Bar-plot" title="Permalink to this headline">¶</a></h2>
+<p>By default values in a column with categorical data are plotted in the order they are encountered in the DataFrame. In the example below it means that the order of days on the x-axis would not necessarily correspond to the usual ordering of days in a week. We can override this by assigning a list of values of the x-column to the <code class="docutils literal notranslate"><span class="pre">order</span></code> argument. Bars will be plotted according to the ordering of the list.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># DataFrame with total tip amounts for a given day and sex</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">tips</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;sex&quot;</span><span class="p">])[</span><span class="s2">&quot;tip&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>day</th>
+      <th>sex</th>
+      <th>tip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Thur</td>
+      <td>Male</td>
+      <td>89.41</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thur</td>
+      <td>Female</td>
+      <td>82.42</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Fri</td>
+      <td>Male</td>
+      <td>26.93</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Fri</td>
+      <td>Female</td>
+      <td>25.03</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Sat</td>
+      <td>Male</td>
+      <td>181.95</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">t</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+            <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Thur&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">],</span>
+            <span class="n">palette</span> <span class="o">=</span> <span class="s2">&quot;muted&quot;</span>
+           <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Bar plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" style="width: 844px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Strip-plot">
+<h2>Strip plot<a class="headerlink" href="#Strip-plot" title="Permalink to this headline">¶</a></h2>
+<p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to decrease overlapping.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">stripplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+              <span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+              <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
+              <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>    <span class="c1"># separate strips of points of different colors</span>
+              <span class="n">order</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Thur&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">],</span>
+              <span class="n">palette</span> <span class="o">=</span> <span class="s2">&quot;muted&quot;</span>
+             <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Strip plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" style="width: 836px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Swarm-plot">
+<h2>Swarm plot<a class="headerlink" href="#Swarm-plot" title="Permalink to this headline">¶</a></h2>
+<p>Swarm plot is similar to the strip plot, but x-coordinates of points are adjusted so that the points do not overlap.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">swarmplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+              <span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+              <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
+              <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>    <span class="c1"># separate strips of points of different colors</span>
+              <span class="n">order</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Thur&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">],</span>
+              <span class="n">palette</span> <span class="o">=</span> <span class="s2">&quot;muted&quot;</span>
+             <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Swarm plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" style="width: 836px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Box-plot">
+<h2>Box plot<a class="headerlink" href="#Box-plot" title="Permalink to this headline">¶</a></h2>
+<p>Components of a box plot:</p>
+<ul class="simple">
+<li><p>The lower edge of a box marks the <em>first quartile</em>: 25% of data values are below it.</p></li>
+<li><p>The line inside a box marks the <em>median</em>: 50% of data values are below, and 50% is above it.</p></li>
+<li><p>The upper edge of a box marks the <em>third quartile</em>: 75% of data values are below it.</p></li>
+<li><p>The height of the box (i.e. the difference between the first and third quartiles) is called the <em>Interquartile Range</em> (IRQ).</p></li>
+<li><p>The length of whiskers can be controlled by the <code class="docutils literal notranslate"><span class="pre">whis</span></code> argument. The whiskers of a box extend to the smallest and larges data values which are within <code class="docutils literal notranslate"><span class="pre">whis</span></code> <span class="math notranslate nohighlight">\(\times\)</span> IQR from the lower and upper edges of a box.</p></li>
+<li><p>Data values which are outside the range of whiskers are considered to be <em>outliers</em>. They are plotted as individual points.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+            <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
+            <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>   <span class="c1"># separate boxes of different colors</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>    <span class="c1"># width of boxes</span>
+            <span class="n">whis</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>     <span class="c1"># controls the length of whiskers of a box</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Thur&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">],</span>
+            <span class="n">palette</span> <span class="o">=</span> <span class="s2">&quot;deep&quot;</span>
+       <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Box plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" style="width: 836px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Violin-plot">
+<h2>Violin plot<a class="headerlink" href="#Violin-plot" title="Permalink to this headline">¶</a></h2>
+<p>Violin plots show kernel density estimate (KDE) of data.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span>
+            <span class="n">y</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+            <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
+            <span class="n">dodge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>   <span class="c1"># separate plots of different colors</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>    <span class="c1"># width of plots</span>
+            <span class="n">order</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;Thur&quot;</span><span class="p">,</span> <span class="s2">&quot;Fri&quot;</span><span class="p">,</span> <span class="s2">&quot;Sat&quot;</span><span class="p">,</span> <span class="s2">&quot;Sun&quot;</span><span class="p">],</span>
+            <span class="n">palette</span> <span class="o">=</span> <span class="s2">&quot;bright&quot;</span><span class="p">,</span>
+       <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Violin plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" style="width: 836px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Histogram-plot">
+<h2>Histogram plot<a class="headerlink" href="#Histogram-plot" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+             <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+             <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span>    <span class="c1"># normalize the histogram so that the total area of bars is 1</span>
+             <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>          <span class="c1"># plot kernel density estimate</span>
+             <span class="n">bins</span><span class="o">=</span><span class="mi">25</span>            <span class="c1"># number of bins of the histogram</span>
+            <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Histogram plot&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" style="width: 847px; height: 340px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Joint-plot">
+<h2>Joint plot<a class="headerlink" href="#Joint-plot" title="Permalink to this headline">¶</a></h2>
+<p>The function <code class="docutils literal notranslate"><span class="pre">sns.jointplot()</span></code> produces a plot of data points together with marginal subplots. Below we use it to add histograms on the margins of the x-axis and y-axis of a scatter plot. While all previous examples used axes-level functions, <code class="docutils literal notranslate"><span class="pre">sns.jointplot()</span></code> is a figure-level function, i.e. it builds the whole matplolib figure.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+              <span class="n">x</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span>
+              <span class="n">y</span><span class="o">=</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span>
+              <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span>   <span class="c1"># plot kind</span>
+              <span class="n">height</span><span class="o">=</span><span class="mf">6.5</span><span class="p">,</span>         <span class="c1"># plot height</span>
+             <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Join plot&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>   <span class="c1"># adds title to the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" style="width: 446px; height: 475px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="Pair-plot">
+<h2>Pair plot<a class="headerlink" href="#Pair-plot" title="Permalink to this headline">¶</a></h2>
+<p>Some types of plots (e.g. the scatter plot or the line plot) show relationships between two variables. The function <code class="docutils literal notranslate"><span class="pre">sns.pairplot()</span></code> is useful if we are dealing with more than two variables. It produces a grid of subplots, one subplot for each pair of variables. Subplots on the diagonal of the grid, which depend only on one variable, can be used to illustrate this single viable using its histogram, KDE etc. The function <code class="docutils literal notranslate"><span class="pre">sns.pairplot()</span></code> is a figure-level function.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">tips</span><span class="p">,</span>
+             <span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tip&quot;</span><span class="p">,</span> <span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">],</span>  <span class="c1"># names of columns used for the plot</span>
+             <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;scatter&quot;</span><span class="p">,</span>                        <span class="c1"># kind of plots for each pair of different columns</span>
+             <span class="n">diag_kind</span><span class="o">=</span><span class="s2">&quot;kde&quot;</span><span class="p">,</span>                       <span class="c1"># kind of plots on the diagonal</span>
+             <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">,</span>
+             <span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+             <span class="n">aspect</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span>
+             <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span>
+             <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Pair plot&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>   <span class="c1"># adds title to the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" style="width: 560px; height: 442px;" /></a>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Plotly/plotly_toc.html" class="btn btn-neutral float-right" title="Plotly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="seaborn_basics.html" class="btn btn-neutral float-left" title="Seaborn" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
+      <span class="lastupdated"><br/>
+        Last updated on Jan 21, 2021.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

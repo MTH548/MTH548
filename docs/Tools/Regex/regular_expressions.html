@@ -1,0 +1,2466 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Regular expressions &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://www.mth548.org/Tools/Regex/regular_expressions.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Functions in the re module" href="re_functions.html" />
+    <link rel="prev" title="Regular expressions" href="regex_toc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../master.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Schedule</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../master.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../master.html">MTH 448/548</a> &raquo;</li>
+        
+          <li><a href="regex_toc.html">Regular expressions</a> &raquo;</li>
+        
+      <li>Regular expressions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Tools/Regex/regular_expressions.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="Regular-expressions">
+<h1>Regular expressions<a class="headerlink" href="#Regular-expressions" title="Permalink to this headline">¶</a></h1>
+<p>Regular expressions are a tool for specifying patterns (phone numbers, e-mail addresses etc.), in text strings. We can use them to search strings for such patterns, modify strings based on search results etc.</p>
+<div class="section" id="Prelude:-raw-strings">
+<h2>Prelude: raw strings<a class="headerlink" href="#Prelude:-raw-strings" title="Permalink to this headline">¶</a></h2>
+<p>In Python strings the backslash character <code class="docutils literal notranslate"><span class="pre">\</span></code> has a special meaning. For example <code class="docutils literal notranslate"><span class="pre">\n</span></code> denotes a new line, <code class="docutils literal notranslate"><span class="pre">\t</span></code> the tab, <code class="docutils literal notranslate"><span class="pre">\U</span></code> indicates a UTF-32 encoded unicode character etc.:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\t</span><span class="s2">there,</span><span class="se">\n</span><span class="s2">this is a cat: </span><span class="se">\U0001F431</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello   there,
+this is a cat: 🐱.
+</pre></div></div>
+</div>
+<p>This creates conflicts with the syntax of regular expressions, since in this setting we want backslashes to be interpreted literally, as backslashes. There are two ways to resolve this. The first is to enter each backslash as <code class="docutils literal notranslate"><span class="pre">\\</span></code> - which indicates that we really mean a backslash:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello</span><span class="se">\\</span><span class="s2">tthere,</span><span class="se">\\</span><span class="s2">nthis is a cat: </span><span class="se">\\</span><span class="s2">U0001F431.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello\tthere,\nthis is a cat: \U0001F431.
+</pre></div></div>
+</div>
+<p>The second method is to precede the string with the <code class="docutils literal notranslate"><span class="pre">r</span></code> character, to create a “raw string”, in which backlashes are treated like any other character:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Hello\tthere,\nthis is a cat: \U0001F431.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Hello\tthere,\nthis is a cat: \U0001F431.
+</pre></div></div>
+</div>
+<p>While working with regular expressions this second method is usually more convenient, and we will use it below.</p>
+</div>
+<div class="section" id="Visualizing-regular-expressions">
+<h2>Visualizing regular expressions<a class="headerlink" href="#Visualizing-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Regular expressions are a feature of many programming languages. In Python they are implemented by the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re</a> module:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+<p>We will use the following function to illustrate the syntax of regular expressions:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="k">def</span> <span class="nf">re_show</span><span class="p">(</span><span class="n">regex</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Displays text with the regex match highlighted.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">text_css</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&quot;border-style: none;</span>
+<span class="s1">                   border-width: 0px;</span>
+<span class="s1">                   padding: 0px;</span>
+<span class="s1">                   font-size: 14px;</span>
+<span class="s1">                   color: darkslategray;</span>
+<span class="s1">                   background-color: white;</span>
+<span class="s1">                   white-space: pre;</span>
+<span class="s1">                   line-height: 20px;&quot;</span>
+<span class="s1">                   &#39;&#39;&#39;</span>
+    <span class="n">match_css</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;&quot;padding: 0px 1px 0px 1px;</span>
+<span class="s1">                    margin: 0px 0.5px 0px 0.5px;</span>
+<span class="s1">                    border-style: solid;</span>
+<span class="s1">                    border-width: 0.5px;</span>
+<span class="s1">                    border-color: darkred;</span>
+<span class="s1">                    background-color: cornsilk;</span>
+<span class="s1">                    color: red;&quot;</span>
+<span class="s1">                    &#39;&#39;&#39;</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">regex</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">fr</span><span class="s1">&#39;&lt;span style=</span><span class="si">{</span><span class="n">match_css</span><span class="si">}</span><span class="s1">&gt;\1&lt;/span&gt;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;code style=</span><span class="si">{</span><span class="n">text_css</span><span class="si">}</span><span class="s1">&gt;</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s1">&lt;/code&gt;&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<p>The first argument of this function is a regular expression. The second is a string in which we search for the pattern specified by the regular expression. The function prints the string with the pattern matches highlighted:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;This is the course MTH 548 Data Oriented Computing!&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;is&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="c1"># search for all occurences of &quot;is&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >Th<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >is</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >is</span> the course MTH 548 Data Oriented Computing!</code></div>
+</div>
+</div>
+<div class="section" id="Character-classes">
+<h2>Character classes<a class="headerlink" href="#Character-classes" title="Permalink to this headline">¶</a></h2>
+<p>As the above example shows, a regular expression can simply consist of a string we want to search for. The real power of regular expressions, however, is that they can contain special character sequences with a more general meaning.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>What it matches</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.</span></code></p></td>
+<td><p>Anything except the newline character.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\w</span></code></p></td>
+<td><p>Any words character: a letter <code class="docutils literal notranslate"><span class="pre">A-Z</span></code>,<code class="docutils literal notranslate"><span class="pre">a-z</span></code>, a digit <code class="docutils literal notranslate"><span class="pre">0-9</span></code>or the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\W</span></code></p></td>
+<td><p>Any character which is not matched by <code class="docutils literal notranslate"><span class="pre">w</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\d</span></code></p></td>
+<td><p>Any digit <code class="docutils literal notranslate"><span class="pre">0-9</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\D</span></code></p></td>
+<td><p>All characters which are not matched by <code class="docutils literal notranslate"><span class="pre">w</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[...]</span></code></p></td>
+<td><p>Any character listed inside the square brackets.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">[^...]</span></code></p></td>
+<td><p>Any character not listed inside the square brackets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">...|...</span></code></p></td>
+<td><p>Match either of the patterns on two sides of the vertical bar</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match any character followed by a &quot;t&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;.t&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    > t</span>he course MTH 548 D<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >at</span>a Orie<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >nt</span>ed Comp<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >ut</span>ing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match &quot;i&quot; followed by two arbitrary characters, and a non-word character:</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;i..\W&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH 548 Data Oriented Comput<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >ing!</span></code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match two consecutive digits</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d\d&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >54</span>8 Data Oriented Computing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match either &quot;D&quot; or &quot;d&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[Dd]&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH 548 <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >D</span>ata Oriente<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >d</span> Computing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match sequences consisting of 4 characters</span>
+<span class="c1"># different than the space &quot; &quot; and &quot;a&quot;:</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[^ a][^ a][^ a][^ a]&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >This</span> is the <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >cour</span>se MTH 548 Data <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Orie</span><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >nted</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Comp</span><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >utin</span>g!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match either &quot;is&quot; or &quot;in&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;is|in&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >Th<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >is</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >is</span> the course MTH 548 Data Oriented Comput<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >in</span>g!</code></div>
+</div>
+</div>
+<div class="section" id="Repetitions">
+<h2>Repetitions<a class="headerlink" href="#Repetitions" title="Permalink to this headline">¶</a></h2>
+<p>In regular expressions we can specify in various ways how many times some pattern should repeat in a match:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>What it means</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>Match the preceding pattern 0 or more times, as many times as possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>Match the preceding pattern 1 or more times, as many times as possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">?</span></code></p></td>
+<td><p>Match 0 or 1 times.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{n}</span></code></p></td>
+<td><p>Match exactly <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{n,</span> <span class="pre">m}</span></code></p></td>
+<td><p>Match as many times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times, and no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{n,}</span></code></p></td>
+<td><p>Match as many times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{,m}</span></code></p></td>
+<td><p>Match as many times as possible, but no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match sequences consisting of exactly 6 word characters</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w</span><span class="si">{6}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >course</span> MTH 548 Data <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Orient</span>ed <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Comput</span>ing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match all sequences consisting of 1 or more digits</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >548</span> Data Oriented Computing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match all sequences consisting of 0 or more digits</span>
+<span class="c1"># notice that every empty sequence between two non-digit characters will match</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d*&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>T<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>h<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>i<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>s<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>i<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>s<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>t<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>h<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>e<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>c<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>o<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>u<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>r<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>s<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>e<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>M<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>T<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>H<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >548</span><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>D<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>a<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>t<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>a<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>O<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>r<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>i<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>e<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>n<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>t<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>e<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>d<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>C<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>o<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>m<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>p<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>u<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>t<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>i<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>n<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>g<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>!<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span></code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match all sequences of at least 3 and no more tban 5 word charcters:</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w{3,5}&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >This</span> is <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >the</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >cours</span>e <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >MTH</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >548</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Data</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Orien</span><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >ted</span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Compu</span><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >ting</span>!</code></div>
+</div>
+</div>
+<div class="section" id="Non-greedy-matches">
+<h2>Non-greedy matches<a class="headerlink" href="#Non-greedy-matches" title="Permalink to this headline">¶</a></h2>
+<p>By default regular expression matches are greedy: they will match the longest possible part of a given string that fits the specified pattern. For example, the pattern <code class="docutils literal notranslate"><span class="pre">r&quot;.+</span> <span class="pre">&quot;</span></code> will match the longest possible character sequence starting with the letter “D” and ending with a space:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;D.* &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH 548 <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Data Oriented </span>Computing!</code></div>
+</div>
+<p>The following sequences modify this behavior by specifying non-greedy matches:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>What it means</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*?</span></code></p></td>
+<td><p>Match the preceding pattern 0 or more times, as few times as possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">+?</span></code></p></td>
+<td><p>Match the preceding pattern 1 or more times, as few times as possible.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">??</span></code></p></td>
+<td><p>Match 0 or 1 times, as few times as possible.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{n,</span> <span class="pre">m}?</span></code></p></td>
+<td><p>Match as few times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times and no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{n,}?</span></code></p></td>
+<td><p>Match as few times as possible, but at least <code class="docutils literal notranslate"><span class="pre">n</span></code> times.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">{,m}?</span></code></p></td>
+<td><p>Match as few times as possible, and no more than <code class="docutils literal notranslate"><span class="pre">m</span></code> times.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match shortest possible sequences starting with &quot;D&quot;</span>
+<span class="c1"># and ending with a space &quot; &quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;D.*? &quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH 548 <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Data </span>Oriented Computing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match all sequences consisting of &quot;i&quot; followed by an &quot;e&quot;</span>
+<span class="c1"># repeated 0 or 1 times, and ending with &quot;n&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;ie??n&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH 548 Data Or<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >ien</span>ted Comput<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >in</span>g!</code></div>
+</div>
+</div>
+<div class="section" id="Match-groups">
+<h2>Match groups<a class="headerlink" href="#Match-groups" title="Permalink to this headline">¶</a></h2>
+<p>As the last example shows, by default the sequences <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">*?</span></code> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">+?</span></code> etc. apply only to the single symbol preceding them. For example, the regular expression <code class="docutils literal notranslate"><span class="pre">&quot;ie?n&quot;</span></code> means that the character <code class="docutils literal notranslate"><span class="pre">e</span></code> should be repeated 0 or 1 times. In order to indicate that <code class="docutils literal notranslate"><span class="pre">?</span></code> applies the whole group <code class="docutils literal notranslate"><span class="pre">ie</span></code> we need to enclose this group in parentheses: <code class="docutils literal notranslate"><span class="pre">(ie)?n</span></code>. A part of a regular expression wrapped in parentheses is called a <em>match group</em>.</p>
+<p><strong>Examples.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match all sequences consisting of &quot;ei&quot; repeated 0 or 1 times</span>
+<span class="c1"># (as many times as possible), followed an &quot;n&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(ie)?n&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is the course MTH 548 Data Or<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >ien</span>ted Computi<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >n</span>g!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match all occurences of &quot;is &quot; repeated at least once,</span>
+<span class="c1"># and as many times as possible</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(is )+&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >Th<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >is is </span>the course MTH 548 Data Oriented Computing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match a sequence of word characters followed by a space,</span>
+<span class="c1"># and then by another word chatacter sequence starting with either &quot;c&quot; or &quot;C&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w* (c|C)\w*&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >the course</span> MTH 548 Data <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Oriented Computing</span>!</code></div>
+</div>
+<p>Compare the last example to one without grouping:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match either a word character sequence followed by &quot; c&quot;</span>
+<span class="c1"># or a sequence staring with &quot;C&quot; followed by word characters</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\w* c|C\w*&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >This is <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >the c</span>ourse MTH 548 Data Oriented <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Computing</span>!</code></div>
+</div>
+</div>
+<div class="section" id="Anchors">
+<h2>Anchors<a class="headerlink" href="#Anchors" title="Permalink to this headline">¶</a></h2>
+<p>Anchors are sequences which not match any character, but rather a specific position in a string:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sequence</p></th>
+<th class="head"><p>What it means</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">^</span></code></p></td>
+<td><p>Match the beginning of the string</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$</span></code></p></td>
+<td><p>Match the end of the string.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\b</span></code></p></td>
+<td><p>Match a word boundary, e.i. a space between word character and a non-word character</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\B</span></code></p></td>
+<td><p>Match a space which is not a word boundary.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match everything from the beginning of the string</span>
+<span class="c1"># until the first occurence of the letter &quot;a&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^.*?a&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >This is the course MTH 548 Da</span>ta Oriented Computing!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match all word boundaries</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>This<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>is<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>the<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>course<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>MTH<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>548<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>Data<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>Oriented<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span> <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>Computing<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    ></span>!</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match sequences which start with an &quot;h&quot;,</span>
+<span class="c1"># end at a word boundary, and are as short as possible</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;h.*?\b&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >T<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >his</span> is t<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >he</span> course MTH 548 Data Oriented Computing!</code></div>
+</div>
+</div>
+<div class="section" id="Flags">
+<h2>Flags<a class="headerlink" href="#Flags" title="Permalink to this headline">¶</a></h2>
+<p>In addition to a regular expression many functions in the <code class="docutils literal notranslate"><span class="pre">re</span></code> module accept flags, which modify the meaning of the regular expression:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Flag</p></th>
+<th class="head"><p>What it means</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">re.I</span></code></p></td>
+<td><p>Ignore distinction between lower and upper case characters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">re.M</span></code></p></td>
+<td><p>In a multiline string the symbols <code class="docutils literal notranslate"><span class="pre">^</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code> match the beginning and the end of a line.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">re.S</span></code></p></td>
+<td><p>The symbol <code class="docutils literal notranslate"><span class="pre">.</span></code> matches everything, including the newline character <code class="docutils literal notranslate"><span class="pre">&quot;\n&quot;</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">re.X</span></code></p></td>
+<td><p>The regular expression may contain comments (see below for details).</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples.</strong> We will use again the function <code class="docutils literal notranslate"><span class="pre">re_show</span></code> which admits an additional <code class="docutils literal notranslate"><span class="pre">flags</span></code> argument.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># a multiline text sample to experiment with</span>
+<span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">dedent</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">       Twinkle, twinkle, little star,</span>
+<span class="s1">       How I wonder what you are!</span>
+<span class="s1">       Up above the world so high,</span>
+<span class="s1">       Like a diamond in the sky.</span>
+<span class="s1">       &#39;&#39;&#39;</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="n">dedent</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Twinkle, twinkle, little star,
+How I wonder what you are!
+Up above the world so high,
+Like a diamond in the sky.
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># find the word &quot;twinkle&quot; in either upper or lower case</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;twinkle&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Twinkle</span>, <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >twinkle</span>, little star,
+How I wonder what you are!
+Up above the world so high,
+Like a diamond in the sky.</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># find a sequence starting with &quot;star&quot;, ending with &quot;!&quot;,</span>
+<span class="c1"># and possibly including newline characters</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;star.*!&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >Twinkle, twinkle, little <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >star,
+How I wonder what you are!</span>
+Up above the world so high,
+Like a diamond in the sky.</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># find shortest possible sequences which start</span>
+<span class="c1"># at the beginning of a line, contain at least one</span>
+<span class="c1"># character, and end at a word boundary</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^.+?\b&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Twinkle</span>, twinkle, little star,
+<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >How</span> I wonder what you are!
+<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Up</span> above the world so high,
+<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Like</span> a diamond in the sky.</code></div>
+</div>
+<p><strong>Note.</strong> Flags can be combined using the vertical bar <code class="docutils literal notranslate"><span class="pre">|</span></code> character:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># re.I and re.S combined</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;twinkle.*!&quot;</span><span class="p">,</span> <span class="n">text2</span><span class="p">,</span> <span class="n">flags</span> <span class="o">=</span>  <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="o">|</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >Twinkle, twinkle, little star,
+How I wonder what you are!</span>
+Up above the world so high,
+Like a diamond in the sky.</code></div>
+</div>
+</div>
+<div class="section" id="Inserting-comments">
+<h2>Inserting comments<a class="headerlink" href="#Inserting-comments" title="Permalink to this headline">¶</a></h2>
+<p>More complex regular expressions can look very cryptic and be difficult to understand. To make them more readable, it is possible to insert comments explaining what they match piece by piece. The flag <code class="docutils literal notranslate"><span class="pre">re.X</span></code> signals that a regular expression may contain comments. If this flag is used it has the following effects:</p>
+<ul class="simple">
+<li><p>All space and newline characters in the regular expression are ignored.</p></li>
+<li><p>If a line in the regular expression contains the <code class="docutils literal notranslate"><span class="pre">#</span></code> character then this character and the remainder of the line are ignored.</p></li>
+<li><p>Exception: the space and <code class="docutils literal notranslate"><span class="pre">#</span></code> characters are matched if they are preceded by a backslash: <code class="docutils literal notranslate"><span class="pre">\</span></code>, <code class="docutils literal notranslate"><span class="pre">\#</span></code> or they are entered as a part of a character group, i.e. enclosed in square brackets <code class="docutils literal notranslate"><span class="pre">[</span> <span class="pre">#]</span></code> or <code class="docutils literal notranslate"><span class="pre">[^</span> <span class="pre">#]</span></code>.</p></li>
+</ul>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text5</span> <span class="o">=</span> <span class="s2">&quot;The solution is x=5.71, y = -13.2, and  z=0.&quot;</span>
+<span class="c1"># match numbers in the decimal form</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;-?          # possibly the minus sign</span>
+<span class="s2">            \d+         # digits before the decimal point</span>
+<span class="s2">            (\.\d+)?    # possibly the decimal point and more digits</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">text5</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >The solution is x=<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >5.71</span>, y = <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >-13.2</span>, and  z=<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >0</span>.</code></div>
+</div>
+</div>
+<div class="section" id="Matching-special-characters">
+<h2>Matching special characters<a class="headerlink" href="#Matching-special-characters" title="Permalink to this headline">¶</a></h2>
+<p>As we have seen above, several characters (<code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> etc.) have special meaning when used in a regular expression. To match such characters literally, we precede them by a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>, so they become <code class="docutils literal notranslate"><span class="pre">\.</span></code>, <code class="docutils literal notranslate"><span class="pre">\+</span></code>, <code class="docutils literal notranslate"><span class="pre">\*</span></code> and so on. The backlash itself is matched by entering <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
+<p><strong>Example.</strong></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">text3</span> <span class="o">=</span> <span class="s2">&quot;*** \hello\ ***&quot;</span>
+<span class="c1"># match the sequence &quot;***&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\*</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   ><span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >***</span> \hello\ <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >***</span></code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match a sequence which starts and ends</span>
+<span class="c1"># with a backlash &quot;\&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">.*</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >*** <span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >\hello\</span> ***</code></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># match a sequence enclosed in parentheses &quot;(...)&quot;</span>
+<span class="n">text4</span> <span class="o">=</span> <span class="s2">&quot;¯\_(ツ)_/¯&quot;</span>
+<span class="n">re_show</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\(.*\)&quot;</span><span class="p">,</span> <span class="n">text4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<code style="border-style: none;
+                   border-width: 0px;
+                   padding: 0px;
+                   font-size: 14px;
+                   color: darkslategray;
+                   background-color: white;
+                   white-space: pre;
+                   line-height: 20px;"
+                   >¯\_<span style="padding: 0px 1px 0px 1px;
+                    margin: 0px 0.5px 0px 0.5px;
+                    border-style: solid;
+                    border-width: 0.5px;
+                    border-color: darkred;
+                    background-color: cornsilk;
+                    color: red;"
+                    >(ツ)</span>_/¯</code></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="re_functions.html" class="btn btn-neutral float-right" title="Functions in the re module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="regex_toc.html" class="btn btn-neutral float-left" title="Regular expressions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
+      <span class="lastupdated"><br/>
+        Last updated on Jan 21, 2021.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

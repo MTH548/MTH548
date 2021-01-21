@@ -34,12 +34,16 @@ extensions = [
     'nbsphinx',
     'sphinx.ext.mathjax',
     'sphinx_copybutton',
-    'sphinx.ext.githubpages'
+    'sphinx.ext.githubpages',
+    #'sphinx_search.extension',
     #'sphinxcontrib.srclinks',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# The master toctree document.
+master_doc = 'master'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -72,7 +76,7 @@ html_theme_options = {
     #'collapse_navigation': True,
     #'sticky_navigation': True,
     #'navigation_depth': 4,
-    #'includehidden': True,
+    'includehidden': False,
     #'titles_only': False
 }
 

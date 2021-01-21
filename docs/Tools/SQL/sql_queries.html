@@ -1,0 +1,2485 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>SQL queries &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://www.mth548.org/Tools/SQL/sql_queries.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SQL joins, union, intersection" href="sql_joins.html" />
+    <link rel="prev" title="SQL basics" href="sql_basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../master.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Schedule</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../master.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../master.html">MTH 448/548</a> &raquo;</li>
+        
+          <li><a href="sql_toc.html">SQL</a> &raquo;</li>
+        
+      <li>SQL queries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Tools/SQL/sql_queries.ipynb" class="fa fa-github"> View on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 5ex;
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 0.3rem;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="SQL-queries">
+<h1>SQL queries<a class="headerlink" href="#SQL-queries" title="Permalink to this headline">¶</a></h1>
+<p>The SQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement is a tool for constructing queries which extract data from a database. We will show here various ways in which this statement can be used.</p>
+<p>For demonstration purposes we will be working with a small SQLite database which can be downloaded here:</p>
+<div class="line-block">
+<div class="line"><a class="reference download internal" download="" href="../../_downloads/b87cd27595e2c17a4b7e3dd2717e0c28/gradebook_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">gradebook_data.sqlite</span></code></a></div>
+</div>
+<p>To execute SQL code in Jupyter Notebook we will use the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> notebook extension. Assuming that this extension is already installed (see <a class="reference internal" href="sql_basics.html"><span class="doc">SQL Basics</span></a> for installation instructions), the code below will load it:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">load_ext</span> sql
+</pre></div>
+</div>
+</div>
+<p>Next, we connect to the <code class="docutils literal notranslate"><span class="pre">gradebook.sqlite</span></code> database:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="n">sqlite</span><span class="p">:</span><span class="o">///</span><span class="n">gradebook_data</span><span class="p">.</span><span class="n">sqlite</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;Connected: @gradebook_data.sqlite&#39;
+</pre></div></div>
+</div>
+<p>This database consists of a single table <code class="docutils literal notranslate"><span class="pre">gradebook</span></code>, with records (names, exam scores etc.) of students enrolled in a college course. The whole table looks as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+        <th>exam1</th>
+        <th>exam2</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>5775</td>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>biology</td>
+        <td>96</td>
+        <td>13</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>9346</td>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>computer science</td>
+        <td>6</td>
+        <td>60</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>9667</td>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>mathematics</td>
+        <td>56</td>
+        <td>24</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>3877</td>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>mathematics</td>
+        <td>72</td>
+        <td>None</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>7256</td>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>None</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>7138</td>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>biology</td>
+        <td>71</td>
+        <td>5</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>5108</td>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>computer science</td>
+        <td>79</td>
+        <td>96</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>3548</td>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>biology</td>
+        <td>79</td>
+        <td>10</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>2712</td>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>27</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>8911</td>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>None</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>6245</td>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>mathematics</td>
+        <td>None</td>
+        <td>67</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>5787</td>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>computer science</td>
+        <td>27</td>
+        <td>54</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>9165</td>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>mathematics</td>
+        <td>27</td>
+        <td>55</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+<div class="section" id="SELECT-…-FROM-…">
+<h2>SELECT … FROM …<a class="headerlink" href="#SELECT-…-FROM-…" title="Permalink to this headline">¶</a></h2>
+<p id="index-0">The code above shows the simplest application of the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement: it can be used to retrieve the entire content of a database table. The complete syntax of this statement, however, can be much more complex:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT [DISTINCT] column_list
+FROM table_list
+[WHERE condition]
+[GROUP BY column [HAVING conditon]]
+[ORDER BY column]
+[LIMIT count OFFSET offset]
+</pre></div>
+</div>
+<p>All parts in [square brackets] are optional. The only mandatory parts are <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> followed a list of columns we want to retrieve, and <code class="docutils literal notranslate"><span class="pre">FROM</span></code> followed by names of tables where these columns come from. In the example below we use just these two keywords to extract a few columns from the <code class="docutils literal notranslate"><span class="pre">gradebook</span></code> table:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">exam3</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+<p>In some cases it may be convenient to give columns aliases instead of using their original names. This can be accomplished as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span> <span class="k">AS</span> <span class="n">FName</span><span class="p">,</span> <span class="n">last_name</span> <span class="k">AS</span> <span class="n">LName</span><span class="p">,</span> <span class="n">exam3</span> <span class="k">AS</span> <span class="n">Last_Exam</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>FName</th>
+        <th>LName</th>
+        <th>Last_Exam</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span> <span class="pre">...</span></code> syntax to retrieve all distinct values in given columns. As an example, we can use it to get a list of majors listed in the <code class="docutils literal notranslate"><span class="pre">gradebook</span></code> table:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">major</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>major</th>
+    </tr>
+    <tr>
+        <td>biology</td>
+    </tr>
+    <tr>
+        <td>computer science</td>
+    </tr>
+    <tr>
+        <td>mathematics</td>
+    </tr>
+</table></div>
+</div>
+<p>Instead of extracting data as it appears in a table, we can modify it in various ways. For example, SQLite provides the <code class="docutils literal notranslate"><span class="pre">||</span></code> operator which concatenates strings. We can use it to combine columns with first and last names into a single column:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">last_name</span> <span class="o">||</span> <span class="ss">&quot;, &quot;</span> <span class="o">||</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">exam1</span><span class="p">,</span> <span class="n">exam2</span><span class="p">,</span> <span class="n">exam3</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>last_name || &quot;, &quot; || first_name</th>
+        <th>exam1</th>
+        <th>exam2</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>Hovey, Rosina</td>
+        <td>96</td>
+        <td>13</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Mcgaugh, Stanton</td>
+        <td>6</td>
+        <td>60</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Hillock, Jonnie</td>
+        <td>56</td>
+        <td>24</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>Flax, Chu</td>
+        <td>72</td>
+        <td>None</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>Trippe, Rosalinda</td>
+        <td>None</td>
+        <td>None</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Mount, Fran</td>
+        <td>71</td>
+        <td>5</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Coate, Shawnna</td>
+        <td>79</td>
+        <td>96</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>Hinkel, Marcia</td>
+        <td>79</td>
+        <td>10</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Bachand, Starr</td>
+        <td>None</td>
+        <td>27</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Champine, Lottie</td>
+        <td>None</td>
+        <td>None</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>Brummitt, Adelina</td>
+        <td>None</td>
+        <td>67</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Rippel, Tenisha</td>
+        <td>27</td>
+        <td>54</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Hoskin, Ludivina</td>
+        <td>27</td>
+        <td>55</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+<p>The default name of a column created using some operation is the code specifying the operation. Aliases let us replace it with a more meaningful name:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">last_name</span> <span class="o">||</span> <span class="ss">&quot;, &quot;</span> <span class="o">||</span> <span class="n">first_name</span> <span class="k">AS</span> <span class="n">full_name</span><span class="p">,</span> <span class="n">exam1</span><span class="p">,</span> <span class="n">exam2</span><span class="p">,</span> <span class="n">exam3</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>full_name</th>
+        <th>exam1</th>
+        <th>exam2</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>Hovey, Rosina</td>
+        <td>96</td>
+        <td>13</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Mcgaugh, Stanton</td>
+        <td>6</td>
+        <td>60</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Hillock, Jonnie</td>
+        <td>56</td>
+        <td>24</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>Flax, Chu</td>
+        <td>72</td>
+        <td>None</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>Trippe, Rosalinda</td>
+        <td>None</td>
+        <td>None</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Mount, Fran</td>
+        <td>71</td>
+        <td>5</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Coate, Shawnna</td>
+        <td>79</td>
+        <td>96</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>Hinkel, Marcia</td>
+        <td>79</td>
+        <td>10</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Bachand, Starr</td>
+        <td>None</td>
+        <td>27</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Champine, Lottie</td>
+        <td>None</td>
+        <td>None</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>Brummitt, Adelina</td>
+        <td>None</td>
+        <td>67</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Rippel, Tenisha</td>
+        <td>27</td>
+        <td>54</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Hoskin, Ludivina</td>
+        <td>27</td>
+        <td>55</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+<div class="section" id="NULL-values-and-COALESCE">
+<h3>NULL values and COALESCE<a class="headerlink" href="#NULL-values-and-COALESCE" title="Permalink to this headline">¶</a></h3>
+<p>Lets say that we want to calculate for each student the sum of scores from the three exams. We can try to do it as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">exam1</span> <span class="o">+</span> <span class="n">exam2</span> <span class="o">+</span>  <span class="n">exam3</span> <span class="k">AS</span> <span class="n">exam_total</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam_total</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>208</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>106</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>152</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>156</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>236</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>130</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>160</td>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+<p>In some cases this works as expected, but several rows show <code class="docutils literal notranslate"><span class="pre">None</span></code> in the <code class="docutils literal notranslate"><span class="pre">exam_total</span></code> column. The <code class="docutils literal notranslate"><span class="pre">None</span></code>table entries correspond to the SQL <code class="docutils literal notranslate"><span class="pre">NULL</span></code> value which signifies missing data. In the original <code class="docutils literal notranslate"><span class="pre">gradebook</span></code> table several exam scores have the <code class="docutils literal notranslate"><span class="pre">NULL</span></code> value, which may indicate e.g. that some students have not taken an exam. Any number added to<code class="docutils literal notranslate"><span class="pre">NULL</span></code> results in <code class="docutils literal notranslate"><span class="pre">NULL</span></code> (since it is not possible to determine what the missing data stands for), which results in <code class="docutils literal notranslate"><span class="pre">NULL</span></code> values
+in the column <code class="docutils literal notranslate"><span class="pre">exam_total</span></code>.</p>
+<p>In our example, it may be sensible to treat <code class="docutils literal notranslate"><span class="pre">NULL</span></code> exam scores as zeros for the purpose of computing the total score. This can be accomplished using the <code class="docutils literal notranslate"><span class="pre">COALESCE</span></code> function. This function takes a sequence of values as arguments and returns the first value which is not <code class="docutils literal notranslate"><span class="pre">NULL</span></code> (or <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if there is no such value). For example, <code class="docutils literal notranslate"><span class="pre">COALESCE(exam1,</span> <span class="pre">0)</span></code> will return either the value of the column <code class="docutils literal notranslate"><span class="pre">exam1</span></code> or 0, depending on whether <code class="docutils literal notranslate"><span class="pre">exam1</span></code> is or is not <code class="docutils literal notranslate"><span class="pre">NULL</span></code>:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">exam1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">AS</span> <span class="n">exam1_modified</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam1_modified</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>96</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>56</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>71</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>27</td>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>27</td>
+    </tr>
+</table></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">COALESCE</span></code> we can improve the query which computes the total score from the three exams:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">exam1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span>  <span class="n">COALESCE</span><span class="p">(</span><span class="n">exam2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">COALESCE</span><span class="p">(</span><span class="n">exam3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">AS</span> <span class="n">exam_total</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam_total</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>208</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>106</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>152</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>101</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>156</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>236</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>130</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>112</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>166</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>160</td>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>82</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="The-CASE-expression">
+<h3>The CASE expression<a class="headerlink" href="#The-CASE-expression" title="Permalink to this headline">¶</a></h3>
+<p>Lets say that we want to assign letter grades based on exam 3 scores: ‘Great’ for scores above 80 points, ‘Pass’ for scores between 80 and 50 points, and ‘Fail’ for all other scores. This can be accomplished using the <code class="docutils literal notranslate"><span class="pre">CASE</span></code> expression:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">exam3</span><span class="p">,</span>
+<span class="k">CASE</span>
+    <span class="k">WHEN</span> <span class="n">exam3</span> <span class="o">&gt;</span> <span class="mi">80</span> <span class="k">THEN</span> <span class="s1">&#39;Great&#39;</span>
+    <span class="k">WHEN</span> <span class="n">exam3</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="k">THEN</span> <span class="s1">&#39;Pass&#39;</span>
+    <span class="k">ELSE</span> <span class="ss">&quot;Fail&quot;</span>
+<span class="k">END</span> <span class="k">AS</span> <span class="n">grade</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam3</th>
+        <th>grade</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>99</td>
+        <td>Great</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>40</td>
+        <td>Fail</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>72</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>29</td>
+        <td>Fail</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+        <td>Great</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>80</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>61</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>41</td>
+        <td>Fail</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>85</td>
+        <td>Great</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>62</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>99</td>
+        <td>Great</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>79</td>
+        <td>Pass</td>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>None</td>
+        <td>Fail</td>
+    </tr>
+</table></div>
+</div>
+</div>
+</div>
+<div class="section" id="WHERE">
+<h2>WHERE<a class="headerlink" href="#WHERE" title="Permalink to this headline">¶</a></h2>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause of the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement to specify which rows of a table should be retrieved. For example, below we use it to select students who received at least 70 points on exam 1:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">WHERE</span> <span class="n">exam1</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+        <th>exam1</th>
+        <th>exam2</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>5775</td>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>biology</td>
+        <td>96</td>
+        <td>13</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>3877</td>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>mathematics</td>
+        <td>72</td>
+        <td>None</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>7138</td>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>biology</td>
+        <td>71</td>
+        <td>5</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>5108</td>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>computer science</td>
+        <td>79</td>
+        <td>96</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>3548</td>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>biology</td>
+        <td>79</td>
+        <td>10</td>
+        <td>41</td>
+    </tr>
+</table></div>
+</div>
+<p>Logical conditions can be combined using <code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">OR</span></code> and <code class="docutils literal notranslate"><span class="pre">NOT</span></code> operators. Below we select students with scores above 50 points on each of the three exams:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">WHERE</span> <span class="n">exam1</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="k">AND</span> <span class="n">exam2</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="k">AND</span> <span class="n">exam3</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+        <th>exam1</th>
+        <th>exam2</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>5108</td>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>computer science</td>
+        <td>79</td>
+        <td>96</td>
+        <td>61</td>
+    </tr>
+</table></div>
+</div>
+<div class="section" id="Comparing-NULL-values">
+<h3>Comparing NULL values<a class="headerlink" href="#Comparing-NULL-values" title="Permalink to this headline">¶</a></h3>
+<p>In some cases we may be interested in retrieving records which have (or do not have) the <code class="docutils literal notranslate"><span class="pre">NULL</span></code> value in some column. The conditions <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">=</span> <span class="pre">NULL</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">!=</span> <span class="pre">NULL</span></code> will not work, since it is not possible to determine if something has the same value as the value of unknown data. Instead, we can use the conditions <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">IS</span> <span class="pre">NULL</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></code>.</p>
+<p>As an example, below we select records of students with <code class="docutils literal notranslate"><span class="pre">NULL</span></code> value in the <code class="docutils literal notranslate"><span class="pre">exam1</span></code> column:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">WHERE</span> <span class="n">exam1</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+        <th>exam1</th>
+        <th>exam2</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>7256</td>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>None</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>2712</td>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>27</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>8911</td>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>None</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>6245</td>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>mathematics</td>
+        <td>None</td>
+        <td>67</td>
+        <td>99</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="LIKE-operator">
+<h3>LIKE operator<a class="headerlink" href="#LIKE-operator" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> operator can be used to perform simple pattern matches in strings. Below we use it to select records of all students whose last names start with an “H”:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">WHERE</span> <span class="n">last_name</span> <span class="k">LIKE</span> <span class="s1">&#39;H%&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>student_id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>major</th>
+        <th>exam1</th>
+        <th>exam2</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>5775</td>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>biology</td>
+        <td>96</td>
+        <td>13</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>9667</td>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>mathematics</td>
+        <td>56</td>
+        <td>24</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>3548</td>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>biology</td>
+        <td>79</td>
+        <td>10</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>9165</td>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>mathematics</td>
+        <td>27</td>
+        <td>55</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+<p>In patterns used by <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> the percentage symbol <code class="docutils literal notranslate"><span class="pre">%</span></code> represents zero of more characters, and the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> stands for a single character. By default pattern matches are case insensitive, so ‘H%’ will match both ‘Hello’ and ‘hello’.</p>
+</div>
+</div>
+<div class="section" id="ORDER">
+<h2>ORDER<a class="headerlink" href="#ORDER" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">ORDER</span></code> clause specifies in which order records retrieved by a query should be returned. We can use it, for example, to arrange students records according to the exam 3 scores:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">exam3</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">exam3</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>None</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>99</td>
+    </tr>
+</table></div>
+</div>
+<p>By default, records are returned in the ascending order. <code class="docutils literal notranslate"><span class="pre">NULL</span></code> is regarded as the smallest possible value, so it appears at the top of the list. By adding the <code class="docutils literal notranslate"><span class="pre">DESC</span></code> keyword we can arrange records in the descending order:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">exam3</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">exam3</span> <span class="k">DESC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>Jonnie</td>
+        <td>Hillock</td>
+        <td>72</td>
+    </tr>
+    <tr>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>61</td>
+    </tr>
+    <tr>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Stanton</td>
+        <td>Mcgaugh</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>None</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="LIMIT">
+<h2>LIMIT<a class="headerlink" href="#LIMIT" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> clause constrains the number of records returned by the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement. For example, we can use it to get records of 5 students with the highest exam 3 scores:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">exam3</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">exam3</span> <span class="k">DESC</span>
+<span class="k">LIMIT</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>Rosina</td>
+        <td>Hovey</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>80</td>
+    </tr>
+</table></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> can be used with an additional <code class="docutils literal notranslate"><span class="pre">OFFSET</span></code> keyword. For example, <code class="docutils literal notranslate"><span class="pre">LIMIT</span> <span class="pre">3</span> <span class="pre">OFFSET</span> <span class="pre">2</span></code> will skip the first 2 records and return the following 3 records:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">exam3</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">exam3</span> <span class="k">DESC</span>
+<span class="k">LIMIT</span> <span class="mi">3</span> <span class="k">OFFSET</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>exam3</th>
+    </tr>
+    <tr>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>80</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="Aggregate-functions">
+<h2>Aggregate functions<a class="headerlink" href="#Aggregate-functions" title="Permalink to this headline">¶</a></h2>
+<p>Aggregate functions summarize values in a column. SQLite provides a few aggregate functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">COUNT(column)</span></code> returns the number of non-NULL values in a column. <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code> returns the number of rows, regardless of their values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AVG(column)</span></code> returns the average of numerical values in a column.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MIN(column)</span></code> and <code class="docutils literal notranslate"><span class="pre">MAX(my_column)</span></code> return the minimal and maximal value of a column, respectively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUM(column)</span></code> returns the sum of numerical values in a column.</p></li>
+</ul>
+<p>For example, below we count the number of non-NULL values in columns with exam scores.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">exam1</span><span class="p">),</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">exam2</span><span class="p">),</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">exam3</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>COUNT(exam1)</th>
+        <th>COUNT(exam2)</th>
+        <th>COUNT(exam3)</th>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>10</td>
+        <td>12</td>
+    </tr>
+</table></div>
+</div>
+<p>Next, we compute the maximal score recorded for each exam:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">exam1</span><span class="p">),</span> <span class="k">MAX</span><span class="p">(</span><span class="n">exam2</span><span class="p">),</span> <span class="k">MAX</span><span class="p">(</span><span class="n">exam3</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>MAX(exam1)</th>
+        <th>MAX(exam2)</th>
+        <th>MAX(exam3)</th>
+    </tr>
+    <tr>
+        <td>96</td>
+        <td>96</td>
+        <td>99</td>
+    </tr>
+</table></div>
+</div>
+</div>
+<div class="section" id="GROUP-BY">
+<h2>GROUP BY<a class="headerlink" href="#GROUP-BY" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span> <span class="pre">expression</span></code> clause of the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement adds more flexibility to the aggregate functions. It divides records into groups in such a way, that the specified <code class="docutils literal notranslate"><span class="pre">expression</span></code> has the same value for all records in a group. Aggregate functions can be then used to summarize columns in each group separately.</p>
+<p>As an example, below we group records based on the value of the <code class="docutils literal notranslate"><span class="pre">major</span></code> column. Then we calculate the average exam scores for each group:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">major</span><span class="p">,</span> <span class="k">AVG</span><span class="p">(</span><span class="n">exam1</span><span class="p">),</span> <span class="k">AVG</span><span class="p">(</span><span class="n">exam2</span><span class="p">),</span> <span class="k">AVG</span><span class="p">(</span><span class="n">exam3</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">major</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>major</th>
+        <th>AVG(exam1)</th>
+        <th>AVG(exam2)</th>
+        <th>AVG(exam3)</th>
+    </tr>
+    <tr>
+        <td>biology</td>
+        <td>82.0</td>
+        <td>9.333333333333334</td>
+        <td>73.33333333333333</td>
+    </tr>
+    <tr>
+        <td>computer science</td>
+        <td>37.333333333333336</td>
+        <td>59.25</td>
+        <td>68.16666666666667</td>
+    </tr>
+    <tr>
+        <td>mathematics</td>
+        <td>51.666666666666664</td>
+        <td>48.666666666666664</td>
+        <td>66.66666666666667</td>
+    </tr>
+</table></div>
+</div>
+<p>The table above is somewhat difficult to read, because it contains too many decimal digits. We can improve it using the <code class="docutils literal notranslate"><span class="pre">ROUND(value,</span> <span class="pre">num_digits)</span></code> function, which rounds numerical values to a given number of digits:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">major</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">exam1</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">exam1_avg</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">exam2</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">exam1_avg</span><span class="p">,</span>
+       <span class="n">ROUND</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">exam3</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">exam3_avg</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">major</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>major</th>
+        <th>exam1_avg</th>
+        <th>exam1_avg_1</th>
+        <th>exam3_avg</th>
+    </tr>
+    <tr>
+        <td>biology</td>
+        <td>82.0</td>
+        <td>9.33</td>
+        <td>73.33</td>
+    </tr>
+    <tr>
+        <td>computer science</td>
+        <td>37.33</td>
+        <td>59.25</td>
+        <td>68.17</td>
+    </tr>
+    <tr>
+        <td>mathematics</td>
+        <td>51.67</td>
+        <td>48.67</td>
+        <td>66.67</td>
+    </tr>
+</table></div>
+</div>
+<p>SQLite provides an additional aggregate function <code class="docutils literal notranslate"><span class="pre">GROUP_CONCAT(column,</span> <span class="pre">separator)</span></code>, which concatenates all non-NULL values in a column, separating them by the specified separator string. We can use it to list exam 1 scores obtained by students in each major:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">major</span><span class="p">,</span> <span class="n">GROUP_CONCAT</span><span class="p">(</span><span class="n">exam1</span><span class="p">,</span> <span class="ss">&quot;, &quot;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">exam1_scores</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">major</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>major</th>
+        <th>exam1_scores</th>
+    </tr>
+    <tr>
+        <td>biology</td>
+        <td>96, 71, 79</td>
+    </tr>
+    <tr>
+        <td>computer science</td>
+        <td>6, 79, 27</td>
+    </tr>
+    <tr>
+        <td>mathematics</td>
+        <td>56, 72, 27</td>
+    </tr>
+</table></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> can be used with an additional <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> clause. In such a case, only groups that satisfy the condition given after <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> will be returned. Below we use it to check which majors averaged more than 50 points on exam 1.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="n">major</span><span class="p">,</span> <span class="n">ROUND</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">exam1</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">exam1_avg</span>
+<span class="k">FROM</span> <span class="n">gradebook</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">major</span>
+<span class="k">HAVING</span> <span class="n">exam1_avg</span> <span class="o">&gt;</span> <span class="mi">50</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>major</th>
+        <th>exam1_avg</th>
+    </tr>
+    <tr>
+        <td>biology</td>
+        <td>82.0</td>
+    </tr>
+    <tr>
+        <td>mathematics</td>
+        <td>51.67</td>
+    </tr>
+</table></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sql_joins.html" class="btn btn-neutral float-right" title="SQL joins, union, intersection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql_basics.html" class="btn btn-neutral float-left" title="SQL basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
+      <span class="lastupdated"><br/>
+        Last updated on Jan 21, 2021.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -7,88 +7,31 @@ Collaboration
 
 You are free to discuss projects with your classmates. However, each project report
 must be solely your own work: it must be written by you in its entirety, including
-all computer code. Plagiarism will result in the zero score on a report, and
-possibly in additional sanctions (an F grade, an academic disciplinary action etc.).
+all Python code. Plagiarism of any kind (copying from other students, or permitting
+someone to copy your work, copying from the internet etc.) will result at the minimum
+in the failing grade on a report, and possibly in additional sanctions (an F grade for
+the course, an academic disciplinary action etc.).
 
 
 Using external resources
 ------------------------
 
-There are two types of resources that may be relevant. First, there are plenty of
-books and websites devoted to Python programming. You should take advantage of this.
-If you have a programming question then in most cases a quick google search will
-get you an answer.
+You are free (and encouraged) to consult Python documentation and
+other resources to better understand various tools we will be using.
+You are not allowed to copy code you found online and use it in your reports.
 
-Second, most of the projects you will be working on are based on mathematical
-problems and ideas that are described somewhere. However, you should not start your
-work on a project by doing a web or library search. The goal of each project is for
-you to explore a problem on your own. Description of your explorations and experimentation
-must be the main part of your project report. It is fine to include some background
-information on the project (properly referencing books and websites it comes from)
-but it is not necessary, and you can get a perfect score without it. Moreover,
-projects are open-ended so there is no "complete solution" you should be looking for.
-Have fun, explore, and put in the report what you came up with.
-
-
-Additional Python features
---------------------------
-
-We will not be able to cover all features of Python in this course. You are free
-(and encouraged!) to explore additional Python tools on your own and use them in
-your code. The only condition is that you must understand your own code and be able
-to explain it in detail if asked. You must not copy code snippets that you found
-somewhere and that somehow seem to be doing what you need.
+In the narrative of a report you can insert a brief quote from some source if you
+find it useful, as long as you provide a proper attribution. Quotes used without an
+attribution are an instance of plagiarism. Long quotes - e.g. using a few paragraphs
+from Wikipedia for the report introduction - will decrease the value of your report,
+even if they are attributed.
 
 
 Report grading rubrics
 ----------------------
 
-Project reports will be graded as follows. Each element listed in the
-table below will be graded on the A-F scale. These letter grades will be then
-converted into numerical scores (A = 4.0, A- = 3.67 etc.), multiplied by the
-corresponding weights, and added together. The resulting score will give the
-letter grade for the whole report.
-
-Bonus (if any) will be indicated by either 'X' or 'XX'. The 'X' bonus will increase
-the overall report grade to the next higher grade (from B to B+, from B+ to A- etc.).
-The 'XX' bonus will increase the report grade by two grades (e.g from B to A-).
-A report grade with a bonus may be higher than A, and will be indicated by either
-A+ or A++.
-
-+----------------------+-----------+--------------------------------------------+
-| Element              | Weight    |  What will be graded                       |
-+======================++==========+============================================+
-| Introduction Section | 10%       | |Intro|                                    |
-+----------------------+-----------+--------------------------------------------+
-| Conclusions Section  | 10%       | |Conclusions|                              |
-+----------------------+-----------+--------------------------------------------+
-| Report Content       | 30%       | |Content|                                  |
-+----------------------+-----------+--------------------------------------------+
-| Python Code          | 30%       | |Code|                                     |
-+----------------------+-----------+--------------------------------------------+
-| Presentation         | 20%       | |Presentation|                             |
-+----------------------+-----------+--------------------------------------------+
-| Bonus                |           | |Bonus|                                    |
-+----------------------+-----------+--------------------------------------------+
-
-.. |Intro| replace:: Quality of the narrative.
-
-.. |Conclusions| replace:: Quality of the narrative.
-
-.. |Content| replace:: Work done on developing the project. Your analysis, insights,
-   observations, and interpretations. Quality of the narrative of the report.
-
-.. |Code| replace:: Quality of the Python code included in the report. Relevance
-   of the code to the project. Code organization. Documentation of code
-   by code comments.
-
-.. |Presentation| replace:: Organization of the report. Text formatting.
-   Use of LaTeX to typeset mathematics. Formatting of code output.
-   Quality of graphs and plots.
-
-.. |Bonus| replace:: Extra credit for excellent work that exceeds
-   expectations.
-
+Detailed rubrics which will be used to grade project reports are posted
+`here <./_static/report_rubrics.pdf>`_.
 
 
 
@@ -103,10 +46,13 @@ Report introduction
 
 A report must begin with an introduction section. It should explain the project
 and the goals of the report in a way which is engaging and understandable to
-a student who has some math background, but does not take this course.
-Introduction should not be limited to a list of tasks you want to accomplish.
-While explaining the project use your own words, do not copy the project
-description.
+person who does not take this course. While writing a report imagine that you
+are creating a part of a portfolio that you will show while applying for a job
+to demonstrate your skills.
+
+The introduction of a report must not be limited to a list of tasks you want
+to accomplish. While explaining the project use your own words, do not copy
+the project description posted on this website.
 
 
 .. toctree::
@@ -153,7 +99,7 @@ Code structure
 ~~~~~~~~~~~~~~
 
 Python code should be split into possibly short code cells that accomplish a single,
-well defined task.  In particular you should not define several functions in one cell
+well defined task.  In particular, you should not define several functions in one cell
 or define a function and execute it in the same cell.
 
 You should explain (even if very briefly) the purpose of each piece of code. As a rule,
