@@ -17,14 +17,12 @@ MTH 448/548 Data Oriented Computing
    :maxdepth: 1
    :caption: Schedule
 
-   Schedule/week_1
+   Schedule/week_0
+
 
 .. toctree::
    :maxdepth: 3
    :caption: Tools
-
-   Tools/Numpy/numpy_toc
-
 
 
 
@@ -32,13 +30,15 @@ MTH 448/548 Data Oriented Computing
    :maxdepth: 3
    :caption: Projects
 
-   Projects/mnist_with_knn/mnist_with_knn
 
 
 
 .. toctree::
    :hidden:
 
+   Schedule/week_1
+
+   Tools/Numpy/numpy_toc
    Tools/Pandas/pandas_toc
    Tools/Seaborn/seaborn_toc
    Tools/Plotly/plotly_toc
@@ -48,6 +48,7 @@ MTH 448/548 Data Oriented Computing
    Tools/json/json
    Tools/SQL/sql_toc
 
+   Projects/mnist_with_knn/mnist_with_knn
    Projects/baby_names/baby_names
    Projects/scrapping_chicago_marathon/scrapping_chicago_marathon
    Projects/kde_marathon_results/kde_marathon_results

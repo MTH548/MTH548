@@ -18,7 +18,7 @@ Instructor
 
 | Bernard Badzioch
 | **E-mail:** `badzioch@buffalo.edu <badzioch@buffalo.edu>`_
-| **Office Hours:** Thu 3:00-5:00 PM
+| **Office Hours:** Thu 3:00-5:00 PM on Discord, General Voice channel.
 
 
 Prerequisites
@@ -125,8 +125,7 @@ such assignment without loosing any credit, but your weekly digest credit will b
 lowered by 2% for each subsequent missed assignment.
 
 I may award extra credit to students who are especially active in the course.
-I may also offer some extra credit opportunities for giving short presentations
-on some topic etc.
+
 
 
 Incomplete Grades
