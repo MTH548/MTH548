@@ -8,22 +8,28 @@ MTH 448/548 Data Oriented Computing
 
 .. toctree::
    :maxdepth: 3
+   :caption: Logistics
 
    index
+   group_assignments
+   to_do
    report_guide
    useful_links
+
 
 .. toctree::
    :maxdepth: 1
    :caption: Schedule
 
    Schedule/week_0
+   Schedule/week_1
 
 
 .. toctree::
    :maxdepth: 3
    :caption: Tools
 
+   Tools/Numpy/numpy_toc
 
 
 .. toctree::
@@ -33,12 +39,12 @@ MTH 448/548 Data Oriented Computing
 
 
 
+
+
+
 .. toctree::
    :hidden:
 
-   Schedule/week_1
-
-   Tools/Numpy/numpy_toc
    Tools/Pandas/pandas_toc
    Tools/Seaborn/seaborn_toc
    Tools/Plotly/plotly_toc

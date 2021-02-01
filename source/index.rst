@@ -29,8 +29,19 @@ with such Python libraries as matplotlib or numpy (although we will start the co
 with a review of numpy). I will also assume that you are familiar with Jupyter Notebook:
 code cells, markdown cells etc. If you have not used Jupyter Notebook before, install
 the Anaconda distribution (see below) which Jupyter Notebook is a part of and get
-acquiainted with it. Feel free to let me know if you have any questions.
+acquainted with it. Feel free to let me know if you have any questions.
 
+
+Learning Outcomes
+-----------------
+
+After taking this course you should be able to:
+
+* Understand various common formats of data (csv, html, xml, json, SQL database etc.) and how to use them.
+* Manipulate data using such tools as numpy, pandas, json, BeautifulSoup, SQL etc.
+* Visualize data using matplotlib, seaborn and plotly.
+* Apply some machine learning methods to analyze data.
+* Describe and explain in writing results of data exploration and analysis.
 
 Course Resources
 ----------------
@@ -44,13 +55,15 @@ distribution since it includes Jupyter Notebook and several Python modules we wi
 If you have a previous version of Python installed, please upgrade it so you don't run into
 possible compatibility issues.
 
-**Textbook.** There is no required textbook. There is a lot of online resources (Python libraries
-documentation etc.) that may be helpful in this course. Some of them are listed on
+**Textbook.** There is no required textbook. There is a lot of online resources (documentation
+of Python libraries etc.) that may be helpful in this course. Some of them are listed on
 the :doc:`Useful Links <useful_links>` page.
 
 
 |Discord.| Every class meeting will start on Zoom, but then we will often migrate
 to Discord which provides better tools for interactive work and collaboration.
+On Discord the class with be split into small groups. Group assignments are posted
+:doc:`here <group_assignments>`.
 
 .. |Discord.| raw:: html
 

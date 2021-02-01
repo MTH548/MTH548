@@ -94,14 +94,39 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">Logistics</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../group_assignments.html">Group Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="week_0.html">Preliminaries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Week 1 (2/1-2/7)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Numpy">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Resources">Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#1.-Visualizing-numpy-arrays">1. Visualizing numpy arrays</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-1">Exercise 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-2">Exercise 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-3">Exercise 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-4">Exercise 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-5">Exercise 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-6">Exercise 6</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
 
             
@@ -434,7 +459,7 @@ div.rendered_html tbody tr:hover {
 <div class="section" id="1.-Visualizing-numpy-arrays">
 <h3>1. Visualizing numpy arrays<a class="headerlink" href="#1.-Visualizing-numpy-arrays" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -469,6 +494,205 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
+<div class="section" id="Exercises">
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
+<p>The exercise below should be completed using tools provided by numpy arrays. Do not use <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, list comprehensions etc. The code in each case can be written in fewer than 10 lines.</p>
+<div class="section" id="Exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">border(a)</span></code> which takes as an argument an 2-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and returns an array obtained by adding a border of zeros to <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[105]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a:</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;border(a):</span><span class="se">\n</span><span class="si">{</span><span class="n">border</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a:
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+
+border(a):
+[[ 0  0  0  0  0  0]
+ [ 0  0  1  2  3  0]
+ [ 0  4  5  6  7  0]
+ [ 0  8  9 10 11  0]
+ [ 0  0  0  0  0  0]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#Exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">row_split(a,</span> <span class="pre">k)</span></code> which for a given 2-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and a positive integer <code class="docutils literal notranslate"><span class="pre">k</span></code> returns a tuple of two 2-dimensional numpy arrays: one consisting of the first <code class="docutils literal notranslate"><span class="pre">k</span></code> rows of <code class="docutils literal notranslate"><span class="pre">a</span></code> and the second consisting of the remaining rows.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">splitted</span> <span class="o">=</span> <span class="n">row_split</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a:</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">row_split(a, 3):</span><span class="se">\n</span><span class="si">{</span><span class="n">splitted</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="se">\n\n</span><span class="s2"> </span><span class="si">{</span><span class="n">splitted</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a:
+[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]
+ [12 13 14]]
+
+row_split(a, 3):
+[[0 1 2]
+ [3 4 5]
+ [6 7 8]]
+
+ [[ 9 10 11]
+ [12 13 14]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#Exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">n_smallest(a,</span> <span class="pre">n)</span></code> which given a 1-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and an integer <code class="docutils literal notranslate"><span class="pre">n</span></code> returns an array with indices of <code class="docutils literal notranslate"><span class="pre">n</span></code> smallest elements of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[107]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># array of random integers</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;a:</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n_smallest(a, 3):</span><span class="se">\n</span><span class="si">{</span><span class="n">n_smallest</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a:
+[51 26 92 37 69 13 23 77 85 79]
+
+n_smallest(a, 3):
+[5 6 1]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h3>
+<p>Write function <code class="docutils literal notranslate"><span class="pre">checkers(n)</span></code> which returns an <span class="math notranslate nohighlight">\(n\times n\)</span> numpy array consisting of zeros and ones arranged in a checkerboard pattern. To check that this function works correctly, test it for both odd end even values of <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">checkers</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[1., 0., 1., 0., 1., 0., 1., 0.],
+       [0., 1., 0., 1., 0., 1., 0., 1.],
+       [1., 0., 1., 0., 1., 0., 1., 0.],
+       [0., 1., 0., 1., 0., 1., 0., 1.],
+       [1., 0., 1., 0., 1., 0., 1., 0.],
+       [0., 1., 0., 1., 0., 1., 0., 1.],
+       [1., 0., 1., 0., 1., 0., 1., 0.],
+       [0., 1., 0., 1., 0., 1., 0., 1.]])
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#Exercise-5" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">sub_table(n)</span></code> which returns an <span class="math notranslate nohighlight">\(n\times n\)</span> numpy array with the subtraction table of numbers from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(n-1\)</span>. The value in the row <span class="math notranslate nohighlight">\(i\)</span> and column <span class="math notranslate nohighlight">\(j\)</span> of the array should be the number <span class="math notranslate nohighlight">\(i - j\)</span>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">sub_table</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[81]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[  0,  -1,  -2,  -3,  -4,  -5,  -6,  -7,  -8,  -9, -10],
+       [  1,   0,  -1,  -2,  -3,  -4,  -5,  -6,  -7,  -8,  -9],
+       [  2,   1,   0,  -1,  -2,  -3,  -4,  -5,  -6,  -7,  -8],
+       [  3,   2,   1,   0,  -1,  -2,  -3,  -4,  -5,  -6,  -7],
+       [  4,   3,   2,   1,   0,  -1,  -2,  -3,  -4,  -5,  -6],
+       [  5,   4,   3,   2,   1,   0,  -1,  -2,  -3,  -4,  -5],
+       [  6,   5,   4,   3,   2,   1,   0,  -1,  -2,  -3,  -4],
+       [  7,   6,   5,   4,   3,   2,   1,   0,  -1,  -2,  -3],
+       [  8,   7,   6,   5,   4,   3,   2,   1,   0,  -1,  -2],
+       [  9,   8,   7,   6,   5,   4,   3,   2,   1,   0,  -1],
+       [ 10,   9,   8,   7,   6,   5,   4,   3,   2,   1,   0]])
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#Exercise-6" title="Permalink to this headline">¶</a></h3>
+<p>If <span class="math notranslate nohighlight">\({\bf v} = [x_1, x_2, \dots, x_n]\)</span> and <span class="math notranslate nohighlight">\({\bf w} = [y_1, y_2, \dots, y_n]\)</span> are two vectors with <span class="math notranslate nohighlight">\(n\)</span> coordinates then the Euclidean distance between <span class="math notranslate nohighlight">\(\bf v\)</span> and <span class="math notranslate nohighlight">\(\bf w\)</span> is given by the formula:</p>
+<div class="math notranslate nohighlight">
+\[d({\bf v}, {\bf w}) = \sqrt{ (x_1 - y_1)^2 + (x_2 - y_2)^2 + \dots + (x_n - y_n)^2}\]</div>
+<p>Let <code class="docutils literal notranslate"><span class="pre">X</span></code> be an <span class="math notranslate nohighlight">\(m\times n\)</span> numpy array, and let <code class="docutils literal notranslate"><span class="pre">w</span></code> be a 1-dimensional array with <span class="math notranslate nohighlight">\(n\)</span> entries. Write a function <code class="docutils literal notranslate"><span class="pre">dist(X,</span> <span class="pre">w)</span></code> which returns a 1-dimensional array with <span class="math notranslate nohighlight">\(m\)</span> entries, such that the <span class="math notranslate nohighlight">\(i\)</span>-th entry is the distance between the <span class="math notranslate nohighlight">\(i\)</span>-th row of <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">w</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[109]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;X:</span><span class="se">\n</span><span class="si">{</span><span class="n">X</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">w:</span><span class="se">\n</span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">dist(X, w):</span><span class="se">\n</span><span class="si">{</span><span class="n">dist</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">w</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+X:
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+
+w:
+[0 1 0 1]
+
+dist(X, w):
+[ 2.82842712 10.19803903 18.11077028]
+</pre></div></div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -493,7 +717,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 26, 2021.
+        Last updated on Feb 01, 2021.
       </span>
 
     </p>
