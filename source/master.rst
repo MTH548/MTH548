@@ -45,6 +45,8 @@ MTH 448/548 Data Oriented Computing
 .. toctree::
    :hidden:
 
+   Schedule/week_2_temporary
+
    Tools/Pandas/pandas_toc
    Tools/Seaborn/seaborn_toc
    Tools/Plotly/plotly_toc
