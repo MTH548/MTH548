@@ -120,6 +120,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#Exercise-4">Exercise 4</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Exercise-5">Exercise 5</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Exercise-6">Exercise 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-7">Exercise 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-8">Exercise 8</a></li>
 </ul>
 </li>
 </ul>
@@ -179,10 +181,6 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
-            
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Schedule/week_1.ipynb" class="fa fa-github"> View on GitHub</a>
-            
           
         
       </li>
@@ -604,7 +602,7 @@ n_smallest(a, 3):
 </div>
 <div class="section" id="Exercise-4">
 <h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h3>
-<p>Write function <code class="docutils literal notranslate"><span class="pre">checkers(n)</span></code> which returns an <span class="math notranslate nohighlight">\(n\times n\)</span> numpy array consisting of zeros and ones arranged in a checkerboard pattern. To check that this function works correctly, test it for both odd end even values of <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Write function <code class="docutils literal notranslate"><span class="pre">checkers(n)</span></code> which returns an <span class="math notranslate nohighlight">\(n\times n\)</span> numpy array consisting of zeros and ones arranged in a checkerboard pattern. To check that this function works correctly, test it for both odd and even values of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -697,6 +695,66 @@ w:
 
 dist(X, w):
 [ 2.82842712 10.19803903 18.11077028]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#Exercise-7" title="Permalink to this headline">¶</a></h3>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">order_columns(a)</span></code> which takes as an argument a 2-dimensional numpy array and returns an array obtained by reordering columns of <code class="docutils literal notranslate"><span class="pre">a</span></code> according to the sum of their entries: the first column is the one where the sum of entries is the smallest, the last column is the one where the sum of entries is the largest.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># 3x5 array of random integers 0 &lt;= n &lt; 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">a:</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">reorder_columns(a):</span><span class="se">\n</span><span class="si">{</span><span class="n">reorder_columns</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+a:
+[[0 3 2 4 0]
+ [3 0 4 1 1]
+ [2 3 4 4 0]]
+
+reorder_columns(a):
+[[0 0 3 4 2]
+ [1 3 0 1 4]
+ [0 2 3 4 4]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#Exercise-8" title="Permalink to this headline">¶</a></h3>
+<p>Write the function <code class="docutils literal notranslate"><span class="pre">first_smaller(a,</span> <span class="pre">n)</span></code> which takes as its argument a 1-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and a number <code class="docutils literal notranslate"><span class="pre">n</span></code> and returns the first entry of <code class="docutils literal notranslate"><span class="pre">a</span></code> which is smaller than <code class="docutils literal notranslate"><span class="pre">n</span></code>. If such entry does not exist the function should return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[54]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># array of 10 random integers 0 &lt;= n &lt; 100</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">a:</span><span class="se">\n</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">first_smaller(a, 50):</span><span class="se">\n</span><span class="si">{</span><span class="n">first_smaller</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+
+a:
+[79 55 35 71  4 68 98 38 20 36]
+
+first_smaller(a, 50):
+35
 </pre></div></div>
 </div>
 </div>

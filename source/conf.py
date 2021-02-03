@@ -103,14 +103,14 @@ html_scaled_image_link = True #False
 
 # Show source files
 
-#html_show_sourcelink =  False #True
+html_show_sourcelink =  False #True
 #srclink_project = 'https://github.com/MTH548'
 #srclink_branch = 'master'
 #srclink_src_path = '/'
 
 # View on GitHub setup
 html_context = {
-"display_github": True, # Add 'Edit on Github' link instead of 'View page source'
+"display_github": False, # True # Add 'Edit on Github' link instead of 'View page source'
 "commit": False,
 #'source_url_prefix': "https://github.com/MTH548",
 "github_host": "github.com",

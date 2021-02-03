@@ -117,6 +117,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#Multidimensional-numpy-arrays">Multidimensional numpy arrays</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Mathematical-operations-on-multidimensional-arrays">Mathematical operations on multidimensional arrays</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Slicing-multidimensional-arrays">Slicing multidimensional arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Sorting">Sorting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Aggregation-functions">Aggregation functions</a></li>
 </ul>
 </li>
@@ -177,10 +178,6 @@
     
       <li class="wy-breadcrumbs-aside">
         
-          
-            
-              <a href="https://github.com/MTH548/MTH548_site/blob/master/source/Tools/Numpy/numpy_basics.ipynb" class="fa fa-github"> View on GitHub</a>
-            
           
         
       </li>
@@ -439,7 +436,7 @@ div.rendered_html tbody tr:hover {
 <h1>Numpy Basics<a class="headerlink" href="#Numpy-Basics" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://numpy.org/devdocs/user/quickstart.html">Numpy</a> is a standard module for doing numerical computations in Python. It provides tools for writing code which is both easier to develop and usually a lot faster than it would be without numpy.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1278,29 +1275,218 @@ array([[ 0,  0,  0,  0,  4,  5],
 </pre></div></div>
 </div>
 </div>
-<div class="section" id="Aggregation-functions">
-<h2>Aggregation functions<a class="headerlink" href="#Aggregation-functions" title="Permalink to this headline">¶</a></h2>
-<p>Numpy includes several aggregation functions that summarize, in various ways, data contained in an array.</p>
+<div class="section" id="Sorting">
+<h2>Sorting<a class="headerlink" href="#Sorting" title="Permalink to this headline">¶</a></h2>
+<p>Numpy has several functions for creating arrays with randomly selected entries. For example, the function <code class="docutils literal notranslate"><span class="pre">np.random.randint(low,</span> <span class="pre">high,</span> <span class="pre">size)</span></code> returns an array of integers the entries of which are greater or equal to <code class="docutils literal notranslate"><span class="pre">low</span></code> and strictly smaller than <code class="docutils literal notranslate"><span class="pre">high</span></code>. The <code class="docutils literal notranslate"><span class="pre">size</span></code> argument specifies the size of the matrix:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># create a 3x4 array of integers randomly selected from the range 0 &lt;= x &lt; 20</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span></span><span class="c1"># 1-dimensional array of 5 elements with entries 0 &lt;= n &lt; 10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([[ 9,  3,  1,  0],
-       [ 4,  9,  2,  8],
-       [ 5,  4, 13,  5]])
+array([1, 2, 7, 1, 6])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># 2-dimensional array of size (4, 5) with entries -10 &lt;= n &lt; 11</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[  0,  -6,  -2,  -2,  -9],
+       [ -1,   3,  -8,  10,  -5],
+       [  7,  -1,  -1,  -4,   7],
+       [-10,   8,   4,   9,   0]])
+</pre></div></div>
+</div>
+<p>For a 1-dimensional array <code class="docutils literal notranslate"><span class="pre">a</span></code> the function <code class="docutils literal notranslate"><span class="pre">np.sort(a)</span></code> sorts elements of the array from the smallest to the largest:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([1, 1, 2, 6, 7])
+</pre></div></div>
+</div>
+<p>For multidimensional arrays, <code class="docutils literal notranslate"><span class="pre">np.sort()</span></code> takes an additional <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument which specifies the coordinate axis along which the sort is to be performed:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># sort b along axis 0, i.e. sort values of each column</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[-10,  -6,  -8,  -4,  -9],
+       [ -1,  -1,  -2,  -2,  -5],
+       [  0,   3,  -1,   9,   0],
+       [  7,   8,   4,  10,   7]])
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># sort b along axis 1, i.e. sort values of each row</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[ -9,  -6,  -2,  -2,   0],
+       [ -8,  -5,  -1,   3,  10],
+       [ -4,  -1,  -1,   7,   7],
+       [-10,   0,   4,   8,   9]])
+</pre></div></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">np.sort()</span></code> without the <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument sorts the array along its last axis:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># the same as sorting along axis 1</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[ -9,  -6,  -2,  -2,   0],
+       [ -8,  -5,  -1,   3,  10],
+       [ -4,  -1,  -1,   7,   7],
+       [-10,   0,   4,   8,   9]])
+</pre></div></div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">np.argsort(a)</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">np.sort</span></code>, but instead of returning sorted values of <code class="docutils literal notranslate"><span class="pre">a</span></code> it produces an array of indices showing how the entries of the array should be rearranged to be sorted:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">np.argsort(a):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+a:
+[1 2 7 1 6]
+
+np.argsort(a):
+[0 3 1 4 2]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">np.argsort(b, axis=1):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+b:
+[[  0  -6  -2  -2  -9]
+ [ -1   3  -8  10  -5]
+ [  7  -1  -1  -4   7]
+ [-10   8   4   9   0]]
+
+np.argsort(b, axis=1):
+[[4 1 2 3 0]
+ [2 4 0 1 3]
+ [3 1 2 0 4]
+ [0 4 2 1 3]]
+</pre></div></div>
+</div>
+</div>
+<div class="section" id="Aggregation-functions">
+<h2>Aggregation functions<a class="headerlink" href="#Aggregation-functions" title="Permalink to this headline">¶</a></h2>
+<p>Numpy includes several aggregation functions that summarize, in various ways, data contained in an array.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># create a 3x4 array of randomly selected integers from the range 0 &lt;= x &lt; 20</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[16, 17,  7,  3],
+       [11,  3,  9, 15],
+       [ 6, 13, 16,  8]])
 </pre></div></div>
 </div>
 <p>Compute the sum of all array entries:</p>
@@ -1341,32 +1527,32 @@ array([[ 9,  3,  1,  0],
 5.25
 </pre></div></div>
 </div>
-<p>Compute maximum value of the array:</p>
+<p>Compute the minimum and maximum values of the array:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span></span><span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-13
+(3, 17)
 </pre></div></div>
 </div>
-<p>Aggregate functions can be used with an additional <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument, which indicates the function should be applied along one coordinate axis of the array. For example, <code class="docutils literal notranslate"><span class="pre">a.max(axis</span> <span class="pre">=</span> <span class="pre">0)</span></code> computes maximum of each column of the array:</p>
+<p>Aggregate functions can be used with an additional <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument, which indicates that the function should be applied along one coordinate axis of the array. For example, <code class="docutils literal notranslate"><span class="pre">a.max(axis</span> <span class="pre">=</span> <span class="pre">0)</span></code> computes maximum of each column of the array:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[56]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span></span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1385,7 +1571,7 @@ array([ 9,  9, 13,  8])
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span></span><span class="n">a</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1423,7 +1609,7 @@ array([ 9,  9, 13])
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Feb 02, 2021.
+        Last updated on Feb 03, 2021.
       </span>
 
     </p>
