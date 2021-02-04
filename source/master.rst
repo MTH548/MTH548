@@ -30,7 +30,7 @@ MTH 448/548 Data Oriented Computing
    :caption: Tools
 
    Tools/Numpy/numpy_toc
-
+   
 
 .. toctree::
    :maxdepth: 3

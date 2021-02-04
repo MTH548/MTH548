@@ -102,6 +102,8 @@ html_sourcelink_suffix = ''
 html_scaled_image_link = True #False
 
 # Show source files
+# change both html_show_sourcelink  and  "display_github" to True to show link
+# to the source files
 
 html_show_sourcelink =  False #True
 #srclink_project = 'https://github.com/MTH548'
