@@ -25,11 +25,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_1
    Schedule/week_2
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Weekly Digests
 
-   Digests/digest_1
 
 .. toctree::
    :maxdepth: 3

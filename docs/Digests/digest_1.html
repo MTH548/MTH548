@@ -48,8 +48,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numpy" href="../Tools/Numpy/numpy_toc.html" />
-    <link rel="prev" title="Week 2 (2/8-2/14)" href="../Schedule/week_2.html" /> 
+    <link rel="next" title="Week 2 (2/8-2/14)" href="../Schedule/week_2.html" />
+    <link rel="prev" title="Week 1 (2/1-2/7)" href="../Schedule/week_1.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,14 +103,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_0.html">Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Weekly Digests</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Weekly Digest 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_0.html">Preliminaries</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Schedule/week_1.html">Week 1 (2/1-2/7)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_1.html#Zoom-Recordings">Zoom Recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_1.html#Notebook">Notebook</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Schedule/week_1.html#Weekly-digest">Weekly digest</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Weekly Digest 1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_1.html#Logistics">Logistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_1.html#Numpy">Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_1.html#Resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_1.html#Exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -165,6 +173,8 @@
     
       <li><a href="../master.html">MTH 448/548</a> &raquo;</li>
         
+          <li><a href="../Schedule/week_1.html">Week 1 (2/1-2/7)</a> &raquo;</li>
+        
       <li>Weekly Digest 1</li>
     
     
@@ -215,26 +225,25 @@ more-or-less obvious in context, but I didn’t see anything specific in the
 rubric/examples about it.</p>
 <p>Also, how do you embed the Python code in the html on the website?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> Dosctrings: I will talk about it in class.</p>
-<p>The course website is generated using Spinx. Most website source files are Jupyter
-notebooks which Sphinx converts into HTML.</p>
+<p>Dosctrings: I will talk about it in class. The course website is generated using
+Spinx. Most website source files are Jupyter notebooks which Sphinx converts into HTML.</p>
 <p><strong>Makhtar asks:</strong></p>
 <blockquote>
 <div><p>can we have 5-10 minutes break during lecture to digest ?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> Sure, good idea.</p>
+<p>Sure, good idea.</p>
 <p><strong>Guozheng asks:</strong></p>
 <blockquote>
 <div><p>Can we more deeply to learn how to draw a graph?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> I plan to talk at some point about a couple of Python libraries for
+<p>I plan to talk at some point about a couple of Python libraries for
 creating graphics.</p>
 <p><strong>Seungmin asks:</strong></p>
 <blockquote>
 <div><p>Since there are groups set up for the course, will there ever be a time we
 happen to work together for a project?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> I was not planning on assigning group projects, but I would be willing
+<p>I was not planning on assigning group projects, but I would be willing
 to give it a try if I figure out how. The problem is that it is not easy to collaborate
 on a Jupyter notebook so that more then one person can edit, merge edits etc.
 There are some possible options, but they would require extra work. Any ideas
@@ -244,7 +253,7 @@ are welcome.</p>
 <div><p>Are the discords group mainly going to be used for the exercises or
 will we have group projects?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> Discord groups are intended for informal collaborations.
+<p>Discord groups are intended for informal collaborations.
 I hope that if someone gets stuck or feels lost it will be helpful to be able to
 talk to groupmates. Plus, it is an opportunity to make new friends during this
 online course. If it turns out that having group projects is feasible (see above)
@@ -256,37 +265,36 @@ np.where and all those other operations work on pandas dataframes much quicker
 than on Java data structures. Is C really that much quicker than Java? What really
 is the magic going on behind the scenes?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> Vectorized operations are really iterations, but done on the C-code level.
+<p>Vectorized operations are really iterations, but done on the C-code level.
 In most cases C is faster than Java. In addition, the Numpy memory model, data types,
 iterators etc. are designed for speed and efficiency. See Numpy documentation for details.</p>
 <p><strong>Hannah asks:</strong></p>
 <blockquote>
 <div><p>When is our first project?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> It is accessible on the course website now.</p>
+<p>It is accessible on the course website now.</p>
 <p><strong>Amena asks:</strong></p>
 <blockquote>
 <div><p>What is your favorite topic out of all the math you have learned? Why is that topic intriguing?
 Also, what book is your favorite and why?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> As for math topics, there are many to choose from. Several related
+<p>As for math topics, there are many to choose from. Several related
 to category theory would certainly make the cut. This area of mathematics
-has been getting popular with computer sciencists too.</p>
-<p>Books - again a tough choice. There are several books by John Milnor which would
-be on my favorites list.</p>
+has been getting popular with computer scientists too. Books - again a tough choice.
+There are several books by John Milnor which would be on my favorites list.</p>
 <p><strong>Sean asks:</strong></p>
 <blockquote>
 <div><p>What kind of work will we be doing related to machine learning? Will we dive into
 how neural networks operate or anything?</p>
 </div></blockquote>
-<p><strong>Answer:</strong> I plan to go over several machine learning methods. As for neural networks -
+<p>I plan to go over several machine learning methods. As for neural networks -
 possibly, not sure yet.</p>
 <p><strong>Sai asks:</strong></p>
 <blockquote>
 <div><p>i have no questions to ask yet. If any i would be surely asking you in no time.
 thank you.</p>
 </div></blockquote>
-<p><strong>Answer:</strong> I will accept it this time, but in general I expect a question for
+<p>I will accept it this time, but in general I expect a question for
 a weekly digest credit. Come up with something.</p>
 </div>
 
@@ -298,10 +306,10 @@ a weekly digest credit. Come up with something.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Tools/Numpy/numpy_toc.html" class="btn btn-neutral float-right" title="Numpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Schedule/week_2.html" class="btn btn-neutral float-right" title="Week 2 (2/8-2/14)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Schedule/week_2.html" class="btn btn-neutral float-left" title="Week 2 (2/8-2/14)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Schedule/week_1.html" class="btn btn-neutral float-left" title="Week 1 (2/1-2/7)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
