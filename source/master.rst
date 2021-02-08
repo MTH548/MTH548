@@ -23,7 +23,13 @@ MTH 448/548 Data Oriented Computing
 
    Schedule/week_0
    Schedule/week_1
+   Schedule/week_2
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Weekly Digests
+
+   Digests/digest_1
 
 .. toctree::
    :maxdepth: 3
@@ -36,6 +42,8 @@ MTH 448/548 Data Oriented Computing
    :maxdepth: 3
    :caption: Projects
 
+   Projects/mnist_with_knn/mnist_with_knn
+
 
 
 
@@ -45,7 +53,6 @@ MTH 448/548 Data Oriented Computing
 .. toctree::
    :hidden:
 
-   Schedule/week_2_temporary
 
    Tools/Pandas/pandas_toc
    Tools/Seaborn/seaborn_toc

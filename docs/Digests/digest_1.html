@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Example: Code sequencing &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Weekly Digest 1 &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -25,7 +25,7 @@
   
 
   
-    <link rel="canonical" href="https://www.mth548.org/Report_guide/report5.html" />
+    <link rel="canonical" href="https://www.mth548.org/Digests/digest_1.html" />
 
   
   <!--[if lt IE 9]>
@@ -48,8 +48,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Example: Code comments" href="report9.html" />
-    <link rel="prev" title="Example: Code structure" href="report7.html" /> 
+    <link rel="next" title="Numpy" href="../Tools/Numpy/numpy_toc.html" />
+    <link rel="prev" title="Week 2 (2/8-2/14)" href="../Schedule/week_2.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,34 +95,11 @@
             
             
               <p class="caption"><span class="caption-text">Logistics</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../group_assignments.html">Group Assignments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../to_do.html">Current Tasks</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../report_guide.html">Project Report Guide</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#collaboration">Collaboration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#using-external-resources">Using external resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../report_guide.html#report-grading-rubrics">Report grading rubrics</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../report_guide.html#report-style-guide">Report Style Guide</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-introduction">Report introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-conclusions">Report conclusions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#report-organization">Report organization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#references">References</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#math-formatting">Math formatting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-structure">Code structure</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../report_guide.html#code-sequencing">Code sequencing</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#code-comments">Code comments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#execution-errors">Execution errors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#output-size">Output size</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#output-formatting">Output formatting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../report_guide.html#graphs-and-plots">Graphs and plots</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
@@ -132,8 +109,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Weekly Digests</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Digests/digest_1.html">Weekly Digest 1</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Weekly Digest 1</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -188,9 +165,7 @@
     
       <li><a href="../master.html">MTH 448/548</a> &raquo;</li>
         
-          <li><a href="../report_guide.html">Project Report Guide</a> &raquo;</li>
-        
-      <li>Example: Code sequencing</li>
+      <li>Weekly Digest 1</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -231,22 +206,89 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="example-code-sequencing">
-<h1>Example: Code sequencing<a class="headerlink" href="#example-code-sequencing" title="Permalink to this headline">¶</a></h1>
-<p><strong>Bad:</strong> In the code below the function <code class="docutils literal notranslate"><span class="pre">ball_height()</span></code> first appears before it is defined.
-This code is confusing to read since when one first sees <code class="docutils literal notranslate"><span class="pre">ball_height()</span></code> it is not clear what
-it is and where it is coming from.</p>
-<a href = "../_static/report_guide/report_sample5a.html">
-<img src="../_static/report_guide/report_sample5a.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a><p><strong>Also bad:</strong> The code below will work if one executes the bottom code cell before executing
-the top one, but anyone reading the report will do it in the opposite order,
-from top to bottom, and this will result in an execution error:</p>
-<a href = "../_static/report_guide/report_sample5aa.html">
-<img src="../_static/report_guide/report_sample5aa.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a><p><strong>Good:</strong>  Code is entered sequentially and it is split into separate cells to better explain its purpose and structure.</p>
-<a href = "../_static/report_guide/report_sample5b.html">
-<img src="../_static/report_guide/report_sample5b.png" style="padding:1px; border:2px solid #C4C4C4; display: block;">
-</a></div>
+<div class="section" id="weekly-digest-1">
+<h1>Weekly Digest 1<a class="headerlink" href="#weekly-digest-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>Makenzie asks:</strong></p>
+<blockquote>
+<div><p>How extensive should our docstrings be in reports? I’m trusting this will be
+more-or-less obvious in context, but I didn’t see anything specific in the
+rubric/examples about it.</p>
+<p>Also, how do you embed the Python code in the html on the website?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> Dosctrings: I will talk about it in class.</p>
+<p>The course website is generated using Spinx. Most website source files are Jupyter
+notebooks which Sphinx converts into HTML.</p>
+<p><strong>Makhtar asks:</strong></p>
+<blockquote>
+<div><p>can we have 5-10 minutes break during lecture to digest ?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> Sure, good idea.</p>
+<p><strong>Guozheng asks:</strong></p>
+<blockquote>
+<div><p>Can we more deeply to learn how to draw a graph?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> I plan to talk at some point about a couple of Python libraries for
+creating graphics.</p>
+<p><strong>Seungmin asks:</strong></p>
+<blockquote>
+<div><p>Since there are groups set up for the course, will there ever be a time we
+happen to work together for a project?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> I was not planning on assigning group projects, but I would be willing
+to give it a try if I figure out how. The problem is that it is not easy to collaborate
+on a Jupyter notebook so that more then one person can edit, merge edits etc.
+There are some possible options, but they would require extra work. Any ideas
+are welcome.</p>
+<p><strong>Elita asks:</strong></p>
+<blockquote>
+<div><p>Are the discords group mainly going to be used for the exercises or
+will we have group projects?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> Discord groups are intended for informal collaborations.
+I hope that if someone gets stuck or feels lost it will be helpful to be able to
+talk to groupmates. Plus, it is an opportunity to make new friends during this
+online course. If it turns out that having group projects is feasible (see above)
+then we can use groups for this as well.</p>
+<p><strong>Max asks:</strong></p>
+<blockquote>
+<div><p>What exactly are vectorized operations? Even when compared to for loops in Java,
+np.where and all those other operations work on pandas dataframes much quicker
+than on Java data structures. Is C really that much quicker than Java? What really
+is the magic going on behind the scenes?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> Vectorized operations are really iterations, but done on the C-code level.
+In most cases C is faster than Java. In addition, the Numpy memory model, data types,
+iterators etc. are designed for speed and efficiency. See Numpy documentation for details.</p>
+<p><strong>Hannah asks:</strong></p>
+<blockquote>
+<div><p>When is our first project?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> It is accessible on the course website now.</p>
+<p><strong>Amena asks:</strong></p>
+<blockquote>
+<div><p>What is your favorite topic out of all the math you have learned? Why is that topic intriguing?
+Also, what book is your favorite and why?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> As for math topics, there are many to choose from. Several related
+to category theory would certainly make the cut. This area of mathematics
+has been getting popular with computer sciencists too.</p>
+<p>Books - again a tough choice. There are several books by John Milnor which would
+be on my favorites list.</p>
+<p><strong>Sean asks:</strong></p>
+<blockquote>
+<div><p>What kind of work will we be doing related to machine learning? Will we dive into
+how neural networks operate or anything?</p>
+</div></blockquote>
+<p><strong>Answer:</strong> I plan to go over several machine learning methods. As for neural networks -
+possibly, not sure yet.</p>
+<p><strong>Sai asks:</strong></p>
+<blockquote>
+<div><p>i have no questions to ask yet. If any i would be surely asking you in no time.
+thank you.</p>
+</div></blockquote>
+<p><strong>Answer:</strong> I will accept it this time, but in general I expect a question for
+a weekly digest credit. Come up with something.</p>
+</div>
 
 
            </div>
@@ -256,10 +298,10 @@ from top to bottom, and this will result in an execution error:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="report9.html" class="btn btn-neutral float-right" title="Example: Code comments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Tools/Numpy/numpy_toc.html" class="btn btn-neutral float-right" title="Numpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="report7.html" class="btn btn-neutral float-left" title="Example: Code structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Schedule/week_2.html" class="btn btn-neutral float-left" title="Week 2 (2/8-2/14)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
