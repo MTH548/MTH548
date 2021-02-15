@@ -25,7 +25,7 @@
   
 
   
-    <link rel="canonical" href="https://www.mth548.org/Schedule/week_4.html" />
+    <link rel="canonical" href="https://www.mth548.org/Schedule/week_4_temp.html" />
 
   
   <!--[if lt IE 9]>
@@ -49,7 +49,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Pandas" href="../Tools/Pandas/pandas_toc.html" />
-    <link rel="prev" title="Week 3 (2/15-2/21)" href="week_3.html" /> 
+    <link rel="prev" title="Project: MNIST with k-means" href="../Projects/mnist_with_k_means/mnist_with_k_means.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -107,6 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_1.html">Week 1 (2/1-2/7)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_2.html">Week 2 (2/8-2/14)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_3.html">Week 3 (2/15-2/21)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -115,6 +116,7 @@
 <p class="caption"><span class="caption-text">Projects</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 </ul>
 
             
@@ -422,12 +424,21 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Week-4-(2/22-2/28)">
 <h1>Week 4 (2/22-2/28)<a class="headerlink" href="#Week-4-(2/22-2/28)" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Pandas">
+<h2><a class="reference internal" href="../Tools/Pandas/pandas_toc.html"><span class="doc">Pandas</span></a><a class="headerlink" href="#Pandas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Series and DataFrames</p></li>
+<li><p>Selecting data</p></li>
+<li><p>Sorting</p></li>
+<li><p>Aggregations</p></li>
+</ul>
+</div>
 <div class="section" id="Resources">
 <h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="1.-Planets-data">
 <h3>1. Planets data<a class="headerlink" href="#1.-Planets-data" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -435,280 +446,314 @@ div.rendered_html tbody tr:hover {
 <span class="n">diameters</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4879</span><span class="p">,</span> <span class="mi">12104</span><span class="p">,</span> <span class="mi">12756</span><span class="p">,</span> <span class="mi">6792</span><span class="p">,</span> <span class="mi">142984</span><span class="p">,</span> <span class="mi">120536</span><span class="p">,</span> <span class="mi">51118</span><span class="p">,</span> <span class="mi">49528</span><span class="p">]</span>
 <span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">167</span><span class="p">,</span> <span class="mi">464</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="o">-</span><span class="mi">110</span><span class="p">,</span> <span class="o">-</span><span class="mi">140</span><span class="p">,</span> <span class="o">-</span><span class="mi">195</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">]</span>
 <span class="n">gravity</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.7</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">23.1</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">8.7</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">]</span>
-<span class="n">moons</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">14</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">printable</span> <span class="o">=</span> <span class="s1">&#39;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!&quot;#$%&amp;</span><span class="se">\&#39;</span><span class="s1">()*+,-./:;&lt;=&gt;?@[</span><span class="se">\\</span><span class="s1">]^_`{|}~ </span><span class="se">\t\n\r\x0b\x0c</span><span class="s1">&#39;</span>
-</pre></div>
 </div>
 </div>
+<div class="section" id="Exercises">
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
+<p>All exercises below use data on passengers of Titanic. A DataFrame with this data can be created as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">printable</span><span class="p">)</span>
+<span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;titanic&quot;</span><span class="p">)</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[&#39;\t&#39;,
- &#39;\n&#39;,
- &#39;\x0b&#39;,
- &#39;\x0c&#39;,
- &#39;\r&#39;,
- &#39; &#39;,
- &#39;!&#39;,
- &#39;&#34;&#39;,
- &#39;#&#39;,
- &#39;$&#39;,
- &#39;%&#39;,
- &#39;&amp;&#39;,
- &#34;&#39;&#34;,
- &#39;(&#39;,
- &#39;)&#39;,
- &#39;*&#39;,
- &#39;+&#39;,
- &#39;,&#39;,
- &#39;-&#39;,
- &#39;.&#39;,
- &#39;/&#39;,
- &#39;0&#39;,
- &#39;1&#39;,
- &#39;2&#39;,
- &#39;3&#39;,
- &#39;4&#39;,
- &#39;5&#39;,
- &#39;6&#39;,
- &#39;7&#39;,
- &#39;8&#39;,
- &#39;9&#39;,
- &#39;:&#39;,
- &#39;;&#39;,
- &#39;&lt;&#39;,
- &#39;=&#39;,
- &#39;&gt;&#39;,
- &#39;?&#39;,
- &#39;@&#39;,
- &#39;A&#39;,
- &#39;B&#39;,
- &#39;C&#39;,
- &#39;D&#39;,
- &#39;E&#39;,
- &#39;F&#39;,
- &#39;G&#39;,
- &#39;H&#39;,
- &#39;I&#39;,
- &#39;J&#39;,
- &#39;K&#39;,
- &#39;L&#39;,
- &#39;M&#39;,
- &#39;N&#39;,
- &#39;O&#39;,
- &#39;P&#39;,
- &#39;Q&#39;,
- &#39;R&#39;,
- &#39;S&#39;,
- &#39;T&#39;,
- &#39;U&#39;,
- &#39;V&#39;,
- &#39;W&#39;,
- &#39;X&#39;,
- &#39;Y&#39;,
- &#39;Z&#39;,
- &#39;[&#39;,
- &#39;\\&#39;,
- &#39;]&#39;,
- &#39;^&#39;,
- &#39;_&#39;,
- &#39;`&#39;,
- &#39;a&#39;,
- &#39;b&#39;,
- &#39;c&#39;,
- &#39;d&#39;,
- &#39;e&#39;,
- &#39;f&#39;,
- &#39;g&#39;,
- &#39;h&#39;,
- &#39;i&#39;,
- &#39;j&#39;,
- &#39;k&#39;,
- &#39;l&#39;,
- &#39;m&#39;,
- &#39;n&#39;,
- &#39;o&#39;,
- &#39;p&#39;,
- &#39;q&#39;,
- &#39;r&#39;,
- &#39;s&#39;,
- &#39;t&#39;,
- &#39;u&#39;,
- &#39;v&#39;,
- &#39;w&#39;,
- &#39;x&#39;,
- &#39;y&#39;,
- &#39;z&#39;,
- &#39;{&#39;,
- &#39;|&#39;,
- &#39;}&#39;,
- &#39;~&#39;]
-</pre></div></div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>survived</th>
+      <th>pclass</th>
+      <th>sex</th>
+      <th>age</th>
+      <th>sibsp</th>
+      <th>parch</th>
+      <th>fare</th>
+      <th>embarked</th>
+      <th>class</th>
+      <th>who</th>
+      <th>adult_male</th>
+      <th>deck</th>
+      <th>embark_town</th>
+      <th>alive</th>
+      <th>alone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7.2500</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>71.2833</td>
+      <td>C</td>
+      <td>First</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>C</td>
+      <td>Cherbourg</td>
+      <td>yes</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.9250</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>yes</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>53.1000</td>
+      <td>S</td>
+      <td>First</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>C</td>
+      <td>Southampton</td>
+      <td>yes</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.0500</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>0</td>
+      <td>2</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13.0000</td>
+      <td>S</td>
+      <td>Second</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30.0000</td>
+      <td>S</td>
+      <td>First</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>B</td>
+      <td>Southampton</td>
+      <td>yes</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>NaN</td>
+      <td>1</td>
+      <td>2</td>
+      <td>23.4500</td>
+      <td>S</td>
+      <td>Third</td>
+      <td>woman</td>
+      <td>False</td>
+      <td>NaN</td>
+      <td>Southampton</td>
+      <td>no</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30.0000</td>
+      <td>C</td>
+      <td>First</td>
+      <td>man</td>
+      <td>True</td>
+      <td>C</td>
+      <td>Cherbourg</td>
+      <td>yes</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.7500</td>
+      <td>Q</td>
+      <td>Third</td>
+      <td>man</td>
+      <td>True</td>
+      <td>NaN</td>
+      <td>Queenstown</td>
+      <td>no</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>891 rows × 15 columns</p>
+</div></div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
+<p><strong>Note.</strong> This is partial data on Titanic passengers. It consists of 891 records, while the total number of Titanic passengers was over 2000.</p>
+<div class="section" id="Exercise-1">
+<h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Create a DataFrame with records of all males.</p>
+<p><strong>Check:</strong> The DataFrame should consist of 577 rows.</p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="s1">&#39;~&#39;</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span>
-</pre></div>
+<div class="section" id="Exercise-2">
+<h3>Exercise 2<a class="headerlink" href="#Exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Create a DataFrame with records of all males who survived the sinking of Titanic.</p>
+<p><strong>Check:</strong> The DataFrame should consist of 109 rows.</p>
 </div>
+<div class="section" id="Exercise-3">
+<h3>Exercise 3<a class="headerlink" href="#Exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Find the age of the oldest Titanic passenger.</p>
+<p><strong>Check:</strong> You should get 80.</p>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
-</pre></div>
+<div class="section" id="Exercise-4">
+<h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h3>
+<p>Get the record of the oldest passenger.</p>
+<p><strong>Check:</strong> The passenger was a male, embarked in Southampton, traveled in the first class and survived.</p>
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-False
-</pre></div></div>
+<div class="section" id="Exercise-5">
+<h3>Exercise 5<a class="headerlink" href="#Exercise-5" title="Permalink to this headline">¶</a></h3>
+<p>Create a DataFrame with records of the 5 oldest females.</p>
+<p><strong>Check:</strong> The ages of the women should be: 63, 63, 62, 60, and 58.</p>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
+<div class="section" id="Exercise-6">
+<h3>Exercise 6<a class="headerlink" href="#Exercise-6" title="Permalink to this headline">¶</a></h3>
+<p>Find the record of the oldest female who did not survive.</p>
+<p><strong>Check:</strong> She was 57, embarked in Southampton and traveled in the second class.</p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="p">[</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">printable</span><span class="p">)]</span>
-</pre></div>
+<div class="section" id="Exercise-7">
+<h3>Exercise 7<a class="headerlink" href="#Exercise-7" title="Permalink to this headline">¶</a></h3>
+<p>Find the number of people who survived the sinking and the number of people who died.</p>
+<p><strong>Check:</strong> 342 survived, 549 died.</p>
 </div>
+<div class="section" id="Exercise-8">
+<h3>Exercise 8<a class="headerlink" href="#Exercise-8" title="Permalink to this headline">¶</a></h3>
+<p>What was the average age of people who survived?</p>
+<p><strong>Check:</strong> 28.34 years.</p>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-[9,
- 10,
- 11,
- 12,
- 13,
- 32,
- 33,
- 34,
- 35,
- 36,
- 37,
- 38,
- 39,
- 40,
- 41,
- 42,
- 43,
- 44,
- 45,
- 46,
- 47,
- 48,
- 49,
- 50,
- 51,
- 52,
- 53,
- 54,
- 55,
- 56,
- 57,
- 58,
- 59,
- 60,
- 61,
- 62,
- 63,
- 64,
- 65,
- 66,
- 67,
- 68,
- 69,
- 70,
- 71,
- 72,
- 73,
- 74,
- 75,
- 76,
- 77,
- 78,
- 79,
- 80,
- 81,
- 82,
- 83,
- 84,
- 85,
- 86,
- 87,
- 88,
- 89,
- 90,
- 91,
- 92,
- 93,
- 94,
- 95,
- 96,
- 97,
- 98,
- 99,
- 100,
- 101,
- 102,
- 103,
- 104,
- 105,
- 106,
- 107,
- 108,
- 109,
- 110,
- 111,
- 112,
- 113,
- 114,
- 115,
- 116,
- 117,
- 118,
- 119,
- 120,
- 121,
- 122,
- 123,
- 124,
- 125,
- 126]
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="Exercise-9">
+<h3>Exercise 9<a class="headerlink" href="#Exercise-9" title="Permalink to this headline">¶</a></h3>
+<p>There were three classes of passengers aboard Titanic: “First”, “Second” and “Third”. Compute what fraction of passengers traveling in each class survived.</p>
+<p><strong>Check:</strong> First: 0.629, Second: 0.473, Third: 0.242.</p>
 </div>
 </div>
 </div>
@@ -724,7 +769,7 @@ False
         <a href="../Tools/Pandas/pandas_toc.html" class="btn btn-neutral float-right" title="Pandas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="week_3.html" class="btn btn-neutral float-left" title="Week 3 (2/15-2/21)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Projects/mnist_with_k_means/mnist_with_k_means.html" class="btn btn-neutral float-left" title="Project: MNIST with k-means" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -735,7 +780,7 @@ False
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Feb 11, 2021.
+        Last updated on Feb 15, 2021.
       </span>
 
     </p>

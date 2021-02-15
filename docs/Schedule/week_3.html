@@ -48,8 +48,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 4 (2/22-2/28)" href="week_4.html" />
-    <link rel="prev" title="Project: Recognizing digits with k-NN" href="../Projects/mnist_with_knn/mnist_with_knn.html" /> 
+    <link rel="next" title="Numpy" href="../Tools/Numpy/numpy_toc.html" />
+    <link rel="prev" title="Weekly Digest 2" href="../Digests/digest_2.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -103,10 +103,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_1.html">Week 1 (2/1-2/7)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_2.html">Week 2 (2/8-2/14)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Week 3 (2/15-2/21)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ipywidgets-and-interact">ipywidgets and interact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#k-means">k-means</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Resources">Resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#1.-k-means">1. k-means</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.-Plotting-nearest-neighbors">2. Plotting nearest neighbors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Exercises">Exercises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-1">Exercise 1</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -115,6 +130,7 @@
 <p class="caption"><span class="caption-text">Projects</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 </ul>
 
             
@@ -443,8 +459,8 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Resources">
 <h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="1.-k-means-and-cluster-plots">
-<h3>1. k-means and cluster plots<a class="headerlink" href="#1.-k-means-and-cluster-plots" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="1.-k-means">
+<h3>1. k-means<a class="headerlink" href="#1.-k-means" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
@@ -486,15 +502,14 @@ div.rendered_html tbody tr:hover {
     <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">h</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">centers</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)]</span>
+
     <span class="n">new_centers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">centers</span><span class="p">)</span>
 
     <span class="n">steps</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">d</span> <span class="o">=</span> <span class="n">get_distances</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">centers</span><span class="p">)</span>
-        <span class="c1"># assign points to clusters</span>
         <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">steps</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">labels</span><span class="p">,</span> <span class="n">centers</span><span class="p">))</span>
-        <span class="c1"># compute centroids of clusters</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
             <span class="n">new_centers</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">labels</span> <span class="o">==</span> <span class="n">j</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">new_centers</span><span class="p">):</span>
@@ -504,7 +519,7 @@ div.rendered_html tbody tr:hover {
     <span class="k">return</span> <span class="n">steps</span>
 
 
-<span class="k">def</span> <span class="nf">plot_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plots clusters and their centoids.</span>
 
@@ -517,11 +532,12 @@ div.rendered_html tbody tr:hover {
 <span class="sd">        centroids.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="c1"># custom colormap</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">labels</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">colors</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span>
         <span class="p">[</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:red&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:green&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:orange&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:purple&#39;</span><span class="p">][:</span><span class="n">n</span><span class="p">])</span>
-
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">centers</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -548,6 +564,72 @@ div.rendered_html tbody tr:hover {
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">plot_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">steps</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">steps</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="2.-Plotting-nearest-neighbors">
+<h3>2. Plotting nearest neighbors<a class="headerlink" href="#2.-Plotting-nearest-neighbors" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span><span class="p">,</span> <span class="n">Normalize</span>
+
+
+<span class="k">def</span> <span class="nf">plot_clusters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">p_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">neighbors</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plots nearest neighbors of a given point.</span>
+
+<span class="sd">    X:</span>
+<span class="sd">        A 2-dimensional numpy array with coordinates</span>
+<span class="sd">        of points in clusters</span>
+<span class="sd">    y:</span>
+<span class="sd">        A 1-dimensional numpy array with labels of points</span>
+<span class="sd">    p:</span>
+<span class="sd">        An array with coordinates of the point whose</span>
+<span class="sd">        neighbors will be plotted.</span>
+<span class="sd">    p_label:</span>
+<span class="sd">        The predicted label of the point p.</span>
+<span class="sd">    neighbors:</span>
+<span class="sd">        A list of row numbers of X which are the nearest</span>
+<span class="sd">        neighbors of the point p.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># build a custom colormap</span>
+    <span class="n">col_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dodgerblue&#39;</span><span class="p">,</span> <span class="s1">&#39;limegreen&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;fuchsia&#39;</span><span class="p">]</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">col_list</span><span class="p">)</span>
+    <span class="n">norm</span> <span class="o">=</span> <span class="n">Normalize</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">col_list</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;seaborn&#39;</span><span class="p">):</span>
+        <span class="n">scatter</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+                              <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+                              <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
+                              <span class="n">s</span><span class="o">=</span><span class="mi">90</span><span class="p">,</span>
+                              <span class="n">cmap</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+                              <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
+                              <span class="n">label</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">p_col</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span> <span class="k">if</span> <span class="n">p_label</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">colors</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">p_label</span><span class="p">))</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">mfc</span><span class="o">=</span><span class="n">p_col</span><span class="p">,</span> <span class="n">mec</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">mew</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">neighbors</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">neighbors</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                        <span class="n">X</span><span class="p">[</span><span class="n">neighbors</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                        <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span>
+                        <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                        <span class="n">facecolors</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span>
+                        <span class="n">s</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="o">*</span><span class="n">scatter</span><span class="o">.</span><span class="n">legend_elements</span><span class="p">(),</span>
+                   <span class="n">markerscale</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+                   <span class="n">prop</span><span class="o">=</span><span class="p">{</span>
+                       <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+                       <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="s2">&quot;normal&quot;</span>
+                   <span class="p">})</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -581,10 +663,10 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="week_4.html" class="btn btn-neutral float-right" title="Week 4 (2/22-2/28)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Tools/Numpy/numpy_toc.html" class="btn btn-neutral float-right" title="Numpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Projects/mnist_with_knn/mnist_with_knn.html" class="btn btn-neutral float-left" title="Project: Recognizing digits with k-NN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Digests/digest_2.html" class="btn btn-neutral float-left" title="Weekly Digest 2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -595,7 +677,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Feb 11, 2021.
+        Last updated on Feb 15, 2021.
       </span>
 
     </p>

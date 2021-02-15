@@ -186,3 +186,19 @@ Graphs and plots must be well formatted. They should have titles and, if appropr
    :maxdepth: 0
 
    Example <./Report_guide/report2>
+
+
+
+Notebook gallery
+----------------
+
+The files linked below were selected from among notebooks posted online by various
+researchers and data scientists. The reports prepared for this class are **not** expected
+be as long and extensive as most of these examples. What you should try to imitate is
+the style: merging of narrative with Python code, organization of the content,
+preparation of graphics, code documentation etc.
+
+* `Common plotting pitfalls by J. Bednar <https://anaconda.org/jbednar/plotting_pitfalls/notebook>`_
+* `An example machine learning notebook by R.S. Olson <https://nbviewer.jupyter.org/github/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb>`_
+* `News Categorization by A. Soto <https://nbviewer.jupyter.org/github/andressotov/News-Categorization-MNB/blob/master/News_Categorization_MNB%2010-oct-2017.ipynb>`_
+* `A Concrete Introduction to Probability (using Python) by P. Norvig <https://nbviewer.jupyter.org/url/norvig.com/ipython/Probability.ipynb>`_
