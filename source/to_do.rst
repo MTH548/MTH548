@@ -4,24 +4,25 @@ Current Tasks
 =============
 
 
-Project 1
+Project 2
 ---------
 
-**Due: Friday, 2/19, 11:59 PM on UBLeans**
+**Due: Friday, 3/5, 11:59 PM on UBLeans**
 
-:doc:`Project: Recognizing digits with k-NN <Projects/mnist_with_knn/mnist_with_knn>` 
+:doc:`Project: MNIST with k-means <Projects/mnist_with_k_means/mnist_with_k_means>` 
 
 
 Weekly digest
 -------------
 
-**Due: Sunday, 2/21, 11:59 PM**
+**Due: Sunday, 2/28, 11:59 PM**
 
 Complete the weekly digest form:
 
 .. raw:: html
    
-   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSflSa7_-O1iaJ8h2oc1C1oUVINMsE7Hsj9hkVRcBC6NnKx6Rw/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPZXnmbLCjwdwFT75bbdRwdXWhZYlBewvEU83IxkUJbBZ3Dg/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
 
 
 

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Week 4 (2/22-2/28) &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Week 5 (3/1-3/7) &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -25,7 +25,7 @@
   
 
   
-    <link rel="canonical" href="https://www.mth548.org/Schedule/week_4_temp.html" />
+    <link rel="canonical" href="https://www.mth548.org/Schedule/week_5_temp.html" />
 
   
   <!--[if lt IE 9]>
@@ -48,7 +48,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pandas" href="../Tools/Pandas/pandas_toc.html" />
+    <link rel="next" title="Seaborn" href="../Tools/Seaborn/seaborn_toc.html" />
     <link rel="prev" title="Project: MNIST with k-means" href="../Projects/mnist_with_k_means/mnist_with_k_means.html" /> 
 </head>
 
@@ -108,10 +108,12 @@
 <li class="toctree-l1"><a class="reference internal" href="week_1.html">Week 1 (2/1-2/7)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_2.html">Week 2 (2/8-2/14)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_3.html">Week 3 (2/15-2/21)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_4.html">Week 4 (2/22-2/28)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Tools/Numpy/numpy_toc.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Pandas/pandas_toc.html">Pandas</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Projects</span></p>
 <ul>
@@ -163,7 +165,7 @@
     
       <li><a href="../master.html">MTH 448/548</a> &raquo;</li>
         
-      <li>Week 4 (2/22-2/28)</li>
+      <li>Week 5 (3/1-3/7)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -422,30 +424,62 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Week-4-(2/22-2/28)">
-<h1>Week 4 (2/22-2/28)<a class="headerlink" href="#Week-4-(2/22-2/28)" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Week-5-(3/1-3/7)">
+<h1>Week 5 (3/1-3/7)<a class="headerlink" href="#Week-5-(3/1-3/7)" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="Pandas">
 <h2><a class="reference internal" href="../Tools/Pandas/pandas_toc.html"><span class="doc">Pandas</span></a><a class="headerlink" href="#Pandas" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Series and DataFrames</p></li>
-<li><p>Selecting data</p></li>
-<li><p>Sorting</p></li>
-<li><p>Aggregations</p></li>
+<li><p>GroupBy</p></li>
+<li><p>Index operations</p></li>
+<li><p>Combining DataFrames</p></li>
+</ul>
+</div>
+<div class="section" id="Project">
+<h2>Project<a class="headerlink" href="#Project" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Projects/baby_names/baby_names.html"><span class="doc">Baby names</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="Resources">
 <h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="1.-Planets-data">
-<h3>1. Planets data<a class="headerlink" href="#1.-Planets-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="1.-Sample-DataFrame-merging-data">
+<h3>1. Sample DataFrame merging data<a class="headerlink" href="#1.-Sample-DataFrame-merging-data" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">planets</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Mercury&quot;</span><span class="p">,</span> <span class="s2">&quot;Venus&quot;</span><span class="p">,</span> <span class="s2">&quot;Earth&quot;</span><span class="p">,</span> <span class="s2">&quot;Mars&quot;</span><span class="p">,</span> <span class="s2">&quot;Jupyter&quot;</span><span class="p">,</span> <span class="s2">&quot;Saturn&quot;</span><span class="p">,</span> <span class="s2">&quot;Uranus&quot;</span><span class="p">,</span> <span class="s2">&quot;Neptune&quot;</span><span class="p">]</span>
-<span class="n">diameters</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4879</span><span class="p">,</span> <span class="mi">12104</span><span class="p">,</span> <span class="mi">12756</span><span class="p">,</span> <span class="mi">6792</span><span class="p">,</span> <span class="mi">142984</span><span class="p">,</span> <span class="mi">120536</span><span class="p">,</span> <span class="mi">51118</span><span class="p">,</span> <span class="mi">49528</span><span class="p">]</span>
-<span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">167</span><span class="p">,</span> <span class="mi">464</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="o">-</span><span class="mi">110</span><span class="p">,</span> <span class="o">-</span><span class="mi">140</span><span class="p">,</span> <span class="o">-</span><span class="mi">195</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">]</span>
-<span class="n">gravity</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.7</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">,</span> <span class="mf">3.7</span><span class="p">,</span> <span class="mf">23.1</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">8.7</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">]</span>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ava&quot;</span><span class="p">,</span> <span class="s2">&quot;Benjamin&quot;</span><span class="p">,</span> <span class="s2">&quot;Charlotte&quot;</span><span class="p">,</span> <span class="s2">&quot;Daniel&quot;</span><span class="p">,</span> <span class="s2">&quot;Emma&quot;</span><span class="p">,</span> <span class="s2">&quot;Fredric&quot;</span><span class="p">,</span> <span class="s2">&quot;Gianna&quot;</span><span class="p">]</span>
+<span class="n">courses</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MTH 141&quot;</span><span class="p">,</span> <span class="s2">&quot;MTH 142&quot;</span><span class="p">,</span> <span class="s2">&quot;MTH 241&quot;</span><span class="p">,</span> <span class="s2">&quot;MTH 306&quot;</span><span class="p">,</span> <span class="s2">&quot;MTH 309&quot;</span><span class="p">,</span> <span class="s2">&quot;MTH 311&quot;</span><span class="p">]</span>
+<span class="n">rooms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;NSC 216&quot;</span><span class="p">,</span> <span class="s2">&quot;Capen 110&quot;</span><span class="p">,</span> <span class="s2">&quot;Park 440&quot;</span><span class="p">]</span>
+
+<span class="c1"># concat rows data</span>
+<span class="n">scores1</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">scores2</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;problem_1&quot;</span><span class="p">,</span> <span class="s2">&quot;problem_2&quot;</span><span class="p">,</span> <span class="s2">&quot;problem_3&quot;</span><span class="p">]</span>
+<span class="n">sec1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">sec2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores2</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># concat columns data</span>
+<span class="n">scores1</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">scores2</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">part1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores1</span><span class="p">,</span>
+                     <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">[:</span><span class="mi">4</span><span class="p">],</span>
+                     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;problem_1&quot;</span><span class="p">,</span> <span class="s2">&quot;problem_2&quot;</span><span class="p">])</span>
+<span class="n">part2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scores2</span><span class="p">,</span>
+                     <span class="n">index</span><span class="o">=</span><span class="n">names</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span>
+                     <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;problem_3&quot;</span><span class="p">,</span> <span class="s2">&quot;problem_4&quot;</span><span class="p">,</span> <span class="s2">&quot;problem_5&quot;</span><span class="p">])</span>
+
+<span class="c1"># merging data</span>
+<span class="n">office_nums</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">courses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;course&quot;</span><span class="p">:</span> <span class="n">courses</span><span class="p">,</span>
+                        <span class="s2">&quot;instructor&quot;</span><span class="p">:</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">names</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="nb">len</span><span class="p">(</span><span class="n">courses</span><span class="p">))})</span>
+<span class="n">instructors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">names</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;office&quot;</span><span class="p">:</span> <span class="n">office_nums</span><span class="p">},</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -453,20 +487,20 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Exercises">
 <h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
-<p>All exercises below use data on passengers of Titanic. A DataFrame with this data can be created as follows:</p>
+<p>All exercises below use data on restaurant visits. A DataFrame with this data can be created as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;titanic&quot;</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">tips</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;tips&quot;</span><span class="p">)</span>
+<span class="n">tips</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -488,272 +522,99 @@ div.rendered_html tbody tr:hover {
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>survived</th>
-      <th>pclass</th>
+      <th>total_bill</th>
+      <th>tip</th>
       <th>sex</th>
-      <th>age</th>
-      <th>sibsp</th>
-      <th>parch</th>
-      <th>fare</th>
-      <th>embarked</th>
-      <th>class</th>
-      <th>who</th>
-      <th>adult_male</th>
-      <th>deck</th>
-      <th>embark_town</th>
-      <th>alive</th>
-      <th>alone</th>
+      <th>smoker</th>
+      <th>day</th>
+      <th>time</th>
+      <th>size</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>3</td>
-      <td>male</td>
-      <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>7.2500</td>
-      <td>S</td>
-      <td>Third</td>
-      <td>man</td>
-      <td>True</td>
-      <td>NaN</td>
-      <td>Southampton</td>
-      <td>no</td>
-      <td>False</td>
+      <td>16.99</td>
+      <td>1.01</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>female</td>
-      <td>38.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>71.2833</td>
-      <td>C</td>
-      <td>First</td>
-      <td>woman</td>
-      <td>False</td>
-      <td>C</td>
-      <td>Cherbourg</td>
-      <td>yes</td>
-      <td>False</td>
+      <td>10.34</td>
+      <td>1.66</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
+      <td>21.01</td>
+      <td>3.50</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
       <td>3</td>
-      <td>female</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>7.9250</td>
-      <td>S</td>
-      <td>Third</td>
-      <td>woman</td>
-      <td>False</td>
-      <td>NaN</td>
-      <td>Southampton</td>
-      <td>yes</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>female</td>
-      <td>35.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>53.1000</td>
-      <td>S</td>
-      <td>First</td>
-      <td>woman</td>
-      <td>False</td>
-      <td>C</td>
-      <td>Southampton</td>
-      <td>yes</td>
-      <td>False</td>
+      <td>23.68</td>
+      <td>3.31</td>
+      <td>Male</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>3</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>8.0500</td>
-      <td>S</td>
-      <td>Third</td>
-      <td>man</td>
-      <td>True</td>
-      <td>NaN</td>
-      <td>Southampton</td>
-      <td>no</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>886</th>
-      <td>0</td>
-      <td>2</td>
-      <td>male</td>
-      <td>27.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>13.0000</td>
-      <td>S</td>
-      <td>Second</td>
-      <td>man</td>
-      <td>True</td>
-      <td>NaN</td>
-      <td>Southampton</td>
-      <td>no</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>887</th>
-      <td>1</td>
-      <td>1</td>
-      <td>female</td>
-      <td>19.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>30.0000</td>
-      <td>S</td>
-      <td>First</td>
-      <td>woman</td>
-      <td>False</td>
-      <td>B</td>
-      <td>Southampton</td>
-      <td>yes</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>888</th>
-      <td>0</td>
-      <td>3</td>
-      <td>female</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>2</td>
-      <td>23.4500</td>
-      <td>S</td>
-      <td>Third</td>
-      <td>woman</td>
-      <td>False</td>
-      <td>NaN</td>
-      <td>Southampton</td>
-      <td>no</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>889</th>
-      <td>1</td>
-      <td>1</td>
-      <td>male</td>
-      <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>30.0000</td>
-      <td>C</td>
-      <td>First</td>
-      <td>man</td>
-      <td>True</td>
-      <td>C</td>
-      <td>Cherbourg</td>
-      <td>yes</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>890</th>
-      <td>0</td>
-      <td>3</td>
-      <td>male</td>
-      <td>32.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>7.7500</td>
-      <td>Q</td>
-      <td>Third</td>
-      <td>man</td>
-      <td>True</td>
-      <td>NaN</td>
-      <td>Queenstown</td>
-      <td>no</td>
-      <td>True</td>
+      <td>24.59</td>
+      <td>3.61</td>
+      <td>Female</td>
+      <td>No</td>
+      <td>Sun</td>
+      <td>Dinner</td>
+      <td>4</td>
     </tr>
   </tbody>
 </table>
-<p>891 rows × 15 columns</p>
 </div></div>
 </div>
-<p><strong>Note.</strong> This is partial data on Titanic passengers. It consists of 891 records, while the total number of Titanic passengers was over 2000.</p>
 <div class="section" id="Exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h3>
-<p>Create a DataFrame with records of all males.</p>
-<p><strong>Check:</strong> The DataFrame should consist of 577 rows.</p>
+<p>How many people visited the restaurant each day of the week?</p>
+<p><strong>Check:</strong> There were 152 visitors on Thursday</p>
 </div>
 <div class="section" id="Exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#Exercise-2" title="Permalink to this headline">¶</a></h3>
-<p>Create a DataFrame with records of all males who survived the sinking of Titanic.</p>
-<p><strong>Check:</strong> The DataFrame should consist of 109 rows.</p>
+<p>What was the average bill paid each day of the week?</p>
+<p><strong>Check:</strong> The average bill on Thursday was $17.48</p>
 </div>
 <div class="section" id="Exercise-3">
 <h3>Exercise 3<a class="headerlink" href="#Exercise-3" title="Permalink to this headline">¶</a></h3>
-<p>Find the age of the oldest Titanic passenger.</p>
-<p><strong>Check:</strong> You should get 80.</p>
+<p>Compute the what percentage of the total bill was the tip for each customer, and then compute the average value of this percentage for male and for female customers.</p>
+<p><strong>Check:</strong> The average tip for males was 15.76%.</p>
 </div>
 <div class="section" id="Exercise-4">
 <h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h3>
-<p>Get the record of the oldest passenger.</p>
-<p><strong>Check:</strong> The passenger was a male, embarked in Southampton, traveled in the first class and survived.</p>
+<p>Compute a DateFrame with 10 rows selected from the tips DataFrame: 5 rows with the the 5 highest total bills for smokers and 5 rows with the 5 highest total bills for non-smokers</p>
+<p><strong>Check:</strong> The 5 highest bills for smokers are \$50.81, \$43.35, \$44.30, \$43.11 and \$40.55.</p>
 </div>
 <div class="section" id="Exercise-5">
 <h3>Exercise 5<a class="headerlink" href="#Exercise-5" title="Permalink to this headline">¶</a></h3>
-<p>Create a DataFrame with records of the 5 oldest females.</p>
-<p><strong>Check:</strong> The ages of the women should be: 63, 63, 62, 60, and 58.</p>
+<p>Create a DataFrame with 4 rows selected from the tips DataFrame: a row with the highest total bill for a male smoker, a row with the highest total bill for a male non-smoker, and the same for female smokers and a female non-smokers.</p>
+<p><strong>Check:</strong> The 5 highest bills are \$50.81 for male smoker, \$48.33 for a male non-smoker, \$44.30 for a female smoker and \$35.83 for a female non-smoker.</p>
 </div>
 <div class="section" id="Exercise-6">
 <h3>Exercise 6<a class="headerlink" href="#Exercise-6" title="Permalink to this headline">¶</a></h3>
-<p>Find the record of the oldest female who did not survive.</p>
-<p><strong>Check:</strong> She was 57, embarked in Southampton and traveled in the second class.</p>
-</div>
-<div class="section" id="Exercise-7">
-<h3>Exercise 7<a class="headerlink" href="#Exercise-7" title="Permalink to this headline">¶</a></h3>
-<p>Find the number of people who survived the sinking and the number of people who died.</p>
-<p><strong>Check:</strong> 342 survived, 549 died.</p>
-</div>
-<div class="section" id="Exercise-8">
-<h3>Exercise 8<a class="headerlink" href="#Exercise-8" title="Permalink to this headline">¶</a></h3>
-<p>What was the average age of people who survived?</p>
-<p><strong>Check:</strong> 28.34 years.</p>
-</div>
-<div class="section" id="Exercise-9">
-<h3>Exercise 9<a class="headerlink" href="#Exercise-9" title="Permalink to this headline">¶</a></h3>
-<p>There were three classes of passengers aboard Titanic: “First”, “Second” and “Third”. Compute what fraction of passengers traveling in each class survived.</p>
-<p><strong>Check:</strong> First: 0.629, Second: 0.473, Third: 0.242.</p>
+<p>Create a DataFrame with two rows indicating if a customer was a male of a female, and columns indicating which day of the week the customer visited the restaurant. The number in each row and column should be the amount of the largest tip that a customer of a given sex and visiting on a given day paid.</p>
+<p><strong>Check:</strong> The highest tip paid on Thursdasy was \$6.70 for males and \$5.17 for females.</p>
 </div>
 </div>
 </div>
@@ -766,7 +627,7 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Tools/Pandas/pandas_toc.html" class="btn btn-neutral float-right" title="Pandas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Tools/Seaborn/seaborn_toc.html" class="btn btn-neutral float-right" title="Seaborn" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Projects/mnist_with_k_means/mnist_with_k_means.html" class="btn btn-neutral float-left" title="Project: MNIST with k-means" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -780,7 +641,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Feb 18, 2021.
+        Last updated on Feb 22, 2021.
       </span>
 
     </p>
