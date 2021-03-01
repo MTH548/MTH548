@@ -7,7 +7,7 @@ Current Tasks
 Project 2
 ---------
 
-**Due: Friday, 3/5, 11:59 PM on UBLeans**
+**Due: Friday, 3/5, 11:59 PM on UBLearns**
 
 :doc:`Project: MNIST with k-means <Projects/mnist_with_k_means/mnist_with_k_means>` 
 
@@ -15,14 +15,13 @@ Project 2
 Weekly digest
 -------------
 
-**Due: Sunday, 2/28, 11:59 PM**
+**Due: Sunday, 3/7, 11:59 PM**
 
 Complete the weekly digest form:
 
 .. raw:: html
    
-   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPZXnmbLCjwdwFT75bbdRwdXWhZYlBewvEU83IxkUJbBZ3Dg/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZvDkOKwkFvInvzU22QiFbUpFKwoap5PeqbohJn1m5ePZZfg/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 
 

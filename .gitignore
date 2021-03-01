@@ -3,6 +3,7 @@
 train-images-idx3-ubyte
 train-labels-idx1-ubyte
 buffalo_crime_Incidents.csv
+bystate.csv
 source/baby_names/namesbystate/
 source/baby_names/names/
 

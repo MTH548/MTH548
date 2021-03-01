@@ -1,8 +1,3 @@
-.. MTH_448 documentation master file, created by
-   sphinx-quickstart on Mon Mar  2 19:17:46 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 MTH 448/548 Data Oriented Computing
 ===================================
 
@@ -26,6 +21,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_2
    Schedule/week_3
    Schedule/week_4
+   Schedule/week_5
 
 
 
@@ -43,6 +39,7 @@ MTH 448/548 Data Oriented Computing
 
    Projects/mnist_with_knn/mnist_with_knn
    Projects/mnist_with_k_means/mnist_with_k_means
+   Projects/baby_names/baby_names
 
 
 
@@ -53,7 +50,7 @@ MTH 448/548 Data Oriented Computing
 .. toctree::
    :hidden:
 
-   Schedule/week_5_temp
+   Schedule/week_6_temp
 
    Tools/Seaborn/seaborn_toc
    Tools/Plotly/plotly_toc
@@ -63,7 +60,7 @@ MTH 448/548 Data Oriented Computing
    Tools/json/json
    Tools/SQL/sql_toc
 
-   Projects/baby_names/baby_names
+
    Projects/scrapping_chicago_marathon/scrapping_chicago_marathon
    Projects/kde_marathon_results/kde_marathon_results
    Projects/text_with_naive_bayes/text_with_naive_bayes
