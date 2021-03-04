@@ -50,7 +50,9 @@ MTH 448/548 Data Oriented Computing
 .. toctree::
    :hidden:
 
+
    Schedule/week_6_temp
+   Schedule/week_7_temp
 
    Tools/Seaborn/seaborn_toc
    Tools/Plotly/plotly_toc
@@ -61,7 +63,7 @@ MTH 448/548 Data Oriented Computing
    Tools/SQL/sql_toc
 
 
-   Projects/scrapping_chicago_marathon/scrapping_chicago_marathon
+   Projects/scrapping_marathon_results/scrapping_marathon_results
    Projects/kde_marathon_results/kde_marathon_results
    Projects/text_with_naive_bayes/text_with_naive_bayes
    Projects/escape_from_jupyter
