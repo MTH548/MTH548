@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Weekly Digest 5 &mdash; MTH 448/548 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://www.mth548.org/Digests/digest_5.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 6 (3/8-3/14)" href="../Schedule/week_6.html" />
+    <link rel="prev" title="Week 5 (3/1-3/7)" href="../Schedule/week_5.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../master.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Logistics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../group_assignments.html">Group Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../to_do.html">Current Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Schedule</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_0.html">Preliminaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_3.html">Week 3 (2/15-2/21)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_4.html">Week 4 (2/22-2/28)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Schedule/week_5.html">Week 5 (3/1-3/7)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_5.html#Zoom-Recordings">Zoom Recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_5.html#Notebook">Notebook</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Schedule/week_5.html#Weekly-digest">Weekly digest</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Weekly Digest 5</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_5.html#Pandas">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_5.html#Project">Project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_5.html#Resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_5.html#Exercises-(Tuesday)">Exercises (Tuesday)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_5.html#Exercises-(Thursday)">Exercises (Thursday)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_6.html">Week 6 (3/8-3/14)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Numpy/numpy_toc.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Pandas/pandas_toc.html">Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Seaborn/seaborn_toc.html">Seaborn</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Plotly/plotly_toc.html">Plotly</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../master.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../master.html">MTH 448/548</a> &raquo;</li>
+        
+          <li><a href="../Schedule/week_5.html">Week 5 (3/1-3/7)</a> &raquo;</li>
+        
+      <li>Weekly Digest 5</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="weekly-digest-5">
+<h1>Weekly Digest 5<a class="headerlink" href="#weekly-digest-5" title="Permalink to this headline">¶</a></h1>
+<p><strong>Zhongyang asks:</strong></p>
+<blockquote>
+<div><p>For 3rd project : Baby names, Is there a good way to test our answers? Because we can
+use heatmap to check our results in project 1 and 2.</p>
+</div></blockquote>
+<p>The baby names project is more open ended: you need to analyze the data in some way and
+describe your analysis. Of course computations you make need to be correct.</p>
+<p><strong>Sean asks:</strong></p>
+<blockquote>
+<div><p>This may have been answered before but I just wanted to know if you are incorporating
+webcam usage into our participation grade?</p>
+</div></blockquote>
+<p>I talked about it briefly last week. I wil not alter course grades depending if someone
+kept their camera on or off, but I would like you to have it on to get a sense of
+participation and community in this remote setting. Consider it a matter of kindness and
+respect.</p>
+<p><strong>Darren asks:</strong></p>
+<blockquote>
+<div><p>For organizing the Jupyter notebook cells, I know that there is a way to move a cell up and
+down, but is there a way to move multiple cells at once instead of moving one cell at a time.</p>
+</div></blockquote>
+<p>You can select multiple consecutive cells for example by first clicking next to a cell, and the
+using Shift-J keys, which adds the next cells to the selection. Once the cells are selected,
+the up and down arrows will move all of them.</p>
+<p><strong>Makenzie asks:</strong></p>
+<blockquote>
+<div><p>I’m curious about web-scraping. Is there a way to pull information from the web directly into
+Python using Pandas?</p>
+</div></blockquote>
+<p>Pandas function <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_html.html">read_html()</a>
+reads data from html tables embedded in webpages. Getting non-tabular data requires more work.
+We will go over web scrapping soon.</p>
+<p><strong>Waleed asks:</strong></p>
+<blockquote>
+<div><p>Are we allowed to use libraries that we have used in the past which are outside the scope of this
+course to do tasks quicker?</p>
+</div></blockquote>
+<p>Yes, unless a project description specifies otherwise.</p>
+<p><strong>Guozheng asks:</strong></p>
+<blockquote>
+<div><p>What is the different between the concat and merge?</p>
+</div></blockquote>
+<p>Concat simply adds additional rows or columns. Merge creates a dataframe using combinations
+of rows (or columns) from two dataframes, using some condition to determine which row should
+be combined with which.</p>
+<p><strong>Sindy asks:</strong></p>
+<blockquote>
+<div><p>During picturing clusters, does the star mark where the most cluster points concrete geometrically?</p>
+</div></blockquote>
+<p>If you are asking about the code I provided, then the star was used for data processed
+by k-NN, not k-means and it marked a point whose label we were trying to predict.</p>
+<p><strong>Jeffrey asks:</strong></p>
+<blockquote>
+<div><p>Can you explain what are the key features of pandas library and what does pandas stand for?</p>
+</div></blockquote>
+<p>The word “pandas” is derived from “”Python data analysis”. I talked about key features of
+pandas in class, please review videos of lectures from week 4 and 5.</p>
+<p><strong>Renjie asks:</strong></p>
+<blockquote>
+<div><p>Have you considered that how many projects in total will be in this course?</p>
+</div></blockquote>
+<p>There should be around seven.</p>
+<p><strong>Matthew asks:</strong></p>
+<blockquote>
+<div><p>Will we be learning any methods of presenting data on maps in this course (e.g.
+choropleth maps)? If not, can you recommend any resources for learning this independently?
+I think it would be an interesting way to present some of the baby name data for project 3.</p>
+</div></blockquote>
+<p>I will be talking about visualizing data on Tuesday, I will include choropleth maps if time permits.</p>
+<p><strong>Miguel asks:</strong></p>
+<blockquote>
+<div><p>I don’t have any questions this week but I just wanna say this is one of my favorite classes!</p>
+</div></blockquote>
+<p>I am glad to hear it, but do come up with some question, this is a part of the assignment.</p>
+<p><strong>Sai asks:</strong></p>
+<blockquote>
+<div><p>Where can I find exercises on this week concept, and practice for the baby project .</p>
+</div></blockquote>
+<p>I am not sure which week you are referring to. There are several exercises with pandas in
+week 5 notes. As for baby names, we will talk more about it in class.</p>
+<p><strong>Mohammedanas asks:</strong></p>
+<blockquote>
+<div><p>If we do get to learning about SQL, how in-depth are we gonna dive in to it?</p>
+</div></blockquote>
+<p>I plan to cover some SQL, enough to write fairly complex queries.</p>
+<p><strong>Peter asks:</strong></p>
+<blockquote>
+<div><p>How long should the Baby names project be? There are suggestions for what to do, but
+“Analyze some facets of this data” is a bit wide open for interpretation!</p>
+</div></blockquote>
+<p>It should be about as long as the previous two reports. Find some aspects of the data
+that seem interesting to you, and explore them. We will talk more about this project
+this week.</p>
+<p><strong>Seungmin asks:</strong></p>
+<blockquote>
+<div><p>Will there be any extra credit or projects that will count towards extra credit in the future?</p>
+</div></blockquote>
+<p>You can get extra credit on each report for work which goes beyond of what is
+expected. There will be no separate extra credit assignments though.</p>
+<p><strong>Elita asks:</strong></p>
+<blockquote>
+<div><p>How many more libraries will we be learning?</p>
+</div></blockquote>
+<p>We will see several more. Some will be explored in greater depth, some we will just
+encounter casually.</p>
+<p><strong>Justin asks:</strong></p>
+<blockquote>
+<div><p>Results of project grade?</p>
+</div></blockquote>
+<p>I am not sure what you mean.</p>
+<p><strong>Amena asks:</strong></p>
+<blockquote>
+<div><p>Do you recommend any other textbooks or readings that may help with the project 3
+Baby names?</p>
+</div></blockquote>
+<p>You don’t need a textbook. You may search the web or check pandas documentation if you
+will need some additional pandas tools for your analysis.</p>
+<p><strong>Jonathan asks:</strong></p>
+<blockquote>
+<div><p>Will we touch pytorch or related libraries at some point this semester?</p>
+</div></blockquote>
+<p>It time permits we may do something with TensorFlow/Keras.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Schedule/week_6.html" class="btn btn-neutral float-right" title="Week 6 (3/8-3/14)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Schedule/week_5.html" class="btn btn-neutral float-left" title="Week 5 (3/1-3/7)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
+      <span class="lastupdated"><br/>
+        Last updated on Mar 08, 2021.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

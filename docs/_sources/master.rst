@@ -22,6 +22,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_3
    Schedule/week_4
    Schedule/week_5
+   Schedule/week_6
 
 
 
@@ -31,6 +32,8 @@ MTH 448/548 Data Oriented Computing
 
    Tools/Numpy/numpy_toc
    Tools/Pandas/pandas_toc
+   Tools/Seaborn/seaborn_toc
+   Tools/Plotly/plotly_toc
    
 
 .. toctree::
@@ -50,12 +53,8 @@ MTH 448/548 Data Oriented Computing
 .. toctree::
    :hidden:
 
-
-   Schedule/week_6_temp
    Schedule/week_7_temp
 
-   Tools/Seaborn/seaborn_toc
-   Tools/Plotly/plotly_toc
    Tools/requests/requests
    Tools/beautiful_soup/beautiful_soup
    Tools/Regex/regex_toc
@@ -64,6 +63,7 @@ MTH 448/548 Data Oriented Computing
 
 
    Projects/scrapping_marathon_results/scrapping_marathon_results
+   Projects/discord_logs/discord_logs
    Projects/kde_marathon_results/kde_marathon_results
    Projects/text_with_naive_bayes/text_with_naive_bayes
    Projects/escape_from_jupyter
