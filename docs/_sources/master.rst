@@ -54,6 +54,7 @@ MTH 448/548 Data Oriented Computing
    :hidden:
 
    Schedule/week_7_temp
+   Schedule/week_8_temp
 
    Tools/requests/requests
    Tools/beautiful_soup/beautiful_soup
