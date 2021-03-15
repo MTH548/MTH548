@@ -48,7 +48,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numpy" href="../Tools/Numpy/numpy_toc.html" />
+    <link rel="next" title="Weekly Digest 6" href="../Digests/digest_6.html" />
     <link rel="prev" title="Weekly Digest 5" href="../Digests/digest_5.html" /> 
 </head>
 
@@ -113,14 +113,20 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Week 6 (3/8-3/14)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Zoom-Recordings">Zoom Recordings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Notebook">Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Weekly-digests">Weekly digests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Digests/digest_6.html">Weekly Digest 6</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#Project">Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Resources">Resources</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#1.-Data-for-choropleth-maps">1. Data for choropleth maps</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#2.-Create-a-DataFrame-with-baby-names">2. Create a DataFrame with baby names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#1.-Plotly-installation">1. Plotly installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2.-Data-for-choropleth-maps">2. Data for choropleth maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.-Create-a-DataFrame-with-baby-names">3. Create a DataFrame with baby names</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="week_7.html">Week 7 (3/15-3/21)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -128,12 +134,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../Tools/Pandas/pandas_toc.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Tools/Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Tools/Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/requests/requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Projects</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
 </ul>
 
             
@@ -454,14 +463,13 @@ div.rendered_html tbody tr:hover {
 <li><p><a class="reference external" href="../_static/weekly_notebooks/week_6_class.html">View online</a></p></li>
 <li><p>Download the notebook file: <a class="reference external" href="../_static/weekly_notebooks/week_6_class.ipynb">week_6_class.ipynb</a>.</p></li>
 </ul>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="o">%</span><span class="k">pip</span> install plotly
-</pre></div>
-</div>
+<div class="section" id="Weekly-digests">
+<h2>Weekly digests<a class="headerlink" href="#Weekly-digests" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Digests/digest_6.html">Weekly Digest 6</a></li>
+</ul>
 </div>
 </div>
 <div class="section" id="Project">
@@ -472,8 +480,20 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Resources">
 <h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="1.-Data-for-choropleth-maps">
-<h3>1. Data for choropleth maps<a class="headerlink" href="#1.-Data-for-choropleth-maps" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="1.-Plotly-installation">
+<h3>1. Plotly installation<a class="headerlink" href="#1.-Plotly-installation" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%</span><span class="k">pip</span> install plotly
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="2.-Data-for-choropleth-maps">
+<h3>2. Data for choropleth maps<a class="headerlink" href="#2.-Data-for-choropleth-maps" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -484,8 +504,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 </div>
-<div class="section" id="2.-Create-a-DataFrame-with-baby-names">
-<h3>2. Create a DataFrame with baby names<a class="headerlink" href="#2.-Create-a-DataFrame-with-baby-names" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="3.-Create-a-DataFrame-with-baby-names">
+<h3>3. Create a DataFrame with baby names<a class="headerlink" href="#3.-Create-a-DataFrame-with-baby-names" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -500,7 +520,7 @@ div.rendered_html tbody tr:hover {
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;names.zip&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">foo</span><span class="p">:</span>
     <span class="n">foo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 
-<span class="c1"># read zipped csv file</span>
+<span class="c1"># read zipped csv files</span>
 <span class="k">with</span> <span class="n">ZipFile</span><span class="p">(</span><span class="s2">&quot;names.zip&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
     <span class="n">fnames</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">z</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.txt&quot;</span><span class="p">))</span>
     <span class="n">file_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -527,7 +547,7 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Tools/Numpy/numpy_toc.html" class="btn btn-neutral float-right" title="Numpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Digests/digest_6.html" class="btn btn-neutral float-right" title="Weekly Digest 6" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Digests/digest_5.html" class="btn btn-neutral float-left" title="Weekly Digest 5" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -541,7 +561,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 11, 2021.
+        Last updated on Mar 15, 2021.
       </span>
 
     </p>

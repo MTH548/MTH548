@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Week 7 (3/15-3/21) &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Week 8 (3/22-3/28) &mdash; MTH 448/548 0.0.1 documentation</title>
   
 
   
@@ -47,7 +47,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Regular expressions" href="../Tools/Regex/regex_toc.html" />
+    <link rel="prev" title="Project: Scrapping marathon results" href="../Projects/scrapping_marathon_results/scrapping_marathon_results.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -109,6 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="week_4.html">Week 4 (2/22-2/28)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_5.html">Week 5 (3/1-3/7)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_6.html">Week 6 (3/8-3/14)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week_7.html">Week 7 (3/15-3/21)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -116,12 +119,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../Tools/Pandas/pandas_toc.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Tools/Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Tools/Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/requests/requests.html">Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Projects</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
 </ul>
 
             
@@ -168,7 +174,7 @@
     
       <li><a href="../master.html">MTH 448/548</a> &raquo;</li>
         
-      <li>Week 7 (3/15-3/21)</li>
+      <li>Week 8 (3/22-3/28)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -427,43 +433,121 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Week-7-(3/15-3/21)">
-<h1>Week 7 (3/15-3/21)<a class="headerlink" href="#Week-7-(3/15-3/21)" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Web-scrapping">
-<h2>Web scrapping<a class="headerlink" href="#Web-scrapping" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Week-8-(3/22-3/28)">
+<h1>Week 8 (3/22-3/28)<a class="headerlink" href="#Week-8-(3/22-3/28)" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Data-formats">
+<h2>Data formats<a class="headerlink" href="#Data-formats" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../Tools/requests/requests.html"><span class="doc">Requests</span></a></p></li>
-<li><p><a class="reference internal" href="../Tools/beautiful_soup/beautiful_soup.html"><span class="doc">BeautifulSoup</span></a></p></li>
+<li><p>XML</p></li>
+<li><p><a class="reference internal" href="../Tools/json/json.html"><span class="doc">JSON</span></a></p></li>
 </ul>
 </div>
-<div class="section" id="Project">
-<h2>Project<a class="headerlink" href="#Project" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="../Projects/scrapping_marathon_results/scrapping_marathon_results.html"><span class="doc">Scrapping marathon results</span></a></p></li>
-</ul>
-</div>
-<div class="section" id="Resources">
-<h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="1.-UB-Mathematics-graduate-students-directory">
-<h3>1. UB Mathematics graduate students directory<a class="headerlink" href="#1.-UB-Mathematics-graduate-students-directory" title="Permalink to this headline">¶</a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">grad_url</span> <span class="o">=</span> <span class="s2">&quot;http://www.buffalo.edu/cas/math/people/grad-directory.html&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="2.-UB-Mathematics-faculty-directory">
-<h3>2. UB Mathematics faculty directory<a class="headerlink" href="#2.-UB-Mathematics-faculty-directory" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="lxml-installation">
+<h2>lxml installation<a class="headerlink" href="#lxml-installation" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">faculty_url</span> <span class="o">=</span> <span class="s2">&quot;http://www.buffalo.edu/cas/math/people/faculty.html&quot;</span>
+<span></span><span class="o">%</span><span class="k">pip</span> install lxml
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="Project">
+<h2>Project<a class="headerlink" href="#Project" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Projects/discord_logs/discord_logs.html"><span class="doc">Discord logs</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="Resources">
+<h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="1.-Sample-Excel-file">
+<h3>1. Sample Excel file<a class="headerlink" href="#1.-Sample-Excel-file" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><a class="reference download internal" download="" href="../_downloads/4a26566bcdf855245f49e9d087cbef47/excel_sample.xlsx"><code class="xref download docutils literal notranslate"><span class="pre">excel_sample.xlsx</span></code></a></div>
+</div>
+</div>
+<div class="section" id="2.-Sample-SVG-file">
+<h3>2. Sample SVG file<a class="headerlink" href="#2.-Sample-SVG-file" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/a/a4/Dodecahedron.svg">Dodecahedron.svg</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">dodeca</span> <span class="o">=</span> <span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/a/a4/Dodecahedron.svg&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="3.-National-Weather-service-API">
+<h3>3. National Weather service API<a class="headerlink" href="#3.-National-Weather-service-API" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.weather.gov/documentation/services-web-api">Documentation</a></p>
+<ul class="simple">
+<li><p>Alerts url:</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">alerts_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.weather.gov/alerts&quot;</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Point url:</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">point_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.weather.gov/points/&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="4.-Nominatim-API">
+<h3>4. Nominatim API<a class="headerlink" href="#4.-Nominatim-API" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://nominatim.org/release-docs/latest/">Documentation</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nominatim_url</span> <span class="o">=</span> <span class="s2">&quot;https://nominatim.openstreetmap.org/search&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="5.-DataFrame-with-times">
+<h3>5. DataFrame with times<a class="headerlink" href="#5.-DataFrame-with-times" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T23:03:12.351+00:00&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T23:04:08.669+00:00&#39;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-05T12:12:12.010+00:00&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-05T17:56:17.123+00:00&#39;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T13:29:45.594+00:00&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-06T00:04:46.032+00:00&#39;</span>
+    <span class="p">},</span>
+<span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -471,125 +555,113 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="section" id="Exercise">
 <h2>Exercise<a class="headerlink" href="#Exercise" title="Permalink to this headline">¶</a></h2>
-<p>Here is the url to a webpage of the UB catalog listing undergraduate mathematics courses:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">courses_url</span> <span class="o">=</span> <span class="s2">&quot;https://catalog.buffalo.edu/courses/mathematics.html&quot;</span>
-</pre></div>
-</div>
-</div>
-<p>Retrieve course codes, titles, and descriptions of all courses and organize them in a pandas DataFrame. The resulting DataFrame should look as follows:</p>
+<p>Use Nominatim API and National Weather Service API to write a function <code class="docutils literal notranslate"><span class="pre">get_forecast()</span></code> that prints weather forecast for a given city in the United States.</p>
+<p><strong>Example.</strong></p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">math_courses</span>
+<span></span><span class="n">get_forecast</span><span class="p">(</span><span class="s2">&quot;Buffalo, NY&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
-<div class="output_area rendered_html docutils container">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Buffalo, Erie County, New York, United States
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+Tonight
+Temperature: 23 F
+Wind: 7 to 14 mph NW
+Forecast: Mostly clear, with a low around 23. Northwest wind 7 to 14
+mph.
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>course_code</th>
-      <th>title</th>
-      <th>description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>MTH 101LR</td>
-      <td>Introduction to Contemporary Mathematics</td>
-      <td>This course is intended for students who do no...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>MTH 115LR</td>
-      <td>Survey of Algebra and Trigonometry</td>
-      <td>A pre-calculus course; covers topics from the ...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>MTH 120LEC</td>
-      <td>Selected Topics in Calculus</td>
-      <td>Allows transfer students to efficiently learn ...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>MTH 121LR</td>
-      <td>Survey of Calculus and Its Applications I</td>
-      <td>For students in social, biological, and manage...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>MTH 122LR</td>
-      <td>Survey of Calculus and Its Applications II</td>
-      <td>Continuation of MTH 121. Maximization of funct...</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>64</th>
-      <td>MTH 470LEC</td>
-      <td>Topics in Mathematics</td>
-      <td>Treats problems, methods, and recent developme...</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>MTH 495TUT</td>
-      <td>Undergraduate Supervised Teaching</td>
-      <td>Students who have at least junior status and s...</td>
-    </tr>
-    <tr>
-      <th>66</th>
-      <td>MTH 496TUT</td>
-      <td>Internship in Mathematics</td>
-      <td>Students get field experience in mathematical ...</td>
-    </tr>
-    <tr>
-      <th>67</th>
-      <td>MTH 497TUT</td>
-      <td>Honors Thesis in Mathematics</td>
-      <td>Open only to math majors intending to seek an ...</td>
-    </tr>
-    <tr>
-      <th>68</th>
-      <td>MTH 499TUT</td>
-      <td>Independent Study</td>
-      <td>Individual study arranged between student and ...</td>
-    </tr>
-  </tbody>
-</table>
-<p>69 rows × 3 columns</p>
-</div></div>
+Saturday
+Temperature: 35 F
+Wind: 6 to 18 mph W
+Forecast: Sunny, with a high near 35. West wind 6 to 18 mph, with
+gusts as high as 30 mph.
+
+Saturday Night
+Temperature: 30 F
+Wind: 12 to 18 mph SW
+Forecast: Mostly clear, with a low around 30. Southwest wind 12 to 18
+mph, with gusts as high as 29 mph.
+
+Sunday
+Temperature: 39 F
+Wind: 9 to 17 mph NW
+Forecast: Mostly sunny, with a high near 39. Northwest wind 9 to 17
+mph.
+
+Sunday Night
+Temperature: 19 F
+Wind: 8 to 16 mph N
+Forecast: Mostly clear, with a low around 19. North wind 8 to 16 mph.
+
+Monday
+Temperature: 33 F
+Wind: 8 mph NE
+Forecast: Sunny, with a high near 33.
+
+Monday Night
+Temperature: 27 F
+Wind: 8 mph E
+Forecast: A chance of snow showers after 8pm. Mostly cloudy, with a
+low around 27. Chance of precipitation is 30%. Little or no snow
+accumulation expected.
+
+Tuesday
+Temperature: 44 F
+Wind: 7 mph SE
+Forecast: A chance of snow showers before 10am, then a chance of rain
+and snow showers. Partly sunny, with a high near 44. Chance of
+precipitation is 40%. Little or no snow accumulation expected.
+
+Tuesday Night
+Temperature: 35 F
+Wind: 7 mph S
+Forecast: A chance of rain showers before 3am, then a slight chance of
+rain and snow showers. Mostly cloudy, with a low around 35. Chance of
+precipitation is 40%.
+
+Wednesday
+Temperature: 47 F
+Wind: 8 mph SW
+Forecast: A slight chance of rain and snow showers before 2pm. Partly
+sunny, with a high near 47.
+
+Wednesday Night
+Temperature: 34 F
+Wind: 5 to 8 mph SW
+Forecast: A slight chance of rain showers between 8pm and 3am, then a
+slight chance of rain and snow showers. Mostly cloudy, with a low
+around 34.
+
+Thursday
+Temperature: 45 F
+Wind: 8 mph S
+Forecast: A chance of rain and snow showers. Mostly cloudy, with a
+high near 45. Chance of precipitation is 30%.
+
+Thursday Night
+Temperature: 29 F
+Wind: 8 to 12 mph NW
+Forecast: A chance of rain showers before 10pm, then a chance of rain
+and snow showers. Mostly cloudy, with a low around 29. Chance of
+precipitation is 30%.
+
+Friday
+Temperature: 39 F
+Wind: 14 mph N
+Forecast: A chance of snow showers before 1pm, then a slight chance of
+rain and snow showers. Mostly sunny, with a high near 39. Chance of
+precipitation is 30%.
+
+</pre></div></div>
 </div>
 </div>
 </div>
@@ -600,6 +672,15 @@ div.rendered_html tbody tr:hover {
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Tools/Regex/regex_toc.html" class="btn btn-neutral float-right" title="Regular expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Projects/scrapping_marathon_results/scrapping_marathon_results.html" class="btn btn-neutral float-left" title="Project: Scrapping marathon results" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -607,7 +688,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 11, 2021.
+        Last updated on Mar 15, 2021.
       </span>
 
     </p>
