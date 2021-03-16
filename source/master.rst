@@ -55,6 +55,7 @@ MTH 448/548 Data Oriented Computing
 
 
    Schedule/week_8_temp
+   Schedule/week_9_temp
 
    Tools/Regex/regex_toc
    Tools/json/json
