@@ -12,6 +12,14 @@ Project 3
 :doc:`Project: Baby names <Projects/baby_names/baby_names>` 
 
 
+Project 4
+---------
+
+**Due: Friday, 3/26, 11:59 PM on UBLearns**
+
+:doc:`Project: Baby names <Projects/scrapping_marathon_results/scrapping_marathon_results>` 
+
+
 Weekly digest
 -------------
 

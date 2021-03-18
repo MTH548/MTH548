@@ -15756,6 +15756,540 @@ a.anchor-link {
 </div>
 
 </div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Faculty-Page">Faculty Page<a class="anchor-link" href="#Faculty-Page">&#182;</a></h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[117]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">faculty_url</span> <span class="o">=</span> <span class="s2">&quot;http://www.buffalo.edu/cas/math/people/faculty.html&quot;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">faculty_url</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[119]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">faculty</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[143]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">faculty</span><span class="o">.</span><span class="n">prettify</span><span class="p">()[:</span><span class="mi">1000</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;!DOCTYPE HTML&gt;
+&lt;html class=&#34;ubcms-65&#34; lang=&#34;en&#34;&gt;
+ &lt;!-- cmspub01 0318-124949 --&gt;
+ &lt;head&gt;
+  &lt;meta content=&#34;IE=edge&#34; http-equiv=&#34;X-UA-Compatible&#34;/&gt;
+  &lt;meta content=&#34;text/html; charset=utf-8&#34; http-equiv=&#34;content-type&#34;/&gt;
+  &lt;meta content=&#34;width=device-width,initial-scale=1&#34; id=&#34;meta-viewport&#34; name=&#34;viewport&#34;/&gt;
+  &lt;script&gt;
+   if (screen.width &gt; 720 &amp;&amp; screen.width &lt; 960) document.getElementById(&#39;meta-viewport&#39;).setAttribute(&#39;content&#39;,&#39;width=960&#39;);
+  &lt;/script&gt;
+  &lt;script&gt;
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&#39;gtm.start&#39;:new Date().getTime(),event:&#39;gtm.js&#39;});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.async=true;j.src=&#39;https://www.googletagmanager.com/gtm.js?id=&#39;+i+dl;f.parentNode.insertBefore(j,f);})(window,document,&#39;script&#39;,&#39;dataLayer&#39;,&#39;GTM-T5KRRKT&#39;);
+  &lt;/script&gt;
+  &lt;title&gt;
+   Faculty - Department of Mathematics - University at Buffalo
+  &lt;/title&gt;
+  &lt;link href=&#34;http://www.buffalo.edu/cas/math/people/faculty.html&#34; rel=&#34;canonical&#34;/&gt;
+  &lt;meta co
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[122]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">faculty</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[122]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>1052</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[125]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">faculty</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;//www.buffalo.edu&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[125]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&lt;a href=&#34;//www.buffalo.edu&#34;&gt;UB Home&lt;/a&gt;,
+ &lt;a href=&#34;//www.buffalo.edu&#34;&gt; &lt;i class=&#34;icon icon-ub-logo&#34;&gt;&lt;/i&gt;&lt;span class=&#34;ada-hidden&#34;&gt;University at Buffalo&lt;/span&gt; &lt;span class=&#34;logo&#34;&gt; &lt;img alt=&#34;&#34; class=&#34;black&#34; height=&#34;20&#34; src=&#34;/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc.clientlibs/wci/components/block/header/clientlibs/resources/ub-logo-black.png&#34; width=&#34;181&#34;/&gt; &lt;/span&gt; &lt;/a&gt;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[126]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">divs</span> <span class="o">=</span> <span class="n">faculty</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;profileinfo-teaser&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[127]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">divs</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[127]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>54</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">divs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">d</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[128]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;div class=&#34;profileinfo-teaser&#34;&gt;&lt;div class=&#34;profileinfo-teaser-photo&#34;&gt;&lt;noscript&gt;&lt;picture&gt;&lt;img alt=&#34;Gino Biondini. &#34; class=&#34;img-60 img-60x60 cq-dd-image&#34; height=&#34;60&#34; src=&#34;/content/shared/cas/math/faculty/biondini/_jcr_content/profileinfo.img.60.60.z.jpg/1600442809023.jpg&#34; srcset=&#34;/content/shared/cas/math/faculty/biondini/jcr:content/profileinfo.img.120.120.z.q65.jpg/1600442809023.jpg 2x&#34; width=&#34;60&#34;/&gt;&lt;/picture&gt;&lt;/noscript&gt;&lt;picture class=&#34;no-display&#34;&gt;&lt;img alt=&#34;Gino Biondini. &#34; class=&#34;img-60 img-60x60 cq-dd-image lazyload&#34; data-src=&#34;/content/shared/cas/math/faculty/biondini/jcr%3acontent/profileinfo.img.60.60.z.jpg/1600442809023.jpg&#34; data-srcset=&#34;/content/shared/cas/math/faculty/biondini/jcr:content/profileinfo.img.120.120.z.q65.jpg/1600442809023.jpg 2x&#34; height=&#34;60&#34; src=&#34;data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7&#34; width=&#34;60&#34;/&gt;&lt;/picture&gt;&lt;script&gt;jQuery(&#39;picture.no-display&#39;).removeClass(&#39;no-display&#39;);&lt;/script&gt;&lt;/div&gt;&lt;div class=&#34;profileinfo-teaser-name&#34;&gt;&lt;a class=&#34;title&#34; href=&#34;/cas/math/people/faculty.host.html/content/shared/cas/math/faculty/biondini.html&#34;&gt; &lt;b&gt;Gino Biondini&lt;span&gt;,&lt;/span&gt;&lt;/b&gt;&lt;small&gt; PhD&lt;/small&gt; &lt;/a&gt;&lt;div class=&#34;profileinfo-teaser-degree&#34;&gt;PhD, Theoretical Physics, University of Perugia, Italy&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;profileinfo-teaser-info&#34;&gt;&lt;div class=&#34;profileinfo-teaser-contact hide-in-narrow&#34;&gt;&lt;p&gt;226 &amp;amp; 324 Mathematics Building&lt;/p&gt;&lt;p&gt;UB North Campus&lt;/p&gt;&lt;p&gt;Phone: (716) 645-8810&lt;/p&gt;&lt;p&gt;Fax: (716) 645 5039&lt;/p&gt;&lt;p&gt;&lt;a class=&#34;longtext&#34; href=&#34;mailto:biondini@buffalo.edu&#34;&gt;biondini@buffalo.edu&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div class=&#34;profileinfo-teaser-professional&#34;&gt;&lt;div class=&#34;profileinfo-teaser-titles&#34;&gt;&lt;div&gt;&lt;div class=&#34;profileinfo-teaser-school-title&#34;&gt;Professor &amp;amp; Department Chair&lt;/div&gt;&lt;div class=&#34;profileinfo-teaser-school-name&#34;&gt;Department of Mathematics&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;profileinfo-teaser-alt-contact&#34;&gt;&lt;div class=&#34;profileinfo-teaser-mobile-contact hide-in-wide buttoncomponent green&#34;&gt;&lt;a class=&#34;profileinfo-teaser-btn-white&#34; href=&#34;tel:(716)%20645-8810&#34;&gt;Call&lt;span class=&#34;ada-hidden&#34;&gt; Gino Biondini&lt;/span&gt;&lt;/a&gt; &lt;a class=&#34;profileinfo-teaser-btn-white&#34; href=&#34;mailto:biondini@buffalo.edu&#34;&gt;Email&lt;span class=&#34;ada-hidden&#34;&gt; Gino Biondini&lt;/span&gt;&lt;/a&gt; &lt;a href=&#34;/cas/math/people/faculty.host.html/content/shared/cas/math/faculty/biondini.html&#34;&gt;Profile&lt;span class=&#34;ada-hidden&#34;&gt; for Gino Biondini&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;profileinfo-teaser-3col-contact hide-in-narrow&#34;&gt;&lt;p&gt;226 &amp;amp; 324 Mathematics Building&lt;/p&gt;&lt;p&gt;UB North Campus&lt;/p&gt;&lt;p&gt;Phone: (716) 645-8810&lt;/p&gt;&lt;p&gt;Fax: (716) 645 5039&lt;/p&gt;&lt;p&gt;&lt;a class=&#34;longtext&#34; href=&#34;mailto:biondini@buffalo.edu&#34;&gt;biondini@buffalo.edu&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;clearfix&#34;&gt;&lt;/div&gt;&lt;/div&gt;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[131]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[131]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;Gino Biondini&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[134]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">contact</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;profileinfo-teaser-contact hide-in-narrow&quot;</span><span class="p">)</span>
+<span class="n">contact</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[134]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;div class=&#34;profileinfo-teaser-contact hide-in-narrow&#34;&gt;&lt;p&gt;226 &amp;amp; 324 Mathematics Building&lt;/p&gt;&lt;p&gt;UB North Campus&lt;/p&gt;&lt;p&gt;Phone: (716) 645-8810&lt;/p&gt;&lt;p&gt;Fax: (716) 645 5039&lt;/p&gt;&lt;p&gt;&lt;a class=&#34;longtext&#34; href=&#34;mailto:biondini@buffalo.edu&#34;&gt;biondini@buffalo.edu&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[135]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">contact</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[135]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&lt;p&gt;226 &amp;amp; 324 Mathematics Building&lt;/p&gt;,
+ &lt;p&gt;UB North Campus&lt;/p&gt;,
+ &lt;p&gt;Phone: (716) 645-8810&lt;/p&gt;,
+ &lt;p&gt;Fax: (716) 645 5039&lt;/p&gt;,
+ &lt;p&gt;&lt;a class=&#34;longtext&#34; href=&#34;mailto:biondini@buffalo.edu&#34;&gt;biondini@buffalo.edu&lt;/a&gt;&lt;/p&gt;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[138]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">contact</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>226 &amp; 324 Mathematics Building
+UB North Campus
+Phone: (716) 645-8810
+Fax: (716) 645 5039
+biondini@buffalo.edu
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[144]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">divs</span><span class="p">[:</span><span class="mi">5</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">contact</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;profileinfo-teaser-contact hide-in-narrow&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">contact</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Gino Biondini
+226 &amp; 324 Mathematics Building
+UB North Campus
+Phone: (716) 645-8810
+Fax: (716) 645 5039
+biondini@buffalo.edu
+
+
+John Ringland
+206 Mathematics Building
+UB North Campus
+Phone: (716) 645-8778
+Fax: (716) 645-5039
+ringland@buffalo.edu
+
+
+Joseph Hundley
+203 &amp; 232 Mathematics Building
+UB North Campus
+Phone: (716) 645-8771 &amp; (716) 645-8784
+Fax: (716) 645-5039
+jahundle@buffalo.edu
+
+
+Yiqiang Li
+212 &amp; 230 Mathematics Building
+UB North Campus
+Phone: (716) 645-8830 (Jenny Russell, 716-645-8782)
+Fax: (716) 645-5039
+gsdmath@buffalo.edu
+
+
+Rupam Acharya
+313 Mathematics Building
+UB North Campus
+Phone: (716) 645-8804
+Fax: (716) 645-5039
+rupamach@buffalo.edu
+
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[142]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
 </body>
 
 
