@@ -14681,7 +14681,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[103]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pic</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
@@ -35184,18 +35184,1439 @@ Area: Chautauqua; Cattaraugus; Allegany
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Getting-weather-forecast">Getting weather forecast<a class="anchor-link" href="#Getting-weather-forecast">&#182;</a></h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">point_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.weather.gov/points/&quot;</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[107]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lat</span> <span class="o">=</span> <span class="mf">42.8864</span>
+<span class="n">lon</span> <span class="o">=</span>  <span class="o">-</span><span class="mf">78.8784</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[108]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">buffalo</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">point_url</span><span class="si">}{</span><span class="n">lat</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">buffalo</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[108]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;https://api.weather.gov/points/42.8864,-78.8784&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[109]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">buffalo</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[111]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{
+    &#34;@context&#34;: [
+        &#34;https://geojson.org/geojson-ld/geojson-context.jsonld&#34;,
+        {
+            &#34;@version&#34;: &#34;1.1&#34;,
+            &#34;wx&#34;: &#34;https://api.weather.gov/ontology#&#34;,
+            &#34;s&#34;: &#34;https://schema.org/&#34;,
+            &#34;geo&#34;: &#34;http://www.opengis.net/ont/geosparql#&#34;,
+            &#34;unit&#34;: &#34;http://codes.wmo.int/common/unit/&#34;,
+            &#34;@vocab&#34;: &#34;https://api.weather.gov/ontology#&#34;,
+            &#34;geometry&#34;: {
+                &#34;@id&#34;: &#34;s:GeoCoordinates&#34;,
+                &#34;@type&#34;: &#34;geo:wktLiteral&#34;
+            },
+            &#34;city&#34;: &#34;s:addressLocality&#34;,
+            &#34;state&#34;: &#34;s:addressRegion&#34;,
+            &#34;distance&#34;: {
+                &#34;@id&#34;: &#34;s:Distance&#34;,
+                &#34;@type&#34;: &#34;s:QuantitativeValue&#34;
+            },
+            &#34;bearing&#34;: {
+                &#34;@type&#34;: &#34;s:QuantitativeValue&#34;
+            },
+            &#34;value&#34;: {
+                &#34;@id&#34;: &#34;s:value&#34;
+            },
+            &#34;unitCode&#34;: {
+                &#34;@id&#34;: &#34;s:unitCode&#34;,
+                &#34;@type&#34;: &#34;@id&#34;
+            },
+            &#34;forecastOffice&#34;: {
+                &#34;@type&#34;: &#34;@id&#34;
+            },
+            &#34;forecastGridData&#34;: {
+                &#34;@type&#34;: &#34;@id&#34;
+            },
+            &#34;publicZone&#34;: {
+                &#34;@type&#34;: &#34;@id&#34;
+            },
+            &#34;county&#34;: {
+                &#34;@type&#34;: &#34;@id&#34;
+            }
+        }
+    ],
+    &#34;id&#34;: &#34;https://api.weather.gov/points/42.8864,-78.8784&#34;,
+    &#34;type&#34;: &#34;Feature&#34;,
+    &#34;geometry&#34;: {
+        &#34;type&#34;: &#34;Point&#34;,
+        &#34;coordinates&#34;: [
+            -78.878399999999999,
+            42.886400000000002
+        ]
+    },
+    &#34;properties&#34;: {
+        &#34;@id&#34;: &#34;https://api.weather.gov/points/42.8864,-78.8784&#34;,
+        &#34;@type&#34;: &#34;wx:Point&#34;,
+        &#34;cwa&#34;: &#34;BUF&#34;,
+        &#34;forecastOffice&#34;: &#34;https://api.weather.gov/offices/BUF&#34;,
+        &#34;gridId&#34;: &#34;BUF&#34;,
+        &#34;gridX&#34;: 35,
+        &#34;gridY&#34;: 46,
+        &#34;forecast&#34;: &#34;https://api.weather.gov/gridpoints/BUF/35,46/forecast&#34;,
+        &#34;forecastHourly&#34;: &#34;https://api.weather.gov/gridpoints/BUF/35,46/forecast/hourly&#34;,
+        &#34;forecastGridData&#34;: &#34;https://api.weather.gov/gridpoints/BUF/35,46&#34;,
+        &#34;observationStations&#34;: &#34;https://api.weather.gov/gridpoints/BUF/35,46/stations&#34;,
+        &#34;relativeLocation&#34;: {
+            &#34;type&#34;: &#34;Feature&#34;,
+            &#34;geometry&#34;: {
+                &#34;type&#34;: &#34;Point&#34;,
+                &#34;coordinates&#34;: [
+                    -78.859685999999996,
+                    42.892491999999997
+                ]
+            },
+            &#34;properties&#34;: {
+                &#34;city&#34;: &#34;Buffalo&#34;,
+                &#34;state&#34;: &#34;NY&#34;,
+                &#34;distance&#34;: {
+                    &#34;value&#34;: 1668.3272886451,
+                    &#34;unitCode&#34;: &#34;unit:m&#34;
+                },
+                &#34;bearing&#34;: {
+                    &#34;value&#34;: 246,
+                    &#34;unitCode&#34;: &#34;unit:degrees_true&#34;
+                }
+            }
+        },
+        &#34;forecastZone&#34;: &#34;https://api.weather.gov/zones/forecast/NYZ010&#34;,
+        &#34;county&#34;: &#34;https://api.weather.gov/zones/county/NYC029&#34;,
+        &#34;fireWeatherZone&#34;: &#34;https://api.weather.gov/zones/fire/NYZ010&#34;,
+        &#34;timeZone&#34;: &#34;America/New_York&#34;,
+        &#34;radarStation&#34;: &#34;KBUF&#34;
+    }
+}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="JSON">JSON<a class="anchor-link" href="#JSON">&#182;</a></h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[112]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[112]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;{\n    &#34;@context&#34;: [\n        &#34;https://geojson.org/geojson-ld/geojson-context.jsonld&#34;,\n        {\n     &#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[113]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[113]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;@context&#39;: [&#39;https://geojson.org/geojson-ld/geojson-context.jsonld&#39;,
+  {&#39;@version&#39;: &#39;1.1&#39;,
+   &#39;wx&#39;: &#39;https://api.weather.gov/ontology#&#39;,
+   &#39;s&#39;: &#39;https://schema.org/&#39;,
+   &#39;geo&#39;: &#39;http://www.opengis.net/ont/geosparql#&#39;,
+   &#39;unit&#39;: &#39;http://codes.wmo.int/common/unit/&#39;,
+   &#39;@vocab&#39;: &#39;https://api.weather.gov/ontology#&#39;,
+   &#39;geometry&#39;: {&#39;@id&#39;: &#39;s:GeoCoordinates&#39;, &#39;@type&#39;: &#39;geo:wktLiteral&#39;},
+   &#39;city&#39;: &#39;s:addressLocality&#39;,
+   &#39;state&#39;: &#39;s:addressRegion&#39;,
+   &#39;distance&#39;: {&#39;@id&#39;: &#39;s:Distance&#39;, &#39;@type&#39;: &#39;s:QuantitativeValue&#39;},
+   &#39;bearing&#39;: {&#39;@type&#39;: &#39;s:QuantitativeValue&#39;},
+   &#39;value&#39;: {&#39;@id&#39;: &#39;s:value&#39;},
+   &#39;unitCode&#39;: {&#39;@id&#39;: &#39;s:unitCode&#39;, &#39;@type&#39;: &#39;@id&#39;},
+   &#39;forecastOffice&#39;: {&#39;@type&#39;: &#39;@id&#39;},
+   &#39;forecastGridData&#39;: {&#39;@type&#39;: &#39;@id&#39;},
+   &#39;publicZone&#39;: {&#39;@type&#39;: &#39;@id&#39;},
+   &#39;county&#39;: {&#39;@type&#39;: &#39;@id&#39;}}],
+ &#39;id&#39;: &#39;https://api.weather.gov/points/42.8864,-78.8784&#39;,
+ &#39;type&#39;: &#39;Feature&#39;,
+ &#39;geometry&#39;: {&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-78.8784, 42.8864]},
+ &#39;properties&#39;: {&#39;@id&#39;: &#39;https://api.weather.gov/points/42.8864,-78.8784&#39;,
+  &#39;@type&#39;: &#39;wx:Point&#39;,
+  &#39;cwa&#39;: &#39;BUF&#39;,
+  &#39;forecastOffice&#39;: &#39;https://api.weather.gov/offices/BUF&#39;,
+  &#39;gridId&#39;: &#39;BUF&#39;,
+  &#39;gridX&#39;: 35,
+  &#39;gridY&#39;: 46,
+  &#39;forecast&#39;: &#39;https://api.weather.gov/gridpoints/BUF/35,46/forecast&#39;,
+  &#39;forecastHourly&#39;: &#39;https://api.weather.gov/gridpoints/BUF/35,46/forecast/hourly&#39;,
+  &#39;forecastGridData&#39;: &#39;https://api.weather.gov/gridpoints/BUF/35,46&#39;,
+  &#39;observationStations&#39;: &#39;https://api.weather.gov/gridpoints/BUF/35,46/stations&#39;,
+  &#39;relativeLocation&#39;: {&#39;type&#39;: &#39;Feature&#39;,
+   &#39;geometry&#39;: {&#39;type&#39;: &#39;Point&#39;, &#39;coordinates&#39;: [-78.859686, 42.892492]},
+   &#39;properties&#39;: {&#39;city&#39;: &#39;Buffalo&#39;,
+    &#39;state&#39;: &#39;NY&#39;,
+    &#39;distance&#39;: {&#39;value&#39;: 1668.3272886451, &#39;unitCode&#39;: &#39;unit:m&#39;},
+    &#39;bearing&#39;: {&#39;value&#39;: 246, &#39;unitCode&#39;: &#39;unit:degrees_true&#39;}}},
+  &#39;forecastZone&#39;: &#39;https://api.weather.gov/zones/forecast/NYZ010&#39;,
+  &#39;county&#39;: &#39;https://api.weather.gov/zones/county/NYC029&#39;,
+  &#39;fireWeatherZone&#39;: &#39;https://api.weather.gov/zones/fire/NYZ010&#39;,
+  &#39;timeZone&#39;: &#39;America/New_York&#39;,
+  &#39;radarStation&#39;: &#39;KBUF&#39;}}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[114]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;@context&quot;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[114]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;https://geojson.org/geojson-ld/geojson-context.jsonld&#39;,
+ {&#39;@version&#39;: &#39;1.1&#39;,
+  &#39;wx&#39;: &#39;https://api.weather.gov/ontology#&#39;,
+  &#39;s&#39;: &#39;https://schema.org/&#39;,
+  &#39;geo&#39;: &#39;http://www.opengis.net/ont/geosparql#&#39;,
+  &#39;unit&#39;: &#39;http://codes.wmo.int/common/unit/&#39;,
+  &#39;@vocab&#39;: &#39;https://api.weather.gov/ontology#&#39;,
+  &#39;geometry&#39;: {&#39;@id&#39;: &#39;s:GeoCoordinates&#39;, &#39;@type&#39;: &#39;geo:wktLiteral&#39;},
+  &#39;city&#39;: &#39;s:addressLocality&#39;,
+  &#39;state&#39;: &#39;s:addressRegion&#39;,
+  &#39;distance&#39;: {&#39;@id&#39;: &#39;s:Distance&#39;, &#39;@type&#39;: &#39;s:QuantitativeValue&#39;},
+  &#39;bearing&#39;: {&#39;@type&#39;: &#39;s:QuantitativeValue&#39;},
+  &#39;value&#39;: {&#39;@id&#39;: &#39;s:value&#39;},
+  &#39;unitCode&#39;: {&#39;@id&#39;: &#39;s:unitCode&#39;, &#39;@type&#39;: &#39;@id&#39;},
+  &#39;forecastOffice&#39;: {&#39;@type&#39;: &#39;@id&#39;},
+  &#39;forecastGridData&#39;: {&#39;@type&#39;: &#39;@id&#39;},
+  &#39;publicZone&#39;: {&#39;@type&#39;: &#39;@id&#39;},
+  &#39;county&#39;: {&#39;@type&#39;: &#39;@id&#39;}}]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[115]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[115]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;@context&#39;, &#39;id&#39;, &#39;type&#39;, &#39;geometry&#39;, &#39;properties&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[118]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">forecast_url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;forecast&quot;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[168]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">forecast_url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">1000</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{
+    &#34;@context&#34;: [
+        &#34;https://geojson.org/geojson-ld/geojson-context.jsonld&#34;,
+        {
+            &#34;@version&#34;: &#34;1.1&#34;,
+            &#34;wx&#34;: &#34;https://api.weather.gov/ontology#&#34;,
+            &#34;geo&#34;: &#34;http://www.opengis.net/ont/geosparql#&#34;,
+            &#34;unit&#34;: &#34;http://codes.wmo.int/common/unit/&#34;,
+            &#34;@vocab&#34;: &#34;https://api.weather.gov/ontology#&#34;
+        }
+    ],
+    &#34;type&#34;: &#34;Feature&#34;,
+    &#34;geometry&#34;: {
+        &#34;type&#34;: &#34;Polygon&#34;,
+        &#34;coordinates&#34;: [
+            [
+                [
+                    -78.882886600000006,
+                    42.898999699999997
+                ],
+                [
+                    -78.886394800000005,
+                    42.877477799999994
+                ],
+                [
+                    -78.857021799999998,
+                    42.874904999999991
+                ],
+                [
+                    -78.853507399999998,
+                    42.896426599999991
+                ],
+                [
+                    -78.8828866000
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[125]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">f</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[125]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;@context&#39;: [&#39;https://geojson.org/geojson-ld/geojson-context.jsonld&#39;,
+  {&#39;@version&#39;: &#39;1.1&#39;,
+   &#39;wx&#39;: &#39;https://api.weather.gov/ontology#&#39;,
+   &#39;geo&#39;: &#39;http://www.opengis.net/ont/geosparql#&#39;,
+   &#39;unit&#39;: &#39;http://codes.wmo.int/common/unit/&#39;,
+   &#39;@vocab&#39;: &#39;https://api.weather.gov/ontology#&#39;}],
+ &#39;type&#39;: &#39;Feature&#39;,
+ &#39;geometry&#39;: {&#39;type&#39;: &#39;Polygon&#39;,
+  &#39;coordinates&#39;: [[[-78.8828866, 42.8989997],
+    [-78.8863948, 42.877477799999994],
+    [-78.8570218, 42.87490499999999],
+    [-78.8535074, 42.89642659999999],
+    [-78.8828866, 42.8989997]]]},
+ &#39;properties&#39;: {&#39;updated&#39;: &#39;2021-03-25T14:39:54+00:00&#39;,
+  &#39;units&#39;: &#39;us&#39;,
+  &#39;forecastGenerator&#39;: &#39;BaselineForecastGenerator&#39;,
+  &#39;generatedAt&#39;: &#39;2021-03-25T17:19:22+00:00&#39;,
+  &#39;updateTime&#39;: &#39;2021-03-25T14:39:54+00:00&#39;,
+  &#39;validTimes&#39;: &#39;2021-03-25T08:00:00+00:00/P7DT17H&#39;,
+  &#39;elevation&#39;: {&#39;value&#39;: 184.0992, &#39;unitCode&#39;: &#39;unit:m&#39;},
+  &#39;periods&#39;: [{&#39;number&#39;: 1,
+    &#39;name&#39;: &#39;This Afternoon&#39;,
+    &#39;startTime&#39;: &#39;2021-03-25T13:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-25T18:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: True,
+    &#39;temperature&#39;: 61,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;7 to 12 mph&#39;,
+    &#39;windDirection&#39;: &#39;SW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/bkn?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Partly Sunny&#39;,
+    &#39;detailedForecast&#39;: &#39;Partly sunny, with a high near 61. Southwest wind 7 to 12 mph.&#39;},
+   {&#39;number&#39;: 2,
+    &#39;name&#39;: &#39;Tonight&#39;,
+    &#39;startTime&#39;: &#39;2021-03-25T18:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-26T06:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: False,
+    &#39;temperature&#39;: 53,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;2 to 9 mph&#39;,
+    &#39;windDirection&#39;: &#39;E&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/tsra,90/tsra,100?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Rain&#39;,
+    &#39;detailedForecast&#39;: &#39;A chance of rain showers between 8pm and 9pm, then rain likely between 9pm and 10pm, then rain and a chance of thunderstorms. Cloudy, with a low around 53. East wind 2 to 9 mph. Chance of precipitation is 100%. New rainfall amounts between a half and three quarters of an inch possible.&#39;},
+   {&#39;number&#39;: 3,
+    &#39;name&#39;: &#39;Friday&#39;,
+    &#39;startTime&#39;: &#39;2021-03-26T06:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-26T18:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: True,
+    &#39;temperature&#39;: 59,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: &#39;falling&#39;,
+    &#39;windSpeed&#39;: &#39;9 to 36 mph&#39;,
+    &#39;windDirection&#39;: &#39;SW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/tsra,90/tsra,60?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Showers And Thunderstorms&#39;,
+    &#39;detailedForecast&#39;: &#39;Showers and thunderstorms. Mostly cloudy. High near 59, with temperatures falling to around 43 in the afternoon. Southwest wind 9 to 36 mph, with gusts as high as 59 mph. Chance of precipitation is 90%. New rainfall amounts between a quarter and half of an inch possible.&#39;},
+   {&#39;number&#39;: 4,
+    &#39;name&#39;: &#39;Friday Night&#39;,
+    &#39;startTime&#39;: &#39;2021-03-26T18:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-27T06:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: False,
+    &#39;temperature&#39;: 35,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;7 to 29 mph&#39;,
+    &#39;windDirection&#39;: &#39;W&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,30/wind_bkn?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Chance Rain Showers then Mostly Cloudy&#39;,
+    &#39;detailedForecast&#39;: &#39;A chance of rain showers before 7pm. Mostly cloudy, with a low around 35. West wind 7 to 29 mph, with gusts as high as 44 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible.&#39;},
+   {&#39;number&#39;: 5,
+    &#39;name&#39;: &#39;Saturday&#39;,
+    &#39;startTime&#39;: &#39;2021-03-27T06:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-27T18:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: True,
+    &#39;temperature&#39;: 53,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;3 to 10 mph&#39;,
+    &#39;windDirection&#39;: &#39;SW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/sct?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Mostly Sunny&#39;,
+    &#39;detailedForecast&#39;: &#39;Mostly sunny, with a high near 53. Southwest wind 3 to 10 mph.&#39;},
+   {&#39;number&#39;: 6,
+    &#39;name&#39;: &#39;Saturday Night&#39;,
+    &#39;startTime&#39;: &#39;2021-03-27T18:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-28T06:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: False,
+    &#39;temperature&#39;: 44,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;3 to 8 mph&#39;,
+    &#39;windDirection&#39;: &#39;SE&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,30/rain_showers,70?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Rain Showers Likely&#39;,
+    &#39;detailedForecast&#39;: &#39;Rain showers likely after 8pm. Mostly cloudy, with a low around 44. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible.&#39;},
+   {&#39;number&#39;: 7,
+    &#39;name&#39;: &#39;Sunday&#39;,
+    &#39;startTime&#39;: &#39;2021-03-28T06:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-28T18:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: True,
+    &#39;temperature&#39;: 54,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;10 to 20 mph&#39;,
+    &#39;windDirection&#39;: &#39;SW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/rain_showers,70/rain_showers,60?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Rain Showers Likely&#39;,
+    &#39;detailedForecast&#39;: &#39;Rain showers likely. Mostly cloudy, with a high near 54. Chance of precipitation is 70%.&#39;},
+   {&#39;number&#39;: 8,
+    &#39;name&#39;: &#39;Sunday Night&#39;,
+    &#39;startTime&#39;: &#39;2021-03-28T18:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-29T06:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: False,
+    &#39;temperature&#39;: 31,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;16 to 20 mph&#39;,
+    &#39;windDirection&#39;: &#39;NW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,40/snow,30?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Chance Rain Showers then Chance Rain And Snow Showers&#39;,
+    &#39;detailedForecast&#39;: &#39;A chance of rain showers before 1am, then a chance of rain and snow showers. Mostly cloudy, with a low around 31. Chance of precipitation is 40%.&#39;},
+   {&#39;number&#39;: 9,
+    &#39;name&#39;: &#39;Monday&#39;,
+    &#39;startTime&#39;: &#39;2021-03-29T06:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-29T18:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: True,
+    &#39;temperature&#39;: 42,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;12 to 16 mph&#39;,
+    &#39;windDirection&#39;: &#39;NW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/snow,30/sct?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Chance Snow Showers then Mostly Sunny&#39;,
+    &#39;detailedForecast&#39;: &#39;A chance of snow showers before 8am. Mostly sunny, with a high near 42. Chance of precipitation is 30%.&#39;},
+   {&#39;number&#39;: 10,
+    &#39;name&#39;: &#39;Monday Night&#39;,
+    &#39;startTime&#39;: &#39;2021-03-29T18:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-30T06:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: False,
+    &#39;temperature&#39;: 31,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;6 to 10 mph&#39;,
+    &#39;windDirection&#39;: &#39;SW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/few?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Mostly Clear&#39;,
+    &#39;detailedForecast&#39;: &#39;Mostly clear, with a low around 31.&#39;},
+   {&#39;number&#39;: 11,
+    &#39;name&#39;: &#39;Tuesday&#39;,
+    &#39;startTime&#39;: &#39;2021-03-30T06:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-30T18:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: True,
+    &#39;temperature&#39;: 57,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;7 to 12 mph&#39;,
+    &#39;windDirection&#39;: &#39;S&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/few?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Sunny&#39;,
+    &#39;detailedForecast&#39;: &#39;Sunny, with a high near 57.&#39;},
+   {&#39;number&#39;: 12,
+    &#39;name&#39;: &#39;Tuesday Night&#39;,
+    &#39;startTime&#39;: &#39;2021-03-30T18:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-31T06:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: False,
+    &#39;temperature&#39;: 45,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;10 to 14 mph&#39;,
+    &#39;windDirection&#39;: &#39;S&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Slight Chance Rain Showers&#39;,
+    &#39;detailedForecast&#39;: &#39;A slight chance of rain showers after 8pm. Partly cloudy, with a low around 45.&#39;},
+   {&#39;number&#39;: 13,
+    &#39;name&#39;: &#39;Wednesday&#39;,
+    &#39;startTime&#39;: &#39;2021-03-31T06:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-03-31T18:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: True,
+    &#39;temperature&#39;: 59,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;15 mph&#39;,
+    &#39;windDirection&#39;: &#39;SW&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/rain_showers,50?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Chance Rain Showers&#39;,
+    &#39;detailedForecast&#39;: &#39;A chance of rain showers. Mostly cloudy, with a high near 59. Chance of precipitation is 50%.&#39;},
+   {&#39;number&#39;: 14,
+    &#39;name&#39;: &#39;Wednesday Night&#39;,
+    &#39;startTime&#39;: &#39;2021-03-31T18:00:00-04:00&#39;,
+    &#39;endTime&#39;: &#39;2021-04-01T06:00:00-04:00&#39;,
+    &#39;isDaytime&#39;: False,
+    &#39;temperature&#39;: 35,
+    &#39;temperatureUnit&#39;: &#39;F&#39;,
+    &#39;temperatureTrend&#39;: None,
+    &#39;windSpeed&#39;: &#39;9 to 14 mph&#39;,
+    &#39;windDirection&#39;: &#39;W&#39;,
+    &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,50?size=medium&#39;,
+    &#39;shortForecast&#39;: &#39;Chance Rain Showers&#39;,
+    &#39;detailedForecast&#39;: &#39;A chance of rain showers. Mostly cloudy, with a low around 35. Chance of precipitation is 50%.&#39;}]}}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[126]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[126]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[&#39;@context&#39;, &#39;type&#39;, &#39;geometry&#39;, &#39;properties&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[128]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">per</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;periods&quot;</span><span class="p">]</span>
+<span class="n">per</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[128]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[{&#39;number&#39;: 1,
+  &#39;name&#39;: &#39;This Afternoon&#39;,
+  &#39;startTime&#39;: &#39;2021-03-25T13:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-25T18:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: True,
+  &#39;temperature&#39;: 61,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;7 to 12 mph&#39;,
+  &#39;windDirection&#39;: &#39;SW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/bkn?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Partly Sunny&#39;,
+  &#39;detailedForecast&#39;: &#39;Partly sunny, with a high near 61. Southwest wind 7 to 12 mph.&#39;},
+ {&#39;number&#39;: 2,
+  &#39;name&#39;: &#39;Tonight&#39;,
+  &#39;startTime&#39;: &#39;2021-03-25T18:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-26T06:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: False,
+  &#39;temperature&#39;: 53,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;2 to 9 mph&#39;,
+  &#39;windDirection&#39;: &#39;E&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/tsra,90/tsra,100?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Rain&#39;,
+  &#39;detailedForecast&#39;: &#39;A chance of rain showers between 8pm and 9pm, then rain likely between 9pm and 10pm, then rain and a chance of thunderstorms. Cloudy, with a low around 53. East wind 2 to 9 mph. Chance of precipitation is 100%. New rainfall amounts between a half and three quarters of an inch possible.&#39;},
+ {&#39;number&#39;: 3,
+  &#39;name&#39;: &#39;Friday&#39;,
+  &#39;startTime&#39;: &#39;2021-03-26T06:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-26T18:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: True,
+  &#39;temperature&#39;: 59,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: &#39;falling&#39;,
+  &#39;windSpeed&#39;: &#39;9 to 36 mph&#39;,
+  &#39;windDirection&#39;: &#39;SW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/tsra,90/tsra,60?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Showers And Thunderstorms&#39;,
+  &#39;detailedForecast&#39;: &#39;Showers and thunderstorms. Mostly cloudy. High near 59, with temperatures falling to around 43 in the afternoon. Southwest wind 9 to 36 mph, with gusts as high as 59 mph. Chance of precipitation is 90%. New rainfall amounts between a quarter and half of an inch possible.&#39;},
+ {&#39;number&#39;: 4,
+  &#39;name&#39;: &#39;Friday Night&#39;,
+  &#39;startTime&#39;: &#39;2021-03-26T18:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-27T06:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: False,
+  &#39;temperature&#39;: 35,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;7 to 29 mph&#39;,
+  &#39;windDirection&#39;: &#39;W&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,30/wind_bkn?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Chance Rain Showers then Mostly Cloudy&#39;,
+  &#39;detailedForecast&#39;: &#39;A chance of rain showers before 7pm. Mostly cloudy, with a low around 35. West wind 7 to 29 mph, with gusts as high as 44 mph. Chance of precipitation is 30%. New rainfall amounts less than a tenth of an inch possible.&#39;},
+ {&#39;number&#39;: 5,
+  &#39;name&#39;: &#39;Saturday&#39;,
+  &#39;startTime&#39;: &#39;2021-03-27T06:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-27T18:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: True,
+  &#39;temperature&#39;: 53,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;3 to 10 mph&#39;,
+  &#39;windDirection&#39;: &#39;SW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/sct?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Mostly Sunny&#39;,
+  &#39;detailedForecast&#39;: &#39;Mostly sunny, with a high near 53. Southwest wind 3 to 10 mph.&#39;},
+ {&#39;number&#39;: 6,
+  &#39;name&#39;: &#39;Saturday Night&#39;,
+  &#39;startTime&#39;: &#39;2021-03-27T18:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-28T06:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: False,
+  &#39;temperature&#39;: 44,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;3 to 8 mph&#39;,
+  &#39;windDirection&#39;: &#39;SE&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,30/rain_showers,70?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Rain Showers Likely&#39;,
+  &#39;detailedForecast&#39;: &#39;Rain showers likely after 8pm. Mostly cloudy, with a low around 44. Chance of precipitation is 70%. New rainfall amounts between a tenth and quarter of an inch possible.&#39;},
+ {&#39;number&#39;: 7,
+  &#39;name&#39;: &#39;Sunday&#39;,
+  &#39;startTime&#39;: &#39;2021-03-28T06:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-28T18:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: True,
+  &#39;temperature&#39;: 54,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;10 to 20 mph&#39;,
+  &#39;windDirection&#39;: &#39;SW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/rain_showers,70/rain_showers,60?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Rain Showers Likely&#39;,
+  &#39;detailedForecast&#39;: &#39;Rain showers likely. Mostly cloudy, with a high near 54. Chance of precipitation is 70%.&#39;},
+ {&#39;number&#39;: 8,
+  &#39;name&#39;: &#39;Sunday Night&#39;,
+  &#39;startTime&#39;: &#39;2021-03-28T18:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-29T06:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: False,
+  &#39;temperature&#39;: 31,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;16 to 20 mph&#39;,
+  &#39;windDirection&#39;: &#39;NW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,40/snow,30?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Chance Rain Showers then Chance Rain And Snow Showers&#39;,
+  &#39;detailedForecast&#39;: &#39;A chance of rain showers before 1am, then a chance of rain and snow showers. Mostly cloudy, with a low around 31. Chance of precipitation is 40%.&#39;},
+ {&#39;number&#39;: 9,
+  &#39;name&#39;: &#39;Monday&#39;,
+  &#39;startTime&#39;: &#39;2021-03-29T06:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-29T18:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: True,
+  &#39;temperature&#39;: 42,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;12 to 16 mph&#39;,
+  &#39;windDirection&#39;: &#39;NW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/snow,30/sct?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Chance Snow Showers then Mostly Sunny&#39;,
+  &#39;detailedForecast&#39;: &#39;A chance of snow showers before 8am. Mostly sunny, with a high near 42. Chance of precipitation is 30%.&#39;},
+ {&#39;number&#39;: 10,
+  &#39;name&#39;: &#39;Monday Night&#39;,
+  &#39;startTime&#39;: &#39;2021-03-29T18:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-30T06:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: False,
+  &#39;temperature&#39;: 31,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;6 to 10 mph&#39;,
+  &#39;windDirection&#39;: &#39;SW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/few?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Mostly Clear&#39;,
+  &#39;detailedForecast&#39;: &#39;Mostly clear, with a low around 31.&#39;},
+ {&#39;number&#39;: 11,
+  &#39;name&#39;: &#39;Tuesday&#39;,
+  &#39;startTime&#39;: &#39;2021-03-30T06:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-30T18:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: True,
+  &#39;temperature&#39;: 57,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;7 to 12 mph&#39;,
+  &#39;windDirection&#39;: &#39;S&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/few?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Sunny&#39;,
+  &#39;detailedForecast&#39;: &#39;Sunny, with a high near 57.&#39;},
+ {&#39;number&#39;: 12,
+  &#39;name&#39;: &#39;Tuesday Night&#39;,
+  &#39;startTime&#39;: &#39;2021-03-30T18:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-31T06:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: False,
+  &#39;temperature&#39;: 45,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;10 to 14 mph&#39;,
+  &#39;windDirection&#39;: &#39;S&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Slight Chance Rain Showers&#39;,
+  &#39;detailedForecast&#39;: &#39;A slight chance of rain showers after 8pm. Partly cloudy, with a low around 45.&#39;},
+ {&#39;number&#39;: 13,
+  &#39;name&#39;: &#39;Wednesday&#39;,
+  &#39;startTime&#39;: &#39;2021-03-31T06:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-03-31T18:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: True,
+  &#39;temperature&#39;: 59,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;15 mph&#39;,
+  &#39;windDirection&#39;: &#39;SW&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/day/rain_showers,50?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Chance Rain Showers&#39;,
+  &#39;detailedForecast&#39;: &#39;A chance of rain showers. Mostly cloudy, with a high near 59. Chance of precipitation is 50%.&#39;},
+ {&#39;number&#39;: 14,
+  &#39;name&#39;: &#39;Wednesday Night&#39;,
+  &#39;startTime&#39;: &#39;2021-03-31T18:00:00-04:00&#39;,
+  &#39;endTime&#39;: &#39;2021-04-01T06:00:00-04:00&#39;,
+  &#39;isDaytime&#39;: False,
+  &#39;temperature&#39;: 35,
+  &#39;temperatureUnit&#39;: &#39;F&#39;,
+  &#39;temperatureTrend&#39;: None,
+  &#39;windSpeed&#39;: &#39;9 to 14 mph&#39;,
+  &#39;windDirection&#39;: &#39;W&#39;,
+  &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,50?size=medium&#39;,
+  &#39;shortForecast&#39;: &#39;Chance Rain Showers&#39;,
+  &#39;detailedForecast&#39;: &#39;A chance of rain showers. Mostly cloudy, with a low around 35. Chance of precipitation is 50%.&#39;}]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[167]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span>  <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s2">&quot;properties&quot;</span><span class="p">][</span><span class="s2">&quot;periods&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">p</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[167]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;number&#39;: 14,
+ &#39;name&#39;: &#39;Wednesday Night&#39;,
+ &#39;startTime&#39;: &#39;2021-03-31T18:00:00-04:00&#39;,
+ &#39;endTime&#39;: &#39;2021-04-01T06:00:00-04:00&#39;,
+ &#39;isDaytime&#39;: False,
+ &#39;temperature&#39;: 35,
+ &#39;temperatureUnit&#39;: &#39;F&#39;,
+ &#39;temperatureTrend&#39;: None,
+ &#39;windSpeed&#39;: &#39;9 to 14 mph&#39;,
+ &#39;windDirection&#39;: &#39;W&#39;,
+ &#39;icon&#39;: &#39;https://api.weather.gov/icons/land/night/rain_showers,50?size=medium&#39;,
+ &#39;shortForecast&#39;: &#39;Chance Rain Showers&#39;,
+ &#39;detailedForecast&#39;: &#39;A chance of rain showers. Mostly cloudy, with a low around 35. Chance of precipitation is 50%.&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[142]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[142]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;Wednesday Night&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[143]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s2">&quot;temperature&quot;</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;temperatureUnit&#39;</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>35 F
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[144]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wind:&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;windSpeed&#39;</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;windDirection&#39;</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Wind: 9 to 14 mph W
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[145]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span><span class="p">[</span><span class="s1">&#39;detailedForecast&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[145]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;A chance of rain showers. Mostly cloudy, with a low around 35. Chance of precipitation is 50%.&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Nominatim-API">Nominatim API<a class="anchor-link" href="#Nominatim-API">&#182;</a></h2>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[164]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nominatim_url</span> <span class="o">=</span> <span class="s2">&quot;https://nominatim.openstreetmap.org/search&quot;</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Buffalo&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;NY&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span>
+         <span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">nominatim_url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[165]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[165]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;https://nominatim.openstreetmap.org/search?city=Buffalo&amp;state=NY&amp;format=json&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[166]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[166]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;[{&#34;place_id&#34;:258446311,&#34;licence&#34;:&#34;Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright&#34;,&#34;osm_type&#34;:&#34;relation&#34;,&#34;osm_id&#34;:175031,&#34;boundingbox&#34;:[&#34;42.8260387&#34;,&#34;42.9664686&#34;,&#34;-78.9194528&#34;,&#34;-78.7951677&#34;],&#34;lat&#34;:&#34;42.8867166&#34;,&#34;lon&#34;:&#34;-78.8783922&#34;,&#34;display_name&#34;:&#34;Buffalo, Erie County, New York, United States&#34;,&#34;class&#34;:&#34;boundary&#34;,&#34;type&#34;:&#34;administrative&#34;,&#34;importance&#34;:0.7329312091953605,&#34;icon&#34;:&#34;https://nominatim.openstreetmap.org/ui/mapicons//poi_boundary_administrative.p.20.png&#34;},{&#34;place_id&#34;:457286,&#34;licence&#34;:&#34;Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright&#34;,&#34;osm_type&#34;:&#34;node&#34;,&#34;osm_id&#34;:158576897,&#34;boundingbox&#34;:[&#34;42.9183918&#34;,&#34;42.9583918&#34;,&#34;-78.7047515&#34;,&#34;-78.6647515&#34;],&#34;lat&#34;:&#34;42.9383918&#34;,&#34;lon&#34;:&#34;-78.6847515&#34;,&#34;display_name&#34;:&#34;Bowmansville, Lancaster, Erie County, New York, 14026, United States&#34;,&#34;class&#34;:&#34;place&#34;,&#34;type&#34;:&#34;hamlet&#34;,&#34;importance&#34;:0.25,&#34;icon&#34;:&#34;https://nominatim.openstreetmap.org/ui/mapicons//poi_place_village.p.20.png&#34;}]&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[154]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">data</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[154]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[{&#39;place_id&#39;: 258446311,
+  &#39;licence&#39;: &#39;Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright&#39;,
+  &#39;osm_type&#39;: &#39;relation&#39;,
+  &#39;osm_id&#39;: 175031,
+  &#39;boundingbox&#39;: [&#39;42.8260387&#39;, &#39;42.9664686&#39;, &#39;-78.9194528&#39;, &#39;-78.7951677&#39;],
+  &#39;lat&#39;: &#39;42.8867166&#39;,
+  &#39;lon&#39;: &#39;-78.8783922&#39;,
+  &#39;display_name&#39;: &#39;Buffalo, Erie County, New York, United States&#39;,
+  &#39;class&#39;: &#39;boundary&#39;,
+  &#39;type&#39;: &#39;administrative&#39;,
+  &#39;importance&#39;: 0.7329312091953605,
+  &#39;icon&#39;: &#39;https://nominatim.openstreetmap.org/ui/mapicons//poi_boundary_administrative.p.20.png&#39;},
+ {&#39;place_id&#39;: 457286,
+  &#39;licence&#39;: &#39;Data © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright&#39;,
+  &#39;osm_type&#39;: &#39;node&#39;,
+  &#39;osm_id&#39;: 158576897,
+  &#39;boundingbox&#39;: [&#39;42.9183918&#39;, &#39;42.9583918&#39;, &#39;-78.7047515&#39;, &#39;-78.6647515&#39;],
+  &#39;lat&#39;: &#39;42.9383918&#39;,
+  &#39;lon&#39;: &#39;-78.6847515&#39;,
+  &#39;display_name&#39;: &#39;Bowmansville, Lancaster, Erie County, New York, 14026, United States&#39;,
+  &#39;class&#39;: &#39;place&#39;,
+  &#39;type&#39;: &#39;hamlet&#39;,
+  &#39;importance&#39;: 0.25,
+  &#39;icon&#39;: &#39;https://nominatim.openstreetmap.org/ui/mapicons//poi_place_village.p.20.png&#39;}]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[156]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;lat&quot;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[156]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;42.8867166&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[157]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;lon&quot;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[157]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;-78.8783922&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>

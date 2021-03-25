@@ -437,164 +437,60 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Week-9-(3/29-4/4)">
 <h1>Week 9 (3/29-4/4)<a class="headerlink" href="#Week-9-(3/29-4/4)" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="KDE-and-Bayes-Classification">
-<h2>KDE and Bayes Classification<a class="headerlink" href="#KDE-and-Bayes-Classification" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="Data-formats">
+<h2>Data formats<a class="headerlink" href="#Data-formats" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../Tools/json/json.html"><span class="doc">JSON</span></a></p></li>
+<li><p>Dates and times</p></li>
+</ul>
 </div>
 <div class="section" id="Project">
 <h2>Project<a class="headerlink" href="#Project" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../Projects/kde_marathon_results/kde_marathon_results.html"><span class="doc">KDE and marathon results</span></a></p></li>
+<li><p><a class="reference internal" href="../Projects/discord_logs/discord_logs.html"><span class="doc">Discord logs</span></a></p></li>
 </ul>
 </div>
 <div class="section" id="Resources">
 <h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="1.-Histogram-demo">
-<h3>1. Histogram demo<a class="headerlink" href="#1.-Histogram-demo" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="1.-OpenCage-Geocoding-API">
+<h3>1. OpenCage Geocoding API<a class="headerlink" href="#1.-OpenCage-Geocoding-API" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://opencagedata.com/">Documentation</a></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">oc_url</span> <span class="o">=</span>  <span class="s2">&quot;https://api.opencagedata.com/geocode/v1/json&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="2.-DataFrame-with-times">
+<h3>2. DataFrame with times<a class="headerlink" href="#2.-DataFrame-with-times" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">fixed</span>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;bmh&#39;</span><span class="p">)</span>
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
-
-
-<span class="k">def</span> <span class="nf">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Plots a histogram of data.</span>
-
-<span class="sd">    bins:</span>
-<span class="sd">        number of bins</span>
-<span class="sd">    shift:</span>
-<span class="sd">        shift of bin boundaries.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-    <span class="n">max_shift</span> <span class="o">=</span> <span class="mi">5</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">max_shift</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="n">max_shift</span><span class="p">)</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
-                 <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;density&quot;</span><span class="p">,</span>
-                 <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-                 <span class="n">binrange</span> <span class="o">=</span>  <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="n">max_shift</span> <span class="o">+</span> <span class="n">shift</span><span class="p">,</span>
-                               <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="n">max_shift</span> <span class="o">+</span> <span class="n">shift</span><span class="p">)</span>
-                <span class="p">)</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">rugplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-<span class="n">interact</span><span class="p">(</span><span class="n">hist</span><span class="p">,</span> <span class="n">shift</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">fixed</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="2.-KDE-plot">
-<h3>2. KDE plot<a class="headerlink" href="#2.-KDE-plot" title="Permalink to this headline">¶</a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
-
-<span class="k">def</span> <span class="nf">kde</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Compute KDE of data with  Gaussian kernels</span>
-
-<span class="sd">    x:</span>
-<span class="sd">       KDE values will be computed for elements</span>
-<span class="sd">       of this array.</span>
-<span class="sd">    h:</span>
-<span class="sd">       Kernel bandwidth</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">X</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">y</span> <span class="o">+=</span> <span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">y</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">plot_kde</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">show_kernels</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Plot KDE</span>
-
-<span class="sd">    data:</span>
-<span class="sd">        An array with data defining KDE.</span>
-<span class="sd">    h:</span>
-<span class="sd">        Kernel bandwidth.</span>
-<span class="sd">    show_kernels:</span>
-<span class="sd">        Boolean. If true, individual kernels are</span>
-<span class="sd">        plotted too.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kde</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="s1">&#39;r|&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">show_kernels</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">X</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">*</span><span class="n">ker</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">h</span><span class="p">),</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="4.-KDE-integral-widget">
-<h3>4. KDE integral widget<a class="headerlink" href="#4.-KDE-integral-widget" title="Permalink to this headline">¶</a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">from</span>  <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gaussian_kde</span>
-
-<span class="k">def</span> <span class="nf">integrate</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">12</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Plot integral of KDE</span>
-
-<span class="sd">    data:</span>
-<span class="sd">        An array with data defining KDE</span>
-<span class="sd">    lower, upper:</span>
-<span class="sd">        Limits of integration.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">kde_data</span> <span class="o">=</span> <span class="n">gaussian_kde</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">integral</span> <span class="o">=</span> <span class="n">kde_data</span><span class="o">.</span><span class="n">integrate_box</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">)</span>
-    <span class="n">xfill</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">lower</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-
-    <span class="n">x_min</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="n">x_max</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">x_min</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;$\int^</span><span class="se">{{</span><span class="si">{</span><span class="n">upper</span><span class="si">:</span><span class="s2">.2f</span><span class="se">}}</span><span class="si">}</span><span class="s2">_</span><span class="se">{{</span><span class="si">{</span><span class="n">lower</span><span class="si">:</span><span class="s2">.2f</span><span class="se">}}</span><span class="si">}</span><span class="s2">f(t)dt = </span><span class="si">{</span><span class="n">integral</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span>
-              <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-              <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">kde_data</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">lower</span> <span class="o">&lt;=</span> <span class="n">upper</span><span class="p">:</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xfill</span><span class="p">,</span>
-                         <span class="n">kde_data</span><span class="p">(</span><span class="n">xfill</span><span class="p">),</span>
-                         <span class="mi">0</span><span class="p">,</span>
-                         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span>
-                         <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="s1">&#39;r|&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-
-<span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
-<span class="n">interact</span><span class="p">(</span><span class="n">integrate</span><span class="p">,</span>
-         <span class="n">data</span><span class="o">=</span><span class="n">fixed</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
-         <span class="n">lower</span><span class="o">=</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
-         <span class="n">upper</span><span class="o">=</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">));</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T23:03:12.351+00:00&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T23:04:08.669+00:00&#39;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-05T12:12:12.010+00:00&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-05T17:56:17.123+00:00&#39;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T13:29:45.594+00:00&#39;</span><span class="p">,</span>
+        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-06T00:04:46.032+00:00&#39;</span>
+    <span class="p">},</span>
+<span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -624,7 +520,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 22, 2021.
+        Last updated on Mar 25, 2021.
       </span>
 
     </p>

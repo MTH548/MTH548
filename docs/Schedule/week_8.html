@@ -122,8 +122,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#2.-Sample-SVG-files">2. Sample SVG files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#3.-National-Weather-Service-API">3. National Weather Service API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#4.-Nominatim-API">4. Nominatim API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#5.-OpenCage-Geocoding-API">5. OpenCage Geocoding API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#6.-DataFrame-with-times">6. DataFrame with times</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#Exercise">Exercise</a></li>
@@ -457,13 +455,14 @@ div.rendered_html tbody tr:hover {
 <h2>Zoom Recordings<a class="headerlink" href="#Zoom-Recordings" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7edcc6fb-0b2f-4916-9886-acf4013e4dae">Tuesday</a></p></li>
+<li><p><a class="reference external" href="https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6fd390a5-d43d-422b-894f-acf6012c6fee">Thursday</a></p></li>
 </ul>
 </div>
 <div class="section" id="Notebook">
 <h2>Notebook<a class="headerlink" href="#Notebook" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="../_static/weekly_notebooks/week_8_class.html">View online</a></p></li>
-<li><p>Download the notebook file: <a class="reference external" href="../_static/weekly_notebooks/week_8_class.ipynb">week_7_class.ipynb</a>.</p></li>
+<li><p>Download the notebook file: <a class="reference external" href="../_static/weekly_notebooks/week_8_class.ipynb">week_8_class.ipynb</a>.</p></li>
 </ul>
 </div>
 <div class="section" id="Data-formats">
@@ -553,49 +552,6 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="n">nominatim_url</span> <span class="o">=</span> <span class="s2">&quot;https://nominatim.openstreetmap.org/search&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="5.-OpenCage-Geocoding-API">
-<h3>5. OpenCage Geocoding API<a class="headerlink" href="#5.-OpenCage-Geocoding-API" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://opencagedata.com/">Documentation</a></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">oc_url</span> <span class="o">=</span>  <span class="s2">&quot;https://api.opencagedata.com/geocode/v1/json&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="6.-DataFrame-with-times">
-<h3>6. DataFrame with times<a class="headerlink" href="#6.-DataFrame-with-times" title="Permalink to this headline">¶</a></h3>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_1&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T23:03:12.351+00:00&#39;</span><span class="p">,</span>
-        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T23:04:08.669+00:00&#39;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_2&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-05T12:12:12.010+00:00&#39;</span><span class="p">,</span>
-        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-05T17:56:17.123+00:00&#39;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-        <span class="s2">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;event_3&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-04T13:29:45.594+00:00&#39;</span><span class="p">,</span>
-        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="s1">&#39;2021-03-06T00:04:46.032+00:00&#39;</span>
-    <span class="p">},</span>
-<span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -727,7 +683,7 @@ high near 45. Chance of precipitation is 30%.
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 24, 2021.
+        Last updated on Mar 25, 2021.
       </span>
 
     </p>
