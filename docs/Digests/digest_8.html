@@ -47,7 +47,9 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 9 (3/29-4/4)" href="../Schedule/week_9.html" />
+    <link rel="prev" title="Week 8 (3/22-3/28)" href="../Schedule/week_8.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,7 +103,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Schedule</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
@@ -110,7 +112,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_5.html">Week 5 (3/1-3/7)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_6.html">Week 6 (3/8-3/14)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_7.html">Week 7 (3/15-3/21)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_8.html">Week 8 (3/22-3/28)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Schedule/week_8.html">Week 8 (3/22-3/28)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_8.html#Zoom-Recordings">Zoom Recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_8.html#Notebook">Notebook</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Schedule/week_8.html#Weekly-digests">Weekly digests</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Weekly Digest 8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_8.html#Data-formats">Data formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_8.html#lxml-installation">lxml installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_8.html#Resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_8.html#Exercise">Exercise</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_9.html">Week 9 (3/29-4/4)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
@@ -176,6 +190,8 @@
     
       <li><a href="../master.html">MTH 448/548</a> &raquo;</li>
         
+          <li><a href="../Schedule/week_8.html">Week 8 (3/22-3/28)</a> &raquo;</li>
+        
       <li>Weekly Digest 8</li>
     
     
@@ -234,7 +250,7 @@ the parser anyway.</p>
 <blockquote>
 <div><p>why for the clear_output, if I don’t put wait=True, the picture is very lag?</p>
 </div></blockquote>
-<p>In the <cite>clear_output()</cite> function <cite>wait=True</cite> assures that the display is cleared only
+<p>In the <code class="docutils literal notranslate"><span class="pre">clear_output()</span></code> function <code class="docutils literal notranslate"><span class="pre">wait=True</span></code> assures that the display is cleared only
 when there is new content ready to replace it. If your computer takes longer time to
 produce the new content then it will create lag.</p>
 <p><strong>Houlin asks:</strong></p>
@@ -255,14 +271,14 @@ in some respect. There will be no separate extra credit assignments.</p>
 <div><p>We can use api to get data from website. Can we use api to do more things to website?
 Like change some material on website.</p>
 </div></blockquote>
-<p>Yes, if the API provides such functionality. For example, Twitter API lets one post
-new tweets, Wikipedia API allows one edit Wikipedia pages etc.</p>
+<p>Yes, if the API provides such functionality. For example, using Twitter API we can post
+new tweets, using Wikipedia API we can edit Wikipedia pages etc.</p>
 <p><strong>Alex asks:</strong></p>
 <blockquote>
 <div><p>Is there a way to check our mid semester grades so far?</p>
 </div></blockquote>
 <p>80% of the final grade is based on project reports, so you can take the average of report grades.
-The grade may be somewhat lower or higher depending on the other 20% which are based on
+Your grade may be somewhat lower or higher depending on the other 20% which are based on
 attendance and weekly digest submissions. If you assume that you are getting an “A” on the 20%
 and combine it with your report grade average for the remaining 80%, it will give you the upper
 estimate of the grade you can get at this point.</p>
@@ -289,17 +305,17 @@ By constantly scrapping or requesting something really fast.) If it is, what’s
 spacing time  between two operation(because sometimes when we are on the website, we click
 fast as well).</p>
 </div></blockquote>
-<p>You <a class="reference external" href="https://parsers.me/us-court-fully-legalized-website-scraping-and-technically-prohibited-it/">US courts ruled</a>
+<p><a class="reference external" href="https://parsers.me/us-court-fully-legalized-website-scraping-and-technically-prohibited-it/">US courts ruled</a>
 that one can legally scrap any website. At the same time website owners can use tools
 (capchas, cookies, fingerprinting etc.) to make scrapping more difficult. Even sites that
-are scrapping-friendly may block your ip address if you create problems - e.g. by sending
+are scrapping-friendly may block your ip address if you create problems by sending
 requests too fast, ignoring robots.txt rules, not providing a meaningful User-Agent etc.
-The reasonable rate of requests you make will depend on a website. Heavily used websites will
+A reasonable rate of requests you make will depend on the website. Heavily used websites will
 be able to handle thousands of requests per second without issues, but for a website hosted
-on a small web server this number will be much smaller. One request per second should be good
-in all circumstances. It is true that you can send more requests manually if you click fast on
-a link in a web browser, but a Python script with asynchronous code will be able to send more
-than a thousand of requests per second  - much more that you would be able to produce by clicking,
+on a small web server this number will be much smaller. One request per second or so should be
+good in most circumstances. It is true that you can send more requests manually if you click fast on
+a link in a web browser, but a Python script with asynchronous code will be able to send over
+1000 requests per second  - much more that you would be able to produce by clicking,
 and enough to put a strain on many web servers.</p>
 <p><strong>Miguel asks:</strong></p>
 <blockquote>
@@ -312,7 +328,7 @@ the focus will shift from introducing new libraries to other content.</p>
 <blockquote>
 <div><p>How many more large projects do we have left?</p>
 </div></blockquote>
-<p>We should have time for 3-4 projects.</p>
+<p>We should have time for 3-4 more projects.</p>
 <p><strong>Sai asks:</strong></p>
 <blockquote>
 <div><p>Is there any regrading opp. for the assignments graded ?</p>
@@ -330,9 +346,9 @@ Example: to get the 50 top male marathon runners I used the webpage to first fin
 this info and used that URL. Is there another way to get to this information without
 putting the exact URL into the program we write?</p>
 </div></blockquote>
-<p>Yes, if a webpage contains a form it is possible to supply its values and submit the form
-from a Python script. Here how could be done with the form posted on the Chicago marathon
-results website:</p>
+<p>If a webpage contains a form it is possible to supply its values and submit the form
+from a Python script. Here is how this could be done with the form posted on the Chicago
+marathon results website:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
   <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://results.chicagomarathon.com/well-known/2019/?pid=list&quot;</span>
@@ -350,8 +366,9 @@ results website:</p>
 </pre></div>
 </div>
 <p>Submitting forms typically requires sending a POST request (as opposed to GET),
-but the Chicago marathon website seems to work with both kinds. The parameters
-that need to be send can be determined looking at the HTML code of the form.</p>
+which is why the last line uses <code class="docutils literal notranslate"><span class="pre">requests.post()</span></code> and not <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code>.
+The parameters of the request can be determined looking at the HTML code
+of the form.</p>
 <p><strong>Matthew asks:</strong></p>
 <blockquote>
 <div><p>I know we’ve been using Jupyter notebook for this course, but do you have
@@ -363,14 +380,15 @@ other good options.</p>
 <blockquote>
 <div><p>Was wondering what the class average grade of the previous project is</p>
 </div></blockquote>
-<p>The average on project 3 was a B (numerically 2.98/4.0).</p>
+<p>The average project 3 grade was a B (numerically: 2.98/4.0).</p>
 <p><strong>Waleed asks:</strong></p>
 <blockquote>
 <div><p>Whats the minimum amount of time we have to use the sleep function when
 web scraping without getting our IP restricted?</p>
 </div></blockquote>
 <p>This will depend on a website. About 1 request per second should be good
-in most cases, some websites may tolerate higher rate.</p>
+in most cases. Some websites may tolerate a higher rate, some may want you
+to slow down even more.</p>
 <p><strong>Jeffrey asks:</strong></p>
 <blockquote>
 <div><p>Will we be able to create our own website after learning html and json?</p>
@@ -378,24 +396,28 @@ in most cases, some websites may tolerate higher rate.</p>
 <p>To create a website from scratch you need to know HTML and CSS. JSON is not
 needed for this. You can also use JavaScript for added functionality. However,
 there are many tools for creating websites in a more user-friendly fashion.
-For example, the website of this course uses Sphinx software. The source of
-all pages of this website are Jupyter notebook files and some rst files. Sphinx
-converts all these files into webpages adding the sidebar etc.</p>
+For example, the website of this course uses <a class="reference external" href="https://www.sphinx-doc.org/en/master/#">Sphinx</a> .
+The source of all pages of this website are Jupyter notebook files and some
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">rst</a> files.
+Sphinx converts all these files into webpages taking care of formatting, adding the sidebar etc.
+Even if you use such software it is good to know some HTML and CSS since it comes handy
+if you want to adjust the look of your website.</p>
 <p><strong>Hannah asks:</strong></p>
 <blockquote>
 <div><p>How is our attendance being graded? Does having our camera on in class count
 for anything?</p>
 </div></blockquote>
 <p>I explained in class at some point that having camera on or off will not impact
-your grade, it is a matter of courtesy and kindness. Attendance is graded and
-as it is stated in the syllabus it counts for 10% of the final grade.</p>
+your grade. It is a matter of courtesy and kindness. As it stated in the syllabus
+attendance is graded and it counts for 10% of the final grade.</p>
 <p><strong>Elita asks:</strong></p>
 <blockquote>
 <div><p>Is there a debugger in jupyter notebook?</p>
 </div></blockquote>
 <p>You can try the <code class="docutils literal notranslate"><span class="pre">%debug</span></code> magic, see <a class="reference external" href="https://chrieke.medium.com/jupyter-tips-and-tricks-994fdddb2057">here</a>
 for more information. <a class="reference external" href="https://ipython.readthedocs.io/en/stable/api/generated/IPython.core.debugger.html#">IPython debugger</a>
-is another option.</p>
+is another option. I think you can also find some notebook extensions which provide a graphical debugger,
+but I have not used them myself.</p>
 <p><strong>Seungmin asks:</strong></p>
 <blockquote>
 <div><p>Will there be any other projects similar to project 4 where most of it is
@@ -421,6 +443,15 @@ Flask is fairly easy to learn on your own though.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Schedule/week_9.html" class="btn btn-neutral float-right" title="Week 9 (3/29-4/4)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Schedule/week_8.html" class="btn btn-neutral float-left" title="Week 8 (3/22-3/28)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

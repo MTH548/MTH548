@@ -17,7 +17,7 @@ the parser anyway.
 
     why for the clear_output, if I don't put wait=True, the picture is very lag?
 
-In the `clear_output()` function `wait=True` assures that the display is cleared only
+In the ``clear_output()`` function ``wait=True`` assures that the display is cleared only
 when there is new content ready to replace it. If your computer takes longer time to
 produce the new content then it will create lag.
 
@@ -41,15 +41,15 @@ in some respect. There will be no separate extra credit assignments.
     We can use api to get data from website. Can we use api to do more things to website?
     Like change some material on website.
 
-Yes, if the API provides such functionality. For example, Twitter API lets one post
-new tweets, Wikipedia API allows one edit Wikipedia pages etc.
+Yes, if the API provides such functionality. For example, using Twitter API we can post
+new tweets, using Wikipedia API we can edit Wikipedia pages etc.
 
 **Alex asks:**
 
     Is there a way to check our mid semester grades so far?
 
 80% of the final grade is based on project reports, so you can take the average of report grades.
-The grade may be somewhat lower or higher depending on the other 20% which are based on
+Your grade may be somewhat lower or higher depending on the other 20% which are based on
 attendance and weekly digest submissions. If you assume that you are getting an "A" on the 20%
 and combine it with your report grade average for the remaining 80%, it will give you the upper
 estimate of the grade you can get at this point.
@@ -79,17 +79,17 @@ and produce a dataframe in this way.
     spacing time  between two operation(because sometimes when we are on the website, we click
     fast as well).
 
-You `US courts ruled <https://parsers.me/us-court-fully-legalized-website-scraping-and-technically-prohibited-it/>`_
+`US courts ruled <https://parsers.me/us-court-fully-legalized-website-scraping-and-technically-prohibited-it/>`_
 that one can legally scrap any website. At the same time website owners can use tools
 (capchas, cookies, fingerprinting etc.) to make scrapping more difficult. Even sites that
-are scrapping-friendly may block your ip address if you create problems - e.g. by sending
+are scrapping-friendly may block your ip address if you create problems by sending
 requests too fast, ignoring robots.txt rules, not providing a meaningful User-Agent etc.
-The reasonable rate of requests you make will depend on a website. Heavily used websites will
+A reasonable rate of requests you make will depend on the website. Heavily used websites will
 be able to handle thousands of requests per second without issues, but for a website hosted
-on a small web server this number will be much smaller. One request per second should be good
-in all circumstances. It is true that you can send more requests manually if you click fast on
-a link in a web browser, but a Python script with asynchronous code will be able to send more
-than a thousand of requests per second  - much more that you would be able to produce by clicking,
+on a small web server this number will be much smaller. One request per second or so should be 
+good in most circumstances. It is true that you can send more requests manually if you click fast on
+a link in a web browser, but a Python script with asynchronous code will be able to send over
+1000 requests per second  - much more that you would be able to produce by clicking,
 and enough to put a strain on many web servers.
 
 
@@ -105,7 +105,7 @@ the focus will shift from introducing new libraries to other content.
 
     How many more large projects do we have left?
 
-We should have time for 3-4 projects.
+We should have time for 3-4 more projects.
 
 
 **Sai asks:**
@@ -119,7 +119,7 @@ No.
 
     Will we be learning how to use nosql databases?
 
-No, there will not be time for it.
+No, there will not be time for it. 
 
 
 **Peter asks:**
@@ -129,9 +129,9 @@ No, there will not be time for it.
     this info and used that URL. Is there another way to get to this information without
     putting the exact URL into the program we write?
 
-Yes, if a webpage contains a form it is possible to supply its values and submit the form
-from a Python script. Here how could be done with the form posted on the Chicago marathon
-results website:
+If a webpage contains a form it is possible to supply its values and submit the form
+from a Python script. Here is how this could be done with the form posted on the Chicago 
+marathon results website:
 
 .. code-block:: python
 
@@ -151,8 +151,9 @@ results website:
     r = requests.post(url, params=params)
 
 Submitting forms typically requires sending a POST request (as opposed to GET),
-but the Chicago marathon website seems to work with both kinds. The parameters
-that need to be send can be determined looking at the HTML code of the form.
+which is why the last line uses ``requests.post()`` and not ``requests.get()``.
+The parameters of the request can be determined looking at the HTML code 
+of the form.
 
 
 **Matthew asks:**
@@ -168,7 +169,7 @@ other good options.
 
     Was wondering what the class average grade of the previous project is
 
-The average on project 3 was a B (numerically 2.98/4.0).
+The average project 3 grade was a B (numerically: 2.98/4.0).
 
 
 **Waleed asks:**
@@ -177,7 +178,8 @@ The average on project 3 was a B (numerically 2.98/4.0).
     web scraping without getting our IP restricted?
 
 This will depend on a website. About 1 request per second should be good
-in most cases, some websites may tolerate higher rate.
+in most cases. Some websites may tolerate a higher rate, some may want you 
+to slow down even more. 
 
 
 **Jeffrey asks:**
@@ -187,9 +189,13 @@ in most cases, some websites may tolerate higher rate.
 To create a website from scratch you need to know HTML and CSS. JSON is not
 needed for this. You can also use JavaScript for added functionality. However,
 there are many tools for creating websites in a more user-friendly fashion.
-For example, the website of this course uses Sphinx software. The source of
-all pages of this website are Jupyter notebook files and some rst files. Sphinx
-converts all these files into webpages adding the sidebar etc.
+For example, the website of this course uses `Sphinx <https://www.sphinx-doc.org/en/master/#>`_ . 
+The source of all pages of this website are Jupyter notebook files and some 
+`rst <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_ files. 
+Sphinx converts all these files into webpages taking care of formatting, adding the sidebar etc.
+Even if you use such software it is good to know some HTML and CSS since it comes handy 
+if you want to adjust the look of your website. 
+
 
 **Hannah asks:**
 
@@ -197,8 +203,9 @@ converts all these files into webpages adding the sidebar etc.
     for anything?
 
 I explained in class at some point that having camera on or off will not impact
-your grade, it is a matter of courtesy and kindness. Attendance is graded and
-as it is stated in the syllabus it counts for 10% of the final grade.
+your grade. It is a matter of courtesy and kindness. As it stated in the syllabus 
+attendance is graded and it counts for 10% of the final grade.
+
 
 **Elita asks:**
 
@@ -206,7 +213,8 @@ as it is stated in the syllabus it counts for 10% of the final grade.
 
 You can try the ``%debug`` magic, see `here <https://chrieke.medium.com/jupyter-tips-and-tricks-994fdddb2057>`_
 for more information. `IPython debugger <https://ipython.readthedocs.io/en/stable/api/generated/IPython.core.debugger.html#>`_
-is another option.
+is another option. I think you can also find some notebook extensions which provide a graphical debugger, 
+but I have not used them myself. 
 
 
 **Seungmin asks:**
@@ -216,11 +224,13 @@ is another option.
 
 Yes, project 5.
 
+
 **Mohammedanas asks:**
 
     Will we have more projects like the 4th project?
 
 Yes, project 5.
+
 
 **Jonathan asks:**
 
