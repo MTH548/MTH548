@@ -60,6 +60,7 @@ MTH 448/548 Data Oriented Computing
 
 
    Schedule/week_10_temp
+   Schedule/week_11_temp
 
    Tools/Regex/regex_toc
    Tools/SQL/sql_toc
