@@ -5,6 +5,14 @@ Current Tasks
 
 
 
+Project 5
+---------
+
+**Due: Friday, 4/9, 11:59 PM on UBLearns**
+
+:doc:`Project: Discord logs <Projects/discord_logs/discord_logs>` 
+
+
 Weekly digest
 -------------
 
