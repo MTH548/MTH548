@@ -27,6 +27,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_8
    Schedule/week_9
    Schedule/week_10
+   Schedule/week_11
 
 
 
@@ -41,6 +42,7 @@ MTH 448/548 Data Oriented Computing
    Tools/requests/requests
    Tools/beautiful_soup/beautiful_soup
    Tools/json/json
+   Tools/Regex/regex_toc
    
 
 .. toctree::
@@ -60,13 +62,7 @@ MTH 448/548 Data Oriented Computing
    :hidden:
 
 
-
-
-   Schedule/week_11_temp
-
-   Tools/Regex/regex_toc
    Tools/SQL/sql_toc
-
 
    Projects/text_with_naive_bayes/text_with_naive_bayes
    Projects/escape_from_jupyter
