@@ -48,7 +48,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Scraping course listings" href="../scraping_course_listings/scraping_course_listings.html" /> 
+    <link rel="next" title="SQL" href="../../Tools/SQL/sql_toc.html" />
+    <link rel="prev" title="Project: Text classification with naive Bayes" href="../text_with_naive_bayes/text_with_naive_bayes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -129,7 +130,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/Regex/regex_toc.html">Regular expressions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Projects</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
@@ -137,6 +138,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../discord_logs/discord_logs.html">Project: Discord logs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kde_marathon_results/kde_marathon_results.html">Project: KDE and marathon results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project: Music database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Objectives">Objectives</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Notes.">Notes.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-1">Exercise 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-2">Exercise 2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-3">Exercise 3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-4">Exercise 4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-5">Exercise 5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-6">Exercise 6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-7">Exercise 7</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-8">Exercise 8</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-9">Exercise 9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Exercise-10">Exercise 10</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -444,25 +462,30 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Project:-Music-database">
 <h1>Project: Music database<a class="headerlink" href="#Project:-Music-database" title="Permalink to this headline">¶</a></h1>
-<html><h1 style="color:teal;"><p>Extra credit</p>
-</h1></html><p>You are not required to complete this project. If you do, the grade from this project will replace the lowest grade from the other projects you completed in this course.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title fa fa-exclamation-circle">Extra credit</p>
+<p><p>You are not required to complete this project. If you do, the grade from this project will replace the lowest project grade you received. If your grade for this project will be lower that all other your project grades, it will not be used. Thus, your grade will not go down whether you complete this project or not.</p>
+</p><p><p><strong>Note.</strong> If your grade for some project has been lowered due disciplinary issues (plagiarism etc.) this grade will not be changed. However, the next lowest grade can be replaced.</p>
+</p></div>
+<div class="section" id="Objectives">
+<h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
+<p>Download the following SQLite file, which contains a database of music recordings:</p>
+<div class="line-block">
+<div class="line"><a class="reference download internal" download="" href="../../_downloads/ff3f90d46738944ae39edf5470b3d518/music_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">music_data.sqlite</span></code></a></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;precision&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">show_results</span><span class="p">(</span><span class="n">ex</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ex</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
-    <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide_index</span><span class="p">())</span>
-</pre></div>
-</div>
+<p><a class="reference external" href="music_data_diagram.pdf">Here</a> is a pdf file showing the structure of this database: tables it consists of and names of columns in each table.</p>
+<p>Use SQL queries to solve exercises given below.</p>
+<div class="section" id="Notes.">
+<h3>Notes.<a class="headerlink" href="#Notes." title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>For illustration, each exercise shows the first five rows of the results you should obtain. Your answers should not be limited to just 5 results - show either all results or the number specified in the statement of an exercise.</p></li>
+<li><p>Your solutions must be obtained with SQL only, using the <code class="docutils literal notranslate"><span class="pre">%%sql</span></code> magic. You must not use pandas etc.</p></li>
+<li><p>This is programming assignment. Your work will be graded primarily based on the results of the code, and also on the code documentation and report organization. You don’t need to include a narrative.</p></li>
+</ol>
 </div>
 <div class="section" id="Exercise-1">
-<h2>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h2>
-<p>Create a table with names of all tracks where the composer is Miles Davis. Tack namea should be in the alphabetical order.</p>
+<h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h3>
+<p>Create a table with names of all tracks where the composer is Miles Davis. Track names should be listed in the alphabetical order.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
@@ -502,8 +525,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-2">
-<h2>Exercise 2<a class="headerlink" href="#Exercise-2" title="Permalink to this headline">¶</a></h2>
-<p>Create a table which lists names and composers for all tracks where the name of the composer includes “Clapton”. Order the table in the alphabetical order of track names.</p>
+<h3>Exercise 2<a class="headerlink" href="#Exercise-2" title="Permalink to this headline">¶</a></h3>
+<p>Create a table that lists titles and composers for all tracks where the name of the composer includes “Clapton”. Order the table in the alphabetical order of track titles.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -543,8 +566,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-3">
-<h2>Exercise 3<a class="headerlink" href="#Exercise-3" title="Permalink to this headline">¶</a></h2>
-<p>Create a table with album title, album artist, and the number of tracks in the album. Display 10 rows of this table with most tracks, ordered in the descending order of the number of tracks.</p>
+<h3>Exercise 3<a class="headerlink" href="#Exercise-3" title="Permalink to this headline">¶</a></h3>
+<p>Create a table with the album title, the album artist, and the number of tracks in the album. Display 10 rows of this table with most tracks, ordered in the descending order of the number of tracks.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -589,8 +612,9 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-4">
-<h2>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h2>
-<p>Create a table listing album title, name of the artist and the total length of the album in minutes for each album whose total length is more than 90 minutes. Order the table according to album lengths in the descending order.</p>
+<h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h3>
+<p>Create a table listing the album title, the name of the artist and the total length of the album in minutes for each album whose total length is more than 90 minutes. Order the table according to album lengths in the descending order.</p>
+<p><strong>Note.</strong> The <code class="docutils literal notranslate"><span class="pre">tracks</span></code> table lists lengths of tracks in milliseconds. One second is equal to 1000 milliseconds.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
@@ -635,8 +659,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-5">
-<h2>Exercise 5<a class="headerlink" href="#Exercise-5" title="Permalink to this headline">¶</a></h2>
-<p>Create a table listing AlbumId and title of each albums which has at least one track in the “Jazz” genre. Order the album titles alphabetically.</p>
+<h3>Exercise 5<a class="headerlink" href="#Exercise-5" title="Permalink to this headline">¶</a></h3>
+<p>Create a table listing AlbumId and the title of each album that has at least one track in the “Jazz” genre. Order album titles alphabetically.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -676,8 +700,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-6">
-<h2>Exercise 6<a class="headerlink" href="#Exercise-6" title="Permalink to this headline">¶</a></h2>
-<p>Create a table which lists AlbumId, album title and price of 10 most expensive albums. The price of an album is the sum of prices of all its tracks. Order the list from the highest album price to the lowest.</p>
+<h3>Exercise 6<a class="headerlink" href="#Exercise-6" title="Permalink to this headline">¶</a></h3>
+<p>Create a table which lists AlbumId, the album title and the price of 10 most expensive albums. The price of an album is the sum of prices of all its tracks. Order the list from the highest album price to the lowest.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
@@ -722,8 +746,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-7">
-<h2>Exercise 7<a class="headerlink" href="#Exercise-7" title="Permalink to this headline">¶</a></h2>
-<p>Create a table that lists AlbumId and title of each album which consist of exactly 10 tracks.</p>
+<h3>Exercise 7<a class="headerlink" href="#Exercise-7" title="Permalink to this headline">¶</a></h3>
+<p>Create a table that lists AlbumId and the title of each album which consist of exactly 10 tracks. Order the table in the alphabetical order of album titles.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
@@ -763,7 +787,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-8">
-<h2>Exercise 8<a class="headerlink" href="#Exercise-8" title="Permalink to this headline">¶</a></h2>
+<h3>Exercise 8<a class="headerlink" href="#Exercise-8" title="Permalink to this headline">¶</a></h3>
 <p>Create a table with two columns: one, called NumTracks listing the number of tracks in an album, and the second called NumAlbums which shows how many albums have such number of tracks. Order the table in the ascending order of NumTracks.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -804,8 +828,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="section" id="Exercise-9">
-<h2>Exercise 9<a class="headerlink" href="#Exercise-9" title="Permalink to this headline">¶</a></h2>
-<p>Create a table which has one row for each album, listing the longest track of the album. The columns should list AlbumId, album title, TrackId, track title, and track time in milliseconds. Order the table according to times in the descending order and display the first 10 rows.</p>
+<h3>Exercise 9<a class="headerlink" href="#Exercise-9" title="Permalink to this headline">¶</a></h3>
+<p>Create a table which has one row for each album, listing the longest track of the album. The columns should be AlbumId, album title, TrackId, track title, and track time in milliseconds. Order the table according to track times in the descending order and display the first 10 rows.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -859,6 +883,54 @@ div.rendered_html tbody tr:hover {
     </tbody></table></div>
 </div>
 </div>
+<div class="section" id="Exercise-10">
+<h3>Exercise 10<a class="headerlink" href="#Exercise-10" title="Permalink to this headline">¶</a></h3>
+<p>Every track in the <code class="docutils literal notranslate"><span class="pre">tracks</span></code> table corresponds to one genre, but an album may consist of tracks of various genres.</p>
+<p>Create a table showing AlbumId, the album title, and the number of distinct track genres for all albums which have more than one genre. Order the list in the alphabetical order of album titles.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">show_results</span><span class="p">(</span><span class="s2">&quot;ex10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<style  type="text/css" >
+</style><table id="T_72ecb654_a134_11eb_8e01_acde48001122" ><thead>    <tr>        <th class="col_heading level0 col0" >AlbumId</th>        <th class="col_heading level0 col1" >Title</th>        <th class="col_heading level0 col2" >NumGenres</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_72ecb654_a134_11eb_8e01_acde48001122row0_col0" class="data row0 col0" >227</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row0_col1" class="data row0 col1" >Battlestar Galactica, Season 3</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row0_col2" class="data row0 col2" >3</td>
+            </tr>
+            <tr>
+                                <td id="T_72ecb654_a134_11eb_8e01_acde48001122row1_col0" class="data row1 col0" >141</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row1_col1" class="data row1 col1" >Greatest Hits</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row1_col2" class="data row1 col2" >3</td>
+            </tr>
+            <tr>
+                                <td id="T_72ecb654_a134_11eb_8e01_acde48001122row2_col0" class="data row2 col0" >228</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row2_col1" class="data row2 col1" >Heroes, Season 1</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row2_col2" class="data row2 col2" >2</td>
+            </tr>
+            <tr>
+                                <td id="T_72ecb654_a134_11eb_8e01_acde48001122row3_col0" class="data row3 col0" >261</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row3_col1" class="data row3 col1" >LOST, Season 4</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row3_col2" class="data row3 col2" >2</td>
+            </tr>
+            <tr>
+                                <td id="T_72ecb654_a134_11eb_8e01_acde48001122row4_col0" class="data row4 col0" >102</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row4_col1" class="data row4 col1" >Live After Death</td>
+                        <td id="T_72ecb654_a134_11eb_8e01_acde48001122row4_col2" class="data row4 col2" >2</td>
+            </tr>
+    </tbody></table></div>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -869,8 +941,10 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../../Tools/SQL/sql_toc.html" class="btn btn-neutral float-right" title="SQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="../scraping_course_listings/scraping_course_listings.html" class="btn btn-neutral float-left" title="Scraping course listings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="../text_with_naive_bayes/text_with_naive_bayes.html" class="btn btn-neutral float-left" title="Project: Text classification with naive Bayes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

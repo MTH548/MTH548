@@ -16,10 +16,11 @@ Project 6
 Weekly digest
 -------------
 
-**Due: Sunday, 4/18, 11:59 PM**
+**Due: Sunday, 4/25, 11:59 PM**
 
 Complete the weekly digest form:
 
 .. raw:: html
-   
-   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeVC7f8k0rKBwosVcYzoPem1Avve5hwJj9CZcMwZ7lT8mYLLw/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjWZznzNwruJxWNIAqE9KpUA33y0NaYnmwyPqJ0eMvRLEeaw/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+ 

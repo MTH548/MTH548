@@ -138,6 +138,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/discord_logs/discord_logs.html">Project: Discord logs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/kde_marathon_results/kde_marathon_results.html">Project: KDE and marathon results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/music_database/music_database.html">Project: Music database</a></li>
 </ul>
 
             
@@ -453,7 +454,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>To execute SQL code in Jupyter Notebook we will use the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> notebook extension. Assuming that this extension is already installed (see <a class="reference internal" href="sql_basics.html"><span class="doc">SQL Basics</span></a> for installation instructions), the code below will load it:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -462,8 +463,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>Next, we connect to the <code class="docutils literal notranslate"><span class="pre">gradebook.sqlite</span></code> database:</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
@@ -472,18 +473,9 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&#39;Connected: @gradebook_data.sqlite&#39;
-</pre></div></div>
-</div>
 <p>This database consists of a single table <code class="docutils literal notranslate"><span class="pre">gradebook</span></code>, with records (names, exam scores etc.) of students enrolled in a college course. The whole table looks as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
@@ -503,7 +495,7 @@ Done.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -518,6 +510,42 @@ Done.
         <th>exam3</th>
     </tr>
     <tr>
+        <td>2712</td>
+        <td>Starr</td>
+        <td>Bachand</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>27</td>
+        <td>85</td>
+    </tr>
+    <tr>
+        <td>3548</td>
+        <td>Marcia</td>
+        <td>Hinkel</td>
+        <td>biology</td>
+        <td>79</td>
+        <td>10</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>3877</td>
+        <td>Chu</td>
+        <td>Flax</td>
+        <td>mathematics</td>
+        <td>72</td>
+        <td>None</td>
+        <td>29</td>
+    </tr>
+    <tr>
+        <td>5108</td>
+        <td>Shawnna</td>
+        <td>Coate</td>
+        <td>computer science</td>
+        <td>79</td>
+        <td>96</td>
+        <td>61</td>
+    </tr>
+    <tr>
         <td>5775</td>
         <td>Rosina</td>
         <td>Hovey</td>
@@ -525,6 +553,60 @@ Done.
         <td>96</td>
         <td>13</td>
         <td>99</td>
+    </tr>
+    <tr>
+        <td>5787</td>
+        <td>Tenisha</td>
+        <td>Rippel</td>
+        <td>computer science</td>
+        <td>27</td>
+        <td>54</td>
+        <td>79</td>
+    </tr>
+    <tr>
+        <td>6245</td>
+        <td>Adelina</td>
+        <td>Brummitt</td>
+        <td>mathematics</td>
+        <td>None</td>
+        <td>67</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>7138</td>
+        <td>Fran</td>
+        <td>Mount</td>
+        <td>biology</td>
+        <td>71</td>
+        <td>5</td>
+        <td>80</td>
+    </tr>
+    <tr>
+        <td>7256</td>
+        <td>Rosalinda</td>
+        <td>Trippe</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>None</td>
+        <td>82</td>
+    </tr>
+    <tr>
+        <td>8911</td>
+        <td>Lottie</td>
+        <td>Champine</td>
+        <td>computer science</td>
+        <td>None</td>
+        <td>None</td>
+        <td>62</td>
+    </tr>
+    <tr>
+        <td>9165</td>
+        <td>Ludivina</td>
+        <td>Hoskin</td>
+        <td>mathematics</td>
+        <td>27</td>
+        <td>55</td>
+        <td>None</td>
     </tr>
     <tr>
         <td>9346</td>
@@ -543,96 +625,6 @@ Done.
         <td>56</td>
         <td>24</td>
         <td>72</td>
-    </tr>
-    <tr>
-        <td>3877</td>
-        <td>Chu</td>
-        <td>Flax</td>
-        <td>mathematics</td>
-        <td>72</td>
-        <td>None</td>
-        <td>29</td>
-    </tr>
-    <tr>
-        <td>7256</td>
-        <td>Rosalinda</td>
-        <td>Trippe</td>
-        <td>computer science</td>
-        <td>None</td>
-        <td>None</td>
-        <td>82</td>
-    </tr>
-    <tr>
-        <td>7138</td>
-        <td>Fran</td>
-        <td>Mount</td>
-        <td>biology</td>
-        <td>71</td>
-        <td>5</td>
-        <td>80</td>
-    </tr>
-    <tr>
-        <td>5108</td>
-        <td>Shawnna</td>
-        <td>Coate</td>
-        <td>computer science</td>
-        <td>79</td>
-        <td>96</td>
-        <td>61</td>
-    </tr>
-    <tr>
-        <td>3548</td>
-        <td>Marcia</td>
-        <td>Hinkel</td>
-        <td>biology</td>
-        <td>79</td>
-        <td>10</td>
-        <td>41</td>
-    </tr>
-    <tr>
-        <td>2712</td>
-        <td>Starr</td>
-        <td>Bachand</td>
-        <td>computer science</td>
-        <td>None</td>
-        <td>27</td>
-        <td>85</td>
-    </tr>
-    <tr>
-        <td>8911</td>
-        <td>Lottie</td>
-        <td>Champine</td>
-        <td>computer science</td>
-        <td>None</td>
-        <td>None</td>
-        <td>62</td>
-    </tr>
-    <tr>
-        <td>6245</td>
-        <td>Adelina</td>
-        <td>Brummitt</td>
-        <td>mathematics</td>
-        <td>None</td>
-        <td>67</td>
-        <td>99</td>
-    </tr>
-    <tr>
-        <td>5787</td>
-        <td>Tenisha</td>
-        <td>Rippel</td>
-        <td>computer science</td>
-        <td>27</td>
-        <td>54</td>
-        <td>79</td>
-    </tr>
-    <tr>
-        <td>9165</td>
-        <td>Ludivina</td>
-        <td>Hoskin</td>
-        <td>mathematics</td>
-        <td>27</td>
-        <td>55</td>
-        <td>None</td>
     </tr>
 </table></div>
 </div>
@@ -2151,11 +2143,12 @@ Done.
 <h2>Aggregate functions<a class="headerlink" href="#Aggregate-functions" title="Permalink to this headline">¶</a></h2>
 <p>Aggregate functions summarize values in a column. SQLite provides a few aggregate functions:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">COUNT(column)</span></code> returns the number of non-NULL values in a column. <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code> returns the number of rows, regardless of their values.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">AVG(column)</span></code> returns the average of numerical values in a column.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MIN(column)</span></code> and <code class="docutils literal notranslate"><span class="pre">MAX(my_column)</span></code> return the minimal and maximal value of a column, respectively.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SUM(column)</span></code> returns the sum of numerical values in a column.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">COUNT(column)</span></code> returns the number of non-NULL values in a column. <code class="docutils literal notranslate"><span class="pre">COUNT(*)</span></code> returns the number of rows, regardless of their values.</p></li>
 </ul>
+<p><strong>Note.</strong> <code class="docutils literal notranslate"><span class="pre">COUNT(column)</span></code> will count all non-NULL values, even if some values repeat. In order to count only distinct values we can use <code class="docutils literal notranslate"><span class="pre">COUNT</span> <span class="pre">(DISTINCT</span> <span class="pre">column)</span></code>.</p>
 <p>For example, below we count the number of non-NULL values in columns with exam scores.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -2192,6 +2185,45 @@ Done.
         <td>9</td>
         <td>10</td>
         <td>12</td>
+    </tr>
+</table></div>
+</div>
+<p>Some values of the columns with exam scores repeat, the above counts include these repetition. We can obtain the number of unique scores in each column as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-sql notranslate"><div class="highlight"><pre>
+<span></span><span class="o">%%</span><span class="k">sql</span>
+<span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">exam1</span><span class="p">),</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">exam2</span><span class="p">),</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">exam3</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="n">gradebook</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ * sqlite:///gradebook_data.sqlite
+Done.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<table>
+    <tr>
+        <th>COUNT(DISTINCT exam1)</th>
+        <th>COUNT(DISTINCT exam2)</th>
+        <th>COUNT(DISTINCT exam3)</th>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>10</td>
+        <td>11</td>
     </tr>
 </table></div>
 </div>
