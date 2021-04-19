@@ -28,6 +28,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_9
    Schedule/week_10
    Schedule/week_11
+   Schedule/week_12
 
 
 
@@ -55,6 +56,7 @@ MTH 448/548 Data Oriented Computing
    Projects/scrapping_marathon_results/scrapping_marathon_results
    Projects/discord_logs/discord_logs
    Projects/kde_marathon_results/kde_marathon_results
+   Projects/text_with_naive_bayes/text_with_naive_bayes
 
 
 
@@ -64,10 +66,10 @@ MTH 448/548 Data Oriented Computing
 
    Tools/SQL/sql_toc
 
-   Projects/text_with_naive_bayes/text_with_naive_bayes
    Projects/escape_from_jupyter
    Projects/nhtsa_complaints
    Projects/scraping_course_listings/scraping_course_listings
+   Projects/music_database/music_database
 
 
 .. Indices and tables

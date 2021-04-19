@@ -116,6 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_9.html">Week 9 (3/29-4/4)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_10.html">Week 10 (4/5-4/11)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_11.html">Week 11 (4/12-4/18)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_12.html">Week 12 (4/19-4/25)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -136,6 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/discord_logs/discord_logs.html">Project: Discord logs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/kde_marathon_results/kde_marathon_results.html">Project: KDE and marathon results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
 </ul>
 
             
@@ -445,8 +447,7 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="SQL-queries">
 <h1>SQL queries<a class="headerlink" href="#SQL-queries" title="Permalink to this headline">¶</a></h1>
-<p>The SQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement is a tool for constructing queries which extract data from a database. We will show here various ways in which this statement can be used.</p>
-<p>For demonstration purposes we will be working with a small SQLite database which can be downloaded here:</p>
+<p>The SQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement is a tool for constructing queries which extract data from a database. We will show various ways in which this statement can be used. For demonstration purposes we will be working with a small SQLite database which can be downloaded here:</p>
 <div class="line-block">
 <div class="line"><a class="reference download internal" download="" href="../../_downloads/b87cd27595e2c17a4b7e3dd2717e0c28/gradebook_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">gradebook_data.sqlite</span></code></a></div>
 </div>
@@ -642,7 +643,7 @@ Done.
 FROM table_list
 [WHERE condition]
 [GROUP BY column [HAVING conditon]]
-[ORDER BY column]
+[ORDER BY column  [ASC | DESC]]
 [LIMIT count OFFSET offset]
 </pre></div>
 </div>
@@ -2394,6 +2395,9 @@ Done.
     </tr>
 </table></div>
 </div>
+</div>
+<div class="section" id="HAVING">
+<h2>HAVING<a class="headerlink" href="#HAVING" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> can be used with an additional <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> clause. In such a case, only groups that satisfy the condition given after <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> will be returned. Below we use it to check which majors averaged more than 50 points on exam 1.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
@@ -2462,7 +2466,7 @@ Done.
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Apr 17, 2021.
+        Last updated on Apr 19, 2021.
       </span>
 
     </p>
