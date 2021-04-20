@@ -70,7 +70,6 @@ MTH 448/548 Data Oriented Computing
    Projects/escape_from_jupyter
    Projects/nhtsa_complaints
    Projects/scraping_course_listings/scraping_course_listings
-   Projects/music_database/music_database
 
 
 .. Indices and tables
