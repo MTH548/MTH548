@@ -117,6 +117,8 @@
 <li class="toctree-l1"><a class="reference internal" href="week_10.html">Week 10 (4/5-4/11)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_11.html">Week 11 (4/12-4/18)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Week 12 (4/19-4/25)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Zoom-recordings">Zoom recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Notebook">Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Text-classification-with-Naive-Bayes">Text classification with Naive Bayes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Project">Project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Resources">Resources</a><ul>
@@ -453,6 +455,19 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Week-12-(4/19-4/25)">
 <h1>Week 12 (4/19-4/25)<a class="headerlink" href="#Week-12-(4/19-4/25)" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Zoom-recordings">
+<h2>Zoom recordings<a class="headerlink" href="#Zoom-recordings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=89f6aaab-b26d-4a8b-900f-ad1001436b9f">Tuesday</a></p></li>
+</ul>
+</div>
+<div class="section" id="Notebook">
+<h2>Notebook<a class="headerlink" href="#Notebook" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../_static/weekly_notebooks/week_12_class.html">View online</a></p></li>
+<li><p>Download the notebook file: <a class="reference external" href="../_static/weekly_notebooks/week_12_class.ipynb">week_11_class.ipynb</a>.</p></li>
+</ul>
+</div>
 <div class="section" id="Text-classification-with-Naive-Bayes">
 <h2>Text classification with Naive Bayes<a class="headerlink" href="#Text-classification-with-Naive-Bayes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -480,7 +495,6 @@ div.rendered_html tbody tr:hover {
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-
 
 <span class="n">movies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://www.mth548.org/_downloads/e4d077fbbc676cd1c8f2bd8a753d42ba/movie_reviews.zip&quot;</span><span class="p">)</span>
 <span class="n">word_counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://www.mth548.org/_static/movie_word_counts.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
