@@ -118,6 +118,8 @@
 <li class="toctree-l1"><a class="reference internal" href="week_11.html">Week 11 (4/12-4/18)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="week_12.html">Week 12 (4/19-4/25)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Week 13 (4/26-5/2)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Zoom-recordings">Zoom recordings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Notebook">Notebook</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#SQL">SQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Online-SQL-interface-examples">Online SQL interface examples</a></li>
 </ul>
@@ -125,8 +127,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#Resources">Resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#1.-ipython-sql-installation">1. ipython-sql installation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#2.-Gradebook-SQLite-database">2. Gradebook SQLite database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#3.-Courses-SQLite-database">3. Courses SQLite database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#4.-SQL-with-Python">4. SQL with Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3.-Word-cloud-sample">3. Word cloud sample</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#4.-Courses-SQLite-database">4. Courses SQLite database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#5.-SQL-with-Python">5. SQL with Python</a></li>
 </ul>
 </li>
 </ul>
@@ -460,6 +463,19 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="section" id="Week-13-(4/26-5/2)">
 <h1>Week 13 (4/26-5/2)<a class="headerlink" href="#Week-13-(4/26-5/2)" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="Zoom-recordings">
+<h2>Zoom recordings<a class="headerlink" href="#Zoom-recordings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=77eaaca4-7f5b-42ea-979b-ad17015de570">Tuesday</a></p></li>
+</ul>
+</div>
+<div class="section" id="Notebook">
+<h2>Notebook<a class="headerlink" href="#Notebook" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="../_static/weekly_notebooks/week_13_class.html">View online</a></p></li>
+<li><p>Download the notebook file: <a class="reference external" href="../_static/weekly_notebooks/week_13_class.ipynb">week_13_class.ipynb</a>.</p></li>
+</ul>
+</div>
 <div class="section" id="SQL">
 <h2>SQL<a class="headerlink" href="#SQL" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -496,24 +512,48 @@ div.rendered_html tbody tr:hover {
 <div class="line"><a class="reference download internal" download="" href="../_downloads/a41892f26e5bed20984cc9fe533ac5bd/gradebook_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">gradebook_data.sqlite</span></code></a></div>
 </div>
 </div>
-<div class="section" id="3.-Courses-SQLite-database">
-<h3>3. Courses SQLite database<a class="headerlink" href="#3.-Courses-SQLite-database" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="3.-Word-cloud-sample">
+<h3>3. Word cloud sample<a class="headerlink" href="#3.-Word-cloud-sample" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">review</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">This film is absolutely awful, but nevertheless, it can be hilarious at times,</span>
+<span class="s2">although this humor is entirely unintentional.The plot was beyond ridiculous.</span>
+<span class="s2">I don&#39;t even think a 2 year-old would be convinced by the ludicrous idiocy that</span>
+<span class="s2">the film-makers tried to slap together into a story. However, on the positive</span>
+<span class="s2">side, some of the horrifically inane plot twists provide a great deal of humor.</span>
+<span class="s2">For example, &quot;Wow, Lady Hogbottom has a giant missile hidden in her back yard!&quot;</span>
+<span class="s2">It gets worse (and even funnier), but I&#39;ll spare you.The acting is generally</span>
+<span class="s2">laughable. Most of the kids&#39; roles are sort of cute, but not very believable.</span>
+<span class="s2">On the other hand, Annie is pretty awful all-around. The adults don&#39;t take their</span>
+<span class="s2">roles seriously at all, but this is largely a good thing. If they&#39;d tried to be</span>
+<span class="s2">believable, the film would&#39;ve been even worse. Which is difficult to imagine.</span>
+<span class="s2">Once you get past the overall crappiness of the movie, there are actually a few</span>
+<span class="s2">standout moments of almost-not-crappiness. The scene where Lady Hogbottom&#39;s son</span>
+<span class="s2">runs away with the maid is surprisingly hilarious, though it&#39;s an annoying letdown</span>
+<span class="s2">when they get caught by the police. The butler character, while very minor, is a ray</span>
+<span class="s2">of sunlight that almost, but never quite pierces through the gloom.Watching this</span>
+<span class="s2">movie actually caused me physical pain. Nevertheless, there were a few redeeming</span>
+<span class="s2">parts that made it almost watchable without beginning to hemorrhage internally.</span>
+<span class="s2">Judged on its good parts alone, the movie would be about a 5; unfortunately,</span>
+<span class="s2">the rest of the movie hardly deserves a 1. Thus, I give it a 3. That&#39;s being pretty</span>
+<span class="s2">generous, I&#39;d say.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="4.-Courses-SQLite-database">
+<h3>4. Courses SQLite database<a class="headerlink" href="#4.-Courses-SQLite-database" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><a class="reference download internal" download="" href="../_downloads/fbba3f96bfcf5b4fa8999342186e6c03/courses_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code></a></div>
 </div>
 </div>
-<div class="section" id="4.-SQL-with-Python">
-<h3>4. SQL with Python<a class="headerlink" href="#4.-SQL-with-Python" title="Permalink to this headline">¶</a></h3>
-<p>SQLAlchemy installation:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="o">%</span><span class="k">pip</span> install SQLAlchemy
-</pre></div>
-</div>
-</div>
+<div class="section" id="5.-SQL-with-Python">
+<h3>5. SQL with Python<a class="headerlink" href="#5.-SQL-with-Python" title="Permalink to this headline">¶</a></h3>
 <p>Sample data:</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -556,7 +596,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Apr 27, 2021.
+        Last updated on Apr 28, 2021.
       </span>
 
     </p>
