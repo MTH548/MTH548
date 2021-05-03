@@ -48,7 +48,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numpy" href="../Tools/Numpy/numpy_toc.html" />
+    <link rel="next" title="Weekly Digest 13" href="../Digests/digest_13.html" />
     <link rel="prev" title="Weekly Digest 12" href="../Digests/digest_12.html" /> 
 </head>
 
@@ -120,6 +120,10 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Week 13 (4/26-5/2)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Zoom-recordings">Zoom recordings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Notebook">Notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Weekly-digests">Weekly digests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Digests/digest_13.html">Weekly Digest 13</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#SQL">SQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#Online-SQL-interface-examples">Online SQL interface examples</a></li>
 </ul>
@@ -129,11 +133,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#2.-Gradebook-SQLite-database">2. Gradebook SQLite database</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#3.-Word-cloud-sample">3. Word cloud sample</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#4.-Courses-SQLite-database">4. Courses SQLite database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#5.-SQL-with-Python">5. SQL with Python</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="week_14.html">Week 14 (5/3-5/9)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tools</span></p>
 <ul>
@@ -156,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Projects/discord_logs/discord_logs.html">Project: Discord logs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/kde_marathon_results/kde_marathon_results.html">Project: KDE and marathon results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/music_database/music_database.html">Project: Music database</a></li>
 </ul>
 
             
@@ -477,6 +482,14 @@ div.rendered_html tbody tr:hover {
 <li><p>Download the notebook file: <a class="reference external" href="../_static/weekly_notebooks/week_13_class.ipynb">week_13_class.ipynb</a>.</p></li>
 </ul>
 </div>
+<div class="section" id="Weekly-digests">
+<h2>Weekly digests<a class="headerlink" href="#Weekly-digests" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Digests/digest_13.html">Weekly Digest 13</a></li>
+</ul>
+</div>
+</div>
 <div class="section" id="SQL">
 <h2>SQL<a class="headerlink" href="#SQL" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -553,25 +566,6 @@ div.rendered_html tbody tr:hover {
 <div class="line"><a class="reference download internal" download="" href="../_downloads/fbba3f96bfcf5b4fa8999342186e6c03/courses_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code></a></div>
 </div>
 </div>
-<div class="section" id="5.-SQL-with-Python">
-<h3>5. SQL with Python<a class="headerlink" href="#5.-SQL-with-Python" title="Permalink to this headline">¶</a></h3>
-<p>Sample data:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Casablanca&#39;</span><span class="p">,</span> <span class="s1">&#39;Forrest Gump&#39;</span><span class="p">,</span> <span class="s1">&#39;Goodfellas&#39;</span><span class="p">,</span>
-                              <span class="s1">&#39;Chinatown&#39;</span><span class="p">,</span> <span class="s1">&#39;Jaws&#39;</span><span class="p">,</span> <span class="s1">&#39;Wall-E&#39;</span><span class="p">],</span>
-                   <span class="s1">&#39;director&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;M. Curtiz&#39;</span><span class="p">,</span> <span class="s1">&#39;R. Zemeckis&#39;</span><span class="p">,</span> <span class="s1">&#39;M. Scorsese&#39;</span><span class="p">,</span>
-                                 <span class="s1">&#39;R. Polanski&#39;</span><span class="p">,</span> <span class="s1">&#39;S. Spielberg&#39;</span><span class="p">,</span> <span class="s1">&#39;A. Stanton&#39;</span><span class="p">],</span>
-                   <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1942</span><span class="p">,</span> <span class="mi">1994</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">1974</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span> <span class="mi">2008</span><span class="p">]})</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 
@@ -583,7 +577,7 @@ div.rendered_html tbody tr:hover {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Tools/Numpy/numpy_toc.html" class="btn btn-neutral float-right" title="Numpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../Digests/digest_13.html" class="btn btn-neutral float-right" title="Weekly Digest 13" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../Digests/digest_12.html" class="btn btn-neutral float-left" title="Weekly Digest 12" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -597,7 +591,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Apr 29, 2021.
+        Last updated on May 03, 2021.
       </span>
 
     </p>
