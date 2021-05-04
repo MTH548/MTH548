@@ -4,6 +4,11 @@ Current Tasks
 =============
 
 
+Course evaluations
+------------------
+
+Please complete the `evaluation of this course <https://www.smartevals.com/entry.aspx?s=buffalo>`_.
+
 
 Project 7
 ---------
