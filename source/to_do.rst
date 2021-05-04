@@ -4,6 +4,11 @@ Current Tasks
 =============
 
 
+.. note::
+  
+   There is no class on Thursday, May 6. Instead, I will be available on 
+   Discord at 12:45 - 3:30 PM to answer any questions.
+
 Course evaluations
 ------------------
 
