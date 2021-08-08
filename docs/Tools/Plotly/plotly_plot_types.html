@@ -1178,7 +1178,7 @@ plotted.</p>
 <h2>Choropleth maps<a class="headerlink" href="#Choropleth-maps" title="Permalink to this headline">¶</a></h2>
 <p>Choropleth maps are used to represent statistical data for geographical areas by assigning colors to each area, depending on values of the data. To illustrate it, we will use data on agricultural exports produced by individual US states in 2011:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1191,7 +1191,7 @@ plotted.</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1339,7 +1339,7 @@ plotted.</p>
 </div>
 <p>We can create an additional column indicating if a state exports cotton:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1349,7 +1349,7 @@ plotted.</p>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1538,17 +1538,17 @@ plotted.</p>
 </div>
 <p>As another example, we will create a map showing what percentage of agricultural exports of each state are vegetables. First, we compute a new column with this percentage data:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;veggies_prc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;total veggies&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;total exports&quot;</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+<span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;veggies_%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;total veggies&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;total exports&quot;</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -1588,7 +1588,7 @@ plotted.</p>
       <th>wheat</th>
       <th>cotton</th>
       <th>cotton_exports</th>
-      <th>veggies_prc</th>
+      <th>veggies_%</th>
     </tr>
   </thead>
   <tbody>
@@ -1716,13 +1716,13 @@ plotted.</p>
                     <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
                     <span class="n">locationmode</span><span class="o">=</span><span class="s2">&quot;USA-states&quot;</span><span class="p">,</span>
                     <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;code&quot;</span><span class="p">,</span>
-                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;veggies_prc&quot;</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;veggies_%&quot;</span><span class="p">,</span>
                     <span class="n">color_continuous_scale</span> <span class="o">=</span> <span class="s2">&quot;tempo&quot;</span><span class="p">,</span> <span class="c1"># color scale to use</span>
                                                       <span class="c1"># see px.colors.sequential for available scales</span>
                     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Precentage of veggie exports&quot;</span><span class="p">,</span>
                     <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="p">,</span>
                     <span class="n">hover_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
-                    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;veggies_prc&quot;</span><span class="p">:</span> <span class="s2">&quot;Veggie Exports %&quot;</span><span class="p">},</span>
+                    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;veggies_%&quot;</span><span class="p">:</span> <span class="s2">&quot;Veggie Exports %&quot;</span><span class="p">},</span>
                    <span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_line_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span> <span class="c1"># plot state boundaries in white</span>
