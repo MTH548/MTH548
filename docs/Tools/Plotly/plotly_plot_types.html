@@ -140,6 +140,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#Marginal-plots">Marginal plots</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Pair-plot">Pair plot</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#Animated-plots">Animated plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Choropleth-maps">Choropleth maps</a></li>
 </ul>
 </li>
 </ul>
@@ -472,7 +473,7 @@ div.rendered_html tbody tr:hover {
 <p>Below are examples of plots which can be created using Plotly Express. For the full list of plots and their options see <a class="reference external" href="https://plotly.com/python-api-reference/plotly.express.html">Plotly Express documentation</a>.</p>
 <p>Plotly Express provides sample datasets which we will use in all examples.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -688,7 +689,7 @@ gapminder:
 <div class="section" id="Scatter-plot">
 <h2>Scatter plot<a class="headerlink" href="#Scatter-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -712,7 +713,7 @@ gapminder:
     scrolling="no"
     width="770px"
     height="520"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_5.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_3.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -722,7 +723,7 @@ gapminder:
 <h2>Line plot<a class="headerlink" href="#Line-plot" title="Permalink to this headline">¶</a></h2>
 <p>By default Plotly uses DataFrame column names to label plot coordinate axes, title of the legend etc. This can be changed using the <code class="docutils literal notranslate"><span class="pre">labels</span></code> argument. Its value should be a dictionary whose keys are column names, and values are labels we want to use.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -751,7 +752,7 @@ gapminder:
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_6.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_4.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -762,7 +763,7 @@ gapminder:
 <p>By default values in a column with categorical data are plotted in the order they are encountered in the DataFrame. In the example below it means that the order of days on the x-axis would not necessarily correspond to the usual ordering of days in a week. We can override this by assigning a dictionary to the <code class="docutils literal notranslate"><span class="pre">category_orders</span></code> argument. Dictionary keys are column names. The value corresponding to a given column is a list of values appearing in the column, ordered in the way we want them
 plotted.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -835,7 +836,7 @@ plotted.</p>
 </div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -859,7 +860,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_9.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_6.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -869,7 +870,7 @@ plotted.</p>
 <h2>Strip plot<a class="headerlink" href="#Strip-plot" title="Permalink to this headline">¶</a></h2>
 <p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to decrease overlapping.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -892,7 +893,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_10.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_7.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -910,7 +911,7 @@ plotted.</p>
 <li><p>Data values which are outside the range of whiskers are considered to be <em>outliers</em>. They are plotted as individual points.</p></li>
 </ul>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -933,7 +934,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_11.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_8.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -943,7 +944,7 @@ plotted.</p>
 <h2>Violin plot<a class="headerlink" href="#Violin-plot" title="Permalink to this headline">¶</a></h2>
 <p>Violin plots show kernel density estimate (KDE) of data.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -967,14 +968,14 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_12.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_9.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
 </div>
 <p>Violin plot can be combined with box plot:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -999,7 +1000,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_13.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_10.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -1009,7 +1010,7 @@ plotted.</p>
 <h2>Histogram plot<a class="headerlink" href="#Histogram-plot" title="Permalink to this headline">¶</a></h2>
 <p>Figures produced by Plotly Express can be customized using other Plotly tools. Below we use it to modify a histogram to add a bit of space between its bars (by default all bars would be plotted next to each other).</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1033,7 +1034,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_14.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_11.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -1042,7 +1043,7 @@ plotted.</p>
 <div class="section" id="Sunburst-plot">
 <h2>Sunburst plot<a class="headerlink" href="#Sunburst-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1062,7 +1063,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_15.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_12.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -1072,7 +1073,7 @@ plotted.</p>
 <h2>Marginal plots<a class="headerlink" href="#Marginal-plots" title="Permalink to this headline">¶</a></h2>
 <p>Most types of plots have options to include one or two marginal sublots. Below we use it to add a carpet plot on the margin of the x-axis, and a box plot on the margin of the y-axis. Possible types of marginal plots are <code class="docutils literal notranslate"><span class="pre">&quot;rug&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;box&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;violin&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;histogram&quot;</span></code>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1095,7 +1096,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_16.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_13.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -1105,7 +1106,7 @@ plotted.</p>
 <h2>Pair plot<a class="headerlink" href="#Pair-plot" title="Permalink to this headline">¶</a></h2>
 <p>Scatter plot shows relationship between two variables. The function <code class="docutils literal notranslate"><span class="pre">px.scatter_matrix()</span></code> is useful if we are dealing with more than two variables. It produces a grid of scatter plots, one plot for each pair of variables.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1126,7 +1127,7 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
-    src="../../_static/plotly_plot_types/iframe_figures/figure_17.html"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_14.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
@@ -1136,7 +1137,7 @@ plotted.</p>
 <h2>Animated plots<a class="headerlink" href="#Animated-plots" title="Permalink to this headline">¶</a></h2>
 <p>Some types plots can be animated using <code class="docutils literal notranslate"><span class="pre">animation_frame</span></code> and <code class="docutils literal notranslate"><span class="pre">animation_group</span></code> arguments. See <a class="reference external" href="https://plotly.com/python/animations/">Plotly documentation</a> for more details.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -1167,11 +1168,582 @@ plotted.</p>
     scrolling="no"
     width="100%"
     height="545px"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_15.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+</div>
+<div class="section" id="Choropleth-maps">
+<h2>Choropleth maps<a class="headerlink" href="#Choropleth-maps" title="Permalink to this headline">¶</a></h2>
+<p>Choropleth maps are used to represent statistical data for geographical areas by assigning colors to each area, depending on values of the data. To illustrate it, we will use data on agricultural exports produced by individual US states in 2011:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code</th>
+      <th>state</th>
+      <th>category</th>
+      <th>total exports</th>
+      <th>beef</th>
+      <th>pork</th>
+      <th>poultry</th>
+      <th>dairy</th>
+      <th>fruits fresh</th>
+      <th>fruits proc</th>
+      <th>total fruits</th>
+      <th>veggies fresh</th>
+      <th>veggies proc</th>
+      <th>total veggies</th>
+      <th>corn</th>
+      <th>wheat</th>
+      <th>cotton</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AL</td>
+      <td>Alabama</td>
+      <td>state</td>
+      <td>1390.63</td>
+      <td>34.4</td>
+      <td>10.6</td>
+      <td>481.0</td>
+      <td>4.06</td>
+      <td>8.0</td>
+      <td>17.1</td>
+      <td>25.11</td>
+      <td>5.5</td>
+      <td>8.9</td>
+      <td>14.33</td>
+      <td>34.9</td>
+      <td>70.0</td>
+      <td>317.61</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AK</td>
+      <td>Alaska</td>
+      <td>state</td>
+      <td>13.31</td>
+      <td>0.2</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.19</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.6</td>
+      <td>1.0</td>
+      <td>1.56</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AZ</td>
+      <td>Arizona</td>
+      <td>state</td>
+      <td>1463.17</td>
+      <td>71.3</td>
+      <td>17.9</td>
+      <td>0.0</td>
+      <td>105.48</td>
+      <td>19.3</td>
+      <td>41.0</td>
+      <td>60.27</td>
+      <td>147.5</td>
+      <td>239.4</td>
+      <td>386.91</td>
+      <td>7.3</td>
+      <td>48.7</td>
+      <td>423.95</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR</td>
+      <td>Arkansas</td>
+      <td>state</td>
+      <td>3586.02</td>
+      <td>53.2</td>
+      <td>29.4</td>
+      <td>562.9</td>
+      <td>3.53</td>
+      <td>2.2</td>
+      <td>4.7</td>
+      <td>6.88</td>
+      <td>4.4</td>
+      <td>7.1</td>
+      <td>11.45</td>
+      <td>69.5</td>
+      <td>114.5</td>
+      <td>665.44</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CA</td>
+      <td>California</td>
+      <td>state</td>
+      <td>16472.88</td>
+      <td>228.7</td>
+      <td>11.1</td>
+      <td>225.4</td>
+      <td>929.95</td>
+      <td>2791.8</td>
+      <td>5944.6</td>
+      <td>8736.40</td>
+      <td>803.2</td>
+      <td>1303.5</td>
+      <td>2106.79</td>
+      <td>34.6</td>
+      <td>249.3</td>
+      <td>1064.95</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>We can create an additional column indicating if a state exports cotton:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;cotton_exports&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;cotton&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code</th>
+      <th>state</th>
+      <th>category</th>
+      <th>total exports</th>
+      <th>beef</th>
+      <th>pork</th>
+      <th>poultry</th>
+      <th>dairy</th>
+      <th>fruits fresh</th>
+      <th>fruits proc</th>
+      <th>total fruits</th>
+      <th>veggies fresh</th>
+      <th>veggies proc</th>
+      <th>total veggies</th>
+      <th>corn</th>
+      <th>wheat</th>
+      <th>cotton</th>
+      <th>cotton_exports</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AL</td>
+      <td>Alabama</td>
+      <td>state</td>
+      <td>1390.63</td>
+      <td>34.4</td>
+      <td>10.6</td>
+      <td>481.0</td>
+      <td>4.06</td>
+      <td>8.0</td>
+      <td>17.1</td>
+      <td>25.11</td>
+      <td>5.5</td>
+      <td>8.9</td>
+      <td>14.33</td>
+      <td>34.9</td>
+      <td>70.0</td>
+      <td>317.61</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AK</td>
+      <td>Alaska</td>
+      <td>state</td>
+      <td>13.31</td>
+      <td>0.2</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.19</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.6</td>
+      <td>1.0</td>
+      <td>1.56</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AZ</td>
+      <td>Arizona</td>
+      <td>state</td>
+      <td>1463.17</td>
+      <td>71.3</td>
+      <td>17.9</td>
+      <td>0.0</td>
+      <td>105.48</td>
+      <td>19.3</td>
+      <td>41.0</td>
+      <td>60.27</td>
+      <td>147.5</td>
+      <td>239.4</td>
+      <td>386.91</td>
+      <td>7.3</td>
+      <td>48.7</td>
+      <td>423.95</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR</td>
+      <td>Arkansas</td>
+      <td>state</td>
+      <td>3586.02</td>
+      <td>53.2</td>
+      <td>29.4</td>
+      <td>562.9</td>
+      <td>3.53</td>
+      <td>2.2</td>
+      <td>4.7</td>
+      <td>6.88</td>
+      <td>4.4</td>
+      <td>7.1</td>
+      <td>11.45</td>
+      <td>69.5</td>
+      <td>114.5</td>
+      <td>665.44</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CA</td>
+      <td>California</td>
+      <td>state</td>
+      <td>16472.88</td>
+      <td>228.7</td>
+      <td>11.1</td>
+      <td>225.4</td>
+      <td>929.95</td>
+      <td>2791.8</td>
+      <td>5944.6</td>
+      <td>8736.40</td>
+      <td>803.2</td>
+      <td>1303.5</td>
+      <td>2106.79</td>
+      <td>34.6</td>
+      <td>249.3</td>
+      <td>1064.95</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>A choropleth map showing cotton exporting states can be produces as follows:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
+                    <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>   <span class="c1"># scope of the map</span>
+                    <span class="n">locationmode</span><span class="o">=</span><span class="s2">&quot;USA-states&quot;</span><span class="p">,</span>    <span class="c1"># we will specify US states using their codes</span>
+                    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="c1"># dataframe column with US state codes</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;cotton_exports&quot;</span><span class="p">,</span> <span class="c1"># values of this column will determine colors</span>
+                    <span class="n">category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cotton_exports&quot;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]},</span>
+                    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;lightgray&quot;</span><span class="p">],</span> <span class="c1"># colors used in the map</span>
+                    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;States exporting cotton&quot;</span><span class="p">,</span>
+                    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="p">,</span>
+                    <span class="n">hover_data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cotton_exports&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+                    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cotton_exports&quot;</span><span class="p">:</span> <span class="s2">&quot;Cotton exporters&quot;</span><span class="p">}</span>
+                   <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="100%"
+    height="545px"
     src="../../_static/plotly_plot_types/iframe_figures/figure_18.html"
     frameborder="0"
     allowfullscreen
 ></iframe></div>
 </div>
+<p>As another example, we will create a map showing what percentage of agricultural exports of each state are vegetables. First, we compute a new column with this percentage data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;veggies_prc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;total veggies&quot;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;total exports&quot;</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>code</th>
+      <th>state</th>
+      <th>category</th>
+      <th>total exports</th>
+      <th>beef</th>
+      <th>pork</th>
+      <th>poultry</th>
+      <th>dairy</th>
+      <th>fruits fresh</th>
+      <th>fruits proc</th>
+      <th>total fruits</th>
+      <th>veggies fresh</th>
+      <th>veggies proc</th>
+      <th>total veggies</th>
+      <th>corn</th>
+      <th>wheat</th>
+      <th>cotton</th>
+      <th>cotton_exports</th>
+      <th>veggies_prc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AL</td>
+      <td>Alabama</td>
+      <td>state</td>
+      <td>1390.63</td>
+      <td>34.4</td>
+      <td>10.6</td>
+      <td>481.0</td>
+      <td>4.06</td>
+      <td>8.0</td>
+      <td>17.1</td>
+      <td>25.11</td>
+      <td>5.5</td>
+      <td>8.9</td>
+      <td>14.33</td>
+      <td>34.9</td>
+      <td>70.0</td>
+      <td>317.61</td>
+      <td>True</td>
+      <td>1.030468</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AK</td>
+      <td>Alaska</td>
+      <td>state</td>
+      <td>13.31</td>
+      <td>0.2</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.19</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>0.6</td>
+      <td>1.0</td>
+      <td>1.56</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00</td>
+      <td>False</td>
+      <td>11.720511</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AZ</td>
+      <td>Arizona</td>
+      <td>state</td>
+      <td>1463.17</td>
+      <td>71.3</td>
+      <td>17.9</td>
+      <td>0.0</td>
+      <td>105.48</td>
+      <td>19.3</td>
+      <td>41.0</td>
+      <td>60.27</td>
+      <td>147.5</td>
+      <td>239.4</td>
+      <td>386.91</td>
+      <td>7.3</td>
+      <td>48.7</td>
+      <td>423.95</td>
+      <td>True</td>
+      <td>26.443270</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR</td>
+      <td>Arkansas</td>
+      <td>state</td>
+      <td>3586.02</td>
+      <td>53.2</td>
+      <td>29.4</td>
+      <td>562.9</td>
+      <td>3.53</td>
+      <td>2.2</td>
+      <td>4.7</td>
+      <td>6.88</td>
+      <td>4.4</td>
+      <td>7.1</td>
+      <td>11.45</td>
+      <td>69.5</td>
+      <td>114.5</td>
+      <td>665.44</td>
+      <td>True</td>
+      <td>0.319295</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CA</td>
+      <td>California</td>
+      <td>state</td>
+      <td>16472.88</td>
+      <td>228.7</td>
+      <td>11.1</td>
+      <td>225.4</td>
+      <td>929.95</td>
+      <td>2791.8</td>
+      <td>5944.6</td>
+      <td>8736.40</td>
+      <td>803.2</td>
+      <td>1303.5</td>
+      <td>2106.79</td>
+      <td>34.6</td>
+      <td>249.3</td>
+      <td>1064.95</td>
+      <td>True</td>
+      <td>12.789445</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>Next, we plot this data:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
+                    <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span>
+                    <span class="n">locationmode</span><span class="o">=</span><span class="s2">&quot;USA-states&quot;</span><span class="p">,</span>
+                    <span class="n">locations</span><span class="o">=</span><span class="s2">&quot;code&quot;</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;veggies_prc&quot;</span><span class="p">,</span>
+                    <span class="n">color_continuous_scale</span> <span class="o">=</span> <span class="s2">&quot;tempo&quot;</span><span class="p">,</span> <span class="c1"># color scale to use</span>
+                                                      <span class="c1"># see px.colors.sequential for available scales</span>
+                    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Precentage of veggie exports&quot;</span><span class="p">,</span>
+                    <span class="n">hover_name</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="p">,</span>
+                    <span class="n">hover_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+                    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;veggies_prc&quot;</span><span class="p">:</span> <span class="s2">&quot;Veggie Exports %&quot;</span><span class="p">},</span>
+                   <span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_traces</span><span class="p">(</span><span class="n">marker_line_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span> <span class="c1"># plot state boundaries in white</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+<iframe
+    scrolling="no"
+    width="100%"
+    height="545px"
+    src="../../_static/plotly_plot_types/iframe_figures/figure_20.html"
+    frameborder="0"
+    allowfullscreen
+></iframe></div>
+</div>
+<p>See <a class="reference external" href="https://plotly.github.io/plotly.py-docs/generated/plotly.express.choropleth.html">Plotly documentation</a> for additional information on plotting choropleth maps.</p>
 </div>
 </div>
 
@@ -1197,7 +1769,7 @@ plotted.</p>
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on May 01, 2021.
+        Last updated on Aug 08, 2021.
       </span>
 
     </p>
