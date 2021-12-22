@@ -95,14 +95,16 @@ div.nboutput.container div.output_area div[class*=highlight] > pre {
 
  /* remove background colors from rst code snippets */
  div.highlight{
-   background-color: rgb(252, 252, 252);
+   background-color: rgb(230, 230, 230);
  }
 
  /* darker input background */
+ /* 2021.12.21 This does not seem to have an effect anymore.
+    Use div.highlight instead */
  div.input_area,
  .highlight-default .highlight,
  .highlight-html .highlight{
-     background-color: #e8e8e8!important;
+     background-color: rgb(240, 240, 240)!important;
  }
 
   /* keep output background white */
