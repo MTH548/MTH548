@@ -70,15 +70,16 @@ The final section of the report must summarize your results and conclusions.
 Report organization
 ~~~~~~~~~~~~~~~~~~~
 
-Beside the sections with introduction and conclusions the body of the
-report should be logically organized into sections reflecting its content.
+Beside the introduction and conclusions, the body of the
+report should be logically organized into sections. Each section 
+should have a meaningful title.
 
 
 
 References
 ~~~~~~~~~~
 
-If you used books, articles, websites etc. while preparing the report they should
+If you used books, articles, websites etc. while preparing the report, they should
 be listed at the end of the report.
 
 
@@ -115,7 +116,7 @@ you should not have in a report two consecutive code cells without any text betw
 Code sequencing
 ~~~~~~~~~~~~~~~
 
-All Python code in the report must be entered in such order that it can be read
+All Python code in the report must be presented in such order that it can be read
 and executed sequentially, from the beginning to the end of the report. For example,
 you should not use a Python function in your report prior to defining this function.
 
@@ -155,7 +156,7 @@ Output size
 
 Your report should contain only code output that serves some purpose
 and that you expect someone to read. As a general rule, do not print more
-than 30 lines of output unless you have a good reason for it.
+than 30 lines of output unless you have a very good reason for it.
 
 
 .. toctree::
@@ -195,7 +196,7 @@ Notebook gallery
 The files linked below were selected from among notebooks posted online by various
 researchers and data scientists. The reports prepared for this class are **not** expected
 be as long and extensive as most of these examples. What you should try to imitate is
-the style: merging of narrative with Python code, organization of the content,
+the style: merging of the narrative with the Python code, organization of the content,
 preparation of graphics, code documentation etc.
 
 * `Common plotting pitfalls by J. Bednar <https://anaconda.org/jbednar/plotting_pitfalls/notebook>`_

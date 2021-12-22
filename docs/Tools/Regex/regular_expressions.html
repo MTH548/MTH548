@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Regular expressions &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Regular expressions &mdash; MTH 448/548  documentation</title>
   
 
   
@@ -41,7 +42,7 @@
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -94,70 +95,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">Logistics</span></p>
+              <p><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Syllabus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../group_assignments.html">Group Assignments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Schedule</span></p>
+<p><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_3.html">Week 3 (2/15-2/21)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_4.html">Week 4 (2/22-2/28)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_5.html">Week 5 (3/1-3/7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_6.html">Week 6 (3/8-3/14)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_7.html">Week 7 (3/15-3/21)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_8.html">Week 8 (3/22-3/28)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_9.html">Week 9 (3/29-4/4)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_10.html">Week 10 (4/5-4/11)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_11.html">Week 11 (4/12-4/18)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_12.html">Week 12 (4/19-4/25)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_13.html">Week 13 (4/26-5/2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_14.html">Week 14 (5/3-5/9)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tools</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../requests/requests.html">Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../json/json.html">JSON</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="regex_toc.html">Regular expressions</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Regular expressions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Prelude:-raw-strings">Prelude: raw strings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Visualizing-regular-expressions">Visualizing regular expressions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Character-classes">Character classes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Repetitions">Repetitions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Non-greedy-matches">Non-greedy matches</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Match-groups">Match groups</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Anchors">Anchors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Flags">Flags</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Inserting-comments">Inserting comments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Matching-special-characters">Matching special characters</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="re_functions.html">Functions in the re module</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Projects</span></p>
+<p><span class="caption-text">Tools</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/discord_logs/discord_logs.html">Project: Discord logs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/kde_marathon_results/kde_marathon_results.html">Project: KDE and marathon results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/music_database/music_database.html">Project: Music database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
 
             
@@ -228,21 +180,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -289,20 +255,33 @@ div.nboutput.container div.prompt pre {
 /* all prompts */
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
-    min-width: 5ex;
-    padding-top: 0.3rem;
-    padding-right: 0.3rem;
-    text-align: right;
-    flex: 0;
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
 }
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
 @media (max-width: 540px) {
     div.nbinput.container div.prompt,
     div.nboutput.container div.prompt {
+        width: unset;
         text-align: left;
         padding: 0.4em;
     }
     div.nboutput.container div.prompt.empty {
         padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
     }
 }
 
@@ -330,7 +309,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -395,7 +374,8 @@ div.nboutput.container div.output_area div[class*=highlight].math,
 div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 0.3rem;
+    padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -465,10 +445,10 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Regular-expressions">
+<section id="Regular-expressions">
 <h1>Regular expressions<a class="headerlink" href="#Regular-expressions" title="Permalink to this headline">¶</a></h1>
 <p>Regular expressions are a tool for specifying patterns (phone numbers, e-mail addresses etc.), in text strings. We can use them to search strings for such patterns, modify strings based on search results etc.</p>
-<div class="section" id="Prelude:-raw-strings">
+<section id="Prelude:-raw-strings">
 <h2>Prelude: raw strings<a class="headerlink" href="#Prelude:-raw-strings" title="Permalink to this headline">¶</a></h2>
 <p>In Python strings the backslash character <code class="docutils literal notranslate"><span class="pre">\</span></code> has a special meaning. For example <code class="docutils literal notranslate"><span class="pre">\n</span></code> denotes a new line, <code class="docutils literal notranslate"><span class="pre">\t</span></code> the tab, <code class="docutils literal notranslate"><span class="pre">\U</span></code> indicates a UTF-32 encoded unicode character etc.:</p>
 <div class="nbinput docutils container">
@@ -526,8 +506,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
 </pre></div></div>
 </div>
 <p>While working with regular expressions this second method is usually more convenient, and we will use it below.</p>
-</div>
-<div class="section" id="Visualizing-regular-expressions">
+</section>
+<section id="Visualizing-regular-expressions">
 <h2>Visualizing regular expressions<a class="headerlink" href="#Visualizing-regular-expressions" title="Permalink to this headline">¶</a></h2>
 <p>Regular expressions are a feature of many programming languages. In Python they are implemented by the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re</a> module:</p>
 <div class="nbinput nblast docutils container">
@@ -620,8 +600,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     color: red;"
                     >is</span> the course MTH 548 Data Oriented Computing!</code></div>
 </div>
-</div>
-<div class="section" id="Character-classes">
+</section>
+<section id="Character-classes">
 <h2>Character classes<a class="headerlink" href="#Character-classes" title="Permalink to this headline">¶</a></h2>
 <p>As the above example shows, a regular expression can simply consist of a string we want to search for. The real power of regular expressions, however, is that they can contain special character sequences with a more general meaning.</p>
 <table class="docutils align-default">
@@ -926,8 +906,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     color: red;"
                     >in</span>g!</code></div>
 </div>
-</div>
-<div class="section" id="Repetitions">
+</section>
+<section id="Repetitions">
 <h2>Repetitions<a class="headerlink" href="#Repetitions" title="Permalink to this headline">¶</a></h2>
 <p>In regular expressions we can specify in various ways how many times some pattern should repeat in a match:</p>
 <table class="docutils align-default">
@@ -1510,8 +1490,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     color: red;"
                     >ting</span>!</code></div>
 </div>
-</div>
-<div class="section" id="Non-greedy-matches">
+</section>
+<section id="Non-greedy-matches">
 <h2>Non-greedy matches<a class="headerlink" href="#Non-greedy-matches" title="Permalink to this headline">¶</a></h2>
 <p>By default regular expression matches are greedy: they will match the longest possible part of a given string that fits the specified pattern. For example, the pattern <code class="docutils literal notranslate"><span class="pre">r&quot;.+</span> <span class="pre">&quot;</span></code> will match the longest possible character sequence starting with the letter “D” and ending with a space:</p>
 <div class="nbinput docutils container">
@@ -1648,8 +1628,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     color: red;"
                     >in</span>g!</code></div>
 </div>
-</div>
-<div class="section" id="Match-groups">
+</section>
+<section id="Match-groups">
 <h2>Match groups<a class="headerlink" href="#Match-groups" title="Permalink to this headline">¶</a></h2>
 <p>As the last example shows, by default the sequences <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">*?</span></code> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">+?</span></code> etc. apply only to the single symbol preceding them. For example, the regular expression <code class="docutils literal notranslate"><span class="pre">&quot;ie?n&quot;</span></code> means that the character <code class="docutils literal notranslate"><span class="pre">e</span></code> should be repeated 0 or 1 times. In order to indicate that <code class="docutils literal notranslate"><span class="pre">?</span></code> applies the whole group <code class="docutils literal notranslate"><span class="pre">ie</span></code> we need to enclose this group in parentheses: <code class="docutils literal notranslate"><span class="pre">(ie)?n</span></code>. A part of a regular expression wrapped in parentheses is called a <em>match group</em>.</p>
 <p><strong>Examples.</strong></p>
@@ -1803,8 +1783,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     color: red;"
                     >Computing</span>!</code></div>
 </div>
-</div>
-<div class="section" id="Anchors">
+</section>
+<section id="Anchors">
 <h2>Anchors<a class="headerlink" href="#Anchors" title="Permalink to this headline">¶</a></h2>
 <p>Anchors are sequences which not match any character, but rather a specific position in a string:</p>
 <table class="docutils align-default">
@@ -2053,8 +2033,8 @@ Hello\tthere,\nthis is a cat: \U0001F431.
                     color: red;"
                     >he</span> course MTH 548 Data Oriented Computing!</code></div>
 </div>
-</div>
-<div class="section" id="Flags">
+</section>
+<section id="Flags">
 <h2>Flags<a class="headerlink" href="#Flags" title="Permalink to this headline">¶</a></h2>
 <p>In addition to a regular expression many functions in the <code class="docutils literal notranslate"><span class="pre">re</span></code> module accept flags, which modify the meaning of the regular expression:</p>
 <table class="docutils align-default">
@@ -2280,8 +2260,8 @@ How I wonder what you are!</span>
 Up above the world so high,
 Like a diamond in the sky.</code></div>
 </div>
-</div>
-<div class="section" id="Inserting-comments">
+</section>
+<section id="Inserting-comments">
 <h2>Inserting comments<a class="headerlink" href="#Inserting-comments" title="Permalink to this headline">¶</a></h2>
 <p>More complex regular expressions can look very cryptic and be difficult to understand. To make them more readable, it is possible to insert comments explaining what they match piece by piece. The flag <code class="docutils literal notranslate"><span class="pre">re.X</span></code> signals that a regular expression may contain comments. If this flag is used it has the following effects:</p>
 <ul class="simple">
@@ -2338,8 +2318,8 @@ Like a diamond in the sky.</code></div>
                     color: red;"
                     >0</span>.</code></div>
 </div>
-</div>
-<div class="section" id="Matching-special-characters">
+</section>
+<section id="Matching-special-characters">
 <h2>Matching special characters<a class="headerlink" href="#Matching-special-characters" title="Permalink to this headline">¶</a></h2>
 <p>As we have seen above, several characters (<code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> etc.) have special meaning when used in a regular expression. To match such characters literally, we precede them by a backslash <code class="docutils literal notranslate"><span class="pre">\</span></code>, so they become <code class="docutils literal notranslate"><span class="pre">\.</span></code>, <code class="docutils literal notranslate"><span class="pre">\+</span></code>, <code class="docutils literal notranslate"><span class="pre">\*</span></code> and so on. The backlash itself is matched by entering <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
 <p><strong>Example.</strong></p>
@@ -2446,8 +2426,8 @@ Like a diamond in the sky.</code></div>
                     color: red;"
                     >(ツ)</span>_/¯</code></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -2471,7 +2451,7 @@ Like a diamond in the sky.</code></div>
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Aug 08, 2021.
+        Last updated on Dec 21, 2021.
       </span>
 
     </p>

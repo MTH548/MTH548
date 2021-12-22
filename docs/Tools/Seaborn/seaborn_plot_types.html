@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Seaborn plot types &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Seaborn plot types &mdash; MTH 448/548  documentation</title>
   
 
   
@@ -41,7 +42,7 @@
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -94,70 +95,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">Logistics</span></p>
+              <p><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Syllabus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../group_assignments.html">Group Assignments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Schedule</span></p>
+<p><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_3.html">Week 3 (2/15-2/21)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_4.html">Week 4 (2/22-2/28)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_5.html">Week 5 (3/1-3/7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_6.html">Week 6 (3/8-3/14)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_7.html">Week 7 (3/15-3/21)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_8.html">Week 8 (3/22-3/28)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_9.html">Week 9 (3/29-4/4)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_10.html">Week 10 (4/5-4/11)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_11.html">Week 11 (4/12-4/18)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_12.html">Week 12 (4/19-4/25)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_13.html">Week 13 (4/26-5/2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_14.html">Week 14 (5/3-5/9)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tools</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="seaborn_toc.html">Seaborn</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="seaborn_basics.html">Seaborn</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Seaborn plot types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#Scatter-plot">Scatter plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Line-plot">Line plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Bar-plot">Bar plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Strip-plot">Strip plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Swarm-plot">Swarm plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Box-plot">Box plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Violin-plot">Violin plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Histogram-plot">Histogram plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Joint-plot">Joint plot</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#Pair-plot">Pair plot</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../requests/requests.html">Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../json/json.html">JSON</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Regex/regex_toc.html">Regular expressions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Projects</span></p>
+<p><span class="caption-text">Tools</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/discord_logs/discord_logs.html">Project: Discord logs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/kde_marathon_results/kde_marathon_results.html">Project: KDE and marathon results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/music_database/music_database.html">Project: Music database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
 
             
@@ -228,21 +180,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -289,20 +255,33 @@ div.nboutput.container div.prompt pre {
 /* all prompts */
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
-    min-width: 5ex;
-    padding-top: 0.3rem;
-    padding-right: 0.3rem;
-    text-align: right;
-    flex: 0;
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
 }
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
 @media (max-width: 540px) {
     div.nbinput.container div.prompt,
     div.nboutput.container div.prompt {
+        width: unset;
         text-align: left;
         padding: 0.4em;
     }
     div.nboutput.container div.prompt.empty {
         padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
     }
 }
 
@@ -330,7 +309,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -395,7 +374,8 @@ div.nboutput.container div.output_area div[class*=highlight].math,
 div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 0.3rem;
+    padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -465,7 +445,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Seaborn-plot-types">
+<section id="Seaborn-plot-types">
 <h1>Seaborn plot types<a class="headerlink" href="#Seaborn-plot-types" title="Permalink to this headline">¶</a></h1>
 <p>Below are examples of plots which can be created using seaborn. For the full list of seaborn functions and their options see the <a class="reference external" href="https://seaborn.pydata.org/api.html">seaborn documentation</a>.</p>
 <p>In all examples we will use sample datasets provided with seaborn.</p>
@@ -654,7 +634,7 @@ flights:
 </table>
 </div></div>
 </div>
-<div class="section" id="Scatter-plot">
+<section id="Scatter-plot">
 <h2>Scatter plot<a class="headerlink" href="#Scatter-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -679,11 +659,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" style="width: 836px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Line-plot">
+</section>
+<section id="Line-plot">
 <h2>Line plot<a class="headerlink" href="#Line-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -708,11 +688,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" style="width: 844px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" style="width: 844px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Bar-plot">
+</section>
+<section id="Bar-plot">
 <h2>Bar plot<a class="headerlink" href="#Bar-plot" title="Permalink to this headline">¶</a></h2>
 <p>By default values in a column with categorical data are plotted in the order they are encountered in the DataFrame. In the example below it means that the order of days on the x-axis would not necessarily correspond to the usual ordering of days in a week. We can override this by assigning a list of values of the x-column to the <code class="docutils literal notranslate"><span class="pre">order</span></code> argument. Bars will be plotted according to the ordering of the list.</p>
 <div class="nbinput docutils container">
@@ -812,11 +792,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" style="width: 844px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" style="width: 844px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Strip-plot">
+</section>
+<section id="Strip-plot">
 <h2>Strip plot<a class="headerlink" href="#Strip-plot" title="Permalink to this headline">¶</a></h2>
 <p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to decrease overlapping.</p>
 <div class="nbinput docutils container">
@@ -843,11 +823,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" style="width: 836px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Swarm-plot">
+</section>
+<section id="Swarm-plot">
 <h2>Swarm plot<a class="headerlink" href="#Swarm-plot" title="Permalink to this headline">¶</a></h2>
 <p>Swarm plot is similar to the strip plot, but x-coordinates of points are adjusted so that the points do not overlap.</p>
 <div class="nbinput docutils container">
@@ -874,11 +854,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" style="width: 836px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Box-plot">
+</section>
+<section id="Box-plot">
 <h2>Box plot<a class="headerlink" href="#Box-plot" title="Permalink to this headline">¶</a></h2>
 <p>Components of a box plot:</p>
 <ul class="simple">
@@ -915,11 +895,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" style="width: 836px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Violin-plot">
+</section>
+<section id="Violin-plot">
 <h2>Violin plot<a class="headerlink" href="#Violin-plot" title="Permalink to this headline">¶</a></h2>
 <p>Violin plots show kernel density estimate (KDE) of data.</p>
 <div class="nbinput docutils container">
@@ -947,11 +927,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" style="width: 836px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Histogram-plot">
+</section>
+<section id="Histogram-plot">
 <h2>Histogram plot<a class="headerlink" href="#Histogram-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -975,11 +955,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" style="width: 847px; height: 340px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" style="width: 847px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Joint-plot">
+</section>
+<section id="Joint-plot">
 <h2>Joint plot<a class="headerlink" href="#Joint-plot" title="Permalink to this headline">¶</a></h2>
 <p>The function <code class="docutils literal notranslate"><span class="pre">sns.jointplot()</span></code> produces a plot of data points together with marginal subplots. Below we use it to add histograms on the margins of the x-axis and y-axis of a scatter plot. While all previous examples used axes-level functions, <code class="docutils literal notranslate"><span class="pre">sns.jointplot()</span></code> is a figure-level function, i.e. it builds the whole matplolib figure.</p>
 <div class="nbinput docutils container">
@@ -1003,11 +983,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" style="width: 446px; height: 475px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" style="width: 446px; height: 475px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Pair-plot">
+</section>
+<section id="Pair-plot">
 <h2>Pair plot<a class="headerlink" href="#Pair-plot" title="Permalink to this headline">¶</a></h2>
 <p>Some types of plots (e.g. the scatter plot or the line plot) show relationships between two variables. The function <code class="docutils literal notranslate"><span class="pre">sns.pairplot()</span></code> is useful if we are dealing with more than two variables. It produces a grid of subplots, one subplot for each pair of variables. Subplots on the diagonal of the grid, which depend only on one variable, can be used to illustrate this single variable using its histogram, KDE etc. The function <code class="docutils literal notranslate"><span class="pre">sns.pairplot()</span></code> is a figure-level function.</p>
 <div class="nbinput docutils container">
@@ -1034,11 +1014,11 @@ flights:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<a class="reference internal image-reference" href="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png"><img alt="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" src="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" style="width: 560px; height: 442px;" /></a>
+<img alt="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" style="width: 560px; height: 442px;" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1062,7 +1042,7 @@ flights:
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Aug 08, 2021.
+        Last updated on Dec 21, 2021.
       </span>
 
     </p>

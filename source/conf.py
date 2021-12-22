@@ -22,7 +22,7 @@ copyright = '<a href="mailto:admin@mth548.org">Bernard Badzioch</a>'
 author = 'Bernard Badzioch'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+#release = '0.0.1'
 
 
 # -- General configuration ---------------------------------------------------

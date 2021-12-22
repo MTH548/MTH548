@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Functions in the re module &mdash; MTH 448/548 0.0.1 documentation</title>
+  <title>Functions in the re module &mdash; MTH 448/548  documentation</title>
   
 
   
@@ -41,7 +42,7 @@
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -94,70 +95,21 @@
               
             
             
-              <p class="caption"><span class="caption-text">Logistics</span></p>
+              <p><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Syllabus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../group_assignments.html">Group Assignments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Schedule</span></p>
+<p><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (2/1-2/7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/8-2/14)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_3.html">Week 3 (2/15-2/21)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_4.html">Week 4 (2/22-2/28)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_5.html">Week 5 (3/1-3/7)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_6.html">Week 6 (3/8-3/14)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_7.html">Week 7 (3/15-3/21)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_8.html">Week 8 (3/22-3/28)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_9.html">Week 9 (3/29-4/4)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_10.html">Week 10 (4/5-4/11)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_11.html">Week 11 (4/12-4/18)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_12.html">Week 12 (4/19-4/25)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_13.html">Week 13 (4/26-5/2)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_14.html">Week 14 (5/3-5/9)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tools</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../requests/requests.html">Requests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../json/json.html">JSON</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="regex_toc.html">Regular expressions</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="regular_expressions.html">Regular expressions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Functions in the re module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#re.findall">re.findall</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#re.findall-with-match-groups">re.findall with match groups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#Non-capturing-match-groups">Non-capturing match groups</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#re.sub">re.sub</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#re.sub-with-backreferences">re.sub with backreferences</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#re.sub-with-a-function-argument">re.sub with a function argument</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../SQL/sql_toc.html">SQL</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Projects</span></p>
+<p><span class="caption-text">Tools</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/discord_logs/discord_logs.html">Project: Discord logs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/kde_marathon_results/kde_marathon_results.html">Project: KDE and marathon results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/text_with_naive_bayes/text_with_naive_bayes.html">Project: Text classification with naive Bayes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Projects/music_database/music_database.html">Project: Music database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
 
             
@@ -228,21 +180,35 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput.container,
-div.nbinput.container div.prompt,
-div.nbinput.container div.input_area,
-div.nbinput.container div[class*=highlight],
-div.nbinput.container div[class*=highlight] pre,
-div.nboutput.container,
-div.nboutput.container div.prompt,
-div.nboutput.container div.output_area,
-div.nboutput.container div[class*=highlight],
-div.nboutput.container div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
 }
 
 /* avoid gaps between output lines */
@@ -289,20 +255,33 @@ div.nboutput.container div.prompt pre {
 /* all prompts */
 div.nbinput.container div.prompt,
 div.nboutput.container div.prompt {
-    min-width: 5ex;
-    padding-top: 0.3rem;
-    padding-right: 0.3rem;
-    text-align: right;
-    flex: 0;
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
 }
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
 @media (max-width: 540px) {
     div.nbinput.container div.prompt,
     div.nboutput.container div.prompt {
+        width: unset;
         text-align: left;
         padding: 0.4em;
     }
     div.nboutput.container div.prompt.empty {
         padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
     }
 }
 
@@ -330,7 +309,7 @@ div.nboutput.container div.output_area {
 div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
@@ -395,7 +374,8 @@ div.nboutput.container div.output_area div[class*=highlight].math,
 div.nboutput.container div.output_area.rendered_html,
 div.nboutput.container div.output_area > div.output_javascript,
 div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 0.3rem;
+    padding: 5px;
+    margin: 0;
 }
 
 /* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
@@ -465,7 +445,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Functions-in-the-re-module">
+<section id="Functions-in-the-re-module">
 <h1>Functions in the re module<a class="headerlink" href="#Functions-in-the-re-module" title="Permalink to this headline">¶</a></h1>
 <p>The Python <code class="docutils literal notranslate"><span class="pre">re</span></code> module had several functions for searching and modifying strings using regular expressions. Here we describe two of them. See the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re module documentation</a> for the complete list.</p>
 <div class="nbinput nblast docutils container">
@@ -477,7 +457,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="re.findall">
+<section id="re.findall">
 <h2>re.findall<a class="headerlink" href="#re.findall" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="re.re.findall">
@@ -505,7 +485,7 @@ div.rendered_html tbody tr:hover {
 [&#39;57&#39;, &#39;100&#39;, &#39;171&#39;, &#39;3&#39;]
 </pre></div></div>
 </div>
-<div class="section" id="re.findall-with-match-groups">
+<section id="re.findall-with-match-groups">
 <h3>re.findall with match groups<a class="headerlink" href="#re.findall-with-match-groups" title="Permalink to this headline">¶</a></h3>
 <p>In some cases we are interested only in a part of a match. For example, we may want to find all dollar amounts in the format “$57”, but we are interested in the numeric value “57” only. Such situations can be handled using match groups (i.e. parts of a regular expression enclosed in parentheses). If we create a match group in the pattern, then the whole pattern will be matched, but only the value of the match group will be returned:</p>
 <div class="nbinput docutils container">
@@ -549,8 +529,8 @@ div.rendered_html tbody tr:hover {
 [(&#39;9&#39;, &#39;30&#39;), (&#39;10&#39;, &#39;15&#39;)]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Non-capturing-match-groups">
+</section>
+<section id="Non-capturing-match-groups">
 <h3>Non-capturing match groups<a class="headerlink" href="#Non-capturing-match-groups" title="Permalink to this headline">¶</a></h3>
 <p>It often happens that need to create a match group in a regular expression for the purpose of specifying what should be matched, and not because we want to retrieve its value. Such match groups can be specified using the format <code class="docutils literal notranslate"><span class="pre">(?:...)</span></code>, and then their values will not be returned by <code class="docutils literal notranslate"><span class="pre">re.findall</span></code>.</p>
 <div class="nbinput docutils container">
@@ -601,9 +581,9 @@ EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM
 [(&#39;BUF 11:30 PM&#39;, &#39;EWR 12:45 PM&#39;), (&#39;EWR 7:45 PM&#39;, &#39;LHR 6:55 AM&#39;)]
 </pre></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="re.sub">
+</section>
+</section>
+<section id="re.sub">
 <h2>re.sub<a class="headerlink" href="#re.sub" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="re.re.sub">
@@ -666,7 +646,7 @@ This costs $57 for a 100 lbs box, so $171 for 3 boxes.
 This costs $(NUMBER) for a (NUMBER) lbs box, so $(NUMBER) for (NUMBER) boxes.
 </pre></div></div>
 </div>
-<div class="section" id="re.sub-with-backreferences">
+<section id="re.sub-with-backreferences">
 <h3>re.sub with backreferences<a class="headerlink" href="#re.sub-with-backreferences" title="Permalink to this headline">¶</a></h3>
 <p>The function <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> is more flexible than the example above suggests, since the value of the replacement string <code class="docutils literal notranslate"><span class="pre">repl</span></code> can depend on the value of the match being replaced. In order to make use of this, we need to specify one or more match groups in the pattern. Each capturing match group creates a <em>backreference</em> i.e., a label <code class="docutils literal notranslate"><span class="pre">\1</span></code>, <code class="docutils literal notranslate"><span class="pre">\2</span></code>, <code class="docutils literal notranslate"><span class="pre">\3</span></code> etc. (with <code class="docutils literal notranslate"><span class="pre">\1</span></code> denoting the leftmost match group). When these labels are used in the replacement string, they by themselves get replaced by
 values of the corresponding match groups.</p>
@@ -739,8 +719,8 @@ From: BUF To: EWR
 From: EWR To: LHR
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="re.sub-with-a-function-argument">
+</section>
+<section id="re.sub-with-a-function-argument">
 <h3>re.sub with a function argument<a class="headerlink" href="#re.sub-with-a-function-argument" title="Permalink to this headline">¶</a></h3>
 <p>There is even more that can be accomplished using <code class="docutils literal notranslate"><span class="pre">re.sub</span></code>. The value of the argument <code class="docutils literal notranslate"><span class="pre">repl</span></code> instead of a string can be a function. For each match of the pattern this function is called with a <em>match object</em> argument, which contains information about the match (its position in the string, values of match groups etc.). The function needs to return a string, which will be substituted for the matched pattern. For more information see the documentation of the <code class="docutils literal notranslate"><span class="pre">re</span></code> module.</p>
 <p><strong>Example.</strong></p>
@@ -790,9 +770,9 @@ Buffalo is 594 km away from New York City
 (about 6 hours by car) and 160 km from Toronto.
 </pre></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -816,7 +796,7 @@ Buffalo is 594 km away from New York City
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Aug 08, 2021.
+        Last updated on Dec 21, 2021.
       </span>
 
     </p>

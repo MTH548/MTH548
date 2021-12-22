@@ -1,16 +1,14 @@
 
-=================
-Syllabus
-=================
+====================
+MTH 448/548 Syllabus
+====================
 
-| **MTH 448/548 Data Oriented Computing**
 
-| **Class times:** Tue Th 12:45-2:35 PM
-| `Zoom <https://buffalo.zoom.us/j/91084963511?pwd=akVwSEI4U25VdzZuRGRlbmpoeHArQT09>`_: meeting ID:  910 8496 3511 Pass:  448548
+Class meetings
+--------------
 
-**Note.** Each class meeting will start on Zoom, but we will use Discord as well, see below.
-If you have not received an access link to the MTH 448/548 Discord server, email me at
-`badzioch@buffalo.edu <badzioch@buffalo.edu>`_.
+| Mon Wed 12:00-1:50 PM
+| 250 Mathematics Building 
 
 
 Instructor
@@ -18,7 +16,7 @@ Instructor
 
 | Bernard Badzioch
 | **E-mail:** `badzioch@buffalo.edu <badzioch@buffalo.edu>`_
-| **Office Hours:** Thu 3:00-5:00 PM on Discord, General Voice channel.
+| **Office Hours:** Wed 5:00-7:00 PM
 
 
 Prerequisites
@@ -28,7 +26,7 @@ This course assumes that you have some experience with programming in Python, an
 with such Python libraries as matplotlib or numpy (although we will start the course
 with a review of numpy). I will also assume that you are familiar with Jupyter Notebook:
 code cells, markdown cells etc. If you have not used Jupyter Notebook before, install
-the Anaconda distribution (see below) which Jupyter Notebook is a part of and get
+the Anaconda distribution (see below), which Jupyter Notebook is a part of, and get
 acquainted with it. Feel free to let me know if you have any questions.
 
 
@@ -46,29 +44,18 @@ After taking this course you should be able to:
 Course Resources
 ----------------
 
-**Laptop or a desktop computer.** You will need a computer both for Zoom/Discord meetings
-and for coding during class and outside class times. Any operating system (Windows/Mac/Linux) is fine.
+**Laptop.** We will be writing code during all class meetings. For this reason you need 
+to bring a laptop to each class. Any operating system (Windows/Mac/Linux) is fine.
 
-**Software.** We will be using the `Anaconda distribution of Python 3.8 <https://www.anaconda.com/products/individual#Downloads>`_.
+**Software.** We will be using the `Anaconda distribution of Python 3.9 <https://www.anaconda.com/products/individual#Downloads target="_blank">`_.
 This is free software. Even if you have Python already installed on your computer you should install this
 distribution since it includes Jupyter Notebook and several Python modules we will need.
 If you have a previous version of Python installed, please upgrade it so you don't run into
 possible compatibility issues.
 
-**Textbook.** There is no required textbook. There is a lot of online resources (documentation
+**Textbook.** There is no required textbook. There are a lot of online resources (documentation
 of Python libraries etc.) that may be helpful in this course. Some of them are listed on
 the :doc:`Useful Links <useful_links>` page.
-
-
-|Discord.| Every class meeting will start on Zoom, but then we will often migrate
-to Discord which provides better tools for interactive work and collaboration.
-On Discord the class with be split into small groups. Group assignments are posted
-:doc:`here <group_assignments>`.
-
-.. |Discord.| raw:: html
-
-   <strong><a href="https://discord.com/">Discord.</a> </strong>
-
 
 |UBLearns| will be used mainly for submitting project reports.
 
