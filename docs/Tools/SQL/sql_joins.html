@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>SQL joins, union, intersection &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -445,12 +447,12 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="SQL-joins,-union,-intersection">
+<div class="section" id="SQL-joins,-union,-intersection">
 <h1>SQL joins, union, intersection<a class="headerlink" href="#SQL-joins,-union,-intersection" title="Permalink to this headline">¶</a></h1>
 <p>We frequently need to combine data from several database tables and queries to extract information we want. The operators <code class="docutils literal notranslate"><span class="pre">UNION</span></code>, <code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code>, <code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code> and various types of joins are tools that help us accomplish such tasks.</p>
 <p>In the examples below we will be using the SQLite database <code class="docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code>. It can be downloaded here:</p>
 <div class="line-block">
-<div class="line"><a class="reference download internal" download="" href="../../_downloads/7c3996d2ebf797182bd2b6e66b2d0817/courses_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="../../_downloads/fcab99093e679a810ab2c2465d04b630/courses_data.sqlite"><code class="xref download docutils literal notranslate"><span class="pre">courses_data.sqlite</span></code></a></div>
 </div>
 <p>To execute SQL code in Jupyter Notebook we will use the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> notebook extension. Assuming that this extension is already installed (see <a class="reference internal" href="sql_basics.html"><span class="doc">SQL Basics</span></a> for installation instructions), the code below will load it:</p>
 <div class="nbinput nblast docutils container">
@@ -658,7 +660,7 @@ Done.
     </tr>
 </table></div>
 </div>
-<section id="INTERSECT">
+<div class="section" id="INTERSECT">
 <h2>INTERSECT<a class="headerlink" href="#INTERSECT" title="Permalink to this headline">¶</a></h2>
 <p>Lets say that we want to know id numbers of students who took both courses, MTH 141 and ENG 101. We can accomplish this using the <code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code> operator. Given two queries, it returns records which are selected by both of them:</p>
 <div class="nbinput docutils container">
@@ -704,8 +706,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
-<section id="UNION">
+</div>
+<div class="section" id="UNION">
 <h2>UNION<a class="headerlink" href="#UNION" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">UNION</span></code> operator combines two queries, returning records selected by either one of them. Identical records selected by both queries are returned only once.</p>
 <p>As an example, we can use <code class="docutils literal notranslate"><span class="pre">UNION</span></code> to get a list of id numbers of students who took either MTH 141 or ENG 101, or both:</p>
@@ -773,8 +775,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
-<section id="EXCEPT">
+</div>
+<div class="section" id="EXCEPT">
 <h2>EXCEPT<a class="headerlink" href="#EXCEPT" title="Permalink to this headline">¶</a></h2>
 <p>Given two queries, the <code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code> operator returns these records selected by the first query, which are not selected by the second query.</p>
 <p>Below we use it to get a list of id numbers of students who took MTH 141 but not ENG 101:</p>
@@ -831,8 +833,8 @@ Done.
 <p class="admonition-title fa fa-exclamation-circle">Note</p>
 <p>The operators <code class="docutils literal notranslate"><span class="pre">INTERSECT</span></code>, <code class="docutils literal notranslate"><span class="pre">UNION</span></code> and <code class="docutils literal notranslate"><span class="pre">EXCEPT</span></code> can be used to combine only queries which return the same number of columns.</p>
 </div>
-</section>
-<section id="Joins">
+</div>
+<div class="section" id="Joins">
 <h2>Joins<a class="headerlink" href="#Joins" title="Permalink to this headline">¶</a></h2>
 <p>Let say that we want to combine records from the <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> tables so that we get student id numbers in one column, MTH 141 grades in the second column, and ENG 101 grades in the last column. This can be done in a few different ways depending on what precisely we want to accomplish:</p>
 <p><strong>Case 1.</strong> We can get records of only these students who took both courses and have a grade for both MTH 141 and ENG 101.</p>
@@ -840,7 +842,7 @@ Done.
 <p><strong>Case 3.</strong> We can get records of all students who took ENG 101, and populate the MTH 141 column with either grades or NULL values depending on whether a student took MTH 141 or not.</p>
 <p><strong>Case 4.</strong> We can get records of students who took either course. The MTH 141 and ENG 101 columns will be populated with grades wherever they exist, and with NULL values elsewhere.</p>
 <p>SQL lets us implement each of these scenarios using different types of table joins: the inner join in case 1, the left and right joins in cases 2 and 3, and the full outer join in case 4.</p>
-<section id="Inner-join">
+<div class="section" id="Inner-join">
 <h3>Inner join<a class="headerlink" href="#Inner-join" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> clause is used as follows:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT column1, column2, ...
@@ -1010,8 +1012,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
-<section id="Left-join">
+</div>
+<div class="section" id="Left-join">
 <h3>Left join<a class="headerlink" href="#Left-join" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> clause is used as follows:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT column1, column2, ...
@@ -1095,8 +1097,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
-<section id="Right-join">
+</div>
+<div class="section" id="Right-join">
 <h3>Right join<a class="headerlink" href="#Right-join" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>, but with roles of the <code class="docutils literal notranslate"><span class="pre">right_table</span></code> and <code class="docutils literal notranslate"><span class="pre">left_table</span></code> reversed: if a record of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> does not have a matching record in the <code class="docutils literal notranslate"><span class="pre">left_table</span></code>, then it gets matched with NULL values.</p>
 <p>While <code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code> is a standard part of SQL, it is not implemented by SQLite. This is a minor inconvenience since we can get the same results by switching tables and using <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>. Below we do this to get grades of ENG 101 students, supplements by MTH 141 grades if they exist:</p>
@@ -1168,8 +1170,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
-<section id="Full-outer-join">
+</div>
+<div class="section" id="Full-outer-join">
 <h3>Full outer join<a class="headerlink" href="#Full-outer-join" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">OUTER</span> <span class="pre">JOIN</span></code> is a combination of <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> and <code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code>. It matches all records of <code class="docutils literal notranslate"><span class="pre">left_table</span></code> with all records of <code class="docutils literal notranslate"><span class="pre">right_table</span></code> based on a specified condition. If a record of either of the two tables does not have a match in the other table, it is matched with NULL values.</p>
 <p>Again, while <code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">OUTER</span> <span class="pre">JOIN</span></code> is a standard SQL feature, SQLite does not implement it. However, we can get the same results using <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> and <code class="docutils literal notranslate"><span class="pre">UNION</span></code>. For example, below we compute the full outer join of the <code class="docutils literal notranslate"><span class="pre">mth141</span></code> and <code class="docutils literal notranslate"><span class="pre">eng101</span></code> tables for records with the same student id number:</p>
@@ -1270,8 +1272,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
-<section id="Multiple-joins">
+</div>
+<div class="section" id="Multiple-joins">
 <h3>Multiple joins<a class="headerlink" href="#Multiple-joins" title="Permalink to this headline">¶</a></h3>
 <p>We can combine more that two tables by iterating the join operation. For example, below we use <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> twice to get grades of students who took both MTH 141 and ENG 101 combined with student names and majors:</p>
 <div class="nbinput docutils container">
@@ -1478,10 +1480,10 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
-</section>
-</section>
-<section id="Views">
+</div>
+</div>
+</div>
+<div class="section" id="Views">
 <h1>Views<a class="headerlink" href="#Views" title="Permalink to this headline">¶</a></h1>
 <p>As the last example shows queries can get long and complicated if they involve multiple joins, unions etc. Views provide a tool for splitting such queries into simpler pieces. A view is a virtual table with results of a given query. This virtual table can be then used to construct other queries. For example, here we construct a view <code class="docutils literal notranslate"><span class="pre">combined_grades</span></code> listing all MTH 141 and ENG 101 grades:</p>
 <div class="nbinput docutils container">
@@ -1834,7 +1836,7 @@ Done.
     </tr>
 </table></div>
 </div>
-</section>
+</div>
 
 
            </div>
@@ -1858,7 +1860,7 @@ Done.
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

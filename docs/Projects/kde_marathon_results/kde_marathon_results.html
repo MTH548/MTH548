@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Project: KDE and marathon results &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -197,14 +199,14 @@
     text-align: unset;
 }
 </style>
-<section id="Project:-KDE-and-marathon-results">
+<div class="section" id="Project:-KDE-and-marathon-results">
 <h1>Project: KDE and marathon results<a class="headerlink" href="#Project:-KDE-and-marathon-results" title="Permalink to this headline">¶</a></h1>
 <html><h1 style="color:teal;"><p>Project weight: 10 points</p>
 </h1></html><p>Download the following csv file which contains race results of about 26,000 marathon runners:</p>
 <div class="line-block">
-<div class="line"><a class="reference download internal" download="" href="../../_downloads/cc72b97156b9bb1911c5f3ca48da3e78/marathon_results.csv"><code class="xref download docutils literal notranslate"><span class="pre">marathon_results.csv</span></code></a></div>
+<div class="line"><a class="reference download internal" download="" href="../../_downloads/01eeefb5bc91ccf3c213c7d9cc73e24e/marathon_results.csv"><code class="xref download docutils literal notranslate"><span class="pre">marathon_results.csv</span></code></a></div>
 </div>
-<section id="Objectives">
+<div class="section" id="Objectives">
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <p>Analyze the marathon data. In particular:</p>
 <ol class="arabic simple">
@@ -214,8 +216,8 @@
 <li><p>Add anything else that you find relevant and interesting.</p></li>
 </ol>
 <p><strong>Note:</strong> Tools for computing KDE are implemented by several Python libraries. You can use, for example, <code class="docutils literal notranslate"><span class="pre">scipy.stats.gaussian_kde</span></code>which is a part of the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html">scipy module</a>. On the other hand you must not use ready-made Bayes classification tools implemented in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> and other machine learning packages. You can use <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> to compute k-NN classification.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -239,7 +241,7 @@
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

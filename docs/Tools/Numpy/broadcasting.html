@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Array shapes and broadcasting &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="numpy_toc.html">Numpy</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="numpy_basics.html">Numpy Basics</a></li>
@@ -455,9 +457,9 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Array-shapes-and-broadcasting">
+<div class="section" id="Array-shapes-and-broadcasting">
 <h1>Array shapes and broadcasting<a class="headerlink" href="#Array-shapes-and-broadcasting" title="Permalink to this headline">¶</a></h1>
-<section id="Shapes-of-numpy-arrays">
+<div class="section" id="Shapes-of-numpy-arrays">
 <h2>Shapes of numpy arrays<a class="headerlink" href="#Shapes-of-numpy-arrays" title="Permalink to this headline">¶</a></h2>
 <p>The shape of a numpy array describes the range of its indices in each dimension: how many rows it has, how many columns etc. It can be obtained using the <code class="docutils literal notranslate"><span class="pre">shape</span></code> property:</p>
 <div class="nbinput docutils container">
@@ -650,30 +652,31 @@ array([[ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11]])
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">flatten()</span></code> method returns a copy of an array flattened to one dimension:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># create an array with 4 rows and 3 columns</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">a</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([[ 3, 10, 59],
-       [93, 75, 49],
-       [24, 67, 19],
-       [66, 80, 18]])
+array([[85, 63, 51],
+       [26, 30,  4],
+       [ 7,  1, 17],
+       [81, 64, 91]])
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -683,16 +686,16 @@ array([[ 3, 10, 59],
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-array([ 3, 10, 59, 93, 75, 49, 24, 67, 19, 66, 80, 18])
+array([85, 63, 51, 26, 30,  4,  7,  1, 17, 81, 64, 91])
 </pre></div></div>
 </div>
-</section>
-<section id="Broadcasting">
+</div>
+<div class="section" id="Broadcasting">
 <h2>Broadcasting<a class="headerlink" href="#Broadcasting" title="Permalink to this headline">¶</a></h2>
 <p>Broadcasting is a feature of numpy arrays which lets us perform arithmetic operations involving arrays of different shapes. In its simplest instance it lets us take the sum of an array and a number:</p>
 <div class="nbinput docutils container">
@@ -834,8 +837,8 @@ c=
 <span class="ansi-red-fg">ValueError</span>: operands could not be broadcast together with shapes (3,4) (2,4)
 </pre></div></div>
 </div>
-</section>
-<section id="Broadcasting-rules">
+</div>
+<div class="section" id="Broadcasting-rules">
 <h2>Broadcasting rules<a class="headerlink" href="#Broadcasting-rules" title="Permalink to this headline">¶</a></h2>
 <p>The rules that determine when two arrays are compatible for broadcasting and how broadcasting is performed are as follows:</p>
 <div class="admonition note">
@@ -932,7 +935,7 @@ a.shape = (3, 4)
 d.shape = (3, 1)
 </pre></div></div>
 </div>
-<p>In this case both arrays are 2-dimensional, and their first dimensions match. Since the array <code class="docutils literal notranslate"><span class="pre">d</span></code> has 1 in the second dimension, it gets stretched in this dimension, which replicated its single column. The result is that <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">d</span></code> adds <code class="docutils literal notranslate"><span class="pre">d</span></code> to every column of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<p>In this case both arrays are 2-dimensional, and their first dimensions match. Since the array <code class="docutils literal notranslate"><span class="pre">d</span></code> has 1 in the second dimension, it gets stretched in this dimension, which replicates its single column. The result is that <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">d</span></code> adds <code class="docutils literal notranslate"><span class="pre">d</span></code> to every column of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
@@ -1060,8 +1063,8 @@ array([[110, 210, 310, 410],
        [130, 230, 330, 430]])
 </pre></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -1085,7 +1088,7 @@ array([[110, 210, 310, 410],
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

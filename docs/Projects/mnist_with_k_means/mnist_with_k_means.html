@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Project: MNIST with k-means &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -197,7 +199,7 @@
     text-align: unset;
 }
 </style>
-<section id="Project:-MNIST-with-k-means">
+<div class="section" id="Project:-MNIST-with-k-means">
 <h1>Project: MNIST with k-means<a class="headerlink" href="#Project:-MNIST-with-k-means" title="Permalink to this headline">¶</a></h1>
 <html><h1 style="color:teal;"><p>Project weight: 10 points</p>
 </h1></html><p>This project uses the MNIST database. The files (the same as for the k-NN project) can be downloaded here:</p>
@@ -205,7 +207,7 @@
 <div class="line"><a class="reference download external" download="" href="http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz"><code class="xref download docutils literal notranslate"><span class="pre">train-images-idx3-ubyte.gz</span></code></a></div>
 <div class="line"><a class="reference download external" download="" href="http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz"><code class="xref download docutils literal notranslate"><span class="pre">train-labels-idx1-ubyte.gz</span></code></a></div>
 </div>
-<section id="Objectives">
+<div class="section" id="Objectives">
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <p><strong>Part 1.</strong></p>
 <ul class="simple">
@@ -220,8 +222,8 @@
 </ol>
 <p>Investigate how the prediction accuracy and speed of k-NN using this new training data compares to the case when you use training data without clustering. Also, if you train k-NN using the centroid training data and then train it using the same amount of randomly selected training data is there a difference in the prediction accuracy?</p>
 <p><strong>Note.</strong> For part 2 use the k-NN classifier implemented in sklearn. It will run faster than the implementation that you wrote yourself.</p>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -245,7 +247,7 @@
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>GroupBy &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -445,7 +447,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="GroupBy">
+<div class="section" id="GroupBy">
 <h1>GroupBy<a class="headerlink" href="#GroupBy" title="Permalink to this headline">¶</a></h1>
 <p>A common pattern in data analysis is to split data into groups based on some criteria (geographical area, age, type of business, etc.), make some computations for each group, and then assemble the results in order to compare them. We will show how to perform such tasks with pandas using the DataFrame <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> method.</p>
 <p>As an example we will use “tips” data set provided by the seaborn module. It contains data on restaurant visits: the total bill amount, tip amount, sex of the person paying the bill, whether the visiting group included smokers, day and time of the visit, and the size of the group:</p>
@@ -549,7 +551,7 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
-<section id="The-GroupBy-object">
+<div class="section" id="The-GroupBy-object">
 <h2>The GroupBy object<a class="headerlink" href="#The-GroupBy-object" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">unique()</span></code> method of pandas Series returns values of a Series, without repetitions. Using it we can check that the “sex” column has only two unique values: “Female” and “Male”:</p>
 <div class="nbinput docutils container">
@@ -913,8 +915,8 @@ value: Female
 </table>
 </div></div>
 </div>
-</section>
-<section id="Simple-aggregations">
+</div>
+<div class="section" id="Simple-aggregations">
 <h2>Simple aggregations<a class="headerlink" href="#Simple-aggregations" title="Permalink to this headline">¶</a></h2>
 <p>The usual way of using GroupBy objects it to make some computations for each group, and then combine the results:</p>
 <div class="nbinput docutils container">
@@ -1120,8 +1122,8 @@ Name: total_bill, dtype: float64
 </table>
 </div></div>
 </div>
-</section>
-<section id="GroupBy.agg">
+</div>
+<div class="section" id="GroupBy.agg">
 <h2>GroupBy.agg<a class="headerlink" href="#GroupBy.agg" title="Permalink to this headline">¶</a></h2>
 <p>To aggregate data in a custom way, we can use the <code class="docutils literal notranslate"><span class="pre">agg()</span></code> method. This method takes as its argument a function. This function is applied to every column of each group to compute aggregations.</p>
 <p>For example, let say that we want to calculate how many males and females left tips above $5.00. This could be done as follows:</p>
@@ -1184,8 +1186,8 @@ Female     4
 Name: tip, dtype: int64
 </pre></div></div>
 </div>
-</section>
-<section id="GroupBy.transform">
+</div>
+<div class="section" id="GroupBy.transform">
 <h2>GroupBy.transform<a class="headerlink" href="#GroupBy.transform" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">transform()</span></code> is another method of GroupBy objects. It also takes as its argument a function and applies this function to columns of each group. In this case though, the function must return either a Series of the same length as the original column or a scalar value.</p>
 <p>In the example below, we use transform to express values of the “total_bill” and “tip” columns as fractions of mean values of these columns in each group.</p>
@@ -1492,8 +1494,8 @@ Name: tip, dtype: int64
 </table>
 </div></div>
 </div>
-</section>
-<section id="GroupBy.apply">
+</div>
+<div class="section" id="GroupBy.apply">
 <h2>GroupBy.apply<a class="headerlink" href="#GroupBy.apply" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">apply()</span></code> method is more flexible than <code class="docutils literal notranslate"><span class="pre">agg()</span></code> and <code class="docutils literal notranslate"><span class="pre">transform()</span></code> but usually also slower. It takes as an argument a function. This function is applied to the whole DataFrame for each group. The return values are then assembled together.</p>
 <p>For example, lets say that for each “Female”/“Male” group we want to find 3 rows of data with the largest tip amounts. We can do it as follows:</p>
@@ -1737,8 +1739,8 @@ Name: tip, dtype: int64
 </table>
 </div></div>
 </div>
-</section>
-<section id="groupby-options">
+</div>
+<div class="section" id="groupby-options">
 <h2>groupby options<a class="headerlink" href="#groupby-options" title="Permalink to this headline">¶</a></h2>
 <p>In the examples above we grouped DataFrame rows based on values of a single column. Grouping can be also performed based on values of several columns. For example, we can split the <code class="docutils literal notranslate"><span class="pre">tips</span></code> DataFrame into groups using values of both “day” and “time” columns, and then compute maximal values of columns for each group:</p>
 <div class="nbinput docutils container">
@@ -1980,8 +1982,8 @@ array([&#39;small&#39;, &#39;large&#39;, &#39;large&#39;, &#39;small&#39;, &#39;
 </table>
 </div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -2005,7 +2007,7 @@ array([&#39;small&#39;, &#39;large&#39;, &#39;large&#39;, &#39;small&#39;, &#39;
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

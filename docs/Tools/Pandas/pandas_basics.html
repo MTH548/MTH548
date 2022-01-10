@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Pandas basics &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -445,7 +447,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Pandas-basics">
+<div class="section" id="Pandas-basics">
 <h1>Pandas basics<a class="headerlink" href="#Pandas-basics" title="Permalink to this headline">¶</a></h1>
 <p>Pandas is a Python library for working with tabular data. The main objects it provides are Series and DataFrame.</p>
 <div class="nbinput nblast docutils container">
@@ -457,7 +459,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Pandas-Series">
+<div class="section" id="Pandas-Series">
 <h2>Pandas Series<a class="headerlink" href="#Pandas-Series" title="Permalink to this headline">¶</a></h2>
 <p>Pandas Series is essentially a one-dimensional array, equipped with an index which labels its entries. We can create a Series object, for example, by converting a list:</p>
 <div class="nbinput docutils container">
@@ -611,8 +613,8 @@ Pluto        2370
 dtype: int64
 </pre></div></div>
 </div>
-</section>
-<section id="Pandas-DataFrame">
+</div>
+<div class="section" id="Pandas-DataFrame">
 <h2>Pandas DataFrame<a class="headerlink" href="#Pandas-DataFrame" title="Permalink to this headline">¶</a></h2>
 <p>Pandas DataFrame is a two-dimensional array equipped with one index labeling its rows, and another labeling its columns. There are several ways of creating a DataFrame. One of them is to use a dictionary of lists. Each list gives values of a column of the DataFrame, and dictionary keys give column labels:</p>
 <div class="nbinput docutils container">
@@ -990,10 +992,10 @@ Index([&#39;Mercury&#39;, &#39;Venus&#39;, &#39;Earth&#39;, &#39;Mars&#39;, &#39
       dtype=&#39;object&#39;)
 </pre></div></div>
 </div>
-</section>
-<section id="Selecting-data-in-a-DataFrame">
+</div>
+<div class="section" id="Selecting-data-in-a-DataFrame">
 <h2>Selecting data in a DataFrame<a class="headerlink" href="#Selecting-data-in-a-DataFrame" title="Permalink to this headline">¶</a></h2>
-<section id="Basic-selections">
+<div class="section" id="Basic-selections">
 <h3>Basic selections<a class="headerlink" href="#Basic-selections" title="Permalink to this headline">¶</a></h3>
 <p>Columns of a DataFrame can be selected by specifying a column name. This returns a Series with column data:</p>
 <div class="nbinput docutils container">
@@ -1177,8 +1179,8 @@ Name: gravity, dtype: float64
 </table>
 </div></div>
 </div>
-</section>
-<section id="Selections-with-loc-and-iloc">
+</div>
+<div class="section" id="Selections-with-loc-and-iloc">
 <h3>Selections with <code class="docutils literal notranslate"><span class="pre">loc</span></code> and <code class="docutils literal notranslate"><span class="pre">iloc</span></code><a class="headerlink" href="#Selections-with-loc-and-iloc" title="Permalink to this headline">¶</a></h3>
 <p>To get more flexibility with DataFrame selections we can use the <code class="docutils literal notranslate"><span class="pre">loc</span></code> indexer. It lets us select rows and columns using row and column labels, lists of labels, and slices:</p>
 <div class="nbinput docutils container">
@@ -1559,8 +1561,8 @@ Saturn     120536
 dtype: int64
 </pre></div></div>
 </div>
-</section>
-<section id="Boolean-indexing">
+</div>
+<div class="section" id="Boolean-indexing">
 <h3>Boolean indexing<a class="headerlink" href="#Boolean-indexing" title="Permalink to this headline">¶</a></h3>
 <p>Similarly as with numpy arrays, we can use Boolean indexing to select parts of pandas Series and DataFrames.</p>
 <div class="nbinput docutils container">
@@ -1799,9 +1801,9 @@ Name: diameter, dtype: bool
 </table>
 </div></div>
 </div>
-</section>
-</section>
-<section id="Sorting">
+</div>
+</div>
+<div class="section" id="Sorting">
 <h2>Sorting<a class="headerlink" href="#Sorting" title="Permalink to this headline">¶</a></h2>
 <p>Values of pandas Series can be sorted using the <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> method:</p>
 <div class="nbinput docutils container">
@@ -2376,10 +2378,10 @@ dtype: int64
 </table>
 </div></div>
 </div>
-</section>
-<section id="Modifying-DataFrames-and-Series">
+</div>
+<div class="section" id="Modifying-DataFrames-and-Series">
 <h2>Modifying DataFrames and Series<a class="headerlink" href="#Modifying-DataFrames-and-Series" title="Permalink to this headline">¶</a></h2>
-<section id="Adding-rows-and-columns">
+<div class="section" id="Adding-rows-and-columns">
 <h3>Adding rows and columns<a class="headerlink" href="#Adding-rows-and-columns" title="Permalink to this headline">¶</a></h3>
 <p>We can add a column to a DataFrame by specifying its name and values:</p>
 <div class="nbinput docutils container">
@@ -2857,8 +2859,8 @@ dtype: int64
 </table>
 </div></div>
 </div>
-</section>
-<section id="Using-numpy-functions">
+</div>
+<div class="section" id="Using-numpy-functions">
 <h3>Using numpy functions<a class="headerlink" href="#Using-numpy-functions" title="Permalink to this headline">¶</a></h3>
 <p>Numpy functions can be be applied directly to pandas Series:</p>
 <div class="nbinput docutils container">
@@ -3056,8 +3058,8 @@ dtype: float64
 </table>
 </div></div>
 </div>
-</section>
-<section id="Series.map()">
+</div>
+<div class="section" id="Series.map()">
 <h3>Series.map()<a class="headerlink" href="#Series.map()" title="Permalink to this headline">¶</a></h3>
 <p>More complex computations can be accomplished using the <code class="docutils literal notranslate"><span class="pre">map</span></code> method of pandas Series. This method takes as its argument a function, applies this function to each value of the Series, and produces a new Series consisting of return values of the function:</p>
 <div class="nbinput docutils container">
@@ -3245,9 +3247,9 @@ dtype: object
 </table>
 </div></div>
 </div>
-</section>
-</section>
-<section id="Aggregations">
+</div>
+</div>
+<div class="section" id="Aggregations">
 <h2>Aggregations<a class="headerlink" href="#Aggregations" title="Permalink to this headline">¶</a></h2>
 <p>Similarly as numpy arrays, pandas Series and DataFrames have several methods that let us summarize their data. We will use the following DataFrame with exam scores of some students to illustrate this:</p>
 <div class="nbinput docutils container">
@@ -3412,7 +3414,7 @@ Emily    108
 dtype: int64
 </pre></div></div>
 </div>
-<section id="DataFrame.agg()">
+<div class="section" id="DataFrame.agg()">
 <h3>DataFrame.agg()<a class="headerlink" href="#DataFrame.agg()" title="Permalink to this headline">¶</a></h3>
 <p>To aggregate data in a custom way we can use the DataFrame <code class="docutils literal notranslate"><span class="pre">agg</span></code> method. This method takes as an argument a function, passes each column (or row) of the DataFrame to this function, and returns a Series (or DataFrame) consisting of return values.</p>
 <p>For example, lets say that we want to assign grades to students based on their total exam scores: “Pass” for a score above 200, and “Fail” otherwise. We can do it as follows:</p>
@@ -3537,9 +3539,9 @@ dtype: float64
 </table>
 </div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -3563,7 +3565,7 @@ dtype: float64
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

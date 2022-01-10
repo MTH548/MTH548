@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Plotly basics &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -445,7 +447,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Plotly-basics">
+<div class="section" id="Plotly-basics">
 <h1>Plotly basics<a class="headerlink" href="#Plotly-basics" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://plotly.com/python/">Plotly</a> is a library for creating interactive plots. To install Plotly from inside of a Jupyter notebook execute the following code:</p>
 <div class="nbinput nblast docutils container">
@@ -457,7 +459,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Traces-and-figures">
+<div class="section" id="Traces-and-figures">
 <h2>Traces and figures<a class="headerlink" href="#Traces-and-figures" title="Permalink to this headline">¶</a></h2>
 <p>Plotly module <code class="docutils literal notranslate"><span class="pre">plotly.graph_objects</span></code> defines classes that can be used to construct plots of various types. Below we use it to produce a scatter plot, which displays points with given <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates. This example illustrates the basic process of producing a plot with Plotly. First, we create an object with plot data (a <em>trace</em> in the Plotly nomenclature). Then we embed the trace in a figure object and finally, we display the resulting figure.</p>
 <div class="nbinput docutils container">
@@ -608,8 +610,8 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-</section>
-<section id="Figure-layout">
+</div>
+<div class="section" id="Figure-layout">
 <h2>Figure layout<a class="headerlink" href="#Figure-layout" title="Permalink to this headline">¶</a></h2>
 <p>So far we created figure objects using only one argument, <code class="docutils literal notranslate"><span class="pre">data</span></code>, which specifies which traces are included in the figure. The second commonly used argument is <code class="docutils literal notranslate"><span class="pre">layout</span></code>. It can be used to set the general properties of the figure: its title, width, height, the location of the legend etc.:</p>
 <div class="nbinput docutils container">
@@ -945,8 +947,8 @@ div.rendered_html tbody tr:hover {
     &#39;margin&#39;: {&#39;b&#39;: 60, &#39;l&#39;: 30, &#39;r&#39;: 30, &#39;t&#39;: 60}}}}}
 </pre></div></div>
 </div>
-</section>
-<section id="Underscore-Notation">
+</div>
+<div class="section" id="Underscore-Notation">
 <h2>Underscore Notation<a class="headerlink" href="#Underscore-Notation" title="Permalink to this headline">¶</a></h2>
 <p>Specifying properties of traces and figures using nested dictionaries can be cumbersome. We can often avoid it by using Plotly’s underscore notation. This notation lets us denote by <code class="docutils literal notranslate"><span class="pre">dict_k</span></code> the value of the dictionary <code class="docutils literal notranslate"><span class="pre">dict</span></code> assigned to the key <code class="docutils literal notranslate"><span class="pre">k</span></code>. For example, using this notation the assignment</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">layout</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;width&#39;</span> <span class="p">:</span> <span class="mi">750</span><span class="p">,</span>  <span class="s1">&#39;height&#39;</span> <span class="p">:</span> <span class="mi">200</span><span class="p">}</span>
@@ -999,8 +1001,8 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-</section>
-<section id="Updating-layout">
+</div>
+<div class="section" id="Updating-layout">
 <h2>Updating layout<a class="headerlink" href="#Updating-layout" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">fig.update_layout()</span></code> method lets us modify figure layout after the figure has been created. We can use it with either dictionaries or the underscore notation. Since all arguments of this method apply to the layout, the <code class="docutils literal notranslate"><span class="pre">layout_</span></code> part of the underscore notation is omitted:</p>
 <div class="nbinput docutils container">
@@ -1035,8 +1037,8 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-</section>
-<section id="Updating-traces">
+</div>
+<div class="section" id="Updating-traces">
 <h2>Updating traces<a class="headerlink" href="#Updating-traces" title="Permalink to this headline">¶</a></h2>
 <p>The method <code class="docutils literal notranslate"><span class="pre">fig.update_traces()</span></code> can be used to update traces embedded in an existing figure.</p>
 <div class="nbinput docutils container">
@@ -1112,8 +1114,8 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-</section>
-<section id="Subplots">
+</div>
+<div class="section" id="Subplots">
 <h2>Subplots<a class="headerlink" href="#Subplots" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">fig.add_trace()</span></code> method can be used to add a trace to an existing figure:</p>
 <div class="nbinput docutils container">
@@ -1210,8 +1212,8 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-</section>
-<section id="Templates">
+</div>
+<div class="section" id="Templates">
 <h2>Templates<a class="headerlink" href="#Templates" title="Permalink to this headline">¶</a></h2>
 <p>Plotly comes with several theme templates which modify the overall look of a figure. A theme can be specified using the <code class="docutils literal notranslate"><span class="pre">template</span></code> key in the figure layout.</p>
 <div class="nbinput docutils container">
@@ -1321,8 +1323,8 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -1346,7 +1348,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

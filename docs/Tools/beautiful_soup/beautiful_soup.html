@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Beautiful Soup &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -443,9 +445,9 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Beautiful-Soup">
+<div class="section" id="Beautiful-Soup">
 <h1>Beautiful Soup<a class="headerlink" href="#Beautiful-Soup" title="Permalink to this headline">¶</a></h1>
-<section id="First-steps">
+<div class="section" id="First-steps">
 <h2>First steps<a class="headerlink" href="#First-steps" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a> is a Python library for retrieving data from HTML (and other XML) files. We will explore its basic functionality using the UB Math Department web page with graduate student directory as an example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://www.buffalo.edu/cas/math/people/grad-directory.html
@@ -3071,8 +3073,8 @@ Cosgrove, Gage (Makenzie)
 Deutsch, Dustin
 </pre></div></div>
 </div>
-</section>
-<section id="Links">
+</div>
+<div class="section" id="Links">
 <h2>Links<a class="headerlink" href="#Links" title="Permalink to this headline">¶</a></h2>
 <p>Links in HTML documents are defined by the <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tag. For example:</p>
 <div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.buffalo.edu&quot;</span><span class="p">&gt;</span>University at Buffalo<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
@@ -3165,7 +3167,7 @@ Deutsch, Dustin
 &#39;http://www.buffalo.edu/ub_admissions/apply-now.html&#39;
 </pre></div></div>
 </div>
-<section id="Link-formats">
+<div class="section" id="Link-formats">
 <h3>Link formats<a class="headerlink" href="#Link-formats" title="Permalink to this headline">¶</a></h3>
 <p>Notice that links addresses can be given in several different formats.</p>
 <p>An <strong>absolute link</strong>, with the whole address of the destination:</p>
@@ -3244,9 +3246,9 @@ Deutsch, Dustin
 &lt;a href=&#34;#letter_a&#34;&gt;A&lt;/a&gt;
 </pre></div></div>
 </div>
-</section>
-</section>
-<section id="Images">
+</div>
+</div>
+<div class="section" id="Images">
 <h2>Images<a class="headerlink" href="#Images" title="Permalink to this headline">¶</a></h2>
 <p>Images in HTML documents are defined using the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag:</p>
 <div class="nbinput docutils container">
@@ -3310,8 +3312,8 @@ Deutsch, Dustin
 <img alt="../../_images/Tools_beautiful_soup_beautiful_soup_53_0.png" class="no-scaled-link" src="../../_images/Tools_beautiful_soup_beautiful_soup_53_0.png" style="width: 50%;" />
 </div>
 </div>
-</section>
-<section id="Tables">
+</div>
+<div class="section" id="Tables">
 <h2>Tables<a class="headerlink" href="#Tables" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example of an HTML code defining a simple table:</p>
 <div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
@@ -3475,8 +3477,8 @@ Deutsch, Dustin
 &lt;td&gt;$4.50&lt;/td&gt;
 </pre></div></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
            </div>
@@ -3500,7 +3502,7 @@ Deutsch, Dustin
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Combining DataFrames &mdash; MTH 448/548  documentation</title>
@@ -14,6 +13,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
 
@@ -35,14 +36,15 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -95,19 +97,19 @@
               
             
             
-              <p><span class="caption-text">Logistics</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">MTH 448/548 Syllabus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../to_do.html">Current Tasks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../report_guide.html">Project Report Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../useful_links.html">Useful links</a></li>
 </ul>
-<p><span class="caption-text">Schedule</span></p>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
 </ul>
-<p><span class="caption-text">Tools</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 </ul>
@@ -445,10 +447,10 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Combining-DataFrames">
+<div class="section" id="Combining-DataFrames">
 <h1>Combining DataFrames<a class="headerlink" href="#Combining-DataFrames" title="Permalink to this headline">¶</a></h1>
 <p>It often happens that data we are working with is split into several DataFrames or Series. Pandas provides tools for combining such data in various ways. We show how to use them below.</p>
-<section id="pd.concat">
+<div class="section" id="pd.concat">
 <h2>pd.concat<a class="headerlink" href="#pd.concat" title="Permalink to this headline">¶</a></h2>
 <p>Lets say that we have two DataFrames with exam scores in some college course. Each DataFrame contains scores of students enrolled in a different section of the course:</p>
 <div class="nbinput docutils container">
@@ -1305,8 +1307,8 @@ part 2:
 </table>
 </div></div>
 </div>
-</section>
-<section id="pd.merge">
+</div>
+<div class="section" id="pd.merge">
 <h2>pd.merge<a class="headerlink" href="#pd.merge" title="Permalink to this headline">¶</a></h2>
 <p>Pandas <code class="docutils literal notranslate"><span class="pre">merge()</span></code> function is another tool for combining two DataFrames. To see how it works, lets assume that we have two DataFrames, one of which gives names of instructors teaching math courses, and the second which lists names and office numbers of instructors:</p>
 <div class="nbinput docutils container">
@@ -1464,7 +1466,7 @@ instructors:
 </div></div>
 </div>
 <p>Notice that not all instructors listed in the first table appear in the second table, and vice versa.</p>
-<section id="Inner-join">
+<div class="section" id="Inner-join">
 <h3>Inner join<a class="headerlink" href="#Inner-join" title="Permalink to this headline">¶</a></h3>
 <p>Lets say that we want to create a DataFrame with course name, instructor name, and instructor office number. Using the <code class="docutils literal notranslate"><span class="pre">merge()</span></code> function this can be done as follows:</p>
 <div class="nbinput docutils container">
@@ -1616,8 +1618,8 @@ instructors:
 </div></div>
 </div>
 <p>The resulting table lists only these instructors, whose names appear both in the courses DataFrame and in the instructors DataFrame.</p>
-</section>
-<section id="Left-join">
+</div>
+<div class="section" id="Left-join">
 <h3>Left join<a class="headerlink" href="#Left-join" title="Permalink to this headline">¶</a></h3>
 <p>Changing the value of the <code class="docutils literal notranslate"><span class="pre">how</span></code> argument changes the way DataFrames are merged. Setting <code class="docutils literal notranslate"><span class="pre">how=&quot;left&quot;</span></code> specifies that we want to get the <em>left join</em>: every row of the left DataFrame will be combined either with a row of the right DataFrame, if it can be matched, or with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values if a match does not exist:</p>
 <div class="nbinput docutils container">
@@ -1710,8 +1712,8 @@ instructors:
 </div></div>
 </div>
 <p>As a result we obtain a table where all courses and their instructors are listed, and <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values indicate for which instructors there is no information about their office numbers.</p>
-</section>
-<section id="Right-join">
+</div>
+<div class="section" id="Right-join">
 <h3>Right join<a class="headerlink" href="#Right-join" title="Permalink to this headline">¶</a></h3>
 <p>The <em>right join</em> (<code class="docutils literal notranslate"><span class="pre">how=&quot;right&quot;</span></code>) is symmetrical to the left join: every row of the right DataFrame will be matched with either a row of the left DataFrame, if a match exists, or with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values otherwise:</p>
 <div class="nbinput docutils container">
@@ -1797,8 +1799,8 @@ instructors:
 </div></div>
 </div>
 <p>This time we obtain a DataFrame with names of all instructors which have an office number listed, with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values indicating instructors who do not teach any course.</p>
-</section>
-<section id="Outer-join">
+</div>
+<div class="section" id="Outer-join">
 <h3>Outer join<a class="headerlink" href="#Outer-join" title="Permalink to this headline">¶</a></h3>
 <p>The last option is the <em>outer join</em> (<code class="docutils literal notranslate"><span class="pre">how=&quot;outer&quot;</span></code>). In this case, rows will be matched when a match exists. If a row of either DataFrame does not have a match, it will be matched with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values:</p>
 <div class="nbinput docutils container">
@@ -2105,9 +2107,9 @@ Name: instructor, dtype: object
 </div></div>
 </div>
 <p>The remaining <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values indicate that an instructor either does not teach a course or does not have an assigned office.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>
@@ -2131,7 +2133,7 @@ Name: instructor, dtype: object
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Dec 22, 2021.
+        Last updated on Jan 10, 2022.
       </span>
 
     </p>

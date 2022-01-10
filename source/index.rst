@@ -16,7 +16,7 @@ Instructor
 
 | Bernard Badzioch
 | **E-mail:** `badzioch@buffalo.edu <badzioch@buffalo.edu>`_
-| **Office Hours:** Wed 5:00-7:00 PM
+| **Office Hours:** Mon 5:30-7:00 PM on MTH 448/548 Discord server. 
 
 
 Prerequisites
@@ -49,9 +49,17 @@ to bring a laptop to each class. Any operating system (Windows/Mac/Linux) is fin
 
 **Software.** We will be using the `Anaconda distribution of Python 3.9 <https://www.anaconda.com/products/individual#Downloads target="_blank">`_.
 This is free software. Even if you have Python already installed on your computer you should install this
-distribution since it includes Jupyter Notebook and several Python modules we will need.
+distribution since it includes Jupyter Notebook and several Python libraries we will need.
 If you have a previous version of Python installed, please upgrade it so you don't run into
 possible compatibility issues.
+
+**Discord server.**  You should have received an invitation link to the MTH 448/548 Discord server in 
+the email with course information. If you don't have this link, let me know.  
+
+The Discord server will be used for office hours. Please also use it to post course related questions 
+instead of emailing them to me. This will help other students who may have the same questions. 
+If you notice a question on Discord that you know the answer to, please respond. For personal issues, 
+regarding your grade etc., contact me directly either by email or by a direct message on Discord. 
 
 **Textbook.** There is no required textbook. There are a lot of online resources (documentation
 of Python libraries etc.) that may be helpful in this course. Some of them are listed on
@@ -70,8 +78,8 @@ Grading
 There will be no exams in this course. Instead, grades will be assigned based on
 the following components:
 
-    * Project Reports 80%
-    * Class Participation 20%
+    * Project Reports 90%
+    * Weekly digests 10%
 
 
 Project Reports
@@ -94,35 +102,28 @@ ones. The cumulative grade for all reports will be computed by:
 3. dividing the resulting number by the sum of weights for all reports;
 4. converting the number obtained in step 3 to a letter grade.
 
-Reports will be submitted via UBLearns. The submission deadline will be 10:00 AM on Fridays.
+Reports will be submitted via UBLearns. The submission deadline will be 11:59 PM on Mondays.
 Late reports will not be accepted. More information about project reports is posted
 :doc:`here <report_guide>`.
 
 
-Class participation
-===================
+Weekly digests
+==============
 
-Class participation credit will be based on two components:
-
-**Class attendance.** You can earn up to 10% of the total course credit
-for being present and on time during class meetings. You can miss two
-class meeting without a justified reason. Each subsequent unexcused absence
-will lower your participation credit by 2% (i.e. from 10% to 8% etc.).
-
-**Weekly digest.** As a part of each homework you will be asked to submit
+**Weekly digest.** Each week you will be asked to submit
 a short (2-3 sentences) writeup on your study from the previous week.
 For example, you can write:
 
 * what topics you have found interesting (or boring)
 * what topics you have found difficult (or easy)
-* how  you feel about the course
+* how you feel about the course
 * anything else you want to share.
 
 You will be also asked to a question (or questions) regarding the course.
 
 You can receive up to 10% credit for these writeups. You can miss one
 such assignment without loosing any credit, but your weekly digest credit will be
-lowered by 2% for each subsequent missed assignment.
+lowered by 2% for each subsequent missed assignment (i.e. from 10% to 8% etc.).
 
 I may award extra credit to students who are especially active in the course.
 
