@@ -22,7 +22,7 @@ copyright = '<a href="mailto:admin@mth548.org">Bernard Badzioch</a>'
 author = 'Bernard Badzioch'
 
 # The full version, including alpha/beta/rc tags
-#release = '0.0.1'
+# release = '0.0.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -132,7 +132,7 @@ nbsphinx_execute_arguments = [
 
 
 # Environment variables to be passed to the kernel:
-#os.environ['MY_DUMMY_VARIABLE'] = 'Hello from conf.py!'
+# os.environ['MY_DUMMY_VARIABLE'] = 'Hello from conf.py!'
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 html_show_copyright = True

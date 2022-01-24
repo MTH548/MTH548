@@ -35,11 +35,11 @@ Learning Outcomes
 
 After taking this course you should be able to:
 
-* Understand various common formats of data (csv, html, xml, json, SQL database etc.) and how to use them.
+* Understand various common formats of data (csv, html, xml, json, SQL databases etc.) and how to use them.
 * Manipulate data using such tools as numpy, pandas, json, BeautifulSoup, SQL etc.
 * Visualize data using matplotlib, seaborn and plotly.
 * Apply some machine learning methods to analyze data.
-* Describe and explain in writing results of data exploration and analysis.
+* Describe in writing results of data exploration and analysis.
 
 Course Resources
 ----------------
@@ -58,14 +58,14 @@ the email with course information. If you don't have this link, let me know.
 
 The Discord server will be used for office hours. Please also use it to post course related questions 
 instead of emailing them to me. This will help other students who may have the same questions. 
-If you notice a question on Discord that you know the answer to, please respond. For personal issues, 
+If you notice a question on Discord that you know the answer to, feel free to respond. For personal issues, 
 regarding your grade etc., contact me directly either by email or by a direct message on Discord. 
 
 **Textbook.** There is no required textbook. There are a lot of online resources (documentation
 of Python libraries etc.) that may be helpful in this course. Some of them are listed on
 the :doc:`Useful Links <useful_links>` page.
 
-|UBLearns| will be used mainly for submitting project reports.
+|UBLearns| will be used for submitting project reports.
 
 .. |UBLearns| raw:: html
 
@@ -90,13 +90,13 @@ working on them largely independently, using mathematical and computing tools.
 The outcome of your work on each project will be a project report that you will
 submit for grading.
 
-Each report will be graded on the A-F scale. Extra credit (a grade of A+) will
+Each report will be graded on the A-F scale. Extra credit (a grade of A+) may
 be assigned for an outstanding work. Some projects will require more effort than
-others. To reflect it each project will have a weight of up to 10 points,
+others. To reflect it, each project will have a weight of up to 10 points,
 with 10 points for more work-intensive projects, and fewer points for shorter
 ones. The cumulative grade for all reports will be computed by:
 
-1. converting the letter grade for each report into credits (A = 4.0, A- = 3.67 etc.);
+1. converting the letter grade for each report into credits (A = 4.0, A- = 3.67, B+ = 3.33 etc.);
 2. multiplying credits for each report by the report weight and adding all these
    products;
 3. dividing the resulting number by the sum of weights for all reports;
@@ -119,7 +119,7 @@ For example, you can write:
 * how you feel about the course
 * anything else you want to share.
 
-You will be also asked to a question (or questions) regarding the course.
+You will be also asked to submit a question (or questions) regarding the course.
 
 You can receive up to 10% credit for these writeups. You can miss one
 such assignment without loosing any credit, but your weekly digest credit will be

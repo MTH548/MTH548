@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Week 1 (1/31-2/6) &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -464,15 +465,15 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Week-1-(1/31-2/6)">
+<section id="Week-1-(1/31-2/6)">
 <h1>Week 1 (1/31-2/6)<a class="headerlink" href="#Week-1-(1/31-2/6)" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Logistics">
+<section id="Logistics">
 <h2>Logistics<a class="headerlink" href="#Logistics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Syllabus and course organization</p></li>
 </ul>
-</div>
-<div class="section" id="Numpy">
+</section>
+<section id="Numpy">
 <h2><a class="reference internal" href="../Tools/Numpy/numpy_toc.html"><span class="doc">Numpy</span></a><a class="headerlink" href="#Numpy" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Numpy arrays</p></li>
@@ -481,10 +482,10 @@ div.rendered_html tbody tr:hover {
 <li><p>Aggregating and sorting</p></li>
 <li><p>Broadcasting</p></li>
 </ul>
-</div>
-<div class="section" id="Resources">
+</section>
+<section id="Resources">
 <h2>Resources<a class="headerlink" href="#Resources" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="1.-Visualizing-numpy-arrays">
+<section id="1.-Visualizing-numpy-arrays">
 <h3>1. Visualizing numpy arrays<a class="headerlink" href="#1.-Visualizing-numpy-arrays" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -520,12 +521,12 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="Exercises">
+</section>
+</section>
+<section id="Exercises">
 <h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
 <p>The exercise below should be completed using tools provided by numpy arrays. Do not use <code class="docutils literal notranslate"><span class="pre">for</span></code> or <code class="docutils literal notranslate"><span class="pre">while</span></code> loops, list comprehensions etc. The code in each case can be written in fewer than 10 lines.</p>
-<div class="section" id="Exercise-1">
+<section id="Exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">border(a)</span></code> which takes as an argument an 2-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and returns an array obtained by adding a border of zeros to <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="nbinput docutils container">
@@ -557,8 +558,8 @@ border(a):
  [ 0  0  0  0  0  0]]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Exercise-2">
+</section>
+<section id="Exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#Exercise-2" title="Permalink to this headline">¶</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">row_split(a,</span> <span class="pre">k)</span></code> which for a given 2-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and a positive integer <code class="docutils literal notranslate"><span class="pre">k</span></code> returns a tuple of two 2-dimensional numpy arrays: one consisting of the first <code class="docutils literal notranslate"><span class="pre">k</span></code> rows of <code class="docutils literal notranslate"><span class="pre">a</span></code> and the second consisting of the remaining rows.</p>
 <div class="nbinput docutils container">
@@ -594,8 +595,8 @@ row_split(a, 3):
  [12 13 14]]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Exercise-3">
+</section>
+<section id="Exercise-3">
 <h3>Exercise 3<a class="headerlink" href="#Exercise-3" title="Permalink to this headline">¶</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">n_smallest(a,</span> <span class="pre">n)</span></code> which given a 1-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and an integer <code class="docutils literal notranslate"><span class="pre">n</span></code> returns an array with indices of <code class="docutils literal notranslate"><span class="pre">n</span></code> smallest elements of <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="nbinput docutils container">
@@ -622,8 +623,8 @@ n_smallest(a, 3):
 [7 5 6]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Exercise-4">
+</section>
+<section id="Exercise-4">
 <h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h3>
 <p>Write function <code class="docutils literal notranslate"><span class="pre">checkers(n)</span></code> which returns an <span class="math notranslate nohighlight">\(n\times n\)</span> numpy array consisting of zeros and ones arranged in a checkerboard pattern. To check that this function works correctly, test it for both odd and even values of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <div class="nbinput docutils container">
@@ -651,8 +652,8 @@ array([[1., 0., 1., 0., 1., 0., 1., 0.],
        [0., 1., 0., 1., 0., 1., 0., 1.]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Exercise-5">
+</section>
+<section id="Exercise-5">
 <h3>Exercise 5<a class="headerlink" href="#Exercise-5" title="Permalink to this headline">¶</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">sub_table(n)</span></code> which returns an <span class="math notranslate nohighlight">\(n\times n\)</span> numpy array with the subtraction table of numbers from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(n-1\)</span>. The value in the row <span class="math notranslate nohighlight">\(i\)</span> and column <span class="math notranslate nohighlight">\(j\)</span> of the array should be the number <span class="math notranslate nohighlight">\(i - j\)</span>.</p>
 <div class="nbinput docutils container">
@@ -683,8 +684,8 @@ array([[  0,  -1,  -2,  -3,  -4,  -5,  -6,  -7,  -8,  -9, -10],
        [ 10,   9,   8,   7,   6,   5,   4,   3,   2,   1,   0]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Exercise-6">
+</section>
+<section id="Exercise-6">
 <h3>Exercise 6<a class="headerlink" href="#Exercise-6" title="Permalink to this headline">¶</a></h3>
 <p>If <span class="math notranslate nohighlight">\({\bf v} = [x_1, x_2, \dots, x_n]\)</span> and <span class="math notranslate nohighlight">\({\bf w} = [y_1, y_2, \dots, y_n]\)</span> are two vectors with <span class="math notranslate nohighlight">\(n\)</span> coordinates then the Euclidean distance between <span class="math notranslate nohighlight">\(\bf v\)</span> and <span class="math notranslate nohighlight">\(\bf w\)</span> is given by the formula:</p>
 <div class="math notranslate nohighlight">
@@ -720,8 +721,8 @@ dist(X, w):
 [ 2.82842712 10.19803903 18.11077028]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Exercise-7">
+</section>
+<section id="Exercise-7">
 <h3>Exercise 7<a class="headerlink" href="#Exercise-7" title="Permalink to this headline">¶</a></h3>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">order_columns(a)</span></code> which takes as an argument a 2-dimensional numpy array and returns an array obtained by reordering columns of <code class="docutils literal notranslate"><span class="pre">a</span></code> according to the sum of their entries: the first column is the one where the sum of entries is the smallest, the last column is the one where the sum of entries is the largest.</p>
 <div class="nbinput docutils container">
@@ -753,8 +754,8 @@ order_columns(a):
  [1 5 2 1 4]]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Exercise-8">
+</section>
+<section id="Exercise-8">
 <h3>Exercise 8<a class="headerlink" href="#Exercise-8" title="Permalink to this headline">¶</a></h3>
 <p>Write the function <code class="docutils literal notranslate"><span class="pre">first_smaller(a,</span> <span class="pre">n)</span></code> which takes as its argument a 1-dimensional numpy array <code class="docutils literal notranslate"><span class="pre">a</span></code> and a number <code class="docutils literal notranslate"><span class="pre">n</span></code> and returns the first entry of <code class="docutils literal notranslate"><span class="pre">a</span></code> which is smaller than <code class="docutils literal notranslate"><span class="pre">n</span></code>. If such entry does not exist the function should return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="nbinput docutils container">
@@ -782,9 +783,9 @@ first_smaller(a, 50):
 26
 </pre></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -808,7 +809,7 @@ first_smaller(a, 50):
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Jan 19, 2022.
       </span>
 
     </p>
