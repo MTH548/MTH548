@@ -16,7 +16,7 @@ Instructor
 
 | Bernard Badzioch
 | **E-mail:** `badzioch@buffalo.edu <badzioch@buffalo.edu>`_
-| **Office Hours:** Mon 5:30-7:00 PM on MTH 448/548 Discord server. 
+| **Office Hours:** Wed 5:30-7:00 PM on MTH 448/548 Discord server. 
 
 
 Prerequisites
@@ -102,7 +102,7 @@ ones. The cumulative grade for all reports will be computed by:
 3. dividing the resulting number by the sum of weights for all reports;
 4. converting the number obtained in step 3 to a letter grade.
 
-Reports will be submitted via UBLearns. The submission deadline will be 11:59 PM on Mondays.
+Reports will be submitted via UBLearns. The submission deadline will be 11:59 PM on Wednesdays.
 Late reports will not be accepted. More information about project reports is posted
 :doc:`here <report_guide>`.
 
