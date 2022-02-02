@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Numpy Basics &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,6 +109,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul class="current">
@@ -127,6 +129,10 @@
 <li class="toctree-l2"><a class="reference internal" href="broadcasting.html">Array shapes and broadcasting</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -462,7 +468,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Numpy-Basics">
+<section id="Numpy-Basics">
 <h1>Numpy Basics<a class="headerlink" href="#Numpy-Basics" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://numpy.org/devdocs/user/quickstart.html">Numpy</a> is a standard module for doing numerical computations in Python. It provides tools for writing code which is both easier to develop and usually a lot faster than it would be without numpy.</p>
 <div class="nbinput nblast docutils container">
@@ -494,7 +500,7 @@ div.rendered_html tbody tr:hover {
 array([1, 2, 3])
 </pre></div></div>
 </div>
-<div class="section" id="Vectorized-computations">
+<section id="Vectorized-computations">
 <h2>Vectorized computations<a class="headerlink" href="#Vectorized-computations" title="Permalink to this headline">¶</a></h2>
 <p>One advantage of using numpy arrays is that many array computations can be <em>vectorized</em> i.e. can be performed on all array elements at once:</p>
 <div class="nbinput docutils container">
@@ -635,8 +641,8 @@ array([ 400, 1000, 1800])
 array([0.84147098, 0.90929743, 0.14112001])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Numpy-arrays-vs-lists">
+</section>
+<section id="Numpy-arrays-vs-lists">
 <h2>Numpy arrays vs lists<a class="headerlink" href="#Numpy-arrays-vs-lists" title="Permalink to this headline">¶</a></h2>
 <p>In some respects numpy arrays behave the same way as lists. For example, indexing and slicing work as usual:</p>
 <div class="nbinput docutils container">
@@ -753,8 +759,8 @@ b = [999   2   3]
 a = [1 2 3 4]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Creating-numpy-arrays">
+</section>
+<section id="Creating-numpy-arrays">
 <h2>Creating numpy arrays<a class="headerlink" href="#Creating-numpy-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Numpy arrays can be created in several ways:</p>
 <p><strong>1.</strong> The <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function converts a list into a numpy array:</p>
@@ -933,8 +939,8 @@ array([10, 12, 14, 16, 18])
 array([1.  , 1.25, 1.5 , 1.75, 2.  ])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Multidimensional-numpy-arrays">
+</section>
+<section id="Multidimensional-numpy-arrays">
 <h2>Multidimensional numpy arrays<a class="headerlink" href="#Multidimensional-numpy-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Numpy arrays can have more than one dimension. One way to create such an array is to start with a 1-dimensional array and use the numpy <code class="docutils literal notranslate"><span class="pre">reshape()</span></code> function that rearranges elements of that array into a new shape.</p>
 <div class="nbinput docutils container">
@@ -1003,8 +1009,8 @@ array([[1., 1., 1., 1., 1.],
        [1., 1., 1., 1., 1.]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Mathematical-operations-on-multidimensional-arrays">
+</section>
+<section id="Mathematical-operations-on-multidimensional-arrays">
 <h2>Mathematical operations on multidimensional arrays<a class="headerlink" href="#Mathematical-operations-on-multidimensional-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Mathematical operations on multidimensional arrays work similarly as for 1-dimensional arrays.</p>
 <div class="nbinput docutils container">
@@ -1136,8 +1142,8 @@ array([[ 0.54030231, -0.41614684],
        [-0.9899925 , -0.65364362]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Slicing-multidimensional-arrays">
+</section>
+<section id="Slicing-multidimensional-arrays">
 <h2>Slicing multidimensional arrays<a class="headerlink" href="#Slicing-multidimensional-arrays" title="Permalink to this headline">¶</a></h2>
 <p>In order to create a slice of a multidimensional array we need to specify which part of each dimension we want to select:</p>
 <div class="nbinput docutils container">
@@ -1304,8 +1310,8 @@ array([[ 0,  0,  0,  0,  4,  5],
        [24, 25, 26, 27, 28, 29]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Sorting">
+</section>
+<section id="Sorting">
 <h2>Sorting<a class="headerlink" href="#Sorting" title="Permalink to this headline">¶</a></h2>
 <p>Numpy has several functions for creating arrays with randomly selected entries. For example, the function <code class="docutils literal notranslate"><span class="pre">np.random.randint(low,</span> <span class="pre">high,</span> <span class="pre">size)</span></code> returns an array of integers the entries of which are greater or equal to <code class="docutils literal notranslate"><span class="pre">low</span></code> and strictly smaller than <code class="docutils literal notranslate"><span class="pre">high</span></code>. The <code class="docutils literal notranslate"><span class="pre">size</span></code> argument specifies the size of the matrix:</p>
 <div class="nbinput docutils container">
@@ -1494,8 +1500,8 @@ np.argsort(b, axis=1):
  [3 0 4 2 1]]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Aggregation-functions">
+</section>
+<section id="Aggregation-functions">
 <h2>Aggregation functions<a class="headerlink" href="#Aggregation-functions" title="Permalink to this headline">¶</a></h2>
 <p>Numpy includes several aggregation functions that summarize, in various ways, data contained in an array.</p>
 <div class="nbinput docutils container">
@@ -1615,8 +1621,8 @@ array([17, 16, 10, 15])
 array([17, 16, 17])
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1640,7 +1646,7 @@ array([17, 16, 17])
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

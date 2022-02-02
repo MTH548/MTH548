@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Project: Text classification with naive Bayes &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -199,7 +205,7 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="Project:-Text-classification-with-naive-Bayes">
+<section id="Project:-Text-classification-with-naive-Bayes">
 <h1>Project: Text classification with naive Bayes<a class="headerlink" href="#Project:-Text-classification-with-naive-Bayes" title="Permalink to this headline">¶</a></h1>
 <html><h1 style="color:teal;"><p>Project weight: 10 points</p>
 </h1></html><p>In this project you will be working with the following two files:</p>
@@ -209,7 +215,7 @@
 </div>
 <p>The file <code class="docutils literal notranslate"><span class="pre">movie_reviews.zip</span></code> is a zipped csv file containing texts of about 25,000 movie reviews. Each review is accompanied by a label, indicating if the review is positive or negative.</p>
 <p>The file <code class="docutils literal notranslate"><span class="pre">newsgroups.zip</span></code> is a zipped text file with about 7000 posts submitted to eight online newsgroups devoted to different topics: cars, hockey, religion etc. Each post includes information to which newsgroup it was submitted.</p>
-<div class="section" id="Objectives">
+<section id="Objectives">
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <p>Check how well naive Bayes classifier can predict if a movie review is positive or negative based on the text of the review. Likewise, check how well naive Bayes predicts to which newsgroup a post was submitted based on the text of the post. Describe your results.</p>
 <p>Here are some questions which you may consider:</p>
@@ -225,8 +231,8 @@
 <div class="line"><a class="reference download internal" download="" href="../../_downloads/3c531a80798970c30fe16af497cfd501/stopwords.txt"><code class="xref download docutils literal notranslate"><span class="pre">stopwords.txt</span></code></a></div>
 </div>
 <p><strong>Note:</strong> For this project you must not use <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> or other other machine learning libraries which have the naive Bayes classifier and text processing tools already implemented. You can use standard Python libraries (e.g. <code class="docutils literal notranslate"><span class="pre">re</span></code> and <code class="docutils literal notranslate"><span class="pre">collections</span></code>), <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, graphics libraries (<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, <code class="docutils literal notranslate"><span class="pre">plotly</span></code> etc.). The goal is to implement the naive Bayes classifier from scratch using these tools.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -250,7 +256,7 @@
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>SQL basics &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,10 +453,10 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="SQL-basics">
+<section id="SQL-basics">
 <h1>SQL basics<a class="headerlink" href="#SQL-basics" title="Permalink to this headline">¶</a></h1>
 <p>SQL is a programming language for working with data stored in relational databases. There are many flavors of SQL used by various database systems (MySQL, Postgres, Oracle, SQL Server etc.), but they share the same basic syntax and functionality. Here we show how to use SQL while working with databases created using SQLite software.</p>
-<div class="section" id="SQL-in-Jupyter-Notebook">
+<section id="SQL-in-Jupyter-Notebook">
 <h2>SQL in Jupyter Notebook<a class="headerlink" href="#SQL-in-Jupyter-Notebook" title="Permalink to this headline">¶</a></h2>
 <p>In order to execute SQL code in Jupyter Notebook, we will use the <code class="docutils literal notranslate"><span class="pre">ipython-sql</span></code> extension of the notebook. The following command, executed in a notebook, will install this extension:</p>
 <div class="nbinput nblast docutils container">
@@ -473,8 +479,8 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <p>From now on, when the first line of a code cell is <code class="docutils literal notranslate"><span class="pre">%%sql</span></code>, the rest of the cell will be evaluated as an SQL (and not Python) code.</p>
-</div>
-<div class="section" id="Creating-tables">
+</section>
+<section id="Creating-tables">
 <h2>Creating tables<a class="headerlink" href="#Creating-tables" title="Permalink to this headline">¶</a></h2>
 <p>To access data stored in a database, we need to connect to the database first. Typically this requires connecting to a remote database server, but SQLite is special in this respect - its databases are saved in files stored locally on a computer. The command below connects to a database stored in a file <code class="docutils literal notranslate"><span class="pre">tiny.sqlite</span></code>. If such file does not exist, it will be automatically created:</p>
 <div class="nbinput docutils container">
@@ -560,8 +566,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="Deleting-tables">
+</section>
+<section id="Deleting-tables">
 <h2>Deleting tables<a class="headerlink" href="#Deleting-tables" title="Permalink to this headline">¶</a></h2>
 <p>In order to delete a table <code class="docutils literal notranslate"><span class="pre">my_table</span></code> from a database we use the statement</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>DROP TABLE  my_table;
@@ -600,8 +606,8 @@ Done.
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="Creating-table-records">
+</section>
+<section id="Creating-table-records">
 <h2>Creating table records<a class="headerlink" href="#Creating-table-records" title="Permalink to this headline">¶</a></h2>
 <p>The statement</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT *
@@ -777,8 +783,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="Modifying-records">
+</section>
+<section id="Modifying-records">
 <h2>Modifying records<a class="headerlink" href="#Modifying-records" title="Permalink to this headline">¶</a></h2>
 <p>Existing records can be modified using the statement</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>UPDATE my_table
@@ -850,8 +856,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="Deleting-records">
+</section>
+<section id="Deleting-records">
 <h2>Deleting records<a class="headerlink" href="#Deleting-records" title="Permalink to this headline">¶</a></h2>
 <p>The statement</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>DELETE FROM my_table
@@ -922,8 +928,8 @@ Done.
 <li><p>All other strings in SQL code (data in table records etc.) must be enclosed in ‘single quotes’.</p></li>
 </ol>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -947,7 +953,7 @@ Done.
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

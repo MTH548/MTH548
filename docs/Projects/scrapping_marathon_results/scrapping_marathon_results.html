@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Project: Scrapping marathon results &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -445,11 +451,11 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Project:-Scrapping-marathon-results">
+<section id="Project:-Scrapping-marathon-results">
 <h1>Project: Scrapping marathon results<a class="headerlink" href="#Project:-Scrapping-marathon-results" title="Permalink to this headline">¶</a></h1>
 <html><h1 style="color:teal;"><p>Project weight: 6 points</p>
 </h1></html><p>The website <a class="reference external" href="https://results.chicagomarathon.com/well-known/2019/">results.chicagomarathon.com/well-known/2019/</a> contains results of the 2019 Chicago Marathon. Using this website we can get a list of runners, The name of each runner is linked to a webpage with more detailed information about the runner.</p>
-<div class="section" id="Objectives">
+<section id="Objectives">
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <p>Use requests and BeautifulSoup to scrap information about the top 50 male runners. The information you retrieve should include the following data:</p>
 <ul class="simple">
@@ -587,8 +593,8 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
-</div>
-<div class="section" id="Notes">
+</section>
+<section id="Notes">
 <h2>Notes<a class="headerlink" href="#Notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Do not scrap more than 50 runners to limit the usage of the web server hosting the marathon website.</p></li>
@@ -600,8 +606,8 @@ div.rendered_html tbody tr:hover {
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -625,7 +631,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>JSON &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -445,12 +451,12 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="JSON">
+<section id="JSON">
 <h1>JSON<a class="headerlink" href="#JSON" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://www.json.org/json-en.html">JSON</a> is a format for representing various types of data (numbers, lists, dictionaries etc.) in the form of text strings. The benefit of encoding data in this way is that strings can be be easily stored in text files or shared over the Internet.</p>
 <p>JSON encoded data is simple to read and understand. For example, a list <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> in the JSON format becomes simply a string <code class="docutils literal notranslate"><span class="pre">'[1,</span> <span class="pre">2,</span> <span class="pre">3]'</span></code>, and a dictionary <code class="docutils literal notranslate"><span class="pre">{'x':</span> <span class="pre">1,</span> <span class="pre">'y':</span> <span class="pre">2}</span></code> becomes a string <code class="docutils literal notranslate"><span class="pre">'{&quot;x&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;y&quot;:</span> <span class="pre">2}'</span></code>. Beside lists and dictionaries, JSON recognizes only a few basic data types: strings, numbers, <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">false</span></code>, and <code class="docutils literal notranslate"><span class="pre">null</span></code>. However, since JSON lists and dictionaries can be arbitrarily nested (so we can have e.g. a list of dictionaries or a dictionary whose values are
 other dictionaries and lists), this syntax can be used to represent complex data structures.</p>
-<div class="section" id="The-json-module">
+<section id="The-json-module">
 <h2>The json module<a class="headerlink" href="#The-json-module" title="Permalink to this headline">¶</a></h2>
 <p>The Python module <code class="docutils literal notranslate"><span class="pre">json</span></code> provides tools for reading and writing JSON data.</p>
 <div class="nbinput nblast docutils container">
@@ -597,8 +603,8 @@ other dictionaries and lists), this syntax can be used to represent complex data
 {&#39;name&#39;: &#39;Maggie&#39;, &#39;age&#39;: 19, &#39;grades&#39;: [&#39;A&#39;, &#39;B+&#39;, &#39;A-&#39;]}
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Example:-currency-exchange-rates">
+</section>
+<section id="Example:-currency-exchange-rates">
 <h2>Example: currency exchange rates<a class="headerlink" href="#Example:-currency-exchange-rates" title="Permalink to this headline">¶</a></h2>
 <p>The website <a class="reference external" href="https://www.exchangeratesapi.io/">www.exchangeratesapi.io</a> provides current and historical currency exchange rates. We can use it, for example, to obtain the latest exchange rates against the US dollar:</p>
 <div class="nbinput docutils container">
@@ -701,8 +707,8 @@ other dictionaries and lists), this syntax can be used to represent complex data
 1.4161682074
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -726,7 +732,7 @@ other dictionaries and lists), this syntax can be used to represent complex data
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

@@ -17,6 +17,7 @@ MTH 448/548 Data Oriented Computing
 
    Schedule/week_0
    Schedule/week_1
+   Schedule/week_2
 
 
 
@@ -32,6 +33,8 @@ MTH 448/548 Data Oriented Computing
 .. toctree::
    :maxdepth: 3
    :caption: Projects
+
+   Projects/mnist_with_knn/mnist_with_knn
 
    
 
@@ -50,7 +53,7 @@ MTH 448/548 Data Oriented Computing
    Tools/Regex/regex_toc
    Tools/SQL/sql_toc
 
-   Projects/mnist_with_knn/mnist_with_knn
+
    Projects/mnist_with_k_means/mnist_with_k_means
    Projects/baby_names/baby_names
    Projects/scrapping_marathon_results/scrapping_marathon_results

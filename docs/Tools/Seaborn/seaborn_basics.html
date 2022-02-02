@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Seaborn &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,7 +453,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Seaborn">
+<section id="Seaborn">
 <h1>Seaborn<a class="headerlink" href="#Seaborn" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://seaborn.pydata.org/">Seaborn</a> is Python library for visualizing data. Seaborn uses matplotlib to create graphics, but it provides tools that make it much easier to create several types of plots. In particular, it is simple to use seaborn with pandas dataframes.</p>
 <div class="nbinput nblast docutils container">
@@ -594,7 +600,7 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
-<div class="section" id="Plots-from-dataframes">
+<section id="Plots-from-dataframes">
 <h2>Plots from dataframes<a class="headerlink" href="#Plots-from-dataframes" title="Permalink to this headline">¶</a></h2>
 <p>In order to produce a scatter plot showing the bill amount on the <span class="math notranslate nohighlight">\(x\)</span> axis and the tip amount on the <span class="math notranslate nohighlight">\(y\)</span> axis we just need to specify the dataframe and names of the appropriate columns:</p>
 <div class="nbinput docutils container">
@@ -738,8 +744,8 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/Tools_Seaborn_seaborn_basics_20_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_basics_20_0.png" style="width: 567px; height: 489px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Figure-level-and-axes-level-functions">
+</section>
+<section id="Figure-level-and-axes-level-functions">
 <h2>Figure-level and axes-level functions<a class="headerlink" href="#Figure-level-and-axes-level-functions" title="Permalink to this headline">¶</a></h2>
 <p>Functions provided by seaborn come in two types. Figure-level functions generate the whole matplotlib figure which may consist of several subplots. The function <code class="docutils literal notranslate"><span class="pre">sns.relplot()</span></code> used in the examples above if such a figure-level function. Axes-level functions create plots in a matplotlib axes object, i.e. in a single subplot. Plots obtained using such a function can be combined with plots created using other seaborn axes-level functions or just standard matplotlib functions:</p>
 <div class="nbinput docutils container">
@@ -787,8 +793,8 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/Tools_Seaborn_seaborn_basics_25_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_basics_25_0.png" style="width: 892px; height: 360px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Customizing-plots">
+</section>
+<section id="Customizing-plots">
 <h2>Customizing plots<a class="headerlink" href="#Customizing-plots" title="Permalink to this headline">¶</a></h2>
 <p>Seaborn functions have several arguments which can be used to control appearance of plots: size of plots, colors, marker sizes etc.</p>
 <div class="nbinput docutils container">
@@ -908,8 +914,8 @@ div.rendered_html tbody tr:hover {
  &#39;axes.spines.top&#39;: True}
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -933,7 +939,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

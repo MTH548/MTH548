@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Requests &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -445,9 +451,9 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Requests">
+<section id="Requests">
 <h1>Requests<a class="headerlink" href="#Requests" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Requests-basics">
+<section id="Requests-basics">
 <h2>Requests basics<a class="headerlink" href="#Requests-basics" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://requests.readthedocs.io/en/master/user/quickstart/">Requests</a> is a Python module for communicating with web pages. We can connect to a web page by passing the address of the page to the the <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code> function:</p>
 <div class="nbinput nblast docutils container">
@@ -530,8 +536,8 @@ erves as the city&#39;s parks department. It is the first non-governmental organ
 erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_180-0&#34; class=&#34;reference&#34;&gt;&lt;a
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Binary-files">
+</section>
+<section id="Binary-files">
 <h2>Binary files<a class="headerlink" href="#Binary-files" title="Permalink to this headline">¶</a></h2>
 <p>Some web addresses point not to web pages, but to other types of data: images, videos, pdf files etc. We can retrieve such data using requests too. For example, here is the url of a <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/9/93/Northern_Cardinal_Male-27527-3.jpg">jpg file</a> posted on Wikimedia Commons:</p>
 <div class="nbinput nblast docutils container">
@@ -577,8 +583,8 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 <img alt="../../_images/Tools_requests_requests_18_0.jpg" class="no-scaled-link" src="../../_images/Tools_requests_requests_18_0.jpg" style="width: 250px;" />
 </div>
 </div>
-</div>
-<div class="section" id="User-Agent">
+</section>
+<section id="User-Agent">
 <h2>User-Agent<a class="headerlink" href="#User-Agent" title="Permalink to this headline">¶</a></h2>
 <p>Every request sent by a web browser to a web server includes User-Agent, i.e. a string with information about the type of browser, the computer on which the browser operates etc. For example, the following User-Agent identifies the browser as Firefox 73 operating on a Macintosh with the operating system Mac OS X 10.14:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:73.0) Gecko/20100101 Firefox/73.0
@@ -653,8 +659,8 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Sending-data">
+</section>
+<section id="Sending-data">
 <h2>Sending data<a class="headerlink" href="#Sending-data" title="Permalink to this headline">¶</a></h2>
 <p>In some cases we need to specify more data, beside the address of a web page, to get the information we need. For example, to make use of the <a class="reference external" href="https://oeis.org/">On-Line Encyclopedia of Integer Sequences</a> we need to provide a sequence of integers as a search query. This can be accomplished using requests as follows:</p>
 <div class="nbinput docutils container">
@@ -695,8 +701,8 @@ Showing 1-3 of 3
 %H A328780
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="POST-requests">
+</section>
+<section id="POST-requests">
 <h2>POST requests<a class="headerlink" href="#POST-requests" title="Permalink to this headline">¶</a></h2>
 <p>The HTTP protocol specifies several different methods in which a client (e.g. a web browser or a Python script) can sent a message to a web server. The function <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code> implements one such method: a GET request. The main purpose of GET requests is to ask the server for some data. As we have seen in the last example, GET requests can also send some information to the server, but this is not their main purpose, and their functionality in this respect is limited. In order to submit data
 to the server - e.g. to securely send a password or upload a file - clients use POST requests. See <a class="reference external" href="https://www.w3schools.com/tags/ref_httpmethods.asp">w3schools.com</a> for more information about differences between GET and POST.</p>
@@ -754,8 +760,8 @@ to the server - e.g. to securely send a password or upload a file - clients use
 
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -779,7 +785,7 @@ to the server - e.g. to securely send a password or upload a file - clients use
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

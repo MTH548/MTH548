@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Reshaping DataFrames &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,7 +453,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Reshaping-DataFrames">
+<section id="Reshaping-DataFrames">
 <h1>Reshaping DataFrames<a class="headerlink" href="#Reshaping-DataFrames" title="Permalink to this headline">¶</a></h1>
 <p>Pandas provide various tools for reshaping DataFrames. This helps us bring data to a form most convenient for our needs. Below we show a few ways how to accomplish it.</p>
 <p>As an illustration we will use sample data provided by the <code class="docutils literal notranslate"><span class="pre">seaborm</span></code> module:</p>
@@ -527,7 +533,7 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
-<div class="section" id="Transpose">
+<section id="Transpose">
 <h2>Transpose<a class="headerlink" href="#Transpose" title="Permalink to this headline">¶</a></h2>
 <p>Transpose of a DataFrame produces a new DataFrame whose rows are columns of the original DataFrame:</p>
 <div class="nbinput docutils container">
@@ -672,8 +678,8 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
-</div>
-<div class="section" id="Setting-and-reseting-an-index">
+</section>
+<section id="Setting-and-reseting-an-index">
 <h2>Setting and reseting an index<a class="headerlink" href="#Setting-and-reseting-an-index" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">set_index()</span></code> method lets us select a column to serve as an index of the DataFrame:</p>
 <div class="nbinput docutils container">
@@ -966,8 +972,8 @@ div.rendered_html tbody tr:hover {
 <p>144 rows × 3 columns</p>
 </div></div>
 </div>
-</div>
-<div class="section" id="MultiIndex">
+</section>
+<section id="MultiIndex">
 <h2>MultiIndex<a class="headerlink" href="#MultiIndex" title="Permalink to this headline">¶</a></h2>
 <p>In our sample DataFrame each value of the passengers column is uniquely identified by a combination of a year and a month. For this reason it would convenient to set the index using not just the <code class="docutils literal notranslate"><span class="pre">year</span></code> column (as we did above) but both <code class="docutils literal notranslate"><span class="pre">year</span></code> and <code class="docutils literal notranslate"><span class="pre">month</span></code> columns. This can be done by passing a list of columns to the <code class="docutils literal notranslate"><span class="pre">set_index()</span></code> method:</p>
 <div class="nbinput docutils container">
@@ -1196,8 +1202,8 @@ Name: (1949, May), dtype: int64
 </table>
 </div></div>
 </div>
-</div>
-<div class="section" id="Stack-and-unstack">
+</section>
+<section id="Stack-and-unstack">
 <h2>Stack and unstack<a class="headerlink" href="#Stack-and-unstack" title="Permalink to this headline">¶</a></h2>
 <p>Lets bring up again the DataFrame with the (year, month) MultiIndex:</p>
 <div class="nbinput docutils container">
@@ -2253,8 +2259,8 @@ MultiIndex([(1949,   &#39;January&#39;),
 <p>144 rows × 3 columns</p>
 </div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -2278,7 +2284,7 @@ MultiIndex([(1949,   &#39;January&#39;),
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

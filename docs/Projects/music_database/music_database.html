@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Project: Music database &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -445,14 +451,14 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Project:-Music-database">
+<section id="Project:-Music-database">
 <h1>Project: Music database<a class="headerlink" href="#Project:-Music-database" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle">Extra credit</p>
 <p><p>You are not required to complete this project. If you do, the grade from this project will replace the lowest project grade you received. If your grade for this project will be lower that all other your project grades, it will not be used. Thus, your grade will not go down whether you complete this project or not.</p>
 </p><p><p><strong>Note.</strong> If your grade for some project has been lowered due disciplinary issues (plagiarism etc.) this grade will not be changed. However, the next lowest grade can be replaced.</p>
 </p></div>
-<div class="section" id="Objectives">
+<section id="Objectives">
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <p>Download the following SQLite file, which contains a database of music recordings:</p>
 <div class="line-block">
@@ -460,15 +466,15 @@ div.rendered_html tbody tr:hover {
 </div>
 <p><a class="reference external" href="music_data_diagram.pdf">Here</a> is a pdf file showing the structure of this database: tables it consists of and names of columns in each table.</p>
 <p>Use SQL queries to solve exercises given below.</p>
-<div class="section" id="Notes.">
+<section id="Notes.">
 <h3>Notes.<a class="headerlink" href="#Notes." title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>For illustration, each exercise shows the first five rows of the results you should obtain. Your answers should not be limited to just 5 results - show either all results or the number specified in the statement of an exercise.</p></li>
 <li><p>Your solutions must be obtained with SQL only, using the <code class="docutils literal notranslate"><span class="pre">%%sql</span></code> magic. You must not use pandas etc.</p></li>
 <li><p>This is a programming assignment. Your work will be graded primarily based on the results of the code, and also on the code documentation and report organization. You don’t need to include a narrative.</p></li>
 </ol>
-</div>
-<div class="section" id="Exercise-1">
+</section>
+<section id="Exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#Exercise-1" title="Permalink to this headline">¶</a></h3>
 <p>Create a table with names of all tracks where the composer is Miles Davis. Track names should be listed in the alphabetical order.</p>
 <div class="nbinput docutils container">
@@ -508,8 +514,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-2">
+</section>
+<section id="Exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#Exercise-2" title="Permalink to this headline">¶</a></h3>
 <p>Create a table that lists titles and composers for all tracks where the name of the composer includes “Clapton”. Order the table in the alphabetical order of track titles.</p>
 <div class="nbinput docutils container">
@@ -549,8 +555,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-3">
+</section>
+<section id="Exercise-3">
 <h3>Exercise 3<a class="headerlink" href="#Exercise-3" title="Permalink to this headline">¶</a></h3>
 <p>Create a table with the album title, the album artist, and the number of tracks in the album. Display 10 rows of this table with most tracks, ordered in the descending order of the number of tracks.</p>
 <div class="nbinput docutils container">
@@ -595,8 +601,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-4">
+</section>
+<section id="Exercise-4">
 <h3>Exercise 4<a class="headerlink" href="#Exercise-4" title="Permalink to this headline">¶</a></h3>
 <p>Create a table listing the album title, the name of the artist and the total length of the album in minutes for each album whose total length is more than 90 minutes. Order the table according to album lengths in the descending order.</p>
 <p><strong>Note.</strong> The <code class="docutils literal notranslate"><span class="pre">tracks</span></code> table lists lengths of tracks in milliseconds. One second is equal to 1000 milliseconds.</p>
@@ -642,8 +648,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-5">
+</section>
+<section id="Exercise-5">
 <h3>Exercise 5<a class="headerlink" href="#Exercise-5" title="Permalink to this headline">¶</a></h3>
 <p>Create a table listing AlbumId and the title of each album that has at least one track in the “Jazz” genre. Order album titles alphabetically.</p>
 <div class="nbinput docutils container">
@@ -683,8 +689,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-6">
+</section>
+<section id="Exercise-6">
 <h3>Exercise 6<a class="headerlink" href="#Exercise-6" title="Permalink to this headline">¶</a></h3>
 <p>Create a table which lists AlbumId, the album title and the price of 10 most expensive albums. The price of an album is the sum of prices of all its tracks. Order the list from the highest album price to the lowest.</p>
 <div class="nbinput docutils container">
@@ -729,8 +735,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-7">
+</section>
+<section id="Exercise-7">
 <h3>Exercise 7<a class="headerlink" href="#Exercise-7" title="Permalink to this headline">¶</a></h3>
 <p>Create a table that lists AlbumId and the title of each album which consist of exactly 10 tracks. Order the table in the alphabetical order of album titles.</p>
 <div class="nbinput docutils container">
@@ -770,8 +776,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-8">
+</section>
+<section id="Exercise-8">
 <h3>Exercise 8<a class="headerlink" href="#Exercise-8" title="Permalink to this headline">¶</a></h3>
 <p>Create a table with two columns: one, called NumTracks listing the number of tracks in an album, and the second called NumAlbums which shows how many albums have such number of tracks. Order the table in the ascending order of NumTracks.</p>
 <div class="nbinput docutils container">
@@ -811,8 +817,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-9">
+</section>
+<section id="Exercise-9">
 <h3>Exercise 9<a class="headerlink" href="#Exercise-9" title="Permalink to this headline">¶</a></h3>
 <p>Create a table which has one row for each album, listing the longest track of the album. The columns should be AlbumId, album title, TrackId, track title, and track time in milliseconds. Order the table according to track times in the descending order and display the first 10 rows.</p>
 <div class="nbinput docutils container">
@@ -867,8 +873,8 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-<div class="section" id="Exercise-10">
+</section>
+<section id="Exercise-10">
 <h3>Exercise 10<a class="headerlink" href="#Exercise-10" title="Permalink to this headline">¶</a></h3>
 <p>Every track in the <code class="docutils literal notranslate"><span class="pre">tracks</span></code> table corresponds to one genre, but an album may consist of tracks of various genres.</p>
 <p>Create a table showing AlbumId, the album title, and the number of distinct track genres for all albums which have more than one genre. Order the list in the alphabetical order of album titles.</p>
@@ -914,9 +920,9 @@ div.rendered_html tbody tr:hover {
             </tr>
     </tbody></table></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -940,7 +946,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

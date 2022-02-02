@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Plotly Express &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,7 +453,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Plotly-Express">
+<section id="Plotly-Express">
 <h1>Plotly Express<a class="headerlink" href="#Plotly-Express" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://plotly.com/python/plotly-express/">Plotly Express</a> is a Plotly module with tools which simplify creation of many types of plots. It is especially useful for visualizing data coming from Pandas dataframes.</p>
 <div class="nbinput nblast docutils container">
@@ -557,7 +563,7 @@ div.rendered_html tbody tr:hover {
 </table>
 </div></div>
 </div>
-<div class="section" id="Plots-from-dataframes">
+<section id="Plots-from-dataframes">
 <h2>Plots from dataframes<a class="headerlink" href="#Plots-from-dataframes" title="Permalink to this headline">¶</a></h2>
 <p>In order to produce a scatter plot showing the bill amount on the <span class="math notranslate nohighlight">\(x\)</span> axis and the tip amount on the <span class="math notranslate nohighlight">\(y\)</span> axis we just need to specify the dataframe and names of the corresponding columns:</p>
 <div class="nbinput docutils container">
@@ -739,8 +745,8 @@ div.rendered_html tbody tr:hover {
 ></iframe></div>
 </div>
 <p>While all above examples show scatter plots only, Plotly Express can be used to create many other types of plots. See the <a class="reference external" href="https://plotly.com/python/plotly-express/">documentation</a> for details.</p>
-</div>
-<div class="section" id="Customizing-plots">
+</section>
+<section id="Customizing-plots">
 <h2>Customizing plots<a class="headerlink" href="#Customizing-plots" title="Permalink to this headline">¶</a></h2>
 <p>Plotly Express functions return Plotly figure objects, which can be customized using other Plotly tools. For example, we can use the <code class="docutils literal notranslate"><span class="pre">fig.add_trace()</span></code> method to add additional traces a figure:</p>
 <div class="nbinput docutils container">
@@ -845,8 +851,8 @@ div.rendered_html tbody tr:hover {
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -870,7 +876,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

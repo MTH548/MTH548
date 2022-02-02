@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Plotly Express plot types &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,7 +453,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Plotly-Express-plot-types">
+<section id="Plotly-Express-plot-types">
 <h1>Plotly Express plot types<a class="headerlink" href="#Plotly-Express-plot-types" title="Permalink to this headline">¶</a></h1>
 <p>Below are examples of plots which can be created using Plotly Express. For the full list of plots and their options see <a class="reference external" href="https://plotly.com/python-api-reference/plotly.express.html">Plotly Express documentation</a>.</p>
 <p>Plotly Express provides sample datasets which we will use in all examples.</p>
@@ -665,7 +671,7 @@ gapminder:
 </table>
 </div></div>
 </div>
-<div class="section" id="Scatter-plot">
+<section id="Scatter-plot">
 <h2>Scatter plot<a class="headerlink" href="#Scatter-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -697,8 +703,8 @@ gapminder:
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Line-plot">
+</section>
+<section id="Line-plot">
 <h2>Line plot<a class="headerlink" href="#Line-plot" title="Permalink to this headline">¶</a></h2>
 <p>By default Plotly uses DataFrame column names to label plot coordinate axes, title of the legend etc. This can be changed using the <code class="docutils literal notranslate"><span class="pre">labels</span></code> argument. Its value should be a dictionary whose keys are column names, and values are labels we want to use.</p>
 <div class="nbinput docutils container">
@@ -736,8 +742,8 @@ gapminder:
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Bar-plot">
+</section>
+<section id="Bar-plot">
 <h2>Bar plot<a class="headerlink" href="#Bar-plot" title="Permalink to this headline">¶</a></h2>
 <p>By default values in a column with categorical data are plotted in the order they are encountered in the DataFrame. In the example below it means that the order of days on the x-axis would not necessarily correspond to the usual ordering of days in a week. We can override this by assigning a dictionary to the <code class="docutils literal notranslate"><span class="pre">category_orders</span></code> argument. Dictionary keys are column names. The value corresponding to a given column is a list of values appearing in the column, ordered in the way we want them
 plotted.</p>
@@ -844,8 +850,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Strip-plot">
+</section>
+<section id="Strip-plot">
 <h2>Strip plot<a class="headerlink" href="#Strip-plot" title="Permalink to this headline">¶</a></h2>
 <p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to decrease overlapping.</p>
 <div class="nbinput docutils container">
@@ -877,8 +883,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Box-plot">
+</section>
+<section id="Box-plot">
 <h2>Box plot<a class="headerlink" href="#Box-plot" title="Permalink to this headline">¶</a></h2>
 <p>Components of a box plot:</p>
 <ul class="simple">
@@ -918,8 +924,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Violin-plot">
+</section>
+<section id="Violin-plot">
 <h2>Violin plot<a class="headerlink" href="#Violin-plot" title="Permalink to this headline">¶</a></h2>
 <p>Violin plots show kernel density estimate (KDE) of data.</p>
 <div class="nbinput docutils container">
@@ -984,8 +990,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Histogram-plot">
+</section>
+<section id="Histogram-plot">
 <h2>Histogram plot<a class="headerlink" href="#Histogram-plot" title="Permalink to this headline">¶</a></h2>
 <p>Figures produced by Plotly Express can be customized using other Plotly tools. Below we use it to modify a histogram to add a bit of space between its bars (by default all bars would be plotted next to each other).</p>
 <div class="nbinput docutils container">
@@ -1018,8 +1024,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Sunburst-plot">
+</section>
+<section id="Sunburst-plot">
 <h2>Sunburst plot<a class="headerlink" href="#Sunburst-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
@@ -1047,8 +1053,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Marginal-plots">
+</section>
+<section id="Marginal-plots">
 <h2>Marginal plots<a class="headerlink" href="#Marginal-plots" title="Permalink to this headline">¶</a></h2>
 <p>Most types of plots have options to include one or two marginal sublots. Below we use it to add a carpet plot on the margin of the x-axis, and a box plot on the margin of the y-axis. Possible types of marginal plots are <code class="docutils literal notranslate"><span class="pre">&quot;rug&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;box&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;violin&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;histogram&quot;</span></code>.</p>
 <div class="nbinput docutils container">
@@ -1080,8 +1086,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Pair-plot">
+</section>
+<section id="Pair-plot">
 <h2>Pair plot<a class="headerlink" href="#Pair-plot" title="Permalink to this headline">¶</a></h2>
 <p>Scatter plot shows relationship between two variables. The function <code class="docutils literal notranslate"><span class="pre">px.scatter_matrix()</span></code> is useful if we are dealing with more than two variables. It produces a grid of scatter plots, one plot for each pair of variables.</p>
 <div class="nbinput docutils container">
@@ -1111,8 +1117,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Animated-plots">
+</section>
+<section id="Animated-plots">
 <h2>Animated plots<a class="headerlink" href="#Animated-plots" title="Permalink to this headline">¶</a></h2>
 <p>Some types plots can be animated using <code class="docutils literal notranslate"><span class="pre">animation_frame</span></code> and <code class="docutils literal notranslate"><span class="pre">animation_group</span></code> arguments. See <a class="reference external" href="https://plotly.com/python/animations/">Plotly documentation</a> for more details.</p>
 <div class="nbinput docutils container">
@@ -1152,8 +1158,8 @@ plotted.</p>
     allowfullscreen
 ></iframe></div>
 </div>
-</div>
-<div class="section" id="Choropleth-maps">
+</section>
+<section id="Choropleth-maps">
 <h2>Choropleth maps<a class="headerlink" href="#Choropleth-maps" title="Permalink to this headline">¶</a></h2>
 <p>Choropleth maps are used to represent statistical data for geographical areas by assigning colors to each area, depending on values of the data. To illustrate it, we will use data on agricultural exports produced by individual US states in 2011:</p>
 <div class="nbinput docutils container">
@@ -1723,8 +1729,8 @@ plotted.</p>
 ></iframe></div>
 </div>
 <p>See <a class="reference external" href="https://plotly.github.io/plotly.py-docs/generated/plotly.express.choropleth.html">Plotly documentation</a> for additional information on plotting choropleth maps.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1748,7 +1754,7 @@ plotted.</p>
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

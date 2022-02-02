@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Boolean and fancy indexing &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,6 +109,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul class="current">
@@ -124,6 +126,10 @@
 <li class="toctree-l2"><a class="reference internal" href="broadcasting.html">Array shapes and broadcasting</a></li>
 </ul>
 </li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -459,9 +465,9 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Boolean-and-fancy-indexing">
+<section id="Boolean-and-fancy-indexing">
 <h1>Boolean and fancy indexing<a class="headerlink" href="#Boolean-and-fancy-indexing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="Boolean-arrays">
+<section id="Boolean-arrays">
 <h2>Boolean arrays<a class="headerlink" href="#Boolean-arrays" title="Permalink to this headline">¶</a></h2>
 <p>A Boolean array is a numpy array with Boolean (True/False) values. Such array can be obtained by applying a logical operator to another numpy array:</p>
 <div class="nbinput docutils container">
@@ -581,8 +587,8 @@ array([[False, False, False, False],
        [ True,  True,  True,  True]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Logical-operations-on-Boolean-arrays">
+</section>
+<section id="Logical-operations-on-Boolean-arrays">
 <h2>Logical operations on Boolean arrays<a class="headerlink" href="#Logical-operations-on-Boolean-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Boolean arrays can be combined using logical operators:</p>
 <table class="docutils align-default">
@@ -700,8 +706,8 @@ d=
  [ True False False False]]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Indexing-with-Boolean-arrays">
+</section>
+<section id="Indexing-with-Boolean-arrays">
 <h2>Indexing with Boolean arrays<a class="headerlink" href="#Indexing-with-Boolean-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Boolean arrays can be used to select elements of other numpy arrays. If <code class="docutils literal notranslate"><span class="pre">a</span></code> is any numpy array and <code class="docutils literal notranslate"><span class="pre">b</span></code> is a boolean array of the same dimensions then <code class="docutils literal notranslate"><span class="pre">a[b]</span></code> selects all elements of <code class="docutils literal notranslate"><span class="pre">a</span></code> for which the corresponding value of <code class="docutils literal notranslate"><span class="pre">b</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="nbinput docutils container">
@@ -846,8 +852,8 @@ array([[-1.        , -1.        ,  0.04097352],
        [ 0.60663578, -1.        ,  0.54362499]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Fancy-indexing">
+</section>
+<section id="Fancy-indexing">
 <h2>Fancy indexing<a class="headerlink" href="#Fancy-indexing" title="Permalink to this headline">¶</a></h2>
 <p>Fancy indexing is a feature of numpy arrays that lets us provide a list of indices to an array instead of a single index. This selects all array elements with indices on the list.</p>
 <div class="nbinput docutils container">
@@ -1040,8 +1046,8 @@ array([[ 5,  6,  7],
        [15, 16, 17]])
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Fancy-indexing-example">
+</section>
+<section id="Fancy-indexing-example">
 <h2>Fancy indexing example<a class="headerlink" href="#Fancy-indexing-example" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example of how fancy indexing can be used in practice. Lets say that we have a numpy array that in the first column gives student id numbers, and in the second column their exam scores:</p>
 <div class="nbinput docutils container">
@@ -1121,8 +1127,8 @@ array([[5007,    1],
        [5000,   85]])
 </pre></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1146,7 +1152,7 @@ array([[5007,    1],
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

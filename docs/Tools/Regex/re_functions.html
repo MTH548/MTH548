@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Functions in the re module &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,7 +453,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Functions-in-the-re-module">
+<section id="Functions-in-the-re-module">
 <h1>Functions in the re module<a class="headerlink" href="#Functions-in-the-re-module" title="Permalink to this headline">¶</a></h1>
 <p>The Python <code class="docutils literal notranslate"><span class="pre">re</span></code> module had several functions for searching and modifying strings using regular expressions. Here we describe two of them. See the <a class="reference external" href="https://docs.python.org/3/library/re.html?highlight=re#module-re">re module documentation</a> for the complete list.</p>
 <div class="nbinput nblast docutils container">
@@ -459,7 +465,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="section" id="re.findall">
+<section id="re.findall">
 <h2>re.findall<a class="headerlink" href="#re.findall" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="re.re.findall">
@@ -487,7 +493,7 @@ div.rendered_html tbody tr:hover {
 [&#39;57&#39;, &#39;100&#39;, &#39;171&#39;, &#39;3&#39;]
 </pre></div></div>
 </div>
-<div class="section" id="re.findall-with-match-groups">
+<section id="re.findall-with-match-groups">
 <h3>re.findall with match groups<a class="headerlink" href="#re.findall-with-match-groups" title="Permalink to this headline">¶</a></h3>
 <p>In some cases we are interested only in a part of a match. For example, we may want to find all dollar amounts in the format “$57”, but we are interested in the numeric value “57” only. Such situations can be handled using match groups (i.e. parts of a regular expression enclosed in parentheses). If we create a match group in the pattern, then the whole pattern will be matched, but only the value of the match group will be returned:</p>
 <div class="nbinput docutils container">
@@ -531,8 +537,8 @@ div.rendered_html tbody tr:hover {
 [(&#39;9&#39;, &#39;30&#39;), (&#39;10&#39;, &#39;15&#39;)]
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="Non-capturing-match-groups">
+</section>
+<section id="Non-capturing-match-groups">
 <h3>Non-capturing match groups<a class="headerlink" href="#Non-capturing-match-groups" title="Permalink to this headline">¶</a></h3>
 <p>It often happens that need to create a match group in a regular expression for the purpose of specifying what should be matched, and not because we want to retrieve its value. Such match groups can be specified using the format <code class="docutils literal notranslate"><span class="pre">(?:...)</span></code>, and then their values will not be returned by <code class="docutils literal notranslate"><span class="pre">re.findall</span></code>.</p>
 <div class="nbinput docutils container">
@@ -583,9 +589,9 @@ EWR 7:45 PM =&gt;=&gt;=&gt;=&gt;=&gt; LHR 6:55 AM
 [(&#39;BUF 11:30 PM&#39;, &#39;EWR 12:45 PM&#39;), (&#39;EWR 7:45 PM&#39;, &#39;LHR 6:55 AM&#39;)]
 </pre></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="re.sub">
+</section>
+</section>
+<section id="re.sub">
 <h2>re.sub<a class="headerlink" href="#re.sub" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="re.re.sub">
@@ -648,7 +654,7 @@ This costs $57 for a 100 lbs box, so $171 for 3 boxes.
 This costs $(NUMBER) for a (NUMBER) lbs box, so $(NUMBER) for (NUMBER) boxes.
 </pre></div></div>
 </div>
-<div class="section" id="re.sub-with-backreferences">
+<section id="re.sub-with-backreferences">
 <h3>re.sub with backreferences<a class="headerlink" href="#re.sub-with-backreferences" title="Permalink to this headline">¶</a></h3>
 <p>The function <code class="docutils literal notranslate"><span class="pre">re.sub</span></code> is more flexible than the example above suggests, since the value of the replacement string <code class="docutils literal notranslate"><span class="pre">repl</span></code> can depend on the value of the match being replaced. In order to make use of this, we need to specify one or more match groups in the pattern. Each capturing match group creates a <em>backreference</em> i.e., a label <code class="docutils literal notranslate"><span class="pre">\1</span></code>, <code class="docutils literal notranslate"><span class="pre">\2</span></code>, <code class="docutils literal notranslate"><span class="pre">\3</span></code> etc. (with <code class="docutils literal notranslate"><span class="pre">\1</span></code> denoting the leftmost match group). When these labels are used in the replacement string, they by themselves get replaced by
 values of the corresponding match groups.</p>
@@ -721,8 +727,8 @@ From: BUF To: EWR
 From: EWR To: LHR
 </pre></div></div>
 </div>
-</div>
-<div class="section" id="re.sub-with-a-function-argument">
+</section>
+<section id="re.sub-with-a-function-argument">
 <h3>re.sub with a function argument<a class="headerlink" href="#re.sub-with-a-function-argument" title="Permalink to this headline">¶</a></h3>
 <p>There is even more that can be accomplished using <code class="docutils literal notranslate"><span class="pre">re.sub</span></code>. The value of the argument <code class="docutils literal notranslate"><span class="pre">repl</span></code> instead of a string can be a function. For each match of the pattern this function is called with a <em>match object</em> argument, which contains information about the match (its position in the string, values of match groups etc.). The function needs to return a string, which will be substituted for the matched pattern. For more information see the documentation of the <code class="docutils literal notranslate"><span class="pre">re</span></code> module.</p>
 <p><strong>Example.</strong></p>
@@ -772,9 +778,9 @@ Buffalo is 594 km away from New York City
 (about 6 hours by car) and 160 km from Toronto.
 </pre></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -798,7 +804,7 @@ Buffalo is 594 km away from New York City
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

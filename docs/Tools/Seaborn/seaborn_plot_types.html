@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Seaborn plot types &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,7 +453,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="Seaborn-plot-types">
+<section id="Seaborn-plot-types">
 <h1>Seaborn plot types<a class="headerlink" href="#Seaborn-plot-types" title="Permalink to this headline">¶</a></h1>
 <p>Below are examples of plots which can be created using seaborn. For the full list of seaborn functions and their options see the <a class="reference external" href="https://seaborn.pydata.org/api.html">seaborn documentation</a>.</p>
 <p>In all examples we will use sample datasets provided with seaborn.</p>
@@ -636,7 +642,7 @@ flights:
 </table>
 </div></div>
 </div>
-<div class="section" id="Scatter-plot">
+<section id="Scatter-plot">
 <h2>Scatter plot<a class="headerlink" href="#Scatter-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -664,8 +670,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_6_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Line-plot">
+</section>
+<section id="Line-plot">
 <h2>Line plot<a class="headerlink" href="#Line-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
@@ -693,8 +699,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_8_0.png" style="width: 844px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Bar-plot">
+</section>
+<section id="Bar-plot">
 <h2>Bar plot<a class="headerlink" href="#Bar-plot" title="Permalink to this headline">¶</a></h2>
 <p>By default values in a column with categorical data are plotted in the order they are encountered in the DataFrame. In the example below it means that the order of days on the x-axis would not necessarily correspond to the usual ordering of days in a week. We can override this by assigning a list of values of the x-column to the <code class="docutils literal notranslate"><span class="pre">order</span></code> argument. Bars will be plotted according to the ordering of the list.</p>
 <div class="nbinput docutils container">
@@ -797,8 +803,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_12_0.png" style="width: 844px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Strip-plot">
+</section>
+<section id="Strip-plot">
 <h2>Strip plot<a class="headerlink" href="#Strip-plot" title="Permalink to this headline">¶</a></h2>
 <p>In a strip plot values in each category are plotted along the y-axis. Plotted points have their x-coordinates randomized a bit, to decrease overlapping.</p>
 <div class="nbinput docutils container">
@@ -828,8 +834,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_14_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Swarm-plot">
+</section>
+<section id="Swarm-plot">
 <h2>Swarm plot<a class="headerlink" href="#Swarm-plot" title="Permalink to this headline">¶</a></h2>
 <p>Swarm plot is similar to the strip plot, but x-coordinates of points are adjusted so that the points do not overlap.</p>
 <div class="nbinput docutils container">
@@ -859,8 +865,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_16_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Box-plot">
+</section>
+<section id="Box-plot">
 <h2>Box plot<a class="headerlink" href="#Box-plot" title="Permalink to this headline">¶</a></h2>
 <p>Components of a box plot:</p>
 <ul class="simple">
@@ -900,8 +906,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_19_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Violin-plot">
+</section>
+<section id="Violin-plot">
 <h2>Violin plot<a class="headerlink" href="#Violin-plot" title="Permalink to this headline">¶</a></h2>
 <p>Violin plots show kernel density estimate (KDE) of data.</p>
 <div class="nbinput docutils container">
@@ -932,8 +938,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_22_0.png" style="width: 836px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Histogram-plot">
+</section>
+<section id="Histogram-plot">
 <h2>Histogram plot<a class="headerlink" href="#Histogram-plot" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
@@ -960,8 +966,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_24_0.png" style="width: 847px; height: 340px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Joint-plot">
+</section>
+<section id="Joint-plot">
 <h2>Joint plot<a class="headerlink" href="#Joint-plot" title="Permalink to this headline">¶</a></h2>
 <p>The function <code class="docutils literal notranslate"><span class="pre">sns.jointplot()</span></code> produces a plot of data points together with marginal subplots. Below we use it to add histograms on the margins of the x-axis and y-axis of a scatter plot. While all previous examples used axes-level functions, <code class="docutils literal notranslate"><span class="pre">sns.jointplot()</span></code> is a figure-level function, i.e. it builds the whole matplolib figure.</p>
 <div class="nbinput docutils container">
@@ -988,8 +994,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_26_0.png" style="width: 446px; height: 475px;" />
 </div>
 </div>
-</div>
-<div class="section" id="Pair-plot">
+</section>
+<section id="Pair-plot">
 <h2>Pair plot<a class="headerlink" href="#Pair-plot" title="Permalink to this headline">¶</a></h2>
 <p>Some types of plots (e.g. the scatter plot or the line plot) show relationships between two variables. The function <code class="docutils literal notranslate"><span class="pre">sns.pairplot()</span></code> is useful if we are dealing with more than two variables. It produces a grid of subplots, one subplot for each pair of variables. Subplots on the diagonal of the grid, which depend only on one variable, can be used to illustrate this single variable using its histogram, KDE etc. The function <code class="docutils literal notranslate"><span class="pre">sns.pairplot()</span></code> is a figure-level function.</p>
 <div class="nbinput docutils container">
@@ -1019,8 +1025,8 @@ flights:
 <img alt="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" class="no-scaled-link" src="../../_images/Tools_Seaborn_seaborn_plot_types_28_0.png" style="width: 560px; height: 442px;" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -1044,7 +1050,7 @@ flights:
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>

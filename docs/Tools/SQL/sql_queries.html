@@ -4,7 +4,8 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>SQL queries &mdash; MTH 448/548  documentation</title>
@@ -43,7 +44,7 @@
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -108,10 +109,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_0.html">Preliminaries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 </ul>
 
             
@@ -447,7 +453,7 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<div class="section" id="SQL-queries">
+<section id="SQL-queries">
 <h1>SQL queries<a class="headerlink" href="#SQL-queries" title="Permalink to this headline">¶</a></h1>
 <p>The SQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement is a tool for constructing queries which extract data from a database. We will show various ways in which this statement can be used. For demonstration purposes we will be working with a small SQLite database which can be downloaded here:</p>
 <div class="line-block">
@@ -629,7 +635,7 @@ Done.
     </tr>
 </table></div>
 </div>
-<div class="section" id="SELECT-…-FROM-…">
+<section id="SELECT-…-FROM-…">
 <h2>SELECT … FROM …<a class="headerlink" href="#SELECT-…-FROM-…" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="index-0"></span><p>The code above shows the simplest application of the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement: it can be used to retrieve the entire content of a database table. The complete syntax of this statement, however, can be much more complex:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SELECT [DISTINCT] column_list
@@ -1105,7 +1111,7 @@ Done.
     </tr>
 </table></div>
 </div>
-<div class="section" id="NULL-values-and-COALESCE">
+<section id="NULL-values-and-COALESCE">
 <h3>NULL values and COALESCE<a class="headerlink" href="#NULL-values-and-COALESCE" title="Permalink to this headline">¶</a></h3>
 <p>Lets say that we want to calculate for each student the sum of scores from the three exams. We can try to do it as follows:</p>
 <div class="nbinput docutils container">
@@ -1406,8 +1412,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="The-CASE-expression">
+</section>
+<section id="The-CASE-expression">
 <h3>The CASE expression<a class="headerlink" href="#The-CASE-expression" title="Permalink to this headline">¶</a></h3>
 <p>Lets say that we want to assign letter grades based on exam 3 scores: ‘Great’ for scores above 80 points, ‘Pass’ for scores between 80 and 50 points, and ‘Fail’ for all other scores. This can be accomplished using the <code class="docutils literal notranslate"><span class="pre">CASE</span></code> expression:</p>
 <div class="nbinput docutils container">
@@ -1527,9 +1533,9 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-</div>
-<div class="section" id="WHERE">
+</section>
+</section>
+<section id="WHERE">
 <h2>WHERE<a class="headerlink" href="#WHERE" title="Permalink to this headline">¶</a></h2>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause of the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement to specify which rows of a table should be retrieved. For example, below we use it to select students who received at least 70 points on exam 1:</p>
 <div class="nbinput docutils container">
@@ -1663,7 +1669,7 @@ Done.
     </tr>
 </table></div>
 </div>
-<div class="section" id="Comparing-NULL-values">
+<section id="Comparing-NULL-values">
 <h3>Comparing NULL values<a class="headerlink" href="#Comparing-NULL-values" title="Permalink to this headline">¶</a></h3>
 <p>In some cases we may be interested in retrieving records which have (or do not have) the <code class="docutils literal notranslate"><span class="pre">NULL</span></code> value in some column. The conditions <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">=</span> <span class="pre">NULL</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">!=</span> <span class="pre">NULL</span></code> will not work, since it is not possible to determine if something has the same value as the value of unknown data. Instead, we can use the conditions <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">IS</span> <span class="pre">NULL</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span> <span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></code>.</p>
 <p>As an example, below we select records of students with <code class="docutils literal notranslate"><span class="pre">NULL</span></code> value in the <code class="docutils literal notranslate"><span class="pre">exam1</span></code> column:</p>
@@ -1741,8 +1747,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="LIKE-operator">
+</section>
+<section id="LIKE-operator">
 <h3>LIKE operator<a class="headerlink" href="#LIKE-operator" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> operator can be used to perform simple pattern matches in strings. Below we use it to select records of all students whose last names start with an “H”:</p>
 <div class="nbinput docutils container">
@@ -1820,9 +1826,9 @@ Done.
 </table></div>
 </div>
 <p>In patterns used by <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> the percentage symbol <code class="docutils literal notranslate"><span class="pre">%</span></code> represents zero of more characters, and the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> stands for a single character. By default pattern matches are case insensitive, so ‘H%’ will match both ‘Hello’ and ‘hello’.</p>
-</div>
-</div>
-<div class="section" id="ORDER">
+</section>
+</section>
+<section id="ORDER">
 <h2>ORDER<a class="headerlink" href="#ORDER" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ORDER</span></code> clause specifies in which order records retrieved by a query should be returned. We can use it, for example, to arrange students records according to the exam 3 scores:</p>
 <div class="nbinput docutils container">
@@ -2024,8 +2030,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="LIMIT">
+</section>
+<section id="LIMIT">
 <h2>LIMIT<a class="headerlink" href="#LIMIT" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">LIMIT</span></code> clause constrains the number of records returned by the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement. For example, we can use it to get records of 5 students with the highest exam 3 scores:</p>
 <div class="nbinput docutils container">
@@ -2139,8 +2145,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="Aggregate-functions">
+</section>
+<section id="Aggregate-functions">
 <h2>Aggregate functions<a class="headerlink" href="#Aggregate-functions" title="Permalink to this headline">¶</a></h2>
 <p>Aggregate functions summarize values in a column. SQLite provides a few aggregate functions:</p>
 <ul class="simple">
@@ -2267,8 +2273,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="GROUP-BY">
+</section>
+<section id="GROUP-BY">
 <h2>GROUP BY<a class="headerlink" href="#GROUP-BY" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span> <span class="pre">expression</span></code> clause of the <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> statement adds more flexibility to the aggregate functions. It divides records into groups in such a way, that the specified <code class="docutils literal notranslate"><span class="pre">expression</span></code> has the same value for all records in a group. Aggregate functions can be then used to summarize columns in each group separately.</p>
 <p>As an example, below we group records based on the value of the <code class="docutils literal notranslate"><span class="pre">major</span></code> column. Then we calculate the average exam scores for each group:</p>
@@ -2428,8 +2434,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-<div class="section" id="HAVING">
+</section>
+<section id="HAVING">
 <h2>HAVING<a class="headerlink" href="#HAVING" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> can be used with an additional <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> clause. In such a case, only groups that satisfy the condition given after <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> will be returned. Below we use it to check which majors averaged more than 50 points on exam 1.</p>
 <div class="nbinput docutils container">
@@ -2474,8 +2480,8 @@ Done.
     </tr>
 </table></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
@@ -2499,7 +2505,7 @@ Done.
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Jan 10, 2022.
+        Last updated on Feb 01, 2022.
       </span>
 
     </p>
