@@ -6,7 +6,7 @@ Current Tasks
 Project 1
 ---------
 
-**Due: Wednesday, 2/16, 11:59 PM on UBLearns**
+**Due: Saturday, 2/19, 11:59 PM on UBLearns**
 
 :doc:`Project: Recognizing digits with k-NN <Projects/mnist_with_knn/mnist_with_knn>` 
 
