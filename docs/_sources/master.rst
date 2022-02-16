@@ -19,7 +19,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_1
    Schedule/week_2
    Schedule/week_3
-
+   Schedule/week_4
 
 
 
@@ -28,6 +28,7 @@ MTH 448/548 Data Oriented Computing
    :caption: Tools
 
    Tools/Numpy/numpy_toc
+   Tools/Pandas/pandas_toc
 
    
 
@@ -36,16 +37,14 @@ MTH 448/548 Data Oriented Computing
    :caption: Projects
 
    Projects/mnist_with_knn/mnist_with_knn
+   Projects/mnist_with_k_means/mnist_with_k_means
 
    
-
-
 
 
 .. toctree::
    :hidden:
 
-   Tools/Pandas/pandas_toc
    Tools/Seaborn/seaborn_toc
    Tools/Plotly/plotly_toc
    Tools/requests/requests
@@ -55,7 +54,6 @@ MTH 448/548 Data Oriented Computing
    Tools/SQL/sql_toc
 
 
-   Projects/mnist_with_k_means/mnist_with_k_means
    Projects/baby_names/baby_names
    Projects/scrapping_marathon_results/scrapping_marathon_results
    Projects/discord_logs/discord_logs
