@@ -102,8 +102,8 @@ ones. The cumulative grade for all reports will be computed by:
 3. dividing the resulting number by the sum of weights for all reports;
 4. converting the number obtained in step 3 to a letter grade.
 
-Reports will be submitted via UBLearns. The submission deadline will be 11:59 PM on Wednesdays.
-Late reports will not be accepted. More information about project reports is posted
+Reports will be submitted via UBLearns. Late reports will not be accepted. 
+More information about project reports is posted
 :doc:`here <report_guide>`.
 
 
