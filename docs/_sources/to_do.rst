@@ -14,7 +14,7 @@ Project 2
 Weekly Digest 3 
 ---------------
 
-**Due: Sunday 2/20, 11:59 PM**
+**Due: Sunday 3/5, 11:59 PM**
 
 .. raw:: html
 
