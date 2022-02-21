@@ -3,12 +3,12 @@ Current Tasks
 =============
 
 
-Project 1
+Project 2
 ---------
 
-**Due: Saturday, 2/19, 11:59 PM on UBLearns**
+**Due: Saturday, 2/26, 11:59 PM on UBLearns**
 
-:doc:`Project: Recognizing digits with k-NN <Projects/mnist_with_knn/mnist_with_knn>` 
+:doc:`Project: MNIST with k-means <Projects/mnist_with_k_means/mnist_with_k_means>` 
 
 
 Weekly Digest 3 
