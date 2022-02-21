@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Weekly Digest 3 &mdash; MTH 448/548  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://www.mth548.org/Digests/digest_3.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 4 (2/21-2/27)" href="../Schedule/week_4.html" />
+    <link rel="prev" title="Week 3 (2/14-2/20)" href="../Schedule/week_3.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../master.html" class="icon icon-home"> MTH 448/548
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Logistics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">MTH 448/548 Syllabus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../to_do.html">Current Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../report_guide.html">Project Report Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../useful_links.html">Useful links</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Schedule</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_0.html">Preliminaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_1.html">Week 1 (1/31-2/6)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_2.html">Week 2 (2/7-2/13)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Schedule/week_3.html">Week 3 (2/14-2/20)</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_3.html#Notebook">Notebook</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../Schedule/week_3.html#Weekly-digest">Weekly digest</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Weekly Digest 3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_3.html#Jupyter-Notebook-extensions">Jupyter Notebook extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_3.html#ipywidgets-and-interact">ipywidgets and interact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_3.html#k-means">k-means</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_3.html#Resources">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Schedule/week_3.html#Exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_4.html">Week 4 (2/21-2/27)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Numpy/numpy_toc.html">Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Pandas/pandas_toc.html">Pandas</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../master.html">MTH 448/548</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../master.html">MTH 448/548</a> &raquo;</li>
+        
+          <li><a href="../Schedule/week_3.html">Week 3 (2/14-2/20)</a> &raquo;</li>
+        
+      <li>Weekly Digest 3</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="weekly-digest-3">
+<h1>Weekly Digest 3<a class="headerlink" href="#weekly-digest-3" title="Permalink to this headline">¶</a></h1>
+<p><strong>Saiful asks:</strong></p>
+<blockquote>
+<div><p>Do you have any plan for assigning long projects and possibly group project?</p>
+</div></blockquote>
+<p>Future projects should require similar effort as the first one. I don’t plan
+to assign group projects.</p>
+<p><strong>bochunde asks:</strong></p>
+<blockquote>
+<div><p>what will be the next project focusing? we did a lot machine learning stuff these weeks,
+will we gonna continue around this? and related to this week’s content, I’m still confused
+about the part I of the project.  In part I we are asked to build the k-nn function.
+So is that necessary to use make_blobs to test its functionality in part I? Because I’ve run my
+function on MNIST data and it worked just fine.</p>
+</div></blockquote>
+<p>The second project is already posted on the course website, you can have a look.
+For the next topic, we will take a break from machine learning and work with
+pandas library.</p>
+<p>You don’t need to test the knn function with <code class="code docutils literal notranslate"><span class="pre">make_blobs</span></code> data in the report,
+as long as you are sure that the function works correctly.</p>
+<p><strong>Cassandra asks:</strong></p>
+<blockquote>
+<div><p>Outside of the MNIST and recognizing digits, what else would k-NN be used for?</p>
+</div></blockquote>
+<p>k-NN can be used to classify any type of data. One can try to use it e.g. with
+medical data to predict which people are sick with some disease and which are not,
+or with data on used cars (car model, age, milage etc.) to predict the
+price of a car. In some classification problems k-NN will work well, in other
+cases different tools may be better.</p>
+<p><strong>Griffin asks:</strong></p>
+<blockquote>
+<div><p>With ipywidget, we only explored drop down menus, sliders, and checkboxes.
+Will there be more complex elements that we will be using, like an input box
+for typing out an input or other interactive features?</p>
+</div></blockquote>
+<p>I may use other features if they will be useful in this course. You can also have
+a look at the <a class="reference external" href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets documentation</a>
+to learn more about them.</p>
+<p><strong>Luca asks:</strong></p>
+<blockquote>
+<div><p>During the class, you mentioned that it’s better for timing reasons to avoid loops in Python
+and use direct methods of the NumPy library. May this latter case create a problem of memory though?</p>
+</div></blockquote>
+<p>It depends. Python objects typically take more memory than numpy datatypes, so a Python list
+will usually occupy more space than a numpy array with the same values. However, vectorized numpy
+computations sometimes create temporary arrays that would not be needed if one wrote an equivalent
+code using loops. In most cases numpy will be still much more efficient, but it is something to keep
+in mind, especially when dealing with large amounts of data.</p>
+<p><strong>Felix asks:</strong></p>
+<blockquote>
+<div><p>is K-NN more or less parallelizeable on some form of GPU, than a ‘conventional’ neural network.</p>
+</div></blockquote>
+<p>It is difficult to compare which method is more parallelizable, but it is
+certainly possible to parallelize k-NN.</p>
+<p><strong>Netra asks:</strong></p>
+<blockquote>
+<div><p>Do most assignments focus on ML applications?</p>
+</div></blockquote>
+<p>About half of the assignements should involve some machine learninig tools.</p>
+<p><strong>Steven asks:</strong></p>
+<blockquote>
+<div><p>Is it possible that we can get a 5 minutes break in the lecture?</p>
+</div></blockquote>
+<p>Let me think about it.</p>
+<p><strong>Adrian asks:</strong></p>
+<blockquote>
+<div><p>What are the pros and cons between the k-nn and k-means algorithm ?</p>
+</div></blockquote>
+<p>These algorithms serve different purposes. k-NN is an algorithm for predicting
+data labels, while k-means is for data clustering.</p>
+<p><strong>Linggan asks:</strong></p>
+<blockquote>
+<div><p>Will there be any projects that will not be done with python?</p>
+</div></blockquote>
+<p>No.</p>
+<p><strong>David asks:</strong></p>
+<blockquote>
+<div><p>Will we ever be required to write a machine learning algorithm.</p>
+</div></blockquote>
+<p>You already implemented one such algorithm (k-NN) for the first project.
+There will be other projects where you will need to implement different
+algorithms.</p>
+<p><strong>Dakota asks:</strong></p>
+<blockquote>
+<div><p>Is there a way to get one on one office hours during the week? I just want to make
+sure I understand the current course material and on track for the rest of the semester.</p>
+</div></blockquote>
+<p>So far my regular office hours were attended by few students, and I had one on one
+conversations with everyone who showed up. If this changes and the regular office
+hours will become busy, I may try to schedule additional times.</p>
+<p><strong>Scott asks:</strong></p>
+<blockquote>
+<div><p>I was wondering if there are any tips to making code more efficient and take less
+time to run, and avoiding using loops. Is using widgets more efficient? Also, is
+clustering better for more applications than k-NN?</p>
+</div></blockquote>
+<p>Widgets are adding interactivity, but they do not make any more computations more
+efficient. Using numpy tools, on the other hand, can speed up the code a lot. Clustering
+has different goals than k-NN. The goal of clustering is to organize data in some groups
+in a possibly useful manner. k-NN is a used for classification: it predicts which label
+should be assigned to a data point.</p>
+<p><strong>Metin asks:</strong></p>
+<blockquote>
+<div><p>1. Given that “each project will have a weight of up to 10 points, with 10 points for more
+work-intensive projects”, can we assume that this was actually one of the longer projects of
+this semester or is it 10 points mainly because it is the first project?</p>
+<p>2. Will we learn about the type of algorithm appropriate for clustering crescent moon like shapes
+in this class?</p>
+</div></blockquote>
+<p>1. The first project was one of the larger project. There may be 1-2 smaller project that will only
+involve writing some code, with no narrative or analysis.</p>
+<p>2. I don’t plan to talk about other clustering algorithms. We will be mnoving to differrent topics
+instead. There is only so much that can be fit in a single semester.</p>
+<p><strong>Jena asks:</strong></p>
+<blockquote>
+<div><p>For the projects, can we get a bit more information on the logic and implementation of it in the general
+sense? (What this code can be used for, why, and how?)</p>
+</div></blockquote>
+<p>I am trying to provide such information. It something is confusing or needs to be explained
+in more detail, please just ask me to clarify.</p>
+<p><strong>Thinh asks:</strong></p>
+<blockquote>
+<div><p>As we know, KNN algorithm helps us to classify the labels of the new datapoint. How about Kmean, what
+is its purpose? Would you mind giving more examples about it?</p>
+</div></blockquote>
+<p>K-means is a clustering algorithm, whose goal is to subdivide data into groups. One example
+of its application we have seen already was clustering colors in image. You will also use this
+algorithm for the second project.</p>
+<p><strong>Haiyi asks:</strong></p>
+<blockquote>
+<div><p>Outliers or interfering data will have a greater impact on the mean, resulting in a center shift.
+How do we detect outliers to optimize the algorithm.</p>
+</div></blockquote>
+<p>Do you to optimize k-means algorithm? Typically you do not discard the outliers in order to apply
+this algorithm. Once you perform clustering you can actually define that outliers are points that
+are far away from all clusters centroids.</p>
+<p><strong>Farhat asks:</strong></p>
+<blockquote>
+<div><p>Moving forward, will we be allowed to utilize databases that have specific functions written for us in
+our project or will we be expected to always create our own specific functions for the task at hand?</p>
+</div></blockquote>
+<p>In depends. For the next project, for example, you will be able to use k-NN and k-means functions
+implemented in the sklearn library.</p>
+<p><strong>Anjali asks:</strong></p>
+<blockquote>
+<div><p>How much analysis of our project is “enough”?</p>
+</div></blockquote>
+<p>I will be indicartion what questions you may want to explore for each project. If you investigate
+in some depth a couple of such (or equivalent) topics, it will be enough.</p>
+<p><strong>Ninghui asks:</strong></p>
+<blockquote>
+<div><p>I have question about last project. If I pass all 60000 data to code, it takes long time to get
+prediction value. Is there any way I can improve?</p>
+</div></blockquote>
+<p>The second project will in part deals with the problem how to make k-NN faster without sacrificing
+its accuracy too much.</p>
+<p><strong>Mikhael asks:</strong></p>
+<blockquote>
+<div><p>I’d like to make the kNN algorithm a bit interactive similar to the Google quickdraw where the user
+f the algorithm gets a 6x6 or NxN grid window with white tiles and they can use their cursor to create
+the data point as a number. The grid has a box for each pixel of the data point. How can I go about
+doing this since it is like a GUI element with Python?</p>
+</div></blockquote>
+<p>You would need to create a GUI interface. There are many Python libraries that can be used
+to do it in various ways. Even matplotlib has tools for creating simple interactive plots that
+may suffice for such an application. You can also use e.g. the kivy library to create an interface
+usable with tablets and smarthones.</p>
+<p><strong>Qiang asks:</strong></p>
+<blockquote>
+<div><p>How many patterns have to be worked out for a project?</p>
+</div></blockquote>
+<p>I am not sure what you mean. How many topics you should explore? A couple should be enough, or even
+one researched in some more depth.</p>
+<p><strong>Michael asks:</strong></p>
+<blockquote>
+<div><p>What is the difference between the K-NN and K-Means algorithm?</p>
+</div></blockquote>
+<p>These algorithms serve different purposes. k-NN is an algorithm for predicting
+data labels, while k-means is for data clustering.</p>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Schedule/week_4.html" class="btn btn-neutral float-right" title="Week 4 (2/21-2/27)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Schedule/week_3.html" class="btn btn-neutral float-left" title="Week 3 (2/14-2/20)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
+      <span class="lastupdated"><br/>
+        Last updated on Feb 21, 2022.
+      </span>
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-161474487-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
