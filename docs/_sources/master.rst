@@ -20,6 +20,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_2
    Schedule/week_3
    Schedule/week_4
+   Schedule/week_5
 
 
 
