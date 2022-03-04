@@ -18,4 +18,4 @@ Weekly Digest 5
 
 .. raw:: html
 
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdb317zkGYZhVb_81siqcUXdOH3ZbYqi41L91L90ZA7eZmINA/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdb317zkGYZhVb_81siqcUXdOH3ZbYqi41L91L90ZA7eZmINA/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>    
