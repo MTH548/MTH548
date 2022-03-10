@@ -3,19 +3,19 @@ Current Tasks
 =============
 
 
-Project 2
+Project 3
 ---------
 
-**Due: Saturday, 3/5 11:59 PM on UBLearns**
+**Due: Saturday, 3/19 11:59 PM on UBLearns**
 
-:doc:`Project: MNIST with k-means <Projects/mnist_with_k_means/mnist_with_k_means>` 
+:doc:`Project: Baby names <Projects/baby_names/baby_names>` 
 
 
-Weekly Digest 5 
+Weekly Digest 6 
 ---------------
 
-**Due: Sunday 3/6 11:59 PM**
+**Due: Sunday 3/13 11:59 PM**
 
 .. raw:: html
 
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdb317zkGYZhVb_81siqcUXdOH3ZbYqi41L91L90ZA7eZmINA/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>    
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRoG9OnlC2lXDhLZkNdvUZO1hJMCd_0k2imm8SE2xu_PgxOg/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
