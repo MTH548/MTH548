@@ -52,7 +52,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="JSON" href="../json/json.html" />
+    <link rel="next" title="Project: Recognizing digits with k-NN" href="../../Projects/mnist_with_knn/mnist_with_knn.html" />
     <link rel="prev" title="Requests" href="../requests/requests.html" /> 
 </head>
 
@@ -114,13 +114,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_4.html">Week 4 (2/21-2/27)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_5.html">Week 5 (2/28-3/6)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_6.html">Week 6 (3/7-3/13)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_7.html">Week 7 (3/14-3/20)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../requests/requests.html">Requests</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Beautiful Soup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#First-steps">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Links">Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Link-formats">Link formats</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#Images">Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Tables">Tables</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul>
@@ -491,6 +503,7 @@ div.rendered_html tbody tr:hover {
     src="https://www.buffalo.edu/cas/math/people/grad-directory.html"
     frameborder="0"
     allowfullscreen
+
 ></iframe></div>
 </div>
 <div class="line-block">
@@ -515,16 +528,16 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;!DOCTYPE HTML&gt;&lt;html lang=&#34;en&#34; class=&#34;ubcms-63&#34;&gt;&lt;!-- cmspub01 0307-163502 --&gt;&lt;head&gt;&lt;meta http-equiv=&#34;X-UA-Com
-patible&#34; content=&#34;IE=edge&#34;/&gt;&lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html; charset=UTF-8&#34;/&gt;&lt;meta id=&#34;met
-a-viewport&#34; name=&#34;viewport&#34; content=&#34;width=device-width,initial-scale=1&#34;/&gt;&lt;script&gt;if (screen.width &gt; 720 &amp;&amp; s
-creen.width &lt; 960) document.getElementById(&#39;meta-viewport&#39;).setAttribute(&#39;content&#39;,&#39;width=960&#39;);&lt;/script&gt;&lt;scr
-ipt&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&#39;gtm.start&#39;:new Date().getTime(),event:&#39;gtm.js&#39;});var f=d.g
-etElementsByTagName(s)[0],j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.async=true;j.src=&#39;https://www.g
-oogletagmanager.com/gtm.js?id=&#39;+i+dl;f.parentNode.insertBefore(j,f);})(window,document,&#39;script&#39;,&#39;dataLayer&#39;,&#39;
-GTM-T5KRRKT&#39;);&lt;/script&gt;&lt;title&gt;Graduate Students - Department of Mathematics - University at Buffalo&lt;/title&gt;&lt;l
-ink rel=&#34;canonical&#34; href=&#34;http://www.buffalo.edu/cas/math/people/grad-directory.html&#34;/&gt;&lt;meta name=&#34;date&#34; cont
-ent=&#34;2020-03-02&#34;/&gt;&lt;
+&lt;!DOCTYPE HTML&gt;&lt;html lang=&#34;en&#34; class=&#34;ubcms-65&#34;&gt;&lt;!-- cmspub03 0310-231422 --&gt;&lt;head&gt;&lt;link rel=&#34;preconnect&#34; hre
+f=&#34;https://www.googletagmanager.com/&#34; crossorigin/&gt;&lt;link rel=&#34;dns-prefetch&#34; href=&#34;https://www.googletagmanage
+r.com/&#34;/&gt;&lt;link rel=&#34;dns-prefetch&#34; href=&#34;https://connect.facebook.net/&#34;/&gt;&lt;link rel=&#34;dns-prefetch&#34; href=&#34;https:
+//www.google-analytics.com/&#34;/&gt;&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge&#34;/&gt;&lt;meta http-equiv=&#34;content
+-type&#34; content=&#34;text/html; charset=UTF-8&#34;/&gt;&lt;meta id=&#34;meta-viewport&#34; name=&#34;viewport&#34; content=&#34;width=device-wid
+th,initial-scale=1&#34;/&gt;&lt;script&gt;if (screen.width &gt; 720 &amp;&amp; screen.width &lt; 960) document.getElementById(&#39;meta-view
+port&#39;).setAttribute(&#39;content&#39;,&#39;width=960&#39;);&lt;/script&gt;&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&#39;gt
+m.start&#39;:new Date().getTime(),event:&#39;gtm.js&#39;});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=
+&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.async=true;j.src=&#39;https://www.googletagmanager.com/gtm.js?id=&#39;+i+dl;f.parentNode.ins
+ertBefore(j,f);})(w
 </pre></div></div>
 </div>
 <p>Next, we import <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> and pass to it the HTML code of the web page to produce a <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> object:</p>
@@ -554,9 +567,13 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 &lt;!DOCTYPE HTML&gt;
-&lt;html class=&#34;ubcms-63&#34; lang=&#34;en&#34;&gt;
- &lt;!-- cmspub01 0307-163502 --&gt;
+&lt;html class=&#34;ubcms-65&#34; lang=&#34;en&#34;&gt;
+ &lt;!-- cmspub03 0310-231422 --&gt;
  &lt;head&gt;
+  &lt;link crossorigin=&#34;&#34; href=&#34;https://www.googletagmanager.com/&#34; rel=&#34;preconnect&#34;/&gt;
+  &lt;link href=&#34;https://www.googletagmanager.com/&#34; rel=&#34;dns-prefetch&#34;/&gt;
+  &lt;link href=&#34;https://connect.facebook.net/&#34; rel=&#34;dns-prefetch&#34;/&gt;
+  &lt;link href=&#34;https://www.google-analytics.com/&#34; rel=&#34;dns-prefetch&#34;/&gt;
   &lt;meta content=&#34;IE=edge&#34; http-equiv=&#34;X-UA-Compatible&#34;/&gt;
   &lt;meta content=&#34;text/html; charset=utf-8&#34; http-equiv=&#34;content-type&#34;/&gt;
   &lt;meta content=&#34;width=device-width,initial-scale=1&#34; id=&#34;meta-viewport&#34; name=&#34;viewport&#34;/&gt;
@@ -567,33 +584,36 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({&#39;gtm.start&#39;:new Date().getTime(),event:&#39;gtm.js&#39;});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=&#39;dataLayer&#39;?&#39;&amp;l=&#39;+l:&#39;&#39;;j.async=true;j.src=&#39;https://www.googletagmanager.com/gtm.js?id=&#39;+i+dl;f.parentNode.insertBefore(j,f);})(window,document,&#39;script&#39;,&#39;dataLayer&#39;,&#39;GTM-T5KRRKT&#39;);
   &lt;/script&gt;
   &lt;title&gt;
-   Graduate Students - Department of Mathematics - University at Buffalo
+   Graduate Student Directory - Department of Mathematics - University at Buffalo
   &lt;/title&gt;
-  &lt;link href=&#34;http://www.buffalo.edu/cas/math/people/grad-directory.html&#34; rel=&#34;canonical&#34;/&gt;
-  &lt;meta content=&#34;2020-03-02&#34; name=&#34;date&#34;/&gt;
-  &lt;meta content=&#34;Graduate Student Directory&#34; name=&#34;og:title&#34;/&gt;
-  &lt;meta content=&#34; A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z &#34; name=&#34;og:description&#34;/&gt;
-  &lt;meta content=&#34;https://www.buffalo.edu/cas/math/people/grad-directory/_jcr_content/par/image.img.512.auto.jpg/1460655962154.jpg&#34; name=&#34;og:image&#34;/&gt;
+  &lt;link href=&#34;https://www.buffalo.edu/cas/math/people/grad-directory.html&#34; rel=&#34;canonical&#34;/&gt;
+  &lt;meta content=&#34;2022-03-01&#34; name=&#34;date&#34;/&gt;
+  &lt;meta content=&#34;Graduate Student Directory&#34; property=&#34;og:title&#34;/&gt;
+  &lt;meta content=&#34; A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z &#34; property=&#34;og:description&#34;/&gt;
+  &lt;meta content=&#34;https://www.buffalo.edu/etc/designs/ubcms/clientlibs-main/images/ub-social.png.img.512.auto.png/1615975613913.png&#34; property=&#34;og:image&#34;/&gt;
+  &lt;meta content=&#34;University at Buffalo&#34; property=&#34;og:image:alt&#34;/&gt;
   &lt;meta content=&#34;summary_large_image&#34; name=&#34;twitter:card&#34;/&gt;
-  &lt;link href=&#34;//www.buffalo.edu/v-b0cee2675721e71f32262184f8d59b30/etc/designs/ubcms/clientlibs.min.b0cee2675721e71f32262184f8d59b30.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;/&gt;
-  &lt;link href=&#34;//www.buffalo.edu/v-9cc4b89851550cf5e105d25db85ba3e9/etc/designs/cas/math/css/main.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;/&gt;
-  &lt;script src=&#34;//www.buffalo.edu/v-18fd5c78e22117752b397a7da5128514/etc/designs/ubcms/clientlibs.min.18fd5c78e22117752b397a7da5128514.js&#34; type=&#34;text/javascript&#34;&gt;
+  &lt;meta content=&#34;https://www.buffalo.edu/cas/math/people/grad-directory/_jcr_content/par/image.img.512.auto.jpg/1629919606956.jpg&#34; property=&#34;thumbnail&#34;/&gt;
+  &lt;meta content=&#34;1. &#34; property=&#34;thumbnail:alt&#34;/&gt;
+  &lt;link href=&#34;/v-5150cc622c68590719981526ed5c6b25/etc/designs/ubcms/clientlibs-privateauthor.min.5150cc622c68590719981526ed5c6b25.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;/&gt;
+  &lt;link href=&#34;/v-3d5e50c59343478ac1f797325d06d08c/etc/designs/ubcms/clientlibs.min.3d5e50c59343478ac1f797325d06d08c.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;/&gt;
+  &lt;link href=&#34;/v-9cc4b89851550cf5e105d25db85ba3e9/etc/designs/cas/math/css/main.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;/&gt;
+  &lt;script nomodule=&#34;&#34; src=&#34;/v-a83c7a045b4a3c7a9600758298bc4ad8/etc/designs/ubcms/clientlibs-polyfills.min.a83c7a045b4a3c7a9600758298bc4ad8.js&#34;&gt;
   &lt;/script&gt;
-  &lt;style type=&#34;text/css&#34;&gt;
+  &lt;script src=&#34;/etc.clientlibs/clientlibs/granite/jquery.min.cee8557e8779d371fe722bbcdd3b3eb7.js&#34;&gt;
+  &lt;/script&gt;
+  &lt;script src=&#34;/v-7cc18f24035dfccf28f4dfe0af578c03/etc/designs/ubcms/clientlibs.min.7cc18f24035dfccf28f4dfe0af578c03.js&#34;&gt;
+  &lt;/script&gt;
+  &lt;style&gt;
    body.page #page, body.page .page-inner {background-color:#FFFFFF}
   &lt;/style&gt;
   &lt;script&gt;
    (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);ga(&#39;create&#39;, &#39;UA-67291618-1&#39;, &#39;auto&#39;);ga(&#39;send&#39;, &#39;pageview&#39;);
   &lt;/script&gt;
-  &lt;script type=&#34;text/javascript&#34;&gt;
-   /*&lt;![CDATA[*/
-        (function() {
-            var sz = document.createElement(&#39;script&#39;); sz.type = &#39;text/javascript&#39;; sz.async = true;
-            sz.src = &#39;//siteimproveanalytics.com/js/siteanalyze_75159.js&#39;;
-            var s = document.getElementsByTagName(&#39;script&#39;)[0]; s.parentNode.insertBefore(sz, s);
-        })();
-        /*]]&gt;*/
-  &lt;/script&gt;
+  &lt;style&gt;
+   img.lazyload,img.lazyloading{position:relative;background:#EEE}
+        img.lazyload:before,img.lazyloading:before{content:&#34;&#34;;background:#EEE;position:absolute;top:0;left:0;bottom:0;right:0}
+  &lt;/style&gt;
  &lt;/head&gt;
  &lt;body class=&#34;contentpage page&#34;&gt;
   &lt;noscript&gt;
@@ -605,6 +625,8 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
     Skip to Content
    &lt;/a&gt;
   &lt;/nav&gt;
+  &lt;div&gt;
+  &lt;/div&gt;
   &lt;div id=&#34;page&#34;&gt;
    &lt;div class=&#34;page-inner&#34;&gt;
     &lt;div class=&#34;page-inner-1&#34;&gt;
@@ -614,9 +636,11 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
       &lt;div class=&#34;page-inner-3&#34;&gt;
        &lt;header&gt;
         &lt;div class=&#34;innerheader inheritedreference reference parbase&#34;&gt;
-         &lt;div class=&#34;headerconfigpage contentpage page&#34;&gt;
+         &lt;div class=&#34;headerconfigpage contentpage page basicpage&#34;&gt;
           &lt;div class=&#34;par parsys&#34;&gt;
            &lt;div class=&#34;alertbanner reference parbase section&#34;&gt;
+            &lt;div contenttreeid=&#34;alertbanner&#34; contenttreestatus=&#34;Not published&#34; style=&#34;display:none;&#34;&gt;
+            &lt;/div&gt;
             &lt;script&gt;
              jQuery(&#39;.cap-message&#39;).detach().insertBefore(&#39;#page&#39;).wrap(&#39;&lt;section aria-label=&#34;UB Alert&#34;&gt;&#39;);
             &lt;/script&gt;
@@ -663,16 +687,14 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  University at Buffalo
                 &lt;/span&gt;
                 &lt;span class=&#34;logo&#34;&gt;
-                 &lt;img alt=&#34;&#34; class=&#34;black&#34; height=&#34;20&#34; src=&#34;//www.buffalo.edu/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc/designs/ubcms/images/header/ub-logo-black.png&#34; width=&#34;181&#34;/&gt;
+                 &lt;img alt=&#34;&#34; class=&#34;black&#34; height=&#34;20&#34; src=&#34;/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc.clientlibs/wci/components/block/header/clientlibs/resources/ub-logo-black.png&#34; width=&#34;181&#34;/&gt;
                 &lt;/span&gt;
                &lt;/a&gt;
                &lt;div class=&#34;mobile-links&#34; data-set=&#34;header-links&#34;&gt;
                &lt;/div&gt;
-               &lt;div class=&#34;title&#34;&gt;
-                &lt;a href=&#34;/cas/math.html&#34;&gt;
-                 Department of Mathematics
-                &lt;/a&gt;
-               &lt;/div&gt;
+               &lt;a class=&#34;title&#34; href=&#34;/cas/math.html&#34;&gt;
+                Department of Mathematics
+               &lt;/a&gt;
               &lt;/div&gt;
               &lt;div class=&#34;social&#34; data-set=&#34;headersocial&#34;&gt;
               &lt;/div&gt;
@@ -688,7 +710,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/a&gt;
                &lt;/div&gt;
                &lt;div class=&#34;buttoncomponent sidebyside green&#34;&gt;
-                &lt;a href=&#34;https://ubfoundation.buffalo.edu/giving/index.php?action=use-parameters&amp;amp;gift_allocation=9351124026&#34; target=&#34;_blank&#34;&gt;
+                &lt;a href=&#34;https://ubfoundation.buffalo.edu/giving/?gift_allocation=01-3-0-01240&#34; target=&#34;_blank&#34;&gt;
                  Support UB Math
                 &lt;/a&gt;
                &lt;/div&gt;
@@ -697,322 +719,42 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
             &lt;/div&gt;
            &lt;/div&gt;
            &lt;div class=&#34;reference parbase section&#34;&gt;
-            &lt;div class=&#34;unstructuredpage page&#34;&gt;
+            &lt;div class=&#34;unstructuredpage page basicpage&#34;&gt;
              &lt;div class=&#34;par parsys&#34;&gt;
               &lt;div class=&#34;list parbase section&#34;&gt;
-               &lt;div id=&#34;ubcms-gen-55488952&#34;&gt;
-                &lt;div class=&#34;par parsys&#34;&gt;
-                 &lt;div class=&#34;reference parbase section&#34;&gt;
-                  &lt;style&gt;
-                   /*
-    (*) large = 24px for regular weight or 18.5px for bold text
-    See http://webaim.org/resources/contrastchecker/
-*/
-.long-term-alert-banner {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #ffc72c;
-}
-.long-term-alert-banner:before {
-  content: &#34;&#34;;
-  position: absolute;
-  left: calc(50% - 50vw);
-  width: 100vw;
-  height: 100%;
-  background-color: #ffc72c;
-}
-@media only screen and (min-width: 721px) and (max-width: 959px) {
-  .long-term-alert-banner:before {
-    left: 0;
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner:before {
-    left: 0;
-  }
-}
-.long-term-alert-banner.ensure-z-top {
-  z-index: 10000;
-}
-.long-term-alert-banner .text.parbase.section {
-  display: inline-block;
-  padding: 6px 14px 0;
-}
-.long-term-alert-banner .text.parbase.section p {
-  position: relative;
-  display: inline-block;
-  margin: 0;
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner .text.parbase.section p {
-    display: block;
-    padding-right: 25px;
-  }
-}
-.long-term-alert-banner .text.parbase.section p,
-.long-term-alert-banner .text.parbase.section p &gt; b {
-  font-size: 14px;
-  line-height: 14px;
-}
-.long-term-alert-banner .text.parbase.section ul {
-  position: relative;
-  display: inline-block;
-  margin: 0 0 0 4px;
-}
-.long-term-alert-banner .text.parbase.section ul &gt; li {
-  font-size: 13px;
-  display: inline-block;
-  margin-left: 4px;
-  padding-top: 4px;
-}
-.long-term-alert-banner .text.parbase.section ul &gt; li:before {
-  content: &#34;&#34;;
-  border: solid black;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 2px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  margin-right: 5px;
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner .text.parbase.section ul &gt; li:before {
-    vertical-align: 1px;
-    margin-right: 4px;
-  }
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner .text.parbase.section ul &gt; li {
-    font-size: 12px;
-    display: block;
-    margin-left: 0;
-    padding: 2px 0 3px 18px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-@media only screen and (min-width: 721px) {
-  .long-term-alert-banner .text.parbase.section ul {
-    display: inline-block !important;
-  }
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner .text.parbase.section ul {
-    display: block;
-    margin-left: 0;
-    margin-top: 8px;
-  }
-  .long-term-alert-banner .text.parbase.section ul.mobile-collapsed {
-    display: none;
-  }
-}
-.long-term-alert-banner .text.parbase.section a {
-  color: black;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-.long-term-alert-banner .text.parbase.section a:hover {
-  border-bottom: 1px solid black;
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner .text.parbase.section {
-    display: block;
-    padding: 10px 20px 9px;
-  }
-}
-.long-term-alert-banner button.collapsible-toggle {
-  display: none;
-  position: absolute;
-  overflow: hidden;
-  background-color: inherit;
-  border: none;
-  top: 7px;
-  right: 12px;
-  height: 20px;
-  cursor: pointer;
-}
-.long-term-alert-banner button.collapsible-toggle:after {
-  content: &#34;+&#34;;
-  display: inline-block;
-  overflow: hidden;
-  font: bold 30px sofia;
-  line-height: 30px;
-  margin-top: -10px;
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner button.collapsible-toggle {
-    display: inline-block;
-  }
-}
-.long-term-alert-banner.expanded button.collapsible-toggle:after {
-  content: &#34;\00d7&#34;;
-}
-@media only screen and (min-width: 721px) and (max-width: 959px) {
-  .long-term-alert-banner {
-    left: 0;
-  }
-}
-@media only screen and (max-width: 720px) {
-  .long-term-alert-banner {
-    left: 0;
-    width: 100vw;
-  }
-}
-@media only screen and (min-width: 721px) {
-  section[aria-label=&#34;UB Alert&#34;] + section[aria-label=&#34;UB Long-Term Alert&#34;] .long-term-alert-banner:before {
-    border-top: 1px solid white;
-  }
-}
-#container.content {
-  width: 100vw;
-  padding-left: 0;
-}
-                  &lt;/style&gt;
-                 &lt;/div&gt;
-                 &lt;div class=&#34;long-term-alert-banner&#34;&gt;
-                  &lt;div class=&#34;text parbase section&#34;&gt;
-                   &lt;p&gt;
-                    &lt;b&gt;
-                     &lt;a href=&#34;https://www.buffalo.edu/coronavirus&#34;&gt;
-                      COVID-19 Information
-                     &lt;/a&gt;
-                     •  3/4/2020 update
-                    &lt;/b&gt;
-                   &lt;/p&gt;
-                   &lt;ul&gt;
-                    &lt;li&gt;
-                     &lt;a href=&#34;https://www.buffalo.edu/coronavirus.html#cv-bulletins&#34;&gt;
-                      UB recalling students studying abroad in affected countries
-                     &lt;/a&gt;
-                    &lt;/li&gt;
-                   &lt;/ul&gt;
+               &lt;div data-columnize-row=&#34;1&#34; id=&#34;ubcms-gen-33853657&#34;&gt;
+                &lt;ul class=&#34;list-style-detail&#34; data-columnize=&#34;1&#34;&gt;
+                 &lt;li&gt;
+                  &lt;div class=&#34;long-term-alert-banner&#34;&gt;
+                   &lt;div class=&#34;text parbase section&#34;&gt;
+                    &lt;p&gt;
+                     &lt;b&gt;
+                      COVID-19 UPDATES  •  3/4/2022
+                     &lt;/b&gt;
+                    &lt;/p&gt;
+                    &lt;ul&gt;
+                     &lt;li&gt;
+                      &lt;a href=&#34;/coronavirus/latest-update.html&#34;&gt;
+                       UB lifts vaccination policy for campus events
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;/ul&gt;
+                   &lt;/div&gt;
                   &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class=&#34;reference parbase section&#34;&gt;
-                  &lt;script&gt;
-                   (function($) {
-    &#39;use strict&#39;;
-
-    /**
-     * The Local Storage key for loading the last recorded Long-Term Alert Banner toggle state.
-     */
-    var toggleStateRecordKey = &#39;ubcmsLongTermAlertToggleState&#39;;
-    setupAlertBannerCollapsible();
-    moveAlertBannerBeforePage();
-
-    /**
-     * Sets up the collapsible functionality and elements for a Long-Term Alert Banner that is found on the page.
-     */
-    function setupAlertBannerCollapsible() {
-                var $alertBanner = $(&#39;.long-term-alert-banner&#39;);
-        var $content = $alertBanner.find(&#39;ul&#39;);
-        var $toggleButton = addToggleButton($alertBanner);
-
-        $content.attr(&#39;aria-label&#39;, &#39;Long-Term Alert Banner Content&#39;);
-        initToggleState($alertBanner, $toggleButton, $content);
-                setupToggleListener($alertBanner, $toggleButton, $content);
-    }
-
-    /**
-     * Adds a toggle button to a given Long-Term Alert Banner.
-     * @param {jQuery} $alertBanner The Long-Term Alert Banner.
-     * @return {jQuery} The added toggle button.
-     */
-    function addToggleButton($alertBanner) {
-                var $toggleButton = $(document.createElement(&#39;button&#39;));
-        $toggleButton.attr(&#39;type&#39;, &#39;button&#39;);
-        $toggleButton.addClass(&#39;collapsible-toggle&#39;);
-        $toggleButton.attr(&#39;aria-haspopup&#39;, &#39;true&#39;);
-        $toggleButton.attr(&#39;aria-label&#39;, &#39;Long-Term Alert Banner Toggle Button&#39;);
-        $toggleButton.attr(&#39;id&#39;, &#39;long-term-alert-collapsible-toggle&#39;);
-        $alertBanner.append($toggleButton);
-        return $toggleButton;
-    }
-
-    /**
-     * Initializes the toggle state for a given Long-Term Alert Banner and its contents.
-     * Note that the toggle state will be initialized to any previously saved toggle state.
-     * @param {jQuery} $alertBanner The Long-Term Alert Banner.
-     * @param {jQuery} $toggleButton The toggle button.
-     * @param {jQuery} $content The toggle content.
-     */
-    function initToggleState($alertBanner, $toggleButton, $content) {
-        var toggleStateRecord = JSON.parse(localStorage.getItem(toggleStateRecordKey));
-        var expanded = (toggleStateRecord &amp;&amp; toggleStateRecord.version === $alertBanner.text())
-                ? (toggleStateRecord.expanded === &#39;true&#39;)
-            : true; // Defaults to expanded on first load.
-
-        if (expanded) {
-                $toggleButton.attr(&#39;aria-expanded&#39;, &#39;true&#39;);
-                $alertBanner.addClass(&#39;expanded&#39;);
-        } else {
-                        $content.addClass(&#39;mobile-collapsed&#39;);
-        }
-    }
-
-    /**
-     * Sets up a toggle button listener for a given Long-Term Alert Banner.
-     * @param {jQuery} $alertBanner The Long-Term Alert Banner.
-     * @param {jQuery} $toggleButton The toggle button.
-     * @param {jQuery} $content The toggle content.
-     */
-    function setupToggleListener($alertBanner, $toggleButton, $content) {
-        $toggleButton.click(function() {
-            toggleCollapsible($alertBanner, $toggleButton, $content);
-        });
-    }
-
-    /**
-     * Toggles a given collapsible Long-Term Alert Banner.
-     * @param {jQuery} $alertBanner The Long-Term Alert Banner collapsible container.
-     * @param {jQuery} $toggleButton The collapsible toggle button.
-     * @param {jQuery} $content The collapsible content.
-     */
-    function toggleCollapsible($alertBanner, $toggleButton, $content) {
-        $alertBanner.toggleClass(&#39;expanded&#39;);
-        var expanded = ($alertBanner.hasClass(&#39;expanded&#39;) ? &#39;true&#39; : &#39;false&#39;);
-        $content.slideToggle(&#39;fast&#39;);
-        $toggleButton.attr(&#39;aria-expanded&#39;, expanded);
-        saveToggleStateForReload($alertBanner, expanded);
-    }
-
-    /**
-     * Saves the toggle state of a given Long-Term Alert Banner so that it maintains its toggle state on page re-visit.
-     * @param {jQuery} $alertBanner The Long-Term Alert Banner to save the toggle state of.
-     * @param {boolean} expanded The epanded toggle state of the Long-Term Alert Banner.
-     */
-    function saveToggleStateForReload($alertBanner, expanded) {
-        var toggleStateRecord = {
-            version: $alertBanner.text(),
-            expanded: expanded
-        };
-        localStorage.setItem(toggleStateRecordKey, JSON.stringify(toggleStateRecord));
-    }
-
-    /**
-     * Moves the a Long-Term Alert Banner found within a page header just before the #page container (if one exists).
-     */
-    function moveAlertBannerBeforePage() {
-        var $page = $(&#39;#page&#39;);
-                if ($page.get(0)) {
-            var $alertBanner = $(&#39;.long-term-alert-banner&#39;);
-            $alertBanner.detach().insertBefore($page).wrap(&#39;&lt;section aria-label=&#34;UB Long-Term Alert&#34;&gt;&#39;);
-            $alertBanner.addClass(&#39;ensure-z-top&#39;);
-        }
-    }
-
-})(jQuery);
-                  &lt;/script&gt;
-                 &lt;/div&gt;
-                &lt;/div&gt;
+                 &lt;/li&gt;
+                &lt;/ul&gt;
                &lt;/div&gt;
+               &lt;script&gt;
+                UBCMS.list.listlimit(&#39;ubcms\u002Dgen\u002D33853657&#39;, &#39;100&#39;,
+                &#39;100&#39;);
+               &lt;/script&gt;
               &lt;/div&gt;
+              &lt;script&gt;
+               UBCMS.longTermAlert.init()
+              &lt;/script&gt;
              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div contenttreeid=&#34;reference&#34; contenttreestatus=&#34;Not published&#34; style=&#34;display:none;&#34;&gt;
             &lt;/div&gt;
            &lt;/div&gt;
            &lt;div class=&#34;mobilemenu section&#34;&gt;
@@ -1054,7 +796,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
             &lt;script&gt;
              jQuery(&#39;.mobileheader-button-menu&#39;).removeAttr(&#39;style&#39;);
     jQuery(document).ready(function() {
-        if ($(&#39;.topnav .search .form&#39;).length &gt; 0) {
+        if ($(&#39;.topnav .search .search-content&#39;).length &gt; 0) {
             $(&#39;.mobileheader-button-search&#39;).removeAttr(&#39;style&#39;);
         }
     });
@@ -1065,13 +807,13 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
             &lt;nav aria-label=&#34;site navigation&#34; class=&#34;topnav-inner&#34;&gt;
              &lt;div class=&#34;main&#34;&gt;
               &lt;ul class=&#34;menu&#34;&gt;
-               &lt;li class=&#34;first theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/about-us.html&#34; id=&#34;ubcms-gen-55489032&#34;&gt;
+               &lt;li class=&#34;first theme-secondary theme-standard-gray&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/about-us.html&#34; id=&#34;ubcms-gen-33853660&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   About
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-55489032&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-33853660&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;About:Why Choose Us?&#34; href=&#34;/cas/math/about-us/why-choose.html&#34;&gt;
@@ -1132,8 +874,8 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                    &lt;/div&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
-                   &lt;a aria-label=&#34;About:Visiting UB&#34; href=&#34;/cas/math/news-events/visiting.html&#34;&gt;
-                    Visiting UB
+                   &lt;a aria-label=&#34;About:Mathematicians of the African Diaspora&#34; href=&#34;/cas/math/about-us/mathematicians-of-the-african-diaspora.html&#34;&gt;
+                    Mathematicians of the African Diaspora
                    &lt;/a&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
@@ -1146,6 +888,11 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                     About Buffalo-Niagara
                    &lt;/a&gt;
                   &lt;/li&gt;
+                  &lt;li&gt;
+                   &lt;a aria-label=&#34;About:Visiting UB&#34; href=&#34;/cas/math/news-events/visiting.html&#34;&gt;
+                    Visiting UB
+                   &lt;/a&gt;
+                  &lt;/li&gt;
                   &lt;li class=&#34;last&#34;&gt;
                    &lt;a aria-label=&#34;About:Contact Us&#34; href=&#34;/cas/math/about-us/contact-us.html&#34;&gt;
                     Contact Us
@@ -1153,147 +900,16 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                   &lt;/li&gt;
                  &lt;/ul&gt;
                  &lt;div class=&#34;relatedLinks relatedlinksreference reference parbase&#34;&gt;
-                  &lt;div class=&#34;nav-related-links&#34;&gt;
-                   &lt;!--noindex--&gt;
-                   &lt;div class=&#34;subnav-title&#34;&gt;
-                    Related Links
-                   &lt;/div&gt;
-                   &lt;!--endnoindex--&gt;
-                   &lt;div class=&#34;relatedlinkspage unstructuredpage page&#34;&gt;
-                    &lt;div class=&#34;par parsys&#34;&gt;
-                     &lt;div class=&#34;relatedlinks list parbase section&#34;&gt;
-                      &lt;div id=&#34;ubcms-gen-55489069&#34;&gt;
-                       &lt;ul class=&#34;link-list&#34; data-columnize=&#34;1&#34;&gt;
-                        &lt;li&gt;
-                         &lt;span class=&#34;teaser teaser-inline&#34;&gt;
-                          &lt;a href=&#34;/cas/math/people/faculty.html&#34;&gt;
-                           &lt;span class=&#34;teaser-inner&#34;&gt;
-                            &lt;!--noindex--&gt;
-                            &lt;span class=&#34;teaser-date&#34;&gt;
-                             2/24/20
-                            &lt;/span&gt;
-                            &lt;!--endnoindex--&gt;
-                            &lt;span class=&#34;teaser-title&#34;&gt;
-                             Faculty
-                            &lt;/span&gt;
-                           &lt;/span&gt;
-                          &lt;/a&gt;
-                         &lt;/span&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                         &lt;span class=&#34;teaser teaser-inline&#34;&gt;
-                          &lt;a href=&#34;/cas/math/people/staff_directory.html&#34;&gt;
-                           &lt;span class=&#34;teaser-inner&#34;&gt;
-                            &lt;!--noindex--&gt;
-                            &lt;span class=&#34;teaser-date&#34;&gt;
-                             2/26/20
-                            &lt;/span&gt;
-                            &lt;!--endnoindex--&gt;
-                            &lt;span class=&#34;teaser-title&#34;&gt;
-                             Staff
-                            &lt;/span&gt;
-                           &lt;/span&gt;
-                          &lt;/a&gt;
-                         &lt;/span&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                         &lt;span class=&#34;teaser teaser-inline&#34;&gt;
-                          &lt;a href=&#34;/cas/math/people/emeriti.html&#34;&gt;
-                           &lt;span class=&#34;teaser-inner&#34;&gt;
-                            &lt;!--noindex--&gt;
-                            &lt;span class=&#34;teaser-date&#34;&gt;
-                             3/3/18
-                            &lt;/span&gt;
-                            &lt;!--endnoindex--&gt;
-                            &lt;span class=&#34;teaser-title&#34;&gt;
-                             Emeriti Faculty
-                            &lt;/span&gt;
-                           &lt;/span&gt;
-                          &lt;/a&gt;
-                         &lt;/span&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                         &lt;span class=&#34;teaser teaser-inline&#34;&gt;
-                          &lt;a href=&#34;/cas/math/people/instructors.html&#34;&gt;
-                           &lt;span class=&#34;teaser-inner&#34;&gt;
-                            &lt;!--noindex--&gt;
-                            &lt;span class=&#34;teaser-date&#34;&gt;
-                             4/30/19
-                            &lt;/span&gt;
-                            &lt;!--endnoindex--&gt;
-                            &lt;span class=&#34;teaser-title&#34;&gt;
-                             Instructors
-                            &lt;/span&gt;
-                           &lt;/span&gt;
-                          &lt;/a&gt;
-                         &lt;/span&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                         &lt;span class=&#34;teaser teaser-inline&#34;&gt;
-                          &lt;a href=&#34;/cas/math/people/visiting-scholars.html&#34;&gt;
-                           &lt;span class=&#34;teaser-inner&#34;&gt;
-                            &lt;!--noindex--&gt;
-                            &lt;span class=&#34;teaser-date&#34;&gt;
-                             4/23/19
-                            &lt;/span&gt;
-                            &lt;!--endnoindex--&gt;
-                            &lt;span class=&#34;teaser-title&#34;&gt;
-                             Visiting Scholars
-                            &lt;/span&gt;
-                           &lt;/span&gt;
-                          &lt;/a&gt;
-                         &lt;/span&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                         &lt;span class=&#34;teaser teaser-inline&#34;&gt;
-                          &lt;a href=&#34;/cas/math/people/grad-directory.html&#34;&gt;
-                           &lt;span class=&#34;teaser-inner&#34;&gt;
-                            &lt;!--noindex--&gt;
-                            &lt;span class=&#34;teaser-date&#34;&gt;
-                             3/2/20
-                            &lt;/span&gt;
-                            &lt;!--endnoindex--&gt;
-                            &lt;span class=&#34;teaser-title&#34;&gt;
-                             Graduate Student Directory
-                            &lt;/span&gt;
-                           &lt;/span&gt;
-                          &lt;/a&gt;
-                         &lt;/span&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;
-                         &lt;span class=&#34;teaser teaser-inline&#34;&gt;
-                          &lt;a href=&#34;/cas/math/alumni-friends1.html&#34;&gt;
-                           &lt;span class=&#34;teaser-inner&#34;&gt;
-                            &lt;!--noindex--&gt;
-                            &lt;span class=&#34;teaser-date&#34;&gt;
-                             3/26/18
-                            &lt;/span&gt;
-                            &lt;!--endnoindex--&gt;
-                            &lt;span class=&#34;teaser-title&#34;&gt;
-                             Alumni
-                            &lt;/span&gt;
-                           &lt;/span&gt;
-                          &lt;/a&gt;
-                         &lt;/span&gt;
-                        &lt;/li&gt;
-                       &lt;/ul&gt;
-                      &lt;/div&gt;
-                      &lt;div class=&#34;clearfix&#34;&gt;
-                      &lt;/div&gt;
-                     &lt;/div&gt;
-                    &lt;/div&gt;
-                   &lt;/div&gt;
-                  &lt;/div&gt;
                  &lt;/div&gt;
                 &lt;/div&gt;
                &lt;/li&gt;
-               &lt;li class=&#34;theme-secondary theme-putnam-gray active-trail&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/people.html&#34; id=&#34;ubcms-gen-55489097&#34;&gt;
+               &lt;li class=&#34;theme-secondary theme-standard-gray active-trail&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/people.html&#34; id=&#34;ubcms-gen-33853662&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   People
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-55489097&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-33853662&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;People:Faculty&#34; href=&#34;/cas/math/people/faculty.html&#34;&gt;
@@ -1321,27 +937,46 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                    &lt;/a&gt;
                   &lt;/li&gt;
                   &lt;li class=&#34;active-trail&#34;&gt;
-                   &lt;a aria-label=&#34;People:Graduate Students&#34; class=&#34;active&#34; href=&#34;/cas/math/people/grad-directory.html&#34;&gt;
-                    Graduate Students
+                   &lt;a aria-label=&#34;People:Graduate Student Directory&#34; class=&#34;active&#34; href=&#34;/cas/math/people/grad-directory.html&#34;&gt;
+                    Graduate Student Directory
                    &lt;/a&gt;
                   &lt;/li&gt;
                   &lt;li class=&#34;last&#34;&gt;
-                   &lt;a aria-label=&#34;People:Alumni&#34; href=&#34;/cas/math/alumni-friends1.html&#34;&gt;
+                   &lt;a aria-label=&#34;People:Alumni&#34; href=&#34;/cas/math/people/alumni-friends.html&#34;&gt;
                     Alumni
                    &lt;/a&gt;
+                   &lt;div class=&#34;topnav-submenu-children-container list&#34;&gt;
+                    &lt;ul class=&#34;submenu-children clearfix link-list&#34;&gt;
+                     &lt;li class=&#34;first&#34;&gt;
+                      &lt;a aria-label=&#34;Alumni:Class of 2021&#34; href=&#34;/cas/math/people/alumni-friends/class-of-2021.html&#34;&gt;
+                       Class of 2021
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                     &lt;li&gt;
+                      &lt;a aria-label=&#34;Alumni:Class of 2020&#34; href=&#34;/cas/math/people/alumni-friends/class-of-2020.html&#34;&gt;
+                       Class of 2020
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                     &lt;li class=&#34;last&#34;&gt;
+                      &lt;a aria-label=&#34;Alumni:PhD Recipients, 2010 to Present&#34; href=&#34;/cas/math/grad/PhD-recipients.html&#34;&gt;
+                       PhD Recipients, 2010 to Present
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;/ul&gt;
+                   &lt;/div&gt;
                   &lt;/li&gt;
                  &lt;/ul&gt;
                  &lt;div class=&#34;relatedLinks relatedlinksreference reference parbase&#34;&gt;
                  &lt;/div&gt;
                 &lt;/div&gt;
                &lt;/li&gt;
-               &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/research.html&#34; id=&#34;ubcms-gen-55489128&#34;&gt;
+               &lt;li class=&#34;theme-secondary theme-standard-gray&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/research.html&#34; id=&#34;ubcms-gen-33853664&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Research
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-55489128&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-33853664&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;Research:Algebra&#34; href=&#34;/cas/math/research/algebra.html&#34;&gt;
@@ -1358,9 +993,14 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                     Applied Mathematics
                    &lt;/a&gt;
                   &lt;/li&gt;
-                  &lt;li class=&#34;last&#34;&gt;
+                  &lt;li&gt;
                    &lt;a aria-label=&#34;Research:Geometry and Topology &#34; href=&#34;/cas/math/research/geometry-topology.html&#34;&gt;
                     Geometry and Topology
+                   &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&#34;last&#34;&gt;
+                   &lt;a aria-label=&#34;Research:Undergraduate Research&#34; href=&#34;/cas/math/ug/undergraduate-research.html&#34;&gt;
+                    Undergraduate Research
                    &lt;/a&gt;
                   &lt;/li&gt;
                  &lt;/ul&gt;
@@ -1368,13 +1008,13 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  &lt;/div&gt;
                 &lt;/div&gt;
                &lt;/li&gt;
-               &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/ug.html&#34; id=&#34;ubcms-gen-55489152&#34;&gt;
+               &lt;li class=&#34;theme-secondary theme-standard-gray&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/ug.html&#34; id=&#34;ubcms-gen-33853666&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Undergraduate
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-55489152&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-33853666&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;Undergraduate:Undergraduate Programs&#34; href=&#34;/cas/math/ug/undergraduate-programs.html&#34;&gt;
@@ -1385,6 +1025,20 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                    &lt;a aria-label=&#34;Undergraduate:Undergraduate Research&#34; href=&#34;/cas/math/ug/undergraduate-research.html&#34;&gt;
                     Undergraduate Research
                    &lt;/a&gt;
+                   &lt;div class=&#34;topnav-submenu-children-container list&#34;&gt;
+                    &lt;ul class=&#34;submenu-children clearfix link-list&#34;&gt;
+                     &lt;li class=&#34;first&#34;&gt;
+                      &lt;a aria-label=&#34;Undergraduate Research:Special Research Projects&#34; href=&#34;/cas/math/ug/undergraduate-research/special-projects.html&#34;&gt;
+                       Special Research Projects
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                     &lt;li class=&#34;last&#34;&gt;
+                      &lt;a aria-label=&#34;Undergraduate Research:Summer Math Scholarship&#34; href=&#34;/cas/math/ug/undergraduate-research/summer.html&#34;&gt;
+                       Summer Math Scholarship
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;/ul&gt;
+                   &lt;/div&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                    &lt;a aria-label=&#34;Undergraduate:Honors, Awards, and Scholarships&#34; href=&#34;/cas/math/ug/honors--awards--and-scholarships.html&#34;&gt;
@@ -1402,6 +1056,11 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                        Sample Syllabi
                       &lt;/a&gt;
                      &lt;/li&gt;
+                     &lt;li&gt;
+                      &lt;a aria-label=&#34;Undergraduate Courses:MTH 121 and 122 Textbook&#34; href=&#34;/cas/math/ug/ug-courses/mth121-122-textbook.html&#34;&gt;
+                       MTH 121 and 122 Textbook
+                      &lt;/a&gt;
+                     &lt;/li&gt;
                      &lt;li class=&#34;last&#34;&gt;
                       &lt;a aria-label=&#34;Undergraduate Courses:MTH 306 Textbook&#34; href=&#34;/cas/math/ug/ug-courses/mth-306-textbook.html&#34;&gt;
                        MTH 306 Textbook
@@ -1416,14 +1075,38 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                    &lt;/a&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
-                   &lt;a aria-label=&#34;Undergraduate:Mathematics Help&#34; href=&#34;/cas/math/ug/math-help.html&#34;&gt;
-                    Mathematics Help
+                   &lt;a aria-label=&#34;Undergraduate:Mathematics Resources&#34; href=&#34;/cas/math/ug/resources.html&#34;&gt;
+                    Mathematics Resources
+                   &lt;/a&gt;
+                   &lt;div class=&#34;topnav-submenu-children-container list&#34;&gt;
+                    &lt;ul class=&#34;submenu-children clearfix link-list&#34;&gt;
+                     &lt;li class=&#34;first&#34;&gt;
+                      &lt;a aria-label=&#34;Mathematics Resources:Mathematics Placement Exam&#34; href=&#34;/cas/math/ug/resources/mathplacement.html&#34;&gt;
+                       Mathematics Placement Exam
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                     &lt;li&gt;
+                      &lt;a aria-label=&#34;Mathematics Resources:Mathematics Placement Exam Frequently Asked Questions&#34; href=&#34;/cas/math/ug/resources/MPEFAQ.html&#34;&gt;
+                       Mathematics Placement Exam Frequently Asked Questions
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                     &lt;li class=&#34;last&#34;&gt;
+                      &lt;a aria-label=&#34;Mathematics Resources:Force Registration&#34; href=&#34;/cas/math/ug/resources/force-registration.html&#34;&gt;
+                       Force Registration
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;/ul&gt;
+                   &lt;/div&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                   &lt;a aria-label=&#34;Undergraduate:Mathematics Help Center&#34; href=&#34;/cas/math/ug/help-center.html&#34;&gt;
+                    Mathematics Help Center
                    &lt;/a&gt;
                    &lt;div class=&#34;topnav-submenu-children-container list&#34;&gt;
                     &lt;ul class=&#34;submenu-children clearfix link-list&#34;&gt;
                      &lt;li class=&#34;first last&#34;&gt;
-                      &lt;a aria-label=&#34;Mathematics Help:ALEKS Assessment for MTH 121, 131, 141&#34; href=&#34;/cas/math/ug/math-help/aleks.html&#34;&gt;
-                       ALEKS Assessment for MTH 121, 131, 141
+                      &lt;a aria-label=&#34;Mathematics Help Center:Online Help Sessions&#34; href=&#34;/content/cas/math/ug/help-center/zoom-pw.html&#34;&gt;
+                       Online Help Sessions
                       &lt;/a&gt;
                      &lt;/li&gt;
                     &lt;/ul&gt;
@@ -1439,27 +1122,18 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  &lt;/div&gt;
                 &lt;/div&gt;
                &lt;/li&gt;
-               &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/grad.html&#34; id=&#34;ubcms-gen-55489207&#34;&gt;
+               &lt;li class=&#34;theme-secondary theme-standard-gray&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/grad.html&#34; id=&#34;ubcms-gen-33853668&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Graduate
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-55489207&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-33853668&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
                    &lt;a aria-label=&#34;Graduate:Master&#39;s Program&#34; href=&#34;/cas/math/grad/master-program.html&#34;&gt;
                     Master&#39;s Program
                    &lt;/a&gt;
-                   &lt;div class=&#34;topnav-submenu-children-container list&#34;&gt;
-                    &lt;ul class=&#34;submenu-children clearfix link-list&#34;&gt;
-                     &lt;li class=&#34;first last&#34;&gt;
-                      &lt;a aria-label=&#34;Master&#39;s Program:MA Focus in Applied and Interdisciplinary Mathematics&#34; href=&#34;/cas/math/grad/master-program/focus.html&#34;&gt;
-                       MA Focus in Applied and Interdisciplinary Mathematics
-                      &lt;/a&gt;
-                     &lt;/li&gt;
-                    &lt;/ul&gt;
-                   &lt;/div&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                    &lt;a aria-label=&#34;Graduate:Doctoral Program (PhD)&#34; href=&#34;/cas/math/grad/doctoral-program.html&#34;&gt;
@@ -1497,11 +1171,21 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                    &lt;/a&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
+                   &lt;a aria-label=&#34;Graduate:PhD Recipients, 2010 to present&#34; href=&#34;/cas/math/grad/PhD-recipients.html&#34;&gt;
+                    PhD Recipients, 2010 to present
+                   &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
                    &lt;a aria-label=&#34;Graduate:Association for Women in Mathematics&#34; href=&#34;/cas/math/about-us/memberships/AWM.html&#34;&gt;
                     Association for Women in Mathematics
                    &lt;/a&gt;
                   &lt;/li&gt;
-                  &lt;li class=&#34;last&#34;&gt;
+                  &lt;li&gt;
+                   &lt;a aria-label=&#34;Graduate:Graduate Student Lecture Series&#34; href=&#34;/cas/math/grad/gsls.html&#34;&gt;
+                    Graduate Student Lecture Series
+                   &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&#34;last active-trail&#34;&gt;
                    &lt;a aria-label=&#34;Graduate:Graduate Student Directory&#34; href=&#34;/cas/math/people/grad-directory.html&#34;&gt;
                     Graduate Student Directory
                    &lt;/a&gt;
@@ -1511,35 +1195,44 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  &lt;/div&gt;
                 &lt;/div&gt;
                &lt;/li&gt;
-               &lt;li class=&#34;theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/courses.html&#34; id=&#34;ubcms-gen-55489256&#34;&gt;
+               &lt;li class=&#34;theme-secondary theme-standard-gray&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/courses.html&#34; id=&#34;ubcms-gen-33853670&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   Courses
                  &lt;/span&gt;
                 &lt;/a&gt;
                &lt;/li&gt;
-               &lt;li class=&#34;last theme-secondary theme-putnam-gray&#34;&gt;
-                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/news-events/news.html&#34; id=&#34;ubcms-gen-55489258&#34;&gt;
+               &lt;li class=&#34;last theme-secondary theme-standard-gray&#34;&gt;
+                &lt;a aria-haspopup=&#34;true&#34; href=&#34;/cas/math/news-events/news.html&#34; id=&#34;ubcms-gen-33853671&#34;&gt;
                  &lt;span class=&#34;container&#34;&gt;
                   News &amp;amp; Events
                  &lt;/span&gt;
                 &lt;/a&gt;
-                &lt;div aria-labelledby=&#34;ubcms-gen-55489258&#34; class=&#34;topnav-submenu-container&#34;&gt;
+                &lt;div aria-labelledby=&#34;ubcms-gen-33853671&#34; class=&#34;topnav-submenu-container&#34;&gt;
                  &lt;ul class=&#34;submenu clearfix&#34;&gt;
                   &lt;li class=&#34;first&#34;&gt;
-                   &lt;a aria-label=&#34;News &amp;amp; Events:NERCCS 2020&#34; href=&#34;/cas/math/news-events/nerccs-2020.html&#34;&gt;
-                    NERCCS 2020
-                   &lt;/a&gt;
-                  &lt;/li&gt;
-                  &lt;li&gt;
                    &lt;a aria-label=&#34;News &amp;amp; Events:News&#34; href=&#34;/cas/math/news-events/news.html&#34;&gt;
                     News
                    &lt;/a&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
-                   &lt;a aria-label=&#34;News &amp;amp; Events:Events Calendar&#34; href=&#34;/cas/math/news-events/calendar.html&#34;&gt;
-                    Events Calendar
+                   &lt;a aria-label=&#34;News &amp;amp; Events:Events &#34; href=&#34;/cas/math/news-events/calendar.html&#34;&gt;
+                    Events
                    &lt;/a&gt;
+                   &lt;div class=&#34;topnav-submenu-children-container list&#34;&gt;
+                    &lt;ul class=&#34;submenu-children clearfix link-list&#34;&gt;
+                     &lt;li class=&#34;first&#34;&gt;
+                      &lt;a aria-label=&#34;Events :Class of 2021&#34; href=&#34;/cas/math/people/alumni-friends/class-of-2021.html&#34;&gt;
+                       Class of 2021
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                     &lt;li class=&#34;last&#34;&gt;
+                      &lt;a aria-label=&#34;Events :Class of 2020&#34; href=&#34;/cas/math/people/alumni-friends/class-of-2020.html&#34;&gt;
+                       Class of 2020
+                      &lt;/a&gt;
+                     &lt;/li&gt;
+                    &lt;/ul&gt;
+                   &lt;/div&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
                    &lt;a aria-label=&#34;News &amp;amp; Events:Myhill Lecture Series&#34; href=&#34;/cas/math/news-events/myhill.html&#34;&gt;
@@ -1586,6 +1279,11 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                    &lt;/div&gt;
                   &lt;/li&gt;
                   &lt;li&gt;
+                   &lt;a aria-label=&#34;News &amp;amp; Events:NERCCS 2020&#34; href=&#34;/cas/math/news-events/nerccs-2020.html&#34;&gt;
+                    NERCCS 2020
+                   &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
                    &lt;a aria-label=&#34;News &amp;amp; Events:News &amp;amp; Events Archive&#34; href=&#34;/cas/math/news-events/archives.html&#34;&gt;
                     News &amp;amp; Events Archive
                    &lt;/a&gt;
@@ -1605,22 +1303,19 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
              &lt;div class=&#34;right&#34;&gt;
               &lt;div class=&#34;search&#34;&gt;
                &lt;!--noindex--&gt;
-               &lt;div role=&#34;search&#34;&gt;
-                &lt;div class=&#34;label&#34; onmouseenter=&#34;jQuery(this).parent().find(&#39;input[type=text]&#39;).focus().select()&#34;&gt;
+               &lt;div class=&#34;search-menu&#34; tabindex=&#34;0&#34;&gt;
+                &lt;div class=&#34;search-label&#34;&gt;
                  Search
                 &lt;/div&gt;
-                &lt;div class=&#34;form&#34; onmouseleave=&#34;jQuery(this).parent().find(&#39;input[type=text]&#39;).blur()&#34;&gt;
-                 &lt;div class=&#34;form-content&#34; data-set=&#34;mobile-search&#34;&gt;
-                  &lt;form action=&#34;/cas/math/searchresults.html&#34; method=&#34;GET&#34; onsubmit=&#34;return this.q.value != &#39;&#39;&#34;&gt;
-                   &lt;label class=&#34;ada-hidden&#34; for=&#34;ubcms-gen-55489304&#34;&gt;
-                    Search
-                   &lt;/label&gt;
-                   &lt;input autocomplete=&#34;off&#34; id=&#34;ubcms-gen-55489304&#34; name=&#34;q&#34; onblur=&#34;jQuery(this).parents(&#39;.form&#39;).removeClass(&#39;show-search&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.form&#39;).addClass(&#39;show-search&#39;)&#34; placeholder=&#34;Search&#34; type=&#34;text&#34; value=&#34;&#34;/&gt;
-                   &lt;i class=&#34;icon icon-search&#34;&gt;
-                   &lt;/i&gt;
-                   &lt;input onblur=&#34;jQuery(this).parents(&#39;.form&#39;).removeClass(&#39;show-search&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.form&#39;).addClass(&#39;show-search&#39;)&#34; type=&#34;submit&#34; value=&#34;Search&#34;/&gt;
-                  &lt;/form&gt;
-                 &lt;/div&gt;
+                &lt;!-- Uses appendAround.js script to transfer this search form to mobile nav menu via data-set attribute. --&gt;
+                &lt;div class=&#34;search-content&#34; data-set=&#34;mobile-search&#34;&gt;
+                 &lt;form action=&#34;/cas/math/searchresults.html&#34; class=&#34;search-form&#34; method=&#34;GET&#34; onsubmit=&#34;return this.q.value != &#39;&#39;&#34;&gt;
+                  &lt;div class=&#34;search-container&#34; role=&#34;search&#34;&gt;
+                   &lt;input aria-label=&#34;Search&#34; autocomplete=&#34;off&#34; class=&#34;search-input&#34; id=&#34;ubcms-gen-33853673&#34; name=&#34;q&#34; placeholder=&#34;Search&#34; type=&#34;text&#34;/&gt;
+                   &lt;button aria-label=&#34;Search&#34; class=&#34;search-submit&#34; type=&#34;submit&#34; value=&#34;Search&#34;&gt;
+                   &lt;/button&gt;
+                  &lt;/div&gt;
+                 &lt;/form&gt;
                 &lt;/div&gt;
                &lt;/div&gt;
                &lt;!--endnoindex--&gt;
@@ -1652,8 +1347,13 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                   &lt;/a&gt;
                  &lt;/li&gt;
                  &lt;li&gt;
-                  &lt;a href=&#34;/cas/math/alumni-friends1.html&#34; onblur=&#34;jQuery(this).parents(&#39;.audiencenav-wrapper&#39;).removeClass(&#39;hover&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.audiencenav-wrapper&#39;).addClass(&#39;hover&#39;)&#34;&gt;
+                  &lt;a href=&#34;/cas/math/people/alumni-friends.html&#34; onblur=&#34;jQuery(this).parents(&#39;.audiencenav-wrapper&#39;).removeClass(&#39;hover&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.audiencenav-wrapper&#39;).addClass(&#39;hover&#39;)&#34;&gt;
                    Alumni &amp;amp; Friends
+                  &lt;/a&gt;
+                 &lt;/li&gt;
+                 &lt;li&gt;
+                  &lt;a href=&#34;http://www.buffalo.edu/inclusion/resources/IXResources.html&#34; onblur=&#34;jQuery(this).parents(&#39;.audiencenav-wrapper&#39;).removeClass(&#39;hover&#39;)&#34; onfocus=&#34;jQuery(this).parents(&#39;.audiencenav-wrapper&#39;).addClass(&#39;hover&#39;)&#34;&gt;
+                   Diversity, Equity, and Inclusive Excellence Resources
                   &lt;/a&gt;
                  &lt;/li&gt;
                 &lt;/ul&gt;
@@ -1666,6 +1366,8 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
             &lt;/script&gt;
            &lt;/div&gt;
           &lt;/div&gt;
+         &lt;/div&gt;
+         &lt;div contenttreeid=&#34;innerheader&#34; contenttreestatus=&#34;Not published&#34; style=&#34;display:none;&#34;&gt;
          &lt;/div&gt;
         &lt;/div&gt;
        &lt;/header&gt;
@@ -1712,15 +1414,32 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/li&gt;
                 &lt;li class=&#34;active-trail&#34;&gt;
                  &lt;span&gt;
-                  &lt;a aria-label=&#34;People:Graduate Students&#34; class=&#34;active&#34; href=&#34;/cas/math/people/grad-directory.html&#34;&gt;
-                   Graduate Students
+                  &lt;a aria-label=&#34;People:Graduate Student Directory&#34; class=&#34;active&#34; href=&#34;/cas/math/people/grad-directory.html&#34;&gt;
+                   Graduate Student Directory
                   &lt;/a&gt;
                  &lt;/span&gt;
                 &lt;/li&gt;
-                &lt;li class=&#34;last&#34;&gt;
-                 &lt;a aria-label=&#34;People:Alumni&#34; href=&#34;/cas/math/alumni-friends1.html&#34;&gt;
+                &lt;li class=&#34;last expand-submenu&#34;&gt;
+                 &lt;a aria-label=&#34;People:Alumni&#34; href=&#34;/cas/math/people/alumni-friends.html&#34;&gt;
                   Alumni
                  &lt;/a&gt;
+                 &lt;ul class=&#34;menu nav-level-2&#34;&gt;
+                  &lt;li class=&#34;first expand-submenu&#34;&gt;
+                   &lt;a aria-label=&#34;Alumni:Class of 2021&#34; href=&#34;/cas/math/people/alumni-friends/class-of-2021.html&#34;&gt;
+                    Class of 2021
+                   &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&#34;expand-submenu&#34;&gt;
+                   &lt;a aria-label=&#34;Alumni:Class of 2020&#34; href=&#34;/cas/math/people/alumni-friends/class-of-2020.html&#34;&gt;
+                    Class of 2020
+                   &lt;/a&gt;
+                  &lt;/li&gt;
+                  &lt;li class=&#34;last expand-submenu&#34;&gt;
+                   &lt;a aria-label=&#34;Alumni:PhD Recipients, 2010 to Present&#34; href=&#34;/cas/math/grad/PhD-recipients.html&#34;&gt;
+                    PhD Recipients, 2010 to Present
+                   &lt;/a&gt;
+                  &lt;/li&gt;
+                 &lt;/ul&gt;
                 &lt;/li&gt;
                &lt;/ul&gt;
                &lt;div class=&#34;relatedLinks relatedlinksreference reference parbase&#34;&gt;
@@ -1735,6 +1454,164 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/div&gt;
                &lt;div class=&#34;iparys_inherited&#34;&gt;
                 &lt;div class=&#34;leftcol iparsys parsys&#34;&gt;
+                 &lt;div class=&#34;flexmodule imagebase section&#34;&gt;
+                  &lt;div class=&#34;flexmodule-inner&#34; id=&#34;ubcms-gen-33853676&#34;&gt;
+                   &lt;div class=&#34;title&#34;&gt;
+                    &lt;h2&gt;
+                     Diversity, Equity, and Inclusive Excellence Resources
+                    &lt;/h2&gt;
+                   &lt;/div&gt;
+                   &lt;div class=&#34;teaser teaser-block flexmodule-style flexmodule-style-largeimg&#34;&gt;
+                    &lt;div class=&#34;teaser-inner&#34;&gt;
+                     &lt;div class=&#34;teaser-images&#34;&gt;
+                      &lt;div class=&#34;teaser-image&#34;&gt;
+                       &lt;a href=&#34;http://www.buffalo.edu/inclusion/resources/IXResources.html&#34; target=&#34;_blank&#34;&gt;
+                        &lt;noscript&gt;
+                         &lt;picture contenttreeid=&#34;flexmodule&#34; contenttreestatus=&#34;Not published&#34;&gt;
+                          &lt;source media=&#34;(max-width: 568px)&#34; srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.448.280.m.q50.png/1607108331977.png, /content/cas/math/people/jcr:content/leftcol/flexmodule.img.576.361.m.q50.png/1607108331977.png 2x&#34; type=&#34;image/png&#34;&gt;
+                           &lt;source media=&#34;(max-width: 720px)&#34; srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.688.431.q80.png/1607108331977.png&#34; type=&#34;image/png&#34;&gt;
+                            &lt;source srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.209.131.png/1607108331977.png, /content/cas/math/people/jcr:content/leftcol/flexmodule.img.418.262.q65.png/1607108331977.png 2x&#34; type=&#34;image/png&#34;&gt;
+                             &lt;img alt=&#34;Diversity, Equity, and Inclusive Excellence Resources. &#34; class=&#34;img-209 img-209x131 cq-dd-image&#34; height=&#34;131&#34; src=&#34;/content/cas/math/people/_jcr_content/leftcol/flexmodule.img.209.131.png/1607108331977.png&#34; srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.418.262.q65.png/1607108331977.png 2x&#34; width=&#34;209&#34;/&gt;
+                            &lt;/source&gt;
+                           &lt;/source&gt;
+                          &lt;/source&gt;
+                         &lt;/picture&gt;
+                        &lt;/noscript&gt;
+                        &lt;picture class=&#34;no-display&#34; contenttreeid=&#34;flexmodule&#34; contenttreestatus=&#34;Not published&#34;&gt;
+                         &lt;source data-srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.448.280.m.q50.png/1607108331977.png, /content/cas/math/people/jcr:content/leftcol/flexmodule.img.576.361.m.q50.png/1607108331977.png 2x&#34; media=&#34;(max-width: 568px)&#34; type=&#34;image/png&#34;&gt;
+                          &lt;source data-srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.688.431.q80.png/1607108331977.png&#34; media=&#34;(max-width: 720px)&#34; type=&#34;image/png&#34;&gt;
+                           &lt;source data-srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.209.131.png/1607108331977.png, /content/cas/math/people/jcr:content/leftcol/flexmodule.img.418.262.q65.png/1607108331977.png 2x&#34; type=&#34;image/png&#34;&gt;
+                            &lt;img alt=&#34;Diversity, Equity, and Inclusive Excellence Resources. &#34; class=&#34;img-209 img-209x131 cq-dd-image lazyload&#34; data-src=&#34;/content/cas/math/people/jcr%3acontent/leftcol/flexmodule.img.209.131.png/1607108331977.png&#34; data-srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.418.262.q65.png/1607108331977.png 2x&#34; height=&#34;131&#34; width=&#34;209&#34;/&gt;
+                           &lt;/source&gt;
+                          &lt;/source&gt;
+                         &lt;/source&gt;
+                        &lt;/picture&gt;
+                        &lt;script&gt;
+                         jQuery(&#39;picture.no-display&#39;).removeClass(&#39;no-display&#39;);
+                        &lt;/script&gt;
+                       &lt;/a&gt;
+                      &lt;/div&gt;
+                     &lt;/div&gt;
+                     &lt;div class=&#34;teaser-content&#34;&gt;
+                      &lt;div class=&#34;teaser-body&#34;&gt;
+                       &lt;p&gt;
+                        UB is committed to achieving inclusive excellence in a deliberate, intentional and coordinated fashion, embedding it in every aspect of our operations. We aspire to foster a healthy, productive, ethical, fair, and affirming campus community to allow all students, faculty and staff to thrive and realize their full potential.
+                        &lt;br/&gt;
+                       &lt;/p&gt;
+                      &lt;/div&gt;
+                      &lt;div class=&#34;teaser-links&#34;&gt;
+                       &lt;div class=&#34;list&#34;&gt;
+                        &lt;div data-columnize-row=&#34;1&#34; id=&#34;ubcms-gen-33853677&#34;&gt;
+                         &lt;ul class=&#34;link-list&#34; data-columnize=&#34;1&#34;&gt;
+                          &lt;li&gt;
+                           &lt;span class=&#34;teaser teaser-inline&#34;&gt;
+                            &lt;a href=&#34;http://www.buffalo.edu/equity/promoting-equal-employment-opportunity-and-diversity.html&#34;&gt;
+                             &lt;span class=&#34;teaser-inner&#34;&gt;
+                              &lt;!--noindex--&gt;
+                              &lt;span class=&#34;teaser-date&#34;&gt;
+                              &lt;/span&gt;
+                              &lt;!--endnoindex--&gt;
+                              &lt;span class=&#34;teaser-title&#34;&gt;
+                               Promoting Equal Employment Opportunity and Diversity
+                              &lt;/span&gt;
+                             &lt;/span&gt;
+                            &lt;/a&gt;
+                           &lt;/span&gt;
+                          &lt;/li&gt;
+                          &lt;li&gt;
+                           &lt;span class=&#34;teaser teaser-inline&#34;&gt;
+                            &lt;a href=&#34;http://www.buffalo.edu/inclusion/resources/IXResources.html&#34;&gt;
+                             &lt;span class=&#34;teaser-inner&#34;&gt;
+                              &lt;!--noindex--&gt;
+                              &lt;span class=&#34;teaser-date&#34;&gt;
+                              &lt;/span&gt;
+                              &lt;!--endnoindex--&gt;
+                              &lt;span class=&#34;teaser-title&#34;&gt;
+                               Inclusive Excellence Resources
+                              &lt;/span&gt;
+                             &lt;/span&gt;
+                            &lt;/a&gt;
+                           &lt;/span&gt;
+                          &lt;/li&gt;
+                          &lt;li&gt;
+                           &lt;span class=&#34;teaser teaser-inline&#34;&gt;
+                            &lt;a href=&#34;http://www.buffalo.edu/inclusion/resources/toolkits_trainings.html&#34;&gt;
+                             &lt;span class=&#34;teaser-inner&#34;&gt;
+                              &lt;!--noindex--&gt;
+                              &lt;span class=&#34;teaser-date&#34;&gt;
+                              &lt;/span&gt;
+                              &lt;!--endnoindex--&gt;
+                              &lt;span class=&#34;teaser-title&#34;&gt;
+                               Toolkits
+                              &lt;/span&gt;
+                             &lt;/span&gt;
+                            &lt;/a&gt;
+                           &lt;/span&gt;
+                          &lt;/li&gt;
+                          &lt;li&gt;
+                           &lt;span class=&#34;teaser teaser-inline&#34;&gt;
+                            &lt;a href=&#34;https://www.buffalo.edu/studentlife/who-we-are/departments/diversity.html&#34;&gt;
+                             &lt;span class=&#34;teaser-inner&#34;&gt;
+                              &lt;!--noindex--&gt;
+                              &lt;span class=&#34;teaser-date&#34;&gt;
+                              &lt;/span&gt;
+                              &lt;!--endnoindex--&gt;
+                              &lt;span class=&#34;teaser-title&#34;&gt;
+                               UB Intercultural and Diversity Center
+                              &lt;/span&gt;
+                             &lt;/span&gt;
+                            &lt;/a&gt;
+                           &lt;/span&gt;
+                          &lt;/li&gt;
+                          &lt;li&gt;
+                           &lt;span class=&#34;teaser teaser-inline&#34;&gt;
+                            &lt;a href=&#34;https://www.buffalo.edu/diversity-innovation.html&#34;&gt;
+                             &lt;span class=&#34;teaser-inner&#34;&gt;
+                              &lt;!--noindex--&gt;
+                              &lt;span class=&#34;teaser-date&#34;&gt;
+                              &lt;/span&gt;
+                              &lt;!--endnoindex--&gt;
+                              &lt;span class=&#34;teaser-title&#34;&gt;
+                               UB Center for Diversity Innovation
+                              &lt;/span&gt;
+                             &lt;/span&gt;
+                            &lt;/a&gt;
+                           &lt;/span&gt;
+                          &lt;/li&gt;
+                          &lt;li&gt;
+                           &lt;span class=&#34;teaser teaser-inline&#34;&gt;
+                            &lt;a href=&#34;http://www.buffalo.edu/equity/external-resources.html&#34;&gt;
+                             &lt;span class=&#34;teaser-inner&#34;&gt;
+                              &lt;!--noindex--&gt;
+                              &lt;span class=&#34;teaser-date&#34;&gt;
+                              &lt;/span&gt;
+                              &lt;!--endnoindex--&gt;
+                              &lt;span class=&#34;teaser-title&#34;&gt;
+                               External Resources
+                              &lt;/span&gt;
+                             &lt;/span&gt;
+                            &lt;/a&gt;
+                           &lt;/span&gt;
+                          &lt;/li&gt;
+                         &lt;/ul&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&#34;clearfix&#34;&gt;
+                        &lt;/div&gt;
+                        &lt;script&gt;
+                         UBCMS.list.listlimit(&#39;ubcms\u002Dgen\u002D33853677&#39;, &#39;100&#39;,
+                &#39;100&#39;);
+                        &lt;/script&gt;
+                       &lt;/div&gt;
+                      &lt;/div&gt;
+                     &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&#34;teaser-clear&#34;&gt;
+                    &lt;/div&gt;
+                   &lt;/div&gt;
+                  &lt;/div&gt;
+                  &lt;div class=&#34;flexmodule-clear&#34;&gt;
+                  &lt;/div&gt;
+                 &lt;/div&gt;
                 &lt;/div&gt;
                &lt;/div&gt;
               &lt;/div&gt;
@@ -1774,36 +1651,41 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
              &lt;/div&gt;
              &lt;div class=&#34;par parsys&#34;&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h1 id=&#34;title&#34;&gt;
-                Graduate Students
+               &lt;h1 id=&#34;title&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
+                Graduate Student Directory
                &lt;/h1&gt;
               &lt;/div&gt;
               &lt;div class=&#34;image-container image-container-680&#34;&gt;
-               &lt;div class=&#34;image border-show&#34;&gt;
+               &lt;div class=&#34;image border-hide&#34;&gt;
                 &lt;noscript&gt;
-                 &lt;picture&gt;
-                  &lt;source media=&#34;(max-width: 568px)&#34; srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.448.auto.q50.jpg/1460655962154.jpg, /content/cas/math/people/grad-directory/jcr:content/par/image.img.576.auto.q50.jpg/1460655962154.jpg 2x&#34; type=&#34;image/jpeg&#34;&gt;
-                   &lt;source media=&#34;(max-width: 720px)&#34; srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.688.auto.q80.jpg/1460655962154.jpg&#34; type=&#34;image/jpeg&#34;&gt;
-                    &lt;img alt=&#34;UB Strong. &#34; class=&#34;img-680 cq-dd-image&#34; src=&#34;/content/cas/math/people/grad-directory/_jcr_content/par/image.img.680.auto.jpg/1460655962154.jpg&#34; width=&#34;680&#34;/&gt;
+                 &lt;picture contenttreeid=&#34;image&#34; contenttreestatus=&#34;Not published&#34;&gt;
+                  &lt;source media=&#34;(max-width: 568px)&#34; srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.448.auto.m.q50.jpg/1629919606956.jpg, /content/cas/math/people/grad-directory/jcr:content/par/image.img.576.auto.m.q50.jpg/1629919606956.jpg 2x&#34; type=&#34;image/jpeg&#34;&gt;
+                   &lt;source media=&#34;(max-width: 720px)&#34; srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.688.auto.q80.jpg/1629919606956.jpg&#34; type=&#34;image/jpeg&#34;&gt;
+                    &lt;source srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.680.auto.jpg/1629919606956.jpg, /content/cas/math/people/grad-directory/jcr:content/par/image.img.1360.auto.q65.jpg/1629919606956.jpg 2x&#34; type=&#34;image/jpeg&#34;&gt;
+                     &lt;img alt=&#34;1. &#34; class=&#34;img-680 cq-dd-image&#34; src=&#34;/content/cas/math/people/grad-directory/_jcr_content/par/image.img.680.auto.jpg/1629919606956.jpg&#34; srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.1360.auto.q65.jpg/1629919606956.jpg 2x&#34; width=&#34;680&#34;/&gt;
+                    &lt;/source&gt;
                    &lt;/source&gt;
                   &lt;/source&gt;
                  &lt;/picture&gt;
                 &lt;/noscript&gt;
-                &lt;picture class=&#34;no-display&#34;&gt;
-                 &lt;source data-srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.448.auto.q50.jpg/1460655962154.jpg, /content/cas/math/people/grad-directory/jcr:content/par/image.img.576.auto.q50.jpg/1460655962154.jpg 2x&#34; media=&#34;(max-width: 568px)&#34; type=&#34;image/jpeg&#34;&gt;
-                  &lt;source data-srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.688.auto.q80.jpg/1460655962154.jpg&#34; media=&#34;(max-width: 720px)&#34; type=&#34;image/jpeg&#34;&gt;
-                   &lt;img alt=&#34;UB Strong. &#34; class=&#34;img-680 cq-dd-image lazyload&#34; data-src=&#34;/content/cas/math/people/grad-directory/jcr%3acontent/par/image.img.680.auto.jpg/1460655962154.jpg&#34; src=&#34;//www.buffalo.edu/etc/designs/default/0.gif&#34; width=&#34;680&#34;/&gt;
+                &lt;picture class=&#34;no-display&#34; contenttreeid=&#34;image&#34; contenttreestatus=&#34;Not published&#34;&gt;
+                 &lt;source data-srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.448.auto.m.q50.jpg/1629919606956.jpg, /content/cas/math/people/grad-directory/jcr:content/par/image.img.576.auto.m.q50.jpg/1629919606956.jpg 2x&#34; media=&#34;(max-width: 568px)&#34; type=&#34;image/jpeg&#34;&gt;
+                  &lt;source data-srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.688.auto.q80.jpg/1629919606956.jpg&#34; media=&#34;(max-width: 720px)&#34; type=&#34;image/jpeg&#34;&gt;
+                   &lt;source data-srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.680.auto.jpg/1629919606956.jpg, /content/cas/math/people/grad-directory/jcr:content/par/image.img.1360.auto.q65.jpg/1629919606956.jpg 2x&#34; type=&#34;image/jpeg&#34;&gt;
+                    &lt;img alt=&#34;1. &#34; class=&#34;img-680 cq-dd-image lazyload&#34; data-src=&#34;/content/cas/math/people/grad-directory/jcr%3acontent/par/image.img.680.auto.jpg/1629919606956.jpg&#34; data-srcset=&#34;/content/cas/math/people/grad-directory/jcr:content/par/image.img.1360.auto.q65.jpg/1629919606956.jpg 2x&#34; width=&#34;680&#34;/&gt;
+                   &lt;/source&gt;
                   &lt;/source&gt;
                  &lt;/source&gt;
                 &lt;/picture&gt;
-                &lt;script type=&#34;text/javascript&#34;&gt;
+                &lt;script&gt;
                  jQuery(&#39;picture.no-display&#39;).removeClass(&#39;no-display&#39;);
                 &lt;/script&gt;
+                &lt;!-- &lt;span data-sly-test=&#34;false&#34; class=&#34;aria-hidden&#34;&gt;&lt;/span&gt; --&gt;
                &lt;/div&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;top&#34;&gt;
-                Mathematics Graduate Student Directory 2019-2020
+               &lt;h2 id=&#34;top&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
+                Mathematics Graduate Student Directory 2021-2022
                &lt;/h2&gt;
               &lt;/div&gt;
               &lt;div class=&#34;introtext text parbase section&#34;&gt;
@@ -1903,8 +1785,17 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
               &lt;/div&gt;
               &lt;div class=&#34;hr hrline&#34; style=&#34;clear:left&#34;&gt;
               &lt;/div&gt;
+              &lt;div class=&#34;text parbase section&#34;&gt;
+               &lt;p&gt;
+                &lt;i&gt;
+                 Offices as listed are in the Mathematics Building, North Campus.
+                &lt;/i&gt;
+               &lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&#34;hr hrline&#34; style=&#34;clear:left&#34;&gt;
+              &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;title_3&#34;&gt;
+               &lt;h2 id=&#34;title_3&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 A
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -1916,7 +1807,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 138  Phone: 645-8823
                 &lt;br/&gt;
-                Email: aselavir@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:aselavir@buffalo.edu&#34;&gt;
+                 aselavir@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -1925,7 +1819,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 126  Phone: 645-8816
                 &lt;br/&gt;
-                Email: minwoong@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:minwoong@buffalo.edu&#34;&gt;
+                 minwoong@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -1934,16 +1831,49 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 138 Phone: 645-8823
                 &lt;br/&gt;
-                Email: lindaale@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:lindaale@buffalo.edu&#34;&gt;
+                 lindaale@buffalo.edu
+                &lt;/a&gt;
                 &lt;br/&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;hr hrline&#34; style=&#34;clear:left&#34;&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_b&#34;&gt;
+               &lt;h2 id=&#34;letter_b&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 B
                &lt;/h2&gt;
+              &lt;/div&gt;
+              &lt;div class=&#34;text parbase section&#34;&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Betz, Katherine
+                &lt;/b&gt;
+                &lt;br/&gt;
+                Office: 132 Phone: 645-8820
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:kbetz2@buffalo.edu&#34;&gt;
+                 kbetz2@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Bhaumik, Jnanajyoti
+                &lt;/b&gt;
+                &lt;br/&gt;
+                Office: 129 Mathematics Building
+                &lt;br/&gt;
+                Phone: 645-8817
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:jnanajyo@buffalo.edu&#34;&gt;
+                 jnanajyo@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+               &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;calltoaction section&#34;&gt;
                &lt;span class=&#34;teaser teaser-inline calltoaction-style-small&#34;&gt;
@@ -1959,7 +1889,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
               &lt;div class=&#34;hr hrline&#34; style=&#34;clear:left&#34;&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_c&#34;&gt;
+               &lt;h2 id=&#34;letter_c&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 C
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -1969,7 +1899,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  Cain Charles
                 &lt;/b&gt;
                 &lt;br/&gt;
-                Email: ccain2@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:ccain2@buffalo.edu&#34;&gt;
+                 ccain2@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -1978,7 +1911,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 222  Phone: 645-8779
                 &lt;br/&gt;
-                Email: mjcasper@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:mjcasper@buffalo.edu&#34;&gt;
+                 mjcasper@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -1987,7 +1923,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 136 Phone: 645-8821
                 &lt;br/&gt;
-                Email: hchang24@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:hchang24@buffalo.edu&#34;&gt;
+                 hchang24@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -1996,7 +1935,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 125 Phone: 645-8815
                 &lt;br/&gt;
-                Email: yenlinch@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:yenlinch@buffalo.edu&#34;&gt;
+                 yenlinch@buffalo.edu
+                &lt;/a&gt;
                 &lt;br/&gt;
                &lt;/p&gt;
                &lt;p&gt;
@@ -2006,7 +1948,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 140 Phone: 645-8825
                 &lt;br/&gt;
-                Email: kayueche@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:kayueche@buffalo.edu&#34;&gt;
+                 kayueche@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2015,64 +1960,16 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 139 Phone: 645-8824
                 &lt;br/&gt;
-                Email: gagecosg@buffalo.edu
-               &lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class=&#34;calltoaction section&#34;&gt;
-               &lt;span class=&#34;teaser teaser-inline calltoaction-style-small&#34;&gt;
-                &lt;a href=&#34;#top&#34;&gt;
-                 &lt;span class=&#34;teaser-inner&#34;&gt;
-                  &lt;span class=&#34;teaser-title&#34;&gt;
-                   back to top
-                  &lt;/span&gt;
-                 &lt;/span&gt;
+                Email:
+                &lt;a href=&#34;mailto:gagecosg@buffalo.edu&#34;&gt;
+                 gagecosg@buffalo.edu
                 &lt;/a&gt;
-               &lt;/span&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+               &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;hr hrline&#34; style=&#34;clear:left&#34;&gt;
               &lt;/div&gt;
-              &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_d&#34;&gt;
-                D
-               &lt;/h2&gt;
-              &lt;/div&gt;
-              &lt;div class=&#34;text parbase section&#34;&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Deutsch, Dustin
-                 &lt;br/&gt;
-                &lt;/b&gt;
-                Office: 140  Phone: 645-8825
-                &lt;br/&gt;
-                Email: dustinde@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Dey, Subhankar
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 125  Phone: 645-8815
-                &lt;br/&gt;
-                Email: subhanka@buffalo.edu
-                &lt;br/&gt;
-                &lt;a href=&#34;https://sites.google.com/view/subhankardeymath&#34; target=&#34;_blank&#34;&gt;
-                 Subhankar Dey&#39;s personal website.
-                &lt;/a&gt;
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Doga, Hakan
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 126  Phone: 645-8816
-                &lt;br/&gt;
-                Email: hakandog@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                &lt;/b&gt;
-               &lt;/p&gt;
-              &lt;/div&gt;
               &lt;div class=&#34;calltoaction section&#34;&gt;
                &lt;span class=&#34;teaser teaser-inline calltoaction-style-small&#34;&gt;
                 &lt;a href=&#34;#top&#34;&gt;
@@ -2085,7 +1982,12 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/span&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_e&#34;&gt;
+               &lt;h2 id=&#34;letter_d&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
+                D
+               &lt;/h2&gt;
+              &lt;/div&gt;
+              &lt;div class=&#34;title section&#34;&gt;
+               &lt;h2 id=&#34;letter_e&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 E
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2095,12 +1997,34 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  Engelhardt, Carolyn
                  &lt;br/&gt;
                 &lt;/b&gt;
-                Email: cengelha@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:cengelha@buffalo.edu&#34;&gt;
+                 cengelha@buffalo.edu
+                &lt;/a&gt;
                 &lt;br/&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_g&#34;&gt;
+               &lt;h2 id=&#34;letter_f&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
+                F
+               &lt;/h2&gt;
+              &lt;/div&gt;
+              &lt;div class=&#34;text parbase section&#34;&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Fonseca dos Reis, Elohim
+                 &lt;br/&gt;
+                &lt;/b&gt;
+                Office: 313  Phone: 645-8804
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:elohimfo@buffalo.edu&#34;&gt;
+                 elohimfo@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&#34;title section&#34;&gt;
+               &lt;h2 id=&#34;letter_g&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 G
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2112,39 +2036,53 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 129  Phone: 645-8817
                 &lt;br/&gt;
-                Email: agkogkou@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Gu, Jiaxi
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 132  Phone: 645-8820
-                &lt;br/&gt;
-                Email: jiaxigu@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:agkogkou@buffalo.edu&#34;&gt;
+                 agkogkou@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_h&#34;&gt;
+               &lt;h2 id=&#34;letter_h&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 H
                &lt;/h2&gt;
               &lt;/div&gt;
               &lt;div class=&#34;text parbase section&#34;&gt;
                &lt;p&gt;
                 &lt;b&gt;
-                 Hopfensperger, John
+                 Haverlick, Justin
                  &lt;br/&gt;
                 &lt;/b&gt;
-                Office: 139  Phone: 645-8824
+                Office: 140  Phone: 645-8825
                 &lt;br/&gt;
-                Email: johnhopf@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:jmhaverl@buffalo.edu&#34;&gt;
+                 jmhaverl@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
-                 Hong, Tao
+                 Herron, Amy
                 &lt;/b&gt;
                 &lt;br/&gt;
-                Email: thong5@buffalo.edu
+                Office: 135
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:ajherron@buffalo.edu&#34;&gt;
+                 ajherron@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Hovland, Seth
+                &lt;/b&gt;
+                &lt;br/&gt;
+                Office: 130  Phone: 645-8818
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:sethhovl@buffalo.edu&#34;&gt;
+                 sethhovl@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2153,7 +2091,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 137  Phone: 645-8822
                 &lt;br/&gt;
-                Email: tszfunhu@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:tszfunhu@buffalo.edu&#34;&gt;
+                 tszfunhu@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2162,7 +2103,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 140  Phone: 645-8825
                 &lt;br/&gt;
-                Email: rhhutchi@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:rhhutchi@buffalo.edu&#34;&gt;
+                 rhhutchi@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2171,7 +2115,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 131 Phone: 645-8819
                 &lt;br/&gt;
-                Email: baohuynh@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:baohuynh@buffalo.edu&#34;&gt;
+                 baohuynh@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;calltoaction section&#34;&gt;
@@ -2186,7 +2133,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/span&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_j&#34;&gt;
+               &lt;h2 id=&#34;letter_j&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 J
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2196,18 +2143,12 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  Jeong, Myeongjin
                  &lt;br/&gt;
                 &lt;/b&gt;
-                Office: 132 Phone: 645-8820
+                Office: 244
                 &lt;br/&gt;
-                Email: myonggin@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Johnson, Megan
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 132  Phone: 645-8820
-                &lt;br/&gt;
-                Email: meganjoh@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:mjeong31@buffalo.edu&#34;&gt;
+                 mjeong31@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2216,11 +2157,14 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 140  Phone: 645-8825
                 &lt;br/&gt;
-                Email: rpjones2@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:rpjones2@buffalo.edu&#34;&gt;
+                 rpjones2@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_k&#34;&gt;
+               &lt;h2 id=&#34;letter_k&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 K
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2232,7 +2176,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 106 Phone: 645-8763
                 &lt;br/&gt;
-                Email: bengieru@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:bengieru@buffalo.edu&#34;&gt;
+                 bengieru@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2241,7 +2188,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 125 Phone: 645-8815
                 &lt;br/&gt;
-                Email: jiseongk@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:jiseongk@buffalo.edu&#34;&gt;
+                 jiseongk@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2250,7 +2200,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 129  Phone: 645-8817
                 &lt;br/&gt;
-                Email: dmitriki@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:dmitriki@buffalo.edu&#34;&gt;
+                 dmitriki@buffalo.edu
+                &lt;/a&gt;
                 &lt;br/&gt;
                &lt;/p&gt;
               &lt;/div&gt;
@@ -2266,11 +2219,35 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/span&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_l&#34;&gt;
+               &lt;h2 id=&#34;letter_l&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 L
                &lt;/h2&gt;
               &lt;/div&gt;
               &lt;div class=&#34;text parbase section&#34;&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Le, Minh Quang
+                &lt;/b&gt;
+                &lt;br/&gt;
+                Office: 131  Phone: 645-8819
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:minhquan@buffalo.edu&#34;&gt;
+                 minhquan@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Leonard, Dakota
+                &lt;/b&gt;
+                &lt;br/&gt;
+                Office: 131  Phone: 645-8819
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:dl42@buffalo.edu&#34;&gt;
+                 dl42@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
                  Liao, Chang-Chih
@@ -2278,7 +2255,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 138  Phone: 645-8823
                 &lt;br/&gt;
-                Email: cliao9@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:cliao9@buffalo.edu&#34;&gt;
+                 cliao9@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2287,28 +2267,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 140 Phone: 645-8825
                 &lt;br/&gt;
-                Email: yanzhanl@buffalo.edu
-                &lt;br/&gt;
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Le, Minh Quang
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 131  Phone: 645-8819
-                &lt;br/&gt;
-                Email: minhquan@buffalo.edu
-                &lt;br/&gt;
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Lin, Wei
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 135  Phone: 645-8832
-                &lt;br/&gt;
-                Email: wlin27@buffalo.edu
-                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:yanzhanl@buffalo.edu&#34;&gt;
+                 yanzhanl@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2317,7 +2279,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 135 Phone: 645-8832
                 &lt;br/&gt;
-                Email: rliu8@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:rliu8@buffalo.edu&#34;&gt;
+                 rliu8@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2326,25 +2291,22 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 136 Phone: 645-8821
                 &lt;br/&gt;
-                Email: tianmoul@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:tianmoul@buffalo.edu&#34;&gt;
+                 tianmoul@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
                  Liu, Yuan
                 &lt;/b&gt;
                 &lt;br/&gt;
-                Office: 140 Phone: 645-8825
+                Office: 135 Phone: 645-8832
                 &lt;br/&gt;
-                Email: yuanliu@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Lottes, Jonathan
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 129 Phone: 645-8817
-                &lt;br/&gt;
-                Email: jllottes@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:yuanliu@buffalo.edu&#34;&gt;
+                 yuanliu@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                &lt;/p&gt;
@@ -2361,7 +2323,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/span&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_m&#34;&gt;
+               &lt;h2 id=&#34;letter_m&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 M
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2373,7 +2335,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 125  Phone: 645-8815
                 &lt;br/&gt;
-                Email: nma22@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:nma22@buffalo.edu&#34;&gt;
+                 nma22@buffalo.edu
+                &lt;/a&gt;
                 &lt;br/&gt;
                &lt;/p&gt;
                &lt;p&gt;
@@ -2383,7 +2348,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 125  Phone: 645-8815
                 &lt;br/&gt;
-                Email: rendama@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:rendama@buffalo.edu&#34;&gt;
+                 rendama@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2392,16 +2360,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 138  Phone: 645-8823
                 &lt;br/&gt;
-                Email: yuqingma@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Mandava, Navya
-                 &lt;br/&gt;
-                &lt;/b&gt;
-                Office: 130  Phone: 645-8818
-                &lt;br/&gt;
-                Email: navyatejam@gmail.com
+                Email:
+                &lt;a href=&#34;mailto:yuqingma@buffalo.edu&#34;&gt;
+                 yuqingma@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2410,7 +2372,22 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 130 Phone: 645-8818
                 &lt;br/&gt;
-                Email: lingqime@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:lingqime@buffalo.edu&#34;&gt;
+                 lingqime@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Meyer, Drew
+                &lt;/b&gt;
+                &lt;br/&gt;
+                Office: 137  Phone: 645-8822
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:drewmeye@buffalo.edu&#34;&gt;
+                 drewmeye@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2419,7 +2396,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 126  Phone: 645-8816
                 &lt;br/&gt;
-                Email: mnmontor@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:mnmontor@buffalo.edu&#34;&gt;
+                 mnmontor@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2428,12 +2408,15 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 139  Phone: 645-8824
                 &lt;br/&gt;
-                Email: rcmoore@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:rcmoore@buffalo.edu&#34;&gt;
+                 rcmoore@buffalo.edu
+                &lt;/a&gt;
                 &lt;br/&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_n&#34;&gt;
+               &lt;h2 id=&#34;letter_n&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 N
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2443,9 +2426,12 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                  Nguyen, Khanh Truong
                 &lt;/b&gt;
                 &lt;br/&gt;
-                Office: 140  PHone: 645-8825
+                Office: 140  Phone: 645-8825
                 &lt;br/&gt;
-                Email: kn55@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:kn55@buffalo.edu&#34;&gt;
+                 kn55@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;calltoaction section&#34;&gt;
@@ -2460,23 +2446,12 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/span&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_o&#34;&gt;
+               &lt;h2 id=&#34;letter_o&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 O
                &lt;/h2&gt;
               &lt;/div&gt;
-              &lt;div class=&#34;text parbase section&#34;&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Oregero, Jeffrey
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 129  Phone: 645-8817
-                &lt;br/&gt;
-                Email: jaoreger@buffalo.edu
-               &lt;/p&gt;
-              &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_p&#34;&gt;
+               &lt;h2 id=&#34;letter_p&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 P
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2490,24 +2465,43 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;b&gt;
                  &lt;br/&gt;
                 &lt;/b&gt;
-                Email: jpeng3@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:jpeng3@buffalo.edu&#34;&gt;
+                 jpeng3@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Poste, Alex
+                &lt;/b&gt;
                 &lt;br/&gt;
+                Office: 140  Phone: 645-8825
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:apposte@buffalo.edu&#34;&gt;
+                 apposte@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_r&#34;&gt;
+               &lt;h2 id=&#34;letter_r&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 R
                &lt;/h2&gt;
               &lt;/div&gt;
               &lt;div class=&#34;text parbase section&#34;&gt;
                &lt;p&gt;
                 &lt;b&gt;
-                 Raico, Pasquale
+                 Rantanen, Matthew
                  &lt;br/&gt;
                 &lt;/b&gt;
-                Office: 140 Phone: 645-8825
+                Office: 130  Phone: 645-8818
                 &lt;br/&gt;
-                Email: ppraico@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:mattrant@buffalo.edu&#34;&gt;
+                 mattrant@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2516,16 +2510,22 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 140 Phone: 645-8825
                 &lt;br/&gt;
-                Email: adhishpr@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:adhishpr@buffalo.edu&#34;&gt;
+                 adhishpr@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
-                 Roseman, Marleah
+                 Russell, Madison
                 &lt;/b&gt;
                 &lt;br/&gt;
-                Office: 137 Phone: 645-8822
+                Office: 129  Phone: 645-8817
                 &lt;br/&gt;
-                Email: mroseman@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:merussel@buffalo.edu&#34;&gt;
+                 merussel@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2536,57 +2536,77 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;b&gt;
                  &lt;br/&gt;
                 &lt;/b&gt;
-                Email: budrozwo@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:budrozwo@buffalo.edu&#34;&gt;
+                 budrozwo@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_s&#34;&gt;
+               &lt;h2 id=&#34;letter_s&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 S
                &lt;/h2&gt;
               &lt;/div&gt;
               &lt;div class=&#34;text parbase section&#34;&gt;
                &lt;p&gt;
                 &lt;b&gt;
-                 Sailsbery, Mitchell
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Email: msailsbe@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Samer, Andrew
+                 Sarkar, Sayantan
                  &lt;br/&gt;
                 &lt;/b&gt;
-                Office: 130  Phone: 645-8818
+                Office: 125  Phone: 645-8815
                 &lt;br/&gt;
-                Email: agsamer@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:sayantan@buffalo.edu&#34;&gt;
+                 sayantan@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
-                 Schilder, Marc
+                 Sharma, Abhishek
+                 &lt;br/&gt;
+                &lt;/b&gt;
+                Office: 126  Phone: 645-8816
+                &lt;br/&gt;
+                Email: aks28
+                &lt;a href=&#34;mailto:sayantan@buffalo.edu&#34;&gt;
+                 @buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Sicuso, Luca
                 &lt;/b&gt;
                 &lt;br/&gt;
-                Office: 135 Phone: 645-8832
+                Office: 131   Phone: 645-8819
                 &lt;br/&gt;
-                Email: mbschild@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:lucasicu@buffalo.edu&#34;&gt;
+                 lucasicu@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
                  Solanki, Deepisha
                 &lt;/b&gt;
                 &lt;br/&gt;
-                Office: 140 Phone: 645-8825
+                Office: 140  Phone: 645-8825
                 &lt;br/&gt;
-                Email: deepisha@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:deepisha@buffalo.edu&#34;&gt;
+                 deepisha@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
                  Som, Bratati
+                 &lt;br/&gt;
                 &lt;/b&gt;
-                &lt;br/&gt;
                 Office: 132 Phone: 645-8820
                 &lt;br/&gt;
-                Email: bratatis@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:bratatis@buffalo.edu&#34;&gt;
+                 bratatis@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2595,7 +2615,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 131 Phone: 645-8819
                 &lt;br/&gt;
-                Email: zhaosong@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:zhaosong@buffalo.edu&#34;&gt;
+                 zhaosong@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2604,7 +2627,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 136  Phone: 645-8821
                 &lt;br/&gt;
-                Email: marksull@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:marksull@buffalo.edu&#34;&gt;
+                 marksull@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2613,11 +2639,14 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 137 Phone: 645-8822
                 &lt;br/&gt;
-                Email: yuxunsun@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:yuxunsun@buffalo.edu&#34;&gt;
+                 yuxunsun@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_t&#34;&gt;
+               &lt;h2 id=&#34;letter_t&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 T
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2629,7 +2658,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 125  Phone: 645-8815
                 &lt;br/&gt;
-                Email: chanonth@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:chanonth@buffalo.edu&#34;&gt;
+                 chanonth@buffalo.edu
+                &lt;/a&gt;
                 &lt;br/&gt;
                 &lt;br/&gt;
                 &lt;br/&gt;
@@ -2647,56 +2679,51 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/span&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_u&#34;&gt;
+               &lt;h2 id=&#34;letter_u&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 U
                &lt;/h2&gt;
               &lt;/div&gt;
-              &lt;div class=&#34;text parbase section&#34;&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Upadhyay, Aparna
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 136  Phone: 645-8821
-                &lt;br/&gt;
-                Email: aparnaup@buffalo.edu
-               &lt;/p&gt;
-              &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_v&#34;&gt;
+               &lt;h2 id=&#34;letter_v&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 V
                &lt;/h2&gt;
               &lt;/div&gt;
               &lt;div class=&#34;text parbase section&#34;&gt;
                &lt;p&gt;
                 &lt;b&gt;
-                 Vinal, Gregory
+                 Vadnere, Arya Abhijeet
                 &lt;/b&gt;
                 &lt;br/&gt;
+                Office: 132 Mathematics Building
+                &lt;br/&gt;
+                Phone: 645-8820
+                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:aryaabhi@buffalo.edu&#34;&gt;
+                 aryaabhi@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 Vinal, Gregory
+                 &lt;br/&gt;
+                &lt;/b&gt;
                 Office: 126  Phone: 645-8816
                 &lt;br/&gt;
-                Email: gregoryv@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:chanonth@buffalo.edu&#34;&gt;
+                 gregoryv@buffalo.edu
+                &lt;/a&gt;
+               &lt;/p&gt;
+               &lt;p&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_w&#34;&gt;
+               &lt;h2 id=&#34;letter_w&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 W
                &lt;/h2&gt;
               &lt;/div&gt;
               &lt;div class=&#34;text parbase section&#34;&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Wang, Biao
-                 &lt;br/&gt;
-                &lt;/b&gt;
-                Office: 125 Phone: 645-8815
-                &lt;br/&gt;
-                Email: bwang32@buffalo.edu
-                &lt;br/&gt;
-                &lt;a href=&#34;http://www.buffalo.edu/~bwang32&#34; target=&#34;_blank&#34;&gt;
-                 Biao Wang&#39;s personal webpage
-                &lt;/a&gt;
-               &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
                  Wang, Daxun
@@ -2704,7 +2731,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 141 Phone: 645-8825
                 &lt;br/&gt;
-                Email: daxunwan@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:daxunwan@buffalo.edu&#34;&gt;
+                 daxunwan@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2713,26 +2743,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;/b&gt;
                 Office: 125 Phone: 645-8815
                 &lt;br/&gt;
-                Email: shiruo@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Wang, Weiqi
-                 &lt;br/&gt;
-                &lt;/b&gt;
-                Office: 125 Phone: 645-8815
-                &lt;br/&gt;
-                Email: weiqiwan@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Winton, Daniel
-                 &lt;br/&gt;
-                &lt;/b&gt;
-                Office: 125 Phone: 645-8815
-                &lt;br/&gt;
-                Email: dmwinton@buffalo.edu
-                &lt;br/&gt;
+                Email:
+                &lt;a href=&#34;mailto:bwang32@buffalo.edu&#34;&gt;
+                 shiruowa@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;calltoaction section&#34;&gt;
@@ -2747,7 +2761,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                &lt;/span&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_y&#34;&gt;
+               &lt;h2 id=&#34;letter_y&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 Y
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2759,11 +2773,14 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 137  Phone: 645-8822
                 &lt;br/&gt;
-                Email: chengyua@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:chengyua@buffalo.edu&#34;&gt;
+                 chengyua@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;title section&#34;&gt;
-               &lt;h2 id=&#34;letter_z&#34;&gt;
+               &lt;h2 id=&#34;letter_z&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
                 Z
                &lt;/h2&gt;
               &lt;/div&gt;
@@ -2775,7 +2792,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 140 Phone: 645-8825
                 &lt;br/&gt;
-                Email: baomingz@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:baomingz@buffalo.edu&#34;&gt;
+                 baomingz@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2784,16 +2804,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 140 Phone: 645-8825
                 &lt;br/&gt;
-                Email: bojunzha@buffalo.edu
-               &lt;/p&gt;
-               &lt;p&gt;
-                &lt;b&gt;
-                 Zhou, Chen
-                &lt;/b&gt;
-                &lt;br/&gt;
-                Office: 140  Phone: 645-8825
-                &lt;br/&gt;
-                Email: czhou5@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:bojunzha@buffalo.edu&#34;&gt;
+                 bojunzha@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
                &lt;p&gt;
                 &lt;b&gt;
@@ -2802,7 +2816,10 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
                 &lt;br/&gt;
                 Office: 140  Phone: 645-8825
                 &lt;br/&gt;
-                Email: cz22@buffalo.edu
+                Email:
+                &lt;a href=&#34;mailto:cz22@buffalo.edu&#34;&gt;
+                 cz22@buffalo.edu
+                &lt;/a&gt;
                &lt;/p&gt;
               &lt;/div&gt;
               &lt;div class=&#34;calltoaction section&#34;&gt;
@@ -2836,7 +2853,7 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
   &lt;/div&gt;
   &lt;footer&gt;
    &lt;div class=&#34;footer inheritedreference reference parbase&#34;&gt;
-    &lt;div class=&#34;footerconfigpage contentpage page&#34;&gt;
+    &lt;div class=&#34;footerconfigpage contentpage page basicpage&#34;&gt;
      &lt;div class=&#34;par parsys&#34;&gt;
       &lt;div class=&#34;htmlsnippet section&#34;&gt;
        &lt;div&gt;
@@ -2853,15 +2870,15 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
        &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&#34;fatfooter section&#34;&gt;
-       &lt;div class=&#34;footer-mode-simple&#34;&gt;
-        &lt;a href=&#34;//www.buffalo.edu/&#34;&gt;
-         &lt;img alt=&#34;University at Buffalo The State University of New York&#34; class=&#34;ub-logo&#34; height=&#34;32&#34; src=&#34;//www.buffalo.edu/v-e541efb31faa2518c910054a542e8044/etc/designs/ubcms/images/fatfooter/ub-logo-two-line.png&#34; width=&#34;241&#34;/&gt;
+       &lt;div class=&#34;footer-mode-simple clearfix&#34;&gt;
+        &lt;a class=&#34;ub-logo-link&#34; href=&#34;//www.buffalo.edu/&#34;&gt;
+         &lt;img alt=&#34;University at Buffalo The State University of New York - 175 Years: 1846-2021&#34; class=&#34;ub-logo&#34; src=&#34;/v-e541efb31faa2518c910054a542e1234/etc.clientlibs/wci/components/block/fatfooter/clientlibs/resources/ub-logo-175-years.png&#34; width=&#34;400&#34;/&gt;
         &lt;/a&gt;
         &lt;div class=&#34;footer-columns footer-columns-1&#34;&gt;
          &lt;div class=&#34;footer-column footer-column-1&#34;&gt;
           &lt;div class=&#34;col1 parsys&#34;&gt;
            &lt;div class=&#34;title section&#34;&gt;
-            &lt;h2 id=&#34;title-1&#34;&gt;
+            &lt;h2 id=&#34;title-1&#34; onpaste=&#34;onPasteFilterPlainText(event)&#34;&gt;
              &lt;a href=&#34;/cas/math.html&#34;&gt;
               Department of Mathematics
              &lt;/a&gt;
@@ -2877,6 +2894,29 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
              &lt;br/&gt;
              Fax: (716) 645-5039
             &lt;/p&gt;
+           &lt;/div&gt;
+           &lt;div class=&#34;reference parbase section&#34;&gt;
+            &lt;div class=&#34;unstructuredpage page basicpage&#34;&gt;
+             &lt;div class=&#34;par parsys&#34;&gt;
+              &lt;div class=&#34;hr hrline&#34; style=&#34;clear:left&#34;&gt;
+              &lt;/div&gt;
+              &lt;div class=&#34;captiontext text parbase section&#34;&gt;
+               &lt;p&gt;
+                &lt;b&gt;
+                 About Our Photos and Videos:
+                &lt;/b&gt;
+                Some photos or videos that appear on this site may have been taken prior to the COVID-19 pandemic and therefore may not accurately reflect current operations or adherence to
+                &lt;a href=&#34;https://www.buffalo.edu/coronavirus/health-and-safety.html&#34; target=&#34;_blank&#34;&gt;
+                 UB’s Health and Safety Guidelines
+                &lt;/a&gt;
+                .
+                &lt;br/&gt;
+               &lt;/p&gt;
+              &lt;/div&gt;
+             &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div contenttreeid=&#34;reference-1&#34; contenttreestatus=&#34;Not published&#34; style=&#34;display:none;&#34;&gt;
+            &lt;/div&gt;
            &lt;/div&gt;
           &lt;/div&gt;
          &lt;/div&gt;
@@ -2917,6 +2957,8 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
       &lt;/div&gt;
      &lt;/div&gt;
     &lt;/div&gt;
+    &lt;div contenttreeid=&#34;footer&#34; contenttreestatus=&#34;Not published&#34; style=&#34;display:none;&#34;&gt;
+    &lt;/div&gt;
    &lt;/div&gt;
   &lt;/footer&gt;
  &lt;/body&gt;
@@ -2952,44 +2994,44 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-[&lt;p&gt;&lt;b&gt;&lt;a href=&#34;https://www.buffalo.edu/coronavirus&#34;&gt;COVID-19 Information&lt;/a&gt;  •  3/4/2020 update&lt;/b&gt;&lt;/p&gt;,
+[&lt;p&gt;&lt;b&gt;COVID-19 UPDATES  •  3/4/2022&lt;/b&gt;&lt;/p&gt;,
+ &lt;p&gt;UB is committed to achieving inclusive excellence in a deliberate, intentional and coordinated fashion, embedding it in every aspect of our operations. We aspire to foster a healthy, productive, ethical, fair, and affirming campus community to allow all students, faculty and staff to thrive and realize their full potential. &lt;br/&gt;&lt;/p&gt;,
  &lt;p&gt;&lt;a href=&#34;#letter_a&#34;&gt;A&lt;/a&gt; | &lt;a href=&#34;#letter_b&#34;&gt;B&lt;/a&gt; | &lt;a href=&#34;#letter_c&#34;&gt;C&lt;/a&gt; | &lt;a href=&#34;#letter_d&#34;&gt;D&lt;/a&gt; | E | &lt;a href=&#34;#letter_f&#34;&gt;F&lt;/a&gt; | &lt;a href=&#34;#letter_g&#34;&gt;G&lt;/a&gt; | &lt;a href=&#34;#letter_h&#34;&gt;H&lt;/a&gt; | I | &lt;a href=&#34;#letter_j&#34;&gt;J&lt;/a&gt; | &lt;a href=&#34;#letter_h&#34;&gt;K&lt;/a&gt; | &lt;a href=&#34;#letter_l&#34;&gt;L&lt;/a&gt; | &lt;a href=&#34;#letter_m&#34;&gt;M&lt;/a&gt; | &lt;a href=&#34;#letter_n&#34;&gt;N&lt;/a&gt; | &lt;a href=&#34;#letter_o&#34;&gt;O&lt;/a&gt; | &lt;a href=&#34;#letter_p&#34;&gt;P&lt;/a&gt; | Q | &lt;a href=&#34;#letter_r&#34;&gt;R&lt;/a&gt; | &lt;a href=&#34;#letter_s&#34;&gt;S&lt;/a&gt; | &lt;a href=&#34;#letter_t&#34;&gt;T&lt;/a&gt; | &lt;a href=&#34;#letter_u&#34;&gt;U&lt;/a&gt; | &lt;a href=&#34;#letter_v&#34;&gt;V&lt;/a&gt; | &lt;a href=&#34;#letter_w&#34;&gt;W&lt;/a&gt; | &lt;a href=&#34;#letter_x&#34;&gt;X&lt;/a&gt; | &lt;a href=&#34;#letter_y&#34;&gt;Y&lt;/a&gt; | &lt;a href=&#34;#letter_z&#34;&gt;Z&lt;/a&gt;&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Abeya Ranasinghe Mudiyanselage, Asela V.&lt;/b&gt;&lt;br/&gt; Office: 138  Phone: 645-8823&lt;br/&gt; Email: aselavir@buffalo.edu&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Ahn, Min Woong&lt;/b&gt;&lt;br/&gt; Office: 126  Phone: 645-8816&lt;br/&gt; Email: minwoong@buffalo.edu&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Alegria, Linda&lt;/b&gt;&lt;br/&gt; Office: 138 Phone: 645-8823&lt;br/&gt; Email: lindaale@buffalo.edu&lt;br/&gt;&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Cain Charles&lt;/b&gt;&lt;br/&gt; Email: ccain2@buffalo.edu&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Casper, Michael&lt;br/&gt; &lt;/b&gt; Office: 222  Phone: 645-8779&lt;br/&gt; Email: mjcasper@buffalo.edu&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Chang, Hong&lt;br/&gt; &lt;/b&gt; Office: 136 Phone: 645-8821&lt;br/&gt; Email: hchang24@buffalo.edu&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Chen, Yen-Lin&lt;br/&gt; &lt;/b&gt; Office: 125 Phone: 645-8815&lt;br/&gt; Email: yenlinch@buffalo.edu&lt;br/&gt;&lt;/p&gt;,
- &lt;p&gt;&lt;b&gt;Cheuk, Ka Yue&lt;br/&gt; &lt;/b&gt; Office: 140 Phone: 645-8825&lt;br/&gt; Email: kayueche@buffalo.edu&lt;/p&gt;]
+ &lt;p&gt;&lt;i&gt;Offices as listed are in the Mathematics Building, North Campus.&lt;/i&gt;&lt;/p&gt;,
+ &lt;p&gt;&lt;b&gt;Abeya Ranasinghe Mudiyanselage, Asela V.&lt;/b&gt;&lt;br/&gt; Office: 138  Phone: 645-8823&lt;br/&gt; Email: &lt;a href=&#34;mailto:aselavir@buffalo.edu&#34;&gt;aselavir@buffalo.edu&lt;/a&gt;&lt;/p&gt;,
+ &lt;p&gt;&lt;b&gt;Ahn, Min Woong&lt;/b&gt;&lt;br/&gt; Office: 126  Phone: 645-8816&lt;br/&gt; Email: &lt;a href=&#34;mailto:minwoong@buffalo.edu&#34;&gt;minwoong@buffalo.edu&lt;/a&gt;&lt;/p&gt;,
+ &lt;p&gt;&lt;b&gt;Alegria, Linda&lt;/b&gt;&lt;br/&gt; Office: 138 Phone: 645-8823&lt;br/&gt; Email: &lt;a href=&#34;mailto:lindaale@buffalo.edu&#34;&gt;lindaale@buffalo.edu&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;,
+ &lt;p&gt;&lt;b&gt;Betz, Katherine&lt;/b&gt;&lt;br/&gt; Office: 132 Phone: 645-8820&lt;br/&gt; Email: &lt;a href=&#34;mailto:kbetz2@buffalo.edu&#34;&gt;kbetz2@buffalo.edu&lt;/a&gt;&lt;/p&gt;,
+ &lt;p&gt;&lt;b&gt;Bhaumik, Jnanajyoti&lt;/b&gt;&lt;br/&gt; Office: 129 Mathematics Building&lt;br/&gt; Phone: 645-8817&lt;br/&gt; Email: &lt;a href=&#34;mailto:jnanajyo@buffalo.edu&#34;&gt;jnanajyo@buffalo.edu&lt;/a&gt;&lt;/p&gt;,
+ &lt;p&gt; &lt;/p&gt;]
 </pre></div></div>
 </div>
 <p>Some items on the list (e.g. the first one) do not contain relevant information, but most of them are paragraphs with student data:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">ptags</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+<span></span><span class="n">ptags</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;p&gt;&lt;b&gt;Cosgrove, Gage (Makenzie)&lt;br/&gt; &lt;/b&gt; Office: 139 Phone: 645-8824&lt;br/&gt; Email: gagecosg@buffalo.edu&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Casper, Michael&lt;br/&gt; &lt;/b&gt; Office: 222  Phone: 645-8779&lt;br/&gt; Email: &lt;a href=&#34;mailto:mjcasper@buffalo.edu&#34;&gt;mjcasper@buffalo.edu&lt;/a&gt;&lt;/p&gt;
 </pre></div></div>
 </div>
 <p>Inside a paragraph tag the name of a student is enclosed in the tag <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;....&lt;/b&gt;</span></code>indicating boldface text. We could use the <code class="docutils literal notranslate"><span class="pre">find_all()</span></code> method again to search for boldface tags in a paragraph, but in this example we can use the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method as well. It returns the first occurrence of a given tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">ptags</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">ptags</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2998,22 +3040,22 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;b&gt;Cosgrove, Gage (Makenzie)&lt;br/&gt; &lt;/b&gt;
+&lt;b&gt;Casper, Michael&lt;br/&gt; &lt;/b&gt;
 </pre></div></div>
 </div>
 <p>The method <code class="docutils literal notranslate"><span class="pre">find()</span></code> returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if the specified tag is not found. We can use this to filter out paragraphs which do not contain student names:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="c1"># this paragraph gives the address of the Math Department</span>
-<span class="n">ptags</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ptags</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3022,11 +3064,11 @@ ent=&#34;2020-03-02&#34;/&gt;&lt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">print</span><span class="p">(</span><span class="n">ptags</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">ptags</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -3040,27 +3082,27 @@ None
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">get_text()</span></code> method returns text contained in a specified HTML element:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">name</span> <span class="o">=</span> <span class="n">ptags</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span></span><span class="n">name</span> <span class="o">=</span> <span class="n">ptags</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 <span class="n">name</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;Cosgrove, Gage (Makenzie) &#39;
+&#39;Casper, Michael &#39;
 </pre></div></div>
 </div>
 <p>Applying this to the list of paragraph tags with student data, we can extract names of all students:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3079,13 +3121,8 @@ None
 Abeya Ranasinghe Mudiyanselage, Asela V.
 Ahn, Min Woong
 Alegria, Linda
-Cain Charles
-Casper, Michael
-Chang, Hong
-Chen, Yen-Lin
-Cheuk, Ka Yue
-Cosgrove, Gage (Makenzie)
-Deutsch, Dustin
+Betz, Katherine
+Bhaumik, Jnanajyoti
 </pre></div></div>
 </div>
 </section>
@@ -3098,7 +3135,7 @@ Deutsch, Dustin
 <p>will be displayed in a web browser as <a class="reference external" href="https://www.buffalo.edu">University at Buffalo</a>. The <code class="docutils literal notranslate"><span class="pre">href</span></code> attribute specifies the address of the link destination, and the text between <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&lt;/a&gt;</span></code> is the visible text of the link.</p>
 <p>Using Beautiful Soup we find links in the graduate student directory web page:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3108,7 +3145,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3118,16 +3155,16 @@ Deutsch, Dustin
  &lt;a href=&#34;//www.buffalo.edu&#34;&gt;UB Home&lt;/a&gt;,
  &lt;a href=&#34;//www.buffalo.edu/maps&#34;&gt;Maps&lt;/a&gt;,
  &lt;a href=&#34;//www.buffalo.edu/directory/&#34;&gt;UB Directory&lt;/a&gt;,
- &lt;a href=&#34;//www.buffalo.edu&#34;&gt; &lt;i class=&#34;icon icon-ub-logo&#34;&gt;&lt;/i&gt;&lt;span class=&#34;ada-hidden&#34;&gt;University at Buffalo&lt;/span&gt; &lt;span class=&#34;logo&#34;&gt; &lt;img alt=&#34;&#34; class=&#34;black&#34; height=&#34;20&#34; src=&#34;//www.buffalo.edu/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc/designs/ubcms/images/header/ub-logo-black.png&#34; width=&#34;181&#34;/&gt; &lt;/span&gt; &lt;/a&gt;,
- &lt;a href=&#34;/cas/math.html&#34;&gt;Department of Mathematics&lt;/a&gt;,
+ &lt;a href=&#34;//www.buffalo.edu&#34;&gt; &lt;i class=&#34;icon icon-ub-logo&#34;&gt;&lt;/i&gt;&lt;span class=&#34;ada-hidden&#34;&gt;University at Buffalo&lt;/span&gt; &lt;span class=&#34;logo&#34;&gt; &lt;img alt=&#34;&#34; class=&#34;black&#34; height=&#34;20&#34; src=&#34;/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc.clientlibs/wci/components/block/header/clientlibs/resources/ub-logo-black.png&#34; width=&#34;181&#34;/&gt; &lt;/span&gt; &lt;/a&gt;,
+ &lt;a class=&#34;title&#34; href=&#34;/cas/math.html&#34;&gt;Department of Mathematics&lt;/a&gt;,
  &lt;a href=&#34;http://www.buffalo.edu/ub_admissions/apply-now.html&#34; target=&#34;_blank&#34;&gt; Apply to UB &lt;/a&gt;,
  &lt;a href=&#34;http://www.buffalo.edu/cas/math/about-us/contact-us.html&#34;&gt; Contact Us &lt;/a&gt;,
- &lt;a href=&#34;https://ubfoundation.buffalo.edu/giving/index.php?action=use-parameters&amp;amp;gift_allocation=9351124026&#34; target=&#34;_blank&#34;&gt; Support UB Math &lt;/a&gt;]
+ &lt;a href=&#34;https://ubfoundation.buffalo.edu/giving/?gift_allocation=01-3-0-01240&#34; target=&#34;_blank&#34;&gt; Support UB Math &lt;/a&gt;]
 </pre></div></div>
 </div>
 <p>Beautiful Soup lets us easily access attributes of any tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3137,7 +3174,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3146,7 +3183,7 @@ Deutsch, Dustin
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3155,7 +3192,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3165,7 +3202,7 @@ Deutsch, Dustin
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3174,7 +3211,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3187,7 +3224,7 @@ Deutsch, Dustin
 <p>Notice that links addresses can be given in several different formats.</p>
 <p>An <strong>absolute link</strong>, with the whole address of the destination:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3196,7 +3233,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3206,7 +3243,7 @@ Deutsch, Dustin
 </div>
 <p>Also an absolute link, but the without the <code class="docutils literal notranslate"><span class="pre">http:</span></code> part:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3215,7 +3252,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3225,7 +3262,7 @@ Deutsch, Dustin
 </div>
 <p>A <strong>local link</strong>, omitting the <code class="docutils literal notranslate"><span class="pre">http://www.buffalo.edu</span></code> part:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3234,26 +3271,26 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;a href=&#34;/cas/math.html&#34;&gt;Department of Mathematics&lt;/a&gt;
+&lt;a class=&#34;title&#34; href=&#34;/cas/math.html&#34;&gt;Department of Mathematics&lt;/a&gt;
 </pre></div></div>
 </div>
 <p>An <strong>anchor</strong>, which links to a specific part of the same page where the link is located. The full address would be <code class="docutils literal notranslate"><span class="pre">http://www.buffalo.edu/cas/math/people/grad-directory.html#letter_a</span></code>:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">grad_links</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span>
+<span></span><span class="n">grad_links</span><span class="p">[</span><span class="mi">118</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3267,50 +3304,51 @@ Deutsch, Dustin
 <h2>Images<a class="headerlink" href="#Images" title="Permalink to this headline">¶</a></h2>
 <p>Images in HTML documents are defined using the <code class="docutils literal notranslate"><span class="pre">&lt;img&gt;</span></code> tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">image</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
-<span class="n">image</span>
+<span></span><span class="n">image</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">img</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[61]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;img alt=&#34;&#34; class=&#34;black&#34; height=&#34;20&#34; src=&#34;//www.buffalo.edu/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc/designs/ubcms/images/header/ub-logo-black.png&#34; width=&#34;181&#34;/&gt;
+&lt;img alt=&#34;Diversity, Equity, and Inclusive Excellence Resources. &#34; class=&#34;img-209 img-209x131 cq-dd-image&#34; height=&#34;131&#34; src=&#34;/content/cas/math/people/_jcr_content/leftcol/flexmodule.img.209.131.png/1607108331977.png&#34; srcset=&#34;/content/cas/math/people/jcr:content/leftcol/flexmodule.img.418.262.q65.png/1607108331977.png 2x&#34; width=&#34;209&#34;/&gt;
 </pre></div></div>
 </div>
 <p>Similarly as with links, each image tag has a <code class="docutils literal notranslate"><span class="pre">src</span></code> attribute which gives the address where the image file is located.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">image</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">]</span>
+<span></span><span class="n">img</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[62]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&#39;//www.buffalo.edu/v-be9166b6b4a1ea7e5771e2eba1d410cf/etc/designs/ubcms/images/header/ub-logo-black.png&#39;
+&#39;/content/cas/math/people/_jcr_content/leftcol/flexmodule.img.209.131.png/1607108331977.png&#39;
 </pre></div></div>
 </div>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">requests</span></code> to download the image file, and <code class="docutils literal notranslate"><span class="pre">IPython.display</span></code> to display it:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">picture</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http:&#39;</span> <span class="o">+</span> <span class="n">image</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">content</span>
+<span></span><span class="n">picture</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://www.buffalo.edu&#39;</span> <span class="o">+</span> <span class="n">img</span><span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">content</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ub_logo.png&quot;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">picture</span><span class="p">)</span>
 
@@ -3320,7 +3358,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[63]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3361,7 +3399,7 @@ Deutsch, Dustin
 </pre></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3371,7 +3409,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -3381,11 +3419,12 @@ Deutsch, Dustin
     src="https://www.mth548.org/_static/table.html"
     frameborder="0"
     allowfullscreen
+
 ></iframe></div>
 </div>
 <p>Let say that we want to use Beautiful Soup to find the quantity and price of apples on the page with the table. First, we get the page content:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3396,7 +3435,7 @@ Deutsch, Dustin
 </div>
 <p>Next, we find the table tag. Since the page contains only one table, the <code class="docutils literal notranslate"><span class="pre">find()</span></code> method can be used for this:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3406,7 +3445,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3432,7 +3471,7 @@ Deutsch, Dustin
 </div>
 <p>We can find the cell of the table which contains the string “Apples” as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3446,7 +3485,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3456,7 +3495,7 @@ Deutsch, Dustin
 </div>
 <p>We are interested in the cell appearing immediately after <code class="docutils literal notranslate"><span class="pre">apples_cell</span></code> (for quantity), and the one after that (for price). The method <code class="docutils literal notranslate"><span class="pre">find_next()</span></code> comes useful here. It searches for the first occurrence of a tag of a specified kind after a given tag:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3465,7 +3504,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[33]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3475,7 +3514,7 @@ Deutsch, Dustin
 </div>
 <p>We can chain <code class="docutils literal notranslate"><span class="pre">find_next()</span></code> to search for subsequent tags:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -3484,7 +3523,7 @@ Deutsch, Dustin
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -3503,7 +3542,7 @@ Deutsch, Dustin
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../json/json.html" class="btn btn-neutral float-right" title="JSON" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../Projects/mnist_with_knn/mnist_with_knn.html" class="btn btn-neutral float-right" title="Project: Recognizing digits with k-NN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../requests/requests.html" class="btn btn-neutral float-left" title="Requests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -3517,7 +3556,7 @@ Deutsch, Dustin
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 09, 2022.
+        Last updated on Mar 10, 2022.
       </span>
 
     </p>

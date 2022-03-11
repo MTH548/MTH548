@@ -22,6 +22,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_4
    Schedule/week_5
    Schedule/week_6
+   Schedule/week_7
 
 
 
@@ -33,6 +34,8 @@ MTH 448/548 Data Oriented Computing
    Tools/Pandas/pandas_toc
    Tools/Seaborn/seaborn_toc
    Tools/Plotly/plotly_toc
+   Tools/requests/requests
+   Tools/beautiful_soup/beautiful_soup
 
    
 

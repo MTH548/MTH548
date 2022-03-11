@@ -53,7 +53,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Beautiful Soup" href="../beautiful_soup/beautiful_soup.html" />
-    <link rel="prev" title="Project: Baby names" href="../../Projects/baby_names/baby_names.html" /> 
+    <link rel="prev" title="Plotly Express plot types" href="../Plotly/plotly_plot_types.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -114,13 +114,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_4.html">Week 4 (2/21-2/27)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_5.html">Week 5 (2/28-3/6)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_6.html">Week 6 (3/7-3/13)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_7.html">Week 7 (3/14-3/20)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Requests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Requests-basics">Requests basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Binary-files">Binary files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#User-Agent">User-Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Sending-data">Sending data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#POST-requests">POST requests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul>
@@ -519,7 +529,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>The text of the web page can be retrieved using the <code class="docutils literal notranslate"><span class="pre">text</span></code> property:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -533,16 +543,16 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
- Park and Parkway System is the hallmark of Buffalo&#39;s many green spaces. Three-fourths of city parkl
-and is part of the system, which comprises six major parks, eight connecting parkways, nine circles
-and seven smaller spaces. Constructed in 1868 by &lt;a href=&#34;/wiki/Frederick_Law_Olmsted&#34; title=&#34;Freder
-ick Law Olmsted&#34;&gt;Frederick Law Olmsted&lt;/a&gt; and his partner &lt;a href=&#34;/wiki/Calvert_Vaux&#34; title=&#34;Calve
-rt Vaux&#34;&gt;Calvert Vaux&lt;/a&gt;, the system was integrated into the city and marks the first attempt in Am
-erica to lay out a coordinated system of public parks and parkways. The Olmsted-designed portions of
- the Buffalo park system are listed on the National Register of Historic Places and are maintained b
-y the Buffalo Olmsted Parks Conservancy (BOPC), a non-profit, for public benefit corporation which s
-erves as the city&#39;s parks department. It is the first non-governmental organization of its kind to s
-erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_180-0&#34; class=&#34;reference&#34;&gt;&lt;a
+ape&#34; title=&#34;Rape&#34;&gt;Rape&lt;/a&gt;&lt;/th&gt;&lt;td class=&#34;infobox-data&#34;&gt;121&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&#34;row&#34; class=&#34;info
+box-label&#34;&gt;&lt;a href=&#34;/wiki/Robbery&#34; title=&#34;Robbery&#34;&gt;Robbery&lt;/a&gt;&lt;/th&gt;&lt;td class=&#34;infobox-data&#34;&gt;802&lt;/td&gt;
+&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&#34;row&#34; class=&#34;infobox-label&#34;&gt;&lt;a href=&#34;/wiki/Aggravated_assault&#34; class=&#34;mw-redirect
+&#34; title=&#34;Aggravated assault&#34;&gt;Aggravated assault&lt;/a&gt;&lt;/th&gt;&lt;td class=&#34;infobox-data&#34;&gt;1,563&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;
+&lt;th scope=&#34;row&#34; class=&#34;infobox-label&#34;&gt;&lt;a href=&#34;/wiki/Violent_crime&#34; title=&#34;Violent crime&#34;&gt;Total viol
+ent crime&lt;/a&gt;&lt;/th&gt;&lt;td class=&#34;infobox-data&#34;&gt;2,533 &lt;img alt=&#34;Positive decrease&#34; src=&#34;//upload.wikimedi
+a.org/wikipedia/commons/thumb/9/92/Decrease_Positive.svg/11px-Decrease_Positive.svg.png&#34; decoding=&#34;a
+sync&#34; title=&#34;Positive decrease&#34; width=&#34;11&#34; height=&#34;11&#34; srcset=&#34;//upload.wikimedia.org/wikipedia/comm
+ons/thumb/9/92/Decrease_Positive.svg/17px-Decrease_Positive.svg.png 1.5x, //upload.wikimedia.org/wik
+ipedia/commons/thumb/9/92/Decrease_Positive.svg/22px-Decrease_Positive.svg.png 2x&#34; data-file-width=&#34;
 </pre></div></div>
 </div>
 </section>
@@ -550,7 +560,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 <h2>Binary files<a class="headerlink" href="#Binary-files" title="Permalink to this headline">¶</a></h2>
 <p>Some web addresses point not to web pages, but to other types of data: images, videos, pdf files etc. We can retrieve such data using requests too. For example, here is the url of a <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/9/93/Northern_Cardinal_Male-27527-3.jpg">jpg file</a> posted on Wikimedia Commons:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[60]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -560,7 +570,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 </div>
 <p>The code below downloads the photo and saves to a jpg file:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -575,7 +585,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 </div>
 <p>We can now display the saved file:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -585,7 +595,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -601,7 +611,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 </div>
 <p>The web page <a class="reference external" href="https://httpbin.org/get">httpbin.org/get</a> simply displays the data sent to it by the browser, so you can visit it to check the User-Agent used by your web browser. Using requests to connect to this website, we can inspect the default User-Agent set by the requests module:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[129]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -619,12 +629,12 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
   &#34;args&#34;: {},
   &#34;headers&#34;: {
     &#34;Accept&#34;: &#34;*/*&#34;,
-    &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+    &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
     &#34;Host&#34;: &#34;httpbin.org&#34;,
-    &#34;User-Agent&#34;: &#34;python-requests/2.22.0&#34;,
-    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e615933-8b363310b894fbadfde15504&#34;
+    &#34;User-Agent&#34;: &#34;python-requests/2.27.1&#34;,
+    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-622acd3b-2da793644ef419a2752bcf87&#34;
   },
-  &#34;origin&#34;: &#34;98.118.166.16&#34;,
+  &#34;origin&#34;: &#34;98.118.166.35&#34;,
   &#34;url&#34;: &#34;https://httpbin.org/get&#34;
 }
 
@@ -632,7 +642,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 </div>
 <p>This default User-Agent is good enough in many cases, but some websites expect less generic information, and may return an error message if these expectations are not met. For example, <a class="reference external" href="https://meta.wikimedia.org/wiki/User-Agent_policy">here</a> is the User-Agent policy of Wikimedia, which applies e.g. to accessing all Wikipedia pages. We can change the request’s User-Agent to any value as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -657,12 +667,12 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
   &#34;args&#34;: {},
   &#34;headers&#34;: {
     &#34;Accept&#34;: &#34;*/*&#34;,
-    &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+    &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
     &#34;Host&#34;: &#34;httpbin.org&#34;,
     &#34;User-Agent&#34;: &#34;MTH548_test_script/1.0&#34;,
-    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e694bd4-bf81c8dc01b6b428ca2c5834&#34;
+    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-622acd48-50e323124c02d82524984ea7&#34;
   },
-  &#34;origin&#34;: &#34;98.118.166.16&#34;,
+  &#34;origin&#34;: &#34;98.118.166.35&#34;,
   &#34;url&#34;: &#34;https://httpbin.org/get&#34;
 }
 
@@ -673,7 +683,7 @@ erve in such a capacity in the United States.&lt;sup id=&#34;cite_ref-AboutBOPC_
 <h2>Sending data<a class="headerlink" href="#Sending-data" title="Permalink to this headline">¶</a></h2>
 <p>In some cases we need to specify more data, beside the address of a web page, to get the information we need. For example, to make use of the <a class="reference external" href="https://oeis.org/">On-Line Encyclopedia of Integer Sequences</a> we need to provide a sequence of integers as a search query. This can be accomplished using requests as follows:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -705,9 +715,8 @@ Showing 1-3 of 3
 %N A328780 Nonnegative integers k such that k and k^2 have the same number of nonzero digits.
 %C A328780 The idea of this sequence comes from the 1st problem of the 28th British Mathematical Olympiad in 1992 (see the link).
 %C A328780 This sequence is infinite because the family of integers {10^k, k &gt;= 0} (A011557) belongs to this sequence.
-%D A328780 A. Gardiner, The Mathematical Olympiad Handbook: An Introduction to Problem Solving, Oxford University Press, 1997, reprinted 2011, Pb 1 pp. 57 and 109 (1992)
-%H A328780 Giovanni Resta, &lt;a href=&#34;/A328780/b328780.txt&#34;&gt;Table of n, a(n) for n = 1..10000&lt;/a&gt;
-%H A328780
+%C A328780 The numbers m, m + 1, m + 2 where m = 49*10^k - 3, or m = 99*10^k - 3, k &gt;= 3 are terms with all nonzero digits. - _Marius A. Burtea_, Dec 21 2020
+%D A328780 A. Gardiner, The Mathematical Olympiad Handbook: An Introduction to Problem Solving, Oxford University Pres
 </pre></div></div>
 </div>
 </section>
@@ -721,7 +730,7 @@ to the server - e.g. to securely send a password or upload a file - clients use
 <p>If you click on the link <a class="reference external" href="https://httpbin.org/post">httpbin.org/post</a>, or you enter this url in the address bar of a web browser, you will see a page with a message “Method not allowed”. It happens because this url expects POST requests, and web browsers use GET unless directed otherwise.</p>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -755,15 +764,15 @@ to the server - e.g. to securely send a password or upload a file - clients use
   },
   &#34;headers&#34;: {
     &#34;Accept&#34;: &#34;*/*&#34;,
-    &#34;Accept-Encoding&#34;: &#34;gzip, deflate&#34;,
+    &#34;Accept-Encoding&#34;: &#34;gzip, deflate, br&#34;,
     &#34;Content-Length&#34;: &#34;36&#34;,
     &#34;Content-Type&#34;: &#34;application/x-www-form-urlencoded&#34;,
     &#34;Host&#34;: &#34;httpbin.org&#34;,
     &#34;User-Agent&#34;: &#34;MTH548_POST_script/1.0&#34;,
-    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-5e69519f-a333c8d8d7245b33ff95a352&#34;
+    &#34;X-Amzn-Trace-Id&#34;: &#34;Root=1-622acd80-1816d66522c996eb5e6857d6&#34;
   },
   &#34;json&#34;: null,
-  &#34;origin&#34;: &#34;98.118.166.16&#34;,
+  &#34;origin&#34;: &#34;98.118.166.35&#34;,
   &#34;url&#34;: &#34;https://httpbin.org/post&#34;
 }
 
@@ -783,7 +792,7 @@ to the server - e.g. to securely send a password or upload a file - clients use
         <a href="../beautiful_soup/beautiful_soup.html" class="btn btn-neutral float-right" title="Beautiful Soup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../Projects/baby_names/baby_names.html" class="btn btn-neutral float-left" title="Project: Baby names" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../Plotly/plotly_plot_types.html" class="btn btn-neutral float-left" title="Plotly Express plot types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -794,7 +803,7 @@ to the server - e.g. to securely send a password or upload a file - clients use
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 09, 2022.
+        Last updated on Mar 10, 2022.
       </span>
 
     </p>
