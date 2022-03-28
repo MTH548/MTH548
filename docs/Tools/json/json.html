@@ -52,8 +52,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Regular expressions" href="../Regex/regex_toc.html" />
-    <link rel="prev" title="Project: Baby names" href="../../Projects/baby_names/baby_names.html" /> 
+    <link rel="next" title="Project: Recognizing digits with k-NN" href="../../Projects/mnist_with_knn/mnist_with_knn.html" />
+    <link rel="prev" title="Beautiful Soup" href="../beautiful_soup/beautiful_soup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -115,21 +115,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_5.html">Week 5 (2/28-3/6)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_6.html">Week 6 (3/7-3/13)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_7.html">Week 7 (3/14-3/20)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_8.html">Week 8 (3/28-4/3)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Numpy/numpy_toc.html">Numpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Pandas/pandas_toc.html">Pandas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Seaborn/seaborn_toc.html">Seaborn</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Plotly/plotly_toc.html">Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../requests/requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JSON</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#The-json-module">The json module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Example:-currency-exchange-rates">Example: currency exchange rates</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
 </ul>
 
             
@@ -577,7 +584,7 @@ other dictionaries and lists), this syntax can be used to represent complex data
 
 <p><code class="docutils literal notranslate"><span class="pre">json.dump</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">json.dumps</span></code> but instead of producing a string representing <code class="docutils literal notranslate"><span class="pre">obj</span></code>, it writes this string to a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code>. For example, the code below saves the dictionary <code class="docutils literal notranslate"><span class="pre">student</span></code> to a text file <code class="docutils literal notranslate"><span class="pre">student.json</span></code>:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -596,7 +603,7 @@ other dictionaries and lists), this syntax can be used to represent complex data
 
 <p><code class="docutils literal notranslate"><span class="pre">json.load</span></code> in turn, is similar to <code class="docutils literal notranslate"><span class="pre">json.loads</span></code>, but it takes as its argument a file object <code class="docutils literal notranslate"><span class="pre">fp</span></code> which contains a JSON formatted string, and returns the corresponding Python object:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -607,7 +614,7 @@ other dictionaries and lists), this syntax can be used to represent complex data
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -618,14 +625,14 @@ other dictionaries and lists), this syntax can be used to represent complex data
 </section>
 <section id="Example:-currency-exchange-rates">
 <h2>Example: currency exchange rates<a class="headerlink" href="#Example:-currency-exchange-rates" title="Permalink to this headline">¶</a></h2>
-<p>The website <a class="reference external" href="https://www.exchangeratesapi.io/">www.exchangeratesapi.io</a> provides current and historical currency exchange rates. We can use it, for example, to obtain the latest exchange rates against the US dollar:</p>
+<p>The website <a class="reference external" href="https://www.exchangerate-api.com/docs/free">www.exchangerate-api.com</a> provides current currency exchange rates. We can use it, for example, to obtain the latest exchange rates against the US dollar:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">rates</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.exchangeratesapi.io/latest?base=USD&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="n">rates</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://open.er-api.com/v6/latest/USD&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">rates</span><span class="p">)</span>
 </pre></div>
@@ -636,18 +643,35 @@ other dictionaries and lists), this syntax can be used to represent complex data
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#34;rates&#34;:{&#34;CAD&#34;:1.4161682074,&#34;HKD&#34;:7.7541236179,&#34;ISK&#34;:139.8404930216,&#34;PHP&#34;:50.9298531811,&#34;DKK&#34;:6.766
-9929309,&#34;HUF&#34;:325.1042233098,&#34;CZK&#34;:24.7553017945,&#34;GBP&#34;:0.805691499,&#34;RON&#34;:4.3753851731,&#34;SEK&#34;:10.00317
-20138,&#34;IDR&#34;:16393.0034439007,&#34;INR&#34;:75.6751857894,&#34;BRL&#34;:5.1215334421,&#34;RUB&#34;:79.8790103317,&#34;HRK&#34;:6.9118
-18017,&#34;JPY&#34;:108.1566068515,&#34;THB&#34;:32.6998368679,&#34;CHF&#34;:0.9580387892,&#34;EUR&#34;:0.9062896502,&#34;MYR&#34;:4.3326083
-016,&#34;BGN&#34;:1.7725212978,&#34;TRY&#34;:6.5683342396,&#34;CNY&#34;:7.0996012326,&#34;NOK&#34;:10.5934384629,&#34;NZD&#34;:1.6680261011,
-&#34;ZAR&#34;:17.8798259924,&#34;USD&#34;:1.0,&#34;MXN&#34;:23.7864781584,&#34;SGD&#34;:1.4257748777,&#34;AUD&#34;:1.6332245786,&#34;ILS&#34;:3.5838
-317926,&#34;KRW&#34;:1224.8685880007,&#34;PLN&#34;:4.124433569},&#34;base&#34;:&#34;USD&#34;,&#34;date&#34;:&#34;2020-03-30&#34;}
+{&#34;result&#34;:&#34;success&#34;,&#34;provider&#34;:&#34;https://www.exchangerate-api.com&#34;,&#34;documentation&#34;:&#34;https://www.excha
+ngerate-api.com/docs/free&#34;,&#34;terms_of_use&#34;:&#34;https://www.exchangerate-api.com/terms&#34;,&#34;time_last_update
+_unix&#34;:1648252952,&#34;time_last_update_utc&#34;:&#34;Sat, 26 Mar 2022 00:02:32 +0000&#34;,&#34;time_next_update_unix&#34;:1
+648340702,&#34;time_next_update_utc&#34;:&#34;Sun, 27 Mar 2022 00:25:02 +0000&#34;,&#34;time_eol_unix&#34;:0,&#34;base_code&#34;:&#34;US
+D&#34;,&#34;rates&#34;:{&#34;USD&#34;:1,&#34;AED&#34;:3.67,&#34;AFN&#34;:87.38,&#34;ALL&#34;:111.39,&#34;AMD&#34;:490.51,&#34;ANG&#34;:1.79,&#34;AOA&#34;:456.53,&#34;ARS&#34;:1
+10.14,&#34;AUD&#34;:1.33,&#34;AWG&#34;:1.79,&#34;AZN&#34;:1.7,&#34;BAM&#34;:1.78,&#34;BBD&#34;:2,&#34;BDT&#34;:85.26,&#34;BGN&#34;:1.78,&#34;BHD&#34;:0.376,&#34;BIF&#34;:20
+09.87,&#34;BMD&#34;:1,&#34;BND&#34;:1.36,&#34;BOB&#34;:6.86,&#34;BRL&#34;:4.8,&#34;BSD&#34;:1,&#34;BTN&#34;:76.25,&#34;BWP&#34;:11.51,&#34;BYN&#34;:3,&#34;BZD&#34;:2,&#34;CAD&#34;:
+1.25,&#34;CDF&#34;:1991.18,&#34;CHF&#34;:0.93,&#34;CLP&#34;:789.57,&#34;CNY&#34;:6.38,&#34;COP&#34;:3763.57,&#34;CRC&#34;:655.56,&#34;CUP&#34;:24,&#34;CVE&#34;:100.
+34,&#34;CZK&#34;:22.37,&#34;DJF&#34;:177.72,&#34;DKK&#34;:6.79,&#34;DOP&#34;:54.78,&#34;DZD&#34;:142.67,&#34;EGP&#34;:18.41,&#34;ERN&#34;:15,&#34;ETB&#34;:51.12,&#34;EU
+R&#34;:0.91,&#34;FJD&#34;:2.09,&#34;FKP&#34;:0.759,&#34;FOK&#34;:6.79,&#34;GBP&#34;:0.759,&#34;GEL&#34;:3.22,&#34;GGP&#34;:0.759,&#34;GHS&#34;:8.18,&#34;GIP&#34;:0.759,
+&#34;GMD&#34;:54.77,&#34;GNF&#34;:8915.07,&#34;GTQ&#34;:7.67,&#34;GYD&#34;:208.82,&#34;HKD&#34;:7.83,&#34;HNL&#34;:24.51,&#34;HRK&#34;:6.86,&#34;HTG&#34;:106.14,&#34;HU
+F&#34;:339.1,&#34;IDR&#34;:14259.38,&#34;ILS&#34;:3.22,&#34;IMP&#34;:0.759,&#34;INR&#34;:76.26,&#34;IQD&#34;:1456.89,&#34;IRR&#34;:41942.62,&#34;ISK&#34;:129.06
+,&#34;JEP&#34;:0.759,&#34;JMD&#34;:153.19,&#34;JOD&#34;:0.709,&#34;JPY&#34;:122.12,&#34;KES&#34;:115,&#34;KGS&#34;:99.06,&#34;KHR&#34;:4039.24,&#34;KID&#34;:1.33,&#34;K
+MF&#34;:447.67,&#34;KRW&#34;:1221.69,&#34;KWD&#34;:0.3,&#34;KYD&#34;:0.833,&#34;KZT&#34;:494.28,&#34;LAK&#34;:12882.01,&#34;LBP&#34;:1507.5,&#34;LKR&#34;:289.07
+,&#34;LRD&#34;:153.09,&#34;LSL&#34;:14.54,&#34;LYD&#34;:4.66,&#34;MAD&#34;:9.49,&#34;MDL&#34;:18.35,&#34;MGA&#34;:3098.09,&#34;MKD&#34;:56.14,&#34;MMK&#34;:1763.21,
+&#34;MNT&#34;:2924.78,&#34;MOP&#34;:8.07,&#34;MRU&#34;:36.33,&#34;MUR&#34;:44.04,&#34;MVR&#34;:15.42,&#34;MWK&#34;:820.11,&#34;MXN&#34;:20.03,&#34;MYR&#34;:4.21,&#34;MZ
+N&#34;:64.25,&#34;NAD&#34;:14.54,&#34;NGN&#34;:414.99,&#34;NIO&#34;:35.71,&#34;NOK&#34;:8.63,&#34;NPR&#34;:122.01,&#34;NZD&#34;:1.44,&#34;OMR&#34;:0.384,&#34;PAB&#34;:1
+,&#34;PEN&#34;:3.73,&#34;PGK&#34;:3.52,&#34;PHP&#34;:52.16,&#34;PKR&#34;:181.75,&#34;PLN&#34;:4.28,&#34;PYG&#34;:7121.96,&#34;QAR&#34;:3.64,&#34;RON&#34;:4.49,&#34;RSD&#34;
+:107.08,&#34;RUB&#34;:98.53,&#34;RWF&#34;:1046.19,&#34;SAR&#34;:3.75,&#34;SBD&#34;:7.95,&#34;SCR&#34;:14.39,&#34;SDG&#34;:445.81,&#34;SEK&#34;:9.41,&#34;SGD&#34;:1.
+36,&#34;SHP&#34;:0.759,&#34;SLL&#34;:11643.18,&#34;SOS&#34;:577.43,&#34;SRD&#34;:20.61,&#34;SSP&#34;:430.22,&#34;STN&#34;:22.29,&#34;SYP&#34;:2510.64,&#34;SZL&#34;:
+14.54,&#34;THB&#34;:33.56,&#34;TJS&#34;:12.56,&#34;TMT&#34;:3.5,&#34;TND&#34;:2.77,&#34;TOP&#34;:2.23,&#34;TRY&#34;:14.82,&#34;TTD&#34;:6.78,&#34;TVD&#34;:1.33,&#34;TWD
+&#34;:28.61,&#34;TZS&#34;:2320.18,&#34;UAH&#34;:29.58,&#34;UGX&#34;:3596.24,&#34;UYU&#34;:41.93,&#34;UZS&#34;:11460.98,&#34;VES&#34;:4.34,&#34;VND&#34;:22860.03
+,&#34;VUV&#34;:112.24,&#34;WST&#34;:2.56,&#34;XAF&#34;:596.89,&#34;XCD&#34;:2.7,&#34;XDR&#34;:0.725,&#34;XOF&#34;:596.89,&#34;XPF&#34;:108.59,&#34;YER&#34;:250.17,&#34;
+ZAR&#34;:14.54,&#34;ZMW&#34;:17.86,&#34;ZWL&#34;:138.14}}
 </pre></div></div>
 </div>
 <p>The exchange rates are provided as a JSON encoded string. Using the <code class="docutils literal notranslate"><span class="pre">json.loads</span></code> function we can convert this string into a Python dictionary:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -657,51 +681,187 @@ other dictionaries and lists), this syntax can be used to represent complex data
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;rates&#39;: {&#39;CAD&#39;: 1.4161682074,
-  &#39;HKD&#39;: 7.7541236179,
-  &#39;ISK&#39;: 139.8404930216,
-  &#39;PHP&#39;: 50.9298531811,
-  &#39;DKK&#39;: 6.7669929309,
-  &#39;HUF&#39;: 325.1042233098,
-  &#39;CZK&#39;: 24.7553017945,
-  &#39;GBP&#39;: 0.805691499,
-  &#39;RON&#39;: 4.3753851731,
-  &#39;SEK&#39;: 10.0031720138,
-  &#39;IDR&#39;: 16393.0034439007,
-  &#39;INR&#39;: 75.6751857894,
-  &#39;BRL&#39;: 5.1215334421,
-  &#39;RUB&#39;: 79.8790103317,
-  &#39;HRK&#39;: 6.911818017,
-  &#39;JPY&#39;: 108.1566068515,
-  &#39;THB&#39;: 32.6998368679,
-  &#39;CHF&#39;: 0.9580387892,
-  &#39;EUR&#39;: 0.9062896502,
-  &#39;MYR&#39;: 4.3326083016,
-  &#39;BGN&#39;: 1.7725212978,
-  &#39;TRY&#39;: 6.5683342396,
-  &#39;CNY&#39;: 7.0996012326,
-  &#39;NOK&#39;: 10.5934384629,
-  &#39;NZD&#39;: 1.6680261011,
-  &#39;ZAR&#39;: 17.8798259924,
-  &#39;USD&#39;: 1.0,
-  &#39;MXN&#39;: 23.7864781584,
-  &#39;SGD&#39;: 1.4257748777,
-  &#39;AUD&#39;: 1.6332245786,
-  &#39;ILS&#39;: 3.5838317926,
-  &#39;KRW&#39;: 1224.8685880007,
-  &#39;PLN&#39;: 4.124433569},
- &#39;base&#39;: &#39;USD&#39;,
- &#39;date&#39;: &#39;2020-03-30&#39;}
+{&#39;result&#39;: &#39;success&#39;,
+ &#39;provider&#39;: &#39;https://www.exchangerate-api.com&#39;,
+ &#39;documentation&#39;: &#39;https://www.exchangerate-api.com/docs/free&#39;,
+ &#39;terms_of_use&#39;: &#39;https://www.exchangerate-api.com/terms&#39;,
+ &#39;time_last_update_unix&#39;: 1648252952,
+ &#39;time_last_update_utc&#39;: &#39;Sat, 26 Mar 2022 00:02:32 +0000&#39;,
+ &#39;time_next_update_unix&#39;: 1648340702,
+ &#39;time_next_update_utc&#39;: &#39;Sun, 27 Mar 2022 00:25:02 +0000&#39;,
+ &#39;time_eol_unix&#39;: 0,
+ &#39;base_code&#39;: &#39;USD&#39;,
+ &#39;rates&#39;: {&#39;USD&#39;: 1,
+  &#39;AED&#39;: 3.67,
+  &#39;AFN&#39;: 87.38,
+  &#39;ALL&#39;: 111.39,
+  &#39;AMD&#39;: 490.51,
+  &#39;ANG&#39;: 1.79,
+  &#39;AOA&#39;: 456.53,
+  &#39;ARS&#39;: 110.14,
+  &#39;AUD&#39;: 1.33,
+  &#39;AWG&#39;: 1.79,
+  &#39;AZN&#39;: 1.7,
+  &#39;BAM&#39;: 1.78,
+  &#39;BBD&#39;: 2,
+  &#39;BDT&#39;: 85.26,
+  &#39;BGN&#39;: 1.78,
+  &#39;BHD&#39;: 0.376,
+  &#39;BIF&#39;: 2009.87,
+  &#39;BMD&#39;: 1,
+  &#39;BND&#39;: 1.36,
+  &#39;BOB&#39;: 6.86,
+  &#39;BRL&#39;: 4.8,
+  &#39;BSD&#39;: 1,
+  &#39;BTN&#39;: 76.25,
+  &#39;BWP&#39;: 11.51,
+  &#39;BYN&#39;: 3,
+  &#39;BZD&#39;: 2,
+  &#39;CAD&#39;: 1.25,
+  &#39;CDF&#39;: 1991.18,
+  &#39;CHF&#39;: 0.93,
+  &#39;CLP&#39;: 789.57,
+  &#39;CNY&#39;: 6.38,
+  &#39;COP&#39;: 3763.57,
+  &#39;CRC&#39;: 655.56,
+  &#39;CUP&#39;: 24,
+  &#39;CVE&#39;: 100.34,
+  &#39;CZK&#39;: 22.37,
+  &#39;DJF&#39;: 177.72,
+  &#39;DKK&#39;: 6.79,
+  &#39;DOP&#39;: 54.78,
+  &#39;DZD&#39;: 142.67,
+  &#39;EGP&#39;: 18.41,
+  &#39;ERN&#39;: 15,
+  &#39;ETB&#39;: 51.12,
+  &#39;EUR&#39;: 0.91,
+  &#39;FJD&#39;: 2.09,
+  &#39;FKP&#39;: 0.759,
+  &#39;FOK&#39;: 6.79,
+  &#39;GBP&#39;: 0.759,
+  &#39;GEL&#39;: 3.22,
+  &#39;GGP&#39;: 0.759,
+  &#39;GHS&#39;: 8.18,
+  &#39;GIP&#39;: 0.759,
+  &#39;GMD&#39;: 54.77,
+  &#39;GNF&#39;: 8915.07,
+  &#39;GTQ&#39;: 7.67,
+  &#39;GYD&#39;: 208.82,
+  &#39;HKD&#39;: 7.83,
+  &#39;HNL&#39;: 24.51,
+  &#39;HRK&#39;: 6.86,
+  &#39;HTG&#39;: 106.14,
+  &#39;HUF&#39;: 339.1,
+  &#39;IDR&#39;: 14259.38,
+  &#39;ILS&#39;: 3.22,
+  &#39;IMP&#39;: 0.759,
+  &#39;INR&#39;: 76.26,
+  &#39;IQD&#39;: 1456.89,
+  &#39;IRR&#39;: 41942.62,
+  &#39;ISK&#39;: 129.06,
+  &#39;JEP&#39;: 0.759,
+  &#39;JMD&#39;: 153.19,
+  &#39;JOD&#39;: 0.709,
+  &#39;JPY&#39;: 122.12,
+  &#39;KES&#39;: 115,
+  &#39;KGS&#39;: 99.06,
+  &#39;KHR&#39;: 4039.24,
+  &#39;KID&#39;: 1.33,
+  &#39;KMF&#39;: 447.67,
+  &#39;KRW&#39;: 1221.69,
+  &#39;KWD&#39;: 0.3,
+  &#39;KYD&#39;: 0.833,
+  &#39;KZT&#39;: 494.28,
+  &#39;LAK&#39;: 12882.01,
+  &#39;LBP&#39;: 1507.5,
+  &#39;LKR&#39;: 289.07,
+  &#39;LRD&#39;: 153.09,
+  &#39;LSL&#39;: 14.54,
+  &#39;LYD&#39;: 4.66,
+  &#39;MAD&#39;: 9.49,
+  &#39;MDL&#39;: 18.35,
+  &#39;MGA&#39;: 3098.09,
+  &#39;MKD&#39;: 56.14,
+  &#39;MMK&#39;: 1763.21,
+  &#39;MNT&#39;: 2924.78,
+  &#39;MOP&#39;: 8.07,
+  &#39;MRU&#39;: 36.33,
+  &#39;MUR&#39;: 44.04,
+  &#39;MVR&#39;: 15.42,
+  &#39;MWK&#39;: 820.11,
+  &#39;MXN&#39;: 20.03,
+  &#39;MYR&#39;: 4.21,
+  &#39;MZN&#39;: 64.25,
+  &#39;NAD&#39;: 14.54,
+  &#39;NGN&#39;: 414.99,
+  &#39;NIO&#39;: 35.71,
+  &#39;NOK&#39;: 8.63,
+  &#39;NPR&#39;: 122.01,
+  &#39;NZD&#39;: 1.44,
+  &#39;OMR&#39;: 0.384,
+  &#39;PAB&#39;: 1,
+  &#39;PEN&#39;: 3.73,
+  &#39;PGK&#39;: 3.52,
+  &#39;PHP&#39;: 52.16,
+  &#39;PKR&#39;: 181.75,
+  &#39;PLN&#39;: 4.28,
+  &#39;PYG&#39;: 7121.96,
+  &#39;QAR&#39;: 3.64,
+  &#39;RON&#39;: 4.49,
+  &#39;RSD&#39;: 107.08,
+  &#39;RUB&#39;: 98.53,
+  &#39;RWF&#39;: 1046.19,
+  &#39;SAR&#39;: 3.75,
+  &#39;SBD&#39;: 7.95,
+  &#39;SCR&#39;: 14.39,
+  &#39;SDG&#39;: 445.81,
+  &#39;SEK&#39;: 9.41,
+  &#39;SGD&#39;: 1.36,
+  &#39;SHP&#39;: 0.759,
+  &#39;SLL&#39;: 11643.18,
+  &#39;SOS&#39;: 577.43,
+  &#39;SRD&#39;: 20.61,
+  &#39;SSP&#39;: 430.22,
+  &#39;STN&#39;: 22.29,
+  &#39;SYP&#39;: 2510.64,
+  &#39;SZL&#39;: 14.54,
+  &#39;THB&#39;: 33.56,
+  &#39;TJS&#39;: 12.56,
+  &#39;TMT&#39;: 3.5,
+  &#39;TND&#39;: 2.77,
+  &#39;TOP&#39;: 2.23,
+  &#39;TRY&#39;: 14.82,
+  &#39;TTD&#39;: 6.78,
+  &#39;TVD&#39;: 1.33,
+  &#39;TWD&#39;: 28.61,
+  &#39;TZS&#39;: 2320.18,
+  &#39;UAH&#39;: 29.58,
+  &#39;UGX&#39;: 3596.24,
+  &#39;UYU&#39;: 41.93,
+  &#39;UZS&#39;: 11460.98,
+  &#39;VES&#39;: 4.34,
+  &#39;VND&#39;: 22860.03,
+  &#39;VUV&#39;: 112.24,
+  &#39;WST&#39;: 2.56,
+  &#39;XAF&#39;: 596.89,
+  &#39;XCD&#39;: 2.7,
+  &#39;XDR&#39;: 0.725,
+  &#39;XOF&#39;: 596.89,
+  &#39;XPF&#39;: 108.59,
+  &#39;YER&#39;: 250.17,
+  &#39;ZAR&#39;: 14.54,
+  &#39;ZMW&#39;: 17.86,
+  &#39;ZWL&#39;: 138.14}}
 </pre></div></div>
 </div>
 <p>We can use the dictionary to check how much 1 USD is worth in terms of any other listed currency:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -711,12 +871,12 @@ other dictionaries and lists), this syntax can be used to represent complex data
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.4161682074
+1.25
 </pre></div></div>
 </div>
 </section>
@@ -730,10 +890,10 @@ other dictionaries and lists), this syntax can be used to represent complex data
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Regex/regex_toc.html" class="btn btn-neutral float-right" title="Regular expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../Projects/mnist_with_knn/mnist_with_knn.html" class="btn btn-neutral float-right" title="Project: Recognizing digits with k-NN" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../Projects/baby_names/baby_names.html" class="btn btn-neutral float-left" title="Project: Baby names" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../beautiful_soup/beautiful_soup.html" class="btn btn-neutral float-left" title="Beautiful Soup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -744,7 +904,7 @@ other dictionaries and lists), this syntax can be used to represent complex data
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 12, 2022.
+        Last updated on Mar 28, 2022.
       </span>
 
     </p>

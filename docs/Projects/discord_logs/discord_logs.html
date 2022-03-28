@@ -53,7 +53,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Project: KDE and marathon results" href="../kde_marathon_results/kde_marathon_results.html" />
-    <link rel="prev" title="Project: Scrapping marathon results" href="../scrapping_marathon_results/scrapping_marathon_results.html" /> 
+    <link rel="prev" title="SQL with Python" href="../../Tools/SQL/sql_with_python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -115,6 +115,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_5.html">Week 5 (2/28-3/6)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_6.html">Week 6 (3/7-3/13)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_7.html">Week 7 (3/14-3/20)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_8.html">Week 8 (3/28-4/3)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
@@ -124,12 +125,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/Plotly/plotly_toc.html">Plotly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/requests/requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools/json/json.html">JSON</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
 </ul>
 
             
@@ -466,7 +469,7 @@ div.rendered_html tbody tr:hover {
 <section id="Project:-Discord-logs">
 <h1>Project: Discord logs<a class="headerlink" href="#Project:-Discord-logs" title="Permalink to this headline">¶</a></h1>
 <html><h1 style="color:teal;"><p>Project weight: 5 points</p>
-</h1></html><p>The JSON file <a class="reference download internal" download="" href="../../_downloads/0cba9c30f557443ad11e5fdfd5727706/discord_logs.json"><code class="xref download docutils literal notranslate"><span class="pre">discord_logs.json</span></code></a> contains a log of activities on the MTH 448/548 Discord server.</p>
+</h1></html><p>The JSON file <a class="reference download internal" download="" href="../../_downloads/0cba9c30f557443ad11e5fdfd5727706/discord_logs.json"><code class="xref download docutils literal notranslate"><span class="pre">discord_logs.json</span></code></a> contains a log of activities on a Discord server created for an online course. The data was anonymized to hide identities of users of the server, but it is unchanged otherwise.</p>
 <p>Here is a fragment of this file. The highlighted lines contain information that the user Sean joined the voice channel ‘General Voice’ on March 4, 2021 at 21:45:38 GMT:</p>
 <pre style="font-size:13px">
 {'id': '817150823247118356',
@@ -518,16 +521,16 @@ div.rendered_html tbody tr:hover {
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <section id="Part-1">
 <h3>Part 1<a class="headerlink" href="#Part-1" title="Permalink to this headline">¶</a></h3>
-<p>Use the log file to create a pandas DataFrame with the record of all occurrences when a user either left or joined a voice channel. The DataFrame should have three columns:</p>
+<p>Use the log file to create a pandas dataframe with the record of all occurrences when a user either left or joined a voice channel. The dataframe should have three columns:</p>
 <ul class="simple">
 <li><p>the column “name” should contain names of users</p></li>
 <li><p>the column “event” should record if a user joined or left a channel</p></li>
 <li><p>the column “time” should give the time of each event.</p></li>
 </ul>
-<p>The rows of the DataFrame should be ordered according to times of events: from the earliest to the latest.</p>
-<p>Here is a sample of showing the structure of the DataFrame:</p>
+<p>The rows of the dataframe should be ordered according to times of events: from the earliest to the latest.</p>
+<p>Here is a sample of showing the structure of the dataframe:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -536,7 +539,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -601,18 +604,18 @@ div.rendered_html tbody tr:hover {
 </section>
 <section id="Part-2">
 <h3>Part 2<a class="headerlink" href="#Part-2" title="Permalink to this headline">¶</a></h3>
-<p>For each user compute the total time the user spent in voice channels. Here is a sample of results you should obtain:</p>
+<p>Create a dataframe that shows the total time each user spent in voice channels. Sort the rows alphabetically by user names. Here is a sample of results you should obtain:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">times_df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span></span><span class="n">times_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
@@ -640,29 +643,29 @@ div.rendered_html tbody tr:hover {
   </thead>
   <tbody>
     <tr>
-      <th>25</th>
+      <th>0</th>
+      <td>Abagail</td>
+      <td>3 days 22:22:09.153000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Abram</td>
+      <td>0 days 03:53:50.386000</td>
+    </tr>
+    <tr>
+      <th>2</th>
       <td>Ariana</td>
       <td>0 days 17:37:12.113000</td>
     </tr>
     <tr>
-      <th>26</th>
-      <td>Jamya</td>
-      <td>1 days 01:12:34.347000</td>
+      <th>3</th>
+      <td>Ashanti</td>
+      <td>0 days 01:49:14.898000</td>
     </tr>
     <tr>
-      <th>27</th>
-      <td>Kathy</td>
-      <td>1 days 03:15:31.871000</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>Edward</td>
-      <td>1 days 19:39:40.461000</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>Abagail</td>
-      <td>3 days 22:22:09.153000</td>
+      <th>4</th>
+      <td>Augustus</td>
+      <td>0 days 03:04:14.154000</td>
     </tr>
   </tbody>
 </table>
@@ -691,7 +694,7 @@ div.rendered_html tbody tr:hover {
         <a href="../kde_marathon_results/kde_marathon_results.html" class="btn btn-neutral float-right" title="Project: KDE and marathon results" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../scrapping_marathon_results/scrapping_marathon_results.html" class="btn btn-neutral float-left" title="Project: Scrapping marathon results" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../../Tools/SQL/sql_with_python.html" class="btn btn-neutral float-left" title="SQL with Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -702,7 +705,7 @@ div.rendered_html tbody tr:hover {
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Mar 12, 2022.
+        Last updated on Mar 28, 2022.
       </span>
 
     </p>

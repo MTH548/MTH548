@@ -3,12 +3,12 @@ Current Tasks
 =============
 
 
-Project 3
+Project 4
 ---------
 
-**Due: Saturday, 3/19 11:59 PM on UBLearns**
+**Due: Sunday, 4/3 11:59 PM on UBLearns**
 
-:doc:`Project: Baby names <Projects/baby_names/baby_names>` 
+:doc:`Project: Scrapping marathon results <Projects/scrapping_marathon_results/scrapping_marathon_results>` 
 
 
 Weekly Digest 7 
