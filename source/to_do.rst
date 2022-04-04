@@ -3,18 +3,18 @@ Current Tasks
 =============
 
 
-Project 4
+Project 5
 ---------
 
-**Due: Sunday, 4/3 11:59 PM on UBLearns**
+**Due: Sunday, 4/10 11:59 PM on UBLearns**
 
-:doc:`Project: Scrapping marathon results <Projects/scrapping_marathon_results/scrapping_marathon_results>` 
+:doc:`Project: Discord logs <Projects/discord_logs/discord_logs>` 
 
 
 Weekly Digest 8 
 ---------------
 
-**Due: Sunday 4/3 11:59 PM**
+**Due: Sunday 4/10 11:59 PM**
 
 .. raw:: html
 
