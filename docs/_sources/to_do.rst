@@ -3,18 +3,10 @@ Current Tasks
 =============
 
 
-Project 5
----------
+Weekly Digest 10
+----------------
 
-**Due: Sunday, 4/10 11:59 PM on UBLearns**
-
-:doc:`Project: Discord logs <Projects/discord_logs/discord_logs>` 
-
-
-Weekly Digest 9 
----------------
-
-**Due: Sunday 4/10 11:59 PM**
+**Due: Sunday 4/17 11:59 PM**
 
 .. raw:: html
    
