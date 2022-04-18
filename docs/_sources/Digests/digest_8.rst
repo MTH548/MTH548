@@ -39,7 +39,7 @@ from scripts. In particular, it will block a request if the user-agent is not on
 with some commonly used web browser. To circumvent it, people scapping amazon pages set 
 their user-agent to the user-agent of some browser, effectively pretending that their script is 
 a web browser. There are many web pages that list user-agents of various web browsers, here is
-[an example](https://developers.whatismybrowser.com/useragents/explore/). 
+`an example <https://developers.whatismybrowser.com/useragents/explore/>`_. 
 
 Faking a user-agent for scrapping amazon may work in a short term, but after a few requests 
 the script can still get blocked if amazon servers notice that too many requests are coming from 
@@ -50,7 +50,7 @@ the same IP address. Then there are ways around it, e.g. by using proxy servers.
 
     I was wondering if there is a way to save variables in python or jupyter like you can in MATLAB. 
 
-In Jupyter notebook you can use [%save](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-save)
+In Jupyter notebook you can use `%save <https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-save>`_
 magic. For more general applications, saving variables and their value to e.g. to a json file 
 is a good option. 
 
@@ -66,7 +66,7 @@ We be will using the marathon data (that you were scrapping for project 4) for s
 
     Can you explain User-header again in class just as review?
 
-You can have a look [here](https://www.mth548.org/Tools/requests/requests.html#User-Agent). 
+You can have a look `here <https://www.mth548.org/Tools/requests/requests.html#User-Agent>`_. 
 You can also search the web for "user-agent web scrapping". There are many pages that 
 explain what user-agent is and how to use it. 
 
@@ -109,7 +109,7 @@ servers, specifically designed to store and process very large amounts of data.
 PageRank is an algorithm for ranking webpages, not a web crawler. Google, Microsoft etc.
 use proprietary software for crawling the web, I am not sure how much of their source 
 code they make public. It is possible to write a fully-featured web crawler using Python, 
-see e.g. [Scrapy](https://scrapy.org/). 
+see e.g. `Scrapy <https://scrapy.org/>`_. 
 
 
 **Haiyi asks:**
@@ -189,7 +189,7 @@ There are other Python libraries though for processing PDF files.
     Is there a way for website to prevent outside users from scrapping data?
 
 There is no way to prevent scrapping entirely, but there are ways to make it more difficult. 
-This is for example what all the websites using [captchas](http://www.captcha.net/) are doing.  
+This is for example what all the websites using `captchas <http://www.captcha.net/>`_ are doing.  
 
 
 **Adrian asks:**

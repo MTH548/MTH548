@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Project: KDE and marathon results &mdash; MTH 448/548  documentation</title>
+  <title>Project: Analysis of marathon results &mdash; MTH 448/548  documentation</title>
   
 
   
@@ -52,8 +52,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Project: Text classification with naive Bayes" href="../text_with_naive_bayes/text_with_naive_bayes.html" />
-    <link rel="prev" title="SQL with Python" href="../../Tools/SQL/sql_with_python.html" /> 
+    <link rel="next" title="SQL" href="../../Tools/SQL/sql_toc.html" />
+    <link rel="prev" title="Project: Discord logs" href="../discord_logs/discord_logs.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -118,6 +118,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_8.html">Week 8 (3/28-4/3)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_9.html">Week 9 (4/4-4/10)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_10.html">Week 10 (4/11-4/17)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Schedule/week_11.html">Week 11 (4/18-4/24)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
@@ -128,14 +129,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/requests/requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/json/json.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools/Regex/regex_toc.html">Regular expressions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Projects</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_knn/mnist_with_knn.html">Project: Recognizing digits with k-NN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../mnist_with_k_means/mnist_with_k_means.html">Project: MNIST with k-means</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../baby_names/baby_names.html">Project: Baby names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../discord_logs/discord_logs.html">Project: Discord logs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project: Analysis of marathon results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Objectives">Objectives</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -182,7 +188,7 @@
     
       <li><a href="../../master.html">MTH 448/548</a> &raquo;</li>
         
-      <li>Project: KDE and marathon results</li>
+      <li>Project: Analysis of marathon results</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,8 +229,8 @@
     text-align: unset;
 }
 </style>
-<section id="Project:-KDE-and-marathon-results">
-<h1>Project: KDE and marathon results<a class="headerlink" href="#Project:-KDE-and-marathon-results" title="Permalink to this headline">¶</a></h1>
+<section id="Project:-Analysis-of-marathon-results">
+<h1>Project: Analysis of marathon results<a class="headerlink" href="#Project:-Analysis-of-marathon-results" title="Permalink to this headline">¶</a></h1>
 <html><h1 style="color:teal;"><p>Project weight: 10 points</p>
 </h1></html><p>Download the following csv file which contains race results of about 26,000 marathon runners:</p>
 <div class="line-block">
@@ -234,12 +240,14 @@
 <h2>Objectives<a class="headerlink" href="#Objectives" title="Permalink to this headline">¶</a></h2>
 <p>Analyze the marathon data. In particular:</p>
 <ol class="arabic simple">
-<li><p>Compute the 2-dimensional kernel density estimate (KDE) for male and female runners using finish time and age as the input data.</p></li>
-<li><p>Use the KDE computed in part 1 and the Bayes theorem to predict if a runner was a male or a female based on their age and finish time.</p></li>
-<li><p>Compare accuracy of this prediction with the prediction obtained using the k-NN classifier.</p></li>
+<li><p>Compute 1-dimensional kernel density estimate (KDE) of male and female runners using finish times, and use it together with the Bayes theorem to compute the probability that a runner with a given time was a female. Use this to make predictions if a runner was a male/female based on their finish times and check accuracy of these predictions.</p></li>
+<li><p>Repeat part 1, but using 2-dimensional KDEs computed using finish times and ages of runners.</p></li>
+<li><p>Compare accuracy of predictions obtained in parts 1 and 2 to the predictions made using k-NN with the same input data.</p></li>
+<li><p>Use linear regression to predict finish times of runners based on their 5K times. Evaluate accuracy of these predictions. Then use other data beside the 5K time (the age of a runner, whether the runner was a male or a female) together with the 5K times to predict finish times using linear regression, and check if this meaningfully improves the predictions.</p></li>
 <li><p>Add anything else that you find relevant and interesting.</p></li>
 </ol>
-<p><strong>Note:</strong> Tools for computing KDE are implemented by several Python libraries. You can use, for example, <code class="docutils literal notranslate"><span class="pre">scipy.stats.gaussian_kde</span></code>which is a part of the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html">scipy module</a>. On the other hand you must not use ready-made Bayes classification tools implemented in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> and other machine learning packages. You can use <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> to compute k-NN classification.</p>
+<p><strong>Note:</strong> Tools for computing KDE are implemented by several Python libraries. You can use, for example, <code class="docutils literal notranslate"><span class="pre">scipy.stats.gaussian_kde</span></code>which is a part of the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.gaussian_kde.html">scipy library</a>. On the other hand, you must not use ready-made Bayes classification tools implemented in <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> and other machine learning packages. You can use <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> to compute k-NN classification. For linear regression you can use the
+implementation provided by <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>.</p>
 </section>
 </section>
 
@@ -251,10 +259,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../text_with_naive_bayes/text_with_naive_bayes.html" class="btn btn-neutral float-right" title="Project: Text classification with naive Bayes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../Tools/SQL/sql_toc.html" class="btn btn-neutral float-right" title="SQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../Tools/SQL/sql_with_python.html" class="btn btn-neutral float-left" title="SQL with Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../discord_logs/discord_logs.html" class="btn btn-neutral float-left" title="Project: Discord logs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -265,7 +273,7 @@
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Apr 10, 2022.
+        Last updated on Apr 18, 2022.
       </span>
 
     </p>

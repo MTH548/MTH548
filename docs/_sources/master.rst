@@ -26,6 +26,7 @@ MTH 448/548 Data Oriented Computing
    Schedule/week_8
    Schedule/week_9
    Schedule/week_10
+   Schedule/week_11
 
 
 
@@ -40,6 +41,7 @@ MTH 448/548 Data Oriented Computing
    Tools/requests/requests
    Tools/beautiful_soup/beautiful_soup
    Tools/json/json
+   Tools/Regex/regex_toc
 
    
 
@@ -52,6 +54,7 @@ MTH 448/548 Data Oriented Computing
    Projects/baby_names/baby_names
    Projects/scrapping_marathon_results/scrapping_marathon_results
    Projects/discord_logs/discord_logs
+   Projects/kde_marathon_results/kde_marathon_results
 
    
 
@@ -65,7 +68,6 @@ MTH 448/548 Data Oriented Computing
    Tools/SQL/sql_toc
 
 
-   Projects/discord_logs/discord_logs
    Projects/kde_marathon_results/kde_marathon_results
    Projects/text_with_naive_bayes/text_with_naive_bayes
    Projects/music_database/music_database

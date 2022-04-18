@@ -2,6 +2,13 @@
 Current Tasks
 =============
 
+:doc:`Project:  Analysis of marathon results <Projects/kde_marathon_results/kde_marathon_results>` 
+
+**Due: Friday 4/29 11:59 PM**
+
+
+|
+|
 
 Weekly Digest 10
 ----------------

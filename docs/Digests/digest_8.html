@@ -128,6 +128,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_9.html">Week 9 (4/4-4/10)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Schedule/week_10.html">Week 10 (4/11-4/17)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Schedule/week_11.html">Week 11 (4/18-4/24)</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tools</span></p>
 <ul>
@@ -138,6 +139,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Tools/requests/requests.html">Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Tools/beautiful_soup/beautiful_soup.html">Beautiful Soup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Tools/json/json.html">JSON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tools/Regex/regex_toc.html">Regular expressions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Projects</span></p>
 <ul>
@@ -146,6 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../Projects/baby_names/baby_names.html">Project: Baby names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/scrapping_marathon_results/scrapping_marathon_results.html">Project: Scrapping marathon results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Projects/discord_logs/discord_logs.html">Project: Discord logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/kde_marathon_results/kde_marathon_results.html">Project: Analysis of marathon results</a></li>
 </ul>
 
             
@@ -267,7 +270,7 @@ from scripts. In particular, it will block a request if the user-agent is not on
 with some commonly used web browser. To circumvent it, people scapping amazon pages set
 their user-agent to the user-agent of some browser, effectively pretending that their script is
 a web browser. There are many web pages that list user-agents of various web browsers, here is
-[an example](<a class="reference external" href="https://developers.whatismybrowser.com/useragents/explore/">https://developers.whatismybrowser.com/useragents/explore/</a>).</p>
+<a class="reference external" href="https://developers.whatismybrowser.com/useragents/explore/">an example</a>.</p>
 <p>Faking a user-agent for scrapping amazon may work in a short term, but after a few requests
 the script can still get blocked if amazon servers notice that too many requests are coming from
 the same IP address. Then there are ways around it, e.g. by using proxy servers.</p>
@@ -275,7 +278,7 @@ the same IP address. Then there are ways around it, e.g. by using proxy servers.
 <blockquote>
 <div><p>I was wondering if there is a way to save variables in python or jupyter like you can in MATLAB.</p>
 </div></blockquote>
-<p>In Jupyter notebook you can use [%save](<a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-save">https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-save</a>)
+<p>In Jupyter notebook you can use <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-save">%save</a>
 magic. For more general applications, saving variables and their value to e.g. to a json file
 is a good option.</p>
 <p><strong>Griffin asks:</strong></p>
@@ -287,7 +290,7 @@ is a good option.</p>
 <blockquote>
 <div><p>Can you explain User-header again in class just as review?</p>
 </div></blockquote>
-<p>You can have a look [here](<a class="reference external" href="https://www.mth548.org/Tools/requests/requests.html#User-Agent">https://www.mth548.org/Tools/requests/requests.html#User-Agent</a>).
+<p>You can have a look <a class="reference external" href="https://www.mth548.org/Tools/requests/requests.html#User-Agent">here</a>.
 You can also search the web for “user-agent web scrapping”. There are many pages that
 explain what user-agent is and how to use it.</p>
 <p><strong>Ninghui asks:</strong></p>
@@ -322,7 +325,7 @@ Presumably they don’t use python.</p>
 <p>PageRank is an algorithm for ranking webpages, not a web crawler. Google, Microsoft etc.
 use proprietary software for crawling the web, I am not sure how much of their source
 code they make public. It is possible to write a fully-featured web crawler using Python,
-see e.g. [Scrapy](<a class="reference external" href="https://scrapy.org/">https://scrapy.org/</a>).</p>
+see e.g. <a class="reference external" href="https://scrapy.org/">Scrapy</a>.</p>
 <p><strong>Haiyi asks:</strong></p>
 <blockquote>
 <div><p>For me, I find it difficult to use the information of the web page to draw pictures, and many times
@@ -389,7 +392,7 @@ the subject of project 4. You will be working with JSON for the next project.</p
 <div><p>Is there a way for website to prevent outside users from scrapping data?</p>
 </div></blockquote>
 <p>There is no way to prevent scrapping entirely, but there are ways to make it more difficult.
-This is for example what all the websites using [captchas](<a class="reference external" href="http://www.captcha.net/">http://www.captcha.net/</a>) are doing.</p>
+This is for example what all the websites using <a class="reference external" href="http://www.captcha.net/">captchas</a> are doing.</p>
 <p><strong>Adrian asks:</strong></p>
 <blockquote>
 <div><p>Will we learn how to automate certain tasks throughout the semester ?</p>
@@ -433,7 +436,7 @@ I don’t think that basic web scrapping brings any special security issues.</p>
     <p>
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="width: 100px; border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by-sa.svg" /></a>  <a href="mailto:admin@mth548.org">Bernard Badzioch</a>
       <span class="lastupdated"><br/>
-        Last updated on Apr 10, 2022.
+        Last updated on Apr 18, 2022.
       </span>
 
     </p>
