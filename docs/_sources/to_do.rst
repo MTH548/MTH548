@@ -2,9 +2,9 @@
 Current Tasks
 =============
 
-:doc:`Project:  Analysis of marathon results <Projects/kde_marathon_results/kde_marathon_results>` 
+:doc:`Project: Text classification with naive Bayes <Projects/text_with_naive_bayes/text_with_naive_bayes>` 
 
-**Due: Friday 4/29 11:59 PM**
+**Due: Friday 5/13 11:59 PM**
 
 
 |
