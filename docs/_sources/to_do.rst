@@ -17,4 +17,4 @@ Weekly Digest 12
 
 .. raw:: html
    
-   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfUICuPuMui5tEA-3TxFi6PPtH31Qm3hEBfstknmwRl-jyFJQ/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTFtCnhZEO1rica7JsChP6rFHAHX0OBjSM5IR_uMynrLmbKw/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
