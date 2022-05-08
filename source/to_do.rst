@@ -7,13 +7,16 @@ Current Tasks
 **Due: Friday 5/13 11:59 PM**
 
 
-|
-|
+:doc:`Optional Project: Music database <Projects/music_database/music_database>`
 
-Weekly Digest 12
+**Due: Friday 5/20 11:59 PM**
+
+
+
+Weekly Digest 13
 ----------------
 
-**Due: Sunday 5/1 11:59 PM**
+**Due: Sunday 5/9 11:59 PM**
 
 .. raw:: html
    
